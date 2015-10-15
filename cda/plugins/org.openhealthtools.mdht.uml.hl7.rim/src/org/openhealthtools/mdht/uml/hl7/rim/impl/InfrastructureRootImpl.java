@@ -55,7 +55,9 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 	 * @generated
 	 */
 	public EList<CS> getRealmCodes() {
-		return InfrastructureRootOperations.getRealmCodes(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -64,7 +66,9 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 	 * @generated
 	 */
 	public II getTypeId() {
-		return InfrastructureRootOperations.getTypeId(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -73,7 +77,9 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 	 * @generated
 	 */
 	public EList<II> getTemplateIds() {
-		return InfrastructureRootOperations.getTemplateIds(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -82,7 +88,9 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 	 * @generated
 	 */
 	public NullFlavor getNullFlavor() {
-		return InfrastructureRootOperations.getNullFlavor(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -91,7 +99,9 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 	 * @generated
 	 */
 	public boolean isNullFlavorDefined() {
-		return InfrastructureRootOperations.isNullFlavorDefined(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -100,7 +110,9 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 	 * @generated
 	 */
 	public boolean isNullFlavorUndefined() {
-		return InfrastructureRootOperations.isNullFlavorUndefined(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -109,7 +121,9 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 	 * @generated
 	 */
 	public boolean hasContent() {
-		return InfrastructureRootOperations.hasContent(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -118,7 +132,9 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 	 * @generated
 	 */
 	public boolean isDefined(String featureName) {
-		return InfrastructureRootOperations.isDefined(this, featureName);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 } // InfrastructureRootImpl

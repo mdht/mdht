@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.hl7.rim.*;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMFactory;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
 
@@ -33,11 +34,12 @@ public class RIMFactoryImpl extends EFactoryImpl implements RIMFactory {
 	 */
 	public static RIMFactory init() {
 		try {
-			RIMFactory theRIMFactory = (RIMFactory) EPackage.Registry.INSTANCE.getEFactory(RIMPackage.eNS_URI);
+			RIMFactory theRIMFactory = (RIMFactory)EPackage.Registry.INSTANCE.getEFactory(RIMPackage.eNS_URI);
 			if (theRIMFactory != null) {
 				return theRIMFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RIMFactoryImpl();
@@ -72,7 +74,7 @@ public class RIMFactoryImpl extends EFactoryImpl implements RIMFactory {
 	 * @generated
 	 */
 	public RIMPackage getRIMPackage() {
-		return (RIMPackage) getEPackage();
+		return (RIMPackage)getEPackage();
 	}
 
 	/**

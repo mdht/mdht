@@ -99,7 +99,7 @@ public interface CR extends ANY {
 	 * @return the value of the '<em>Inverted</em>' attribute.
 	 * @see #setInverted(boolean)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCR_Inverted()
-	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" ordered="false"
+	 * @model default="false" ordered="false"
 	 * @generated
 	 */
 	boolean isInverted();
@@ -118,6 +118,7 @@ public interface CR extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * (self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->

@@ -28,13 +28,13 @@ import org.openhealthtools.mdht.uml.term.core.profile.UsageContext;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl#getIdentifier <em>Identifier</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl#getStatus <em>Status</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl#getStatusDate <em>Status Date</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl#getBase_Class <em>Base Class</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class UsageContextImpl extends EObjectImpl implements UsageContext {
@@ -42,7 +42,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -53,7 +52,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -64,7 +62,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -75,7 +72,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -86,7 +82,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getStatusDate()
 	 * @generated
 	 * @ordered
@@ -97,7 +92,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The cached value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getStatusDate()
 	 * @generated
 	 * @ordered
@@ -108,7 +102,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -118,7 +111,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected UsageContextImpl() {
@@ -128,7 +120,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -138,7 +129,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -151,9 +141,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 			case TermPackage.USAGE_CONTEXT__STATUS_DATE:
 				return getStatusDate();
 			case TermPackage.USAGE_CONTEXT__BASE_CLASS:
-				if (resolve) {
-					return getBase_Class();
-				}
+				if (resolve) return getBase_Class();
 				return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -162,22 +150,17 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case TermPackage.USAGE_CONTEXT__IDENTIFIER:
-				return IDENTIFIER_EDEFAULT == null
-						? identifier != null
-						: !IDENTIFIER_EDEFAULT.equals(identifier);
+				return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
 			case TermPackage.USAGE_CONTEXT__STATUS:
 				return status != STATUS_EDEFAULT;
 			case TermPackage.USAGE_CONTEXT__STATUS_DATE:
-				return STATUS_DATE_EDEFAULT == null
-						? statusDate != null
-						: !STATUS_DATE_EDEFAULT.equals(statusDate);
+				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
 			case TermPackage.USAGE_CONTEXT__BASE_CLASS:
 				return base_Class != null;
 		}
@@ -187,23 +170,22 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TermPackage.USAGE_CONTEXT__IDENTIFIER:
-				setIdentifier((String) newValue);
+				setIdentifier((String)newValue);
 				return;
 			case TermPackage.USAGE_CONTEXT__STATUS:
-				setStatus((StatusKind) newValue);
+				setStatus((StatusKind)newValue);
 				return;
 			case TermPackage.USAGE_CONTEXT__STATUS_DATE:
-				setStatusDate((String) newValue);
+				setStatusDate((String)newValue);
 				return;
 			case TermPackage.USAGE_CONTEXT__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -212,7 +194,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -223,7 +204,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -239,7 +219,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 				setStatusDate(STATUS_DATE_EDEFAULT);
 				return;
 			case TermPackage.USAGE_CONTEXT__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class) null);
+				setBase_Class((org.eclipse.uml2.uml.Class)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -248,18 +228,15 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject) base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject)base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class, base_Class));
-				}
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class, base_Class));
 			}
 		}
 		return base_Class;
@@ -268,7 +245,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -278,7 +254,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StatusKind getStatus() {
@@ -288,7 +263,6 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getStatusDate() {
@@ -298,62 +272,49 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class, base_Class));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class, base_Class));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.USAGE_CONTEXT__IDENTIFIER, oldIdentifier, identifier));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__IDENTIFIER, oldIdentifier, identifier));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setStatus(StatusKind newStatus) {
 		StatusKind oldStatus = status;
-		status = newStatus == null
-				? STATUS_EDEFAULT
-				: newStatus;
-		if (eNotificationRequired()) {
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS, oldStatus, status));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setStatusDate(String newStatusDate) {
 		String oldStatusDate = statusDate;
 		statusDate = newStatusDate;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS_DATE, oldStatusDate, statusDate));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS_DATE, oldStatusDate, statusDate));
 	}
 
 	/**

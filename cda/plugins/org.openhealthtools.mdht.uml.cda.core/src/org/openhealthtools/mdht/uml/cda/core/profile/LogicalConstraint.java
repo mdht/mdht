@@ -10,7 +10,7 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint#getOperation <em>Operation</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint#getOperation <em>Operation</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,6 +27,7 @@ public interface LogicalConstraint extends ConstraintValidation {
 	 * If the meaning of the '<em>Operation</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Operation</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator
 	 * @see #setOperation(LogicalOperator)
@@ -40,7 +41,9 @@ public interface LogicalConstraint extends ConstraintValidation {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint#getOperation <em>Operation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operation</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Operation</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator
 	 * @see #getOperation()
 	 * @generated

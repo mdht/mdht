@@ -74,6 +74,7 @@ public class IVL_INTOperations extends INTOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * not self.low.oclIsUndefined() implies self.center.oclIsUndefined() and (self.width.oclIsUndefined() or self.high.oclIsUndefined())
 	 * @param ivL_INT The receiving '<em><b>IVL INT</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -87,21 +88,20 @@ public class IVL_INTOperations extends INTOperations {
 			helper.setContext(DatatypesPackage.Literals.IVL_INT);
 			try {
 				VALIDATE_OPTIONS_CONTAINING_LOW__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_OPTIONS_CONTAINING_LOW__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_OPTIONS_CONTAINING_LOW__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ivL_INT)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE,
-					DatatypesValidator.IVL_INT__OPTIONS_CONTAINING_LOW,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateOptionsContainingLow",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ivL_INT, context) }),
-					new Object[] { ivL_INT }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.IVL_INT__OPTIONS_CONTAINING_LOW,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateOptionsContainingLow", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ivL_INT, context) }),
+						 new Object [] { ivL_INT }));
 			}
 			return false;
 		}
@@ -132,6 +132,7 @@ public class IVL_INTOperations extends INTOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * not self.center.oclIsUndefined() implies self.high.oclIsUndefined() and self.low.oclIsUndefined()
 	 * @param ivL_INT The receiving '<em><b>IVL INT</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -145,21 +146,20 @@ public class IVL_INTOperations extends INTOperations {
 			helper.setContext(DatatypesPackage.Literals.IVL_INT);
 			try {
 				VALIDATE_OPTIONS_CONTAINING_CENTER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_OPTIONS_CONTAINING_CENTER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_OPTIONS_CONTAINING_CENTER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ivL_INT)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE,
-					DatatypesValidator.IVL_INT__OPTIONS_CONTAINING_CENTER,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateOptionsContainingCenter",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ivL_INT, context) }),
-					new Object[] { ivL_INT }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.IVL_INT__OPTIONS_CONTAINING_CENTER,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateOptionsContainingCenter", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ivL_INT, context) }),
+						 new Object [] { ivL_INT }));
 			}
 			return false;
 		}
@@ -190,6 +190,7 @@ public class IVL_INTOperations extends INTOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * not self.high.oclIsUndefined() implies (self.low.oclIsUndefined() and self.center.oclIsUndefined() and self.width.oclIsUndefined()) or ((not self.low.oclIsUndefined()) and self.width.oclIsUndefined() and self.center.oclIsUndefined()) or ((not self.width.oclIsUndefined()) and self.low.oclIsUndefined() and self.center.oclIsUndefined())
 	 * @param ivL_INT The receiving '<em><b>IVL INT</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -203,21 +204,20 @@ public class IVL_INTOperations extends INTOperations {
 			helper.setContext(DatatypesPackage.Literals.IVL_INT);
 			try {
 				VALIDATE_OPTIONS_CONTAINING_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_OPTIONS_CONTAINING_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_OPTIONS_CONTAINING_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ivL_INT)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE,
-					DatatypesValidator.IVL_INT__OPTIONS_CONTAINING_HIGH,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateOptionsContainingHigh",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ivL_INT, context) }),
-					new Object[] { ivL_INT }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.IVL_INT__OPTIONS_CONTAINING_HIGH,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateOptionsContainingHigh", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ivL_INT, context) }),
+						 new Object [] { ivL_INT }));
 			}
 			return false;
 		}
@@ -248,6 +248,7 @@ public class IVL_INTOperations extends INTOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * not self.width.oclIsUndefined() implies ((not self.low.oclIsUndefined()) and self.center.oclIsUndefined() and self.high.oclIsUndefined()) or (self.low.oclIsUndefined() and self.center.oclIsUndefined()) or ((not self.center.oclIsUndefined()) and self.low.oclIsUndefined() and self.high.oclIsUndefined())
 	 * @param ivL_INT The receiving '<em><b>IVL INT</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -261,21 +262,20 @@ public class IVL_INTOperations extends INTOperations {
 			helper.setContext(DatatypesPackage.Literals.IVL_INT);
 			try {
 				VALIDATE_OPTIONS_CONTAINING_WIDTH__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_OPTIONS_CONTAINING_WIDTH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_OPTIONS_CONTAINING_WIDTH__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ivL_INT)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE,
-					DatatypesValidator.IVL_INT__OPTIONS_CONTAINING_WIDTH,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateOptionsContainingWidth",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ivL_INT, context) }),
-					new Object[] { ivL_INT }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.IVL_INT__OPTIONS_CONTAINING_WIDTH,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateOptionsContainingWidth", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ivL_INT, context) }),
+						 new Object [] { ivL_INT }));
 			}
 			return false;
 		}

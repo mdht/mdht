@@ -4,11 +4,15 @@ Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.term.core;singleton:=true
 Bundle-Version: 2.5.11.qualifier
+Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.eclipse.uml2.uml,
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.uml2.uml;visibility:=reexport,
  org.openhealthtools.mdht.uml.common;visibility:=reexport
-Export-Package: org.openhealthtools.mdht.uml.term.core.profile,org.ope
- nhealthtools.mdht.uml.term.core.profile.impl,org.openhealthtools.mdht
- .uml.term.core.profile.util,org.openhealthtools.mdht.uml.term.core.ut
- il
+Bundle-ActivationPolicy: lazy
+Export-Package: org.openhealthtools.mdht.uml.term.core.profile,
+ org.openhealthtools.mdht.uml.term.core.profile.impl,
+ org.openhealthtools.mdht.uml.term.core.profile.util,
+ org.openhealthtools.mdht.uml.term.core.util

@@ -65,9 +65,9 @@
 					<filters>
 						<filter>
 							<type>eclipse-plugin</type>
-							<id>org.eclipse.jdt.core</id>
+							<id>luna.org.eclipse.jdt.core</id>
 							<restrictTo>
-								<!-- this is the version for Kepler SR1, have to adapt for other 
+								<!-- this is the version for luna SR1, have to adapt for other 
 									release trains/service releases -->
 								<version>3.9.1.v20130905-0837</version>
 							</restrictTo>

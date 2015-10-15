@@ -45,4 +45,20 @@
       </mapping>
    </extension>
   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated wtf -->
+      <package
+            uri="http://www.openhealthtools.org/mdht/schemas/term/1"
+            class="org.openhealthtools.mdht.uml.term.core.profile.TermPackage"
+            genModel="model/wtf.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Terminology.profile -->
+      <package
+            uri="http://www.openhealthtools.org/mdht/schemas/term/1"
+            class="org.openhealthtools.mdht.uml.term.core.profile.TermPackage"
+            genModel="model/Terminology.profile.genmodel"/>
+   </extension>
+
 </plugin>

@@ -79,6 +79,7 @@ public class IIOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.isNullFlavorDefined() or self.isDefined('root')
 	 * @param ii The receiving '<em><b>II</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -91,20 +92,20 @@ public class IIOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.II);
 			try {
 				VALIDATE_II__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_II__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_II__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ii)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR,
-					DatatypesValidator.DIAGNOSTIC_SOURCE,
-					DatatypesValidator.II__II,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic", new Object[] {
-								"validateII", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ii, context) }),
-					new Object[] { ii }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.II__II,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateII", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ii, context) }),
+						 new Object [] { ii }));
 			}
 			return false;
 		}

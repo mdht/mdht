@@ -158,7 +158,12 @@ public enum EntityClassPlace implements Enumerator {
 	 * @generated
 	 */
 	private static final EntityClassPlace[] VALUES_ARRAY = new EntityClassPlace[] {
-			CITY, COUNTRY, COUNTY, PLC, PROVINCE, };
+			CITY,
+			COUNTRY,
+			COUNTY,
+			PLC,
+			PROVINCE,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Entity Class Place</b></em>' enumerators.
@@ -208,16 +213,11 @@ public enum EntityClassPlace implements Enumerator {
 	 */
 	public static EntityClassPlace get(int value) {
 		switch (value) {
-			case CITY_VALUE:
-				return CITY;
-			case COUNTRY_VALUE:
-				return COUNTRY;
-			case COUNTY_VALUE:
-				return COUNTY;
-			case PLC_VALUE:
-				return PLC;
-			case PROVINCE_VALUE:
-				return PROVINCE;
+			case CITY_VALUE: return CITY;
+			case COUNTRY_VALUE: return COUNTRY;
+			case COUNTY_VALUE: return COUNTY;
+			case PLC_VALUE: return PLC;
+			case PROVINCE_VALUE: return PROVINCE;
 		}
 		return null;
 	}
@@ -261,7 +261,7 @@ public enum EntityClassPlace implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -270,7 +270,7 @@ public enum EntityClassPlace implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -279,7 +279,7 @@ public enum EntityClassPlace implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

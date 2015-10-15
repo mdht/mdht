@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.util;
@@ -450,9 +450,9 @@ public class ModelConsolidator {
 					// if association to base model type, leave it unchanged
 					if (!isBaseModel(endType)) {
 						// don't use specialization of nested classes
-						//if ((endType.getOwner() instanceof Class)) {
-						//	consolType = (Class) mergedProperty.getType();
-						
+						// if ((endType.getOwner() instanceof Class)) {
+						// consolType = (Class) mergedProperty.getType();
+
 						// if a more specific type defined in consol or source model, use it
 						consolType = findConsolSpecialization((Class) endType);
 

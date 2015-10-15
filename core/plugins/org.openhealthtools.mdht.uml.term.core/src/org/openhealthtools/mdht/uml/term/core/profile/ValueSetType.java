@@ -23,7 +23,6 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Value Set Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
  * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetType()
  * @model
  * @generated
@@ -33,7 +32,6 @@ public enum ValueSetType implements Enumerator {
 	 * The '<em><b>Extensional</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #EXTENSIONAL_VALUE
 	 * @generated
 	 * @ordered
@@ -44,7 +42,6 @@ public enum ValueSetType implements Enumerator {
 	 * The '<em><b>Intensional</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #INTENSIONAL_VALUE
 	 * @generated
 	 * @ordered
@@ -58,7 +55,6 @@ public enum ValueSetType implements Enumerator {
 	 * If the meaning of '<em><b>Extensional</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #EXTENSIONAL
 	 * @model name="Extensional"
 	 * @generated
@@ -73,7 +69,6 @@ public enum ValueSetType implements Enumerator {
 	 * If the meaning of '<em><b>Intensional</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #INTENSIONAL
 	 * @model name="Intensional"
 	 * @generated
@@ -85,16 +80,17 @@ public enum ValueSetType implements Enumerator {
 	 * An array of all the '<em><b>Value Set Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	private static final ValueSetType[] VALUES_ARRAY = new ValueSetType[] { EXTENSIONAL, INTENSIONAL, };
+	private static final ValueSetType[] VALUES_ARRAY = new ValueSetType[] {
+			EXTENSIONAL,
+			INTENSIONAL,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Value Set Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final List<ValueSetType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -103,15 +99,12 @@ public enum ValueSetType implements Enumerator {
 	 * Returns the '<em><b>Value Set Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static ValueSetType get(int value) {
 		switch (value) {
-			case EXTENSIONAL_VALUE:
-				return EXTENSIONAL;
-			case INTENSIONAL_VALUE:
-				return INTENSIONAL;
+			case EXTENSIONAL_VALUE: return EXTENSIONAL;
+			case INTENSIONAL_VALUE: return INTENSIONAL;
 		}
 		return null;
 	}
@@ -120,7 +113,6 @@ public enum ValueSetType implements Enumerator {
 	 * Returns the '<em><b>Value Set Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static ValueSetType get(String literal) {
@@ -137,7 +129,6 @@ public enum ValueSetType implements Enumerator {
 	 * Returns the '<em><b>Value Set Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static ValueSetType getByName(String name) {
@@ -153,7 +144,6 @@ public enum ValueSetType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -161,7 +151,6 @@ public enum ValueSetType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -169,7 +158,6 @@ public enum ValueSetType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -178,7 +166,6 @@ public enum ValueSetType implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private ValueSetType(int value, String name, String literal) {
@@ -190,38 +177,34 @@ public enum ValueSetType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

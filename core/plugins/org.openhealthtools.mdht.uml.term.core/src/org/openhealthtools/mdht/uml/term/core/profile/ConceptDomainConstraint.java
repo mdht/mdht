@@ -19,17 +19,17 @@ import org.eclipse.uml2.uml.Property;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Concept Domain Constraint</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getReference <em>Reference</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getIdentifier <em>Identifier</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getName <em>Name</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getBase_Property <em>Base Property</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getName <em>Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getBase_Property <em>Base Property</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint()
  * @model
  * @generated
@@ -42,7 +42,6 @@ public interface ConceptDomainConstraint extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint_Base_Property()
@@ -58,7 +57,6 @@ public interface ConceptDomainConstraint extends EObject {
 	 * If the meaning of the '<em>Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint_Identifier()
@@ -74,7 +72,6 @@ public interface ConceptDomainConstraint extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint_Name()
@@ -90,7 +87,6 @@ public interface ConceptDomainConstraint extends EObject {
 	 * If the meaning of the '<em>Reference</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Reference</em>' reference.
 	 * @see #setReference(ConceptDomain)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint_Reference()
@@ -100,26 +96,20 @@ public interface ConceptDomainConstraint extends EObject {
 	ConceptDomain getReference();
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getBase_Property <em>Base Property</em>}'
-	 * reference.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Base Property</em>' reference.
+	 * @param value the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
 	 * @generated
 	 */
 	void setBase_Property(Property value);
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getIdentifier <em>Identifier</em>}'
-	 * attribute.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Identifier</em>' attribute.
+	 * @param value the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -129,22 +119,17 @@ public interface ConceptDomainConstraint extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
 	void setName(String value);
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getReference <em>Reference</em>}'
-	 * reference.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getReference <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Reference</em>' reference.
+	 * @param value the new value of the '<em>Reference</em>' reference.
 	 * @see #getReference()
 	 * @generated
 	 */

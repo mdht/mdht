@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Sean Muir (JKM Software) - Add support for inline class generation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
 
@@ -81,7 +81,7 @@ public class InstanceGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.cda.util.CDASwitch#caseStrucDocText(org.openhealthtools.mdht.uml.cda.StrucDocText)
 		 */
 		@Override
@@ -130,7 +130,7 @@ public class InstanceGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseCE(org.openhealthtools.mdht.uml.hl7.datatypes.CE)
 		 */
 		// @Override
@@ -141,7 +141,7 @@ public class InstanceGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseCS(org.openhealthtools.mdht.uml.hl7.datatypes.CS)
 		 */
 		@Override
@@ -243,7 +243,7 @@ public class InstanceGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseED(org.openhealthtools.mdht.uml.hl7.datatypes.ED)
 		 */
 		@Override
@@ -254,7 +254,7 @@ public class InstanceGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseINT(org.openhealthtools.mdht.uml.hl7.datatypes.INT)
 		 */
 		@Override

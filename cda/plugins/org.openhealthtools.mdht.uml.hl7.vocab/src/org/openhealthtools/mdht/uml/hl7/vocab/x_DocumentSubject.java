@@ -82,7 +82,10 @@ public enum x_DocumentSubject implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final x_DocumentSubject[] VALUES_ARRAY = new x_DocumentSubject[] { PAT, PRS, };
+	private static final x_DocumentSubject[] VALUES_ARRAY = new x_DocumentSubject[] {
+			PAT,
+			PRS,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>xDocument Subject</b></em>' enumerators.
@@ -132,10 +135,8 @@ public enum x_DocumentSubject implements Enumerator {
 	 */
 	public static x_DocumentSubject get(int value) {
 		switch (value) {
-			case PAT_VALUE:
-				return PAT;
-			case PRS_VALUE:
-				return PRS;
+			case PAT_VALUE: return PAT;
+			case PRS_VALUE: return PRS;
 		}
 		return null;
 	}
@@ -179,7 +180,7 @@ public enum x_DocumentSubject implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -188,7 +189,7 @@ public enum x_DocumentSubject implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -197,7 +198,7 @@ public enum x_DocumentSubject implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

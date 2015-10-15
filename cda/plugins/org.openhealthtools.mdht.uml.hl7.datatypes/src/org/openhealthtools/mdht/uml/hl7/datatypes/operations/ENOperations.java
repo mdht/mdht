@@ -95,6 +95,7 @@ public class ENOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.delimiter->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::DEL)
 	 * @param en The receiving '<em><b>EN</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -107,20 +108,20 @@ public class ENOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
 				VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__DELIMITER,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateDelimiter",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
-					new Object[] { en }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.EN__DELIMITER,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDelimiter", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						 new Object [] { en }));
 			}
 			return false;
 		}
@@ -151,6 +152,7 @@ public class ENOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.family->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::FAM)
 	 * @param en The receiving '<em><b>EN</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -163,20 +165,20 @@ public class ENOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
 				VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__FAMILY,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateFamily",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
-					new Object[] { en }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.EN__FAMILY,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateFamily", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						 new Object [] { en }));
 			}
 			return false;
 		}
@@ -207,6 +209,7 @@ public class ENOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.given->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::GIV)
 	 * @param en The receiving '<em><b>EN</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -219,20 +222,20 @@ public class ENOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
 				VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__GIVEN,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateGiven",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
-					new Object[] { en }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.EN__GIVEN,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateGiven", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						 new Object [] { en }));
 			}
 			return false;
 		}
@@ -263,6 +266,7 @@ public class ENOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.prefix->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::PFX)
 	 * @param en The receiving '<em><b>EN</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -275,20 +279,20 @@ public class ENOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
 				VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__PREFIX,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validatePrefix",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
-					new Object[] { en }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.EN__PREFIX,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validatePrefix", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						 new Object [] { en }));
 			}
 			return false;
 		}
@@ -319,6 +323,7 @@ public class ENOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.suffix->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::SFX)
 	 * @param en The receiving '<em><b>EN</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -331,20 +336,20 @@ public class ENOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
 				VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__SUFFIX,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateSuffix",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
-					new Object[] { en }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.EN__SUFFIX,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateSuffix", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						 new Object [] { en }));
 			}
 			return false;
 		}

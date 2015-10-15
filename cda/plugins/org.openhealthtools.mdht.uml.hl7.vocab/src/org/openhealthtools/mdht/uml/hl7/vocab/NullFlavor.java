@@ -135,13 +135,13 @@ public enum NullFlavor implements Enumerator {
 	 * @ordered
 	 */
 	UNK(10, "UNK", "UNK"), /**
-							* The '<em><b>NP</b></em>' literal object.
-							* <!-- begin-user-doc -->
+	 * The '<em><b>NP</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 							* <!-- end-user-doc -->
-							* @see #NP_VALUE
-							* @generated
-							* @ordered
-							*/
+	 * @see #NP_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	NP(11, "NP", "NP");
 
 	/**
@@ -331,7 +331,19 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 */
 	private static final NullFlavor[] VALUES_ARRAY = new NullFlavor[] {
-			ASKU, MSK, NA, NASK, NAV, NI, NINF, OTH, PINF, TRC, UNK, NP, };
+			ASKU,
+			MSK,
+			NA,
+			NASK,
+			NAV,
+			NI,
+			NINF,
+			OTH,
+			PINF,
+			TRC,
+			UNK,
+			NP,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Null Flavor</b></em>' enumerators.
@@ -381,30 +393,18 @@ public enum NullFlavor implements Enumerator {
 	 */
 	public static NullFlavor get(int value) {
 		switch (value) {
-			case ASKU_VALUE:
-				return ASKU;
-			case MSK_VALUE:
-				return MSK;
-			case NA_VALUE:
-				return NA;
-			case NASK_VALUE:
-				return NASK;
-			case NAV_VALUE:
-				return NAV;
-			case NI_VALUE:
-				return NI;
-			case NINF_VALUE:
-				return NINF;
-			case OTH_VALUE:
-				return OTH;
-			case PINF_VALUE:
-				return PINF;
-			case TRC_VALUE:
-				return TRC;
-			case UNK_VALUE:
-				return UNK;
-			case NP_VALUE:
-				return NP;
+			case ASKU_VALUE: return ASKU;
+			case MSK_VALUE: return MSK;
+			case NA_VALUE: return NA;
+			case NASK_VALUE: return NASK;
+			case NAV_VALUE: return NAV;
+			case NI_VALUE: return NI;
+			case NINF_VALUE: return NINF;
+			case OTH_VALUE: return OTH;
+			case PINF_VALUE: return PINF;
+			case TRC_VALUE: return TRC;
+			case UNK_VALUE: return UNK;
+			case NP_VALUE: return NP;
 		}
 		return null;
 	}
@@ -448,7 +448,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -457,7 +457,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -466,7 +466,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

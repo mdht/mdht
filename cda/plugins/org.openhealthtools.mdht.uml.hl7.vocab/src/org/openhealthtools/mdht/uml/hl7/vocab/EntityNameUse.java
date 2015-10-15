@@ -358,7 +358,20 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 */
 	private static final EntityNameUse[] VALUES_ARRAY = new EntityNameUse[] {
-			A, ABC, ASGN, C, I, IDE, L, P, PHON, R, SNDX, SRCH, SYL, };
+			A,
+			ABC,
+			ASGN,
+			C,
+			I,
+			IDE,
+			L,
+			P,
+			PHON,
+			R,
+			SNDX,
+			SRCH,
+			SYL,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Entity Name Use</b></em>' enumerators.
@@ -408,32 +421,19 @@ public enum EntityNameUse implements Enumerator {
 	 */
 	public static EntityNameUse get(int value) {
 		switch (value) {
-			case A_VALUE:
-				return A;
-			case ABC_VALUE:
-				return ABC;
-			case ASGN_VALUE:
-				return ASGN;
-			case C_VALUE:
-				return C;
-			case I_VALUE:
-				return I;
-			case IDE_VALUE:
-				return IDE;
-			case L_VALUE:
-				return L;
-			case P_VALUE:
-				return P;
-			case PHON_VALUE:
-				return PHON;
-			case R_VALUE:
-				return R;
-			case SNDX_VALUE:
-				return SNDX;
-			case SRCH_VALUE:
-				return SRCH;
-			case SYL_VALUE:
-				return SYL;
+			case A_VALUE: return A;
+			case ABC_VALUE: return ABC;
+			case ASGN_VALUE: return ASGN;
+			case C_VALUE: return C;
+			case I_VALUE: return I;
+			case IDE_VALUE: return IDE;
+			case L_VALUE: return L;
+			case P_VALUE: return P;
+			case PHON_VALUE: return PHON;
+			case R_VALUE: return R;
+			case SNDX_VALUE: return SNDX;
+			case SRCH_VALUE: return SRCH;
+			case SYL_VALUE: return SYL;
 		}
 		return null;
 	}
@@ -477,7 +477,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -486,7 +486,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -495,7 +495,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

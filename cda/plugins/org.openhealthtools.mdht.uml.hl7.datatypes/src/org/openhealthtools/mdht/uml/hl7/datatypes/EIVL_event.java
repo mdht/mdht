@@ -29,6 +29,7 @@ public interface EIVL_event extends CE {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.originalText.oclIsUndefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -41,6 +42,7 @@ public interface EIVL_event extends CE {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.translation->size()=0
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -53,6 +55,7 @@ public interface EIVL_event extends CE {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * not self.codeSystem.oclIsUndefined() implies self.codeSystem='2.16.840.1.113883.5.139'
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -65,6 +68,7 @@ public interface EIVL_event extends CE {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * not self.codeSystemName.oclIsUndefined() implies self.codeSystemName='TimingEvent'
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->

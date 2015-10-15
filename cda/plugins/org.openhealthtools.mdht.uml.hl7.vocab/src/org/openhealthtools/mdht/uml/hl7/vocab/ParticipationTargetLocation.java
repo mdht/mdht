@@ -183,7 +183,13 @@ public enum ParticipationTargetLocation implements Enumerator {
 	 * @generated
 	 */
 	private static final ParticipationTargetLocation[] VALUES_ARRAY = new ParticipationTargetLocation[] {
-			DST, ELOC, LOC, ORG, RML, VIA, };
+			DST,
+			ELOC,
+			LOC,
+			ORG,
+			RML,
+			VIA,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Participation Target Location</b></em>' enumerators.
@@ -233,18 +239,12 @@ public enum ParticipationTargetLocation implements Enumerator {
 	 */
 	public static ParticipationTargetLocation get(int value) {
 		switch (value) {
-			case DST_VALUE:
-				return DST;
-			case ELOC_VALUE:
-				return ELOC;
-			case LOC_VALUE:
-				return LOC;
-			case ORG_VALUE:
-				return ORG;
-			case RML_VALUE:
-				return RML;
-			case VIA_VALUE:
-				return VIA;
+			case DST_VALUE: return DST;
+			case ELOC_VALUE: return ELOC;
+			case LOC_VALUE: return LOC;
+			case ORG_VALUE: return ORG;
+			case RML_VALUE: return RML;
+			case VIA_VALUE: return VIA;
 		}
 		return null;
 	}
@@ -288,7 +288,7 @@ public enum ParticipationTargetLocation implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -297,7 +297,7 @@ public enum ParticipationTargetLocation implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -306,7 +306,7 @@ public enum ParticipationTargetLocation implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

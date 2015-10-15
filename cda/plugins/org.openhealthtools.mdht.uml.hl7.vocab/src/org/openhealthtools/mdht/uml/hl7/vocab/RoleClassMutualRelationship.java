@@ -65,13 +65,13 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @ordered
 	 */
 	CASESBJ(3, "CASESBJ", "CASESBJ"), /**
-										* The '<em><b>CIT</b></em>' literal object.
-										* <!-- begin-user-doc -->
+	 * The '<em><b>CIT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 										* <!-- end-user-doc -->
-										* @see #CIT_VALUE
-										* @generated
-										* @ordered
-										*/
+	 * @see #CIT_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	CIT(4, "CIT", "CIT"),
 
 	/**
@@ -806,8 +806,38 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 */
 	private static final RoleClassMutualRelationship[] VALUES_ARRAY = new RoleClassMutualRelationship[] {
-			AGNT, ASSIGNED, CAREGIVER, CASESBJ, CIT, COMPAR, CON, COVPTY, CRINV, CRSPNSR, ECON, EMP, GUAR, GUARD,
-			INVSBJ, LIC, MIL, NOK, NOT, PAT, PAYEE, PAYOR, POLHOLD, PROV, PRS, QUAL, RESBJ, SGNOFF, SPNSR, STD, UNDWRT, };
+			AGNT,
+			ASSIGNED,
+			CAREGIVER,
+			CASESBJ,
+			CIT,
+			COMPAR,
+			CON,
+			COVPTY,
+			CRINV,
+			CRSPNSR,
+			ECON,
+			EMP,
+			GUAR,
+			GUARD,
+			INVSBJ,
+			LIC,
+			MIL,
+			NOK,
+			NOT,
+			PAT,
+			PAYEE,
+			PAYOR,
+			POLHOLD,
+			PROV,
+			PRS,
+			QUAL,
+			RESBJ,
+			SGNOFF,
+			SPNSR,
+			STD,
+			UNDWRT,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Role Class Mutual Relationship</b></em>' enumerators.
@@ -857,68 +887,37 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 */
 	public static RoleClassMutualRelationship get(int value) {
 		switch (value) {
-			case AGNT_VALUE:
-				return AGNT;
-			case ASSIGNED_VALUE:
-				return ASSIGNED;
-			case CAREGIVER_VALUE:
-				return CAREGIVER;
-			case CASESBJ_VALUE:
-				return CASESBJ;
-			case CIT_VALUE:
-				return CIT;
-			case COMPAR_VALUE:
-				return COMPAR;
-			case CON_VALUE:
-				return CON;
-			case COVPTY_VALUE:
-				return COVPTY;
-			case CRINV_VALUE:
-				return CRINV;
-			case CRSPNSR_VALUE:
-				return CRSPNSR;
-			case ECON_VALUE:
-				return ECON;
-			case EMP_VALUE:
-				return EMP;
-			case GUAR_VALUE:
-				return GUAR;
-			case GUARD_VALUE:
-				return GUARD;
-			case INVSBJ_VALUE:
-				return INVSBJ;
-			case LIC_VALUE:
-				return LIC;
-			case MIL_VALUE:
-				return MIL;
-			case NOK_VALUE:
-				return NOK;
-			case NOT_VALUE:
-				return NOT;
-			case PAT_VALUE:
-				return PAT;
-			case PAYEE_VALUE:
-				return PAYEE;
-			case PAYOR_VALUE:
-				return PAYOR;
-			case POLHOLD_VALUE:
-				return POLHOLD;
-			case PROV_VALUE:
-				return PROV;
-			case PRS_VALUE:
-				return PRS;
-			case QUAL_VALUE:
-				return QUAL;
-			case RESBJ_VALUE:
-				return RESBJ;
-			case SGNOFF_VALUE:
-				return SGNOFF;
-			case SPNSR_VALUE:
-				return SPNSR;
-			case STD_VALUE:
-				return STD;
-			case UNDWRT_VALUE:
-				return UNDWRT;
+			case AGNT_VALUE: return AGNT;
+			case ASSIGNED_VALUE: return ASSIGNED;
+			case CAREGIVER_VALUE: return CAREGIVER;
+			case CASESBJ_VALUE: return CASESBJ;
+			case CIT_VALUE: return CIT;
+			case COMPAR_VALUE: return COMPAR;
+			case CON_VALUE: return CON;
+			case COVPTY_VALUE: return COVPTY;
+			case CRINV_VALUE: return CRINV;
+			case CRSPNSR_VALUE: return CRSPNSR;
+			case ECON_VALUE: return ECON;
+			case EMP_VALUE: return EMP;
+			case GUAR_VALUE: return GUAR;
+			case GUARD_VALUE: return GUARD;
+			case INVSBJ_VALUE: return INVSBJ;
+			case LIC_VALUE: return LIC;
+			case MIL_VALUE: return MIL;
+			case NOK_VALUE: return NOK;
+			case NOT_VALUE: return NOT;
+			case PAT_VALUE: return PAT;
+			case PAYEE_VALUE: return PAYEE;
+			case PAYOR_VALUE: return PAYOR;
+			case POLHOLD_VALUE: return POLHOLD;
+			case PROV_VALUE: return PROV;
+			case PRS_VALUE: return PRS;
+			case QUAL_VALUE: return QUAL;
+			case RESBJ_VALUE: return RESBJ;
+			case SGNOFF_VALUE: return SGNOFF;
+			case SPNSR_VALUE: return SPNSR;
+			case STD_VALUE: return STD;
+			case UNDWRT_VALUE: return UNDWRT;
 		}
 		return null;
 	}
@@ -962,7 +961,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -971,7 +970,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -980,7 +979,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

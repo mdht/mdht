@@ -157,7 +157,13 @@ public enum SetOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final SetOperator[] VALUES_ARRAY = new SetOperator[] { A, E, H, I, P, };
+	private static final SetOperator[] VALUES_ARRAY = new SetOperator[] {
+			A,
+			E,
+			H,
+			I,
+			P,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Set Operator</b></em>' enumerators.
@@ -207,16 +213,11 @@ public enum SetOperator implements Enumerator {
 	 */
 	public static SetOperator get(int value) {
 		switch (value) {
-			case A_VALUE:
-				return A;
-			case E_VALUE:
-				return E;
-			case H_VALUE:
-				return H;
-			case I_VALUE:
-				return I;
-			case P_VALUE:
-				return P;
+			case A_VALUE: return A;
+			case E_VALUE: return E;
+			case H_VALUE: return H;
+			case I_VALUE: return I;
+			case P_VALUE: return P;
 		}
 		return null;
 	}
@@ -260,7 +261,7 @@ public enum SetOperator implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -269,7 +270,7 @@ public enum SetOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -278,7 +279,7 @@ public enum SetOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

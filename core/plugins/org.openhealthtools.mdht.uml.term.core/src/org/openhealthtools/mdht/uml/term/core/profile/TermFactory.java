@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
  * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage
  * @generated
  */
@@ -28,7 +27,6 @@ public interface TermFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	TermFactory eINSTANCE = org.openhealthtools.mdht.uml.term.core.profile.impl.TermFactoryImpl.init();
@@ -37,7 +35,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>CD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>CD</em>'.
 	 * @generated
 	 */
@@ -47,7 +44,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>Code System Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Code System Constraint</em>'.
 	 * @generated
 	 */
@@ -57,7 +53,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>Code System Version</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Code System Version</em>'.
 	 * @generated
 	 */
@@ -67,7 +62,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>Concept Domain</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Concept Domain</em>'.
 	 * @generated
 	 */
@@ -77,7 +71,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>Concept Domain Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Concept Domain Constraint</em>'.
 	 * @generated
 	 */
@@ -87,7 +80,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>CR</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>CR</em>'.
 	 * @generated
 	 */
@@ -97,7 +89,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>Usage Context</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Usage Context</em>'.
 	 * @generated
 	 */
@@ -107,7 +98,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>Value Set Code</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Value Set Code</em>'.
 	 * @generated
 	 */
@@ -117,7 +107,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>Value Set Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Value Set Constraint</em>'.
 	 * @generated
 	 */
@@ -127,7 +116,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>Value Set Context Binding</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Value Set Context Binding</em>'.
 	 * @generated
 	 */
@@ -137,7 +125,6 @@ public interface TermFactory extends EFactory {
 	 * Returns a new object of class '<em>Value Set Version</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Value Set Version</em>'.
 	 * @generated
 	 */
@@ -147,7 +134,6 @@ public interface TermFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

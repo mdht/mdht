@@ -62,7 +62,7 @@ public interface InfrastructureRoot extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isNullFlavorDefined();
@@ -70,7 +70,7 @@ public interface InfrastructureRoot extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isNullFlavorUndefined();
@@ -78,7 +78,7 @@ public interface InfrastructureRoot extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	boolean hasContent();
@@ -86,7 +86,7 @@ public interface InfrastructureRoot extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" featureNameDataType="org.eclipse.uml2.types.String" featureNameRequired="true" featureNameOrdered="false"
+	 * @model required="true" ordered="false" featureNameRequired="true" featureNameOrdered="false"
 	 * @generated
 	 */
 	boolean isDefined(String featureName);

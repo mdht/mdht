@@ -83,7 +83,9 @@ public enum EntityDeterminerDetermined implements Enumerator {
 	 * @generated
 	 */
 	private static final EntityDeterminerDetermined[] VALUES_ARRAY = new EntityDeterminerDetermined[] {
-			KIND, QUANTIFIEDKIND, };
+			KIND,
+			QUANTIFIEDKIND,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Entity Determiner Determined</b></em>' enumerators.
@@ -133,10 +135,8 @@ public enum EntityDeterminerDetermined implements Enumerator {
 	 */
 	public static EntityDeterminerDetermined get(int value) {
 		switch (value) {
-			case KIND_VALUE:
-				return KIND;
-			case QUANTIFIEDKIND_VALUE:
-				return QUANTIFIEDKIND;
+			case KIND_VALUE: return KIND;
+			case QUANTIFIEDKIND_VALUE: return QUANTIFIEDKIND;
 		}
 		return null;
 	}
@@ -180,7 +180,7 @@ public enum EntityDeterminerDetermined implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -189,7 +189,7 @@ public enum EntityDeterminerDetermined implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -198,7 +198,7 @@ public enum EntityDeterminerDetermined implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

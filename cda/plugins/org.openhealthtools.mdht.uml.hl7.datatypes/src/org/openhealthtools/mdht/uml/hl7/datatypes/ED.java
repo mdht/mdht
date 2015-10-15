@@ -335,6 +335,7 @@ public interface ED extends BIN {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * not self.thumbnail.oclIsUndefined() implies self.thumbnail.thumbnail.oclIsUndefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -346,7 +347,7 @@ public interface ED extends BIN {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" textDataType="org.eclipse.uml2.types.String" textRequired="true" textOrdered="false"
+	 * @model required="true" ordered="false" textRequired="true" textOrdered="false"
 	 * @generated
 	 */
 	ED addText(String text);
@@ -354,7 +355,7 @@ public interface ED extends BIN {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	String getText();
@@ -362,7 +363,7 @@ public interface ED extends BIN {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" regularExpressionDataType="org.eclipse.uml2.types.String" regularExpressionRequired="true" regularExpressionOrdered="false"
+	 * @model required="true" ordered="false" regularExpressionRequired="true" regularExpressionOrdered="false"
 	 * @generated
 	 */
 	boolean matches(String regularExpression);
@@ -370,7 +371,7 @@ public interface ED extends BIN {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	String getCDATA();
@@ -378,7 +379,7 @@ public interface ED extends BIN {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" cdataDataType="org.eclipse.uml2.types.String" cdataRequired="true" cdataOrdered="false"
+	 * @model required="true" ordered="false" cdataRequired="true" cdataOrdered="false"
 	 * @generated
 	 */
 	ED addCDATA(String cdata);

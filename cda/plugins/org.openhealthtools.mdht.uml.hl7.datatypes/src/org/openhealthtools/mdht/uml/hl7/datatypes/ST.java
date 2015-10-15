@@ -30,6 +30,7 @@ public interface ST extends ED {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.thumbnail.oclIsUndefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -42,6 +43,7 @@ public interface ST extends ED {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.reference.oclIsUndefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -54,6 +56,7 @@ public interface ST extends ED {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.integrityCheck.oclIsUndefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -66,6 +69,7 @@ public interface ST extends ED {
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * not self.isCompressionDefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -78,6 +82,7 @@ public interface ST extends ED {
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -90,6 +95,7 @@ public interface ST extends ED {
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * ((self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')) or ((self.isNullFlavorDefined() or self.getCDATA() <> '') and not(self.isNullFlavorDefined() and self.getCDATA() <> ''))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -101,7 +107,10 @@ public interface ST extends ED {
 	/**
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * <!-- begin-model-doc -->
+	 * self.isDefined('compression')
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'compression\')'"
 	 * @generated
 	 */
@@ -110,7 +119,10 @@ public interface ST extends ED {
 	/**
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * <!-- begin-model-doc -->
+	 * self.isDefined('integrityCheckAlgorithm')
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'integrityCheckAlgorithm\')'"
 	 * @generated
 	 */
@@ -119,7 +131,10 @@ public interface ST extends ED {
 	/**
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * <!-- begin-model-doc -->
+	 * self.isDefined('representation')
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'representation\')'"
 	 * @generated
 	 */
@@ -129,6 +144,7 @@ public interface ST extends ED {
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * not self.isIntegrityCheckAlgorithmDefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->

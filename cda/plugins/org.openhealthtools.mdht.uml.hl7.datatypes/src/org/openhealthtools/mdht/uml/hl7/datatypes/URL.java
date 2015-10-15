@@ -42,7 +42,7 @@ public interface URL extends ANY {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getURL_Value()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getValue();
@@ -61,6 +61,7 @@ public interface URL extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * (self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->

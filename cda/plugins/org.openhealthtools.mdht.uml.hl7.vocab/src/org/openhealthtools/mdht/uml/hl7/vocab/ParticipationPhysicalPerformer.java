@@ -133,7 +133,11 @@ public enum ParticipationPhysicalPerformer implements Enumerator {
 	 * @generated
 	 */
 	private static final ParticipationPhysicalPerformer[] VALUES_ARRAY = new ParticipationPhysicalPerformer[] {
-			DIST, PPRF, PRF, SPRF, };
+			DIST,
+			PPRF,
+			PRF,
+			SPRF,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Participation Physical Performer</b></em>' enumerators.
@@ -183,14 +187,10 @@ public enum ParticipationPhysicalPerformer implements Enumerator {
 	 */
 	public static ParticipationPhysicalPerformer get(int value) {
 		switch (value) {
-			case DIST_VALUE:
-				return DIST;
-			case PPRF_VALUE:
-				return PPRF;
-			case PRF_VALUE:
-				return PRF;
-			case SPRF_VALUE:
-				return SPRF;
+			case DIST_VALUE: return DIST;
+			case PPRF_VALUE: return PPRF;
+			case PRF_VALUE: return PRF;
+			case SPRF_VALUE: return SPRF;
 		}
 		return null;
 	}
@@ -234,7 +234,7 @@ public enum ParticipationPhysicalPerformer implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -243,7 +243,7 @@ public enum ParticipationPhysicalPerformer implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -252,7 +252,7 @@ public enum ParticipationPhysicalPerformer implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

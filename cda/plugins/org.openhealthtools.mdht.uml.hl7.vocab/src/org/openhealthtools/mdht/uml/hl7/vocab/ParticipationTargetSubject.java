@@ -82,7 +82,10 @@ public enum ParticipationTargetSubject implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ParticipationTargetSubject[] VALUES_ARRAY = new ParticipationTargetSubject[] { SBJ, SPC, };
+	private static final ParticipationTargetSubject[] VALUES_ARRAY = new ParticipationTargetSubject[] {
+			SBJ,
+			SPC,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Participation Target Subject</b></em>' enumerators.
@@ -132,10 +135,8 @@ public enum ParticipationTargetSubject implements Enumerator {
 	 */
 	public static ParticipationTargetSubject get(int value) {
 		switch (value) {
-			case SBJ_VALUE:
-				return SBJ;
-			case SPC_VALUE:
-				return SPC;
+			case SBJ_VALUE: return SBJ;
+			case SPC_VALUE: return SPC;
 		}
 		return null;
 	}
@@ -179,7 +180,7 @@ public enum ParticipationTargetSubject implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -188,7 +189,7 @@ public enum ParticipationTargetSubject implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -197,7 +198,7 @@ public enum ParticipationTargetSubject implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

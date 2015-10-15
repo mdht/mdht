@@ -89,7 +89,7 @@ public interface ANY extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isNullFlavorDefined();
@@ -97,7 +97,7 @@ public interface ANY extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isNullFlavorUndefined();
@@ -105,7 +105,7 @@ public interface ANY extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	boolean hasContent();
@@ -113,7 +113,7 @@ public interface ANY extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" featureNameDataType="org.eclipse.uml2.types.String" featureNameRequired="true" featureNameOrdered="false"
+	 * @model required="true" ordered="false" featureNameRequired="true" featureNameOrdered="false"
 	 * @generated
 	 */
 	boolean isDefined(String featureName);
@@ -121,7 +121,7 @@ public interface ANY extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" featureNameDataType="org.eclipse.uml2.types.String" featureNameRequired="true" featureNameOrdered="false" regularExpressionDataType="org.eclipse.uml2.types.String" regularExpressionRequired="true" regularExpressionOrdered="false"
+	 * @model required="true" ordered="false" featureNameRequired="true" featureNameOrdered="false" regularExpressionRequired="true" regularExpressionOrdered="false"
 	 * @generated
 	 */
 	boolean matches(String featureName, String regularExpression);

@@ -79,6 +79,7 @@ public class CEOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.qualifier->size()=0
 	 * @param ce The receiving '<em><b>CE</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -91,20 +92,20 @@ public class CEOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.CE);
 			try {
 				VALIDATE_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ce)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.CE__QUALIFIER,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateQualifier",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ce, context) }),
-					new Object[] { ce }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.CE__QUALIFIER,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateQualifier", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ce, context) }),
+						 new Object [] { ce }));
 			}
 			return false;
 		}

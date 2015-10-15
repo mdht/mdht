@@ -12,11 +12,19 @@ package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.Constraint;
+import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event;
 import org.openhealthtools.mdht.uml.hl7.datatypes.operations.EIVL_eventOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 
 /**
  * <!-- begin-user-doc -->

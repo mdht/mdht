@@ -233,7 +233,15 @@ public enum x_DocumentProcedureMood implements Enumerator {
 	 * @generated
 	 */
 	private static final x_DocumentProcedureMood[] VALUES_ARRAY = new x_DocumentProcedureMood[] {
-			APT, ARQ, DEF, EVN, INT, PRMS, PRP, RQO, };
+			APT,
+			ARQ,
+			DEF,
+			EVN,
+			INT,
+			PRMS,
+			PRP,
+			RQO,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>xDocument Procedure Mood</b></em>' enumerators.
@@ -283,22 +291,14 @@ public enum x_DocumentProcedureMood implements Enumerator {
 	 */
 	public static x_DocumentProcedureMood get(int value) {
 		switch (value) {
-			case APT_VALUE:
-				return APT;
-			case ARQ_VALUE:
-				return ARQ;
-			case DEF_VALUE:
-				return DEF;
-			case EVN_VALUE:
-				return EVN;
-			case INT_VALUE:
-				return INT;
-			case PRMS_VALUE:
-				return PRMS;
-			case PRP_VALUE:
-				return PRP;
-			case RQO_VALUE:
-				return RQO;
+			case APT_VALUE: return APT;
+			case ARQ_VALUE: return ARQ;
+			case DEF_VALUE: return DEF;
+			case EVN_VALUE: return EVN;
+			case INT_VALUE: return INT;
+			case PRMS_VALUE: return PRMS;
+			case PRP_VALUE: return PRP;
+			case RQO_VALUE: return RQO;
 		}
 		return null;
 	}
@@ -342,7 +342,7 @@ public enum x_DocumentProcedureMood implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -351,7 +351,7 @@ public enum x_DocumentProcedureMood implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -360,7 +360,7 @@ public enum x_DocumentProcedureMood implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

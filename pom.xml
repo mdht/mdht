@@ -19,9 +19,9 @@
 	
 	<repositories>
 		<repository>
-			<id>kepler</id>
+			<id>luna</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/kepler</url>
+			<url>http://download.eclipse.org/releases/luna</url>
 		</repository>
 	</repositories>
 
@@ -51,9 +51,9 @@
 			<id>mdht_build</id>
 			<repositories>
 				<repository>
-					<id>kepler</id>
+					<id>luna</id>
 					<layout>p2</layout>
-					<url>http://download.eclipse.org/releases/kepler</url>
+					<url>http://download.eclipse.org/releases/luna</url>
 				</repository>
 			</repositories>
 			<build>
@@ -105,11 +105,9 @@
 							<filters>
 								<filter>
 									<type>eclipse-plugin</type>
-									<id>org.eclipse.jdt.core</id>
+									<id>org.eclipse.uml2.uml.source</id>
 									<restrictTo>
-										<!-- this is the version for Kepler SR1, have to adapt for other 
-											release trains/service releases -->
-										<version>3.9.1.v20130905-0837</version>
+										<version>3.1.2.v201010261927</version>
 									</restrictTo>
 								</filter>
 							</filters>

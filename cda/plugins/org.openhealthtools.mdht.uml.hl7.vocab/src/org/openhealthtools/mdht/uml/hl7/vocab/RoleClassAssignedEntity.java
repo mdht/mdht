@@ -183,7 +183,13 @@ public enum RoleClassAssignedEntity implements Enumerator {
 	 * @generated
 	 */
 	private static final RoleClassAssignedEntity[] VALUES_ARRAY = new RoleClassAssignedEntity[] {
-			ASSIGNED, COMPAR, CON, ECON, NOK, SGNOFF, };
+			ASSIGNED,
+			COMPAR,
+			CON,
+			ECON,
+			NOK,
+			SGNOFF,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Role Class Assigned Entity</b></em>' enumerators.
@@ -233,18 +239,12 @@ public enum RoleClassAssignedEntity implements Enumerator {
 	 */
 	public static RoleClassAssignedEntity get(int value) {
 		switch (value) {
-			case ASSIGNED_VALUE:
-				return ASSIGNED;
-			case COMPAR_VALUE:
-				return COMPAR;
-			case CON_VALUE:
-				return CON;
-			case ECON_VALUE:
-				return ECON;
-			case NOK_VALUE:
-				return NOK;
-			case SGNOFF_VALUE:
-				return SGNOFF;
+			case ASSIGNED_VALUE: return ASSIGNED;
+			case COMPAR_VALUE: return COMPAR;
+			case CON_VALUE: return CON;
+			case ECON_VALUE: return ECON;
+			case NOK_VALUE: return NOK;
+			case SGNOFF_VALUE: return SGNOFF;
 		}
 		return null;
 	}
@@ -288,7 +288,7 @@ public enum RoleClassAssignedEntity implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -297,7 +297,7 @@ public enum RoleClassAssignedEntity implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -306,7 +306,7 @@ public enum RoleClassAssignedEntity implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

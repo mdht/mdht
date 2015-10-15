@@ -13,6 +13,7 @@ package org.openhealthtools.mdht.uml.hl7.rim.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.openhealthtools.mdht.uml.hl7.rim.*;
 import org.openhealthtools.mdht.uml.hl7.rim.Act;
 import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
 import org.openhealthtools.mdht.uml.hl7.rim.Entity;
@@ -80,81 +81,54 @@ public class RIMSwitch<T> extends Switch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case RIMPackage.ACT: {
-				Act act = (Act) theEObject;
+				Act act = (Act)theEObject;
 				T result = caseAct(act);
-				if (result == null) {
-					result = caseInfrastructureRoot(act);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseInfrastructureRoot(act);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RIMPackage.INFRASTRUCTURE_ROOT: {
-				InfrastructureRoot infrastructureRoot = (InfrastructureRoot) theEObject;
+				InfrastructureRoot infrastructureRoot = (InfrastructureRoot)theEObject;
 				T result = caseInfrastructureRoot(infrastructureRoot);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RIMPackage.PARTICIPATION: {
-				Participation participation = (Participation) theEObject;
+				Participation participation = (Participation)theEObject;
 				T result = caseParticipation(participation);
-				if (result == null) {
-					result = caseInfrastructureRoot(participation);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseInfrastructureRoot(participation);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RIMPackage.ROLE: {
-				Role role = (Role) theEObject;
+				Role role = (Role)theEObject;
 				T result = caseRole(role);
-				if (result == null) {
-					result = caseInfrastructureRoot(role);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseInfrastructureRoot(role);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RIMPackage.ENTITY: {
-				Entity entity = (Entity) theEObject;
+				Entity entity = (Entity)theEObject;
 				T result = caseEntity(entity);
-				if (result == null) {
-					result = caseInfrastructureRoot(entity);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseInfrastructureRoot(entity);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RIMPackage.ROLE_LINK: {
-				RoleLink roleLink = (RoleLink) theEObject;
+				RoleLink roleLink = (RoleLink)theEObject;
 				T result = caseRoleLink(roleLink);
-				if (result == null) {
-					result = caseInfrastructureRoot(roleLink);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseInfrastructureRoot(roleLink);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RIMPackage.ACT_RELATIONSHIP: {
-				ActRelationship actRelationship = (ActRelationship) theEObject;
+				ActRelationship actRelationship = (ActRelationship)theEObject;
 				T result = caseActRelationship(actRelationship);
-				if (result == null) {
-					result = caseInfrastructureRoot(actRelationship);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseInfrastructureRoot(actRelationship);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			default:
-				return defaultCase(theEObject);
+			default: return defaultCase(theEObject);
 		}
 	}
 

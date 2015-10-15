@@ -107,7 +107,11 @@ public enum ActClassDocument implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ActClassDocument[] VALUES_ARRAY = new ActClassDocument[] { CDALVLONE, DOC, DOCCLIN, };
+	private static final ActClassDocument[] VALUES_ARRAY = new ActClassDocument[] {
+			CDALVLONE,
+			DOC,
+			DOCCLIN,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Act Class Document</b></em>' enumerators.
@@ -157,12 +161,9 @@ public enum ActClassDocument implements Enumerator {
 	 */
 	public static ActClassDocument get(int value) {
 		switch (value) {
-			case CDALVLONE_VALUE:
-				return CDALVLONE;
-			case DOC_VALUE:
-				return DOC;
-			case DOCCLIN_VALUE:
-				return DOCCLIN;
+			case CDALVLONE_VALUE: return CDALVLONE;
+			case DOC_VALUE: return DOC;
+			case DOCCLIN_VALUE: return DOCCLIN;
 		}
 		return null;
 	}
@@ -206,7 +207,7 @@ public enum ActClassDocument implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -215,7 +216,7 @@ public enum ActClassDocument implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -224,7 +225,7 @@ public enum ActClassDocument implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

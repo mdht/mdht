@@ -13,6 +13,10 @@ package org.openhealthtools.mdht.uml.hl7.rim.impl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.hl7.rim.Entity;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
 import org.openhealthtools.mdht.uml.hl7.rim.Role;
@@ -53,7 +57,9 @@ public abstract class EntityImpl extends InfrastructureRootImpl implements Entit
 	 * @generated
 	 */
 	public Enumerator getClassCode() {
-		return EntityOperations.getClassCode(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -62,7 +68,9 @@ public abstract class EntityImpl extends InfrastructureRootImpl implements Entit
 	 * @generated
 	 */
 	public Enumerator getDeterminerCode() {
-		return EntityOperations.getDeterminerCode(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -71,7 +79,9 @@ public abstract class EntityImpl extends InfrastructureRootImpl implements Entit
 	 * @generated
 	 */
 	public EList<Role> getPlayedRoles() {
-		return EntityOperations.getPlayedRoles(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -80,8 +90,29 @@ public abstract class EntityImpl extends InfrastructureRootImpl implements Entit
 	 * @generated
 	 */
 	public EList<Role> getScopedRoles() {
-		return EntityOperations.getScopedRoles(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #isClassCodeDefined() <em>Is Class Code Defined</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isClassCodeDefined()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IS_CLASS_CODE_DEFINED__EOCL_EXP = "self.isDefined('classCode')";
+	/**
+	 * The cached OCL query for the '{@link #isClassCodeDefined() <em>Is Class Code Defined</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isClassCodeDefined()
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> IS_CLASS_CODE_DEFINED__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,8 +120,38 @@ public abstract class EntityImpl extends InfrastructureRootImpl implements Entit
 	 * @generated
 	 */
 	public boolean isClassCodeDefined() {
-		return EntityOperations.isClassCodeDefined(this);
+		if (IS_CLASS_CODE_DEFINED__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(RIMPackage.Literals.ENTITY, RIMPackage.Literals.ENTITY.getEAllOperations().get(12));
+			try {
+				IS_CLASS_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_CLASS_CODE_DEFINED__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(IS_CLASS_CODE_DEFINED__EOCL_QRY);
+		return ((Boolean) query.evaluate(this)).booleanValue();
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #isDeterminerCodeDefined() <em>Is Determiner Code Defined</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDeterminerCodeDefined()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IS_DETERMINER_CODE_DEFINED__EOCL_EXP = "self.isDefined('determinerCode')";
+	/**
+	 * The cached OCL query for the '{@link #isDeterminerCodeDefined() <em>Is Determiner Code Defined</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDeterminerCodeDefined()
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> IS_DETERMINER_CODE_DEFINED__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,7 +159,27 @@ public abstract class EntityImpl extends InfrastructureRootImpl implements Entit
 	 * @generated
 	 */
 	public boolean isDeterminerCodeDefined() {
-		return EntityOperations.isDeterminerCodeDefined(this);
+		if (IS_DETERMINER_CODE_DEFINED__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(RIMPackage.Literals.ENTITY, RIMPackage.Literals.ENTITY.getEAllOperations().get(13));
+			try {
+				IS_DETERMINER_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_DETERMINER_CODE_DEFINED__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(IS_DETERMINER_CODE_DEFINED__EOCL_QRY);
+		return ((Boolean) query.evaluate(this)).booleanValue();
 	}
+
+	/**
+	 * The cached environment for evaluating OCL expressions.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected static final OCL EOCL_ENV = OCL.newInstance();
 
 } // EntityImpl

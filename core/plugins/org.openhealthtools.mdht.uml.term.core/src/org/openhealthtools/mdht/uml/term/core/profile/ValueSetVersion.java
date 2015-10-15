@@ -19,29 +19,29 @@ import org.eclipse.uml2.uml.Enumeration;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Value Set Version</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getIdentifier <em>Identifier</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getVersion <em>Version</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getFullName <em>Full Name</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getSource <em>Source</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getUrl <em>Url</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getDefinition <em>Definition</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getEffectiveDate <em>Effective Date</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getExpirationDate <em>Expiration Date</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getReleaseDate <em>Release Date</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getRevisionDate <em>Revision Date</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatus <em>Status</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatusDate <em>Status Date</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getType <em>Type</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBinding <em>Binding</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getCodeSystem <em>Code System</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBase_Enumeration <em>Base Enumeration</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getVersion <em>Version</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getFullName <em>Full Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getSource <em>Source</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getUrl <em>Url</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getEffectiveDate <em>Effective Date</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getExpirationDate <em>Expiration Date</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getReleaseDate <em>Release Date</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getRevisionDate <em>Revision Date</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getType <em>Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBinding <em>Binding</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getCodeSystem <em>Code System</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBase_Enumeration <em>Base Enumeration</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion()
  * @model
  * @generated
@@ -54,7 +54,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Base Enumeration</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Base Enumeration</em>' reference.
 	 * @see #setBase_Enumeration(Enumeration)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_Base_Enumeration()
@@ -71,7 +70,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Binding</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Binding</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.BindingKind
 	 * @see #setBinding(BindingKind)
@@ -88,7 +86,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Code System</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Code System</em>' reference.
 	 * @see #setCodeSystem(CodeSystemVersion)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_CodeSystem()
@@ -104,7 +101,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Definition</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Definition</em>' attribute.
 	 * @see #setDefinition(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_Definition()
@@ -120,7 +116,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Effective Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Effective Date</em>' attribute.
 	 * @see #setEffectiveDate(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_EffectiveDate()
@@ -132,7 +127,6 @@ public interface ValueSetVersion extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -141,7 +135,6 @@ public interface ValueSetVersion extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -154,7 +147,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Expiration Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Expiration Date</em>' attribute.
 	 * @see #setExpirationDate(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_ExpirationDate()
@@ -170,7 +162,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Full Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Full Name</em>' attribute.
 	 * @see #setFullName(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_FullName()
@@ -186,7 +177,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_Identifier()
@@ -202,7 +192,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Release Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Release Date</em>' attribute.
 	 * @see #setReleaseDate(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_ReleaseDate()
@@ -218,7 +207,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Revision Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Revision Date</em>' attribute.
 	 * @see #setRevisionDate(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_RevisionDate()
@@ -234,7 +222,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Source</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Source</em>' attribute.
 	 * @see #setSource(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_Source()
@@ -251,7 +238,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Status</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Status</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.StatusKind
 	 * @see #setStatus(StatusKind)
@@ -268,7 +254,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Status Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Status Date</em>' attribute.
 	 * @see #setStatusDate(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_StatusDate()
@@ -285,7 +270,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetType
 	 * @see #setType(ValueSetType)
@@ -302,7 +286,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Url</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Url</em>' attribute.
 	 * @see #setUrl(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_Url()
@@ -318,7 +301,6 @@ public interface ValueSetVersion extends EObject {
 	 * If the meaning of the '<em>Version</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetVersion_Version()
@@ -328,13 +310,10 @@ public interface ValueSetVersion extends EObject {
 	String getVersion();
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBase_Enumeration <em>Base Enumeration</em>}'
-	 * reference.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBase_Enumeration <em>Base Enumeration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Base Enumeration</em>' reference.
+	 * @param value the new value of the '<em>Base Enumeration</em>' reference.
 	 * @see #getBase_Enumeration()
 	 * @generated
 	 */
@@ -344,9 +323,7 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBinding <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Binding</em>' attribute.
+	 * @param value the new value of the '<em>Binding</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.BindingKind
 	 * @see #getBinding()
 	 * @generated
@@ -357,9 +334,7 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getCodeSystem <em>Code System</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Code System</em>' reference.
+	 * @param value the new value of the '<em>Code System</em>' reference.
 	 * @see #getCodeSystem()
 	 * @generated
 	 */
@@ -369,22 +344,17 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getDefinition <em>Definition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Definition</em>' attribute.
+	 * @param value the new value of the '<em>Definition</em>' attribute.
 	 * @see #getDefinition()
 	 * @generated
 	 */
 	void setDefinition(String value);
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getEffectiveDate <em>Effective Date</em>}'
-	 * attribute.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getEffectiveDate <em>Effective Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Effective Date</em>' attribute.
+	 * @param value the new value of the '<em>Effective Date</em>' attribute.
 	 * @see #getEffectiveDate()
 	 * @generated
 	 */
@@ -393,20 +363,16 @@ public interface ValueSetVersion extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @model nameRequired="true" nameOrdered="false"
 	 * @generated
 	 */
 	void setEnumerationName(String name);
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getExpirationDate <em>Expiration Date</em>}'
-	 * attribute.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getExpirationDate <em>Expiration Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Expiration Date</em>' attribute.
+	 * @param value the new value of the '<em>Expiration Date</em>' attribute.
 	 * @see #getExpirationDate()
 	 * @generated
 	 */
@@ -416,9 +382,7 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getFullName <em>Full Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Full Name</em>' attribute.
+	 * @param value the new value of the '<em>Full Name</em>' attribute.
 	 * @see #getFullName()
 	 * @generated
 	 */
@@ -428,9 +392,7 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Identifier</em>' attribute.
+	 * @param value the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -440,22 +402,17 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getReleaseDate <em>Release Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Release Date</em>' attribute.
+	 * @param value the new value of the '<em>Release Date</em>' attribute.
 	 * @see #getReleaseDate()
 	 * @generated
 	 */
 	void setReleaseDate(String value);
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getRevisionDate <em>Revision Date</em>}'
-	 * attribute.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getRevisionDate <em>Revision Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Revision Date</em>' attribute.
+	 * @param value the new value of the '<em>Revision Date</em>' attribute.
 	 * @see #getRevisionDate()
 	 * @generated
 	 */
@@ -465,9 +422,7 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getSource <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Source</em>' attribute.
+	 * @param value the new value of the '<em>Source</em>' attribute.
 	 * @see #getSource()
 	 * @generated
 	 */
@@ -477,9 +432,7 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatus <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Status</em>' attribute.
+	 * @param value the new value of the '<em>Status</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.StatusKind
 	 * @see #getStatus()
 	 * @generated
@@ -490,9 +443,7 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatusDate <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Status Date</em>' attribute.
+	 * @param value the new value of the '<em>Status Date</em>' attribute.
 	 * @see #getStatusDate()
 	 * @generated
 	 */
@@ -502,9 +453,7 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Type</em>' attribute.
+	 * @param value the new value of the '<em>Type</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetType
 	 * @see #getType()
 	 * @generated
@@ -515,9 +464,7 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getUrl <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Url</em>' attribute.
+	 * @param value the new value of the '<em>Url</em>' attribute.
 	 * @see #getUrl()
 	 * @generated
 	 */
@@ -527,9 +474,7 @@ public interface ValueSetVersion extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getVersion <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Version</em>' attribute.
+	 * @param value the new value of the '<em>Version</em>' attribute.
 	 * @see #getVersion()
 	 * @generated
 	 */

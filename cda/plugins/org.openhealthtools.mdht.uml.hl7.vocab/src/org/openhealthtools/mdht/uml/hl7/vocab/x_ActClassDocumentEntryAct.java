@@ -258,7 +258,16 @@ public enum x_ActClassDocumentEntryAct implements Enumerator {
 	 * @generated
 	 */
 	private static final x_ActClassDocumentEntryAct[] VALUES_ARRAY = new x_ActClassDocumentEntryAct[] {
-			ACCM, ACT, CONS, CTTEVENT, INC, INFRM, PCPR, REG, SPCTRT, };
+			ACCM,
+			ACT,
+			CONS,
+			CTTEVENT,
+			INC,
+			INFRM,
+			PCPR,
+			REG,
+			SPCTRT,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>xAct Class Document Entry Act</b></em>' enumerators.
@@ -308,24 +317,15 @@ public enum x_ActClassDocumentEntryAct implements Enumerator {
 	 */
 	public static x_ActClassDocumentEntryAct get(int value) {
 		switch (value) {
-			case ACCM_VALUE:
-				return ACCM;
-			case ACT_VALUE:
-				return ACT;
-			case CONS_VALUE:
-				return CONS;
-			case CTTEVENT_VALUE:
-				return CTTEVENT;
-			case INC_VALUE:
-				return INC;
-			case INFRM_VALUE:
-				return INFRM;
-			case PCPR_VALUE:
-				return PCPR;
-			case REG_VALUE:
-				return REG;
-			case SPCTRT_VALUE:
-				return SPCTRT;
+			case ACCM_VALUE: return ACCM;
+			case ACT_VALUE: return ACT;
+			case CONS_VALUE: return CONS;
+			case CTTEVENT_VALUE: return CTTEVENT;
+			case INC_VALUE: return INC;
+			case INFRM_VALUE: return INFRM;
+			case PCPR_VALUE: return PCPR;
+			case REG_VALUE: return REG;
+			case SPCTRT_VALUE: return SPCTRT;
 		}
 		return null;
 	}
@@ -369,7 +369,7 @@ public enum x_ActClassDocumentEntryAct implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -378,7 +378,7 @@ public enum x_ActClassDocumentEntryAct implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -387,7 +387,7 @@ public enum x_ActClassDocumentEntryAct implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

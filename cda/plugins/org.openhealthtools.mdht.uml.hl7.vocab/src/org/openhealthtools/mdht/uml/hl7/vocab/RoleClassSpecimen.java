@@ -107,7 +107,11 @@ public enum RoleClassSpecimen implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final RoleClassSpecimen[] VALUES_ARRAY = new RoleClassSpecimen[] { ALQT, ISLT, SPEC, };
+	private static final RoleClassSpecimen[] VALUES_ARRAY = new RoleClassSpecimen[] {
+			ALQT,
+			ISLT,
+			SPEC,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Role Class Specimen</b></em>' enumerators.
@@ -157,12 +161,9 @@ public enum RoleClassSpecimen implements Enumerator {
 	 */
 	public static RoleClassSpecimen get(int value) {
 		switch (value) {
-			case ALQT_VALUE:
-				return ALQT;
-			case ISLT_VALUE:
-				return ISLT;
-			case SPEC_VALUE:
-				return SPEC;
+			case ALQT_VALUE: return ALQT;
+			case ISLT_VALUE: return ISLT;
+			case SPEC_VALUE: return SPEC;
 		}
 		return null;
 	}
@@ -206,7 +207,7 @@ public enum RoleClassSpecimen implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -215,7 +216,7 @@ public enum RoleClassSpecimen implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -224,7 +225,7 @@ public enum RoleClassSpecimen implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

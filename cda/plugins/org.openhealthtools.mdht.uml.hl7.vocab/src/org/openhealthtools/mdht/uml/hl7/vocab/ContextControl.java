@@ -132,7 +132,12 @@ public enum ContextControl implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ContextControl[] VALUES_ARRAY = new ContextControl[] { AN, AP, ON, OP, };
+	private static final ContextControl[] VALUES_ARRAY = new ContextControl[] {
+			AN,
+			AP,
+			ON,
+			OP,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Context Control</b></em>' enumerators.
@@ -182,14 +187,10 @@ public enum ContextControl implements Enumerator {
 	 */
 	public static ContextControl get(int value) {
 		switch (value) {
-			case AN_VALUE:
-				return AN;
-			case AP_VALUE:
-				return AP;
-			case ON_VALUE:
-				return ON;
-			case OP_VALUE:
-				return OP;
+			case AN_VALUE: return AN;
+			case AP_VALUE: return AP;
+			case ON_VALUE: return ON;
+			case OP_VALUE: return OP;
 		}
 		return null;
 	}
@@ -233,7 +234,7 @@ public enum ContextControl implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -242,7 +243,7 @@ public enum ContextControl implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -251,7 +252,7 @@ public enum ContextControl implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

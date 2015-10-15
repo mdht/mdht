@@ -132,7 +132,12 @@ public enum EntityClassOrganization implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final EntityClassOrganization[] VALUES_ARRAY = new EntityClassOrganization[] { NAT, ORG, PUB, STATE, };
+	private static final EntityClassOrganization[] VALUES_ARRAY = new EntityClassOrganization[] {
+			NAT,
+			ORG,
+			PUB,
+			STATE,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Entity Class Organization</b></em>' enumerators.
@@ -182,14 +187,10 @@ public enum EntityClassOrganization implements Enumerator {
 	 */
 	public static EntityClassOrganization get(int value) {
 		switch (value) {
-			case NAT_VALUE:
-				return NAT;
-			case ORG_VALUE:
-				return ORG;
-			case PUB_VALUE:
-				return PUB;
-			case STATE_VALUE:
-				return STATE;
+			case NAT_VALUE: return NAT;
+			case ORG_VALUE: return ORG;
+			case PUB_VALUE: return PUB;
+			case STATE_VALUE: return STATE;
 		}
 		return null;
 	}
@@ -233,7 +234,7 @@ public enum EntityClassOrganization implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -242,7 +243,7 @@ public enum EntityClassOrganization implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -251,7 +252,7 @@ public enum EntityClassOrganization implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

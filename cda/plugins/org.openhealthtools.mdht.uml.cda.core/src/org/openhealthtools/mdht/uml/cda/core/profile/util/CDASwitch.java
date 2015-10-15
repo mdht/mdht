@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile.util;
@@ -45,6 +45,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ * 
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage
  * @generated
  */
@@ -53,6 +54,7 @@ public class CDASwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static CDAPackage modelPackage;
@@ -61,6 +63,7 @@ public class CDASwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CDASwitch() {
@@ -73,6 +76,7 @@ public class CDASwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -88,7 +92,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Act Relationship</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -103,7 +109,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Association Validation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -118,7 +126,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -133,7 +143,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Class Validation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -148,7 +160,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Codegen Support</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -163,7 +177,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Code System Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -178,7 +194,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Concept Domain Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -193,7 +211,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Conforms To</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -208,7 +228,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Constraint Validation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -223,7 +245,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Entry</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -238,7 +262,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Entry Relationship</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -253,7 +279,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Null Flavor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -268,7 +296,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Participation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -283,7 +313,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Logical Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -298,7 +330,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Inline</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -313,7 +347,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Unimplementable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -328,7 +364,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property Validation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -343,7 +381,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Code System Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -358,7 +398,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Concept Domain Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -374,7 +416,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Value Set Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -389,7 +433,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Text Value</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -404,7 +450,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Validation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -419,7 +467,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Value Set Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -434,7 +484,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Vocab Specification</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -449,7 +501,9 @@ public class CDASwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -463,6 +517,7 @@ public class CDASwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -470,157 +525,250 @@ public class CDASwitch<T> extends Switch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case CDAPackage.ENTRY: {
-				Entry entry = (Entry)theEObject;
+				Entry entry = (Entry) theEObject;
 				T result = caseEntry(entry);
-				if (result == null) result = caseAssociationValidation(entry);
-				if (result == null) result = caseValidation(entry);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAssociationValidation(entry);
+				}
+				if (result == null) {
+					result = caseValidation(entry);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ASSOCIATION_VALIDATION: {
-				AssociationValidation associationValidation = (AssociationValidation)theEObject;
+				AssociationValidation associationValidation = (AssociationValidation) theEObject;
 				T result = caseAssociationValidation(associationValidation);
-				if (result == null) result = caseValidation(associationValidation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseValidation(associationValidation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.VALIDATION: {
-				Validation validation = (Validation)theEObject;
+				Validation validation = (Validation) theEObject;
 				T result = caseValidation(validation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ENTRY_RELATIONSHIP: {
-				EntryRelationship entryRelationship = (EntryRelationship)theEObject;
+				EntryRelationship entryRelationship = (EntryRelationship) theEObject;
 				T result = caseEntryRelationship(entryRelationship);
-				if (result == null) result = caseAssociationValidation(entryRelationship);
-				if (result == null) result = caseValidation(entryRelationship);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAssociationValidation(entryRelationship);
+				}
+				if (result == null) {
+					result = caseValidation(entryRelationship);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CODEGEN_SUPPORT: {
-				CodegenSupport codegenSupport = (CodegenSupport)theEObject;
+				CodegenSupport codegenSupport = (CodegenSupport) theEObject;
 				T result = caseCodegenSupport(codegenSupport);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PROPERTY_VALIDATION: {
-				PropertyValidation propertyValidation = (PropertyValidation)theEObject;
+				PropertyValidation propertyValidation = (PropertyValidation) theEObject;
 				T result = casePropertyValidation(propertyValidation);
-				if (result == null) result = caseValidation(propertyValidation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseValidation(propertyValidation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CLASS_VALIDATION: {
-				ClassValidation classValidation = (ClassValidation)theEObject;
+				ClassValidation classValidation = (ClassValidation) theEObject;
 				T result = caseClassValidation(classValidation);
-				if (result == null) result = caseValidation(classValidation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseValidation(classValidation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.VOCAB_SPECIFICATION: {
-				VocabSpecification vocabSpecification = (VocabSpecification)theEObject;
+				VocabSpecification vocabSpecification = (VocabSpecification) theEObject;
 				T result = caseVocabSpecification(vocabSpecification);
-				if (result == null) result = casePropertyValidation(vocabSpecification);
-				if (result == null) result = caseValidation(vocabSpecification);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePropertyValidation(vocabSpecification);
+				}
+				if (result == null) {
+					result = caseValidation(vocabSpecification);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.NULL_FLAVOR: {
-				NullFlavor nullFlavor = (NullFlavor)theEObject;
+				NullFlavor nullFlavor = (NullFlavor) theEObject;
 				T result = caseNullFlavor(nullFlavor);
-				if (result == null) result = casePropertyValidation(nullFlavor);
-				if (result == null) result = caseValidation(nullFlavor);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePropertyValidation(nullFlavor);
+				}
+				if (result == null) {
+					result = caseValidation(nullFlavor);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.TEXT_VALUE: {
-				TextValue textValue = (TextValue)theEObject;
+				TextValue textValue = (TextValue) theEObject;
 				T result = caseTextValue(textValue);
-				if (result == null) result = casePropertyValidation(textValue);
-				if (result == null) result = caseValidation(textValue);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePropertyValidation(textValue);
+				}
+				if (result == null) {
+					result = caseValidation(textValue);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CDA_TEMPLATE: {
-				CDATemplate cdaTemplate = (CDATemplate)theEObject;
+				CDATemplate cdaTemplate = (CDATemplate) theEObject;
 				T result = caseCDATemplate(cdaTemplate);
-				if (result == null) result = caseClassValidation(cdaTemplate);
-				if (result == null) result = caseValidation(cdaTemplate);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassValidation(cdaTemplate);
+				}
+				if (result == null) {
+					result = caseValidation(cdaTemplate);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CONSTRAINT_VALIDATION: {
-				ConstraintValidation constraintValidation = (ConstraintValidation)theEObject;
+				ConstraintValidation constraintValidation = (ConstraintValidation) theEObject;
 				T result = caseConstraintValidation(constraintValidation);
-				if (result == null) result = caseValidation(constraintValidation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseValidation(constraintValidation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CONFORMS_TO: {
-				ConformsTo conformsTo = (ConformsTo)theEObject;
+				ConformsTo conformsTo = (ConformsTo) theEObject;
 				T result = caseConformsTo(conformsTo);
-				if (result == null) result = caseValidation(conformsTo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseValidation(conformsTo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT: {
-				ConceptDomainConstraint conceptDomainConstraint = (ConceptDomainConstraint)theEObject;
+				ConceptDomainConstraint conceptDomainConstraint = (ConceptDomainConstraint) theEObject;
 				T result = caseConceptDomainConstraint(conceptDomainConstraint);
-				if (result == null) result = caseTerm_ConceptDomainConstraint(conceptDomainConstraint);
-				if (result == null) result = caseValidation(conceptDomainConstraint);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseTerm_ConceptDomainConstraint(conceptDomainConstraint);
+				}
+				if (result == null) {
+					result = caseValidation(conceptDomainConstraint);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT: {
-				CodeSystemConstraint codeSystemConstraint = (CodeSystemConstraint)theEObject;
+				CodeSystemConstraint codeSystemConstraint = (CodeSystemConstraint) theEObject;
 				T result = caseCodeSystemConstraint(codeSystemConstraint);
-				if (result == null) result = caseTerm_CodeSystemConstraint(codeSystemConstraint);
-				if (result == null) result = caseValidation(codeSystemConstraint);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseTerm_CodeSystemConstraint(codeSystemConstraint);
+				}
+				if (result == null) {
+					result = caseValidation(codeSystemConstraint);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.VALUE_SET_CONSTRAINT: {
-				ValueSetConstraint valueSetConstraint = (ValueSetConstraint)theEObject;
+				ValueSetConstraint valueSetConstraint = (ValueSetConstraint) theEObject;
 				T result = caseValueSetConstraint(valueSetConstraint);
-				if (result == null) result = caseTerm_ValueSetConstraint(valueSetConstraint);
-				if (result == null) result = caseValidation(valueSetConstraint);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseTerm_ValueSetConstraint(valueSetConstraint);
+				}
+				if (result == null) {
+					result = caseValidation(valueSetConstraint);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ACT_RELATIONSHIP: {
-				ActRelationship actRelationship = (ActRelationship)theEObject;
+				ActRelationship actRelationship = (ActRelationship) theEObject;
 				T result = caseActRelationship(actRelationship);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PARTICIPATION: {
-				Participation participation = (Participation)theEObject;
+				Participation participation = (Participation) theEObject;
 				T result = caseParticipation(participation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.LOGICAL_CONSTRAINT: {
-				LogicalConstraint logicalConstraint = (LogicalConstraint)theEObject;
+				LogicalConstraint logicalConstraint = (LogicalConstraint) theEObject;
 				T result = caseLogicalConstraint(logicalConstraint);
-				if (result == null) result = caseConstraintValidation(logicalConstraint);
-				if (result == null) result = caseValidation(logicalConstraint);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseConstraintValidation(logicalConstraint);
+				}
+				if (result == null) {
+					result = caseValidation(logicalConstraint);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.INLINE: {
-				Inline inline = (Inline)theEObject;
+				Inline inline = (Inline) theEObject;
 				T result = caseInline(inline);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.UNIMPLEMENTABLE: {
-				Unimplementable unimplementable = (Unimplementable)theEObject;
+				Unimplementable unimplementable = (Unimplementable) theEObject;
 				T result = caseUnimplementable(unimplementable);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
-			default: return defaultCase(theEObject);
+			default:
+				return defaultCase(theEObject);
 		}
 	}
 

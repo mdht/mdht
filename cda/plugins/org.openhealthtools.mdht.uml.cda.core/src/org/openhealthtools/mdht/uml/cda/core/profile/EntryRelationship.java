@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile;
@@ -20,7 +20,7 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship#getTypeCode <em>Type Code</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship#getTypeCode <em>Type Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +37,7 @@ public interface EntryRelationship extends AssociationValidation {
 	 * If the meaning of the '<em>Type Code</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind
 	 * @see #setTypeCode(EntryRelationshipKind)
@@ -50,7 +51,9 @@ public interface EntryRelationship extends AssociationValidation {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship#getTypeCode <em>Type Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type Code</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind
 	 * @see #getTypeCode()
 	 * @generated

@@ -6021,30 +6021,6 @@ public interface DatatypesPackage extends EPackage {
 		EClass AD = eINSTANCE.getAD();
 
 		/**
-		 * The meta object literal for the '<em><b>Useable Period</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference AD__USEABLE_PERIOD = eINSTANCE.getAD_UseablePeriod();
-
-		/**
-		 * The meta object literal for the '<em><b>Use</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AD__USE = eINSTANCE.getAD_Use();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Not Ordered</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AD__IS_NOT_ORDERED = eINSTANCE.getAD_IsNotOrdered();
-
-		/**
 		 * The meta object literal for the '<em><b>Delimiter</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6269,6 +6245,30 @@ public interface DatatypesPackage extends EPackage {
 		EAttribute AD__PART = eINSTANCE.getAD_Part();
 
 		/**
+		 * The meta object literal for the '<em><b>Useable Period</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AD__USEABLE_PERIOD = eINSTANCE.getAD_UseablePeriod();
+
+		/**
+		 * The meta object literal for the '<em><b>Use</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AD__USE = eINSTANCE.getAD_Use();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Not Ordered</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AD__IS_NOT_ORDERED = eINSTANCE.getAD_IsNotOrdered();
+
+		/**
 		 * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6303,22 +6303,6 @@ public interface DatatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EN = eINSTANCE.getEN();
-
-		/**
-		 * The meta object literal for the '<em><b>Use</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EN__USE = eINSTANCE.getEN_Use();
-
-		/**
-		 * The meta object literal for the '<em><b>Valid Time</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EN__VALID_TIME = eINSTANCE.getEN_ValidTime();
 
 		/**
 		 * The meta object literal for the '<em><b>Delimiter</b></em>' containment reference list feature.
@@ -6369,12 +6353,54 @@ public interface DatatypesPackage extends EPackage {
 		EAttribute EN__PART = eINSTANCE.getEN_Part();
 
 		/**
+		 * The meta object literal for the '<em><b>Valid Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EN__VALID_TIME = eINSTANCE.getEN_ValidTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Use</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EN__USE = eINSTANCE.getEN_Use();
+
+		/**
 		 * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute EN__MIXED = eINSTANCE.getEN_Mixed();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENXPImpl <em>ENXP</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENXPImpl
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getENXP()
+		 * @generated
+		 */
+		EClass ENXP = eINSTANCE.getENXP();
+
+		/**
+		 * The meta object literal for the '<em><b>Part Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENXP__PART_TYPE = eINSTANCE.getENXP_PartType();
+
+		/**
+		 * The meta object literal for the '<em><b>Qualifier</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENXP__QUALIFIER = eINSTANCE.getENXP_Qualifier();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.IVL_TSImpl <em>IVL TS</em>}' class.
@@ -6487,32 +6513,6 @@ public interface DatatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PQR__VALUE = eINSTANCE.getPQR_Value();
-
-		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENXPImpl <em>ENXP</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENXPImpl
-		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getENXP()
-		 * @generated
-		 */
-		EClass ENXP = eINSTANCE.getENXP();
-
-		/**
-		 * The meta object literal for the '<em><b>Part Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENXP__PART_TYPE = eINSTANCE.getENXP_PartType();
-
-		/**
-		 * The meta object literal for the '<em><b>Qualifier</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENXP__QUALIFIER = eINSTANCE.getENXP_Qualifier();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ONImpl <em>ON</em>}' class.
@@ -6983,6 +6983,16 @@ public interface DatatypesPackage extends EPackage {
 		EEnum BINARY_DATA_ENCODING = eINSTANCE.getBinaryDataEncoding();
 
 		/**
+		 * The meta object literal for the '<em>ts Type</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#gettsType()
+		 * @generated
+		 */
+		EDataType TS_TYPE = eINSTANCE.gettsType();
+
+		/**
 		 * The meta object literal for the '<em>cs Type</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7011,16 +7021,6 @@ public interface DatatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType ST_TYPE = eINSTANCE.getstType();
-
-		/**
-		 * The meta object literal for the '<em>ts Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.String
-		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#gettsType()
-		 * @generated
-		 */
-		EDataType TS_TYPE = eINSTANCE.gettsType();
 
 	}
 

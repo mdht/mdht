@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile.impl;
@@ -31,10 +31,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#getMessage <em>Message</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#getSeverity <em>Severity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#getRuleId <em>Rule Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#isMandatory <em>Mandatory</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#getMessage <em>Message</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#getSeverity <em>Severity</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#getRuleId <em>Rule Id</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#isMandatory <em>Mandatory</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +47,7 @@ public class ConceptDomainConstraintImpl extends
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -57,6 +58,7 @@ public class ConceptDomainConstraintImpl extends
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -67,6 +69,7 @@ public class ConceptDomainConstraintImpl extends
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -77,6 +80,7 @@ public class ConceptDomainConstraintImpl extends
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -87,6 +91,7 @@ public class ConceptDomainConstraintImpl extends
 	 * The cached value of the '{@link #getRuleId() <em>Rule Id</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRuleId()
 	 * @generated
 	 * @ordered
@@ -97,6 +102,7 @@ public class ConceptDomainConstraintImpl extends
 	 * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -107,6 +113,7 @@ public class ConceptDomainConstraintImpl extends
 	 * The cached value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -116,6 +123,7 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConceptDomainConstraintImpl() {
@@ -125,17 +133,23 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Validation.class) {
 			switch (derivedFeatureID) {
-				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MESSAGE: return CDAPackage.VALIDATION__MESSAGE;
-				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__SEVERITY: return CDAPackage.VALIDATION__SEVERITY;
-				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID: return CDAPackage.VALIDATION__RULE_ID;
-				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY: return CDAPackage.VALIDATION__MANDATORY;
-				default: return -1;
+				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MESSAGE:
+					return CDAPackage.VALIDATION__MESSAGE;
+				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__SEVERITY:
+					return CDAPackage.VALIDATION__SEVERITY;
+				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID:
+					return CDAPackage.VALIDATION__RULE_ID;
+				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY:
+					return CDAPackage.VALIDATION__MANDATORY;
+				default:
+					return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -144,17 +158,23 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Validation.class) {
 			switch (baseFeatureID) {
-				case CDAPackage.VALIDATION__MESSAGE: return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MESSAGE;
-				case CDAPackage.VALIDATION__SEVERITY: return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__SEVERITY;
-				case CDAPackage.VALIDATION__RULE_ID: return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID;
-				case CDAPackage.VALIDATION__MANDATORY: return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY;
-				default: return -1;
+				case CDAPackage.VALIDATION__MESSAGE:
+					return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MESSAGE;
+				case CDAPackage.VALIDATION__SEVERITY:
+					return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__SEVERITY;
+				case CDAPackage.VALIDATION__RULE_ID:
+					return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID;
+				case CDAPackage.VALIDATION__MANDATORY:
+					return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY;
+				default:
+					return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -163,6 +183,7 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -183,13 +204,16 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MESSAGE:
-				return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
+				return MESSAGE_EDEFAULT == null
+						? message != null
+						: !MESSAGE_EDEFAULT.equals(message);
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__SEVERITY:
 				return severity != SEVERITY_EDEFAULT;
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID:
@@ -203,6 +227,7 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -210,17 +235,17 @@ public class ConceptDomainConstraintImpl extends
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MESSAGE:
-				setMessage((String)newValue);
+				setMessage((String) newValue);
 				return;
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__SEVERITY:
-				setSeverity((SeverityKind)newValue);
+				setSeverity((SeverityKind) newValue);
 				return;
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID:
 				getRuleId().clear();
-				getRuleId().addAll((Collection<? extends String>)newValue);
+				getRuleId().addAll((Collection<? extends String>) newValue);
 				return;
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY:
-				setMandatory((Boolean)newValue);
+				setMandatory((Boolean) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -229,6 +254,7 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -239,6 +265,7 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -263,6 +290,7 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getMessage() {
@@ -272,6 +300,7 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<String> getRuleId() {
@@ -284,6 +313,7 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SeverityKind getSeverity() {
@@ -293,6 +323,7 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isMandatory() {
@@ -302,47 +333,61 @@ public class ConceptDomainConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMandatory(boolean newMandatory) {
 		boolean oldMandatory = mandatory;
 		mandatory = newMandatory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY, oldMandatory, mandatory));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY, oldMandatory, mandatory));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMessage(String newMessage) {
 		String oldMessage = message;
 		message = newMessage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MESSAGE, oldMessage, message));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MESSAGE, oldMessage, message));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSeverity(SeverityKind newSeverity) {
 		SeverityKind oldSeverity = severity;
-		severity = newSeverity == null ? SEVERITY_EDEFAULT : newSeverity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__SEVERITY, oldSeverity, severity));
+		severity = newSeverity == null
+				? SEVERITY_EDEFAULT
+				: newSeverity;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__SEVERITY, oldSeverity, severity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (message: ");

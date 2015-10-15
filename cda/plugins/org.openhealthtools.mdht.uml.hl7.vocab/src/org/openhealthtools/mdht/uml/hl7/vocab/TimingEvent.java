@@ -358,7 +358,20 @@ public enum TimingEvent implements Enumerator {
 	 * @generated
 	 */
 	private static final TimingEvent[] VALUES_ARRAY = new TimingEvent[] {
-			AC, ACD, ACM, ACV, HS, IC, ICD, ICM, ICV, PC, PCD, PCM, PCV, };
+			AC,
+			ACD,
+			ACM,
+			ACV,
+			HS,
+			IC,
+			ICD,
+			ICM,
+			ICV,
+			PC,
+			PCD,
+			PCM,
+			PCV,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Timing Event</b></em>' enumerators.
@@ -408,32 +421,19 @@ public enum TimingEvent implements Enumerator {
 	 */
 	public static TimingEvent get(int value) {
 		switch (value) {
-			case AC_VALUE:
-				return AC;
-			case ACD_VALUE:
-				return ACD;
-			case ACM_VALUE:
-				return ACM;
-			case ACV_VALUE:
-				return ACV;
-			case HS_VALUE:
-				return HS;
-			case IC_VALUE:
-				return IC;
-			case ICD_VALUE:
-				return ICD;
-			case ICM_VALUE:
-				return ICM;
-			case ICV_VALUE:
-				return ICV;
-			case PC_VALUE:
-				return PC;
-			case PCD_VALUE:
-				return PCD;
-			case PCM_VALUE:
-				return PCM;
-			case PCV_VALUE:
-				return PCV;
+			case AC_VALUE: return AC;
+			case ACD_VALUE: return ACD;
+			case ACM_VALUE: return ACM;
+			case ACV_VALUE: return ACV;
+			case HS_VALUE: return HS;
+			case IC_VALUE: return IC;
+			case ICD_VALUE: return ICD;
+			case ICM_VALUE: return ICM;
+			case ICV_VALUE: return ICV;
+			case PC_VALUE: return PC;
+			case PCD_VALUE: return PCD;
+			case PCM_VALUE: return PCM;
+			case PCV_VALUE: return PCV;
 		}
 		return null;
 	}
@@ -477,7 +477,7 @@ public enum TimingEvent implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -486,7 +486,7 @@ public enum TimingEvent implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -495,7 +495,7 @@ public enum TimingEvent implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

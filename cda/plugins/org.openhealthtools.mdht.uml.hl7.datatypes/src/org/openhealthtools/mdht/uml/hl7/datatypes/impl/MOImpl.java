@@ -14,12 +14,20 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.Constraint;
+import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.MO;
 import org.openhealthtools.mdht.uml.hl7.datatypes.operations.MOOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,9 +120,8 @@ public class MOImpl extends QTYImpl implements MO {
 	public void setValue(BigDecimal newValue) {
 		BigDecimal oldValue = value;
 		value = newValue;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.MO__VALUE, oldValue, value));
-		}
 	}
 
 	/**
@@ -134,9 +141,8 @@ public class MOImpl extends QTYImpl implements MO {
 	public void setCurrency(String newCurrency) {
 		String oldCurrency = currency;
 		currency = newCurrency;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.MO__CURRENCY, oldCurrency, currency));
-		}
 	}
 
 	/**
@@ -182,10 +188,10 @@ public class MOImpl extends QTYImpl implements MO {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.MO__VALUE:
-				setValue((BigDecimal) newValue);
+				setValue((BigDecimal)newValue);
 				return;
 			case DatatypesPackage.MO__CURRENCY:
-				setCurrency((String) newValue);
+				setCurrency((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,13 +224,9 @@ public class MOImpl extends QTYImpl implements MO {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.MO__VALUE:
-				return VALUE_EDEFAULT == null
-						? value != null
-						: !VALUE_EDEFAULT.equals(value);
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case DatatypesPackage.MO__CURRENCY:
-				return CURRENCY_EDEFAULT == null
-						? currency != null
-						: !CURRENCY_EDEFAULT.equals(currency);
+				return CURRENCY_EDEFAULT == null ? currency != null : !CURRENCY_EDEFAULT.equals(currency);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -236,9 +238,7 @@ public class MOImpl extends QTYImpl implements MO {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");

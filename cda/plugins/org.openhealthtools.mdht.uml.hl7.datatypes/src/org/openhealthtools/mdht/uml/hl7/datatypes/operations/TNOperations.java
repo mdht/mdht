@@ -70,6 +70,7 @@ public class TNOperations extends ENOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.delimiter->isEmpty() and self.family->isEmpty() and self.given->isEmpty() and self.prefix->isEmpty() and self.suffix->isEmpty() and mixed->size() = 1
 	 * @param tn The receiving '<em><b>TN</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -82,20 +83,20 @@ public class TNOperations extends ENOperations {
 			helper.setContext(DatatypesPackage.Literals.TN);
 			try {
 				VALIDATE_INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(tn)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.TN__INVARIANT,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateInvariant",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(tn, context) }),
-					new Object[] { tn }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.TN__INVARIANT,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateInvariant", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(tn, context) }),
+						 new Object [] { tn }));
 			}
 			return false;
 		}

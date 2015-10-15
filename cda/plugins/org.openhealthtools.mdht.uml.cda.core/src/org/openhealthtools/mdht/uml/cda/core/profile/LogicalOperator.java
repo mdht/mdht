@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Logical Operator</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getLogicalOperator()
  * @model
  * @generated
@@ -22,6 +23,7 @@ public enum LogicalOperator implements Enumerator {
 	 * The '<em><b>AND</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #AND_VALUE
 	 * @generated
 	 * @ordered
@@ -32,6 +34,7 @@ public enum LogicalOperator implements Enumerator {
 	 * The '<em><b>OR</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OR_VALUE
 	 * @generated
 	 * @ordered
@@ -42,6 +45,7 @@ public enum LogicalOperator implements Enumerator {
 	 * The '<em><b>XOR</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #XOR_VALUE
 	 * @generated
 	 * @ordered
@@ -52,6 +56,7 @@ public enum LogicalOperator implements Enumerator {
 	 * The '<em><b>IFTHEN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #IFTHEN_VALUE
 	 * @generated
 	 * @ordered
@@ -62,6 +67,7 @@ public enum LogicalOperator implements Enumerator {
 	 * The '<em><b>NOTBOTH</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #NOTBOTH_VALUE
 	 * @generated
 	 * @ordered
@@ -75,6 +81,7 @@ public enum LogicalOperator implements Enumerator {
 	 * If the meaning of '<em><b>AND</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #AND
 	 * @model
 	 * @generated
@@ -89,6 +96,7 @@ public enum LogicalOperator implements Enumerator {
 	 * If the meaning of '<em><b>OR</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OR
 	 * @model
 	 * @generated
@@ -103,6 +111,7 @@ public enum LogicalOperator implements Enumerator {
 	 * If the meaning of '<em><b>XOR</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #XOR
 	 * @model
 	 * @generated
@@ -117,6 +126,7 @@ public enum LogicalOperator implements Enumerator {
 	 * If the meaning of '<em><b>IFTHEN</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #IFTHEN
 	 * @model
 	 * @generated
@@ -131,6 +141,7 @@ public enum LogicalOperator implements Enumerator {
 	 * If the meaning of '<em><b>NOTBOTH</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #NOTBOTH
 	 * @model
 	 * @generated
@@ -142,20 +153,16 @@ public enum LogicalOperator implements Enumerator {
 	 * An array of all the '<em><b>Logical Operator</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final LogicalOperator[] VALUES_ARRAY = new LogicalOperator[] {
-			AND,
-			OR,
-			XOR,
-			IFTHEN,
-			NOTBOTH,
-		};
+	private static final LogicalOperator[] VALUES_ARRAY = new LogicalOperator[] { AND, OR, XOR, IFTHEN, NOTBOTH, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Logical Operator</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<LogicalOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -164,6 +171,7 @@ public enum LogicalOperator implements Enumerator {
 	 * Returns the '<em><b>Logical Operator</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static LogicalOperator get(String literal) {
@@ -180,6 +188,7 @@ public enum LogicalOperator implements Enumerator {
 	 * Returns the '<em><b>Logical Operator</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static LogicalOperator getByName(String name) {
@@ -196,15 +205,21 @@ public enum LogicalOperator implements Enumerator {
 	 * Returns the '<em><b>Logical Operator</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static LogicalOperator get(int value) {
 		switch (value) {
-			case AND_VALUE: return AND;
-			case OR_VALUE: return OR;
-			case XOR_VALUE: return XOR;
-			case IFTHEN_VALUE: return IFTHEN;
-			case NOTBOTH_VALUE: return NOTBOTH;
+			case AND_VALUE:
+				return AND;
+			case OR_VALUE:
+				return OR;
+			case XOR_VALUE:
+				return XOR;
+			case IFTHEN_VALUE:
+				return IFTHEN;
+			case NOTBOTH_VALUE:
+				return NOTBOTH;
 		}
 		return null;
 	}
@@ -212,6 +227,7 @@ public enum LogicalOperator implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -219,6 +235,7 @@ public enum LogicalOperator implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -226,6 +243,7 @@ public enum LogicalOperator implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -234,6 +252,7 @@ public enum LogicalOperator implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private LogicalOperator(int value, String name, String literal) {
@@ -245,34 +264,38 @@ public enum LogicalOperator implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

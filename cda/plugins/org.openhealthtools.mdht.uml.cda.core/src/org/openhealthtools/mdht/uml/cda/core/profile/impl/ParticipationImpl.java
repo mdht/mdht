@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile.impl;
@@ -29,9 +29,9 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getBase_Association <em>Base Association</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getAssociationType <em>Association Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getTypeCode <em>Type Code</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getBase_Association <em>Base Association</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getAssociationType <em>Association Type</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	 * The cached value of the '{@link #getBase_Association() <em>Base Association</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Association()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	 * The cached value of the '{@link #getAssociationType() <em>Association Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAssociationType()
 	 * @generated
 	 * @ordered
@@ -62,6 +64,7 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	 * The cached value of the '{@link #getTypeCode() <em>Type Code</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypeCode()
 	 * @generated
 	 * @ordered
@@ -71,6 +74,7 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ParticipationImpl() {
@@ -80,6 +84,7 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetAssociationType() {
@@ -89,6 +94,7 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Association basicGetBase_Association() {
@@ -98,6 +104,7 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EnumerationLiteral basicGetTypeCode() {
@@ -107,19 +114,26 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.PARTICIPATION__BASE_ASSOCIATION:
-				if (resolve) return getBase_Association();
+				if (resolve) {
+					return getBase_Association();
+				}
 				return basicGetBase_Association();
 			case CDAPackage.PARTICIPATION__ASSOCIATION_TYPE:
-				if (resolve) return getAssociationType();
+				if (resolve) {
+					return getAssociationType();
+				}
 				return basicGetAssociationType();
 			case CDAPackage.PARTICIPATION__TYPE_CODE:
-				if (resolve) return getTypeCode();
+				if (resolve) {
+					return getTypeCode();
+				}
 				return basicGetTypeCode();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -128,6 +142,7 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -146,19 +161,20 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.PARTICIPATION__BASE_ASSOCIATION:
-				setBase_Association((Association)newValue);
+				setBase_Association((Association) newValue);
 				return;
 			case CDAPackage.PARTICIPATION__ASSOCIATION_TYPE:
-				setAssociationType((org.eclipse.uml2.uml.Class)newValue);
+				setAssociationType((org.eclipse.uml2.uml.Class) newValue);
 				return;
 			case CDAPackage.PARTICIPATION__TYPE_CODE:
-				setTypeCode((EnumerationLiteral)newValue);
+				setTypeCode((EnumerationLiteral) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -167,6 +183,7 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,19 +194,20 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.PARTICIPATION__BASE_ASSOCIATION:
-				setBase_Association((Association)null);
+				setBase_Association((Association) null);
 				return;
 			case CDAPackage.PARTICIPATION__ASSOCIATION_TYPE:
-				setAssociationType((org.eclipse.uml2.uml.Class)null);
+				setAssociationType((org.eclipse.uml2.uml.Class) null);
 				return;
 			case CDAPackage.PARTICIPATION__TYPE_CODE:
-				setTypeCode((EnumerationLiteral)null);
+				setTypeCode((EnumerationLiteral) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -198,15 +216,19 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class getAssociationType() {
 		if (associationType != null && associationType.eIsProxy()) {
-			InternalEObject oldAssociationType = (InternalEObject)associationType;
-			associationType = (org.eclipse.uml2.uml.Class)eResolveProxy(oldAssociationType);
+			InternalEObject oldAssociationType = (InternalEObject) associationType;
+			associationType = (org.eclipse.uml2.uml.Class) eResolveProxy(oldAssociationType);
 			if (associationType != oldAssociationType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.PARTICIPATION__ASSOCIATION_TYPE, oldAssociationType, associationType));
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.PARTICIPATION__ASSOCIATION_TYPE, oldAssociationType,
+						associationType));
+				}
 			}
 		}
 		return associationType;
@@ -215,15 +237,19 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Association getBase_Association() {
 		if (base_Association != null && base_Association.eIsProxy()) {
-			InternalEObject oldBase_Association = (InternalEObject)base_Association;
-			base_Association = (Association)eResolveProxy(oldBase_Association);
+			InternalEObject oldBase_Association = (InternalEObject) base_Association;
+			base_Association = (Association) eResolveProxy(oldBase_Association);
 			if (base_Association != oldBase_Association) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.PARTICIPATION__BASE_ASSOCIATION, oldBase_Association, base_Association));
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.PARTICIPATION__BASE_ASSOCIATION, oldBase_Association,
+						base_Association));
+				}
 			}
 		}
 		return base_Association;
@@ -232,15 +258,18 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EnumerationLiteral getTypeCode() {
 		if (typeCode != null && typeCode.eIsProxy()) {
-			InternalEObject oldTypeCode = (InternalEObject)typeCode;
-			typeCode = (EnumerationLiteral)eResolveProxy(oldTypeCode);
+			InternalEObject oldTypeCode = (InternalEObject) typeCode;
+			typeCode = (EnumerationLiteral) eResolveProxy(oldTypeCode);
 			if (typeCode != oldTypeCode) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.PARTICIPATION__TYPE_CODE, oldTypeCode, typeCode));
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.PARTICIPATION__TYPE_CODE, oldTypeCode, typeCode));
+				}
 			}
 		}
 		return typeCode;
@@ -249,37 +278,47 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setAssociationType(org.eclipse.uml2.uml.Class newAssociationType) {
 		org.eclipse.uml2.uml.Class oldAssociationType = associationType;
 		associationType = newAssociationType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPATION__ASSOCIATION_TYPE, oldAssociationType, associationType));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PARTICIPATION__ASSOCIATION_TYPE, oldAssociationType, associationType));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBase_Association(Association newBase_Association) {
 		Association oldBase_Association = base_Association;
 		base_Association = newBase_Association;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPATION__BASE_ASSOCIATION, oldBase_Association, base_Association));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PARTICIPATION__BASE_ASSOCIATION, oldBase_Association,
+				base_Association));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTypeCode(EnumerationLiteral newTypeCode) {
 		EnumerationLiteral oldTypeCode = typeCode;
 		typeCode = newTypeCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPATION__TYPE_CODE, oldTypeCode, typeCode));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PARTICIPATION__TYPE_CODE, oldTypeCode, typeCode));
+		}
 	}
 
 } // ParticipationImpl

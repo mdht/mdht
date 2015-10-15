@@ -8,17 +8,18 @@ Bundle-ClassPath: .,
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.openhealthtools.mdht.uml.cda,org.openhealthtools.m
- dht.uml.cda.impl,org.openhealthtools.mdht.uml.cda.internal.resource;x
- -internal:=true,org.openhealthtools.mdht.uml.cda.operations,org.openh
- ealthtools.mdht.uml.cda.util,org.openhealthtools.mdht.uml.cda.validate
+Export-Package: org.openhealthtools.mdht.uml.cda,
+ org.openhealthtools.mdht.uml.cda.impl,
+ org.openhealthtools.mdht.uml.cda.internal.resource;x-internal:=true,
+ org.openhealthtools.mdht.uml.cda.operations,
+ org.openhealthtools.mdht.uml.cda.util,
+ org.openhealthtools.mdht.uml.cda.validate
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.datatypes;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport,
- org.eclipse.uml2.types;visibility:=reexport,
  org.eclipse.uml2.common;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.rim;visibility:=reexport,
  org.openhealthtools.mdht.emf.runtime;visibility:=reexport

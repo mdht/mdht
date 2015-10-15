@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile.impl;
@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.NullFlavorImpl#getNullFlavor <em>Null Flavor</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.NullFlavorImpl#getNullFlavor <em>Null Flavor</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNullFlavor()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	 * The cached value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNullFlavor()
 	 * @generated
 	 * @ordered
@@ -57,6 +59,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected NullFlavorImpl() {
@@ -66,6 +69,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,6 +84,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,7 +99,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -114,6 +119,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -124,6 +130,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -139,6 +146,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NullFlavorKind getNullFlavor() {
@@ -148,23 +156,31 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setNullFlavor(NullFlavorKind newNullFlavor) {
 		NullFlavorKind oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.NULL_FLAVOR__NULL_FLAVOR, oldNullFlavor, nullFlavor));
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.NULL_FLAVOR__NULL_FLAVOR, oldNullFlavor, nullFlavor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");

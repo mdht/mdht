@@ -13,12 +13,20 @@ package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.Constraint;
+import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.URL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.operations.URLOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,9 +98,8 @@ public abstract class URLImpl extends ANYImpl implements URL {
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.URL__VALUE, oldValue, value));
-		}
 	}
 
 	/**
@@ -127,7 +134,7 @@ public abstract class URLImpl extends ANYImpl implements URL {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.URL__VALUE:
-				setValue((String) newValue);
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,9 +164,7 @@ public abstract class URLImpl extends ANYImpl implements URL {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.URL__VALUE:
-				return VALUE_EDEFAULT == null
-						? value != null
-						: !VALUE_EDEFAULT.equals(value);
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -171,9 +176,7 @@ public abstract class URLImpl extends ANYImpl implements URL {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");

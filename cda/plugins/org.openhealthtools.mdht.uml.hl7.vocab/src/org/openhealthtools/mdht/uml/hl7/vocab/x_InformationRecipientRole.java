@@ -83,7 +83,9 @@ public enum x_InformationRecipientRole implements Enumerator {
 	 * @generated
 	 */
 	private static final x_InformationRecipientRole[] VALUES_ARRAY = new x_InformationRecipientRole[] {
-			ASSIGNED, HLTHCHRT, };
+			ASSIGNED,
+			HLTHCHRT,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>xInformation Recipient Role</b></em>' enumerators.
@@ -133,10 +135,8 @@ public enum x_InformationRecipientRole implements Enumerator {
 	 */
 	public static x_InformationRecipientRole get(int value) {
 		switch (value) {
-			case ASSIGNED_VALUE:
-				return ASSIGNED;
-			case HLTHCHRT_VALUE:
-				return HLTHCHRT;
+			case ASSIGNED_VALUE: return ASSIGNED;
+			case HLTHCHRT_VALUE: return HLTHCHRT;
 		}
 		return null;
 	}
@@ -180,7 +180,7 @@ public enum x_InformationRecipientRole implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -189,7 +189,7 @@ public enum x_InformationRecipientRole implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -198,7 +198,7 @@ public enum x_InformationRecipientRole implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

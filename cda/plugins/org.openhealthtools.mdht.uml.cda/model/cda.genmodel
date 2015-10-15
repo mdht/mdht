@@ -4,7 +4,7 @@
     modelDirectory="/org.openhealthtools.mdht.uml.cda/src" modelPluginID="org.openhealthtools.mdht.uml.cda"
     modelName="Cda" modelPluginClass="CDAPlugin" testsDirectory="/org.openhealthtools.mdht.uml.cda.test/src/test/java"
     importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="7.0" copyrightFields="false"
-    testsPluginID="org.openhealthtools.mdht.uml.cda.test" runtimeVersion="2.9" usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.genmodel#//rim ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab ../../org.eclipse.uml2.types/model/Types.genmodel#//types"
+    testsPluginID="org.openhealthtools.mdht.uml.cda.test" runtimeVersion="2.9" usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.genmodel#//rim ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab"
     pluralizedGetters="true" invariantPrefix="validate">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
@@ -1306,10 +1306,9 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//StrucDocText">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/mixed"
-          pluralizationException="true"/>
+          createChild="true" ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/mixed"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
-          ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/any" pluralizationException="true"/>
+          ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/any"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/iD"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//StrucDocText/addText">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//StrucDocText/addText/text"/>
@@ -1573,8 +1572,8 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Encounter/statusCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Encounter/effectiveTime"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference cda.ecore#//Encounter/priorityCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Encounter/priorityCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Encounter/subject"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -2521,17 +2520,14 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//DocumentRoot">
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EAttribute cda.ecore#//DocumentRoot/mixed"
-          pluralizationException="true"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/xMLNSPrefixMap"
-          pluralizationException="true"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/xSISchemaLocation"
-          pluralizationException="true"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
-          ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/clinicalDocument"/>
+          ecoreFeature="ecore:EAttribute cda.ecore#//DocumentRoot/mixed"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/clinicalDocument"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="cda.ecore#//RegistryDelegate">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegistryDelegate/getEClass">

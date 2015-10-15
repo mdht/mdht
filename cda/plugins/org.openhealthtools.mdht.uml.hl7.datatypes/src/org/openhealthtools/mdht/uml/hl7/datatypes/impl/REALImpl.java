@@ -14,12 +14,20 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.Constraint;
+import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.REAL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.operations.REALOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -91,9 +99,8 @@ public class REALImpl extends QTYImpl implements REAL {
 	public void setValue(BigDecimal newValue) {
 		BigDecimal oldValue = value;
 		value = newValue;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.REAL__VALUE, oldValue, value));
-		}
 	}
 
 	/**
@@ -137,7 +144,7 @@ public class REALImpl extends QTYImpl implements REAL {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.REAL__VALUE:
-				setValue((BigDecimal) newValue);
+				setValue((BigDecimal)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -167,9 +174,7 @@ public class REALImpl extends QTYImpl implements REAL {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.REAL__VALUE:
-				return VALUE_EDEFAULT == null
-						? value != null
-						: !VALUE_EDEFAULT.equals(value);
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -181,9 +186,7 @@ public class REALImpl extends QTYImpl implements REAL {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");

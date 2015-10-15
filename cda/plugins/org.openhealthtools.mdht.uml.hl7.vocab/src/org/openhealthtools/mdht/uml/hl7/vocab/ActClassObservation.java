@@ -383,7 +383,21 @@ public enum ActClassObservation implements Enumerator {
 	 * @generated
 	 */
 	private static final ActClassObservation[] VALUES_ARRAY = new ActClassObservation[] {
-			ALRT, CASE, CLNTRL, CNOD, COND, DGIMG, INVSTG, OBS, OBSCOR, OBSSER, OUTB, ROIBND, ROIOVL, SPCOBS, };
+			ALRT,
+			CASE,
+			CLNTRL,
+			CNOD,
+			COND,
+			DGIMG,
+			INVSTG,
+			OBS,
+			OBSCOR,
+			OBSSER,
+			OUTB,
+			ROIBND,
+			ROIOVL,
+			SPCOBS,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Act Class Observation</b></em>' enumerators.
@@ -433,34 +447,20 @@ public enum ActClassObservation implements Enumerator {
 	 */
 	public static ActClassObservation get(int value) {
 		switch (value) {
-			case ALRT_VALUE:
-				return ALRT;
-			case CASE_VALUE:
-				return CASE;
-			case CLNTRL_VALUE:
-				return CLNTRL;
-			case CNOD_VALUE:
-				return CNOD;
-			case COND_VALUE:
-				return COND;
-			case DGIMG_VALUE:
-				return DGIMG;
-			case INVSTG_VALUE:
-				return INVSTG;
-			case OBS_VALUE:
-				return OBS;
-			case OBSCOR_VALUE:
-				return OBSCOR;
-			case OBSSER_VALUE:
-				return OBSSER;
-			case OUTB_VALUE:
-				return OUTB;
-			case ROIBND_VALUE:
-				return ROIBND;
-			case ROIOVL_VALUE:
-				return ROIOVL;
-			case SPCOBS_VALUE:
-				return SPCOBS;
+			case ALRT_VALUE: return ALRT;
+			case CASE_VALUE: return CASE;
+			case CLNTRL_VALUE: return CLNTRL;
+			case CNOD_VALUE: return CNOD;
+			case COND_VALUE: return COND;
+			case DGIMG_VALUE: return DGIMG;
+			case INVSTG_VALUE: return INVSTG;
+			case OBS_VALUE: return OBS;
+			case OBSCOR_VALUE: return OBSCOR;
+			case OBSSER_VALUE: return OBSSER;
+			case OUTB_VALUE: return OUTB;
+			case ROIBND_VALUE: return ROIBND;
+			case ROIOVL_VALUE: return ROIOVL;
+			case SPCOBS_VALUE: return SPCOBS;
 		}
 		return null;
 	}
@@ -504,7 +504,7 @@ public enum ActClassObservation implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -513,7 +513,7 @@ public enum ActClassObservation implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -522,7 +522,7 @@ public enum ActClassObservation implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

@@ -19,7 +19,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl#getOperation <em>Operation</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl#getOperation <em>Operation</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +30,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	 * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOperation()
 	 * @generated
 	 * @ordered
@@ -40,6 +41,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOperation()
 	 * @generated
 	 * @ordered
@@ -49,6 +51,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LogicalConstraintImpl() {
@@ -58,6 +61,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,6 +72,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LogicalOperator getOperation() {
@@ -77,18 +82,24 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setOperation(LogicalOperator newOperation) {
 		LogicalOperator oldOperation = operation;
-		operation = newOperation == null ? OPERATION_EDEFAULT : newOperation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LOGICAL_CONSTRAINT__OPERATION, oldOperation, operation));
+		operation = newOperation == null
+				? OPERATION_EDEFAULT
+				: newOperation;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LOGICAL_CONSTRAINT__OPERATION, oldOperation, operation));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -103,13 +114,14 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.LOGICAL_CONSTRAINT__OPERATION:
-				setOperation((LogicalOperator)newValue);
+				setOperation((LogicalOperator) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -118,6 +130,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -133,6 +146,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -147,11 +161,14 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (operation: ");

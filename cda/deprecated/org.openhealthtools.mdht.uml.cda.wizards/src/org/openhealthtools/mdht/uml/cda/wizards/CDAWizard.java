@@ -62,7 +62,7 @@ import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
-import org.eclipse.uml2.uml.Type;
+
 import org.eclipse.uml2.uml.UMLPackage;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleException;

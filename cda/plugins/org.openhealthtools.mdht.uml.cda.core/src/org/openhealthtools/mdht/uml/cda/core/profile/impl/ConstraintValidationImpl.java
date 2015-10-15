@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile.impl;
@@ -27,8 +27,9 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl#getBase_Constraint <em>Base Constraint</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl#isEnabledDitaForConstraints <em>Enabled Dita For Constraints</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl#getBase_Constraint <em>Base Constraint</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl#isEnabledDitaForConstraints <em>Enabled Dita For Constraints
+ * </em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +40,7 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	 * The cached value of the '{@link #getBase_Constraint() <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Constraint()
 	 * @generated
 	 * @ordered
@@ -49,15 +51,18 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	 * The default value of the '{@link #isEnabledDitaForConstraints() <em>Enabled Dita For Constraints</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isEnabledDitaForConstraints()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final boolean ENABLED_DITA_FOR_CONSTRAINTS_EDEFAULT = false;
+
 	/**
 	 * The cached value of the '{@link #isEnabledDitaForConstraints() <em>Enabled Dita For Constraints</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isEnabledDitaForConstraints()
 	 * @generated
 	 * @ordered
@@ -67,6 +72,7 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConstraintValidationImpl() {
@@ -76,6 +82,7 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Constraint basicGetBase_Constraint() {
@@ -85,13 +92,16 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT:
-				if (resolve) return getBase_Constraint();
+				if (resolve) {
+					return getBase_Constraint();
+				}
 				return basicGetBase_Constraint();
 			case CDAPackage.CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS:
 				return isEnabledDitaForConstraints();
@@ -102,6 +112,7 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -118,11 +129,14 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (enabledDitaForConstraints: ");
@@ -134,16 +148,17 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT:
-				setBase_Constraint((Constraint)newValue);
+				setBase_Constraint((Constraint) newValue);
 				return;
 			case CDAPackage.CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS:
-				setEnabledDitaForConstraints((Boolean)newValue);
+				setEnabledDitaForConstraints((Boolean) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,6 +167,7 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -162,13 +178,14 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT:
-				setBase_Constraint((Constraint)null);
+				setBase_Constraint((Constraint) null);
 				return;
 			case CDAPackage.CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS:
 				setEnabledDitaForConstraints(ENABLED_DITA_FOR_CONSTRAINTS_EDEFAULT);
@@ -180,15 +197,19 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Constraint getBase_Constraint() {
 		if (base_Constraint != null && base_Constraint.eIsProxy()) {
-			InternalEObject oldBase_Constraint = (InternalEObject)base_Constraint;
-			base_Constraint = (Constraint)eResolveProxy(oldBase_Constraint);
+			InternalEObject oldBase_Constraint = (InternalEObject) base_Constraint;
+			base_Constraint = (Constraint) eResolveProxy(oldBase_Constraint);
 			if (base_Constraint != oldBase_Constraint) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT,
+						oldBase_Constraint, base_Constraint));
+				}
 			}
 		}
 		return base_Constraint;
@@ -197,18 +218,23 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBase_Constraint(Constraint newBase_Constraint) {
 		Constraint oldBase_Constraint = base_Constraint;
 		base_Constraint = newBase_Constraint;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT, oldBase_Constraint,
+				base_Constraint));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isEnabledDitaForConstraints() {
@@ -218,13 +244,17 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setEnabledDitaForConstraints(boolean newEnabledDitaForConstraints) {
 		boolean oldEnabledDitaForConstraints = enabledDitaForConstraints;
 		enabledDitaForConstraints = newEnabledDitaForConstraints;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS, oldEnabledDitaForConstraints, enabledDitaForConstraints));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS,
+				oldEnabledDitaForConstraints, enabledDitaForConstraints));
+		}
 	}
 
 } // ConstraintValidationImpl

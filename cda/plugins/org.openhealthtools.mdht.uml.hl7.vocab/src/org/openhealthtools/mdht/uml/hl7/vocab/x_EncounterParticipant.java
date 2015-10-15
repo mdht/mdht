@@ -158,7 +158,12 @@ public enum x_EncounterParticipant implements Enumerator {
 	 * @generated
 	 */
 	private static final x_EncounterParticipant[] VALUES_ARRAY = new x_EncounterParticipant[] {
-			ADM, ATND, CON, DIS, REF, };
+			ADM,
+			ATND,
+			CON,
+			DIS,
+			REF,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>xEncounter Participant</b></em>' enumerators.
@@ -208,16 +213,11 @@ public enum x_EncounterParticipant implements Enumerator {
 	 */
 	public static x_EncounterParticipant get(int value) {
 		switch (value) {
-			case ADM_VALUE:
-				return ADM;
-			case ATND_VALUE:
-				return ATND;
-			case CON_VALUE:
-				return CON;
-			case DIS_VALUE:
-				return DIS;
-			case REF_VALUE:
-				return REF;
+			case ADM_VALUE: return ADM;
+			case ATND_VALUE: return ATND;
+			case CON_VALUE: return CON;
+			case DIS_VALUE: return DIS;
+			case REF_VALUE: return REF;
 		}
 		return null;
 	}
@@ -261,7 +261,7 @@ public enum x_EncounterParticipant implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -270,7 +270,7 @@ public enum x_EncounterParticipant implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -279,7 +279,7 @@ public enum x_EncounterParticipant implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

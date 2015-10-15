@@ -208,7 +208,14 @@ public enum x_ActMoodDocumentObservation implements Enumerator {
 	 * @generated
 	 */
 	private static final x_ActMoodDocumentObservation[] VALUES_ARRAY = new x_ActMoodDocumentObservation[] {
-			DEF, EVN, GOL, INT, PRMS, PRP, RQO, };
+			DEF,
+			EVN,
+			GOL,
+			INT,
+			PRMS,
+			PRP,
+			RQO,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>xAct Mood Document Observation</b></em>' enumerators.
@@ -258,20 +265,13 @@ public enum x_ActMoodDocumentObservation implements Enumerator {
 	 */
 	public static x_ActMoodDocumentObservation get(int value) {
 		switch (value) {
-			case DEF_VALUE:
-				return DEF;
-			case EVN_VALUE:
-				return EVN;
-			case GOL_VALUE:
-				return GOL;
-			case INT_VALUE:
-				return INT;
-			case PRMS_VALUE:
-				return PRMS;
-			case PRP_VALUE:
-				return PRP;
-			case RQO_VALUE:
-				return RQO;
+			case DEF_VALUE: return DEF;
+			case EVN_VALUE: return EVN;
+			case GOL_VALUE: return GOL;
+			case INT_VALUE: return INT;
+			case PRMS_VALUE: return PRMS;
+			case PRP_VALUE: return PRP;
+			case RQO_VALUE: return RQO;
 		}
 		return null;
 	}
@@ -315,7 +315,7 @@ public enum x_ActMoodDocumentObservation implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -324,7 +324,7 @@ public enum x_ActMoodDocumentObservation implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -333,7 +333,7 @@ public enum x_ActMoodDocumentObservation implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

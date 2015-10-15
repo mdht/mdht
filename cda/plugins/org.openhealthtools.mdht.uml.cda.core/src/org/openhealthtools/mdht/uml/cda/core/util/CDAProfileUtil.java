@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - added missing utilities
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
@@ -181,7 +181,7 @@ public class CDAProfileUtil {
 	/**
 	 * Returns stereotype if applied, or first sub-stereotype applied that is a
 	 * specialization of the given stereotype.
-	 * 
+	 *
 	 * @return stereotype, or null if not applied
 	 */
 	public static Stereotype getAppliedCDAStereotype(Element element, String stereotypeName) {
@@ -211,7 +211,7 @@ public class CDAProfileUtil {
 	/**
 	 * Returns all applied stereotypes, including sub-stereotype applied that is a
 	 * specialization of the given stereotype.
-	 * 
+	 *
 	 * @return stereotypes, or null if not applied
 	 */
 	public static List<Stereotype> getAppliedStereotypes(Element element, String stereotypeName) {
@@ -269,7 +269,7 @@ public class CDAProfileUtil {
 
 	/**
 	 * Is the specified stereotype a CDA validation stereotype?
-	 * 
+	 *
 	 * @param stereotype
 	 *            a stereotype applied to a model element
 	 * @return whether it specializes (possibly indirectly) the <tt>cda::Validation</tt> stereotype

@@ -14,17 +14,25 @@ import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.Constraint;
+import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.operations.EDOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 import org.openhealthtools.mdht.uml.hl7.vocab.CompressionAlgorithm;
 import org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm;
 
@@ -223,7 +231,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public TEL getReference() {
-		return (TEL) getMixed().get(DatatypesPackage.Literals.ED__REFERENCE, true);
+		return (TEL)getMixed().get(DatatypesPackage.Literals.ED__REFERENCE, true);
 	}
 
 	/**
@@ -232,7 +240,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public NotificationChain basicSetReference(TEL newReference, NotificationChain msgs) {
-		return ((FeatureMap.Internal) getMixed()).basicAdd(DatatypesPackage.Literals.ED__REFERENCE, newReference, msgs);
+		return ((FeatureMap.Internal)getMixed()).basicAdd(DatatypesPackage.Literals.ED__REFERENCE, newReference, msgs);
 	}
 
 	/**
@@ -241,7 +249,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public void setReference(TEL newReference) {
-		((FeatureMap.Internal) getMixed()).set(DatatypesPackage.Literals.ED__REFERENCE, newReference);
+		((FeatureMap.Internal)getMixed()).set(DatatypesPackage.Literals.ED__REFERENCE, newReference);
 	}
 
 	/**
@@ -250,7 +258,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public ED getThumbnail() {
-		return (ED) getMixed().get(DatatypesPackage.Literals.ED__THUMBNAIL, true);
+		return (ED)getMixed().get(DatatypesPackage.Literals.ED__THUMBNAIL, true);
 	}
 
 	/**
@@ -259,7 +267,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public NotificationChain basicSetThumbnail(ED newThumbnail, NotificationChain msgs) {
-		return ((FeatureMap.Internal) getMixed()).basicAdd(DatatypesPackage.Literals.ED__THUMBNAIL, newThumbnail, msgs);
+		return ((FeatureMap.Internal)getMixed()).basicAdd(DatatypesPackage.Literals.ED__THUMBNAIL, newThumbnail, msgs);
 	}
 
 	/**
@@ -268,7 +276,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public void setThumbnail(ED newThumbnail) {
-		((FeatureMap.Internal) getMixed()).set(DatatypesPackage.Literals.ED__THUMBNAIL, newThumbnail);
+		((FeatureMap.Internal)getMixed()).set(DatatypesPackage.Literals.ED__THUMBNAIL, newThumbnail);
 	}
 
 	/**
@@ -290,10 +298,8 @@ public class EDImpl extends BINImpl implements ED {
 		mediaType = newMediaType;
 		boolean oldMediaTypeESet = mediaTypeESet;
 		mediaTypeESet = true;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType, mediaType, !oldMediaTypeESet));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType, mediaType, !oldMediaTypeESet));
 	}
 
 	/**
@@ -306,11 +312,8 @@ public class EDImpl extends BINImpl implements ED {
 		boolean oldMediaTypeESet = mediaTypeESet;
 		mediaType = MEDIA_TYPE_EDEFAULT;
 		mediaTypeESet = false;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType, MEDIA_TYPE_EDEFAULT,
-				oldMediaTypeESet));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType, MEDIA_TYPE_EDEFAULT, oldMediaTypeESet));
 	}
 
 	/**
@@ -339,9 +342,8 @@ public class EDImpl extends BINImpl implements ED {
 	public void setLanguage(String newLanguage) {
 		String oldLanguage = language;
 		language = newLanguage;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__LANGUAGE, oldLanguage, language));
-		}
 	}
 
 	/**
@@ -360,16 +362,11 @@ public class EDImpl extends BINImpl implements ED {
 	 */
 	public void setCompression(CompressionAlgorithm newCompression) {
 		CompressionAlgorithm oldCompression = compression;
-		compression = newCompression == null
-				? COMPRESSION_EDEFAULT
-				: newCompression;
+		compression = newCompression == null ? COMPRESSION_EDEFAULT : newCompression;
 		boolean oldCompressionESet = compressionESet;
 		compressionESet = true;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.ED__COMPRESSION, oldCompression, compression,
-				!oldCompressionESet));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__COMPRESSION, oldCompression, compression, !oldCompressionESet));
 	}
 
 	/**
@@ -382,11 +379,8 @@ public class EDImpl extends BINImpl implements ED {
 		boolean oldCompressionESet = compressionESet;
 		compression = COMPRESSION_EDEFAULT;
 		compressionESet = false;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.ED__COMPRESSION, oldCompression, COMPRESSION_EDEFAULT,
-				oldCompressionESet));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ED__COMPRESSION, oldCompression, COMPRESSION_EDEFAULT, oldCompressionESet));
 	}
 
 	/**
@@ -415,10 +409,8 @@ public class EDImpl extends BINImpl implements ED {
 	public void setIntegrityCheck(byte[] newIntegrityCheck) {
 		byte[] oldIntegrityCheck = integrityCheck;
 		integrityCheck = newIntegrityCheck;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.ED__INTEGRITY_CHECK, oldIntegrityCheck, integrityCheck));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__INTEGRITY_CHECK, oldIntegrityCheck, integrityCheck));
 	}
 
 	/**
@@ -437,16 +429,11 @@ public class EDImpl extends BINImpl implements ED {
 	 */
 	public void setIntegrityCheckAlgorithm(IntegrityCheckAlgorithm newIntegrityCheckAlgorithm) {
 		IntegrityCheckAlgorithm oldIntegrityCheckAlgorithm = integrityCheckAlgorithm;
-		integrityCheckAlgorithm = newIntegrityCheckAlgorithm == null
-				? INTEGRITY_CHECK_ALGORITHM_EDEFAULT
-				: newIntegrityCheckAlgorithm;
+		integrityCheckAlgorithm = newIntegrityCheckAlgorithm == null ? INTEGRITY_CHECK_ALGORITHM_EDEFAULT : newIntegrityCheckAlgorithm;
 		boolean oldIntegrityCheckAlgorithmESet = integrityCheckAlgorithmESet;
 		integrityCheckAlgorithmESet = true;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM, oldIntegrityCheckAlgorithm,
-				integrityCheckAlgorithm, !oldIntegrityCheckAlgorithmESet));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM, oldIntegrityCheckAlgorithm, integrityCheckAlgorithm, !oldIntegrityCheckAlgorithmESet));
 	}
 
 	/**
@@ -459,11 +446,8 @@ public class EDImpl extends BINImpl implements ED {
 		boolean oldIntegrityCheckAlgorithmESet = integrityCheckAlgorithmESet;
 		integrityCheckAlgorithm = INTEGRITY_CHECK_ALGORITHM_EDEFAULT;
 		integrityCheckAlgorithmESet = false;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM, oldIntegrityCheckAlgorithm,
-				INTEGRITY_CHECK_ALGORITHM_EDEFAULT, oldIntegrityCheckAlgorithmESet));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM, oldIntegrityCheckAlgorithm, INTEGRITY_CHECK_ALGORITHM_EDEFAULT, oldIntegrityCheckAlgorithmESet));
 	}
 
 	/**
@@ -538,7 +522,7 @@ public class EDImpl extends BINImpl implements ED {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DatatypesPackage.ED__MIXED:
-				return ((InternalEList<?>) getMixed()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -552,10 +536,8 @@ public class EDImpl extends BINImpl implements ED {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatatypesPackage.ED__MIXED:
-				if (coreType) {
-					return getMixed();
-				}
-				return ((FeatureMap.Internal) getMixed()).getWrapper();
+				if (coreType) return getMixed();
+				return ((FeatureMap.Internal)getMixed()).getWrapper();
 			case DatatypesPackage.ED__REFERENCE:
 				return getReference();
 			case DatatypesPackage.ED__THUMBNAIL:
@@ -583,28 +565,28 @@ public class EDImpl extends BINImpl implements ED {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.ED__MIXED:
-				((FeatureMap.Internal) getMixed()).set(newValue);
+				((FeatureMap.Internal)getMixed()).set(newValue);
 				return;
 			case DatatypesPackage.ED__REFERENCE:
-				setReference((TEL) newValue);
+				setReference((TEL)newValue);
 				return;
 			case DatatypesPackage.ED__THUMBNAIL:
-				setThumbnail((ED) newValue);
+				setThumbnail((ED)newValue);
 				return;
 			case DatatypesPackage.ED__MEDIA_TYPE:
-				setMediaType((String) newValue);
+				setMediaType((String)newValue);
 				return;
 			case DatatypesPackage.ED__LANGUAGE:
-				setLanguage((String) newValue);
+				setLanguage((String)newValue);
 				return;
 			case DatatypesPackage.ED__COMPRESSION:
-				setCompression((CompressionAlgorithm) newValue);
+				setCompression((CompressionAlgorithm)newValue);
 				return;
 			case DatatypesPackage.ED__INTEGRITY_CHECK:
-				setIntegrityCheck((byte[]) newValue);
+				setIntegrityCheck((byte[])newValue);
 				return;
 			case DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM:
-				setIntegrityCheckAlgorithm((IntegrityCheckAlgorithm) newValue);
+				setIntegrityCheckAlgorithm((IntegrityCheckAlgorithm)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -622,10 +604,10 @@ public class EDImpl extends BINImpl implements ED {
 				getMixed().clear();
 				return;
 			case DatatypesPackage.ED__REFERENCE:
-				setReference((TEL) null);
+				setReference((TEL)null);
 				return;
 			case DatatypesPackage.ED__THUMBNAIL:
-				setThumbnail((ED) null);
+				setThumbnail((ED)null);
 				return;
 			case DatatypesPackage.ED__MEDIA_TYPE:
 				unsetMediaType();
@@ -663,15 +645,11 @@ public class EDImpl extends BINImpl implements ED {
 			case DatatypesPackage.ED__MEDIA_TYPE:
 				return isSetMediaType();
 			case DatatypesPackage.ED__LANGUAGE:
-				return LANGUAGE_EDEFAULT == null
-						? language != null
-						: !LANGUAGE_EDEFAULT.equals(language);
+				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
 			case DatatypesPackage.ED__COMPRESSION:
 				return isSetCompression();
 			case DatatypesPackage.ED__INTEGRITY_CHECK:
-				return INTEGRITY_CHECK_EDEFAULT == null
-						? integrityCheck != null
-						: !INTEGRITY_CHECK_EDEFAULT.equals(integrityCheck);
+				return INTEGRITY_CHECK_EDEFAULT == null ? integrityCheck != null : !INTEGRITY_CHECK_EDEFAULT.equals(integrityCheck);
 			case DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM:
 				return isSetIntegrityCheckAlgorithm();
 		}
@@ -685,35 +663,21 @@ public class EDImpl extends BINImpl implements ED {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");
 		result.append(mixed);
 		result.append(", mediaType: ");
-		if (mediaTypeESet) {
-			result.append(mediaType);
-		} else {
-			result.append("<unset>");
-		}
+		if (mediaTypeESet) result.append(mediaType); else result.append("<unset>");
 		result.append(", language: ");
 		result.append(language);
 		result.append(", compression: ");
-		if (compressionESet) {
-			result.append(compression);
-		} else {
-			result.append("<unset>");
-		}
+		if (compressionESet) result.append(compression); else result.append("<unset>");
 		result.append(", integrityCheck: ");
 		result.append(integrityCheck);
 		result.append(", integrityCheckAlgorithm: ");
-		if (integrityCheckAlgorithmESet) {
-			result.append(integrityCheckAlgorithm);
-		} else {
-			result.append("<unset>");
-		}
+		if (integrityCheckAlgorithmESet) result.append(integrityCheckAlgorithm); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

@@ -12,6 +12,10 @@ package org.openhealthtools.mdht.uml.hl7.rim.impl;
 
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
 import org.openhealthtools.mdht.uml.hl7.rim.Role;
 import org.openhealthtools.mdht.uml.hl7.rim.RoleLink;
@@ -52,7 +56,9 @@ public abstract class RoleLinkImpl extends InfrastructureRootImpl implements Rol
 	 * @generated
 	 */
 	public Enumerator getTypeCode() {
-		return RoleLinkOperations.getTypeCode(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -61,7 +67,9 @@ public abstract class RoleLinkImpl extends InfrastructureRootImpl implements Rol
 	 * @generated
 	 */
 	public Role getTarget() {
-		return RoleLinkOperations.getTarget(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -70,8 +78,29 @@ public abstract class RoleLinkImpl extends InfrastructureRootImpl implements Rol
 	 * @generated
 	 */
 	public Role getSource() {
-		return RoleLinkOperations.getSource(this);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #isTypeCodeDefined() <em>Is Type Code Defined</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTypeCodeDefined()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IS_TYPE_CODE_DEFINED__EOCL_EXP = "self.isDefined('typeCode')";
+	/**
+	 * The cached OCL query for the '{@link #isTypeCodeDefined() <em>Is Type Code Defined</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTypeCodeDefined()
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> IS_TYPE_CODE_DEFINED__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +108,27 @@ public abstract class RoleLinkImpl extends InfrastructureRootImpl implements Rol
 	 * @generated
 	 */
 	public boolean isTypeCodeDefined() {
-		return RoleLinkOperations.isTypeCodeDefined(this);
+		if (IS_TYPE_CODE_DEFINED__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(RIMPackage.Literals.ROLE_LINK, RIMPackage.Literals.ROLE_LINK.getEAllOperations().get(11));
+			try {
+				IS_TYPE_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_TYPE_CODE_DEFINED__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(IS_TYPE_CODE_DEFINED__EOCL_QRY);
+		return ((Boolean) query.evaluate(this)).booleanValue();
 	}
+
+	/**
+	 * The cached environment for evaluating OCL expressions.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected static final OCL EOCL_ENV = OCL.newInstance();
 
 } // RoleLinkImpl

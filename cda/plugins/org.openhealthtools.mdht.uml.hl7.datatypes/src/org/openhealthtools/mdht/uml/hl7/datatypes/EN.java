@@ -85,6 +85,23 @@ public interface EN extends ANY {
 	boolean isSetUses();
 
 	/**
+	 * Returns the value of the '<em><b>Mixed</b></em>' attribute list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mixed</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mixed</em>' attribute list.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_Mixed()
+	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" ordered="false"
+	 *        extendedMetaData="kind='elementWildcard'"
+	 * @generated
+	 */
+	FeatureMap getMixed();
+
+	/**
 	 * Returns the value of the '<em><b>Valid Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -214,26 +231,10 @@ public interface EN extends ANY {
 	FeatureMap getParts();
 
 	/**
-	 * Returns the value of the '<em><b>Mixed</b></em>' attribute list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mixed</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mixed</em>' attribute list.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_Mixed()
-	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" ordered="false"
-	 *        extendedMetaData="kind='elementWildcard'"
-	 * @generated
-	 */
-	FeatureMap getMixed();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.delimiter->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::DEL)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -246,6 +247,7 @@ public interface EN extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.family->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::FAM)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -258,6 +260,7 @@ public interface EN extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.given->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::GIV)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -270,6 +273,7 @@ public interface EN extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.prefix->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::PFX)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -282,6 +286,7 @@ public interface EN extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.suffix->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::SFX)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -293,7 +298,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" delimiterDataType="org.eclipse.uml2.types.String" delimiterRequired="true" delimiterOrdered="false"
+	 * @model required="true" ordered="false" delimiterRequired="true" delimiterOrdered="false"
 	 * @generated
 	 */
 	EN addDelimiter(String delimiter);
@@ -301,7 +306,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" familyDataType="org.eclipse.uml2.types.String" familyRequired="true" familyOrdered="false"
+	 * @model required="true" ordered="false" familyRequired="true" familyOrdered="false"
 	 * @generated
 	 */
 	EN addFamily(String family);
@@ -309,7 +314,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" givenDataType="org.eclipse.uml2.types.String" givenRequired="true" givenOrdered="false"
+	 * @model required="true" ordered="false" givenRequired="true" givenOrdered="false"
 	 * @generated
 	 */
 	EN addGiven(String given);
@@ -317,7 +322,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" prefixDataType="org.eclipse.uml2.types.String" prefixRequired="true" prefixOrdered="false"
+	 * @model required="true" ordered="false" prefixRequired="true" prefixOrdered="false"
 	 * @generated
 	 */
 	EN addPrefix(String prefix);
@@ -325,7 +330,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" suffixDataType="org.eclipse.uml2.types.String" suffixRequired="true" suffixOrdered="false"
+	 * @model required="true" ordered="false" suffixRequired="true" suffixOrdered="false"
 	 * @generated
 	 */
 	EN addSuffix(String suffix);
@@ -333,7 +338,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" textDataType="org.eclipse.uml2.types.String" textRequired="true" textOrdered="false"
+	 * @model required="true" ordered="false" textRequired="true" textOrdered="false"
 	 * @generated
 	 */
 	EN addText(String text);
@@ -341,7 +346,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	String getText();
@@ -349,7 +354,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false" trimDataType="org.eclipse.uml2.types.Boolean" trimRequired="true" trimOrdered="false"
+	 * @model required="true" ordered="false" trimRequired="true" trimOrdered="false"
 	 * @generated
 	 */
 	String getText(boolean trim);

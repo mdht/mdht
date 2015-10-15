@@ -82,7 +82,10 @@ public enum IntegrityCheckAlgorithm implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final IntegrityCheckAlgorithm[] VALUES_ARRAY = new IntegrityCheckAlgorithm[] { SHA1, SHA256, };
+	private static final IntegrityCheckAlgorithm[] VALUES_ARRAY = new IntegrityCheckAlgorithm[] {
+			SHA1,
+			SHA256,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Integrity Check Algorithm</b></em>' enumerators.
@@ -132,10 +135,8 @@ public enum IntegrityCheckAlgorithm implements Enumerator {
 	 */
 	public static IntegrityCheckAlgorithm get(int value) {
 		switch (value) {
-			case SHA1_VALUE:
-				return SHA1;
-			case SHA256_VALUE:
-				return SHA256;
+			case SHA1_VALUE: return SHA1;
+			case SHA256_VALUE: return SHA256;
 		}
 		return null;
 	}
@@ -179,7 +180,7 @@ public enum IntegrityCheckAlgorithm implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -188,7 +189,7 @@ public enum IntegrityCheckAlgorithm implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -197,7 +198,7 @@ public enum IntegrityCheckAlgorithm implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

@@ -81,6 +81,7 @@ public class MOOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * not(self.isNullFlavorDefined() and (self.isDefined('value') or self.isDefined('currency')))
 	 * @param mo The receiving '<em><b>MO</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -93,20 +94,20 @@ public class MOOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.MO);
 			try {
 				VALIDATE_MO__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MO__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_MO__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(mo)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR,
-					DatatypesValidator.DIAGNOSTIC_SOURCE,
-					DatatypesValidator.MO__MO,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic", new Object[] {
-								"validateMO", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(mo, context) }),
-					new Object[] { mo }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.MO__MO,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateMO", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(mo, context) }),
+						 new Object [] { mo }));
 			}
 			return false;
 		}

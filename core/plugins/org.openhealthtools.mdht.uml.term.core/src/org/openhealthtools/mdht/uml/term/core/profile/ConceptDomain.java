@@ -18,18 +18,18 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Concept Domain</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getIdentifier <em>Identifier</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getFullName <em>Full Name</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatus <em>Status</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatusDate <em>Status Date</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getBase_Class <em>Base Class</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getFullName <em>Full Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomain()
  * @model
  * @generated
@@ -42,7 +42,6 @@ public interface ConceptDomain extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomain_Base_Class()
@@ -58,7 +57,6 @@ public interface ConceptDomain extends EObject {
 	 * If the meaning of the '<em>Full Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Full Name</em>' attribute.
 	 * @see #setFullName(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomain_FullName()
@@ -74,7 +72,6 @@ public interface ConceptDomain extends EObject {
 	 * If the meaning of the '<em>Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomain_Identifier()
@@ -91,7 +88,6 @@ public interface ConceptDomain extends EObject {
 	 * If the meaning of the '<em>Status</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Status</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.StatusKind
 	 * @see #setStatus(StatusKind)
@@ -108,7 +104,6 @@ public interface ConceptDomain extends EObject {
 	 * If the meaning of the '<em>Status Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Status Date</em>' attribute.
 	 * @see #setStatusDate(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomain_StatusDate()
@@ -121,9 +116,7 @@ public interface ConceptDomain extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Base Class</em>' reference.
+	 * @param value the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -133,9 +126,7 @@ public interface ConceptDomain extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getFullName <em>Full Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Full Name</em>' attribute.
+	 * @param value the new value of the '<em>Full Name</em>' attribute.
 	 * @see #getFullName()
 	 * @generated
 	 */
@@ -145,9 +136,7 @@ public interface ConceptDomain extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Identifier</em>' attribute.
+	 * @param value the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -157,9 +146,7 @@ public interface ConceptDomain extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatus <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Status</em>' attribute.
+	 * @param value the new value of the '<em>Status</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.StatusKind
 	 * @see #getStatus()
 	 * @generated
@@ -170,9 +157,7 @@ public interface ConceptDomain extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatusDate <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Status Date</em>' attribute.
+	 * @param value the new value of the '<em>Status Date</em>' attribute.
 	 * @see #getStatusDate()
 	 * @generated
 	 */

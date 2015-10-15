@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
  * @see org.openhealthtools.mdht.uml.term.core.profile.TermFactory
  * @model kind="package"
  * @generated
@@ -45,7 +44,6 @@ public interface TermPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -53,7 +51,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CDImpl <em>CD</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.CDImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getCD()
 		 * @generated
@@ -64,7 +61,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Qualifier</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CD__QUALIFIER = eINSTANCE.getCD_Qualifier();
@@ -73,7 +69,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Translation</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CD__TRANSLATION = eINSTANCE.getCD_Translation();
@@ -82,7 +77,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CD__CODE = eINSTANCE.getCD_Code();
@@ -91,7 +85,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code System</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CD__CODE_SYSTEM = eINSTANCE.getCD_CodeSystem();
@@ -100,7 +93,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code System Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CD__CODE_SYSTEM_NAME = eINSTANCE.getCD_CodeSystemName();
@@ -109,7 +101,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code System Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CD__CODE_SYSTEM_VERSION = eINSTANCE.getCD_CodeSystemVersion();
@@ -118,7 +109,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CD__DISPLAY_NAME = eINSTANCE.getCD_DisplayName();
@@ -127,7 +117,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CRImpl <em>CR</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.CRImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getCR()
 		 * @generated
@@ -138,7 +127,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CR__NAME = eINSTANCE.getCR_Name();
@@ -147,7 +135,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CR__VALUE = eINSTANCE.getCR_Value();
@@ -156,17 +143,14 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Inverted</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CR__INVERTED = eINSTANCE.getCR_Inverted();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainConstraintImpl
-		 * <em>Concept Domain Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainConstraintImpl <em>Concept Domain Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainConstraintImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getConceptDomainConstraint()
 		 * @generated
@@ -177,7 +161,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CONCEPT_DOMAIN_CONSTRAINT__REFERENCE = eINSTANCE.getConceptDomainConstraint_Reference();
@@ -186,7 +169,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CONCEPT_DOMAIN_CONSTRAINT__IDENTIFIER = eINSTANCE.getConceptDomainConstraint_Identifier();
@@ -195,7 +177,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CONCEPT_DOMAIN_CONSTRAINT__NAME = eINSTANCE.getConceptDomainConstraint_Name();
@@ -204,17 +185,14 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY = eINSTANCE.getConceptDomainConstraint_Base_Property();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainImpl <em>Concept Domain</em>}'
-		 * class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainImpl <em>Concept Domain</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getConceptDomain()
 		 * @generated
@@ -225,7 +203,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CONCEPT_DOMAIN__IDENTIFIER = eINSTANCE.getConceptDomain_Identifier();
@@ -234,7 +211,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Full Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CONCEPT_DOMAIN__FULL_NAME = eINSTANCE.getConceptDomain_FullName();
@@ -243,7 +219,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CONCEPT_DOMAIN__STATUS = eINSTANCE.getConceptDomain_Status();
@@ -252,7 +227,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Status Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CONCEPT_DOMAIN__STATUS_DATE = eINSTANCE.getConceptDomain_StatusDate();
@@ -261,17 +235,14 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CONCEPT_DOMAIN__BASE_CLASS = eINSTANCE.getConceptDomain_Base_Class();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl
-		 * <em>Code System Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl <em>Code System Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getCodeSystemConstraint()
 		 * @generated
@@ -282,7 +253,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CODE_SYSTEM_CONSTRAINT__REFERENCE = eINSTANCE.getCodeSystemConstraint_Reference();
@@ -291,7 +261,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_CONSTRAINT__IDENTIFIER = eINSTANCE.getCodeSystemConstraint_Identifier();
@@ -300,7 +269,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_CONSTRAINT__NAME = eINSTANCE.getCodeSystemConstraint_Name();
@@ -309,7 +277,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_CONSTRAINT__VERSION = eINSTANCE.getCodeSystemConstraint_Version();
@@ -318,7 +285,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Binding</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_CONSTRAINT__BINDING = eINSTANCE.getCodeSystemConstraint_Binding();
@@ -327,7 +293,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_CONSTRAINT__CODE = eINSTANCE.getCodeSystemConstraint_Code();
@@ -336,7 +301,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_CONSTRAINT__DISPLAY_NAME = eINSTANCE.getCodeSystemConstraint_DisplayName();
@@ -345,7 +309,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Qualifier</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CODE_SYSTEM_CONSTRAINT__QUALIFIER = eINSTANCE.getCodeSystemConstraint_Qualifier();
@@ -354,17 +317,14 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY = eINSTANCE.getCodeSystemConstraint_Base_Property();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemVersionImpl
-		 * <em>Code System Version</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemVersionImpl <em>Code System Version</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemVersionImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getCodeSystemVersion()
 		 * @generated
@@ -375,7 +335,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_VERSION__IDENTIFIER = eINSTANCE.getCodeSystemVersion_Identifier();
@@ -384,7 +343,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_VERSION__VERSION = eINSTANCE.getCodeSystemVersion_Version();
@@ -393,7 +351,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Full Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_VERSION__FULL_NAME = eINSTANCE.getCodeSystemVersion_FullName();
@@ -402,7 +359,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_VERSION__SOURCE = eINSTANCE.getCodeSystemVersion_Source();
@@ -411,7 +367,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_VERSION__URL = eINSTANCE.getCodeSystemVersion_Url();
@@ -420,7 +375,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Effective Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_VERSION__EFFECTIVE_DATE = eINSTANCE.getCodeSystemVersion_EffectiveDate();
@@ -429,7 +383,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Release Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_VERSION__RELEASE_DATE = eINSTANCE.getCodeSystemVersion_ReleaseDate();
@@ -438,7 +391,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_VERSION__STATUS = eINSTANCE.getCodeSystemVersion_Status();
@@ -447,7 +399,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Status Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute CODE_SYSTEM_VERSION__STATUS_DATE = eINSTANCE.getCodeSystemVersion_StatusDate();
@@ -456,17 +407,14 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Enumeration</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference CODE_SYSTEM_VERSION__BASE_ENUMERATION = eINSTANCE.getCodeSystemVersion_Base_Enumeration();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl
-		 * <em>Value Set Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl <em>Value Set Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getValueSetConstraint()
 		 * @generated
@@ -477,7 +425,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference VALUE_SET_CONSTRAINT__REFERENCE = eINSTANCE.getValueSetConstraint_Reference();
@@ -486,7 +433,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_CONSTRAINT__IDENTIFIER = eINSTANCE.getValueSetConstraint_Identifier();
@@ -495,7 +441,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_CONSTRAINT__NAME = eINSTANCE.getValueSetConstraint_Name();
@@ -504,7 +449,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_CONSTRAINT__VERSION = eINSTANCE.getValueSetConstraint_Version();
@@ -513,7 +457,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Binding</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_CONSTRAINT__BINDING = eINSTANCE.getValueSetConstraint_Binding();
@@ -522,17 +465,14 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference VALUE_SET_CONSTRAINT__BASE_PROPERTY = eINSTANCE.getValueSetConstraint_Base_Property();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl <em>Value Set Version</em>}
-		 * ' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl <em>Value Set Version</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getValueSetVersion()
 		 * @generated
@@ -543,7 +483,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__IDENTIFIER = eINSTANCE.getValueSetVersion_Identifier();
@@ -552,7 +491,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__VERSION = eINSTANCE.getValueSetVersion_Version();
@@ -561,7 +499,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Full Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__FULL_NAME = eINSTANCE.getValueSetVersion_FullName();
@@ -570,7 +507,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__SOURCE = eINSTANCE.getValueSetVersion_Source();
@@ -579,7 +515,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__URL = eINSTANCE.getValueSetVersion_Url();
@@ -588,7 +523,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Definition</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__DEFINITION = eINSTANCE.getValueSetVersion_Definition();
@@ -597,7 +531,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Effective Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__EFFECTIVE_DATE = eINSTANCE.getValueSetVersion_EffectiveDate();
@@ -606,7 +539,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Expiration Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__EXPIRATION_DATE = eINSTANCE.getValueSetVersion_ExpirationDate();
@@ -615,7 +547,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Release Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__RELEASE_DATE = eINSTANCE.getValueSetVersion_ReleaseDate();
@@ -624,7 +555,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Revision Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__REVISION_DATE = eINSTANCE.getValueSetVersion_RevisionDate();
@@ -633,7 +563,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__STATUS = eINSTANCE.getValueSetVersion_Status();
@@ -642,7 +571,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Status Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__STATUS_DATE = eINSTANCE.getValueSetVersion_StatusDate();
@@ -651,7 +579,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__TYPE = eINSTANCE.getValueSetVersion_Type();
@@ -660,7 +587,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Binding</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_VERSION__BINDING = eINSTANCE.getValueSetVersion_Binding();
@@ -669,7 +595,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code System</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference VALUE_SET_VERSION__CODE_SYSTEM = eINSTANCE.getValueSetVersion_CodeSystem();
@@ -678,17 +603,14 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Enumeration</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference VALUE_SET_VERSION__BASE_ENUMERATION = eINSTANCE.getValueSetVersion_Base_Enumeration();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetCodeImpl <em>Value Set Code</em>}'
-		 * class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetCodeImpl <em>Value Set Code</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetCodeImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getValueSetCode()
 		 * @generated
@@ -699,7 +621,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Concept Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_CODE__CONCEPT_NAME = eINSTANCE.getValueSetCode_ConceptName();
@@ -708,7 +629,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Usage Note</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_CODE__USAGE_NOTE = eINSTANCE.getValueSetCode_UsageNote();
@@ -717,7 +637,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code System</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference VALUE_SET_CODE__CODE_SYSTEM = eINSTANCE.getValueSetCode_CodeSystem();
@@ -726,17 +645,14 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Enumeration Literal</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference VALUE_SET_CODE__BASE_ENUMERATION_LITERAL = eINSTANCE.getValueSetCode_Base_EnumerationLiteral();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetContextBindingImpl
-		 * <em>Value Set Context Binding</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetContextBindingImpl <em>Value Set Context Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetContextBindingImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getValueSetContextBinding()
 		 * @generated
@@ -747,7 +663,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Effective Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute VALUE_SET_CONTEXT_BINDING__EFFECTIVE_DATE = eINSTANCE.getValueSetContextBinding_EffectiveDate();
@@ -756,7 +671,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Concept Domain</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN = eINSTANCE.getValueSetContextBinding_ConceptDomain();
@@ -765,7 +679,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value Set</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference VALUE_SET_CONTEXT_BINDING__VALUE_SET = eINSTANCE.getValueSetContextBinding_ValueSet();
@@ -774,7 +687,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Usage Context</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT = eINSTANCE.getValueSetContextBinding_UsageContext();
@@ -783,17 +695,14 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference VALUE_SET_CONTEXT_BINDING__BASE_CLASS = eINSTANCE.getValueSetContextBinding_Base_Class();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl <em>Usage Context</em>}'
-		 * class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl <em>Usage Context</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getUsageContext()
 		 * @generated
@@ -804,7 +713,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute USAGE_CONTEXT__IDENTIFIER = eINSTANCE.getUsageContext_Identifier();
@@ -813,7 +721,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute USAGE_CONTEXT__STATUS = eINSTANCE.getUsageContext_Status();
@@ -822,7 +729,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Status Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute USAGE_CONTEXT__STATUS_DATE = eINSTANCE.getUsageContext_StatusDate();
@@ -831,7 +737,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference USAGE_CONTEXT__BASE_CLASS = eINSTANCE.getUsageContext_Base_Class();
@@ -840,7 +745,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.BindingKind <em>Binding Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.BindingKind
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getBindingKind()
 		 * @generated
@@ -851,7 +755,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetType <em>Value Set Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetType
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getValueSetType()
 		 * @generated
@@ -862,7 +765,6 @@ public interface TermPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.term.core.profile.StatusKind <em>Status Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.StatusKind
 		 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getStatusKind()
 		 * @generated
@@ -875,7 +777,6 @@ public interface TermPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNAME = "profile";
@@ -884,7 +785,6 @@ public interface TermPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.openhealthtools.org/mdht/schemas/term/1";
@@ -893,7 +793,6 @@ public interface TermPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "term";
@@ -902,7 +801,6 @@ public interface TermPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	TermPackage eINSTANCE = org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl.init();
@@ -911,7 +809,6 @@ public interface TermPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CDImpl <em>CD</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.CDImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getCD()
 	 * @generated
@@ -922,7 +819,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Qualifier</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -932,7 +828,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Translation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -942,7 +837,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -952,7 +846,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Code System</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -962,7 +855,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Code System Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -972,7 +864,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Code System Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -982,7 +873,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -992,7 +882,6 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>CD</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1002,7 +891,6 @@ public interface TermPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CRImpl <em>CR</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.CRImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getCR()
 	 * @generated
@@ -1013,7 +901,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1023,7 +910,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1033,7 +919,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Inverted</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1043,18 +928,15 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>CR</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CR_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainConstraintImpl
-	 * <em>Concept Domain Constraint</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainConstraintImpl <em>Concept Domain Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainConstraintImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getConceptDomainConstraint()
 	 * @generated
@@ -1065,7 +947,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1075,7 +956,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1085,7 +965,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1095,7 +974,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1105,7 +983,6 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>Concept Domain Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1115,7 +992,6 @@ public interface TermPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainImpl <em>Concept Domain</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ConceptDomainImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getConceptDomain()
 	 * @generated
@@ -1126,7 +1002,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1136,7 +1011,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Full Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1146,7 +1020,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1156,7 +1029,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Status Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1166,7 +1038,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1176,18 +1047,15 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>Concept Domain</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CONCEPT_DOMAIN_FEATURE_COUNT = 5;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl
-	 * <em>Code System Constraint</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl <em>Code System Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getCodeSystemConstraint()
 	 * @generated
@@ -1198,7 +1066,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1208,7 +1075,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1218,7 +1084,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1228,7 +1093,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1238,7 +1102,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1248,7 +1111,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1258,7 +1120,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1268,7 +1129,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Qualifier</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1278,7 +1138,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1288,18 +1147,15 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>Code System Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT = 9;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemVersionImpl <em>Code System Version</em>}'
-	 * class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemVersionImpl <em>Code System Version</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemVersionImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getCodeSystemVersion()
 	 * @generated
@@ -1310,7 +1166,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1320,7 +1175,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1330,7 +1184,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Full Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1340,7 +1193,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1350,7 +1202,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1360,7 +1211,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Effective Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1370,7 +1220,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Release Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1380,7 +1229,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1390,7 +1238,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Status Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1400,7 +1247,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Enumeration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1410,18 +1256,15 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>Code System Version</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CODE_SYSTEM_VERSION_FEATURE_COUNT = 10;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl <em>Value Set Constraint</em>}'
-	 * class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl <em>Value Set Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getValueSetConstraint()
 	 * @generated
@@ -1432,7 +1275,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1442,7 +1284,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1452,7 +1293,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1462,7 +1302,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1472,7 +1311,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1482,7 +1320,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1492,7 +1329,6 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>Value Set Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1502,7 +1338,6 @@ public interface TermPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl <em>Value Set Version</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getValueSetVersion()
 	 * @generated
@@ -1513,7 +1348,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1523,7 +1357,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1533,7 +1366,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Full Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1543,7 +1375,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1553,7 +1384,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1563,7 +1393,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Definition</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1573,7 +1402,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Effective Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1583,7 +1411,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Expiration Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1593,7 +1420,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Release Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1603,7 +1429,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Revision Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1613,7 +1438,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1623,7 +1447,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Status Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1633,7 +1456,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1643,7 +1465,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1653,7 +1474,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Code System</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1663,7 +1483,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Enumeration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1673,7 +1492,6 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>Value Set Version</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1683,7 +1501,6 @@ public interface TermPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetCodeImpl <em>Value Set Code</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetCodeImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getValueSetCode()
 	 * @generated
@@ -1694,7 +1511,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Concept Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1704,7 +1520,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Usage Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1714,7 +1529,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Code System</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1724,7 +1538,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Enumeration Literal</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1734,18 +1547,15 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>Value Set Code</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int VALUE_SET_CODE_FEATURE_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetContextBindingImpl
-	 * <em>Value Set Context Binding</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetContextBindingImpl <em>Value Set Context Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetContextBindingImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getValueSetContextBinding()
 	 * @generated
@@ -1756,7 +1566,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Effective Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1766,7 +1575,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Concept Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1776,7 +1584,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Value Set</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1786,7 +1593,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Usage Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1796,7 +1602,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1806,7 +1611,6 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>Value Set Context Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1816,7 +1620,6 @@ public interface TermPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl <em>Usage Context</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getUsageContext()
 	 * @generated
@@ -1827,7 +1630,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1837,7 +1639,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1847,7 +1648,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Status Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1857,7 +1657,6 @@ public interface TermPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1867,7 +1666,6 @@ public interface TermPackage extends EPackage {
 	 * The number of structural features of the '<em>Usage Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1877,7 +1675,6 @@ public interface TermPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.BindingKind <em>Binding Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.BindingKind
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getBindingKind()
 	 * @generated
@@ -1888,7 +1685,6 @@ public interface TermPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetType <em>Value Set Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetType
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getValueSetType()
 	 * @generated
@@ -1899,7 +1695,6 @@ public interface TermPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.term.core.profile.StatusKind <em>Status Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.StatusKind
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.impl.TermPackageImpl#getStatusKind()
 	 * @generated
@@ -1910,7 +1705,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.term.core.profile.BindingKind <em>Binding Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for enum '<em>Binding Kind</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.BindingKind
 	 * @generated
@@ -1921,7 +1715,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.CD <em>CD</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>CD</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CD
 	 * @generated
@@ -1932,7 +1725,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getCode <em>Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Code</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CD#getCode()
 	 * @see #getCD()
@@ -1944,7 +1736,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystem <em>Code System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Code System</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystem()
 	 * @see #getCD()
@@ -1953,11 +1744,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCD_CodeSystem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystemName
-	 * <em>Code System Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystemName <em>Code System Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Code System Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystemName()
 	 * @see #getCD()
@@ -1966,11 +1755,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCD_CodeSystemName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystemVersion
-	 * <em>Code System Version</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystemVersion <em>Code System Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Code System Version</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystemVersion()
 	 * @see #getCD()
@@ -1982,7 +1769,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getDisplayName <em>Display Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Display Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CD#getDisplayName()
 	 * @see #getCD()
@@ -1991,11 +1777,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCD_DisplayName();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getQualifier
-	 * <em>Qualifier</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getQualifier <em>Qualifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the containment reference list '<em>Qualifier</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CD#getQualifier()
 	 * @see #getCD()
@@ -2004,11 +1788,9 @@ public interface TermPackage extends EPackage {
 	EReference getCD_Qualifier();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getTranslation
-	 * <em>Translation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getTranslation <em>Translation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the containment reference list '<em>Translation</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CD#getTranslation()
 	 * @see #getCD()
@@ -2017,11 +1799,9 @@ public interface TermPackage extends EPackage {
 	EReference getCD_Translation();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint <em>Code System Constraint</em>}
-	 * '.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint <em>Code System Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Code System Constraint</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint
 	 * @generated
@@ -2029,11 +1809,9 @@ public interface TermPackage extends EPackage {
 	EClass getCodeSystemConstraint();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getBase_Property
-	 * <em>Base Property</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getBase_Property()
 	 * @see #getCodeSystemConstraint()
@@ -2042,11 +1820,9 @@ public interface TermPackage extends EPackage {
 	EReference getCodeSystemConstraint_Base_Property();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getBinding
-	 * <em>Binding</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getBinding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Binding</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getBinding()
 	 * @see #getCodeSystemConstraint()
@@ -2058,7 +1834,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getCode <em>Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Code</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getCode()
 	 * @see #getCodeSystemConstraint()
@@ -2067,11 +1842,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCodeSystemConstraint_Code();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getDisplayName
-	 * <em>Display Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getDisplayName <em>Display Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Display Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getDisplayName()
 	 * @see #getCodeSystemConstraint()
@@ -2080,11 +1853,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCodeSystemConstraint_DisplayName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getIdentifier
-	 * <em>Identifier</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Identifier</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getIdentifier()
 	 * @see #getCodeSystemConstraint()
@@ -2096,7 +1867,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getName()
 	 * @see #getCodeSystemConstraint()
@@ -2105,11 +1875,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCodeSystemConstraint_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getQualifier
-	 * <em>Qualifier</em>}'.
+	 * Returns the meta object for the reference list '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getQualifier <em>Qualifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Qualifier</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getQualifier()
 	 * @see #getCodeSystemConstraint()
@@ -2118,11 +1886,9 @@ public interface TermPackage extends EPackage {
 	EReference getCodeSystemConstraint_Qualifier();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getReference
-	 * <em>Reference</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getReference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Reference</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getReference()
 	 * @see #getCodeSystemConstraint()
@@ -2131,11 +1897,9 @@ public interface TermPackage extends EPackage {
 	EReference getCodeSystemConstraint_Reference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getVersion
-	 * <em>Version</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Version</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getVersion()
 	 * @see #getCodeSystemConstraint()
@@ -2147,7 +1911,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion <em>Code System Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Code System Version</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion
 	 * @generated
@@ -2155,11 +1918,9 @@ public interface TermPackage extends EPackage {
 	EClass getCodeSystemVersion();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getBase_Enumeration
-	 * <em>Base Enumeration</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getBase_Enumeration <em>Base Enumeration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Enumeration</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getBase_Enumeration()
 	 * @see #getCodeSystemVersion()
@@ -2168,11 +1929,9 @@ public interface TermPackage extends EPackage {
 	EReference getCodeSystemVersion_Base_Enumeration();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getEffectiveDate
-	 * <em>Effective Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getEffectiveDate <em>Effective Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Effective Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getEffectiveDate()
 	 * @see #getCodeSystemVersion()
@@ -2181,11 +1940,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCodeSystemVersion_EffectiveDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getFullName
-	 * <em>Full Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getFullName <em>Full Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Full Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getFullName()
 	 * @see #getCodeSystemVersion()
@@ -2194,11 +1951,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCodeSystemVersion_FullName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getIdentifier
-	 * <em>Identifier</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Identifier</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getIdentifier()
 	 * @see #getCodeSystemVersion()
@@ -2207,11 +1962,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCodeSystemVersion_Identifier();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getReleaseDate
-	 * <em>Release Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getReleaseDate <em>Release Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Release Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getReleaseDate()
 	 * @see #getCodeSystemVersion()
@@ -2223,7 +1976,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Source</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getSource()
 	 * @see #getCodeSystemVersion()
@@ -2235,7 +1987,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Status</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getStatus()
 	 * @see #getCodeSystemVersion()
@@ -2244,11 +1995,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCodeSystemVersion_Status();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getStatusDate
-	 * <em>Status Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getStatusDate <em>Status Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Status Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getStatusDate()
 	 * @see #getCodeSystemVersion()
@@ -2260,7 +2009,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getUrl <em>Url</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Url</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getUrl()
 	 * @see #getCodeSystemVersion()
@@ -2269,11 +2017,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getCodeSystemVersion_Url();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getVersion <em>Version</em>}
-	 * '.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Version</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion#getVersion()
 	 * @see #getCodeSystemVersion()
@@ -2285,7 +2031,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain <em>Concept Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Concept Domain</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain
 	 * @generated
@@ -2293,11 +2038,9 @@ public interface TermPackage extends EPackage {
 	EClass getConceptDomain();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getBase_Class
-	 * <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getBase_Class()
 	 * @see #getConceptDomain()
@@ -2306,11 +2049,9 @@ public interface TermPackage extends EPackage {
 	EReference getConceptDomain_Base_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getFullName <em>Full Name</em>}
-	 * '.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getFullName <em>Full Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Full Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getFullName()
 	 * @see #getConceptDomain()
@@ -2319,11 +2060,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getConceptDomain_FullName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getIdentifier
-	 * <em>Identifier</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Identifier</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getIdentifier()
 	 * @see #getConceptDomain()
@@ -2335,7 +2074,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Status</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatus()
 	 * @see #getConceptDomain()
@@ -2344,11 +2082,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getConceptDomain_Status();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatusDate
-	 * <em>Status Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatusDate <em>Status Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Status Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain#getStatusDate()
 	 * @see #getConceptDomain()
@@ -2357,11 +2093,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getConceptDomain_StatusDate();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
-	 * <em>Concept Domain Constraint</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint <em>Concept Domain Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Concept Domain Constraint</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
 	 * @generated
@@ -2369,11 +2103,9 @@ public interface TermPackage extends EPackage {
 	EClass getConceptDomainConstraint();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getBase_Property
-	 * <em>Base Property</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getBase_Property()
 	 * @see #getConceptDomainConstraint()
@@ -2382,11 +2114,9 @@ public interface TermPackage extends EPackage {
 	EReference getConceptDomainConstraint_Base_Property();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getIdentifier
-	 * <em>Identifier</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Identifier</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getIdentifier()
 	 * @see #getConceptDomainConstraint()
@@ -2395,11 +2125,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getConceptDomainConstraint_Identifier();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getName <em>Name</em>}
-	 * '.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getName()
 	 * @see #getConceptDomainConstraint()
@@ -2408,11 +2136,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getConceptDomainConstraint_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getReference
-	 * <em>Reference</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getReference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Reference</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getReference()
 	 * @see #getConceptDomainConstraint()
@@ -2424,7 +2150,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.CR <em>CR</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>CR</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CR
 	 * @generated
@@ -2435,7 +2160,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.CR#isInverted <em>Inverted</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Inverted</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CR#isInverted()
 	 * @see #getCR()
@@ -2447,7 +2171,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.term.core.profile.CR#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the containment reference '<em>Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CR#getName()
 	 * @see #getCR()
@@ -2459,7 +2182,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.term.core.profile.CR#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CR#getValue()
 	 * @see #getCR()
@@ -2471,7 +2193,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.term.core.profile.StatusKind <em>Status Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for enum '<em>Status Kind</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.StatusKind
 	 * @generated
@@ -2482,7 +2203,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2492,7 +2212,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.UsageContext <em>Usage Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Usage Context</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.UsageContext
 	 * @generated
@@ -2500,11 +2219,9 @@ public interface TermPackage extends EPackage {
 	EClass getUsageContext();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getBase_Class
-	 * <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getBase_Class()
 	 * @see #getUsageContext()
@@ -2513,11 +2230,9 @@ public interface TermPackage extends EPackage {
 	EReference getUsageContext_Base_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getIdentifier
-	 * <em>Identifier</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Identifier</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getIdentifier()
 	 * @see #getUsageContext()
@@ -2529,7 +2244,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Status</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getStatus()
 	 * @see #getUsageContext()
@@ -2538,11 +2252,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getUsageContext_Status();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getStatusDate
-	 * <em>Status Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getStatusDate <em>Status Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Status Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.UsageContext#getStatusDate()
 	 * @see #getUsageContext()
@@ -2554,7 +2266,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode <em>Value Set Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Value Set Code</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode
 	 * @generated
@@ -2562,11 +2273,9 @@ public interface TermPackage extends EPackage {
 	EClass getValueSetCode();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getBase_EnumerationLiteral
-	 * <em>Base Enumeration Literal</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getBase_EnumerationLiteral <em>Base Enumeration Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Enumeration Literal</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getBase_EnumerationLiteral()
 	 * @see #getValueSetCode()
@@ -2575,11 +2284,9 @@ public interface TermPackage extends EPackage {
 	EReference getValueSetCode_Base_EnumerationLiteral();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getCodeSystem
-	 * <em>Code System</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getCodeSystem <em>Code System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Code System</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getCodeSystem()
 	 * @see #getValueSetCode()
@@ -2588,11 +2295,9 @@ public interface TermPackage extends EPackage {
 	EReference getValueSetCode_CodeSystem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getConceptName
-	 * <em>Concept Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getConceptName <em>Concept Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Concept Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getConceptName()
 	 * @see #getValueSetCode()
@@ -2601,11 +2306,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetCode_ConceptName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getUsageNote <em>Usage Note</em>}
-	 * '.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getUsageNote <em>Usage Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Usage Note</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode#getUsageNote()
 	 * @see #getValueSetCode()
@@ -2617,7 +2320,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint <em>Value Set Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Value Set Constraint</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint
 	 * @generated
@@ -2625,11 +2327,9 @@ public interface TermPackage extends EPackage {
 	EClass getValueSetConstraint();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getBase_Property
-	 * <em>Base Property</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getBase_Property()
 	 * @see #getValueSetConstraint()
@@ -2638,11 +2338,9 @@ public interface TermPackage extends EPackage {
 	EReference getValueSetConstraint_Base_Property();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getBinding
-	 * <em>Binding</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getBinding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Binding</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getBinding()
 	 * @see #getValueSetConstraint()
@@ -2651,11 +2349,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetConstraint_Binding();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getIdentifier
-	 * <em>Identifier</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Identifier</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getIdentifier()
 	 * @see #getValueSetConstraint()
@@ -2667,7 +2363,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getName()
 	 * @see #getValueSetConstraint()
@@ -2676,11 +2371,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetConstraint_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getReference
-	 * <em>Reference</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getReference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Reference</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getReference()
 	 * @see #getValueSetConstraint()
@@ -2689,11 +2382,9 @@ public interface TermPackage extends EPackage {
 	EReference getValueSetConstraint_Reference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getVersion
-	 * <em>Version</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Version</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint#getVersion()
 	 * @see #getValueSetConstraint()
@@ -2702,11 +2393,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetConstraint_Version();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding
-	 * <em>Value Set Context Binding</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding <em>Value Set Context Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Value Set Context Binding</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding
 	 * @generated
@@ -2714,11 +2403,9 @@ public interface TermPackage extends EPackage {
 	EClass getValueSetContextBinding();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getBase_Class
-	 * <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getBase_Class()
 	 * @see #getValueSetContextBinding()
@@ -2727,11 +2414,9 @@ public interface TermPackage extends EPackage {
 	EReference getValueSetContextBinding_Base_Class();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getConceptDomain
-	 * <em>Concept Domain</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getConceptDomain <em>Concept Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Concept Domain</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getConceptDomain()
 	 * @see #getValueSetContextBinding()
@@ -2740,11 +2425,9 @@ public interface TermPackage extends EPackage {
 	EReference getValueSetContextBinding_ConceptDomain();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getEffectiveDate
-	 * <em>Effective Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getEffectiveDate <em>Effective Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Effective Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getEffectiveDate()
 	 * @see #getValueSetContextBinding()
@@ -2753,11 +2436,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetContextBinding_EffectiveDate();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getUsageContext
-	 * <em>Usage Context</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getUsageContext <em>Usage Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Usage Context</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getUsageContext()
 	 * @see #getValueSetContextBinding()
@@ -2766,11 +2447,9 @@ public interface TermPackage extends EPackage {
 	EReference getValueSetContextBinding_UsageContext();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getValueSet
-	 * <em>Value Set</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getValueSet <em>Value Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Value Set</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getValueSet()
 	 * @see #getValueSetContextBinding()
@@ -2782,7 +2461,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetType <em>Value Set Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for enum '<em>Value Set Type</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetType
 	 * @generated
@@ -2793,7 +2471,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion <em>Value Set Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Value Set Version</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion
 	 * @generated
@@ -2801,11 +2478,9 @@ public interface TermPackage extends EPackage {
 	EClass getValueSetVersion();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBase_Enumeration
-	 * <em>Base Enumeration</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBase_Enumeration <em>Base Enumeration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Enumeration</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBase_Enumeration()
 	 * @see #getValueSetVersion()
@@ -2817,7 +2492,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBinding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Binding</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getBinding()
 	 * @see #getValueSetVersion()
@@ -2826,11 +2500,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetVersion_Binding();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getCodeSystem
-	 * <em>Code System</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getCodeSystem <em>Code System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Code System</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getCodeSystem()
 	 * @see #getValueSetVersion()
@@ -2839,11 +2511,9 @@ public interface TermPackage extends EPackage {
 	EReference getValueSetVersion_CodeSystem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getDefinition
-	 * <em>Definition</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getDefinition <em>Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Definition</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getDefinition()
 	 * @see #getValueSetVersion()
@@ -2852,11 +2522,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetVersion_Definition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getEffectiveDate
-	 * <em>Effective Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getEffectiveDate <em>Effective Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Effective Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getEffectiveDate()
 	 * @see #getValueSetVersion()
@@ -2865,11 +2533,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetVersion_EffectiveDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getExpirationDate
-	 * <em>Expiration Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getExpirationDate <em>Expiration Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Expiration Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getExpirationDate()
 	 * @see #getValueSetVersion()
@@ -2878,11 +2544,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetVersion_ExpirationDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getFullName
-	 * <em>Full Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getFullName <em>Full Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Full Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getFullName()
 	 * @see #getValueSetVersion()
@@ -2891,11 +2555,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetVersion_FullName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getIdentifier
-	 * <em>Identifier</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Identifier</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getIdentifier()
 	 * @see #getValueSetVersion()
@@ -2904,11 +2566,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetVersion_Identifier();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getReleaseDate
-	 * <em>Release Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getReleaseDate <em>Release Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Release Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getReleaseDate()
 	 * @see #getValueSetVersion()
@@ -2917,11 +2577,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetVersion_ReleaseDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getRevisionDate
-	 * <em>Revision Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getRevisionDate <em>Revision Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Revision Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getRevisionDate()
 	 * @see #getValueSetVersion()
@@ -2933,7 +2591,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Source</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getSource()
 	 * @see #getValueSetVersion()
@@ -2945,7 +2602,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Status</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatus()
 	 * @see #getValueSetVersion()
@@ -2954,11 +2610,9 @@ public interface TermPackage extends EPackage {
 	EAttribute getValueSetVersion_Status();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatusDate
-	 * <em>Status Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatusDate <em>Status Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Status Date</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getStatusDate()
 	 * @see #getValueSetVersion()
@@ -2970,7 +2624,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getType()
 	 * @see #getValueSetVersion()
@@ -2982,7 +2635,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getUrl <em>Url</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Url</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getUrl()
 	 * @see #getValueSetVersion()
@@ -2994,7 +2646,6 @@ public interface TermPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Version</em>'.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion#getVersion()
 	 * @see #getValueSetVersion()

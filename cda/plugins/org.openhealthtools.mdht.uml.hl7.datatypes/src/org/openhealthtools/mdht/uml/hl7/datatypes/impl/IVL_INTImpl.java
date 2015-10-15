@@ -14,15 +14,23 @@ import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.Constraint;
+import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.operations.IVL_INTOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -118,13 +126,8 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 		IVXB_INT oldLow = low;
 		low = newLow;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.IVL_INT__LOW, oldLow, newLow);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__LOW, oldLow, newLow);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -137,21 +140,15 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	public void setLow(IVXB_INT newLow) {
 		if (newLow != low) {
 			NotificationChain msgs = null;
-			if (low != null) {
-				msgs = ((InternalEObject) low).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.IVL_INT__LOW, null, msgs);
-			}
-			if (newLow != null) {
-				msgs = ((InternalEObject) newLow).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.IVL_INT__LOW, null, msgs);
-			}
+			if (low != null)
+				msgs = ((InternalEObject)low).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_INT__LOW, null, msgs);
+			if (newLow != null)
+				msgs = ((InternalEObject)newLow).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_INT__LOW, null, msgs);
 			msgs = basicSetLow(newLow, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__LOW, newLow, newLow));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__LOW, newLow, newLow));
 	}
 
 	/**
@@ -172,13 +169,8 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 		INT oldCenter = center;
 		center = newCenter;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.IVL_INT__CENTER, oldCenter, newCenter);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__CENTER, oldCenter, newCenter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -191,22 +183,15 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	public void setCenter(INT newCenter) {
 		if (newCenter != center) {
 			NotificationChain msgs = null;
-			if (center != null) {
-				msgs = ((InternalEObject) center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.IVL_INT__CENTER, null, msgs);
-			}
-			if (newCenter != null) {
-				msgs = ((InternalEObject) newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.IVL_INT__CENTER, null, msgs);
-			}
+			if (center != null)
+				msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_INT__CENTER, null, msgs);
+			if (newCenter != null)
+				msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_INT__CENTER, null, msgs);
 			msgs = basicSetCenter(newCenter, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.IVL_INT__CENTER, newCenter, newCenter));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__CENTER, newCenter, newCenter));
 	}
 
 	/**
@@ -227,13 +212,8 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 		IVXB_INT oldHigh = high;
 		high = newHigh;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.IVL_INT__HIGH, oldHigh, newHigh);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__HIGH, oldHigh, newHigh);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -246,21 +226,15 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	public void setHigh(IVXB_INT newHigh) {
 		if (newHigh != high) {
 			NotificationChain msgs = null;
-			if (high != null) {
-				msgs = ((InternalEObject) high).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.IVL_INT__HIGH, null, msgs);
-			}
-			if (newHigh != null) {
-				msgs = ((InternalEObject) newHigh).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.IVL_INT__HIGH, null, msgs);
-			}
+			if (high != null)
+				msgs = ((InternalEObject)high).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_INT__HIGH, null, msgs);
+			if (newHigh != null)
+				msgs = ((InternalEObject)newHigh).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_INT__HIGH, null, msgs);
 			msgs = basicSetHigh(newHigh, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__HIGH, newHigh, newHigh));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__HIGH, newHigh, newHigh));
 	}
 
 	/**
@@ -281,13 +255,8 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 		INT oldWidth = width;
 		width = newWidth;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.IVL_INT__WIDTH, oldWidth, newWidth);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__WIDTH, oldWidth, newWidth);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -300,21 +269,15 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	public void setWidth(INT newWidth) {
 		if (newWidth != width) {
 			NotificationChain msgs = null;
-			if (width != null) {
-				msgs = ((InternalEObject) width).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.IVL_INT__WIDTH, null, msgs);
-			}
-			if (newWidth != null) {
-				msgs = ((InternalEObject) newWidth).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.IVL_INT__WIDTH, null, msgs);
-			}
+			if (width != null)
+				msgs = ((InternalEObject)width).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_INT__WIDTH, null, msgs);
+			if (newWidth != null)
+				msgs = ((InternalEObject)newWidth).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_INT__WIDTH, null, msgs);
 			msgs = basicSetWidth(newWidth, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__WIDTH, newWidth, newWidth));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__WIDTH, newWidth, newWidth));
 	}
 
 	/**
@@ -412,16 +375,16 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.IVL_INT__LOW:
-				setLow((IVXB_INT) newValue);
+				setLow((IVXB_INT)newValue);
 				return;
 			case DatatypesPackage.IVL_INT__CENTER:
-				setCenter((INT) newValue);
+				setCenter((INT)newValue);
 				return;
 			case DatatypesPackage.IVL_INT__HIGH:
-				setHigh((IVXB_INT) newValue);
+				setHigh((IVXB_INT)newValue);
 				return;
 			case DatatypesPackage.IVL_INT__WIDTH:
-				setWidth((INT) newValue);
+				setWidth((INT)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -436,16 +399,16 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.IVL_INT__LOW:
-				setLow((IVXB_INT) null);
+				setLow((IVXB_INT)null);
 				return;
 			case DatatypesPackage.IVL_INT__CENTER:
-				setCenter((INT) null);
+				setCenter((INT)null);
 				return;
 			case DatatypesPackage.IVL_INT__HIGH:
-				setHigh((IVXB_INT) null);
+				setHigh((IVXB_INT)null);
 				return;
 			case DatatypesPackage.IVL_INT__WIDTH:
-				setWidth((INT) null);
+				setWidth((INT)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -383,7 +383,21 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 */
 	private static final ActMood[] VALUES_ARRAY = new ActMood[] {
-			APT, ARQ, DEF, EVN, EVNCRT, GOL, INT, OPT, PERM, PERMRQ, PRMS, PRP, RQO, SLOT, };
+			APT,
+			ARQ,
+			DEF,
+			EVN,
+			EVNCRT,
+			GOL,
+			INT,
+			OPT,
+			PERM,
+			PERMRQ,
+			PRMS,
+			PRP,
+			RQO,
+			SLOT,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Act Mood</b></em>' enumerators.
@@ -433,34 +447,20 @@ public enum ActMood implements Enumerator {
 	 */
 	public static ActMood get(int value) {
 		switch (value) {
-			case APT_VALUE:
-				return APT;
-			case ARQ_VALUE:
-				return ARQ;
-			case DEF_VALUE:
-				return DEF;
-			case EVN_VALUE:
-				return EVN;
-			case EVNCRT_VALUE:
-				return EVNCRT;
-			case GOL_VALUE:
-				return GOL;
-			case INT_VALUE:
-				return INT;
-			case OPT_VALUE:
-				return OPT;
-			case PERM_VALUE:
-				return PERM;
-			case PERMRQ_VALUE:
-				return PERMRQ;
-			case PRMS_VALUE:
-				return PRMS;
-			case PRP_VALUE:
-				return PRP;
-			case RQO_VALUE:
-				return RQO;
-			case SLOT_VALUE:
-				return SLOT;
+			case APT_VALUE: return APT;
+			case ARQ_VALUE: return ARQ;
+			case DEF_VALUE: return DEF;
+			case EVN_VALUE: return EVN;
+			case EVNCRT_VALUE: return EVNCRT;
+			case GOL_VALUE: return GOL;
+			case INT_VALUE: return INT;
+			case OPT_VALUE: return OPT;
+			case PERM_VALUE: return PERM;
+			case PERMRQ_VALUE: return PERMRQ;
+			case PRMS_VALUE: return PRMS;
+			case PRP_VALUE: return PRP;
+			case RQO_VALUE: return RQO;
+			case SLOT_VALUE: return SLOT;
 		}
 		return null;
 	}
@@ -504,7 +504,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -513,7 +513,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -522,7 +522,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

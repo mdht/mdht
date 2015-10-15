@@ -82,7 +82,10 @@ public enum x_InformationRecipient implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final x_InformationRecipient[] VALUES_ARRAY = new x_InformationRecipient[] { PRCP, TRC, };
+	private static final x_InformationRecipient[] VALUES_ARRAY = new x_InformationRecipient[] {
+			PRCP,
+			TRC,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>xInformation Recipient</b></em>' enumerators.
@@ -132,10 +135,8 @@ public enum x_InformationRecipient implements Enumerator {
 	 */
 	public static x_InformationRecipient get(int value) {
 		switch (value) {
-			case PRCP_VALUE:
-				return PRCP;
-			case TRC_VALUE:
-				return TRC;
+			case PRCP_VALUE: return PRCP;
+			case TRC_VALUE: return TRC;
 		}
 		return null;
 	}
@@ -179,7 +180,7 @@ public enum x_InformationRecipient implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -188,7 +189,7 @@ public enum x_InformationRecipient implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -197,7 +198,7 @@ public enum x_InformationRecipient implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

@@ -308,7 +308,18 @@ public enum EntityNamePartQualifier implements Enumerator {
 	 * @generated
 	 */
 	private static final EntityNamePartQualifier[] VALUES_ARRAY = new EntityNamePartQualifier[] {
-			AC, AD, BR, CL, IN, LS, NB, PR, SP, TITLE, VV, };
+			AC,
+			AD,
+			BR,
+			CL,
+			IN,
+			LS,
+			NB,
+			PR,
+			SP,
+			TITLE,
+			VV,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Entity Name Part Qualifier</b></em>' enumerators.
@@ -358,28 +369,17 @@ public enum EntityNamePartQualifier implements Enumerator {
 	 */
 	public static EntityNamePartQualifier get(int value) {
 		switch (value) {
-			case AC_VALUE:
-				return AC;
-			case AD_VALUE:
-				return AD;
-			case BR_VALUE:
-				return BR;
-			case CL_VALUE:
-				return CL;
-			case IN_VALUE:
-				return IN;
-			case LS_VALUE:
-				return LS;
-			case NB_VALUE:
-				return NB;
-			case PR_VALUE:
-				return PR;
-			case SP_VALUE:
-				return SP;
-			case TITLE_VALUE:
-				return TITLE;
-			case VV_VALUE:
-				return VV;
+			case AC_VALUE: return AC;
+			case AD_VALUE: return AD;
+			case BR_VALUE: return BR;
+			case CL_VALUE: return CL;
+			case IN_VALUE: return IN;
+			case LS_VALUE: return LS;
+			case NB_VALUE: return NB;
+			case PR_VALUE: return PR;
+			case SP_VALUE: return SP;
+			case TITLE_VALUE: return TITLE;
+			case VV_VALUE: return VV;
 		}
 		return null;
 	}
@@ -423,7 +423,7 @@ public enum EntityNamePartQualifier implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -432,7 +432,7 @@ public enum EntityNamePartQualifier implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -441,7 +441,7 @@ public enum EntityNamePartQualifier implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

@@ -133,7 +133,11 @@ public enum ActRelationshipHasComponent implements Enumerator {
 	 * @generated
 	 */
 	private static final ActRelationshipHasComponent[] VALUES_ARRAY = new ActRelationshipHasComponent[] {
-			ARR, COMP, CTRLV, DEP, };
+			ARR,
+			COMP,
+			CTRLV,
+			DEP,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Act Relationship Has Component</b></em>' enumerators.
@@ -183,14 +187,10 @@ public enum ActRelationshipHasComponent implements Enumerator {
 	 */
 	public static ActRelationshipHasComponent get(int value) {
 		switch (value) {
-			case ARR_VALUE:
-				return ARR;
-			case COMP_VALUE:
-				return COMP;
-			case CTRLV_VALUE:
-				return CTRLV;
-			case DEP_VALUE:
-				return DEP;
+			case ARR_VALUE: return ARR;
+			case COMP_VALUE: return COMP;
+			case CTRLV_VALUE: return CTRLV;
+			case DEP_VALUE: return DEP;
 		}
 		return null;
 	}
@@ -234,7 +234,7 @@ public enum ActRelationshipHasComponent implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -243,7 +243,7 @@ public enum ActRelationshipHasComponent implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -252,7 +252,7 @@ public enum ActRelationshipHasComponent implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**
