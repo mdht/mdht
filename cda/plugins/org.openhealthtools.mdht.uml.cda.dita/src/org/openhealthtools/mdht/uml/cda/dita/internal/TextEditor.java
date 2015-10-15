@@ -59,6 +59,7 @@ public class TextEditor implements ConstraintEditor {
 	 * @return the value stored in the Dita Enabled constraint
 	 *         true iff the constraint has a Boolean of true, false otherwise
 	 */
+	@Override
 	public boolean isDitaEnabled() {
 		Boolean ditaEnabled = false;
 		try {
@@ -79,7 +80,13 @@ public class TextEditor implements ConstraintEditor {
 	public void setDitaEnabled(boolean isEnabled) {
 		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
 			constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+
+		if (stereotype == null) {
+			stereotype = CDAProfileUtil.applyCDAStereotype(constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+		}
+
 		constraint.setValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED, isEnabled);
+
 	}
 
 	private void handleChange() {
@@ -128,6 +135,7 @@ public class TextEditor implements ConstraintEditor {
 	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
+	@Override
 	public void setConstraint(Constraint constraint) {
 		boolean firstRun = this.constraint == null && constraint != null;
 		this.constraint = constraint;
