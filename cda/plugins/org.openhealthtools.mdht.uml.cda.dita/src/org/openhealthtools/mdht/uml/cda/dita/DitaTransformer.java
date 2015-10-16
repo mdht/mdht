@@ -55,6 +55,8 @@ public class DitaTransformer {
 		// get list of published classifiers
 		Boolean prevCard = CDAModelUtil.cardinalityAfterElement;
 		CDAModelUtil.cardinalityAfterElement = transformerOptions.isCardinalityAfterElement();
+		CDAModelUtil.isAppendConformanceRules = transformerOptions.isAppendConformanceRules();
+
 		UMLSwitch<Object> pubList = new UMLSwitch<Object>() {
 			@Override
 			public Object caseClassifier(Classifier classifier) {
