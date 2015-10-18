@@ -1182,13 +1182,12 @@ public class CDAModelUtil {
 				currentlyItem = ccm.trim().endsWith(li[1]);
 			}
 			sb.append(li[0] + prefix + ccm);
+			StringBuilder propertyComments = new StringBuilder();
+			currentlyItem &= appendPropertyComments(propertyComments, property, markup);
 			if (currentlyItem) {
-				sb.append(li[0]);
+				sb.append(li[0]).append(propertyComments).append(li[1]);
 			}
-			appendPropertyComments(sb, property, markup);
-			if (currentlyItem) {
-				sb.append(li[1]);
-			}
+
 			appendPropertyRules(sb, property, constraintMap, subConstraintMap, unprocessedConstraints, markup, !order);
 
 			if (order) {
