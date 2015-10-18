@@ -80,10 +80,14 @@ public class DitaUtil {
 	public static void validate(IPath tmpFileInWorkspaceDir) throws IOException, ParserConfigurationException,
 			SAXException, URISyntaxException {
 
+		// TODO delete commented out code which was used for debugging (debug code needs to stay at least two releases after 2.5.9)
 		// Get the XSD file
 		Bundle bundle = Platform.getBundle("org.dita.dost");
-		Path ditaSchemadirPath = new Path("DITA-OT/schema/technicalContent/xsd/topic.xsd");
-		URL ditaXSD = FileLocator.toFileURL(FileLocator.find(bundle, ditaSchemadirPath, null));
+		// Path ditaSchemadirPath = new Path("DITA-OT/schema/technicalContent/xsd/topic.xsd");
+		// URL ditaXSD = FileLocator.toFileURL(FileLocator.find(bundle, ditaSchemadirPath, null));
+		Path ditaFolderPath = new Path("DITA-OT");
+		URL ditaFolder = FileLocator.toFileURL(FileLocator.find(bundle, ditaFolderPath, null));
+		// System.out.println(ditaFolder);
 
 		// Create DBF and ignore DTD
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -96,13 +100,20 @@ public class DitaUtil {
 		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
 		// Use catalog
-		Path ditaCatalogPath = new Path("DITA-OT/schema/catalog.xml");
-		URL ditaCatalog = FileLocator.toFileURL(FileLocator.find(bundle, ditaCatalogPath, null));
-		XMLCatalogResolver resolver = new XMLCatalogResolver(new String[] { ditaCatalog.getFile() });
+		// Path ditaCatalogPath = new Path("DITA-OT/schema/catalog.xml");
+		// URL ditaCatalog = FileLocator.toFileURL(FileLocator.find(bundle, ditaCatalogPath, null));
+		File ditaCatalogFile = new File(ditaFolder.getFile(), "schema/catalog.xml");
+		// System.out.println(ditaCatalogFile);
+		// System.out.println(ditaCatalogFile.exists());
+		XMLCatalogResolver resolver = new XMLCatalogResolver(new String[] { ditaCatalogFile.getAbsolutePath() });
 		schemaFactory.setResourceResolver(resolver);
 
 		// load a WXS schema, represented by a Schema instance
-		Source schemaFile = new StreamSource(new File(ditaXSD.toURI()));
+		File ditaSchemaFile = new File(ditaFolder.getFile(), "schema/technicalContent/xsd/topic.xsd");
+
+		// System.out.println(ditaSchemaFile);
+		// System.out.println(ditaSchemaFile.exists());
+		Source schemaFile = new StreamSource(ditaSchemaFile);
 		Schema schema = schemaFactory.newSchema(schemaFile);
 		Validator validator = schema.newValidator();
 
