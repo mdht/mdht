@@ -221,6 +221,16 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 								oESpec.getBodies().add(body);
 							}
 						}
+						if (ditaModified) {
+							ditaModified = false;
+							contributors.get(language).setDitaEnabled(ditaEnableButton.getSelection());
+
+							// Also don't show errors if they are visible
+							if (!ditaEnableButton.getSelection()) {
+								errorText.setVisible(false);
+								closeErrorTextButton.setVisible(false);
+							}
+						}
 					} else {
 						return Status.CANCEL_STATUS;
 					}
@@ -330,6 +340,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		ditaEnableButton.setLayoutData(data);
 		ditaEnableButton.setEnabled(true);
 		ditaEnableButton.setVisible(false);
+
 		ditaEnableButton.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				ditaModified = true;
@@ -550,6 +561,12 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		} else {
 			languageCombo.setEnabled(true);
 			bodyText.setEnabled(true);
+		}
+		if ("Analysis".equals(languageCombo.getText())) {
+			ditaEnableButton.setSelection(contributors.get(language).isDitaEnabled());
+			ditaEnableButton.setVisible(true);
+		} else {
+			ditaEnableButton.setVisible(false);
 		}
 
 	}

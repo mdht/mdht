@@ -15,6 +15,9 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.dita.DitaTransformerOptions;
 import org.openhealthtools.mdht.uml.cda.dita.TransformClassContent;
 import org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor;
@@ -52,16 +55,38 @@ public class TextEditor implements ConstraintEditor {
 		});
 	}
 
-	private boolean isDitaEnabled() {
-		return true;
-		// Boolean ditaEnabled = false;
-		// try {
-		// Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-		// constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-		// ditaEnabled = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
-		// } catch (IllegalArgumentException ex) { /* Swallow this */
-		// }
-		// return ditaEnabled;
+	/**
+	 * @return the value stored in the Dita Enabled constraint
+	 *         true iff the constraint has a Boolean of true, false otherwise
+	 */
+	@Override
+	public boolean isDitaEnabled() {
+		Boolean ditaEnabled = false;
+		try {
+			Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+			ditaEnabled = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
+		} catch (IllegalArgumentException ex) { /* Swallow this */
+		}
+		return ditaEnabled;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setDitaEnabled(boolean)
+	 */
+	@Override
+	public void setDitaEnabled(boolean isEnabled) {
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+			constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+
+		if (stereotype == null) {
+			stereotype = CDAProfileUtil.applyCDAStereotype(constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+		}
+
+		constraint.setValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED, isEnabled);
+
 	}
 
 	private void handleChange() {
@@ -107,9 +132,10 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
+	@Override
 	public void setConstraint(Constraint constraint) {
 		boolean firstRun = this.constraint == null && constraint != null;
 		this.constraint = constraint;
