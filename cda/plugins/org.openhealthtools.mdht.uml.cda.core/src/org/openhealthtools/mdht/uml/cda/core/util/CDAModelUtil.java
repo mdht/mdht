@@ -34,8 +34,12 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -64,7 +68,6 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
 import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.cda.transform.CDABaseModelReflection;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.PropertyList;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
@@ -75,7 +78,6 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
-import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 
 public class CDAModelUtil {
 
@@ -876,8 +878,17 @@ public class CDAModelUtil {
 		String propertyPrefix = getNameSpacePrefix(property);
 
 		// Try to get CDA Name
-		IBaseModelReflection ibmr = new CDABaseModelReflection();
-		Property cdaProperty = ibmr.getBaseProperty((Classifier) property.getOwner(), property);
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.cda.core.TransformProvider");
+		IExtension[] extensions = ep.getExtensions();
+		TransformProvider newContributor = null;
+		try {
+			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension("transform-class");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		Property cdaProperty = newContributor.GetTransform(property);
+
 		String propertyCdaName = null;
 		if (cdaProperty != null) {
 			propertyCdaName = cdaProperty.getName();

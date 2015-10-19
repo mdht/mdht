@@ -15,5 +15,11 @@
 -->
 
 <plugin>
+   <extension
+         point="org.openhealthtools.mdht.uml.cda.core.TransformProvider">
+      <editor
+            transform-class="org.openhealthtools.mdht.uml.cda.transform.TransformSupplier">
+      </editor>
+   </extension>
 
 </plugin>
