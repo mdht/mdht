@@ -74,4 +74,25 @@ public class LanguageEditor extends UmlUiEditor {
 
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setDitaEnabled(boolean)
+	 */
+	@Override
+	public void setDitaEnabled(boolean isEnabled) {
+		// TODO Auto-generated method stub
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#isDitaEnabled()
+	 */
+	@Override
+	public boolean isDitaEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
