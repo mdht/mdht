@@ -882,12 +882,13 @@ public class CDAModelUtil {
 		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.cda.core.TransformProvider");
 		IExtension[] extensions = ep.getExtensions();
 		TransformProvider newContributor = null;
+		Property cdaProperty = null;
 		try {
 			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension("transform-class");
+			cdaProperty = newContributor.GetTransform(property);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		Property cdaProperty = newContributor.GetTransform(property);
 
 		String propertyCdaName = null;
 		if (cdaProperty != null) {
@@ -899,6 +900,7 @@ public class CDAModelUtil {
 		message.append(propertyPrefix != null
 				? propertyPrefix + ":" + propertyCdaName
 				: propertyCdaName);
+
 		message.append(markup
 				? "</b>"
 				: "");
@@ -1780,7 +1782,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 *
+		 * 
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
