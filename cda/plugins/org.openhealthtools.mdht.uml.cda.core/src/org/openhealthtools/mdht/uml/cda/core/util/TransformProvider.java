@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     AlexSkillender - initial API and implementation
+ *     AlexSkillender (NEHTA) - initial API and implementation
  *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
@@ -14,8 +14,7 @@ package org.openhealthtools.mdht.uml.cda.core.util;
 import org.eclipse.uml2.uml.Property;
 
 /**
- * @author AlexSkillender
- *
+ * Provides access to the CDA Transform properties
  */
 public interface TransformProvider {
 
