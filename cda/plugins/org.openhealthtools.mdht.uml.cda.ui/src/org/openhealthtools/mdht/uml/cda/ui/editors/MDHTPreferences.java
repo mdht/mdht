@@ -163,6 +163,6 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 	private void storeValues() {
 		IPreferenceStore store = getPreferenceStore();
 		store.setValue(CARDINALITY_STORE_VALUE, cardinalityCheckBox.getSelection());
-		store.setValue(PDF_GEN_STORE_VALUE, cardinalityCheckBox.getSelection());
+		store.setValue(PDF_GEN_STORE_VALUE, disablePdfGenerationCheckBox.getSelection());
 	}
 }
