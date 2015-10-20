@@ -6,7 +6,7 @@
          <meta.schema plugin="org.openhealthtools.mdht.uml.cda.core" id="TransformProvider" name="org.openhealthtools.uml.cda.core"/>
       </appInfo>
       <documentation>
-         [Enter description of this extension point.]
+         An abstraction of access to the org.openhealthtools.mdht.uml.cda.transform package that provides access to transform properties.
       </documentation>
    </annotation>
 
@@ -67,7 +67,7 @@
          <meta.section type="since"/>
       </appInfo>
       <documentation>
-         [Enter the first release in which this extension point appears.]
+         2.5.11.201510190659
       </documentation>
    </annotation>
 
@@ -76,7 +76,16 @@
          <meta.section type="examples"/>
       </appInfo>
       <documentation>
-         [Enter extension point usage example here.]
+         		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		IExtensionPoint ep = reg.getExtensionPoint(&quot;org.openhealthtools.mdht.uml.cda.core.TransformProvider&quot;);
+		IExtension[] extensions = ep.getExtensions();
+		TransformProvider newContributor = null;
+		try {
+			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension(&quot;transform-class&quot;);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		Property cdaProperty = newContributor.GetTransform(property);
       </documentation>
    </annotation>
 
@@ -94,7 +103,7 @@
          <meta.section type="implementation"/>
       </appInfo>
       <documentation>
-         [Enter information about supplied implementation of this extension point.]
+         Implemented in org.openhealthtools.mdht.uml.cda.transform.TransformSupplier.java
       </documentation>
    </annotation>
 
