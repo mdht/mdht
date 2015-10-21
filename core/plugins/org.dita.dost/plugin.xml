@@ -22,7 +22,7 @@
 		
     </command>
     
-	<command  id="org.dita.dost.commands.publishaspdf" name="PDF" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+    <command  id="org.dita.dost.commands.publishaspdf" name="PDF" defaultHandler="org.dita.dost.handlers.PublishPdfHandler" >
 		<commandParameter id="org.dita.dost.parameter.target" name="target" />
     </command>
     
@@ -50,7 +50,7 @@
 		<commandParameter id="org.dita.dost.parameter.target" name="target" />
     </command>
 
-     <command  id="org.dita.dost.commands.publishaspdf2" name="PDF2" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+  <command  id="org.dita.dost.commands.publishaspdf2" name="PDF2" defaultHandler="org.dita.dost.handlers.PublishPdfHandler" >
 		<commandParameter id="org.dita.dost.parameter.target" name="target" />
     </command>
 
