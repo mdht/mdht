@@ -34,8 +34,12 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -875,9 +879,30 @@ public class CDAModelUtil {
 
 		String propertyPrefix = getNameSpacePrefix(property);
 
+		// Try to get CDA Name
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.cda.core.TransformProvider");
+		IExtension[] extensions = ep.getExtensions();
+		TransformProvider newContributor = null;
+		Property cdaProperty = null;
+		try {
+			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension("transform-class");
+			cdaProperty = newContributor.GetTransform(property);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		String propertyCdaName = null;
+		if (cdaProperty != null) {
+			propertyCdaName = cdaProperty.getName();
+		} else {
+			propertyCdaName = getCDAElementName(property);
+		}
+
 		message.append(propertyPrefix != null
-				? propertyPrefix + ":" + property.getName()
-				: property.getName());
+				? propertyPrefix + ":" + propertyCdaName
+				: propertyCdaName);
+
 		message.append(markup
 				? "</b>"
 				: "");
@@ -1765,7 +1790,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 *
+		 * 
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
