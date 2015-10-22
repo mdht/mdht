@@ -419,18 +419,11 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		IFile ditaMapFile = CDAUIUtil.getProjectFile(project, CDAUIUtil.DITA_PATH, "book.ditamap");
 
-		if (ditaMapFile != null) {
-			StringBuffer targets = new StringBuffer();
+		// should PDF and DITA-OT be skipped for this build
+		boolean disablePdf = Activator.getDefault().getPreferenceStore().getBoolean(MDHTPreferences.PDF_GEN_STORE_VALUE);
 
-			boolean disablePdf = Activator.getDefault().getPreferenceStore().getBoolean(
-				MDHTPreferences.PDF_GEN_STORE_VALUE);
-			// Disable the PDF generation in the build, if set by preferences
-			if (!disablePdf) {
-				targets.append("pdf,");
-			}
-			targets.append("eclipsehelp");
-
-			DitaUtil.publish(ditaMapFile, targets.toString());
+		if (ditaMapFile != null && !disablePdf) {
+			DitaUtil.publish(ditaMapFile, "pdf,eclipsehelp");
 		}
 	}
 
