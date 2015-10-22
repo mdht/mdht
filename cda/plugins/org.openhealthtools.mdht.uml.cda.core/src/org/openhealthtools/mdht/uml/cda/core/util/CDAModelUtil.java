@@ -909,7 +909,7 @@ public class CDAModelUtil {
 
 		message.append(getBusinessName(property));
 
-		if (isXMLAttribute(property) && property.getDefault() != null) {
+		if (property.getDefault() != null) {
 			message.append("=\"").append(property.getDefault()).append("\" ");
 		}
 		message.append(markup
@@ -1790,7 +1790,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
