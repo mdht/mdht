@@ -34,7 +34,7 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 			+ "for that, dita-transform.xml needs to be adjusted to say "
 			+ "cardinalityAfterElement=\"true\" in <transformToDita>";
 
-	private static String PDF_GEN_DISABLE_CHECK_BOX_LABEL = "Disable automatic PDF generation ";
+	private static String PDF_GEN_DISABLE_CHECK_BOX_LABEL = "Disable built-in PDF generation";
 
 	private static String PDF_GEN_DISABLE_CHECK_BOX_TOOLTIP = "Prevent the automatic generation of PDF "
 			+ " files in the workspace. This also removes the PDF Generation context menu option";
