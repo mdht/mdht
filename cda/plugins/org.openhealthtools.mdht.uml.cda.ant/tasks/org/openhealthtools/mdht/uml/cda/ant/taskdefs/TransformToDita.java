@@ -51,6 +51,8 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	private Boolean cardinalityAfterElement = null;
 
+	private Boolean appendConformanceRules = null;
+
 	private Boolean includeVocabularyConstraints = null;
 
 	private int exampleDepth;
@@ -156,6 +158,9 @@ public class TransformToDita extends CDAModelingSubTask {
 		if (cardinalityAfterElement == null && project.getProperty("cardinalityAfterElement") != null) {
 			cardinalityAfterElement = Boolean.valueOf(project.getProperty("cardinalityAfterElement"));
 		}
+		if (appendConformanceRules == null && project.getProperty("appendConformanceRules") != null) {
+			appendConformanceRules = Boolean.valueOf(project.getProperty("appendConformanceRules"));
+		}
 
 		Integer.getInteger(project.getProperty("exampleDepth"));
 
@@ -185,6 +190,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	public void setCardinalityAfterElement(boolean cardinalityAfter) {
 		cardinalityAfterElement = new Boolean(cardinalityAfter);
+	}
+
+	public void setAppendConformanceRules(boolean appendConformanceRules) {
+		this.appendConformanceRules = new Boolean(appendConformanceRules);
 	}
 
 	// ANT task child elements
@@ -232,6 +241,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 		if (cardinalityAfterElement != null) {
 			options.setCardinalityAfterElement(cardinalityAfterElement);
+		}
+
+		if (appendConformanceRules != null) {
+			options.setAppendConformanceRules(appendConformanceRules);
 		}
 
 		if (includeVocabularyConstraints != null) {

@@ -42,6 +42,8 @@ public class DitaTransformerOptions {
 
 	public static final String CARDINALITY_AFTER_ELEMENT = "cardinalityAfterElement";
 
+	public static final String APPEND_CONFORMANCE_RULES_ATTRIBUTE = "appendConformanceRules";
+
 	public static final String EXAMPLE_DEPTH = "exampleDepth";
 
 	private IPath outputPath = null;
@@ -53,6 +55,8 @@ public class DitaTransformerOptions {
 	private boolean includeUsageNotes = false;
 
 	private boolean cardinalityAfterElement = false;
+
+	private boolean appendConformanceRules = false;
 
 	private boolean includeVocabularyConstraints = false;
 
@@ -108,6 +112,7 @@ public class DitaTransformerOptions {
 		includeUsageNotes = store.getBoolean(INCLUDE_USAGE_NOTES);
 		includeVocabularyConstraints = store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
 		cardinalityAfterElement = store.getBoolean(CARDINALITY_AFTER_ELEMENT);
+		appendConformanceRules = store.getBoolean(APPEND_CONFORMANCE_RULES_ATTRIBUTE);
 
 		exampleDepth = store.getInt(EXAMPLE_DEPTH);
 
@@ -119,6 +124,15 @@ public class DitaTransformerOptions {
 
 	public boolean isCardinalityAfterElement() {
 		return cardinalityAfterElement;
+	}
+
+	/**
+	 * The value of the appendConformanceRule attribute in the dita-transform ant task xml
+	 *
+	 * @return appendConformanceRules
+	 */
+	public boolean isAppendConformanceRules() {
+		return appendConformanceRules;
 	}
 
 	public boolean isIncludeTableView() {
@@ -135,6 +149,14 @@ public class DitaTransformerOptions {
 
 	public void setCardinalityAfterElement(boolean cardinalityAfterElement) {
 		this.cardinalityAfterElement = cardinalityAfterElement;
+	}
+
+	/**
+	 * @param appendConformanceRules
+	 *            should the Dita transformation append conformance rules
+	 */
+	public void setAppendConformanceRules(boolean appendConformanceRules) {
+		this.appendConformanceRules = appendConformanceRules;
 	}
 
 	public boolean isIncludeVocabularyConstraints() {

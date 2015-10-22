@@ -105,6 +105,8 @@ public class CDAModelUtil {
 
 	public static boolean cardinalityAfterElement = false;
 
+	public static boolean isAppendConformanceRules = false;
+
 	public static Class getCDAClass(Classifier templateClass) {
 		Class cdaClass = null;
 
@@ -1028,10 +1030,16 @@ public class CDAModelUtil {
 				} else {
 					StringBuilder sb = new StringBuilder();
 					boolean hadSideEffect = appendPropertyComments(sb, property, markup);
-					// this commented out line currently creates duplicate property messages if enabled (and hadSideEffect check is removed)
-					// appendConformanceRules(sb, (Class) property.getType(), "", markup);
+					if (isAppendConformanceRules) {
+						int len = sb.length();
+
+						appendConformanceRules(sb, (Class) property.getType(), "", markup);
+
+						hadSideEffect |= sb.length() > len;
+					}
 					if (hadSideEffect) {
 						message.append(" " + sb);
+
 					}
 				}
 
