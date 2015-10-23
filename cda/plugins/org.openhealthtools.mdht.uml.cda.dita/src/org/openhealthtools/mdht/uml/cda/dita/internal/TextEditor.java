@@ -73,7 +73,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setDitaEnabled(boolean)
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
 	@Override
@@ -186,3 +186,4 @@ public class TextEditor implements ConstraintEditor {
 	}
 
 }
+>>>>>>> upstream/develop
