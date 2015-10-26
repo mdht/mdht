@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for restoring defaults
  *     Christian W. Damus - implement handling of live validation roll-back (artf3318)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
 
@@ -61,6 +61,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
+import org.openhealthtools.mdht.uml.common.ui.util.UMLUIUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
 import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
@@ -258,19 +259,19 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 	}
 
 	private void addValueSetReference() {
-		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(property.eResource().getResourceSet());
-		if (ctsProfile == null) {
-			return;
-		}
-		final Stereotype valueSetVersionStereotype = (Stereotype) ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_VERSION);
+
 		IElementFilter filter = new IElementFilter() {
 			public boolean accept(Element element) {
-				return (element instanceof Enumeration) && element.isStereotypeApplied(valueSetVersionStereotype);
+				if ((element instanceof Enumeration) &&
+						TermProfileUtil.getValueSetVersion((Enumeration) element) != null) {
+					return true;
+				}
+				return false;
 			}
 		};
 
 		final Enumeration valueSetEnum = (Enumeration) DialogLaunchUtil.chooseElement(
-			filter, property.eResource().getResourceSet(), getPart().getSite().getShell(), null, "Select a Value Set");
+			filter, UMLUIUtil.loadModelsfromWorkspace(), getPart().getSite().getShell(), null, "Select a Value Set");
 		if (valueSetEnum == null) {
 			return;
 		}
@@ -499,9 +500,9 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@Override
@@ -632,7 +633,7 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification
