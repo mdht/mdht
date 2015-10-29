@@ -109,6 +109,8 @@ public class CDAModelUtil {
 
 	public static boolean cardinalityAfterElement = false;
 
+	public static boolean disablePdfGeneration = false;
+
 	public static boolean isAppendConformanceRules = false;
 
 	public static Class getCDAClass(Classifier templateClass) {
@@ -1790,7 +1792,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {

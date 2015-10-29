@@ -34,9 +34,18 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 			+ "for that, dita-transform.xml needs to be adjusted to say "
 			+ "cardinalityAfterElement=\"true\" in <transformToDita>";
 
+	private static String PDF_GEN_DISABLE_CHECK_BOX_LABEL = "Disable built-in PDF generation";
+
+	private static String PDF_GEN_DISABLE_CHECK_BOX_TOOLTIP = "Prevent the automatic generation of PDF "
+			+ " files in the workspace. This also removes the PDF Generation context menu option";
+
 	public static String CARDINALITY_STORE_VALUE = "CardinalityCheckValue";
 
+	public static String PDF_GEN_STORE_VALUE = "DisablePDFCheckValue";
+
 	private Button cardinalityCheckBox;
+
+	private Button disablePdfGenerationCheckBox;
 
 	/**
 	 * Creates an new checkbox instance and sets the default
@@ -93,6 +102,11 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 		Composite composite_textField = createComposite(parent, 2);
 		cardinalityCheckBox = createCheckBox(
 			composite_textField, CARDINALITY_CHECK_BOX_LABEL, CARDINALITY_CHECK_BOX_TOOLTIP);
+
+		Composite pdf_composite_textField = createComposite(parent, 2);
+		disablePdfGenerationCheckBox = createCheckBox(
+			pdf_composite_textField, PDF_GEN_DISABLE_CHECK_BOX_LABEL, PDF_GEN_DISABLE_CHECK_BOX_TOOLTIP);
+
 		initializeValues();
 
 		return new Composite(parent, SWT.NULL);
@@ -119,6 +133,7 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 	private void initializeDefaults() {
 		IPreferenceStore store = getPreferenceStore();
 		cardinalityCheckBox.setSelection(store.getDefaultBoolean(CARDINALITY_STORE_VALUE));
+		disablePdfGenerationCheckBox.setSelection(store.getBoolean(PDF_GEN_STORE_VALUE));
 	}
 
 	/**
@@ -127,6 +142,7 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 	private void initializeValues() {
 		IPreferenceStore store = getPreferenceStore();
 		cardinalityCheckBox.setSelection(store.getBoolean(CARDINALITY_STORE_VALUE));
+		disablePdfGenerationCheckBox.setSelection(store.getBoolean(PDF_GEN_STORE_VALUE));
 	}
 
 	@Override
@@ -147,5 +163,6 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 	private void storeValues() {
 		IPreferenceStore store = getPreferenceStore();
 		store.setValue(CARDINALITY_STORE_VALUE, cardinalityCheckBox.getSelection());
+		store.setValue(PDF_GEN_STORE_VALUE, disablePdfGenerationCheckBox.getSelection());
 	}
 }

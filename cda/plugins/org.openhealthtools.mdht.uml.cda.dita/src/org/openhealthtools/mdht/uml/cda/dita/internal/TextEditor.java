@@ -166,7 +166,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setErrorText(org.eclipse.swt.widgets.Text)
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setCloseErrorText(org.eclipse.swt.widgets.Button)
 	 */
 	@Override
