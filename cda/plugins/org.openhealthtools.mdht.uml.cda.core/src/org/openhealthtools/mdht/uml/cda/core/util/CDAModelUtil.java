@@ -1154,6 +1154,19 @@ public class CDAModelUtil {
 						subConstraintMap);
 		}
 
+		List<Classifier> allParents = new ArrayList<Classifier>(umlClass.allParents());
+		allParents.add(0, umlClass);
+		
+		// aggregate constraints
+		for (int i = allParents.size() - 1; i > 0; i--) {
+			Class parent = (Class) allParents.get(i);
+			if (!CDAModelUtil.isCDAModel(parent)) {
+				for (Constraint constraint : parent.getOwnedRules()) {
+					unprocessedConstraints.add(constraint);
+				}
+			}
+		}
+		
 		for (Constraint constraint : unprocessedConstraints) {
 			hasRules = true;
 			sb.append(li[0] + prefix + CDAModelUtil.computeConformanceMessage(constraint, markup) + li[1]);
