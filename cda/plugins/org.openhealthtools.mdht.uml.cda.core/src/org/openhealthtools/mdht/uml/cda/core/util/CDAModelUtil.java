@@ -1081,7 +1081,7 @@ public class CDAModelUtil {
 
 	private static final String[] NOLI = { "", " " };
 
-	static private void appendConformanceRules(StringBuilder appendB, Class umlClass, String prefix, boolean markup) {
+	static public void appendConformanceRules(StringBuilder appendB, Class umlClass, String prefix, boolean markup) {
 
 		String[] ol = markup
 				? OL
@@ -2091,7 +2091,7 @@ public class CDAModelUtil {
 		return false;
 	}
 
-	private static String getMultiplicityRange(Class template) {
+	public static String getMultiplicityRange(Class template) {
 		String templateId = null;
 		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(template, ICDAProfileConstants.CDA_TEMPLATE);
 		if (hl7Template != null && template.hasValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY)) {
