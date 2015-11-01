@@ -30,12 +30,17 @@ public class MDHTPreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 		store.setDefault(MDHTPreferences.CARDINALITY_STORE_VALUE, false);
+		store.setDefault(MDHTPreferences.PDF_GEN_STORE_VALUE, false);
 		Activator.getDefault().getPreferenceStore().addPropertyChangeListener(changeListener);
 	}
 
 	private void handleChanges(PropertyChangeEvent event) {
 		if (event.getProperty().equals(MDHTPreferences.CARDINALITY_STORE_VALUE)) {
 			CDAModelUtil.cardinalityAfterElement = (Boolean) event.getNewValue();
+		}
+
+		if (event.getProperty().equals(MDHTPreferences.PDF_GEN_STORE_VALUE)) {
+			CDAModelUtil.disablePdfGeneration = (Boolean) event.getNewValue();
 		}
 	}
 
