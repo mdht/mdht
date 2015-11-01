@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added CS type check
@@ -15,7 +15,7 @@
  *                        - ensure terminology initializer for property constraints (artf3233)
  *                        - support nested datatype subclasses (artf3350)
  *     Dan Brown (Ai)     - update constraint override logic
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
@@ -184,7 +184,8 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 				codeSystemVersion = (String) property.getValue(
 					vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
 				if (code == null) {
-					code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
+					code = (String) property.getValue(
+						vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
 				}
 				displayName = (String) property.getValue(
 					vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
@@ -287,33 +288,76 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 				templateTypeQName = inheritedTypeQName;
 			}
 
-			/*
-			 * Test for multiplicity restriction
-			 */
+			// Have we changed the property cardinality
+
 			if (property.getLower() != inheritedProperty.getLower() ||
 					property.getUpper() != inheritedProperty.getUpper()) {
 
-				if (property.getUpper() == 0) {
-					// element is prohibited in redefinition
-					// place-holder for when this is supported in UML 2.2
-				} else if (cdaProperty.getUpper() == 1) {
-					// single-valued CDA property
+				// If CDA property upper is 1 - treat as property
+				// else treat as collection
+				if (cdaProperty.getUpper() == 1) {
 					if (property.getLower() == 1) {
 						if (propertyType instanceof Enumeration) {
 							body.append("isDefined('" + cdaProperty.getName() + "')");
 						} else {
 							body.append("not " + selfName + ".oclIsUndefined()");
 						}
+					} else if (property.getUpper() == 0) {
+						if (propertyType instanceof Enumeration) {
+							body.append(" not isDefined('" + cdaProperty.getName() + "')");
+						} else {
+							body.append(" " + selfName + ".oclIsUndefined()");
+						}
 					}
-				} else if (cdaProperty.getUpper() > 0 || cdaProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
-					// multi-valued CDA property
+				} else {
+
+					// Keep this for some level of backwards compatibility else check size for upper and lower
 					if (property.getLower() == 1 && property.getUpper() == 1) {
 						body.append(selfName + "->size() = 1");
-					} else if (property.getLower() >= 1) {
-						body.append("not " + selfName + "->isEmpty()");
+					} else {
+						body.append(selfName + "->size() >= " + property.getLower());
+						if (property.getUpper() != LiteralUnlimitedNatural.UNLIMITED) {
+							body.append(" and " + selfName + "->size() <= " + property.getUpper());
+						}
 					}
 				}
 			}
+
+			/*
+			 * Test for multiplicity restriction
+			 */
+			// if (property.getLower() != inheritedProperty.getLower() ||
+			// property.getUpper() != inheritedProperty.getUpper()) {
+			//
+			// body.append("Begin >>>> ");
+			// System.out.println(body.toString());
+			//
+			// body.append(selfName + "->size() >= " + property.getLower());
+			//
+			// body.append(" and " + selfName + "->size() <= " + property.getUpper());
+			//
+			// if (property.getUpper() == 0) {
+			// // element is prohibited in redefinition
+			// // place-holder for when this is supported in UML 2.2
+			// } else if (cdaProperty.getUpper() == 1) {
+			// // single-valued CDA property
+			// if (property.getLower() == 1) {
+			// if (propertyType instanceof Enumeration) {
+			// body.append("isDefined('" + cdaProperty.getName() + "')");
+			// } else {
+			// body.append("not " + selfName + ".oclIsUndefined()");
+			// }
+			// }
+			// } else if (cdaProperty.getUpper() > 0 || cdaProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
+			// // multi-valued CDA property
+			// if (property.getLower() == 1 && property.getUpper() == 1) {
+			// body.append(selfName + "->size() = 1");
+			// } else if (property.getLower() >= 1) {
+			// body.append("not " + selfName + "->isEmpty()");
+			// }
+			// }
+			// body.append(" <<<< End");
+			// }
 
 			/*
 			 * Test for type restriction
@@ -376,8 +420,8 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 						if (body.length() > 0) {
 							body.append(" and ");
 						}
-						body.append("self." + property.getName() + ".nullFlavor = vocab::NullFlavor::" +
-								nullFlavorValue);
+						body.append(
+							"self." + property.getName() + ".nullFlavor = vocab::NullFlavor::" + nullFlavorValue);
 
 						AnnotationsUtil annotationUtil = getEcoreProfile().annotate(class_);
 						annotationUtil.setAnnotation(property.getName() + ".nullFlavor", nullFlavorValue);

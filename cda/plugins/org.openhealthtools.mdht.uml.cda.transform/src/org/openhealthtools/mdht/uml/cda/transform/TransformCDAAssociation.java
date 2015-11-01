@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - more accurate association multiplicity constraints (artf3100)
  *                        - support local datatype subclasses (artf3350)
- *     Dan Brown (Audacious Inquiry) - Implement fix for artf3818 : Errata 384 Incorporate No Information Section Fixes                   
+ *     Dan Brown (Audacious Inquiry) - Implement fix for artf3818 : Errata 384 Incorporate No Information Section Fixes
  *
  * $Id$
  */
@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
@@ -47,17 +48,25 @@ public class TransformCDAAssociation extends TransformAssociation {
 
 		if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass)) &&
 				CDAModelUtil.isSection(targetClass)) {
-			// ClinicalDocument -> Section || Section -> Section
-			constraintBody.append("self.getAllSections()->");
-			constraintBody.append((sourceProperty.getUpper() == 1)
-					? "one("
-					: "exists(");
-			constraintBody.append("section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" +
-					constraintTargetQName + "))");
 
-			// start building "getter" operation body
-			operationBody.append(constraintBody.toString().replace("one", "select").replace("exists", "select"));
+			operationBody.append("self.getAllSections()->select(");
+			operationBody.append(
+				"section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" +
+						constraintTargetQName + "))");
 
+			if (sourceProperty.getUpper() == 1) {
+				constraintBody.append(operationBody.toString().replace("select", "one"));
+			} else {
+				constraintBody.append(operationBody.toString()).append("->size() >= ").append(
+					sourceProperty.getLower() == 0
+							? "1"
+							: sourceProperty.getLower());
+				if (sourceProperty.getUpper() != LiteralUnlimitedNatural.UNLIMITED) {
+					constraintBody.append(" and ").append(operationBody.toString()).append("->size() <= ").append(
+						sourceProperty.getUpper());
+				}
+
+			}
 			result = true;
 		}
 
@@ -82,10 +91,12 @@ public class TransformCDAAssociation extends TransformAssociation {
 		} else if (CDAModelUtil.isClinicalStatement(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
 			associationEndOut[0] = "entryRelationship";
 			variableDeclarationOut[0] = "entryRelationship : cda::EntryRelationship";
-		} else if (CDAModelUtil.isClinicalStatement(sourceClass) && "ParticipantRole".equals(baseTargetClass.getName())) {
+		} else
+			if (CDAModelUtil.isClinicalStatement(sourceClass) && "ParticipantRole".equals(baseTargetClass.getName())) {
 			associationEndOut[0] = "participant";
 			variableDeclarationOut[0] = "participant : cda::Participant2";
-		} else if (CDAModelUtil.isClinicalStatement(sourceClass) && "AssignedEntity".equals(baseTargetClass.getName())) {
+		} else if (CDAModelUtil.isClinicalStatement(sourceClass) &&
+				"AssignedEntity".equals(baseTargetClass.getName())) {
 			associationEndOut[0] = "performer";
 			variableDeclarationOut[0] = "performer : cda::Performer2";
 		} else {
@@ -173,7 +184,7 @@ public class TransformCDAAssociation extends TransformAssociation {
 	}
 
 	/**
-	 * 
+	 *
 	 * Returns the OCL prefix required based on the implementation.
 	 * Overrides the parent TransformAssociation.java method to provide more complex OCL based on a specific scenario.
 	 * The scenario is Errata 384:
@@ -181,7 +192,7 @@ public class TransformCDAAssociation extends TransformAssociation {
 	 * The entry requirement is enforced.
 	 * Otherwise, if there is no nullFlavor = NI specified on the section:
 	 * The entry is required as defined by the existing OCL constraint.
-	 * 
+	 *
 	 * @param baseSourceClass
 	 *            used for sub class overrides to determine what type of element we are dealing with.
 	 *            If the subclass is calling the method, pass in null since it is not used in the super.
