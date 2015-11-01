@@ -255,11 +255,10 @@ public class CDAModelUtil {
 			String cdaName = cdaClass == null
 					? null
 					: cdaClass.getName();
-			if (cdaClass != null &&
-					("Act".equals(cdaName) || "Encounter".equals(cdaName) || "Observation".equals(cdaName) ||
-							"ObservationMedia".equals(cdaName) || "Organizer".equals(cdaName) ||
-							"Procedure".equals(cdaName) || "RegionOfInterest".equals(cdaName) ||
-							"SubstanceAdministration".equals(cdaName) || "Supply".equals(cdaName))) {
+			if (cdaClass != null && ("Act".equals(cdaName) || "Encounter".equals(cdaName) ||
+					"Observation".equals(cdaName) || "ObservationMedia".equals(cdaName) ||
+					"Organizer".equals(cdaName) || "Procedure".equals(cdaName) || "RegionOfInterest".equals(cdaName) ||
+					"SubstanceAdministration".equals(cdaName) || "Supply".equals(cdaName))) {
 				return true;
 			}
 		}
@@ -419,8 +418,8 @@ public class CDAModelUtil {
 				return multiplicityElementToggle(markup, "@extension", " [1..1]", templateVersionAsBusinessName);
 			}
 		};
-		return cdaTemplater.setRequireMarkup(markup).setRuleIds(ruleIds).setTemplateVersion(templateVersion).setMultiplicity(
-			multiplicityRange).compute().toString();
+		return cdaTemplater.setRequireMarkup(markup).setRuleIds(ruleIds).setTemplateVersion(
+			templateVersion).setMultiplicity(multiplicityRange).compute().toString();
 	}
 
 	public static String computeConformanceMessage(Generalization generalization, boolean markup) {
@@ -505,8 +504,8 @@ public class CDAModelUtil {
 
 	private static StringBuffer multiplicityElementToggle(Property property, boolean markup, String elementName) {
 		StringBuffer message = new StringBuffer();
-		message.append(multiplicityElementToggle(
-			markup, elementName, getMultiplicityRange(property), getBusinessName(property)));
+		message.append(
+			multiplicityElementToggle(markup, elementName, getMultiplicityRange(property), getBusinessName(property)));
 		return message;
 	}
 
@@ -593,9 +592,12 @@ public class CDAModelUtil {
 
 				appendConformanceRules(sb, endType, (property.getUpper() == 1
 						? "This "
-						: "Such ") + (property.getUpper() == 1
-						? elementName
-						: NameUtilities.pluralize(elementName)) + " ", markup);
+						: "Such ") +
+						(property.getUpper() == 1
+								? elementName
+								: NameUtilities.pluralize(elementName)) +
+						" ",
+					markup);
 				message.append(" " + sb + " ");
 
 			} else {
@@ -680,9 +682,12 @@ public class CDAModelUtil {
 
 				appendConformanceRules(sb, inlinedClass, (property.getUpper() == 1
 						? "This "
-						: "Such ") + (property.getUpper() == 1
-						? elementName
-						: NameUtilities.pluralize(elementName)) + " ", markup);
+						: "Such ") +
+						(property.getUpper() == 1
+								? elementName
+								: NameUtilities.pluralize(elementName)) +
+						" ",
+					markup);
 				message.append(" " + sb);
 
 			}
@@ -720,9 +725,10 @@ public class CDAModelUtil {
 			message.append("Contains ");
 			message.append(markup
 					? "<tt><b>"
-					: "").append("@typeCode=\"").append(markup
-					? "</b>"
-					: "");
+					: "").append("@typeCode=\"").append(
+						markup
+								? "</b>"
+								: "");
 			message.append(typeCode).append("\" ");
 			message.append(markup
 					? "</tt>"
@@ -807,7 +813,8 @@ public class CDAModelUtil {
 			if (eReferenceStereoetype != null) {
 				String nameSpace = (String) cdaBaseProperty.getValue(eReferenceStereoetype, CDAModelUtil.XMLNAMESPACE);
 				if (!StringUtils.isEmpty(nameSpace)) {
-					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(cdaBaseProperty.getNearestPackage());
+					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(
+						cdaBaseProperty.getNearestPackage());
 					Stereotype ePackageStereoetype = topPackage.getApplicableStereotype(CDAModelUtil.EPACKAGE);
 					if (ePackageStereoetype != null) {
 						if (nameSpace.equals(topPackage.getValue(ePackageStereoetype, CDAModelUtil.NSURI))) {
@@ -888,7 +895,8 @@ public class CDAModelUtil {
 		TransformProvider newContributor = null;
 		Property cdaProperty = null;
 		try {
-			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension("transform-class");
+			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension(
+				"transform-class");
 			cdaProperty = newContributor.GetTransform(property);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -960,11 +968,13 @@ public class CDAModelUtil {
 					textValue, ICDAProfileConstants.VALIDATION_SEVERITY);
 				message.append(" and ").append(markup
 						? "<b>"
-						: "").append(level != null
-						? getValidationKeyword(level.getLiteral())
-						: keyword).append(markup
-						? "</b>"
-						: "").append(" equal \"").append(value).append("\"");
+						: "").append(
+							level != null
+									? getValidationKeyword(level.getLiteral())
+									: keyword).append(
+										markup
+												? "</b>"
+												: "").append(" equal \"").append(value).append("\"");
 			}
 		}
 
@@ -976,8 +986,8 @@ public class CDAModelUtil {
 				? null
 				: redefinedProperties.get(0);
 
-		if (property.getType() != null &&
-				((redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType()))))) {
+		if (property.getType() != null && ((redefinedProperty == null ||
+				(!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType()))))) {
 			message.append(" with " + "@xsi:type=\"");
 			if (redefinedProperty != null && redefinedProperty.getType() != null &&
 					redefinedProperty.getType().getName() != null && !redefinedProperty.getType().getName().isEmpty()) {
@@ -1035,10 +1045,10 @@ public class CDAModelUtil {
 
 				if (isPublishSeperately((Class) property.getType())) {
 
-					String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
-						property, property.getType()))
-							? computeXref(xrefSource, (Classifier) property.getType())
-							: null;
+					String xref = (property.getType() instanceof Classifier &&
+							UMLUtil.isSameProject(property, property.getType()))
+									? computeXref(xrefSource, (Classifier) property.getType())
+									: null;
 					boolean showXref = markup && (xref != null);
 
 					if (showXref) {
@@ -1181,17 +1191,15 @@ public class CDAModelUtil {
 
 		// XML attributes
 		for (Property property : propertyList.getAttributes()) {
-			hasRules = hasRules |
-					appendPropertyList(
-						umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
-						subConstraintMap);
+			hasRules = hasRules | appendPropertyList(
+				umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
+				subConstraintMap);
 		}
 		// XML elements
 		for (Property property : propertyList.getAssociationEnds()) {
-			hasRules = hasRules |
-					appendPropertyList(
-						umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
-						subConstraintMap);
+			hasRules = hasRules | appendPropertyList(
+				umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
+				subConstraintMap);
 		}
 
 		for (Constraint constraint : unprocessedConstraints) {
@@ -1311,7 +1319,8 @@ public class CDAModelUtil {
 	}
 
 	private static void appendSubConstraintRules(StringBuffer ruleConstraints, Constraint constraint,
-			Map<Constraint, List<Constraint>> subConstraintMap, List<Constraint> unprocessedConstraints, boolean markup) {
+			Map<Constraint, List<Constraint>> subConstraintMap, List<Constraint> unprocessedConstraints,
+			boolean markup) {
 
 		String[] ol;
 		String[] li;
@@ -2066,7 +2075,8 @@ public class CDAModelUtil {
 			elementName = "entry";
 		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+		} else
+			if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
 		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"ParticipantRole".equals(cdaTargetClass.getName())) {
@@ -2090,19 +2100,122 @@ public class CDAModelUtil {
 		return message.toString();
 	}
 
+	/*
+	 *
+	 * · 0..1 zero or one
+	 *
+	 * · 1..1 exactly one
+	 *
+	 * · 1..* at least one
+	 *
+	 * · 0..* zero or more
+	 *
+	 * · 1..n at least one and not more than n
+	 */
+
 	private static String getMultiplicityText(Property property) {
 
 		StringBuffer message = new StringBuffer();
-		if (property.getLower() == 1 && property.getUpper() == 1) {
-			message.append("exactly one");
-		} else if (property.getLower() == 0 && property.getUpper() == 1) {
-			message.append("zero or one");
-		} else if (property.getLower() == 0 && property.getUpper() == -1) {
-			message.append("zero or more");
-		} else if (property.getLower() == 1 && property.getUpper() == -1) {
-			message.append("at least one");
+
+		if (property.getLower() == property.getUpper()) {
+			// Upper and lower equal
+			message.append("exactly ").append(convertNumberToWords(property.getUpper()));
+		} else if (property.getLower() == 0) {
+			// Lower is zero
+			if (property.getUpper() == 0) {
+
+			} else if (property.getUpper() == 1) {
+				message.append("zero or one");
+			} else if (property.getUpper() == -1) {
+				message.append("zero or more");
+			} else {
+				message.append("not more than " + convertNumberToWords(property.getUpper()));
+			}
+		} else if (property.getLower() == 1) {
+			// Lower is one
+			if (property.getUpper() == -1) {
+				message.append("at least one");
+			} else {
+				message.append(
+					"at least " + convertNumberToWords(property.getLower()) + " and not more than " +
+							convertNumberToWords(property.getUpper()));
+			}
+		} else {
+			// Lower is greater then 1
+			message.append("at least " + convertNumberToWords(property.getLower()));
+			if (property.getUpper() != -1) {
+				message.append(" and not more than " + convertNumberToWords(property.getUpper()));
+			}
 		}
 		return message.toString();
+	}
+
+	// This snippet may be used freely, as long as the authorship note remains in the source code.
+
+	private static final String[] lowNames = {
+			"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
+			"thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
+
+	private static final String[] tensNames = {
+			"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
+
+	private static final String[] bigNames = { "thousand", "million", "billion" };
+
+	/**
+	 * Converts an integer number into words (american english).
+	 *
+	 * @author Christian d'Heureuse, Inventec Informatik AG, Switzerland, www.source-code.biz
+	 **/
+	private static String convertNumberToWords(int n) {
+		if (n < 0) {
+			return "minus " + convertNumberToWords(-n);
+		}
+		if (n <= 999) {
+			return convert999(n);
+		}
+		String s = null;
+		int t = 0;
+		while (n > 0) {
+			if (n % 1000 != 0) {
+				String s2 = convert999(n % 1000);
+				if (t > 0) {
+					s2 = s2 + " " + bigNames[t - 1];
+				}
+				if (s == null) {
+					s = s2;
+				} else {
+					s = s2 + ", " + s;
+				}
+			}
+			n /= 1000;
+			t++;
+		}
+		return s;
+	}
+
+	// Range 0 to 999.
+	private static String convert999(int n) {
+		String s1 = lowNames[n / 100] + " hundred";
+		String s2 = convert99(n % 100);
+		if (n <= 99) {
+			return s2;
+		} else if (n % 100 == 0) {
+			return s1;
+		} else {
+			return s1 + " " + s2;
+		}
+	}
+
+	// Range 0 to 99.
+	private static String convert99(int n) {
+		if (n < 20) {
+			return lowNames[n];
+		}
+		String s = tensNames[n / 10 - 2];
+		if (n % 10 == 0) {
+			return s;
+		}
+		return s + "-" + lowNames[n % 10];
 	}
 
 	public static boolean isXMLAttribute(Property property) {
