@@ -66,6 +66,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
 import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
@@ -1166,23 +1167,27 @@ public class CDAModelUtil {
 
 		for (Constraint constraint : umlClass.getOwnedRules()) {
 			unprocessedConstraints.add(constraint);
-			for (Element element : constraint.getConstrainedElements()) {
-				if (element instanceof Property) {
-					String name = ((Property) element).getName();
-					List<Constraint> rules = constraintMap.get(name);
-					if (rules == null) {
-						rules = new ArrayList<Constraint>();
-						constraintMap.put(name, rules);
+
+			// Do not associate logical constraints with a property because they are a class and not a property constraint
+			if (CDAProfileUtil.getLogicalConstraint(constraint) == null) {
+				for (Element element : constraint.getConstrainedElements()) {
+					if (element instanceof Property) {
+						String name = ((Property) element).getName();
+						List<Constraint> rules = constraintMap.get(name);
+						if (rules == null) {
+							rules = new ArrayList<Constraint>();
+							constraintMap.put(name, rules);
+						}
+						rules.add(constraint);
+					} else if (element instanceof Constraint) {
+						Constraint subConstraint = (Constraint) element;
+						List<Constraint> rules = subConstraintMap.get(subConstraint);
+						if (rules == null) {
+							rules = new ArrayList<Constraint>();
+							subConstraintMap.put(subConstraint, rules);
+						}
+						rules.add(constraint);
 					}
-					rules.add(constraint);
-				} else if (element instanceof Constraint) {
-					Constraint subConstraint = (Constraint) element;
-					List<Constraint> rules = subConstraintMap.get(subConstraint);
-					if (rules == null) {
-						rules = new ArrayList<Constraint>();
-						subConstraintMap.put(subConstraint, rules);
-					}
-					rules.add(constraint);
 				}
 			}
 		}
@@ -1720,35 +1725,83 @@ public class CDAModelUtil {
 			keyword = "SHALL";
 		}
 
-		message.append(markup
-				? "<b>"
-				: "");
-		message.append(keyword);
-		message.append(markup
-				? "</b>"
-				: "");
-		message.append(" satisfy the following ");
+		// Wording for IFTHEN - IF xxx then SHALL yyy
+		if (!logicConstraint.getOperation().equals(LogicalOperator.IFTHEN)) {
+			message.append(markup
+					? "<b>"
+					: "");
+			message.append(keyword);
+			message.append(markup
+					? "</b>"
+					: "");
 
-		boolean appendLogic = false;
-		message.append(OL[0]);
-		for (Element element : constraint.getConstrainedElements()) {
-			message.append(LI[0]);
-			if (appendLogic) {
-				message.append(markup
-						? "<b>"
-						: " ");
-				message.append(" " + logicConstraint.getOperation() + " ");
-				message.append(markup
-						? "</b>"
-						: " ");
+		}
+
+		switch (logicConstraint.getOperation()) {
+			case XOR:
+				message.append(" contain one and only one of the following ");
+				break;
+			case AND:
+				message.append(" contain all of the following ");
+				break;
+			case OR:
+				message.append(" contain one or more of the following ");
+			case IFTHEN:
+				message.append("if ");
+				break;
+			case NOTBOTH:
+				message.append(" contain zero or one of the following but not both ");
+				break;
+			default:
+				message.append(" satisfy the following ");
+				break;
+		}
+
+		if (logicConstraint.getOperation().equals(LogicalOperator.IFTHEN) &&
+				constraint.getConstrainedElements().size() == 2) {
+
+		
+			String propertyKeyword = getValidationKeyword(constraint.getConstrainedElements().get(0));
+
+			if (propertyKeyword != null) {
+				message.append(
+					computeConformanceMessage(constraint.getConstrainedElements().get(0), markup).replace(
+						propertyKeyword, ""));
 			} else {
-				appendLogic = true;
+				message.append(computeConformanceMessage(constraint.getConstrainedElements().get(0), markup));
 			}
 
-			message.append(computeConformanceMessage(element, markup));
-			message.append(LI[1]);
+		
+			message.append(" then it ").append(markup
+					? "<lines>"
+					: "").append(
+						markup
+								? "<b>"
+								: "").append(keyword).append(
+									markup
+											? "</b> "
+											: " ");
+		
+
+			message.append(computeConformanceMessage(constraint.getConstrainedElements().get(1), markup));
+			message.append(markup
+					? "</lines>"
+					: "");
+			
+
+		} else {
+			if (markup) {
+				message.append("<ul>");
+			}
+			for (Element element : constraint.getConstrainedElements()) {
+				message.append(LI[0]);
+				message.append(computeConformanceMessage(element, markup));
+				message.append(LI[1]);
+			}
+			if (markup) {
+				message.append("</ul>");
+			}
 		}
-		message.append(OL[1]);
 
 		appendConformanceRuleIds(constraint, message, markup);
 
