@@ -1760,7 +1760,6 @@ public class CDAModelUtil {
 		if (logicConstraint.getOperation().equals(LogicalOperator.IFTHEN) &&
 				constraint.getConstrainedElements().size() == 2) {
 
-		
 			String propertyKeyword = getValidationKeyword(constraint.getConstrainedElements().get(0));
 
 			if (propertyKeyword != null) {
@@ -1771,7 +1770,6 @@ public class CDAModelUtil {
 				message.append(computeConformanceMessage(constraint.getConstrainedElements().get(0), markup));
 			}
 
-		
 			message.append(" then it ").append(markup
 					? "<lines>"
 					: "").append(
@@ -1781,13 +1779,11 @@ public class CDAModelUtil {
 									markup
 											? "</b> "
 											: " ");
-		
 
 			message.append(computeConformanceMessage(constraint.getConstrainedElements().get(1), markup));
 			message.append(markup
 					? "</lines>"
 					: "");
-			
 
 		} else {
 			if (markup) {
@@ -2171,8 +2167,10 @@ public class CDAModelUtil {
 		StringBuffer message = new StringBuffer();
 
 		if (property.getLower() == property.getUpper()) {
-			// Upper and lower equal
-			message.append("exactly ").append(convertNumberToWords(property.getUpper()));
+			// Upper and lower equal and not zero
+			if (property.getLower() != 0) {
+				message.append("exactly ").append(convertNumberToWords(property.getUpper()));
+			}
 		} else if (property.getLower() == 0) {
 			// Lower is zero
 			if (property.getUpper() == 0) {
