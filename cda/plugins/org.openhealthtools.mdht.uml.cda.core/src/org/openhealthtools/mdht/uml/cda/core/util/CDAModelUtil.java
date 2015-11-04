@@ -1133,7 +1133,7 @@ public class CDAModelUtil {
 
 	private static final String[] NOLI = { "", " " };
 
-	static private void appendConformanceRules(StringBuilder appendB, Class umlClass, String prefix, boolean markup) {
+	static public void appendConformanceRules(StringBuilder appendB, Class umlClass, String prefix, boolean markup) {
 
 		String[] ol = markup
 				? OL
@@ -1208,6 +1208,19 @@ public class CDAModelUtil {
 				subConstraintMap);
 		}
 
+		List<Classifier> allParents = new ArrayList<Classifier>(umlClass.allParents());
+		allParents.add(0, umlClass);
+		
+		// aggregate constraints
+		for (int i = allParents.size() - 1; i > 0; i--) {
+			Class parent = (Class) allParents.get(i);
+			if (!CDAModelUtil.isCDAModel(parent)) {
+				for (Constraint constraint : parent.getOwnedRules()) {
+					unprocessedConstraints.add(constraint);
+				}
+			}
+		}
+		
 		for (Constraint constraint : unprocessedConstraints) {
 			hasRules = true;
 			sb.append(li[0] + prefix + CDAModelUtil.computeConformanceMessage(constraint, markup) + li[1]);
@@ -2282,7 +2295,7 @@ public class CDAModelUtil {
 		return false;
 	}
 
-	private static String getMultiplicityRange(Class template) {
+	public static String getMultiplicityRange(Class template) {
 		String templateId = null;
 		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(template, ICDAProfileConstants.CDA_TEMPLATE);
 		if (hl7Template != null && template.hasValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY)) {
