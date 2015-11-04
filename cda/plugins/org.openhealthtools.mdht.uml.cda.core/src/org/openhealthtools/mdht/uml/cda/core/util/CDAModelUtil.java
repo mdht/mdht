@@ -16,6 +16,7 @@
  *     								 - added message support for errata 384 as per artf3818 No Information Section Fix
  *     								 - support templateId extension attribute value in generalization and association messages
  *     Sarp Kaya (NEHTA)
+ *     Vadim Peretokin (NEHTA) - added handling of SHOULD + 0..0 multiplicity to produce publication text "SHALL NOT"
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
@@ -2595,7 +2596,8 @@ public class CDAModelUtil {
 	}
 
 	private static String addShallNot(String keyword, Property property) {
-		if (property.getLower() == 0 && property.getUpper() == 0 && "SHALL".equals(keyword)) {
+		if (property.getLower() == 0 && property.getUpper() == 0 &&
+				("SHALL".equals(keyword) || "SHOULD".equals(keyword))) {
 			keyword += " NOT";
 		}
 		return keyword;
