@@ -129,7 +129,7 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 		return body.toString();
 	}
 
-	private boolean isEDType(Property property) {
+	private boolean isTextProperty(Property property) {
 		Classifier type = (Classifier) property.getType();
 		if (type == null) {
 			Property cdaProperty = getBaseProperty(property);
@@ -144,7 +144,9 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 		allTypes.add(0, type);
 
 		for (Classifier classifier : allTypes) {
-			if ("datatypes::ED".equals(classifier.getQualifiedName())) {
+			if ("datatypes::ED".equals(classifier.getQualifiedName()) ||
+					"datatypes::EN".equals(classifier.getQualifiedName()) ||
+					"datatypes::AD".equals(classifier.getQualifiedName())) {
 				return true;
 			}
 		}
@@ -442,7 +444,7 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 			 */
 			Stereotype textValue = getEcoreProfile().getAppliedValidationStereotype(
 				property, ValidationStereotypeKind.TEXT_VALUE);
-			if (textValue != null && isEDType(property)) {
+			if (textValue != null && isTextProperty(property)) {
 				String value = (String) property.getValue(textValue, ICDAProfileConstants.TEXT_VALUE_VALUE);
 				if (value != null) {
 					Class class_ = property.getClass_();
@@ -450,8 +452,14 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 						if (body.length() > 0) {
 							body.append(" and ");
 						}
-						body.append("self." + property.getName() + ".getText() = " + "'" + value + "'");
-
+						if (cdaProperty.getUpper() == 1) {
+							body.append("self." + cdaProperty.getName() + ".getText() = " + "'" + value + "'");
+						} else {
+							body.append(
+								"self." + cdaProperty.getName() + "->reject(" + cdaProperty.getName() +
+										" : datatypes::" + cdaProperty.getType().getName() + " |" +
+										cdaProperty.getName() + ".getText()='" + value + "')->size() = 0");
+						}
 						AnnotationsUtil annotationUtil = getEcoreProfile().annotate(class_);
 						annotationUtil.setAnnotation(property.getName() + ".mixed", value);
 						annotationUtil.saveAnnotations();

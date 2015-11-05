@@ -36,9 +36,8 @@ public class TextAttributeFilter extends CDAFilter {
 						CDAModelUtil.getCDADatatype(((Property) element).getClass_()) != null) &&
 				((Property) element).getType() instanceof Classifier) {
 			Classifier type = (Classifier) ((Property) element).getType();
-
 			List<String> allParentNames = UMLUtil.getAllParentNames(type);
-			return allParentNames.contains("ED");
+			return allParentNames.contains("ED") || allParentNames.contains("EN") || allParentNames.contains("AD");
 		}
 		return false;
 	}
