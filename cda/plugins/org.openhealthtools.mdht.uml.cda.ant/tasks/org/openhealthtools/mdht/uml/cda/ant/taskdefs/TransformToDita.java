@@ -53,6 +53,8 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	private Boolean appendConformanceRules = null;
 
+	private Boolean noVerticalLinesInTables = null;
+
 	private Boolean includeVocabularyConstraints = null;
 
 	private int exampleDepth;
@@ -149,6 +151,11 @@ public class TransformToDita extends CDAModelingSubTask {
 		if (includeVocabularyConstraints == null && project.getProperty("includeVocabularyConstraints") != null) {
 			includeVocabularyConstraints = Boolean.valueOf(project.getProperty("includeVocabularyConstraints"));
 		}
+
+		if (noVerticalLinesInTables == null && project.getProperty("noVerticalLinesInTables") != null) {
+			noVerticalLinesInTables = Boolean.valueOf(project.getProperty("noVerticalLinesInTables"));
+		}
+
 		if (includeTableView == null && project.getProperty("includeTableView") != null) {
 			includeTableView = Boolean.valueOf(project.getProperty("includeTableView"));
 		}
@@ -194,6 +201,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	public void setAppendConformanceRules(boolean appendConformanceRules) {
 		this.appendConformanceRules = new Boolean(appendConformanceRules);
+	}
+
+	public void setNoVerticalLinesInTables(boolean noVerticalLinesInTables) {
+		this.noVerticalLinesInTables = new Boolean(noVerticalLinesInTables);
 	}
 
 	// ANT task child elements
@@ -245,6 +256,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 		if (appendConformanceRules != null) {
 			options.setAppendConformanceRules(appendConformanceRules);
+		}
+
+		if (noVerticalLinesInTables != null) {
+			options.setNoVerticalLinesInTables(noVerticalLinesInTables);
 		}
 
 		if (includeVocabularyConstraints != null) {
