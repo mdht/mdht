@@ -58,6 +58,8 @@ public class DitaTransformerOptions {
 
 	private boolean appendConformanceRules = false;
 
+	private boolean noVerticalLinesInTables;
+
 	private boolean includeVocabularyConstraints = false;
 
 	private int exampleDepth;
@@ -135,6 +137,20 @@ public class DitaTransformerOptions {
 		return appendConformanceRules;
 	}
 
+	/**
+	 * The value of the noVerticalLinesInTables attribute in the dita-transform ant task xml
+	 * If set, use <br>
+	 *
+	 * {@code <table frame="topbot" rowsep="1">} <br>
+	 * instead of <br>
+	 * {@code <table frame="all" rowsep="1" colsep="1"> }
+	 *
+	 * @return appendConformanceRules
+	 */
+	public boolean isNoVerticalLinesInTables() {
+		return noVerticalLinesInTables;
+	}
+
 	public boolean isIncludeTableView() {
 		return includeTableView;
 	}
@@ -157,6 +173,15 @@ public class DitaTransformerOptions {
 	 */
 	public void setAppendConformanceRules(boolean appendConformanceRules) {
 		this.appendConformanceRules = appendConformanceRules;
+	}
+
+	/**
+	 * @param noVerticalLinesInTables
+	 *            should the Dita transformer disable vertical lines in tables
+	 */
+	public void setNoVerticalLinesInTables(Boolean noVerticalLinesInTables) {
+		this.noVerticalLinesInTables = noVerticalLinesInTables;
+
 	}
 
 	public boolean isIncludeVocabularyConstraints() {

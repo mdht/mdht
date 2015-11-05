@@ -4,14 +4,14 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Les Westberg - Fixed a problem related to generating the DITA for value sets
- *                    that were not contained in the vocab project and that are in 
+ *                    that were not contained in the vocab project and that are in
  *                    models which are not based on CDA
- *                   
- *     
+ *
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
@@ -74,8 +74,11 @@ public class TransformValueSet extends TransformAbstract {
 
 		if (!umlEnumeration.getOwnedLiterals().isEmpty()) {
 
+			// print the <table> tag
+			writer.println(getTableType());
+
 			if (transformerOptions.isIncludeUsageNotes()) {
-				writer.println("<table frame=\"all\" rowsep=\"1\" colsep=\"1\"><tgroup cols=\"4\">");
+				writer.println("<tgroup cols=\"4\">");
 				writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col3\" colwidth=\"1*\"/>");
@@ -84,7 +87,7 @@ public class TransformValueSet extends TransformAbstract {
 				writer.println("<entry>Code</entry><entry>Code System</entry><entry>Print Name</entry><entry>Usage Note</entry>");
 				writer.println("</row></thead><tbody>");
 			} else {
-				writer.println("<table frame=\"all\" rowsep=\"1\" colsep=\"1\"><tgroup cols=\"3\">");
+				writer.println("<tgroup cols=\"3\">");
 				writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col3\" colwidth=\"2*\"/>");
@@ -130,8 +133,23 @@ public class TransformValueSet extends TransformAbstract {
 		}
 	}
 
-	private static void appendDefinition(PrintWriter writer, Enumeration umlEnumeration) {
-		writer.println("<table frame=\"all\" rowsep=\"1\" colsep=\"1\"><tgroup cols=\"2\">");
+	/**
+	 * Using transformerOptions determine the correct table type to use for
+	 * output
+	 *
+	 * @return either {@code <table frame=\"topbot\" rowsep=\"1\"> } if isNoVerticalLinesInTables is set
+	 *         or {@code <table frame=\"all\" rowsep=\"1\" colsep=\"1\"> }
+	 */
+	private String getTableType() {
+		return transformerOptions.isNoVerticalLinesInTables()
+				? "<table frame=\"topbot\" rowsep=\"1\">"
+				: "<table frame=\"all\" rowsep=\"1\" colsep=\"1\">";
+
+	}
+
+	private void appendDefinition(PrintWriter writer, Enumeration umlEnumeration) {
+		writer.println(getTableType());
+		writer.println("<tgroup cols=\"2\">");
 		writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
 		writer.println("<colspec colname=\"col2\" colwidth=\"4*\"/>");
 		writer.println("<tbody>");
