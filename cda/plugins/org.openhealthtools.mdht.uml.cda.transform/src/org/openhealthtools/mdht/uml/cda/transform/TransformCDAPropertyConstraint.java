@@ -146,6 +146,7 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 		for (Classifier classifier : allTypes) {
 			if ("datatypes::ED".equals(classifier.getQualifiedName()) ||
 					"datatypes::EN".equals(classifier.getQualifiedName()) ||
+					"datatypes::ON".equals(classifier.getQualifiedName()) ||
 					"datatypes::AD".equals(classifier.getQualifiedName())) {
 				return true;
 			}
