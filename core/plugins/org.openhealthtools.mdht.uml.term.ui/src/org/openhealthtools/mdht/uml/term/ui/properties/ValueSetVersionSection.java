@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for restoring defaults
  *     Christian W. Damus - implement handling of live validation roll-back (artf3318)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
 
@@ -59,6 +59,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
+import org.openhealthtools.mdht.uml.common.ui.util.UMLUIUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
 import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
@@ -181,7 +182,8 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 
 	private void modifyFields() {
 		if (!(idModified || nameModified || versionModified || fullNameModified || sourceModified || urlModified ||
-				effectiveDateModified || releaseDateModified || typeModified || bindingModified || definitionModified)) {
+				effectiveDateModified || releaseDateModified || typeModified || bindingModified ||
+				definitionModified)) {
 			return;
 		}
 
@@ -191,12 +193,14 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Profile ctsProfile = TermProfileUtil.getTerminologyProfile(umlEnumeration.eResource().getResourceSet());
+					Profile ctsProfile = TermProfileUtil.getTerminologyProfile(
+						umlEnumeration.eResource().getResourceSet());
 					if (ctsProfile == null) {
 						return Status.CANCEL_STATUS;
 					}
 					Enumeration bindingKind = (Enumeration) ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
-					Enumeration valueSetType = (Enumeration) ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_TYPE);
+					Enumeration valueSetType = (Enumeration) ctsProfile.getOwnedType(
+						ITermProfileConstants.VALUE_SET_TYPE);
 
 					ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
 
@@ -355,20 +359,18 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 	}
 
 	private void addCodeSystemReference() {
-		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(umlEnumeration.eResource().getResourceSet());
-		if (ctsProfile == null) {
-			return;
-		}
-		final Stereotype codeSystemVersionStereotype = (Stereotype) ctsProfile.getOwnedType(ITermProfileConstants.CODE_SYSTEM_VERSION);
 		IElementFilter filter = new IElementFilter() {
 			public boolean accept(Element element) {
-				return (element instanceof Enumeration) && element.isStereotypeApplied(codeSystemVersionStereotype);
+				if ((element instanceof Enumeration) &&
+						TermProfileUtil.getCodeSystemVersion((Enumeration) element) != null) {
+					return true;
+				}
+				return false;
 			}
 		};
 
 		final Enumeration codeSystemEnum = (Enumeration) DialogLaunchUtil.chooseElement(
-			filter, umlEnumeration.eResource().getResourceSet(), getPart().getSite().getShell(), null,
-			"Select a Code System");
+			filter, UMLUIUtil.loadModelsfromWorkspace(), getPart().getSite().getShell(), null, "Select a Code System");
 
 		if (codeSystemEnum == null) {
 			return;
@@ -381,7 +383,8 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 				"The selected Enumertion must be a <<CodeSystemVersion>>");
 			return;
 		}
-		final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnum.getStereotypeApplication(codeSystemStereotype);
+		final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnum.getStereotypeApplication(
+			codeSystemStereotype);
 
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlEnumeration);
@@ -703,9 +706,9 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@Override
@@ -943,7 +946,7 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification

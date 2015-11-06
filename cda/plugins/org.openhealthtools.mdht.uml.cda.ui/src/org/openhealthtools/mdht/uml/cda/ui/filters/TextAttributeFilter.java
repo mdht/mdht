@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.filters;
@@ -31,12 +31,14 @@ public class TextAttributeFilter extends CDAFilter {
 		Element element = getElement(object);
 
 		// property is owned by a class derived from CDA, and type is a Classifier
-		if (element instanceof Property && CDAModelUtil.getCDAClass(((Property) element).getClass_()) != null &&
+		if (element instanceof Property &&
+				(CDAModelUtil.getCDAClass(((Property) element).getClass_()) != null ||
+						CDAModelUtil.getCDADatatype(((Property) element).getClass_()) != null) &&
 				((Property) element).getType() instanceof Classifier) {
 			Classifier type = (Classifier) ((Property) element).getType();
-
 			List<String> allParentNames = UMLUtil.getAllParentNames(type);
-			return allParentNames.contains("ED");
+			return allParentNames.contains("ED") || allParentNames.contains("EN") || allParentNames.contains("AD") ||
+					allParentNames.contains("ON");
 		}
 		return false;
 	}

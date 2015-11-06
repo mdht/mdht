@@ -4,31 +4,21 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.builder;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpression;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
+import java.util.Set;
 
 import org.dita.dost.util.DitaUtil;
 import org.eclipse.ant.core.AntCorePlugin;
@@ -41,6 +31,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
+import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.IncrementalProjectBuilder;
@@ -78,11 +69,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ecore.importer.UMLImporter;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil.FindResourcesByNameVisitor;
 import org.openhealthtools.mdht.uml.cda.ui.actions.ImportDitaReferences;
+import org.openhealthtools.mdht.uml.cda.ui.editors.MDHTPreferences;
+import org.openhealthtools.mdht.uml.cda.ui.internal.Activator;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 
 public class CDABuilder extends IncrementalProjectBuilder {
 
@@ -177,7 +166,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 	/**
 	 * getTemplatesDirectory returns the templates directory where the cda.uml model is found
 	 * This is to support extensions
-	 * 
+	 *
 	 * @return
 	 */
 	private static String getTemplatesDirectory() {
@@ -194,11 +183,44 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			}
 
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
 		}
 
 		return TEMPLATESDIR;
+	}
+
+	public static class CollectGenPackages implements IResourceVisitor {
+
+		/**
+		 * @param resourceSet
+		 */
+		public CollectGenPackages(ResourceSet resourceSet) {
+			super();
+			this.resourceSet = resourceSet;
+		}
+
+		Set<org.eclipse.emf.codegen.ecore.genmodel.GenPackage> genPackages = new LinkedHashSet<org.eclipse.emf.codegen.ecore.genmodel.GenPackage>();
+
+		private ResourceSet resourceSet = null;
+
+		public boolean visit(IResource resource) throws CoreException {
+
+			if (resource.getFileExtension() != null && "genmodel".equals(resource.getFileExtension())) {
+				GenModel sourceGenModel = (GenModel) EcoreUtil.getObjectByType(
+					resourceSet.getResource(
+						URI.createPlatformResourceURI(resource.getFullPath().toString(), true), true).getContents(),
+					GenModelPackage.eINSTANCE.getGenModel());
+
+				if (sourceGenModel != null) {
+					for (org.eclipse.emf.codegen.ecore.genmodel.GenPackage usedGenPackage : sourceGenModel.getAllGenAndUsedGenPackagesWithClassifiers()) {
+						if (genPackages.add(usedGenPackage)) {
+						}
+					}
+				}
+			}
+			return true;
+		}
+
 	}
 
 	public static void createGenModel(IProject project, IProgressMonitor monitor) {
@@ -278,8 +300,15 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		genmodel.getGenAnnotations().add(ga);
 
-		for (org.eclipse.emf.codegen.ecore.genmodel.GenPackage genPackage : getGenModel(project).values()) {
-			genmodel.getUsedGenPackages().add(genPackage);
+		CollectGenPackages lgmv = new CollectGenPackages(resourceSet);
+
+		try {
+			project.getWorkspace().getRoot().accept(lgmv);
+			for (org.eclipse.emf.codegen.ecore.genmodel.GenPackage genPackage : lgmv.genPackages) {
+				genmodel.getUsedGenPackages().add(genPackage);
+			}
+		} catch (CoreException e2) {
+
 		}
 
 		GenPackage genPackage = GenModelFactory.eINSTANCE.createGenPackage();
@@ -326,107 +355,6 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		}
 
-	}
-
-	private static String getFileNameFromMap(String ditaMapPath) {
-
-		String fileName = null;
-
-		try {
-
-			FileInputStream ditaMapStream;
-
-			ditaMapStream = new FileInputStream(ditaMapPath);
-
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-
-			factory.setNamespaceAware(true);
-
-			factory.setValidating(false);
-
-			factory.setFeature("http://xml.org/sax/features/namespaces", false);
-			factory.setFeature("http://xml.org/sax/features/validation", false);
-			factory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
-			factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
-
-			DocumentBuilder builder;
-
-			Document doc = null;
-
-			XPathExpression expr = null;
-
-			builder = factory.newDocumentBuilder();
-
-			doc = builder.parse(new InputSource(ditaMapStream)); // zipFile.getInputStream(pluginEntry)));
-
-			XPathFactory xFactory = XPathFactory.newInstance();
-
-			XPath xpath = xFactory.newXPath();
-
-			expr = xpath.compile("//bookmap/booktitle/mainbooktitle");
-
-			Node result = (Node) expr.evaluate(doc, XPathConstants.NODE);
-
-			if (result != null) {
-
-				fileName = result.getTextContent();
-			} else {
-
-				expr = xpath.compile("/bookmap");
-
-				result = (Node) expr.evaluate(doc, XPathConstants.NODE);
-
-				if (result != null) {
-					fileName = result.getAttributes().getNamedItem("id").getTextContent();
-				}
-			}
-
-			// If there is any issue parsing - we use the project name
-		} catch (FileNotFoundException e) {
-		} catch (ParserConfigurationException e) {
-		} catch (SAXException e) {
-		} catch (IOException e) {
-		} catch (XPathExpressionException e) {
-		}
-		return fileName;
-	}
-
-	private static HashMap<org.eclipse.emf.codegen.ecore.genmodel.GenPackage, org.eclipse.emf.codegen.ecore.genmodel.GenPackage> getGenModel(
-			IProject modelProject) {
-
-		HashMap<org.eclipse.emf.codegen.ecore.genmodel.GenPackage, org.eclipse.emf.codegen.ecore.genmodel.GenPackage> genPackages = new HashMap<org.eclipse.emf.codegen.ecore.genmodel.GenPackage, org.eclipse.emf.codegen.ecore.genmodel.GenPackage>();
-
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-
-		ResourceSet resourceSet = new ResourceSetImpl();
-
-		IWorkspaceRoot root = workspace.getRoot();
-
-		for (IProject project : root.getProjects()) {
-
-			if (!modelProject.getName().equals(project.getName())) {
-				URI genmodelFile = CDAUIUtil.getGeneratorModel(project);
-				if (genmodelFile != null) {
-					GenModel sourceGenModel = (GenModel) EcoreUtil.getObjectByType(
-						resourceSet.getResource(genmodelFile, true).getContents(),
-						GenModelPackage.eINSTANCE.getGenModel());
-
-					if (sourceGenModel != null) {
-						for (org.eclipse.emf.codegen.ecore.genmodel.GenPackage usedGenPackage : sourceGenModel.getUsedGenPackages()) {
-							genPackages.put(usedGenPackage, usedGenPackage);
-						}
-
-						for (org.eclipse.emf.codegen.ecore.genmodel.GenPackage usedGenPackage : sourceGenModel.getGenPackages()) {
-							genPackages.put(usedGenPackage, usedGenPackage);
-						}
-					}
-
-				}
-			}
-
-		}
-
-		return genPackages;
 	}
 
 	public static void runGenerate(boolean cleanBuild, IProject project, IProgressMonitor monitor) {
@@ -491,7 +419,10 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		IFile ditaMapFile = CDAUIUtil.getProjectFile(project, CDAUIUtil.DITA_PATH, "book.ditamap");
 
-		if (ditaMapFile != null) {
+		// should PDF and DITA-OT be skipped for this build
+		boolean disablePdf = Activator.getDefault().getPreferenceStore().getBoolean(MDHTPreferences.PDF_GEN_STORE_VALUE);
+
+		if (ditaMapFile != null && !disablePdf) {
 			DitaUtil.publish(ditaMapFile, "pdf,eclipsehelp");
 		}
 	}
@@ -611,7 +542,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 	 * Opens .modelStatus file which is created by the validateModel ant task
 	 * This is needed currently because unable to get anything other then success from
 	 * ant tasks running during build
-	 * 
+	 *
 	 * @param modelProject
 	 * @return
 	 */

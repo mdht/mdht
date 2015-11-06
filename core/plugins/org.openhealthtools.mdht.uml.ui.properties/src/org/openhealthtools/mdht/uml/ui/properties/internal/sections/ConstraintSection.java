@@ -166,6 +166,8 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		}
 	}
 
+	private static String T1 = "ConstraintValidation";
+
 	public void modifyFields() {
 		if (!(bodyModified || languageModified || ditaModified)) {
 			return;
@@ -221,7 +223,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 						}
 						if (ditaModified) {
 							ditaModified = false;
-							contributors.get(language).setStereotype(ditaEnableButton.getSelection());
+							contributors.get(language).setDitaEnabled(ditaEnableButton.getSelection());
 
 							// Also don't show errors if they are visible
 							if (!ditaEnableButton.getSelection()) {
@@ -269,11 +271,6 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 				}
 			}
 		}
-
-		// for (ConstraintEditor ce : contributors) {
-		// languages.add(ce.getLanguage());
-		//
-		// }
 	}
 
 	@Override
@@ -343,6 +340,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		ditaEnableButton.setLayoutData(data);
 		ditaEnableButton.setEnabled(true);
 		ditaEnableButton.setVisible(false);
+
 		ditaEnableButton.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				ditaModified = true;
@@ -359,6 +357,10 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		 * ---- body text ----
 		 */
 		bodyText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
+
+		for (ConstraintEditor ce : contributors.values()) {
+			ce.setText(bodyText);
+		}
 
 		CLabel bodyLabel = getWidgetFactory().createCLabel(composite, "Body:"); //$NON-NLS-1$
 		data = new FormData();
@@ -408,7 +410,6 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		});
 
 		for (ConstraintEditor ce : contributors.values()) {
-			ce.setText(bodyText);
 			ce.setCloseErrorText(closeErrorTextButton);
 			ce.setErrorText(errorText);
 		}
@@ -561,13 +562,13 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			languageCombo.setEnabled(true);
 			bodyText.setEnabled(true);
 		}
-
 		if ("Analysis".equals(languageCombo.getText())) {
-			ditaEnableButton.setSelection(contributors.get(language).getSelection());
+			ditaEnableButton.setSelection(contributors.get(language).isDitaEnabled());
 			ditaEnableButton.setVisible(true);
 		} else {
 			ditaEnableButton.setVisible(false);
 		}
+
 	}
 
 	/**

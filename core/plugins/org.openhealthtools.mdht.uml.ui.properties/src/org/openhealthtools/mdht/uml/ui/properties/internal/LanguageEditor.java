@@ -77,21 +77,20 @@ public class LanguageEditor extends UmlUiEditor {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setStereotype(boolean)
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setDitaEnabled(boolean)
 	 */
 	@Override
-	public void setStereotype(boolean selection) {
+	public void setDitaEnabled(boolean isEnabled) {
 		// TODO Auto-generated method stub
-
 	}
 
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#getSelection()
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#isDitaEnabled()
 	 */
 	@Override
-	public boolean getSelection() {
+	public boolean isDitaEnabled() {
 		// TODO Auto-generated method stub
 		return false;
 	}

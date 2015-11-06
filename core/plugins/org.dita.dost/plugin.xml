@@ -22,7 +22,7 @@
 		
     </command>
     
-	<command  id="org.dita.dost.commands.publishaspdf" name="PDF" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+    <command  id="org.dita.dost.commands.publishaspdf" name="PDF" defaultHandler="org.dita.dost.handlers.PublishPdfHandler" >
 		<commandParameter id="org.dita.dost.parameter.target" name="target" />
     </command>
     
@@ -50,7 +50,7 @@
 		<commandParameter id="org.dita.dost.parameter.target" name="target" />
     </command>
 
-     <command  id="org.dita.dost.commands.publishaspdf2" name="PDF2" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+  <command  id="org.dita.dost.commands.publishaspdf2" name="PDF2" defaultHandler="org.dita.dost.handlers.PublishPdfHandler" >
 		<commandParameter id="org.dita.dost.parameter.target" name="target" />
     </command>
 
@@ -139,13 +139,24 @@
       <command commandId="org.dita.dost.commands.publishaspdf" label="Publish As PDF" id="org.dita.dost.menu.publishaspdf" mnemonic="S">
       	<parameter name="org.dita.dost.parameter.target" value="pdf" />
       	<visibleWhen>
-               <with variable="selection">
+      	<and>
+           <with variable="selection">
                   <iterate>
                      <adapt type="org.eclipse.core.resources.IResource">
                      	<test property="org.eclipse.core.resources.extension" value="ditamap" />
                      </adapt>
                   </iterate>
                </with>
+	      	  <with
+	      	    variable="activeContexts">
+	      	    <test
+	      	      args="true"
+	      	      forcePluginActivation="true"
+	      	      property="org.dita.dost.testPDF"
+	      	      value="false">
+	      	    </test>
+	      	  </with>
+	      	  </and>
             </visibleWhen>         
       </command>    
       
@@ -168,6 +179,17 @@
 
       <command commandId="org.dita.dost.commands.publishaspdf" >
       	<parameter name="org.dita.dost.parameter.target" value="pdf" />
+      	<visibleWhen>
+  	  	  <with
+      	    variable="activeContexts">
+      	    <test
+      	      args="true"
+      	      forcePluginActivation="true"
+      	      property="org.dita.dost.testPDF"
+      	      value="false">
+      	    </test>
+      	  </with>
+        </visibleWhen>         
       </command>    
  
       <command commandId="org.dita.dost.commands.publishaswordrtf" >
@@ -196,6 +218,17 @@
 
     <command commandId="org.dita.dost.commands.publishaspdf2" >
       	<parameter name="org.dita.dost.parameter.target" value="pdf2" />
+      		<visibleWhen>
+  	  	  <with
+      	    variable="activeContexts">
+      	    <test
+      	      args="true"
+      	      forcePluginActivation="true"
+      	      property="org.dita.dost.testPDF"
+      	      value="false">
+      	    </test>
+      	  </with>
+        </visibleWhen>        
       </command>    
 
 <!--
@@ -229,6 +262,15 @@
       </menuContribution>
       
    </extension>
-   
+  <extension
+    point="org.eclipse.core.expressions.propertyTesters">
+    <propertyTester
+      class="org.dita.dost.handlers.PdfPreferenceTester"
+      id="org.dita.dost.pdfTest"
+      namespace="org.dita.dost"
+      properties="testPDF"
+      type="java.lang.Object">
+    </propertyTester>
+  </extension>
    
 </plugin>

@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for "business name" values
  *     Christian W. Damus - Handle element wrappers (artf3238)
- *
+ *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
@@ -58,7 +58,7 @@ import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPr
 
 /**
  * The general properties section for NamedElement.
- *
+ * 
  * $Id: $
  */
 public class NamedElementSection extends WrapperAwareModelerPropertySection {
@@ -118,7 +118,6 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 		}
 
 		try {
-
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
@@ -157,22 +156,11 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 						}
 
 						refreshBusinessNameText();
-
-						if (!NamedElementUtil.setElementName(namedElement, localNameText.getText())) {
-							return Status.CANCEL_STATUS;
-						}
 					} else if (businessNameModified) {
 						businessNameModified = false;
 						this.setLabel("Set Business Name");
 
-						namedElement.setName(businessNameText.getText());
-
 						if (!NamedElementUtil.setBusinessName(namedElement, businessNameText.getText())) {
-							refreshBusinessNameText();
-							return Status.CANCEL_STATUS;
-						}
-
-						if (!NamedElementUtil.setElementName(namedElement, localNameText.getText())) {
 							refreshBusinessNameText();
 							return Status.CANCEL_STATUS;
 						}
@@ -294,9 +282,9 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 	/*
 	 * Override super implementation to allow for objects that are not
 	 * IAdaptable.
-	 *
+	 * 
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.
 	 * AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
@@ -349,7 +337,7 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 		localNameText.removeKeyListener(keyListener);
 		localNameText.removeFocusListener(focusListener);
 		if (namedElement.getName() != null) {
-			localNameText.setText(NamedElementUtil.getElementName(namedElement));
+			localNameText.setText(namedElement.getName());
 		} else {
 			localNameText.setText("");
 		}
@@ -364,4 +352,5 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 		// TODO there should be a better way to force tabbed page label update
 		tabbedPropertySheetPage.labelProviderChanged(new LabelProviderChangedEvent(new LabelProvider()));
 	}
+
 }

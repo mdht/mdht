@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for restoring defaults
  *     Christian W. Damus - implement handling of live validation roll-back (artf3318)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
 
@@ -53,11 +53,11 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
+import org.openhealthtools.mdht.uml.common.ui.util.UMLUIUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
 import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
@@ -220,20 +220,19 @@ public class ValueSetCodeSection extends ResettableModelerPropertySection {
 	}
 
 	private void addCodeSystemReference() {
-		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(umlEnumerationLiteral.eResource().getResourceSet());
-		if (ctsProfile == null) {
-			return;
-		}
-		final Stereotype codeSystemVersionStereotype = (Stereotype) ctsProfile.getOwnedType(ITermProfileConstants.CODE_SYSTEM_VERSION);
+
 		IElementFilter filter = new IElementFilter() {
 			public boolean accept(Element element) {
-				return (element instanceof Enumeration) && element.isStereotypeApplied(codeSystemVersionStereotype);
+				if ((element instanceof Enumeration) &&
+						TermProfileUtil.getCodeSystemVersion((Enumeration) element) != null) {
+					return true;
+				}
+				return false;
 			}
 		};
 
 		final Enumeration codeSystemEnum = (Enumeration) DialogLaunchUtil.chooseElement(
-			filter, umlEnumerationLiteral.eResource().getResourceSet(), getPart().getSite().getShell(), null,
-			"Select a Code System");
+			filter, UMLUIUtil.loadModelsfromWorkspace(), getPart().getSite().getShell(), null, "Select a Code System");
 
 		if (codeSystemEnum == null) {
 			return;
@@ -246,7 +245,8 @@ public class ValueSetCodeSection extends ResettableModelerPropertySection {
 				"The selected Enumertion must be a <<CodeSystemVersion>>");
 			return;
 		}
-		final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnum.getStereotypeApplication(codeSystemStereotype);
+		final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnum.getStereotypeApplication(
+			codeSystemStereotype);
 
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlEnumerationLiteral);
@@ -472,9 +472,9 @@ public class ValueSetCodeSection extends ResettableModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@Override
@@ -509,7 +509,8 @@ public class ValueSetCodeSection extends ResettableModelerPropertySection {
 		if (valueSetCode != null) {
 			codeSystemVersion = valueSetCode.getCodeSystem();
 			if (codeSystemVersion == null) {
-				ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumerationLiteral.getEnumeration());
+				ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(
+					umlEnumerationLiteral.getEnumeration());
 				if (valueSetVersion != null) {
 					codeSystemVersion = valueSetVersion.getCodeSystem();
 					isDefaultCodeSystem = true;
@@ -589,7 +590,7 @@ public class ValueSetCodeSection extends ResettableModelerPropertySection {
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification

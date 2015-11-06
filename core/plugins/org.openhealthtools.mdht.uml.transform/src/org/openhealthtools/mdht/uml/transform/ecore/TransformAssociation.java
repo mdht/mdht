@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - more accurate association multiplicity constraints (artf3100)
@@ -179,25 +179,26 @@ public abstract class TransformAssociation extends TransformAbstract {
 			final boolean notEmpty = (lower == 1) && (upper == LiteralUnlimitedNatural.UNLIMITED);
 			final boolean exists = notEmpty && ((selector == null) || (selector.length() == 0));
 			final String comparator;
-			final String range;
+			final String upperComparator;
 			if (one || exists || isEmpty || notEmpty) { // special cases
 				comparator = null;
-				range = null;
+				upperComparator = null;
+				// range = null;
 			} else if (upper == lower) {
 				comparator = " = " + lower;
-				range = null;
+				// range = null;
+				upperComparator = null;
 			} else if (upper > lower) {
 				// don't use %d in case locale introduces a thousands separator
-				range = String.format("%s..%s", lower, upper);
-				comparator = null;
+				// range = String.format("%s..%s", lower, upper);
+				// range = null;
+				comparator = " >= " + lower;
+				upperComparator = " <= " + upper;
 			} else {
 				// if the upper < lower, then it only makes sense if upper is -1 (*)
 				comparator = " >= " + lower;
-				range = null;
-			}
-
-			if (range != null) {
-				constraintBody.append(range).append("->includes(");
+				// range = null;
+				upperComparator = null;
 			}
 
 			constraintBody.append(addPrefix(baseSourceClass) + associationEnd + "->");
@@ -217,7 +218,8 @@ public abstract class TransformAssociation extends TransformAbstract {
 			constraintBody.append(reference + ".oclIsKindOf(" + constraintTargetQName + ")");
 
 			// handle any stereotypes that may be applied to the association
-			appendAssociationStereotypeConditions(constraintBody, association, associationEnd, sourceClass, targetClass);
+			appendAssociationStereotypeConditions(
+				constraintBody, association, associationEnd, sourceClass, targetClass);
 
 			// close off the 'select' or 'exists' or 'one' iterator
 			constraintBody.append(")");
@@ -238,13 +240,14 @@ public abstract class TransformAssociation extends TransformAbstract {
 					// constrain the cardinality explicitly
 					constraintBody.append("->size()");
 
-					if (range != null) {
-						// close the 'includes' operation
-						constraintBody.append(")");
-					} else {
+					if (upperComparator == null) {
 						// compare the cardinality against some number
 						constraintBody.append(comparator);
+					} else {
+						String select = constraintBody.toString();
+						constraintBody.append(comparator).append(" and ").append(select).append(upperComparator);
 					}
+
 				}
 			}
 
@@ -348,13 +351,13 @@ public abstract class TransformAssociation extends TransformAbstract {
 	 * can be nested multiple levels deep. In such cases, the OCL's should reference the
 	 * base class. This method would return the qualified name of the base class, if the
 	 * nesting is more than 2 levels deep.
-	 * 
+	 *
 	 * e.g : A class with a qualified name
 	 * consol::GeneralHeaderConstraints::RecordTarget::PatientRole should
 	 * be referenced as cda::PatientRole
-	 * 
+	 *
 	 * Also make sure the the class name is valid for Java - so no spaces, etc
-	 * 
+	 *
 	 * @param constraintTarget
 	 * @return
 	 */
@@ -372,7 +375,7 @@ public abstract class TransformAssociation extends TransformAbstract {
 	}
 
 	/**
-	 * 
+	 *
 	 * Returns the OCL prefix required based on the implementation.
 	 * The String returned for the base class is simply "self." as to not interfere with this generic version.
 	 * However, for the child class TransformCDAAssociation.java -
@@ -382,9 +385,9 @@ public abstract class TransformAssociation extends TransformAbstract {
 	 * The entry requirement is enforced.
 	 * Otherwise, if there is no nullFlavor = NI specified on the section:
 	 * The entry is required as defined by the existing OCL constraint.
-	 * 
+	 *
 	 * In the future, other subclasses could override the method for their own prefix requirements as well.
-	 * 
+	 *
 	 * @param baseSourceClass
 	 *            used for sub class overrides to determine what type of element we are dealing with.
 	 *            If the subclass is calling the method, pass in null since it is not used in the (this) super.

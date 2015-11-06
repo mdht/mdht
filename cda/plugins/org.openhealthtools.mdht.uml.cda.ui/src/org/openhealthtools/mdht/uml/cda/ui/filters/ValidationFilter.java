@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.filters;
@@ -33,7 +33,7 @@ public class ValidationFilter extends CDAFilter {
 		if (object instanceof Element) {
 			element = (Element) object;
 		} else if (object instanceof IAdaptable) {
-			element = (Element) ((IAdaptable) object).getAdapter(Element.class);
+			element = (Element)((IAdaptable) object).getAdapter(Element.class);
 		}
 
 		Class templateClass = null;
@@ -49,7 +49,8 @@ public class ValidationFilter extends CDAFilter {
 			templateClass = (Class) ((Generalization) element).getSpecific();
 		}
 
-		if (templateClass != null && CDAModelUtil.getCDAClass(templateClass) != null) {
+		if (templateClass != null && (CDAModelUtil.getCDAClass(templateClass) != null ||
+				CDAModelUtil.getCDADatatype(templateClass) != null)) {
 			return true;
 		}
 		return false;
