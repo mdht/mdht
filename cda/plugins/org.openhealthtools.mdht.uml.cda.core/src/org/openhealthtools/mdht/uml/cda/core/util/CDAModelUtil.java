@@ -41,6 +41,7 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -257,10 +258,11 @@ public class CDAModelUtil {
 			String cdaName = cdaClass == null
 					? null
 					: cdaClass.getName();
-			if (cdaClass != null && ("Act".equals(cdaName) || "Encounter".equals(cdaName) ||
-					"Observation".equals(cdaName) || "ObservationMedia".equals(cdaName) ||
-					"Organizer".equals(cdaName) || "Procedure".equals(cdaName) || "RegionOfInterest".equals(cdaName) ||
-					"SubstanceAdministration".equals(cdaName) || "Supply".equals(cdaName))) {
+			if (cdaClass != null &&
+					("Act".equals(cdaName) || "Encounter".equals(cdaName) || "Observation".equals(cdaName) ||
+							"ObservationMedia".equals(cdaName) || "Organizer".equals(cdaName) ||
+							"Procedure".equals(cdaName) || "RegionOfInterest".equals(cdaName) ||
+							"SubstanceAdministration".equals(cdaName) || "Supply".equals(cdaName))) {
 				return true;
 			}
 		}
@@ -420,8 +422,8 @@ public class CDAModelUtil {
 				return multiplicityElementToggle(markup, "@extension", " [1..1]", templateVersionAsBusinessName);
 			}
 		};
-		return cdaTemplater.setRequireMarkup(markup).setRuleIds(ruleIds).setTemplateVersion(
-			templateVersion).setMultiplicity(multiplicityRange).compute().toString();
+		return cdaTemplater.setRequireMarkup(markup).setRuleIds(ruleIds).setTemplateVersion(templateVersion).setMultiplicity(
+			multiplicityRange).compute().toString();
 	}
 
 	public static String computeConformanceMessage(Generalization generalization, boolean markup) {
@@ -506,8 +508,8 @@ public class CDAModelUtil {
 
 	private static StringBuffer multiplicityElementToggle(Property property, boolean markup, String elementName) {
 		StringBuffer message = new StringBuffer();
-		message.append(
-			multiplicityElementToggle(markup, elementName, getMultiplicityRange(property), getBusinessName(property)));
+		message.append(multiplicityElementToggle(
+			markup, elementName, getMultiplicityRange(property), getBusinessName(property)));
 		return message;
 	}
 
@@ -594,12 +596,9 @@ public class CDAModelUtil {
 
 				appendConformanceRules(sb, endType, (property.getUpper() == 1
 						? "This "
-						: "Such ") +
-						(property.getUpper() == 1
-								? elementName
-								: NameUtilities.pluralize(elementName)) +
-						" ",
-					markup);
+						: "Such ") + (property.getUpper() == 1
+						? elementName
+						: NameUtilities.pluralize(elementName)) + " ", markup);
 				message.append(" " + sb + " ");
 
 			} else {
@@ -684,12 +683,9 @@ public class CDAModelUtil {
 
 				appendConformanceRules(sb, inlinedClass, (property.getUpper() == 1
 						? "This "
-						: "Such ") +
-						(property.getUpper() == 1
-								? elementName
-								: NameUtilities.pluralize(elementName)) +
-						" ",
-					markup);
+						: "Such ") + (property.getUpper() == 1
+						? elementName
+						: NameUtilities.pluralize(elementName)) + " ", markup);
 				message.append(" " + sb);
 
 			}
@@ -727,10 +723,9 @@ public class CDAModelUtil {
 			message.append("Contains ");
 			message.append(markup
 					? "<tt><b>"
-					: "").append("@typeCode=\"").append(
-						markup
-								? "</b>"
-								: "");
+					: "").append("@typeCode=\"").append(markup
+					? "</b>"
+					: "");
 			message.append(typeCode).append("\" ");
 			message.append(markup
 					? "</tt>"
@@ -815,8 +810,7 @@ public class CDAModelUtil {
 			if (eReferenceStereoetype != null) {
 				String nameSpace = (String) cdaBaseProperty.getValue(eReferenceStereoetype, CDAModelUtil.XMLNAMESPACE);
 				if (!StringUtils.isEmpty(nameSpace)) {
-					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(
-						cdaBaseProperty.getNearestPackage());
+					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(cdaBaseProperty.getNearestPackage());
 					Stereotype ePackageStereoetype = topPackage.getApplicableStereotype(CDAModelUtil.EPACKAGE);
 					if (ePackageStereoetype != null) {
 						if (nameSpace.equals(topPackage.getValue(ePackageStereoetype, CDAModelUtil.NSURI))) {
@@ -897,8 +891,7 @@ public class CDAModelUtil {
 		TransformProvider newContributor = null;
 		Property cdaProperty = null;
 		try {
-			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension(
-				"transform-class");
+			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension("transform-class");
 			cdaProperty = newContributor.GetTransform(property);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -906,7 +899,7 @@ public class CDAModelUtil {
 
 		String propertyCdaName = null;
 		if (cdaProperty != null) {
-			propertyCdaName = cdaProperty.getName();
+			propertyCdaName = getCDAName(cdaProperty);
 		} else {
 			propertyCdaName = getCDAElementName(property);
 		}
@@ -970,13 +963,11 @@ public class CDAModelUtil {
 					textValue, ICDAProfileConstants.VALIDATION_SEVERITY);
 				message.append(" and ").append(markup
 						? "<b>"
-						: "").append(
-							level != null
-									? getValidationKeyword(level.getLiteral())
-									: keyword).append(
-										markup
-												? "</b>"
-												: "").append(" equal \"").append(value).append("\"");
+						: "").append(level != null
+						? getValidationKeyword(level.getLiteral())
+						: keyword).append(markup
+						? "</b>"
+						: "").append(" equal \"").append(value).append("\"");
 			}
 		}
 
@@ -988,8 +979,8 @@ public class CDAModelUtil {
 				? null
 				: redefinedProperties.get(0);
 
-		if (property.getType() != null && ((redefinedProperty == null ||
-				(!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType()))))) {
+		if (property.getType() != null &&
+				((redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType()))))) {
 			message.append(" with " + "@xsi:type=\"");
 			if (redefinedProperty != null && redefinedProperty.getType() != null &&
 					redefinedProperty.getType().getName() != null && !redefinedProperty.getType().getName().isEmpty()) {
@@ -1047,10 +1038,10 @@ public class CDAModelUtil {
 
 				if (isPublishSeperately((Class) property.getType())) {
 
-					String xref = (property.getType() instanceof Classifier &&
-							UMLUtil.isSameProject(property, property.getType()))
-									? computeXref(xrefSource, (Classifier) property.getType())
-									: null;
+					String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
+						property, property.getType()))
+							? computeXref(xrefSource, (Classifier) property.getType())
+							: null;
 					boolean showXref = markup && (xref != null);
 
 					if (showXref) {
@@ -1087,6 +1078,58 @@ public class CDAModelUtil {
 		}
 
 		return message.toString();
+	}
+
+	/**
+	 * getCDAName
+	 *
+	 * recursively, depth first, check the object graph for a CDA Name using the root of the "redefined"
+	 * property if it exists.
+	 *
+	 * Also handle special cases like sectionId which has a cdaName of ID
+	 *
+	 * @param cdaProperty
+	 *            an MDHT property
+	 * @return string
+	 *         the calculated CDA name
+	 */
+	private static String getCDAName(Property cdaProperty) {
+		EList<Property> redefines = cdaProperty.getRedefinedProperties();
+
+		// if there is a stereotype name, use it
+		String name = getStereotypeName(cdaProperty);
+		if (name != null)
+			return name;
+
+		// if there are redefines, check for more but only alone the first branch (0)
+		if (redefines != null && redefines.size() > 0) {
+			return getCDAName(redefines.get(0));
+		}
+
+		// eventually return the property Name of the root redefined element;
+
+		return cdaProperty.getName();
+	}
+
+	/**
+	 * Get the CDA name from a stereotype if it exists
+	 *
+	 * @param cdaProperty
+	 *            a Property
+	 * @return the xmlName or null if no stereotype exists
+	 */
+	private static String getStereotypeName(Property cdaProperty) {
+		Stereotype eAttribute = cdaProperty.getAppliedStereotype("Ecore::EAttribute");
+		if (eAttribute != null) {
+			String name = (String) cdaProperty.getValue(eAttribute, "xmlName");
+
+			// handle the special case of ID with another name such a sectionId in Section
+			if (name != null) {
+				return name;
+			}
+		}
+
+		return null;
 	}
 
 	private static void appendSubsetsNotation(Property property, StringBuffer message, boolean markup,
@@ -1197,15 +1240,17 @@ public class CDAModelUtil {
 
 		// XML attributes
 		for (Property property : propertyList.getAttributes()) {
-			hasRules = hasRules | appendPropertyList(
-				umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
-				subConstraintMap);
+			hasRules = hasRules |
+					appendPropertyList(
+						umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
+						subConstraintMap);
 		}
 		// XML elements
 		for (Property property : propertyList.getAssociationEnds()) {
-			hasRules = hasRules | appendPropertyList(
-				umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
-				subConstraintMap);
+			hasRules = hasRules |
+					appendPropertyList(
+						umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
+						subConstraintMap);
 		}
 
 		for (Constraint constraint : unprocessedConstraints) {
@@ -1325,8 +1370,7 @@ public class CDAModelUtil {
 	}
 
 	private static void appendSubConstraintRules(StringBuffer ruleConstraints, Constraint constraint,
-			Map<Constraint, List<Constraint>> subConstraintMap, List<Constraint> unprocessedConstraints,
-			boolean markup) {
+			Map<Constraint, List<Constraint>> subConstraintMap, List<Constraint> unprocessedConstraints, boolean markup) {
 
 		String[] ol;
 		String[] li;
@@ -1764,22 +1808,19 @@ public class CDAModelUtil {
 			String propertyKeyword = getValidationKeyword(constraint.getConstrainedElements().get(0));
 
 			if (propertyKeyword != null) {
-				message.append(
-					computeConformanceMessage(constraint.getConstrainedElements().get(0), markup).replace(
-						propertyKeyword, ""));
+				message.append(computeConformanceMessage(constraint.getConstrainedElements().get(0), markup).replace(
+					propertyKeyword, ""));
 			} else {
 				message.append(computeConformanceMessage(constraint.getConstrainedElements().get(0), markup));
 			}
 
 			message.append(" then it ").append(markup
 					? "<lines>"
-					: "").append(
-						markup
-								? "<b>"
-								: "").append(keyword).append(
-									markup
-											? "</b> "
-											: " ");
+					: "").append(markup
+					? "<b>"
+					: "").append(keyword).append(markup
+					? "</b> "
+					: " ");
 
 			message.append(computeConformanceMessage(constraint.getConstrainedElements().get(1), markup));
 			message.append(markup
@@ -2125,8 +2166,7 @@ public class CDAModelUtil {
 			elementName = "entry";
 		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else
-			if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
 		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"ParticipantRole".equals(cdaTargetClass.getName())) {
@@ -2188,9 +2228,8 @@ public class CDAModelUtil {
 			if (property.getUpper() == -1) {
 				message.append("at least one");
 			} else {
-				message.append(
-					"at least " + convertNumberToWords(property.getLower()) + " and not more than " +
-							convertNumberToWords(property.getUpper()));
+				message.append("at least " + convertNumberToWords(property.getLower()) + " and not more than " +
+						convertNumberToWords(property.getUpper()));
 			}
 		} else {
 			// Lower is greater then 1
