@@ -474,7 +474,7 @@ public class TransformClassContent extends TransformAbstract {
 			EObject eObject = instanceGenerator.createInstance(umlClass, exampleDepth > 0
 					? exampleDepth
 					: 2);
-			if (eObject == null) {
+			if (eObject==null) {
 				ArrayList<ModelStatus> statuses = new ArrayList<ModelStatus>();
 				ClinicalDocumentCreator creator = new ClinicalDocumentCreator(
 					null, umlClass.eResource().getResourceSet(), statuses);
@@ -485,6 +485,7 @@ public class TransformClassContent extends TransformAbstract {
 				if (newObject != null) {
 					String xml = creator.toXMLString(newObject, umlClass);
 					writer.write(xml);
+					writer.println("]]></codeblock>"); 
 					return;
 				}
 			}
