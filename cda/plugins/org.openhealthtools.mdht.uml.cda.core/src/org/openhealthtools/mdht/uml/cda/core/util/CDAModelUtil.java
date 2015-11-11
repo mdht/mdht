@@ -24,6 +24,7 @@ package org.openhealthtools.mdht.uml.cda.core.util;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,24 +47,6 @@ import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.uml2.common.util.UML2Util;
-import org.eclipse.uml2.uml.Association;
-import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Comment;
-import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Enumeration;
-import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.eclipse.uml2.uml.Generalization;
-import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.OpaqueExpression;
-import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.Type;
-import org.eclipse.uml2.uml.ValueSpecification;
-import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
@@ -81,6 +64,8 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
+
+import com.google.common.collect.Constraint;
 
 public class CDAModelUtil {
 
@@ -1112,7 +1097,7 @@ public class CDAModelUtil {
 			return name;
 		}
 
-		// if there are redefines, check for more but only alone the first branch (0)
+		// if there are redefines, check for more but only along the first branch (0)
 		if (redefines != null && redefines.size() > 0) {
 			return getCDAName(redefines.get(0));
 		}
