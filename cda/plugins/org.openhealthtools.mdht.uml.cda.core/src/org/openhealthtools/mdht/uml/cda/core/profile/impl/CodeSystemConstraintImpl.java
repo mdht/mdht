@@ -23,6 +23,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,13 +31,15 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#getMessage <em>Message</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#getSeverity <em>Severity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#getRuleId <em>Rule Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#isMandatory <em>Mandatory</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#isStrict <em>Strict</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -113,6 +116,46 @@ public class CodeSystemConstraintImpl extends
 	protected boolean mandatory = MANDATORY_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ValidationKind KIND_EDEFAULT = ValidationKind.OPEN;
+
+	/**
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected ValidationKind kind = KIND_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isStrict() <em>Strict</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isStrict()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean STRICT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isStrict() <em>Strict</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isStrict()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean strict = STRICT_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -134,6 +177,8 @@ public class CodeSystemConstraintImpl extends
 				case CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY: return CDAPackage.VALIDATION__SEVERITY;
 				case CDAPackage.CODE_SYSTEM_CONSTRAINT__RULE_ID: return CDAPackage.VALIDATION__RULE_ID;
 				case CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY: return CDAPackage.VALIDATION__MANDATORY;
+				case CDAPackage.CODE_SYSTEM_CONSTRAINT__KIND: return CDAPackage.VALIDATION__KIND;
+				case CDAPackage.CODE_SYSTEM_CONSTRAINT__STRICT: return CDAPackage.VALIDATION__STRICT;
 				default: return -1;
 			}
 		}
@@ -153,6 +198,8 @@ public class CodeSystemConstraintImpl extends
 				case CDAPackage.VALIDATION__SEVERITY: return CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY;
 				case CDAPackage.VALIDATION__RULE_ID: return CDAPackage.CODE_SYSTEM_CONSTRAINT__RULE_ID;
 				case CDAPackage.VALIDATION__MANDATORY: return CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY;
+				case CDAPackage.VALIDATION__KIND: return CDAPackage.CODE_SYSTEM_CONSTRAINT__KIND;
+				case CDAPackage.VALIDATION__STRICT: return CDAPackage.CODE_SYSTEM_CONSTRAINT__STRICT;
 				default: return -1;
 			}
 		}
@@ -175,6 +222,10 @@ public class CodeSystemConstraintImpl extends
 				return getRuleId();
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY:
 				return isMandatory();
+			case CDAPackage.CODE_SYSTEM_CONSTRAINT__KIND:
+				return getKind();
+			case CDAPackage.CODE_SYSTEM_CONSTRAINT__STRICT:
+				return isStrict();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,6 +246,10 @@ public class CodeSystemConstraintImpl extends
 				return ruleId != null && !ruleId.isEmpty();
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY:
 				return mandatory != MANDATORY_EDEFAULT;
+			case CDAPackage.CODE_SYSTEM_CONSTRAINT__KIND:
+				return kind != KIND_EDEFAULT;
+			case CDAPackage.CODE_SYSTEM_CONSTRAINT__STRICT:
+				return strict != STRICT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,6 +275,12 @@ public class CodeSystemConstraintImpl extends
 				return;
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY:
 				setMandatory((Boolean)newValue);
+				return;
+			case CDAPackage.CODE_SYSTEM_CONSTRAINT__KIND:
+				setKind((ValidationKind)newValue);
+				return;
+			case CDAPackage.CODE_SYSTEM_CONSTRAINT__STRICT:
+				setStrict((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -254,6 +315,12 @@ public class CodeSystemConstraintImpl extends
 				return;
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY:
 				setMandatory(MANDATORY_EDEFAULT);
+				return;
+			case CDAPackage.CODE_SYSTEM_CONSTRAINT__KIND:
+				setKind(KIND_EDEFAULT);
+				return;
+			case CDAPackage.CODE_SYSTEM_CONSTRAINT__STRICT:
+				setStrict(STRICT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -315,6 +382,48 @@ public class CodeSystemConstraintImpl extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ValidationKind getKind() {
+		return kind;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setKind(ValidationKind newKind) {
+		ValidationKind oldKind = kind;
+		kind = newKind == null ? KIND_EDEFAULT : newKind;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__KIND, oldKind, kind));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isStrict() {
+		return strict;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStrict(boolean newStrict) {
+		boolean oldStrict = strict;
+		strict = newStrict;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__STRICT, oldStrict, strict));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void setMessage(String newMessage) {
 		String oldMessage = message;
 		message = newMessage;
@@ -352,6 +461,10 @@ public class CodeSystemConstraintImpl extends
 		result.append(ruleId);
 		result.append(", mandatory: ");
 		result.append(mandatory);
+		result.append(", kind: ");
+		result.append(kind);
+		result.append(", strict: ");
+		result.append(strict);
 		result.append(')');
 		return result.toString();
 	}

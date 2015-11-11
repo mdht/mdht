@@ -19,11 +19,11 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue#getValue <em>Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue#isIgnoreCase <em>Ignore Case</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getTextValue()
  * @model

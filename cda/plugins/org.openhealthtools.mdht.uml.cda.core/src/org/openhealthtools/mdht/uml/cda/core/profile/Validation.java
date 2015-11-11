@@ -22,13 +22,15 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getMessage <em>Message</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getSeverity <em>Severity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getRuleId <em>Rule Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#isMandatory <em>Mandatory</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#isStrict <em>Strict</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidation()
  * @model abstract="true"
@@ -107,6 +109,63 @@ public interface Validation extends EObject {
 	 * @generated
 	 */
 	void setMandatory(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
+	 * The default value is <code>"OPEN"</code>.
+	 * The literals are from the enumeration {@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Kind</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Kind</em>' attribute.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind
+	 * @see #setKind(ValidationKind)
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidation_Kind()
+	 * @model default="OPEN" ordered="false"
+	 * @generated
+	 */
+	ValidationKind getKind();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getKind <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Kind</em>' attribute.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind
+	 * @see #getKind()
+	 * @generated
+	 */
+	void setKind(ValidationKind value);
+
+	/**
+	 * Returns the value of the '<em><b>Strict</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Strict</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Strict</em>' attribute.
+	 * @see #setStrict(boolean)
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidation_Strict()
+	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" ordered="false"
+	 * @generated
+	 */
+	boolean isStrict();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#isStrict <em>Strict</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Strict</em>' attribute.
+	 * @see #isStrict()
+	 * @generated
+	 */
+	void setStrict(boolean value);
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getMessage <em>Message</em>}' attribute.

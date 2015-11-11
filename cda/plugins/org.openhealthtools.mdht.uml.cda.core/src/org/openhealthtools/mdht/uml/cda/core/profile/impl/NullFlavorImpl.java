@@ -26,10 +26,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.NullFlavorImpl#getNullFlavor <em>Null Flavor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl#getBasePackage <em>Base Package</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl#getNsPrefix <em>Ns Prefix</em>}</li>
@@ -35,7 +36,6 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl#getBase_Namespace <em>Base Namespace</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

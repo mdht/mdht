@@ -21,11 +21,11 @@ import org.eclipse.uml2.uml.Constraint;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation#getBase_Constraint <em>Base Constraint</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation#isEnabledDitaForConstraints <em>Enabled Dita For Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getConstraintValidation()
  * @model

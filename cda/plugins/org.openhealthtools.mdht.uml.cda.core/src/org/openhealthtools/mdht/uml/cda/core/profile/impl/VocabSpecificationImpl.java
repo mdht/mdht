@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl#getCodeSystem <em>Code System</em>}</li>
@@ -31,7 +32,6 @@ import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl#getCodeSystemVersion <em>Code System Version</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl#getDisplayName <em>Display Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -24,11 +24,11 @@ import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.TextValueImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.TextValueImpl#isIgnoreCase <em>Ignore Case</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
