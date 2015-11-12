@@ -44,6 +44,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
  * <!-- end-model-doc -->
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='CDA'"
  * @generated
  */
 public interface CDAPackage extends EPackage {
@@ -137,6 +138,22 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VALIDATION__MANDATORY = eINSTANCE.getValidation_Mandatory();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALIDATION__KIND = eINSTANCE.getValidation_Kind();
+
+		/**
+		 * The meta object literal for the '<em><b>Strict</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALIDATION__STRICT = eINSTANCE.getValidation_Strict();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl <em>Entry Relationship</em>}' class.
@@ -635,6 +652,16 @@ public interface CDAPackage extends EPackage {
 		EEnum ENTRY_KIND = eINSTANCE.getEntryKind();
 
 		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind <em>Validation Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getValidationKind()
+		 * @generated
+		 */
+		EEnum VALIDATION_KIND = eINSTANCE.getValidationKind();
+
+		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind <em>Entry Relationship Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -745,13 +772,31 @@ public interface CDAPackage extends EPackage {
 	int VALIDATION__MANDATORY = 3;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATION__KIND = 4;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATION__STRICT = 5;
+
+	/**
 	 * The number of structural features of the '<em>Validation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALIDATION_FEATURE_COUNT = 4;
+	int VALIDATION_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl <em>Association Validation</em>}' class.
@@ -798,6 +843,24 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_VALIDATION__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_VALIDATION__STRICT = VALIDATION__STRICT;
 
 	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
@@ -862,6 +925,24 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTRY__MANDATORY = ASSOCIATION_VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY__KIND = ASSOCIATION_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY__STRICT = ASSOCIATION_VALIDATION__STRICT;
 
 	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
@@ -935,6 +1016,24 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTRY_RELATIONSHIP__MANDATORY = ASSOCIATION_VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_RELATIONSHIP__KIND = ASSOCIATION_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_RELATIONSHIP__STRICT = ASSOCIATION_VALIDATION__STRICT;
 
 	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
@@ -1083,6 +1182,24 @@ public interface CDAPackage extends EPackage {
 	int PROPERTY_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_VALIDATION__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_VALIDATION__STRICT = VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1147,6 +1264,24 @@ public interface CDAPackage extends EPackage {
 	int CLASS_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_VALIDATION__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_VALIDATION__STRICT = VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1209,6 +1344,24 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int VOCAB_SPECIFICATION__MANDATORY = PROPERTY_VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VOCAB_SPECIFICATION__KIND = PROPERTY_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VOCAB_SPECIFICATION__STRICT = PROPERTY_VALIDATION__STRICT;
 
 	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
@@ -1320,6 +1473,24 @@ public interface CDAPackage extends EPackage {
 	int NULL_FLAVOR__MANDATORY = PROPERTY_VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_FLAVOR__KIND = PROPERTY_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_FLAVOR__STRICT = PROPERTY_VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1391,6 +1562,24 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_VALUE__MANDATORY = PROPERTY_VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_VALUE__KIND = PROPERTY_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_VALUE__STRICT = PROPERTY_VALIDATION__STRICT;
 
 	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
@@ -1473,6 +1662,24 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int CDA_TEMPLATE__MANDATORY = CLASS_VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CDA_TEMPLATE__KIND = CLASS_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CDA_TEMPLATE__STRICT = CLASS_VALIDATION__STRICT;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -1584,6 +1791,24 @@ public interface CDAPackage extends EPackage {
 	int CONSTRAINT_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_VALIDATION__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_VALIDATION__STRICT = VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1657,6 +1882,24 @@ public interface CDAPackage extends EPackage {
 	int CONFORMS_TO__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMS_TO__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMS_TO__STRICT = VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Generalization</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1694,49 +1937,13 @@ public interface CDAPackage extends EPackage {
 	int CONCEPT_DOMAIN_CONSTRAINT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Reference</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__REFERENCE = TermPackage.CONCEPT_DOMAIN_CONSTRAINT__REFERENCE;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__IDENTIFIER = TermPackage.CONCEPT_DOMAIN_CONSTRAINT__IDENTIFIER;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__NAME = TermPackage.CONCEPT_DOMAIN_CONSTRAINT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Base Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY = TermPackage.CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__MESSAGE = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 0;
+	int CONCEPT_DOMAIN_CONSTRAINT__MESSAGE = VALIDATION__MESSAGE;
 
 	/**
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
@@ -1745,7 +1952,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__SEVERITY = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 1;
+	int CONCEPT_DOMAIN_CONSTRAINT__SEVERITY = VALIDATION__SEVERITY;
 
 	/**
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
@@ -1754,7 +1961,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__RULE_ID = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 2;
+	int CONCEPT_DOMAIN_CONSTRAINT__RULE_ID = VALIDATION__RULE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
@@ -1763,7 +1970,61 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__MANDATORY = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 3;
+	int CONCEPT_DOMAIN_CONSTRAINT__MANDATORY = VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__STRICT = VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__REFERENCE = VALIDATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__IDENTIFIER = VALIDATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__NAME = VALIDATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY = VALIDATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Concept Domain Constraint</em>' class.
@@ -1772,7 +2033,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 4;
+	int CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT = VALIDATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl <em>Code System Constraint</em>}' class.
@@ -1902,13 +2163,31 @@ public interface CDAPackage extends EPackage {
 	int CODE_SYSTEM_CONSTRAINT__MANDATORY = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_SYSTEM_CONSTRAINT__KIND = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_SYSTEM_CONSTRAINT__STRICT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Code System Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 4;
+	int CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValueSetConstraintImpl <em>Value Set Constraint</em>}' class.
@@ -1921,67 +2200,13 @@ public interface CDAPackage extends EPackage {
 	int VALUE_SET_CONSTRAINT = 15;
 
 	/**
-	 * The feature id for the '<em><b>Reference</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__REFERENCE = TermPackage.VALUE_SET_CONSTRAINT__REFERENCE;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__IDENTIFIER = TermPackage.VALUE_SET_CONSTRAINT__IDENTIFIER;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__NAME = TermPackage.VALUE_SET_CONSTRAINT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__VERSION = TermPackage.VALUE_SET_CONSTRAINT__VERSION;
-
-	/**
-	 * The feature id for the '<em><b>Binding</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__BINDING = TermPackage.VALUE_SET_CONSTRAINT__BINDING;
-
-	/**
-	 * The feature id for the '<em><b>Base Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__BASE_PROPERTY = TermPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT__MESSAGE = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 0;
+	int VALUE_SET_CONSTRAINT__MESSAGE = VALIDATION__MESSAGE;
 
 	/**
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
@@ -1990,7 +2215,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT__SEVERITY = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 1;
+	int VALUE_SET_CONSTRAINT__SEVERITY = VALIDATION__SEVERITY;
 
 	/**
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
@@ -1999,7 +2224,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT__RULE_ID = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 2;
+	int VALUE_SET_CONSTRAINT__RULE_ID = VALIDATION__RULE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
@@ -2008,7 +2233,79 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT__MANDATORY = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 3;
+	int VALUE_SET_CONSTRAINT__MANDATORY = VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__STRICT = VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__REFERENCE = VALIDATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__IDENTIFIER = VALIDATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__NAME = VALIDATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__VERSION = VALIDATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Binding</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__BINDING = VALIDATION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__BASE_PROPERTY = VALIDATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Value Set Constraint</em>' class.
@@ -2017,7 +2314,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT_FEATURE_COUNT = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 4;
+	int VALUE_SET_CONSTRAINT_FEATURE_COUNT = VALIDATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl <em>Act Relationship</em>}' class.
@@ -2158,6 +2455,24 @@ public interface CDAPackage extends EPackage {
 	int LOGICAL_CONSTRAINT__MANDATORY = CONSTRAINT_VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__KIND = CONSTRAINT_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__STRICT = CONSTRAINT_VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2288,6 +2603,16 @@ public interface CDAPackage extends EPackage {
 	int ENTRY_KIND = 22;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind <em>Validation Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getValidationKind()
+	 * @generated
+	 */
+	int VALIDATION_KIND = 23;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind <em>Entry Relationship Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2295,7 +2620,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntryRelationshipKind()
 	 * @generated
 	 */
-	int ENTRY_RELATIONSHIP_KIND = 23;
+	int ENTRY_RELATIONSHIP_KIND = 24;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind <em>Null Flavor Kind</em>}' enum.
@@ -2305,7 +2630,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getNullFlavorKind()
 	 * @generated
 	 */
-	int NULL_FLAVOR_KIND = 24;
+	int NULL_FLAVOR_KIND = 25;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator <em>Logical Operator</em>}' enum.
@@ -2315,7 +2640,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getLogicalOperator()
 	 * @generated
 	 */
-	int LOGICAL_OPERATOR = 25;
+	int LOGICAL_OPERATOR = 26;
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship <em>Act Relationship</em>}'.
@@ -2668,6 +2993,16 @@ public interface CDAPackage extends EPackage {
 	EEnum getEntryKind();
 
 	/**
+	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind <em>Validation Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Validation Kind</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind
+	 * @generated
+	 */
+	EEnum getValidationKind();
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship <em>Entry Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2950,6 +3285,28 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getValidation_Mandatory();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation#getKind()
+	 * @see #getValidation()
+	 * @generated
+	 */
+	EAttribute getValidation_Kind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#isStrict <em>Strict</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Strict</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation#isStrict()
+	 * @see #getValidation()
+	 * @generated
+	 */
+	EAttribute getValidation_Strict();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getMessage <em>Message</em>}'.

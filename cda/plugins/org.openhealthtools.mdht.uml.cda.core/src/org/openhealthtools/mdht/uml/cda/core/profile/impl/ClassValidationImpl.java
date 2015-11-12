@@ -25,10 +25,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ClassValidation;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ClassValidationImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

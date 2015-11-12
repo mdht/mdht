@@ -19,6 +19,7 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystem <em>Code System</em>}</li>
@@ -26,7 +27,6 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystemVersion <em>Code System Version</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getDisplayName <em>Display Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getVocabSpecification()
  * @model

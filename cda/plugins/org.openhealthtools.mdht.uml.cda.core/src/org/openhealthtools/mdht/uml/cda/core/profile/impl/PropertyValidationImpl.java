@@ -26,10 +26,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.PropertyValidationImpl#getBase_Property <em>Base Property</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

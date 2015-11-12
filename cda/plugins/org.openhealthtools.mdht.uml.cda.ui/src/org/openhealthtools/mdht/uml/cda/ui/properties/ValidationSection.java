@@ -24,7 +24,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.NotificationImpl;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -44,20 +43,18 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Enumeration;
-import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
 import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
@@ -69,11 +66,21 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 	protected CCombo severityCombo;
 
+	protected CCombo kindCombo;
+
 	protected boolean severityModified = false;
+
+	protected boolean kindModified = false;
+
+	protected boolean stringModified = false;
 
 	protected Text ruleIdText;
 
 	protected boolean ruleIdModified = false;
+
+	protected Button strictButton;
+
+	protected boolean strictModified = false;
 
 	/**
 	 * Duplicate copy of private field in superclass. I'd like to remove this,
@@ -117,7 +124,7 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 	protected abstract Stereotype getValidationStereotype();
 
 	protected void modifyFields() {
-		if (!(ruleIdModified || severityModified)) {
+		if (!(ruleIdModified || severityModified || kindModified || strictModified)) {
 			return;
 		}
 
@@ -127,47 +134,40 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Stereotype stereotype = getValidationStereotype();
 
-					Enumeration severityKind = null;
-					Profile cdaProfile = CDAProfileUtil.getCDAProfile(modelElement.eResource().getResourceSet());
-					if (cdaProfile != null) {
-						severityKind = (Enumeration) cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
-					}
+					// Until we refactor all the sections - need to use the Stereotype to get correct type
+					Stereotype stereotype = getValidationStereotype();
 
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
 					}
+
 					if (!modelElement.isStereotypeApplied(stereotype)) {
 						modelElement.applyStereotype(stereotype);
 					}
 
+					Validation validation = (Validation) modelElement.getStereotypeApplication(stereotype);
+
 					if (severityModified) {
 						severityModified = false;
-						this.setLabel("Set Validation Severity");
-						if (severityKind != null) {
-							if (severityCombo.getSelectionIndex() == 0) {
-								// remove stereotype property
-								// modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, null);
-								modelElement.unapplyStereotype(stereotype);
-							} else {
-								EnumerationLiteral literal = severityKind.getOwnedLiterals().get(
-									severityCombo.getSelectionIndex() - 1);
-								modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, literal);
-							}
+						if (severityCombo.getSelectionIndex() >= 0) {
+							validation.setSeverity(SeverityKind.get(severityCombo.getSelectionIndex() - 1));
 						}
 					} else if (ruleIdModified) {
 						ruleIdModified = false;
-						this.setLabel("Set Validation Rule ID");
-
-						Validation validation = (Validation) modelElement.getStereotypeApplication(stereotype);
 						validation.getRuleId().clear();
-
 						String value = ruleIdText.getText().trim();
 						StringTokenizer tokenizer = new StringTokenizer(value, ",; ");
 						while (tokenizer.hasMoreTokens()) {
 							validation.getRuleId().add(tokenizer.nextToken());
 						}
+					} else if (kindModified) {
+						kindModified = false;
+						validation.setKind(ValidationKind.get(kindCombo.getSelectionIndex()));
+
+					} else if (strictModified) {
+						strictModified = false;
+						validation.setStrict(strictButton.getSelection());
 					} else {
 						return Status.CANCEL_STATUS;
 					}
@@ -179,9 +179,14 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 			execute(operation);
 
-		} catch (Exception e) {
+		} catch (
+
+		Exception e)
+
+		{
 			throw new RuntimeException(e.getCause());
 		}
+
 	}
 
 	@Override
@@ -223,6 +228,7 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 	}
 
 	protected void addValidationControls(final Composite composite, int numerator, int offset) {
+
 		FormData data = null;
 
 		/* ---- severity combo ---- */
@@ -267,84 +273,134 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 	}
 
+	protected void addScope(final Composite composite, int numerator, int offset) {
+
+		FormData data = null;
+
+		kindCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
+		kindCombo.setItems(new String[] { ValidationKind.OPEN.getLiteral(), ValidationKind.CLOSED.getLiteral() });
+		kindCombo.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				kindModified = true;
+				modifyFields();
+			}
+
+			public void widgetSelected(SelectionEvent e) {
+				kindModified = true;
+				modifyFields();
+			}
+		});
+
+		CLabel kindLabel = getWidgetFactory().createCLabel(composite, "Kind:"); //$NON-NLS-1$
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.top = new FormAttachment(severityCombo, 0, SWT.RIGHT);
+		kindLabel.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(kindLabel, 0);
+		data.top = new FormAttachment(severityCombo, 0, SWT.RIGHT);
+		kindCombo.setLayoutData(data);
+
+		strictButton = getWidgetFactory().createButton(composite, "Strict", SWT.CHECK);
+		data = new FormData();
+		data.left = new FormAttachment(kindCombo, 0);
+		data.top = new FormAttachment(severityCombo, 0, SWT.RIGHT);
+		strictButton.setLayoutData(data);
+		strictButton.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				strictModified = true;
+				modifyFields();
+			}
+
+			public void widgetSelected(SelectionEvent e) {
+				strictModified = true;
+				modifyFields();
+			}
+		});
+	}
+
 	@Override
 	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
 		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
-
-		// Composite composite = getWidgetFactory().createGroup(parent, "Validation");
-		// FormLayout layout = new FormLayout();
-		// layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-		// layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-		// layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-		// composite.setLayout(layout);
-		//
-		// addValidationControls(composite, 0, 1);
 	}
 
 	@Override
 	public void refresh() {
-		Stereotype stereotype = getValidationStereotype();
-
 		if (modelElement == null || modelElement.eResource() == null) {
 			return;
 		}
-		Enumeration severityKind = null;
-		Profile cdaProfile = CDAProfileUtil.getCDAProfile(modelElement.eResource().getResourceSet());
-		if (cdaProfile != null) {
-			severityKind = (Enumeration) cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
+
+		Validation validation = (Validation) modelElement.getStereotypeApplication(getValidationStereotype());
+
+		if (validation == null) {
+			return;
 		}
 
 		ruleIdText.removeModifyListener(modifyListener);
 		ruleIdText.removeKeyListener(keyListener);
 		ruleIdText.removeFocusListener(focusListener);
-		Object ruleIds = null;
-		if (stereotype != null && modelElement.isStereotypeApplied(stereotype)) {
-			ruleIds = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID);
-		}
-		if (ruleIds != null) {
-			StringBuffer ruleIdDisplay = new StringBuffer();
-			Validation validation = (Validation) modelElement.getStereotypeApplication(stereotype);
-			for (String ruleId : validation.getRuleId()) {
-				if (ruleIdDisplay.length() > 0) {
-					ruleIdDisplay.append(", ");
-				}
-				ruleIdDisplay.append(ruleId);
+
+		StringBuffer ruleIdDisplay = new StringBuffer();
+		for (String ruleId : validation.getRuleId()) {
+			if (ruleIdDisplay.length() > 0) {
+				ruleIdDisplay.append(", ");
 			}
-			ruleIdText.setText(ruleIdDisplay.toString());
-		} else {
-			ruleIdText.setText("");
+			ruleIdDisplay.append(ruleId);
 		}
+		ruleIdText.setText(ruleIdDisplay.toString());
+
 		ruleIdText.addModifyListener(modifyListener);
 		ruleIdText.addKeyListener(keyListener);
 		ruleIdText.addFocusListener(focusListener);
 
-		severityCombo.select(0);
-		if (stereotype != null && modelElement.isStereotypeApplied(stereotype)) {
-			Object value = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
-			String severity = null;
-			if (value instanceof EnumerationLiteral) {
-				severity = ((EnumerationLiteral) value).getName();
-			} else if (value instanceof Enumerator) {
-				severity = ((Enumerator) value).getName();
-			}
+		switch (validation.getSeverity()) {
+			case ERROR:
+				severityCombo.select(1);
+				break;
+			case WARNING:
+				severityCombo.select(2);
+				break;
+			case INFO:
+				severityCombo.select(3);
+				break;
+			default:
+				severityCombo.select(0);
+				break;
+		}
 
-			if (severityKind != null && severity != null) {
-				EnumerationLiteral literal = severityKind.getOwnedLiteral(severity);
-				if (literal != null) {
-					int index = severityKind.getOwnedLiterals().indexOf(literal);
-					severityCombo.select(index + 1);
-				}
+		if (kindCombo != null) {
+			switch (validation.getKind()) {
+				case OPEN:
+					kindCombo.select(0);
+					break;
+				case CLOSED:
+					kindCombo.select(1);
+					break;
+				default:
+					kindCombo.select(0);
+					break;
 			}
+		}
+
+		if (strictButton != null) {
+			strictButton.setSelection(validation.isStrict());
 		}
 
 		if (isReadOnly()) {
 			severityCombo.setEnabled(false);
 			ruleIdText.setEnabled(false);
+			if (kindCombo != null) {
+				kindCombo.setEnabled(false);
+			}
 		} else {
 			severityCombo.setEnabled(true);
 			ruleIdText.setEnabled(true);
+			if (kindCombo != null) {
+				kindCombo.setEnabled(true);
+			}
 		}
 
 	}

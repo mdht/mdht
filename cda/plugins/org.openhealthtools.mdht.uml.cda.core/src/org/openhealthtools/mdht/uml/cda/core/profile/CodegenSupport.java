@@ -22,6 +22,7 @@ import org.eclipse.uml2.uml.Namespace;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBasePackage <em>Base Package</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsPrefix <em>Ns Prefix</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.uml2.uml.Namespace;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBase_Namespace <em>Base Namespace</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport()
  * @model

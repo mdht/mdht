@@ -19,10 +19,10 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor#getNullFlavor <em>Null Flavor</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getNullFlavor()
  * @model

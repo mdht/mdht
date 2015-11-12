@@ -26,10 +26,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

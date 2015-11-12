@@ -26,11 +26,11 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl#getBase_Generalization <em>Base Generalization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl#isRequiresParentId <em>Requires Parent Id</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

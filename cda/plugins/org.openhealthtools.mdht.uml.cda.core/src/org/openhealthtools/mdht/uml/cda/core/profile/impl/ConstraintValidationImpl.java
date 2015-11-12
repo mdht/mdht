@@ -26,11 +26,11 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl#getBase_Constraint <em>Base Constraint</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl#isEnabledDitaForConstraints <em>Enabled Dita For Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for restoring defaults
  *     Christian W. Damus - implement handling of live validation roll-back (artf3318)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.properties;
@@ -114,7 +114,7 @@ public class PropertySection extends ValidationSection {
 	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-		Composite composite = getWidgetFactory().createGroup(parent, "Property Validation (multiplicty, type)");
+		Composite composite = getWidgetFactory().createGroup(parent, "Property Validation (multiplicty, type, scope)");
 		FormLayout layout = new FormLayout();
 		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
 		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
@@ -122,6 +122,7 @@ public class PropertySection extends ValidationSection {
 		composite.setLayout(layout);
 
 		addValidationControls(composite, 0, 1);
+		addScope(composite, 0, 1);
 
 		FormData data = null;
 
@@ -149,6 +150,50 @@ public class PropertySection extends ValidationSection {
 		data.right = new FormAttachment(100, 0);
 		data.top = new FormAttachment(mandatoryButton, 0, SWT.CENTER);
 		restoreDefaultsButton.setLayoutData(data);
+
+		// CCombo kindCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
+		// kindCombo.setItems(new String[] { "", "OPEN", "CLOSED" });
+		// kindCombo.addSelectionListener(new SelectionListener() {
+		// public void widgetDefaultSelected(SelectionEvent e) {
+		// kindModified = true;
+		// modifyFields();
+		// }
+		//
+		// public void widgetSelected(SelectionEvent e) {
+		// kindModified = true;
+		// modifyFields();
+		// }
+		// });
+		// // data.left = new FormAttachment(0, 0);
+		// // data.top = new FormAttachment(severityCombo, 0, SWT.CENTER);
+		//
+		// CLabel kindLabel = getWidgetFactory().createCLabel(composite, "Kind:"); //$NON-NLS-1$
+		// data = new FormData();
+		// data.left = new FormAttachment(0, 0);
+		// data.top = new FormAttachment(severityCombo, 0, SWT.RIGHT);
+		// kindLabel.setLayoutData(data);
+		//
+		// data = new FormData();
+		// data.left = new FormAttachment(kindLabel, 0);
+		// data.top = new FormAttachment(severityCombo, 0, SWT.RIGHT);
+		// kindCombo.setLayoutData(data);
+		//
+		// strictButton = getWidgetFactory().createButton(composite, "Strict", SWT.CHECK);
+		// data = new FormData();
+		// data.left = new FormAttachment(kindCombo, 0);
+		// data.top = new FormAttachment(severityCombo, 0, SWT.RIGHT);
+		// strictButton.setLayoutData(data);
+		// strictButton.addSelectionListener(new SelectionListener() {
+		// public void widgetDefaultSelected(SelectionEvent e) {
+		// strictModified = true;
+		// modifyFields();
+		// }
+		//
+		// public void widgetSelected(SelectionEvent e) {
+		// strictModified = true;
+		// modifyFields();
+		// }
+		// });
 
 	}
 

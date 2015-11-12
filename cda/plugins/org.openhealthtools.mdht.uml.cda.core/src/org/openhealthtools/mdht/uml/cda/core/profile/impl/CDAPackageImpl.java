@@ -46,6 +46,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
 import org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
@@ -223,6 +224,13 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum validationKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum entryRelationshipKindEEnum = null;
 
 	/**
@@ -338,6 +346,8 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		createEAttribute(validationEClass, VALIDATION__SEVERITY);
 		createEAttribute(validationEClass, VALIDATION__RULE_ID);
 		createEAttribute(validationEClass, VALIDATION__MANDATORY);
+		createEAttribute(validationEClass, VALIDATION__KIND);
+		createEAttribute(validationEClass, VALIDATION__STRICT);
 
 		entryRelationshipEClass = createEClass(ENTRY_RELATIONSHIP);
 		createEAttribute(entryRelationshipEClass, ENTRY_RELATIONSHIP__TYPE_CODE);
@@ -415,6 +425,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		// Create enums
 		severityKindEEnum = createEEnum(SEVERITY_KIND);
 		entryKindEEnum = createEEnum(ENTRY_KIND);
+		validationKindEEnum = createEEnum(VALIDATION_KIND);
 		entryRelationshipKindEEnum = createEEnum(ENTRY_RELATIONSHIP_KIND);
 		nullFlavorKindEEnum = createEEnum(NULL_FLAVOR_KIND);
 		logicalOperatorEEnum = createEEnum(LOGICAL_OPERATOR);
@@ -722,6 +733,15 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getValidationKind() {
+		return validationKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEntryRelationship() {
 		return entryRelationshipEClass;
 	}
@@ -965,6 +985,24 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getValidation_Kind() {
+		return (EAttribute)validationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getValidation_Strict() {
+		return (EAttribute)validationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getValidation_Message() {
 		return (EAttribute)validationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1087,12 +1125,12 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		cdaTemplateEClass.getESuperTypes().add(this.getClassValidation());
 		constraintValidationEClass.getESuperTypes().add(this.getValidation());
 		conformsToEClass.getESuperTypes().add(this.getValidation());
-		conceptDomainConstraintEClass.getESuperTypes().add(theTermPackage.getConceptDomainConstraint());
 		conceptDomainConstraintEClass.getESuperTypes().add(this.getValidation());
+		conceptDomainConstraintEClass.getESuperTypes().add(theTermPackage.getConceptDomainConstraint());
 		codeSystemConstraintEClass.getESuperTypes().add(theTermPackage.getCodeSystemConstraint());
 		codeSystemConstraintEClass.getESuperTypes().add(this.getValidation());
-		valueSetConstraintEClass.getESuperTypes().add(theTermPackage.getValueSetConstraint());
 		valueSetConstraintEClass.getESuperTypes().add(this.getValidation());
+		valueSetConstraintEClass.getESuperTypes().add(theTermPackage.getValueSetConstraint());
 		logicalConstraintEClass.getESuperTypes().add(this.getConstraintValidation());
 
 		// Initialize classes and features; add operations and parameters
@@ -1107,6 +1145,8 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEAttribute(getValidation_Severity(), this.getSeverityKind(), "severity", null, 0, 1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValidation_RuleId(), theTypesPackage.getString(), "ruleId", null, 0, -1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValidation_Mandatory(), theTypesPackage.getBoolean(), "mandatory", "false", 0, 1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValidation_Kind(), this.getValidationKind(), "kind", "OPEN", 0, 1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValidation_Strict(), theTypesPackage.getBoolean(), "strict", "false", 0, 1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(entryRelationshipEClass, EntryRelationship.class, "EntryRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntryRelationship_TypeCode(), this.getEntryRelationshipKind(), "typeCode", null, 0, 1, EntryRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1191,6 +1231,10 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		addEEnumLiteral(entryKindEEnum, EntryKind.COMP);
 		addEEnumLiteral(entryKindEEnum, EntryKind.DRIV);
 
+		initEEnum(validationKindEEnum, ValidationKind.class, "ValidationKind");
+		addEEnumLiteral(validationKindEEnum, ValidationKind.OPEN);
+		addEEnumLiteral(validationKindEEnum, ValidationKind.CLOSED);
+
 		initEEnum(entryRelationshipKindEEnum, EntryRelationshipKind.class, "EntryRelationshipKind");
 		addEEnumLiteral(entryRelationshipKindEEnum, EntryRelationshipKind.CAUS);
 		addEEnumLiteral(entryRelationshipKindEEnum, EntryRelationshipKind.COMP);
@@ -1227,6 +1271,26 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "originalName", "CDA"
+		   });
 	}
 
 } // CDAPackageImpl

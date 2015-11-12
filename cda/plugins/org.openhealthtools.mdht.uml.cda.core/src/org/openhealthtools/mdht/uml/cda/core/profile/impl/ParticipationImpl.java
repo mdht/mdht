@@ -28,12 +28,12 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getBase_Association <em>Base Association</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getAssociationType <em>Association Type</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
