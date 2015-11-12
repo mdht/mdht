@@ -37,7 +37,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.filesystem,
  org.dita.dost,
  org.eclipse.pde.ui,
- org.eclipse.emf.ecore
+ org.eclipse.emf.ecore,
+ org.eclipse.swt
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.cda.ui.editors,

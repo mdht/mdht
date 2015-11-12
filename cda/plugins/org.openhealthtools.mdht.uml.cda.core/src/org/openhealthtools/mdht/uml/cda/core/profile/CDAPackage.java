@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile;
@@ -42,8 +42,10 @@ import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
  * org.openhealthtools.mdht.uml.cda.validation.internal.properties.SeverityAndCardinalityConstraint
  * org.openhealthtools.mdht.uml.cda.validation.internal.properties.PropertyValidation
  * <!-- end-model-doc -->
+ * 
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='CDA'"
  * @generated
  */
 public interface CDAPackage extends EPackage {
@@ -57,6 +59,7 @@ public interface CDAPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -64,6 +67,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryImpl <em>Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntry()
 		 * @generated
@@ -74,14 +78,17 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ENTRY__TYPE_CODE = eINSTANCE.getEntry_TypeCode();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl <em>Association Validation</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl
+		 * <em>Association Validation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getAssociationValidation()
 		 * @generated
@@ -92,6 +99,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Association</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ASSOCIATION_VALIDATION__BASE_ASSOCIATION = eINSTANCE.getAssociationValidation_Base_Association();
@@ -100,6 +108,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl <em>Validation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getValidation()
 		 * @generated
@@ -110,6 +119,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VALIDATION__MESSAGE = eINSTANCE.getValidation_Message();
@@ -118,6 +128,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Severity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VALIDATION__SEVERITY = eINSTANCE.getValidation_Severity();
@@ -126,6 +137,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Rule Id</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VALIDATION__RULE_ID = eINSTANCE.getValidation_RuleId();
@@ -134,14 +146,35 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mandatory</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VALIDATION__MANDATORY = eINSTANCE.getValidation_Mandatory();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl <em>Entry Relationship</em>}' class.
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute VALIDATION__KIND = eINSTANCE.getValidation_Kind();
+
+		/**
+		 * The meta object literal for the '<em><b>Strict</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute VALIDATION__STRICT = eINSTANCE.getValidation_Strict();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl
+		 * <em>Entry Relationship</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntryRelationship()
 		 * @generated
@@ -152,14 +185,17 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ENTRY_RELATIONSHIP__TYPE_CODE = eINSTANCE.getEntryRelationship_TypeCode();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl <em>Codegen Support</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl <em>Codegen Support</em>}'
+		 * class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getCodegenSupport()
 		 * @generated
@@ -170,6 +206,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CODEGEN_SUPPORT__BASE_PACKAGE = eINSTANCE.getCodegenSupport_BasePackage();
@@ -178,6 +215,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ns Prefix</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CODEGEN_SUPPORT__NS_PREFIX = eINSTANCE.getCodegenSupport_NsPrefix();
@@ -186,6 +224,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ns URI</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CODEGEN_SUPPORT__NS_URI = eINSTANCE.getCodegenSupport_NsURI();
@@ -194,6 +233,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Package Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CODEGEN_SUPPORT__PACKAGE_NAME = eINSTANCE.getCodegenSupport_PackageName();
@@ -202,6 +242,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CODEGEN_SUPPORT__PREFIX = eINSTANCE.getCodegenSupport_Prefix();
@@ -210,14 +251,17 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Namespace</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CODEGEN_SUPPORT__BASE_NAMESPACE = eINSTANCE.getCodegenSupport_Base_Namespace();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.PropertyValidationImpl <em>Property Validation</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.PropertyValidationImpl
+		 * <em>Property Validation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.PropertyValidationImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getPropertyValidation()
 		 * @generated
@@ -228,14 +272,17 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PROPERTY_VALIDATION__BASE_PROPERTY = eINSTANCE.getPropertyValidation_Base_Property();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ClassValidationImpl <em>Class Validation</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ClassValidationImpl <em>Class Validation</em>}'
+		 * class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ClassValidationImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getClassValidation()
 		 * @generated
@@ -246,14 +293,17 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLASS_VALIDATION__BASE_CLASS = eINSTANCE.getClassValidation_Base_Class();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl <em>Vocab Specification</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl
+		 * <em>Vocab Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getVocabSpecification()
 		 * @generated
@@ -264,6 +314,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VOCAB_SPECIFICATION__CODE = eINSTANCE.getVocabSpecification_Code();
@@ -272,6 +323,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code System</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VOCAB_SPECIFICATION__CODE_SYSTEM = eINSTANCE.getVocabSpecification_CodeSystem();
@@ -280,6 +332,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code System Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VOCAB_SPECIFICATION__CODE_SYSTEM_NAME = eINSTANCE.getVocabSpecification_CodeSystemName();
@@ -288,6 +341,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code System Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VOCAB_SPECIFICATION__CODE_SYSTEM_VERSION = eINSTANCE.getVocabSpecification_CodeSystemVersion();
@@ -296,6 +350,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VOCAB_SPECIFICATION__DISPLAY_NAME = eINSTANCE.getVocabSpecification_DisplayName();
@@ -304,6 +359,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.NullFlavorImpl <em>Null Flavor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.NullFlavorImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getNullFlavor()
 		 * @generated
@@ -314,6 +370,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute NULL_FLAVOR__NULL_FLAVOR = eINSTANCE.getNullFlavor_NullFlavor();
@@ -322,6 +379,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.TextValueImpl <em>Text Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.TextValueImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getTextValue()
 		 * @generated
@@ -332,6 +390,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TEXT_VALUE__VALUE = eINSTANCE.getTextValue_Value();
@@ -340,6 +399,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ignore Case</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TEXT_VALUE__IGNORE_CASE = eINSTANCE.getTextValue_IgnoreCase();
@@ -348,6 +408,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl <em>Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getCDATemplate()
 		 * @generated
@@ -358,6 +419,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Template Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CDA_TEMPLATE__TEMPLATE_ID = eINSTANCE.getCDATemplate_TemplateId();
@@ -366,6 +428,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Assigning Authority Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME = eINSTANCE.getCDATemplate_AssigningAuthorityName();
@@ -374,6 +437,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Context Dependent</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CDA_TEMPLATE__CONTEXT_DEPENDENT = eINSTANCE.getCDATemplate_ContextDependent();
@@ -382,6 +446,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Template Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CDA_TEMPLATE__TEMPLATE_VERSION = eINSTANCE.getCDATemplate_TemplateVersion();
@@ -390,14 +455,17 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Template Multiplicity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CDA_TEMPLATE__TEMPLATE_MULTIPLICITY = eINSTANCE.getCDATemplate_TemplateMultiplicity();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl <em>Constraint Validation</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl
+		 * <em>Constraint Validation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getConstraintValidation()
 		 * @generated
@@ -408,6 +476,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Constraint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CONSTRAINT_VALIDATION__BASE_CONSTRAINT = eINSTANCE.getConstraintValidation_Base_Constraint();
@@ -416,6 +485,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Enabled Dita For Constraints</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS = eINSTANCE.getConstraintValidation_EnabledDitaForConstraints();
@@ -424,6 +494,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl <em>Conforms To</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getConformsTo()
 		 * @generated
@@ -434,6 +505,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Generalization</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CONFORMS_TO__BASE_GENERALIZATION = eINSTANCE.getConformsTo_Base_Generalization();
@@ -442,14 +514,17 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Requires Parent Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CONFORMS_TO__REQUIRES_PARENT_ID = eINSTANCE.getConformsTo_RequiresParentId();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl <em>Concept Domain Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl
+		 * <em>Concept Domain Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getConceptDomainConstraint()
 		 * @generated
@@ -457,9 +532,11 @@ public interface CDAPackage extends EPackage {
 		EClass CONCEPT_DOMAIN_CONSTRAINT = eINSTANCE.getConceptDomainConstraint();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl <em>Code System Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl
+		 * <em>Code System Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getCodeSystemConstraint()
 		 * @generated
@@ -467,9 +544,11 @@ public interface CDAPackage extends EPackage {
 		EClass CODE_SYSTEM_CONSTRAINT = eINSTANCE.getCodeSystemConstraint();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValueSetConstraintImpl <em>Value Set Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValueSetConstraintImpl
+		 * <em>Value Set Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ValueSetConstraintImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getValueSetConstraint()
 		 * @generated
@@ -477,9 +556,11 @@ public interface CDAPackage extends EPackage {
 		EClass VALUE_SET_CONSTRAINT = eINSTANCE.getValueSetConstraint();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl <em>Act Relationship</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl <em>Act Relationship</em>}'
+		 * class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getActRelationship()
 		 * @generated
@@ -490,6 +571,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Association</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ACT_RELATIONSHIP__BASE_ASSOCIATION = eINSTANCE.getActRelationship_Base_Association();
@@ -498,6 +580,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Association Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ACT_RELATIONSHIP__ASSOCIATION_TYPE = eINSTANCE.getActRelationship_AssociationType();
@@ -506,14 +589,17 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type Code</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ACT_RELATIONSHIP__TYPE_CODE = eINSTANCE.getActRelationship_TypeCode();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl <em>Participation</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl <em>Participation</em>}'
+		 * class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getParticipation()
 		 * @generated
@@ -524,6 +610,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Association</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PARTICIPATION__BASE_ASSOCIATION = eINSTANCE.getParticipation_Base_Association();
@@ -532,6 +619,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Association Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PARTICIPATION__ASSOCIATION_TYPE = eINSTANCE.getParticipation_AssociationType();
@@ -540,14 +628,17 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type Code</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PARTICIPATION__TYPE_CODE = eINSTANCE.getParticipation_TypeCode();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl <em>Logical Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl
+		 * <em>Logical Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getLogicalConstraint()
 		 * @generated
@@ -558,6 +649,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute LOGICAL_CONSTRAINT__OPERATION = eINSTANCE.getLogicalConstraint_Operation();
@@ -566,6 +658,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl <em>Inline</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getInline()
 		 * @generated
@@ -576,6 +669,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INLINE__BASE_CLASS = eINSTANCE.getInline_Base_Class();
@@ -584,6 +678,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INLINE__FILTER = eINSTANCE.getInline_Filter();
@@ -592,14 +687,17 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Publish Seperately</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INLINE__PUBLISH_SEPERATELY = eINSTANCE.getInline_PublishSeperately();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl <em>Unimplementable</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl <em>Unimplementable</em>}'
+		 * class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getUnimplementable()
 		 * @generated
@@ -610,6 +708,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Constraint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference UNIMPLEMENTABLE__BASE_CONSTRAINT = eINSTANCE.getUnimplementable_Base_Constraint();
@@ -618,6 +717,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind <em>Severity Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getSeverityKind()
 		 * @generated
@@ -628,6 +728,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryKind <em>Entry Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryKind
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntryKind()
 		 * @generated
@@ -635,9 +736,22 @@ public interface CDAPackage extends EPackage {
 		EEnum ENTRY_KIND = eINSTANCE.getEntryKind();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind <em>Entry Relationship Kind</em>}' enum.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind <em>Validation Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getValidationKind()
+		 * @generated
+		 */
+		EEnum VALIDATION_KIND = eINSTANCE.getValidationKind();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind
+		 * <em>Entry Relationship Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntryRelationshipKind()
 		 * @generated
@@ -648,6 +762,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind <em>Null Flavor Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getNullFlavorKind()
 		 * @generated
@@ -658,6 +773,7 @@ public interface CDAPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator <em>Logical Operator</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getLogicalOperator()
 		 * @generated
@@ -670,6 +786,7 @@ public interface CDAPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "profile";
@@ -678,6 +795,7 @@ public interface CDAPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.openhealthtools.org/mdht/schemas/cda/4";
@@ -686,6 +804,7 @@ public interface CDAPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "CDA";
@@ -694,6 +813,7 @@ public interface CDAPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	CDAPackage eINSTANCE = org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl.init();
@@ -702,6 +822,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl <em>Validation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getValidation()
 	 * @generated
@@ -712,6 +833,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -721,6 +843,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -730,6 +853,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -739,24 +863,48 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int VALIDATION__MANDATORY = 3;
 
 	/**
-	 * The number of structural features of the '<em>Validation</em>' class.
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int VALIDATION_FEATURE_COUNT = 4;
+	int VALIDATION__KIND = 4;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl <em>Association Validation</em>}' class.
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATION__STRICT = 5;
+
+	/**
+	 * The number of structural features of the '<em>Validation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATION_FEATURE_COUNT = 6;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl <em>Association Validation</em>
+	 * }' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getAssociationValidation()
 	 * @generated
@@ -767,6 +915,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -776,6 +925,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -785,6 +935,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -794,15 +945,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ASSOCIATION_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_VALIDATION__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_VALIDATION__STRICT = VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -812,6 +985,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Association Validation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -821,6 +995,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryImpl <em>Entry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntry()
 	 * @generated
@@ -831,6 +1006,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -840,6 +1016,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -849,6 +1026,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -858,15 +1036,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ENTRY__MANDATORY = ASSOCIATION_VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY__KIND = ASSOCIATION_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY__STRICT = ASSOCIATION_VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -876,6 +1076,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -885,15 +1086,18 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ENTRY_FEATURE_COUNT = ASSOCIATION_VALIDATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl <em>Entry Relationship</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl <em>Entry Relationship</em>}'
+	 * class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntryRelationship()
 	 * @generated
@@ -904,6 +1108,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -913,6 +1118,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -922,6 +1128,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -931,15 +1138,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ENTRY_RELATIONSHIP__MANDATORY = ASSOCIATION_VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_RELATIONSHIP__KIND = ASSOCIATION_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_RELATIONSHIP__STRICT = ASSOCIATION_VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -949,6 +1178,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -958,6 +1188,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Entry Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -967,6 +1198,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl <em>Codegen Support</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getCodegenSupport()
 	 * @generated
@@ -977,6 +1209,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -986,6 +1219,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Ns Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -995,6 +1229,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Ns URI</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1004,6 +1239,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1013,6 +1249,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1022,6 +1259,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1031,15 +1269,18 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Codegen Support</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CODEGEN_SUPPORT_FEATURE_COUNT = 6;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.PropertyValidationImpl <em>Property Validation</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.PropertyValidationImpl <em>Property Validation</em>}'
+	 * class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.PropertyValidationImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getPropertyValidation()
 	 * @generated
@@ -1050,6 +1291,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1059,6 +1301,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1068,6 +1311,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1077,15 +1321,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int PROPERTY_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_VALIDATION__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_VALIDATION__STRICT = VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1095,6 +1361,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Property Validation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1104,6 +1371,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ClassValidationImpl <em>Class Validation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ClassValidationImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getClassValidation()
 	 * @generated
@@ -1114,6 +1382,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1123,6 +1392,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1132,6 +1402,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1141,15 +1412,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CLASS_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_VALIDATION__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_VALIDATION__STRICT = VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1159,15 +1452,18 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Class Validation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CLASS_VALIDATION_FEATURE_COUNT = VALIDATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl <em>Vocab Specification</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl <em>Vocab Specification</em>}'
+	 * class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getVocabSpecification()
 	 * @generated
@@ -1178,6 +1474,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1187,6 +1484,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1196,6 +1494,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1205,15 +1504,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int VOCAB_SPECIFICATION__MANDATORY = PROPERTY_VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VOCAB_SPECIFICATION__KIND = PROPERTY_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VOCAB_SPECIFICATION__STRICT = PROPERTY_VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1223,6 +1544,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1232,6 +1554,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Code System</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1241,6 +1564,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Code System Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1250,6 +1574,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Code System Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1259,6 +1584,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1268,6 +1594,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Vocab Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1277,6 +1604,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.NullFlavorImpl <em>Null Flavor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.NullFlavorImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getNullFlavor()
 	 * @generated
@@ -1287,6 +1615,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1296,6 +1625,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1305,6 +1635,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1314,15 +1645,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int NULL_FLAVOR__MANDATORY = PROPERTY_VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_FLAVOR__KIND = PROPERTY_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_FLAVOR__STRICT = PROPERTY_VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1332,6 +1685,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1341,6 +1695,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Null Flavor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1350,6 +1705,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.TextValueImpl <em>Text Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.TextValueImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getTextValue()
 	 * @generated
@@ -1360,6 +1716,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1369,6 +1726,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1378,6 +1736,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1387,15 +1746,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int TEXT_VALUE__MANDATORY = PROPERTY_VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_VALUE__KIND = PROPERTY_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_VALUE__STRICT = PROPERTY_VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1405,6 +1786,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1414,6 +1796,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Ignore Case</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1423,6 +1806,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Text Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1432,6 +1816,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl <em>Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getCDATemplate()
 	 * @generated
@@ -1442,6 +1827,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1451,6 +1837,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1460,6 +1847,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1469,15 +1857,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CDA_TEMPLATE__MANDATORY = CLASS_VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CDA_TEMPLATE__KIND = CLASS_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CDA_TEMPLATE__STRICT = CLASS_VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1487,6 +1897,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Template Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1496,6 +1907,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Assigning Authority Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1505,6 +1917,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Context Dependent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1514,6 +1927,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Template Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1523,6 +1937,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Template Multiplicity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1532,15 +1947,18 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CDA_TEMPLATE_FEATURE_COUNT = CLASS_VALIDATION_FEATURE_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl <em>Constraint Validation</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl <em>Constraint Validation</em>}'
+	 * class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getConstraintValidation()
 	 * @generated
@@ -1551,6 +1969,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1560,6 +1979,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1569,6 +1989,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1578,15 +1999,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CONSTRAINT_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_VALIDATION__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_VALIDATION__STRICT = VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1596,6 +2039,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Enabled Dita For Constraints</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1605,6 +2049,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Constraint Validation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1614,6 +2059,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl <em>Conforms To</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getConformsTo()
 	 * @generated
@@ -1624,6 +2070,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1633,6 +2080,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1642,6 +2090,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1651,15 +2100,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CONFORMS_TO__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMS_TO__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMS_TO__STRICT = VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Generalization</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1669,6 +2140,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Requires Parent Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1678,15 +2150,18 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Conforms To</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CONFORMS_TO_FEATURE_COUNT = VALIDATION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl <em>Concept Domain Constraint</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl
+	 * <em>Concept Domain Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getConceptDomainConstraint()
 	 * @generated
@@ -1694,90 +2169,121 @@ public interface CDAPackage extends EPackage {
 	int CONCEPT_DOMAIN_CONSTRAINT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Reference</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__REFERENCE = TermPackage.CONCEPT_DOMAIN_CONSTRAINT__REFERENCE;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__IDENTIFIER = TermPackage.CONCEPT_DOMAIN_CONSTRAINT__IDENTIFIER;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__NAME = TermPackage.CONCEPT_DOMAIN_CONSTRAINT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Base Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY = TermPackage.CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__MESSAGE = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 0;
+	int CONCEPT_DOMAIN_CONSTRAINT__MESSAGE = VALIDATION__MESSAGE;
 
 	/**
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__SEVERITY = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 1;
+	int CONCEPT_DOMAIN_CONSTRAINT__SEVERITY = VALIDATION__SEVERITY;
 
 	/**
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__RULE_ID = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 2;
+	int CONCEPT_DOMAIN_CONSTRAINT__RULE_ID = VALIDATION__RULE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT__MANDATORY = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 3;
+	int CONCEPT_DOMAIN_CONSTRAINT__MANDATORY = VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__STRICT = VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__REFERENCE = VALIDATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__IDENTIFIER = VALIDATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__NAME = VALIDATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY = VALIDATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Concept Domain Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 4;
+	int CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT = VALIDATION_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl <em>Code System Constraint</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl <em>Code System Constraint</em>}
+	 * ' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getCodeSystemConstraint()
 	 * @generated
@@ -1788,6 +2294,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1797,6 +2304,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1806,6 +2314,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1815,6 +2324,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1824,6 +2334,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1833,6 +2344,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1842,6 +2354,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1851,6 +2364,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Qualifier</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1860,6 +2374,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1869,6 +2384,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1878,6 +2394,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1887,6 +2404,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1896,24 +2414,48 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CODE_SYSTEM_CONSTRAINT__MANDATORY = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Code System Constraint</em>' class.
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 4;
+	int CODE_SYSTEM_CONSTRAINT__KIND = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValueSetConstraintImpl <em>Value Set Constraint</em>}' class.
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_SYSTEM_CONSTRAINT__STRICT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Code System Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 6;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValueSetConstraintImpl <em>Value Set Constraint</em>}'
+	 * class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ValueSetConstraintImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getValueSetConstraint()
 	 * @generated
@@ -1921,108 +2463,140 @@ public interface CDAPackage extends EPackage {
 	int VALUE_SET_CONSTRAINT = 15;
 
 	/**
-	 * The feature id for the '<em><b>Reference</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__REFERENCE = TermPackage.VALUE_SET_CONSTRAINT__REFERENCE;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__IDENTIFIER = TermPackage.VALUE_SET_CONSTRAINT__IDENTIFIER;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__NAME = TermPackage.VALUE_SET_CONSTRAINT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__VERSION = TermPackage.VALUE_SET_CONSTRAINT__VERSION;
-
-	/**
-	 * The feature id for the '<em><b>Binding</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__BINDING = TermPackage.VALUE_SET_CONSTRAINT__BINDING;
-
-	/**
-	 * The feature id for the '<em><b>Base Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET_CONSTRAINT__BASE_PROPERTY = TermPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT__MESSAGE = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 0;
+	int VALUE_SET_CONSTRAINT__MESSAGE = VALIDATION__MESSAGE;
 
 	/**
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT__SEVERITY = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 1;
+	int VALUE_SET_CONSTRAINT__SEVERITY = VALIDATION__SEVERITY;
 
 	/**
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT__RULE_ID = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 2;
+	int VALUE_SET_CONSTRAINT__RULE_ID = VALIDATION__RULE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT__MANDATORY = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 3;
+	int VALUE_SET_CONSTRAINT__MANDATORY = VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__KIND = VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__STRICT = VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__REFERENCE = VALIDATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__IDENTIFIER = VALIDATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__NAME = VALIDATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__VERSION = VALIDATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Binding</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__BINDING = VALIDATION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__BASE_PROPERTY = VALIDATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Value Set Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT_FEATURE_COUNT = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 4;
+	int VALUE_SET_CONSTRAINT_FEATURE_COUNT = VALIDATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl <em>Act Relationship</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getActRelationship()
 	 * @generated
@@ -2033,6 +2607,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2042,6 +2617,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Association Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2051,6 +2627,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Type Code</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2060,6 +2637,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Act Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2069,6 +2647,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl <em>Participation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getParticipation()
 	 * @generated
@@ -2079,6 +2658,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2088,6 +2668,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Association Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2097,6 +2678,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Type Code</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2106,15 +2688,18 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Participation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int PARTICIPATION_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl <em>Logical Constraint</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl <em>Logical Constraint</em>}'
+	 * class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getLogicalConstraint()
 	 * @generated
@@ -2125,6 +2710,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2134,6 +2720,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2143,6 +2730,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2152,15 +2740,37 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int LOGICAL_CONSTRAINT__MANDATORY = CONSTRAINT_VALIDATION__MANDATORY;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__KIND = CONSTRAINT_VALIDATION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Strict</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__STRICT = CONSTRAINT_VALIDATION__STRICT;
+
+	/**
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2170,6 +2780,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Enabled Dita For Constraints</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2179,6 +2790,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2188,6 +2800,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Logical Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2197,6 +2810,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl <em>Inline</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getInline()
 	 * @generated
@@ -2207,6 +2821,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2216,6 +2831,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2225,6 +2841,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Publish Seperately</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2234,6 +2851,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Inline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2243,6 +2861,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl <em>Unimplementable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getUnimplementable()
 	 * @generated
@@ -2253,6 +2872,7 @@ public interface CDAPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2262,6 +2882,7 @@ public interface CDAPackage extends EPackage {
 	 * The number of structural features of the '<em>Unimplementable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2271,6 +2892,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind <em>Severity Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getSeverityKind()
 	 * @generated
@@ -2281,6 +2903,7 @@ public interface CDAPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryKind <em>Entry Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryKind
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntryKind()
 	 * @generated
@@ -2288,39 +2911,54 @@ public interface CDAPackage extends EPackage {
 	int ENTRY_KIND = 22;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind <em>Validation Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getValidationKind()
+	 * @generated
+	 */
+	int VALIDATION_KIND = 23;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind <em>Entry Relationship Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntryRelationshipKind()
 	 * @generated
 	 */
-	int ENTRY_RELATIONSHIP_KIND = 23;
+	int ENTRY_RELATIONSHIP_KIND = 24;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind <em>Null Flavor Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getNullFlavorKind()
 	 * @generated
 	 */
-	int NULL_FLAVOR_KIND = 24;
+	int NULL_FLAVOR_KIND = 25;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator <em>Logical Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getLogicalOperator()
 	 * @generated
 	 */
-	int LOGICAL_OPERATOR = 25;
+	int LOGICAL_OPERATOR = 26;
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship <em>Act Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Act Relationship</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship
 	 * @generated
@@ -2328,9 +2966,11 @@ public interface CDAPackage extends EPackage {
 	EClass getActRelationship();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getAssociationType <em>Association Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getAssociationType
+	 * <em>Association Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Association Type</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getAssociationType()
 	 * @see #getActRelationship()
@@ -2339,9 +2979,11 @@ public interface CDAPackage extends EPackage {
 	EReference getActRelationship_AssociationType();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getBase_Association <em>Base Association</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getBase_Association
+	 * <em>Base Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Association</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getBase_Association()
 	 * @see #getActRelationship()
@@ -2350,9 +2992,11 @@ public interface CDAPackage extends EPackage {
 	EReference getActRelationship_Base_Association();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getTypeCode <em>Type Code</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getTypeCode <em>Type Code</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Type Code</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getTypeCode()
 	 * @see #getActRelationship()
@@ -2361,9 +3005,11 @@ public interface CDAPackage extends EPackage {
 	EReference getActRelationship_TypeCode();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation <em>Association Validation</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation <em>Association Validation</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Association Validation</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation
 	 * @generated
@@ -2371,9 +3017,11 @@ public interface CDAPackage extends EPackage {
 	EClass getAssociationValidation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation#getBase_Association <em>Base Association</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation#getBase_Association
+	 * <em>Base Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Association</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation#getBase_Association()
 	 * @see #getAssociationValidation()
@@ -2385,6 +3033,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2394,6 +3043,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate <em>Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Template</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate
 	 * @generated
@@ -2401,9 +3051,11 @@ public interface CDAPackage extends EPackage {
 	EClass getCDATemplate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getAssigningAuthorityName <em>Assigning Authority Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getAssigningAuthorityName
+	 * <em>Assigning Authority Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Assigning Authority Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getAssigningAuthorityName()
 	 * @see #getCDATemplate()
@@ -2412,9 +3064,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getCDATemplate_AssigningAuthorityName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#isContextDependent <em>Context Dependent</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#isContextDependent
+	 * <em>Context Dependent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Context Dependent</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#isContextDependent()
 	 * @see #getCDATemplate()
@@ -2423,9 +3077,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getCDATemplate_ContextDependent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateVersion <em>Template Version</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateVersion
+	 * <em>Template Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Template Version</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateVersion()
 	 * @see #getCDATemplate()
@@ -2434,9 +3090,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getCDATemplate_TemplateVersion();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateMultiplicity <em>Template Multiplicity</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateMultiplicity
+	 * <em>Template Multiplicity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Template Multiplicity</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateMultiplicity()
 	 * @see #getCDATemplate()
@@ -2445,9 +3103,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getCDATemplate_TemplateMultiplicity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateId <em>Template Id</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Template Id</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateId()
 	 * @see #getCDATemplate()
@@ -2459,6 +3119,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ClassValidation <em>Class Validation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Class Validation</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ClassValidation
 	 * @generated
@@ -2466,9 +3127,11 @@ public interface CDAPackage extends EPackage {
 	EClass getClassValidation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ClassValidation#getBase_Class <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ClassValidation#getBase_Class
+	 * <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ClassValidation#getBase_Class()
 	 * @see #getClassValidation()
@@ -2480,6 +3143,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport <em>Codegen Support</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Codegen Support</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport
 	 * @generated
@@ -2487,9 +3151,11 @@ public interface CDAPackage extends EPackage {
 	EClass getCodegenSupport();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBase_Namespace <em>Base Namespace</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBase_Namespace
+	 * <em>Base Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Namespace</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBase_Namespace()
 	 * @see #getCodegenSupport()
@@ -2498,9 +3164,11 @@ public interface CDAPackage extends EPackage {
 	EReference getCodegenSupport_Base_Namespace();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBasePackage <em>Base Package</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBasePackage
+	 * <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Base Package</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBasePackage()
 	 * @see #getCodegenSupport()
@@ -2509,9 +3177,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getCodegenSupport_BasePackage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsPrefix <em>Ns Prefix</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsPrefix <em>Ns Prefix</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Ns Prefix</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsPrefix()
 	 * @see #getCodegenSupport()
@@ -2523,6 +3193,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsURI <em>Ns URI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Ns URI</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsURI()
 	 * @see #getCodegenSupport()
@@ -2531,9 +3202,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getCodegenSupport_NsURI();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPackageName <em>Package Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPackageName
+	 * <em>Package Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Package Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPackageName()
 	 * @see #getCodegenSupport()
@@ -2545,6 +3218,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPrefix <em>Prefix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Prefix</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPrefix()
 	 * @see #getCodegenSupport()
@@ -2556,6 +3230,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodeSystemConstraint <em>Code System Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Code System Constraint</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CodeSystemConstraint
 	 * @generated
@@ -2563,9 +3238,11 @@ public interface CDAPackage extends EPackage {
 	EClass getCodeSystemConstraint();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConceptDomainConstraint <em>Concept Domain Constraint</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConceptDomainConstraint
+	 * <em>Concept Domain Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Concept Domain Constraint</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ConceptDomainConstraint
 	 * @generated
@@ -2576,6 +3253,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo <em>Conforms To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Conforms To</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo
 	 * @generated
@@ -2583,9 +3261,11 @@ public interface CDAPackage extends EPackage {
 	EClass getConformsTo();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#getBase_Generalization <em>Base Generalization</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#getBase_Generalization
+	 * <em>Base Generalization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Generalization</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#getBase_Generalization()
 	 * @see #getConformsTo()
@@ -2594,9 +3274,11 @@ public interface CDAPackage extends EPackage {
 	EReference getConformsTo_Base_Generalization();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#isRequiresParentId <em>Requires Parent Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#isRequiresParentId
+	 * <em>Requires Parent Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Requires Parent Id</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#isRequiresParentId()
 	 * @see #getConformsTo()
@@ -2608,6 +3290,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation <em>Constraint Validation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Constraint Validation</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation
 	 * @generated
@@ -2615,9 +3298,11 @@ public interface CDAPackage extends EPackage {
 	EClass getConstraintValidation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation#getBase_Constraint <em>Base Constraint</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation#getBase_Constraint
+	 * <em>Base Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Constraint</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation#getBase_Constraint()
 	 * @see #getConstraintValidation()
@@ -2626,9 +3311,11 @@ public interface CDAPackage extends EPackage {
 	EReference getConstraintValidation_Base_Constraint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation#isEnabledDitaForConstraints <em>Enabled Dita For Constraints</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation#isEnabledDitaForConstraints <em>Enabled Dita For Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Enabled Dita For Constraints</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation#isEnabledDitaForConstraints()
 	 * @see #getConstraintValidation()
@@ -2640,6 +3327,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Entry <em>Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Entry</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Entry
 	 * @generated
@@ -2650,6 +3338,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Entry#getTypeCode <em>Type Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Type Code</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Entry#getTypeCode()
 	 * @see #getEntry()
@@ -2661,6 +3350,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryKind <em>Entry Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Entry Kind</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryKind
 	 * @generated
@@ -2668,9 +3358,21 @@ public interface CDAPackage extends EPackage {
 	EEnum getEntryKind();
 
 	/**
+	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind <em>Validation Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for enum '<em>Validation Kind</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind
+	 * @generated
+	 */
+	EEnum getValidationKind();
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship <em>Entry Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Entry Relationship</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship
 	 * @generated
@@ -2678,9 +3380,11 @@ public interface CDAPackage extends EPackage {
 	EClass getEntryRelationship();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship#getTypeCode <em>Type Code</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship#getTypeCode
+	 * <em>Type Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Type Code</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship#getTypeCode()
 	 * @see #getEntryRelationship()
@@ -2689,9 +3393,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getEntryRelationship_TypeCode();
 
 	/**
-	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind <em>Entry Relationship Kind</em>}'.
+	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind <em>Entry Relationship Kind</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Entry Relationship Kind</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind
 	 * @generated
@@ -2702,6 +3408,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor <em>Null Flavor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Null Flavor</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor
 	 * @generated
@@ -2709,9 +3416,11 @@ public interface CDAPackage extends EPackage {
 	EClass getNullFlavor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor#getNullFlavor <em>Null Flavor</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor#getNullFlavor <em>Null Flavor</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Null Flavor</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor#getNullFlavor()
 	 * @see #getNullFlavor()
@@ -2723,6 +3432,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind <em>Null Flavor Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Null Flavor Kind</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind
 	 * @generated
@@ -2733,6 +3443,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator <em>Logical Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Logical Operator</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator
 	 * @generated
@@ -2743,6 +3454,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation <em>Participation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Participation</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Participation
 	 * @generated
@@ -2750,9 +3462,11 @@ public interface CDAPackage extends EPackage {
 	EClass getParticipation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getAssociationType <em>Association Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getAssociationType
+	 * <em>Association Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Association Type</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Participation#getAssociationType()
 	 * @see #getParticipation()
@@ -2761,9 +3475,11 @@ public interface CDAPackage extends EPackage {
 	EReference getParticipation_AssociationType();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getBase_Association <em>Base Association</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getBase_Association
+	 * <em>Base Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Association</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Participation#getBase_Association()
 	 * @see #getParticipation()
@@ -2775,6 +3491,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getTypeCode <em>Type Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Type Code</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Participation#getTypeCode()
 	 * @see #getParticipation()
@@ -2786,6 +3503,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint <em>Logical Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Logical Constraint</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint
 	 * @generated
@@ -2793,9 +3511,11 @@ public interface CDAPackage extends EPackage {
 	EClass getLogicalConstraint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint#getOperation <em>Operation</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint#getOperation
+	 * <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Operation</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint#getOperation()
 	 * @see #getLogicalConstraint()
@@ -2807,6 +3527,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline <em>Inline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Inline</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Inline
 	 * @generated
@@ -2817,6 +3538,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Inline#getBase_Class()
 	 * @see #getInline()
@@ -2828,6 +3550,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getFilter <em>Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Filter</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Inline#getFilter()
 	 * @see #getInline()
@@ -2836,9 +3559,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getInline_Filter();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately <em>Publish Seperately</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately
+	 * <em>Publish Seperately</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Publish Seperately</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately()
 	 * @see #getInline()
@@ -2850,6 +3575,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable <em>Unimplementable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Unimplementable</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable
 	 * @generated
@@ -2857,9 +3583,11 @@ public interface CDAPackage extends EPackage {
 	EClass getUnimplementable();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable#getBase_Constraint <em>Base Constraint</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable#getBase_Constraint
+	 * <em>Base Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Constraint</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable#getBase_Constraint()
 	 * @see #getUnimplementable()
@@ -2871,6 +3599,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation <em>Property Validation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Property Validation</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation
 	 * @generated
@@ -2878,9 +3607,11 @@ public interface CDAPackage extends EPackage {
 	EClass getPropertyValidation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation#getBase_Property <em>Base Property</em>}'.
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation#getBase_Property
+	 * <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation#getBase_Property()
 	 * @see #getPropertyValidation()
@@ -2892,6 +3623,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind <em>Severity Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Severity Kind</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind
 	 * @generated
@@ -2902,6 +3634,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue <em>Text Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Text Value</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.TextValue
 	 * @generated
@@ -2912,6 +3645,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue#isIgnoreCase <em>Ignore Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Ignore Case</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.TextValue#isIgnoreCase()
 	 * @see #getTextValue()
@@ -2923,6 +3657,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.TextValue#getValue()
 	 * @see #getTextValue()
@@ -2934,6 +3669,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation <em>Validation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Validation</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation
 	 * @generated
@@ -2944,6 +3680,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#isMandatory <em>Mandatory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Mandatory</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation#isMandatory()
 	 * @see #getValidation()
@@ -2952,9 +3689,34 @@ public interface CDAPackage extends EPackage {
 	EAttribute getValidation_Mandatory();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation#getKind()
+	 * @see #getValidation()
+	 * @generated
+	 */
+	EAttribute getValidation_Kind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#isStrict <em>Strict</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Strict</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation#isStrict()
+	 * @see #getValidation()
+	 * @generated
+	 */
+	EAttribute getValidation_Strict();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Message</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation#getMessage()
 	 * @see #getValidation()
@@ -2966,6 +3728,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getRuleId <em>Rule Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Rule Id</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation#getRuleId()
 	 * @see #getValidation()
@@ -2977,6 +3740,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getSeverity <em>Severity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Severity</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation#getSeverity()
 	 * @see #getValidation()
@@ -2988,6 +3752,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint <em>Value Set Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Value Set Constraint</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint
 	 * @generated
@@ -2998,6 +3763,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification <em>Vocab Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Vocab Specification</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification
 	 * @generated
@@ -3008,6 +3774,7 @@ public interface CDAPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCode <em>Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Code</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCode()
 	 * @see #getVocabSpecification()
@@ -3016,9 +3783,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getVocabSpecification_Code();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystem <em>Code System</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystem
+	 * <em>Code System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Code System</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystem()
 	 * @see #getVocabSpecification()
@@ -3027,9 +3796,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getVocabSpecification_CodeSystem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystemName <em>Code System Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystemName
+	 * <em>Code System Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Code System Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystemName()
 	 * @see #getVocabSpecification()
@@ -3038,9 +3809,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getVocabSpecification_CodeSystemName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystemVersion <em>Code System Version</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystemVersion
+	 * <em>Code System Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Code System Version</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getCodeSystemVersion()
 	 * @see #getVocabSpecification()
@@ -3049,9 +3822,11 @@ public interface CDAPackage extends EPackage {
 	EAttribute getVocabSpecification_CodeSystemVersion();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getDisplayName <em>Display Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getDisplayName
+	 * <em>Display Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Display Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification#getDisplayName()
 	 * @see #getVocabSpecification()

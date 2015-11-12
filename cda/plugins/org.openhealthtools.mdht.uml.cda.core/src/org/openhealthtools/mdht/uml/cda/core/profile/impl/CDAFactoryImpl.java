@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile.impl;
@@ -47,12 +47,14 @@ import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -65,16 +67,16 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static CDAFactory init() {
 		try {
-			CDAFactory theCDAFactory = (CDAFactory)EPackage.Registry.INSTANCE.getEFactory(CDAPackage.eNS_URI);
+			CDAFactory theCDAFactory = (CDAFactory) EPackage.Registry.INSTANCE.getEFactory(CDAPackage.eNS_URI);
 			if (theCDAFactory != null) {
 				return theCDAFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new CDAFactoryImpl();
@@ -84,6 +86,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CDAFactoryImpl() {
@@ -93,62 +96,109 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertEntryKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String convertEntryRelationshipKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertNullFlavorKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LogicalOperator createLogicalOperatorFromString(EDataType eDataType, String initialValue) {
-		LogicalOperator result = LogicalOperator.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+	public ValidationKind createValidationKindFromString(EDataType eDataType, String initialValue) {
+		ValidationKind result = ValidationKind.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String convertValidationKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String convertEntryRelationshipKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String convertNullFlavorKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public LogicalOperator createLogicalOperatorFromString(EDataType eDataType, String initialValue) {
+		LogicalOperator result = LogicalOperator.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertLogicalOperatorToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertSeverityKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -158,6 +208,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 				return convertSeverityKindToString(eDataType, instanceValue);
 			case CDAPackage.ENTRY_KIND:
 				return convertEntryKindToString(eDataType, instanceValue);
+			case CDAPackage.VALIDATION_KIND:
+				return convertValidationKindToString(eDataType, instanceValue);
 			case CDAPackage.ENTRY_RELATIONSHIP_KIND:
 				return convertEntryRelationshipKindToString(eDataType, instanceValue);
 			case CDAPackage.NULL_FLAVOR_KIND:
@@ -165,38 +217,60 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			case CDAPackage.LOGICAL_OPERATOR:
 				return convertLogicalOperatorToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException(
+					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CDAPackage.ENTRY: return createEntry();
-			case CDAPackage.ASSOCIATION_VALIDATION: return createAssociationValidation();
-			case CDAPackage.ENTRY_RELATIONSHIP: return createEntryRelationship();
-			case CDAPackage.CODEGEN_SUPPORT: return createCodegenSupport();
-			case CDAPackage.PROPERTY_VALIDATION: return createPropertyValidation();
-			case CDAPackage.CLASS_VALIDATION: return createClassValidation();
-			case CDAPackage.VOCAB_SPECIFICATION: return createVocabSpecification();
-			case CDAPackage.NULL_FLAVOR: return createNullFlavor();
-			case CDAPackage.TEXT_VALUE: return createTextValue();
-			case CDAPackage.CDA_TEMPLATE: return createCDATemplate();
-			case CDAPackage.CONSTRAINT_VALIDATION: return createConstraintValidation();
-			case CDAPackage.CONFORMS_TO: return createConformsTo();
-			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT: return createConceptDomainConstraint();
-			case CDAPackage.CODE_SYSTEM_CONSTRAINT: return createCodeSystemConstraint();
-			case CDAPackage.VALUE_SET_CONSTRAINT: return createValueSetConstraint();
-			case CDAPackage.ACT_RELATIONSHIP: return createActRelationship();
-			case CDAPackage.PARTICIPATION: return createParticipation();
-			case CDAPackage.LOGICAL_CONSTRAINT: return createLogicalConstraint();
-			case CDAPackage.INLINE: return createInline();
-			case CDAPackage.UNIMPLEMENTABLE: return createUnimplementable();
+			case CDAPackage.ENTRY:
+				return createEntry();
+			case CDAPackage.ASSOCIATION_VALIDATION:
+				return createAssociationValidation();
+			case CDAPackage.ENTRY_RELATIONSHIP:
+				return createEntryRelationship();
+			case CDAPackage.CODEGEN_SUPPORT:
+				return createCodegenSupport();
+			case CDAPackage.PROPERTY_VALIDATION:
+				return createPropertyValidation();
+			case CDAPackage.CLASS_VALIDATION:
+				return createClassValidation();
+			case CDAPackage.VOCAB_SPECIFICATION:
+				return createVocabSpecification();
+			case CDAPackage.NULL_FLAVOR:
+				return createNullFlavor();
+			case CDAPackage.TEXT_VALUE:
+				return createTextValue();
+			case CDAPackage.CDA_TEMPLATE:
+				return createCDATemplate();
+			case CDAPackage.CONSTRAINT_VALIDATION:
+				return createConstraintValidation();
+			case CDAPackage.CONFORMS_TO:
+				return createConformsTo();
+			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT:
+				return createConceptDomainConstraint();
+			case CDAPackage.CODE_SYSTEM_CONSTRAINT:
+				return createCodeSystemConstraint();
+			case CDAPackage.VALUE_SET_CONSTRAINT:
+				return createValueSetConstraint();
+			case CDAPackage.ACT_RELATIONSHIP:
+				return createActRelationship();
+			case CDAPackage.PARTICIPATION:
+				return createParticipation();
+			case CDAPackage.LOGICAL_CONSTRAINT:
+				return createLogicalConstraint();
+			case CDAPackage.INLINE:
+				return createInline();
+			case CDAPackage.UNIMPLEMENTABLE:
+				return createUnimplementable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -205,6 +279,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ActRelationship createActRelationship() {
@@ -215,6 +290,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AssociationValidation createAssociationValidation() {
@@ -225,6 +301,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CDATemplate createCDATemplate() {
@@ -235,6 +312,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ClassValidation createClassValidation() {
@@ -245,6 +323,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CodegenSupport createCodegenSupport() {
@@ -255,6 +334,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CodeSystemConstraint createCodeSystemConstraint() {
@@ -265,6 +345,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConceptDomainConstraint createConceptDomainConstraint() {
@@ -275,6 +356,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConformsTo createConformsTo() {
@@ -285,6 +367,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstraintValidation createConstraintValidation() {
@@ -295,6 +378,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Entry createEntry() {
@@ -305,17 +389,22 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EntryKind createEntryKindFromString(EDataType eDataType, String initialValue) {
 		EntryKind result = EntryKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EntryRelationship createEntryRelationship() {
@@ -326,17 +415,22 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EntryRelationshipKind createEntryRelationshipKindFromString(EDataType eDataType, String initialValue) {
 		EntryRelationshipKind result = EntryRelationshipKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -346,6 +440,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 				return createSeverityKindFromString(eDataType, initialValue);
 			case CDAPackage.ENTRY_KIND:
 				return createEntryKindFromString(eDataType, initialValue);
+			case CDAPackage.VALIDATION_KIND:
+				return createValidationKindFromString(eDataType, initialValue);
 			case CDAPackage.ENTRY_RELATIONSHIP_KIND:
 				return createEntryRelationshipKindFromString(eDataType, initialValue);
 			case CDAPackage.NULL_FLAVOR_KIND:
@@ -353,13 +449,15 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			case CDAPackage.LOGICAL_OPERATOR:
 				return createLogicalOperatorFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException(
+					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NullFlavor createNullFlavor() {
@@ -370,17 +468,22 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NullFlavorKind createNullFlavorKindFromString(EDataType eDataType, String initialValue) {
 		NullFlavorKind result = NullFlavorKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Participation createParticipation() {
@@ -391,6 +494,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LogicalConstraint createLogicalConstraint() {
@@ -401,6 +505,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Inline createInline() {
@@ -411,6 +516,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Unimplementable createUnimplementable() {
@@ -421,6 +527,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PropertyValidation createPropertyValidation() {
@@ -431,17 +538,22 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SeverityKind createSeverityKindFromString(EDataType eDataType, String initialValue) {
 		SeverityKind result = SeverityKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TextValue createTextValue() {
@@ -452,6 +564,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetConstraint createValueSetConstraint() {
@@ -462,6 +575,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VocabSpecification createVocabSpecification() {
@@ -472,10 +586,11 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CDAPackage getCDAPackage() {
-		return (CDAPackage)getEPackage();
+		return (CDAPackage) getEPackage();
 	}
 
 } // CDAFactoryImpl

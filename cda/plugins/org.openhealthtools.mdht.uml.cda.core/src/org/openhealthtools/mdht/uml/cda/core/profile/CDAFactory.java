@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile;
@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage
  * @generated
  */
@@ -27,6 +28,7 @@ public interface CDAFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	CDAFactory eINSTANCE = org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAFactoryImpl.init();
@@ -35,6 +37,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Act Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Act Relationship</em>'.
 	 * @generated
 	 */
@@ -44,6 +47,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Association Validation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Association Validation</em>'.
 	 * @generated
 	 */
@@ -53,6 +57,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Template</em>'.
 	 * @generated
 	 */
@@ -62,6 +67,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Class Validation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Class Validation</em>'.
 	 * @generated
 	 */
@@ -71,6 +77,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Codegen Support</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Codegen Support</em>'.
 	 * @generated
 	 */
@@ -80,6 +87,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Code System Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Code System Constraint</em>'.
 	 * @generated
 	 */
@@ -89,6 +97,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Concept Domain Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Concept Domain Constraint</em>'.
 	 * @generated
 	 */
@@ -98,6 +107,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Conforms To</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Conforms To</em>'.
 	 * @generated
 	 */
@@ -107,6 +117,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Constraint Validation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Constraint Validation</em>'.
 	 * @generated
 	 */
@@ -116,6 +127,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Entry</em>'.
 	 * @generated
 	 */
@@ -125,6 +137,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Entry Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Entry Relationship</em>'.
 	 * @generated
 	 */
@@ -134,6 +147,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Null Flavor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Null Flavor</em>'.
 	 * @generated
 	 */
@@ -143,6 +157,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Participation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Participation</em>'.
 	 * @generated
 	 */
@@ -152,6 +167,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Logical Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Logical Constraint</em>'.
 	 * @generated
 	 */
@@ -161,6 +177,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Inline</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Inline</em>'.
 	 * @generated
 	 */
@@ -170,6 +187,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Unimplementable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Unimplementable</em>'.
 	 * @generated
 	 */
@@ -179,6 +197,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Property Validation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Property Validation</em>'.
 	 * @generated
 	 */
@@ -188,6 +207,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Text Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Text Value</em>'.
 	 * @generated
 	 */
@@ -197,6 +217,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Value Set Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Value Set Constraint</em>'.
 	 * @generated
 	 */
@@ -206,6 +227,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns a new object of class '<em>Vocab Specification</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Vocab Specification</em>'.
 	 * @generated
 	 */
@@ -215,6 +237,7 @@ public interface CDAFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

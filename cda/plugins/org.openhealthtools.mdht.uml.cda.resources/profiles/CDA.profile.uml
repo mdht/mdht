@@ -387,39 +387,6 @@
         </eClassifiers>
       </contents>
     </eAnnotations>
-    <elementImport xmi:id="_jrfMgIEVEd6H8o-hO3-B4Q">
-      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </elementImport>
-    <elementImport xmi:id="_egRPYIEWEd6H8o-hO3-B4Q">
-      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Association"/>
-    </elementImport>
-    <elementImport xmi:id="_egRPYYEWEd6H8o-hO3-B4Q">
-      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
-    </elementImport>
-    <elementImport xmi:id="_egRPYoEWEd6H8o-hO3-B4Q">
-      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
-    </elementImport>
-    <elementImport xmi:id="_9ks2IJmTEd6OiP9GTesZug">
-      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
-    </elementImport>
-    <elementImport xmi:id="_CxDn0KFLEd6NOYTVzzK9uw">
-      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Constraint"/>
-    </elementImport>
-    <elementImport xmi:id="_S6oGUB10Ed-N4c96fT7fpQ">
-      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Generalization"/>
-    </elementImport>
-    <elementImport xmi:id="_vJNUYCcWEd-F25YcmQx-uw">
-      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Namespace"/>
-    </elementImport>
-    <elementImport xmi:id="_4EGqENdUEeGhHO1Bx5wUGA">
-      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#OpaqueExpression"/>
-    </elementImport>
-    <packageImport xmi:id="_XlGuUBz5Ed-WH9Qw4coEMg">
-      <importedPackage xmi:type="uml:Profile" href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
-    </packageImport>
-    <packageImport xmi:id="_UYD1wH75EeSQPpbHWE9Ilg">
-      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
-    </packageImport>
     <ownedRule xmi:id="_mj6acK57EeGx65LZSgZT-A" name="invalidOCLConstraint">
       <constrainedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#OpaqueExpression"/>
       <specification xmi:type="uml:OpaqueExpression" xmi:id="_xC0pUK57EeGx65LZSgZT-A">
@@ -479,6 +446,39 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
         <body>org.openhealthtools.mdht.uml.cda.validation.internal.properties.PropertyValidation</body>
       </specification>
     </ownedRule>
+    <elementImport xmi:id="_jrfMgIEVEd6H8o-hO3-B4Q">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <elementImport xmi:id="_egRPYIEWEd6H8o-hO3-B4Q">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Association"/>
+    </elementImport>
+    <elementImport xmi:id="_egRPYYEWEd6H8o-hO3-B4Q">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </elementImport>
+    <elementImport xmi:id="_egRPYoEWEd6H8o-hO3-B4Q">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+    </elementImport>
+    <elementImport xmi:id="_9ks2IJmTEd6OiP9GTesZug">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+    </elementImport>
+    <elementImport xmi:id="_CxDn0KFLEd6NOYTVzzK9uw">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Constraint"/>
+    </elementImport>
+    <elementImport xmi:id="_S6oGUB10Ed-N4c96fT7fpQ">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Generalization"/>
+    </elementImport>
+    <elementImport xmi:id="_vJNUYCcWEd-F25YcmQx-uw">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Namespace"/>
+    </elementImport>
+    <elementImport xmi:id="_4EGqENdUEeGhHO1Bx5wUGA">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#OpaqueExpression"/>
+    </elementImport>
+    <packageImport xmi:id="_XlGuUBz5Ed-WH9Qw4coEMg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </packageImport>
+    <packageImport xmi:id="_UYD1wH75EeSQPpbHWE9Ilg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_sBP9kIEVEd6H8o-hO3-B4Q" name="SeverityKind">
       <ownedLiteral xmi:id="_3J00gIEVEd6H8o-hO3-B4Q" name="ERROR"/>
       <ownedLiteral xmi:id="_4PjtgIEVEd6H8o-hO3-B4Q" name="WARNING"/>
@@ -554,6 +554,17 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qN47UEhoEeCAwtsXrgwZCA"/>
         <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_r_988EhoEeCAwtsXrgwZCA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_vJkdAIfwEeWEAfhl6ZGiRw" name="kind" type="_n0r6IIfwEeWEAfhl6ZGiRw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vJlEEIfwEeWEAfhl6ZGiRw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vJlEEYfwEeWEAfhl6ZGiRw" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_12PwYIfwEeWEAfhl6ZGiRw" value="OPEN"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_x8IEMIfwEeWEAfhl6ZGiRw" name="strict">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_x8IEMYfwEeWEAfhl6ZGiRw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x8IEMofwEeWEAfhl6ZGiRw" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_2wUzAIfwEeWEAfhl6ZGiRw" value="false"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_x6N6EJmVEd6OiP9GTesZug" name="PropertyValidation">
@@ -783,6 +794,10 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
     </packagedElement>
     <packagedElement xmi:type="uml:Extension" xmi:id="_W9ZOoK7XEeOIc9h626Utvg" name="Constraint_Unimplementable" memberEnd="_W9Z1sK7XEeOIc9h626Utvg _W9Z1sa7XEeOIc9h626Utvg">
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_W9Z1sK7XEeOIc9h626Utvg" name="extension_Unimplementable" type="_Vcn_cK7XEeOIc9h626Utvg" aggregation="composite" association="_W9ZOoK7XEeOIc9h626Utvg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_n0r6IIfwEeWEAfhl6ZGiRw" name="ValidationKind">
+      <ownedLiteral xmi:id="_rE0OIIfwEeWEAfhl6ZGiRw" name="OPEN"/>
+      <ownedLiteral xmi:id="_slJ_gIfwEeWEAfhl6ZGiRw" name="CLOSED"/>
     </packagedElement>
     <profileApplication xmi:id="_ud74ACCuEd-RxoWH9gAx2A">
       <eAnnotations xmi:id="_ud8fECCuEd-RxoWH9gAx2A" source="http://www.eclipse.org/uml2/2.0.0/UML">
