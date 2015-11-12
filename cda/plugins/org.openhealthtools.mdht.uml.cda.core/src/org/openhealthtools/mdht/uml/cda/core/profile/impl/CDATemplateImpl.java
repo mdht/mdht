@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getTemplateId <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getAssigningAuthorityName <em>Assigning Authority Name</em>}</li>
@@ -31,7 +32,6 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getTemplateVersion <em>Template Version</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getTemplateMultiplicity <em>Template Multiplicity</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -19,12 +19,12 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl#getBase_Class <em>Base Class</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl#isPublishSeperately <em>Publish Seperately</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

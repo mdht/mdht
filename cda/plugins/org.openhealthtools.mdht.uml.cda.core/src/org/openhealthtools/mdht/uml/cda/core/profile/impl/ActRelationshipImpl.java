@@ -28,12 +28,12 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl#getBase_Association <em>Base Association</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl#getAssociationType <em>Association Type</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

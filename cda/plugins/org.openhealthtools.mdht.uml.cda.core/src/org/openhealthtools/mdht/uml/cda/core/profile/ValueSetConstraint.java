@@ -22,6 +22,5 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  * @model
  * @generated
  */
-public interface ValueSetConstraint extends org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint,
-		Validation {
+public interface ValueSetConstraint extends Validation, org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint {
 } // ValueSetConstraint

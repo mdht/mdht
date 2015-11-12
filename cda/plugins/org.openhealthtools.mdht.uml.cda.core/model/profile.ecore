@@ -5,6 +5,9 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.OCLConstraintConstraints&#xA;org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.OCLConstraintConstraints&#xA;(memberEnd->size() = 2) and&#xA;-- check for non-null name detects an unresolved proxy&#xA;memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined())&#xA;org.openhealthtools.mdht.uml.cda.validation.internal.packages.PackageImportConstraints&#xA;org.openhealthtools.mdht.uml.cda.validation.internal.packages.PackageImportConstraints&#xA;org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.PropertyConstraints&#xA;org.openhealthtools.mdht.uml.cda.validation.internal.properties.SeverityAndCardinalityConstraint&#xA;org.openhealthtools.mdht.uml.cda.validation.internal.properties.PropertyValidation"/>
   </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="CDA"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EEnum" name="SeverityKind">
     <eLiterals name="ERROR"/>
     <eLiterals name="WARNING" value="1"/>
@@ -32,6 +35,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mandatory" ordered="false"
         eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Boolean"
         defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" eType="#//ValidationKind"
+        defaultValueLiteral="OPEN"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strict" ordered="false"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ValidationKind">
+    <eLiterals name="OPEN"/>
+    <eLiterals name="CLOSED" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EntryRelationshipKind">
     <eLiterals name="CAUS"/>
@@ -135,9 +147,9 @@
         eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Boolean"
         defaultValueLiteral="false"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConceptDomainConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.term.core/model/profile.ecore#//ConceptDomainConstraint #//Validation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConceptDomainConstraint" eSuperTypes="#//Validation platform:/plugin/org.openhealthtools.mdht.uml.term.core/model/profile.ecore#//ConceptDomainConstraint"/>
   <eClassifiers xsi:type="ecore:EClass" name="CodeSystemConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.term.core/model/profile.ecore#//CodeSystemConstraint #//Validation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ValueSetConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.term.core/model/profile.ecore#//ValueSetConstraint #//Validation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSetConstraint" eSuperTypes="#//Validation platform:/plugin/org.openhealthtools.mdht.uml.term.core/model/profile.ecore#//ValueSetConstraint"/>
   <eClassifiers xsi:type="ecore:EClass" name="ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Association" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association"/>

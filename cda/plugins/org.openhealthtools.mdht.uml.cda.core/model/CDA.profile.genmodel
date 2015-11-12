@@ -23,6 +23,10 @@
     <details key="DERIVED_FEATURES" value="PROCESS"/>
     <details key="VALIDATION_DELEGATES" value="IGNORE"/>
     <details key="INVOCATION_DELEGATES" value="IGNORE"/>
+    <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
+    <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
+    <details key="NON_API_INVARIANTS" value="IGNORE"/>
+    <details key="UNTYPED_PROPERTIES" value="REPORT"/>
   </genAnnotations>
   <foreignModel>../../org.openhealthtools.mdht.uml.cda.resources/profiles/CDA.profile.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="CDA" basePackage="org.openhealthtools.mdht.uml.cda.core"
@@ -35,6 +39,10 @@
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="profile.ecore#//EntryKind">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//EntryKind/COMP"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//EntryKind/DRIV"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="profile.ecore#//ValidationKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//ValidationKind/OPEN"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//ValidationKind/CLOSED"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="profile.ecore#//EntryRelationshipKind">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//EntryRelationshipKind/CAUS"/>
@@ -82,6 +90,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//Validation/severity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//Validation/ruleId"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//Validation/mandatory"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//Validation/kind"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//Validation/strict"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//EntryRelationship">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//EntryRelationship/typeCode"/>

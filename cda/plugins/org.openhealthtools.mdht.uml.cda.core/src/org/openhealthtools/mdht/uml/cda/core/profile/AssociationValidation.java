@@ -21,10 +21,10 @@ import org.eclipse.uml2.uml.Association;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation#getBase_Association <em>Base Association</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getAssociationValidation()
  * @model

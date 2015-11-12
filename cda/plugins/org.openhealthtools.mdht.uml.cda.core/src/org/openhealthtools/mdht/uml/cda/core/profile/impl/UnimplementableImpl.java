@@ -21,10 +21,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl#getBase_Constraint <em>Base Constraint</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

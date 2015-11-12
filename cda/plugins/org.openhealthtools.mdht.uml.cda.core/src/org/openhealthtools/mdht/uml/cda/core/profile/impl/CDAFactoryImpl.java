@@ -104,6 +104,26 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ValidationKind createValidationKindFromString(EDataType eDataType, String initialValue) {
+		ValidationKind result = ValidationKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertValidationKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String convertEntryRelationshipKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
@@ -158,6 +178,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 				return convertSeverityKindToString(eDataType, instanceValue);
 			case CDAPackage.ENTRY_KIND:
 				return convertEntryKindToString(eDataType, instanceValue);
+			case CDAPackage.VALIDATION_KIND:
+				return convertValidationKindToString(eDataType, instanceValue);
 			case CDAPackage.ENTRY_RELATIONSHIP_KIND:
 				return convertEntryRelationshipKindToString(eDataType, instanceValue);
 			case CDAPackage.NULL_FLAVOR_KIND:
@@ -346,6 +368,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 				return createSeverityKindFromString(eDataType, initialValue);
 			case CDAPackage.ENTRY_KIND:
 				return createEntryKindFromString(eDataType, initialValue);
+			case CDAPackage.VALIDATION_KIND:
+				return createValidationKindFromString(eDataType, initialValue);
 			case CDAPackage.ENTRY_RELATIONSHIP_KIND:
 				return createEntryRelationshipKindFromString(eDataType, initialValue);
 			case CDAPackage.NULL_FLAVOR_KIND:

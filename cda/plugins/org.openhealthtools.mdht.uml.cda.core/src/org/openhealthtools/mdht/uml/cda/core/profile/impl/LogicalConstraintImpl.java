@@ -18,10 +18,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl#getOperation <em>Operation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

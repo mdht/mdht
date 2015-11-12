@@ -23,5 +23,5 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  * @generated
  */
 public interface ConceptDomainConstraint extends
-		org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint, Validation {
+		Validation, org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint {
 } // ConceptDomainConstraint
