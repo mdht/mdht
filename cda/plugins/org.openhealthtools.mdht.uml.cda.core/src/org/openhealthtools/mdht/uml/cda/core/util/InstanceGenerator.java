@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Sean Muir (JKM Software) - Add support for inline class generation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
 
@@ -81,7 +81,7 @@ public class InstanceGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.cda.util.CDASwitch#caseStrucDocText(org.openhealthtools.mdht.uml.cda.StrucDocText)
 		 */
 		@Override
@@ -130,7 +130,7 @@ public class InstanceGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseCE(org.openhealthtools.mdht.uml.hl7.datatypes.CE)
 		 */
 		// @Override
@@ -141,7 +141,7 @@ public class InstanceGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseCS(org.openhealthtools.mdht.uml.hl7.datatypes.CS)
 		 */
 		@Override
@@ -243,7 +243,7 @@ public class InstanceGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseED(org.openhealthtools.mdht.uml.hl7.datatypes.ED)
 		 */
 		@Override
@@ -254,7 +254,7 @@ public class InstanceGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseINT(org.openhealthtools.mdht.uml.hl7.datatypes.INT)
 		 */
 		@Override
@@ -399,7 +399,8 @@ public class InstanceGenerator {
 									cdaReference.getEReferenceType());
 								;
 								if (ePackage != null) {
-									EClassifier eType = ePackage.getEClassifier(UML2Util.getValidJavaIdentifier(property.getType().getName()));
+									EClassifier eType = ePackage.getEClassifier(
+										UML2Util.getValidJavaIdentifier(property.getType().getName()));
 									if (eType != null) {
 										objectToAdd = ePackage.getEFactoryInstance().create((EClass) eType);
 										initEObject(eObject);
@@ -412,11 +413,12 @@ public class InstanceGenerator {
 										while (owner.getOwner() instanceof Class) {
 											owner = (Class) owner.getOwner();
 										}
-										EClassifier eet = ePackage.getEClassifier(UML2Util.getValidJavaIdentifier(owner.getName()));
+										EClassifier eet = ePackage.getEClassifier(
+											UML2Util.getValidJavaIdentifier(owner.getName()));
 										if (eet != null) {
-											EAnnotation annotation = eet.getEAnnotation(CDAUtil.CDA_ANNOTATION_SOURCE +
-													"/" +
-													UML2Util.getValidJavaIdentifier(property.getType().getQualifiedName()));
+											EAnnotation annotation = eet.getEAnnotation(
+												CDAUtil.CDA_ANNOTATION_SOURCE + "/" + UML2Util.getValidJavaIdentifier(
+													property.getType().getQualifiedName()));
 											if (annotation != null) {
 												CDAUtil.init(objectToAdd, annotation.getDetails().map());
 											}
@@ -466,7 +468,8 @@ public class InstanceGenerator {
 								// If not found -search for Class with Spaces
 								if (operationClass == null) {
 									StringBuffer buffer = new StringBuffer();
-									for (String token : UMLUtil.splitName(eOperation.getEGenericType().getEClassifier().getName())) {
+									for (String token : UMLUtil.splitName(
+										eOperation.getEGenericType().getEClassifier().getName())) {
 										buffer.append(buffer.length() > 0
 												? " "
 												: "");
@@ -514,20 +517,23 @@ public class InstanceGenerator {
 
 						EList result = (EList) eObject.eGet(structuralFeature);
 						if (result.size() == 0) {
-							EObject objectToAdd = sfEClass.getEPackage().getEFactoryInstance().create((EClass) sfEClass);
+							EObject objectToAdd = sfEClass.getEPackage().getEFactoryInstance().create(
+								(EClass) sfEClass);
 							if (DatatypesPackage.eINSTANCE.getNsURI().equals(
 								objectToAdd.eClass().getEPackage().getNsURI())) {
 								datatypesInit.setCurrentFeature(structuralFeature);
 								datatypesInit.doSwitch(objectToAdd);
 							} else {
 
-								sampleInstanceInitialization(umlClass, objectToAdd, shallShouldMayProperties, level - 1);
+								sampleInstanceInitialization(
+									umlClass, objectToAdd, shallShouldMayProperties, level - 1);
 							}
 							try {
 								result.add(objectToAdd);
 							} catch (ClassCastException cce) {
-								System.out.println("Unable to add " + eClass.getName() + "." +
-										structuralFeature.getName() + " using type " + objectToAdd.eClass().getName());
+								System.out.println(
+									"Unable to add " + eClass.getName() + "." + structuralFeature.getName() +
+											" using type " + objectToAdd.eClass().getName());
 							}
 						}
 					} else {
@@ -554,8 +560,9 @@ public class InstanceGenerator {
 								// }
 
 							} catch (Exception cce) {
-								System.out.println("Unable to set " + eClass.getName() + "." +
-										structuralFeature.getEType().getName() + structuralFeature.getName());
+								System.out.println(
+									"Unable to set " + eClass.getName() + "." + structuralFeature.getEType().getName() +
+											structuralFeature.getName());
 							}
 						}
 					}
@@ -603,8 +610,8 @@ public class InstanceGenerator {
 
 						IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
-						IProject docProject = root.getProject(topPackage.eResource().getURI().segment(1).replace(
-							".model", ".doc"));
+						IProject docProject = root.getProject(
+							topPackage.eResource().getURI().segment(1).replace(".model", ".doc"));
 
 						if (docProject.exists()) {
 							IFolder samplesFolder = docProject.getFolder("samples");
@@ -612,8 +619,9 @@ public class InstanceGenerator {
 								IFile samplesFile = samplesFolder.getFile(sampleArtifact.getFileName());
 
 								if (samplesFile.exists()) {
-									clinicalDocument = CDAUtil.load(new FileInputStream(root.getLocation().append(
-										samplesFile.getFullPath()).toFile()));
+									clinicalDocument = CDAUtil.load(
+										new FileInputStream(
+											root.getLocation().append(samplesFile.getFullPath()).toFile()));
 								}
 							}
 

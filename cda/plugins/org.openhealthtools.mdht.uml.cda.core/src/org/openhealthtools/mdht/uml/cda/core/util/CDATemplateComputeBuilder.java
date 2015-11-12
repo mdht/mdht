@@ -26,8 +26,9 @@ public abstract class CDATemplateComputeBuilder {
 	private String content;
 
 	public static String getMultiplicityRange(String multiplicity) {
-		if (multiplicity == null) // default
+		if (multiplicity == null) {
 			return "1..1";
+		}
 		return multiplicity.trim();
 	}
 
@@ -63,34 +64,40 @@ public abstract class CDATemplateComputeBuilder {
 		content.append(addTemplateIdMultiplicity());
 		content.append(ruleIds);
 		content.append(" such that it ");
-		if (markup)
+		if (markup) {
 			content.append("<ol><li>");
+		}
 		content.append(getSeverityContain());
 		content.append("exactly one");
 		content.append(addRootMultiplicity());
-		if (markup)
+		if (markup) {
 			content.append("</li>");
+		}
 		if (!StringUtils.isEmpty(templateVersion)) {
-			if (markup)
+			if (markup) {
 				content.append(" <li>");
-			else
+			} else {
 				content.append(" and ");
+			}
 			content.append(getSeverityContain());
 			content.append("exactly one");
 			content.append(addTemplateVersion());
-			if (markup)
+			if (markup) {
 				content.append("</li>");
+			}
 		}
-		if (markup)
+		if (markup) {
 			content.append("</ol>");
+		}
 		this.content = content.toString();
 		return this;
 	}
 
 	@Override
 	public String toString() {
-		if (content == null)
+		if (content == null) {
 			return super.toString();
+		}
 		return content;
 	}
 
@@ -102,20 +109,24 @@ public abstract class CDATemplateComputeBuilder {
 
 	private String getSeverityContain() {
 		StringBuilder content = new StringBuilder();
-		if (markup)
+		if (markup) {
 			content.append("<b>");
+		}
 		content.append("SHALL");
-		if (markup)
+		if (markup) {
 			content.append("</b>");
+		}
 		content.append(" contain ");
 		return content.toString();
 	}
 
 	private String getMultiplicityText() {
-		if ("[1..1]".equals(multiplicity))
+		if ("[1..1]".equals(multiplicity)) {
 			return "exactly one";
-		if ("[1..*]".equals(multiplicity))
+		}
+		if ("[1..*]".equals(multiplicity)) {
 			return "at least one";
+		}
 		System.err.println("Used unexpected multiplicity " + multiplicity);
 		return "";
 	}
