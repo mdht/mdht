@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile;
@@ -24,12 +24,12 @@ import org.eclipse.uml2.uml.Namespace;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBasePackage <em>Base Package</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsPrefix <em>Ns Prefix</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsURI <em>Ns URI</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPackageName <em>Package Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBase_Namespace <em>Base Namespace</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBasePackage <em>Base Package</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsPrefix <em>Ns Prefix</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsURI <em>Ns URI</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPackageName <em>Package Name</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPrefix <em>Prefix</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBase_Namespace <em>Base Namespace</em>}</li>
  * </ul>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport()
@@ -44,6 +44,7 @@ public interface CodegenSupport extends EObject {
 	 * If the meaning of the '<em>Base Namespace</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Namespace</em>' reference.
 	 * @see #setBase_Namespace(Namespace)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_Base_Namespace()
@@ -59,6 +60,7 @@ public interface CodegenSupport extends EObject {
 	 * If the meaning of the '<em>Base Package</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Package</em>' attribute.
 	 * @see #setBasePackage(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_BasePackage()
@@ -74,6 +76,7 @@ public interface CodegenSupport extends EObject {
 	 * If the meaning of the '<em>Ns Prefix</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Ns Prefix</em>' attribute.
 	 * @see #setNsPrefix(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_NsPrefix()
@@ -89,6 +92,7 @@ public interface CodegenSupport extends EObject {
 	 * If the meaning of the '<em>Ns URI</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Ns URI</em>' attribute.
 	 * @see #setNsURI(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_NsURI()
@@ -104,6 +108,7 @@ public interface CodegenSupport extends EObject {
 	 * If the meaning of the '<em>Package Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Package Name</em>' attribute.
 	 * @see #setPackageName(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_PackageName()
@@ -119,6 +124,7 @@ public interface CodegenSupport extends EObject {
 	 * If the meaning of the '<em>Prefix</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Prefix</em>' attribute.
 	 * @see #setPrefix(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_Prefix()
@@ -128,10 +134,13 @@ public interface CodegenSupport extends EObject {
 	String getPrefix();
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBase_Namespace <em>Base Namespace</em>}' reference.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBase_Namespace <em>Base Namespace</em>}'
+	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Namespace</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Namespace</em>' reference.
 	 * @see #getBase_Namespace()
 	 * @generated
 	 */
@@ -141,7 +150,9 @@ public interface CodegenSupport extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getBasePackage <em>Base Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Package</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Package</em>' attribute.
 	 * @see #getBasePackage()
 	 * @generated
 	 */
@@ -151,7 +162,9 @@ public interface CodegenSupport extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsPrefix <em>Ns Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ns Prefix</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Ns Prefix</em>' attribute.
 	 * @see #getNsPrefix()
 	 * @generated
 	 */
@@ -161,7 +174,9 @@ public interface CodegenSupport extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getNsURI <em>Ns URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ns URI</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Ns URI</em>' attribute.
 	 * @see #getNsURI()
 	 * @generated
 	 */
@@ -171,7 +186,9 @@ public interface CodegenSupport extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPackageName <em>Package Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Package Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Package Name</em>' attribute.
 	 * @see #getPackageName()
 	 * @generated
 	 */
@@ -181,7 +198,9 @@ public interface CodegenSupport extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport#getPrefix <em>Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prefix</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Prefix</em>' attribute.
 	 * @see #getPrefix()
 	 * @generated
 	 */
