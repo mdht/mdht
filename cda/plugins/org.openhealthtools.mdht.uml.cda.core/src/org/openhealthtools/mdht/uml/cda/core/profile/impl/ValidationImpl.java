@@ -49,7 +49,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getRuleId() <em>Rule Id</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getRuleId()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -126,7 +126,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -137,7 +137,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -148,7 +148,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #isStrict() <em>Strict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isStrict()
 	 * @generated
 	 * @ordered
@@ -159,7 +159,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #isStrict() <em>Strict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isStrict()
 	 * @generated
 	 * @ordered
@@ -169,7 +169,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected ValidationImpl() {
@@ -179,7 +179,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -312,7 +312,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String getMessage() {
@@ -322,7 +322,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EList<String> getRuleId() {
@@ -335,7 +335,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public SeverityKind getSeverity() {
@@ -345,7 +345,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public boolean isMandatory() {
@@ -355,21 +355,22 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void setMandatory(boolean newMandatory) {
 		boolean oldMandatory = mandatory;
 		mandatory = newMandatory;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__MANDATORY, oldMandatory,
 				mandatory));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public ValidationKind getKind() {
@@ -379,7 +380,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void setKind(ValidationKind newKind) {
@@ -387,14 +388,15 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 		kind = newKind == null
 				? KIND_EDEFAULT
 				: newKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__KIND, oldKind, kind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public boolean isStrict() {
@@ -404,33 +406,35 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void setStrict(boolean newStrict) {
 		boolean oldStrict = strict;
 		strict = newStrict;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__STRICT, oldStrict, strict));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void setMessage(String newMessage) {
 		String oldMessage = message;
 		message = newMessage;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__MESSAGE, oldMessage, message));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void setSeverity(SeverityKind newSeverity) {
@@ -438,21 +442,23 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 		severity = newSeverity == null
 				? SEVERITY_EDEFAULT
 				: newSeverity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__SEVERITY, oldSeverity, severity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (message: ");

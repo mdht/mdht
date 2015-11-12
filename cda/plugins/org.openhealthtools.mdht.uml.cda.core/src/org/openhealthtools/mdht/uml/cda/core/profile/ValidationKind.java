@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Validation Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidationKind()
  * @model
  * @generated
@@ -22,6 +23,7 @@ public enum ValidationKind implements Enumerator {
 	 * The '<em><b>OPEN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OPEN_VALUE
 	 * @generated
 	 * @ordered
@@ -32,6 +34,7 @@ public enum ValidationKind implements Enumerator {
 	 * The '<em><b>CLOSED</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #CLOSED_VALUE
 	 * @generated
 	 * @ordered
@@ -46,6 +49,7 @@ public enum ValidationKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OPEN
 	 * @model
 	 * @generated
@@ -61,6 +65,7 @@ public enum ValidationKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #CLOSED
 	 * @model
 	 * @generated
@@ -72,18 +77,16 @@ public enum ValidationKind implements Enumerator {
 	 * An array of all the '<em><b>Validation Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final ValidationKind[] VALUES_ARRAY =
-		new ValidationKind[] {
-			OPEN,
-			CLOSED,
-		};
+	private static final ValidationKind[] VALUES_ARRAY = new ValidationKind[] { OPEN, CLOSED, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Validation Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<ValidationKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -92,7 +95,9 @@ public enum ValidationKind implements Enumerator {
 	 * Returns the '<em><b>Validation Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
+	 * 
+	 * @param literal
+	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -110,7 +115,9 @@ public enum ValidationKind implements Enumerator {
 	 * Returns the '<em><b>Validation Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
+	 * 
+	 * @param name
+	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -128,14 +135,18 @@ public enum ValidationKind implements Enumerator {
 	 * Returns the '<em><b>Validation Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
+	 * 
+	 * @param value
+	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ValidationKind get(int value) {
 		switch (value) {
-			case OPEN_VALUE: return OPEN;
-			case CLOSED_VALUE: return CLOSED;
+			case OPEN_VALUE:
+				return OPEN;
+			case CLOSED_VALUE:
+				return CLOSED;
 		}
 		return null;
 	}
@@ -143,6 +154,7 @@ public enum ValidationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -150,6 +162,7 @@ public enum ValidationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -157,6 +170,7 @@ public enum ValidationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -165,6 +179,7 @@ public enum ValidationKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private ValidationKind(int value, String name, String literal) {
@@ -176,39 +191,43 @@ public enum ValidationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //ValidationKind
+
+} // ValidationKind

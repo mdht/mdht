@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile;
@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.Property;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Validation Support</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.Property;
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport#getBase_Property <em>Base Property</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidationSupport()
  * @model
  * @generated
@@ -44,7 +44,7 @@ public interface ValidationSupport extends EObject {
 	 * If the meaning of the '<em>Base Association</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Association</em>' reference.
 	 * @see #setBase_Association(Association)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidationSupport_Base_Association()
@@ -60,7 +60,7 @@ public interface ValidationSupport extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidationSupport_Base_Class()
@@ -76,7 +76,7 @@ public interface ValidationSupport extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidationSupport_Base_Property()
@@ -92,7 +92,7 @@ public interface ValidationSupport extends EObject {
 	 * If the meaning of the '<em>Message</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Message</em>' attribute.
 	 * @see #setMessage(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidationSupport_Message()
@@ -109,7 +109,7 @@ public interface ValidationSupport extends EObject {
 	 * If the meaning of the '<em>Severity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Severity</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind
 	 * @see #setSeverity(SeverityKind)
@@ -124,7 +124,7 @@ public interface ValidationSupport extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Association</em>' reference.
 	 * @see #getBase_Association()
@@ -136,7 +136,7 @@ public interface ValidationSupport extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -149,7 +149,7 @@ public interface ValidationSupport extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
@@ -161,7 +161,7 @@ public interface ValidationSupport extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport#getMessage <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Message</em>' attribute.
 	 * @see #getMessage()
@@ -173,7 +173,7 @@ public interface ValidationSupport extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport#getSeverity <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Severity</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind
