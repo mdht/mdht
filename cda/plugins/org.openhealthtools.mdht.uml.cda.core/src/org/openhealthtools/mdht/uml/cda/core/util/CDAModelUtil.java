@@ -1240,6 +1240,8 @@ public class CDAModelUtil {
 			currentlyItem &= appendPropertyComments(propertyComments, property, markup);
 			if (currentlyItem) {
 				sb.append(li[0]).append(propertyComments).append(li[1]);
+			} else {
+				sb.append(propertyComments);
 			}
 
 			appendPropertyRules(sb, property, constraintMap, subConstraintMap, unprocessedConstraints, markup, !order);
