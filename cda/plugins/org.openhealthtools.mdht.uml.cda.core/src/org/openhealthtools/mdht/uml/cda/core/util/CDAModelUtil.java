@@ -981,27 +981,23 @@ public class CDAModelUtil {
 			}
 		}
 
-		/*
-		 * Append datatype restriction, if redefined to a specialized type
-		 */
-		List<Property> redefinedProperties = UMLUtil.getRedefinedProperties(property);
-		Property redefinedProperty = redefinedProperties.isEmpty()
-				? null
-				: redefinedProperties.get(0);
 
-		if (property.getType() != null && ((redefinedProperty == null ||
-				(!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType()))))) {
-			message.append(" with " + "@xsi:type=\"");
-			if (redefinedProperty != null && redefinedProperty.getType() != null &&
-					redefinedProperty.getType().getName() != null && !redefinedProperty.getType().getName().isEmpty()) {
-				message.append(redefinedProperty.getType().getName());
-			} else {
-				message.append(property.getType().getName());
+		if (property.getType() instanceof Classifier && cdaProperty != null &&
+				cdaProperty.getType() instanceof Classifier) {
+			Classifier propertyType = (Classifier) property.getType();
+			Classifier cdaPropertyType = (Classifier) cdaProperty.getType();
+			Class propertyCdaType = CDAModelUtil.getCDAClass(propertyType);
+			if (propertyCdaType == null)
+				propertyCdaType = CDAModelUtil.getCDADatatype(propertyType);
+			// if the datatype is not different from the immediate parent, then the xsi:type shouldn't be printed
+			if (propertyCdaType != null && cdaPropertyType != null && propertyCdaType != cdaPropertyType &&
+					propertyCdaType.getName() != null && !propertyCdaType.getName().isEmpty()) {
+				message.append(" with " + "@xsi:type=\"");
+				message.append(propertyCdaType.getName());
+				message.append("\"");
 			}
-			message.append("\"");
-
 		}
-
+		
 		// for vocab properties, put rule ID at end, use terminology constraint if specified
 		if (isHL7VocabAttribute(property)) {
 			String ruleIds = getTerminologyConformanceRuleIds(property);
