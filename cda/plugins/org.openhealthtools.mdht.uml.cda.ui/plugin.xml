@@ -30,12 +30,24 @@
                label="%CDAPropertyTab.label"
                afterTab="property.tab.GeneralPropertySection"
                id="property.tab.CDAPropertySection">           
+         </propertyTab>   
+         <propertyTab
+            category="domain"
+            label="CDA Instance Sample"
+            afterTab="property.tab.CDAPropertySection"
+            id="property.tab.CDAInstanceSampleSection">           
          </propertyTab> 
       </propertyTabs>
    </extension>
  
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
-       <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+       <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">          
+          
+         <propertySection tab="property.tab.CDAInstanceSampleSection" 
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.CDAInstanceSampleSection" 
+             id="property.section.cda.CDAInstanceSampleSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.TemplateFilter"/>
+                          
        
          <propertySection tab="property.tab.CDAPropertySection"
              class="org.openhealthtools.mdht.uml.cda.ui.properties.InlineSection"
