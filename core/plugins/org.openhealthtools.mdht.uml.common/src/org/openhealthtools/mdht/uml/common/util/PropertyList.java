@@ -99,6 +99,16 @@ public class PropertyList {
 			}
 
 		}
+		if (associationEnds != null) {
+			for (Property attribute : associationEnds) {
+				for (Property redefinedProperty : attribute.getRedefinedProperties()) {
+					if (property.equals(redefinedProperty)) {
+						return true;
+					}
+				}
+			}
+
+		}
 		return false;
 	}
 
