@@ -153,31 +153,30 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 						int index = severityCombo.getSelectionIndex();
 						if (index >= 0) {
 
+							// map severity to SeverityKind
 							SeverityKind severity = null;
 							validation.setNegationIndicator(false);
 							switch (index) {
 								case 0: // not set
 									severity = SeverityKind.ERROR;
-
+									break;
 								case 1: // SHALL
 									severity = SeverityKind.ERROR;
+									break;
 								case 2: // SHOULD
 									severity = SeverityKind.WARNING;
+									break;
 								case 3: // SHOULD NOT
 									severity = SeverityKind.WARNING;
+									// for NOT
 									validation.setNegationIndicator(true);
+									break;
+								case 4: // MAY
+									severity = SeverityKind.INFO;
 									break;
 							}
 
-							// if SHOULD NOT has been selected
-							// use the negation indicator
-							if (index == 3) {
-								validation.setSeverity(SeverityKind.WARNING);
-								validation.setNegationIndicator(true);
-							} else {
-								validation.setSeverity(SeverityKind.get(index - 1));
-								validation.setNegationIndicator(false);
-							}
+							validation.setSeverity(severity);
 
 						}
 					} else if (ruleIdModified) {
@@ -449,9 +448,9 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 *
+	 * 
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@Override
