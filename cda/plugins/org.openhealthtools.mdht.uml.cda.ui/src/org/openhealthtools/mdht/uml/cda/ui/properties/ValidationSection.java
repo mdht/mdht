@@ -110,7 +110,7 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
-			// do nothing
+
 		}
 
 		public void focusLost(FocusEvent event) {
@@ -333,6 +333,18 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 			return;
 		}
 
+		if (severityCombo != null) {
+			severityCombo.select(0);
+		}
+
+		if (kindCombo != null) {
+			kindCombo.select(0);
+		}
+
+		if (ruleIdText != null) {
+			ruleIdText.setText("");
+		}
+
 		Validation validation = (Validation) modelElement.getStereotypeApplication(getValidationStereotype());
 
 		if (validation == null) {
@@ -419,9 +431,9 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 *
+	 * 
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@Override
@@ -450,7 +462,7 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 *
+	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification
