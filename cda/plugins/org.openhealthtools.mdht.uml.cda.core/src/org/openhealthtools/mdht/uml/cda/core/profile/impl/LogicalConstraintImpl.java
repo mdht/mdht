@@ -18,10 +18,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl#getOperation <em>Operation</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -91,8 +91,8 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 				? OPERATION_EDEFAULT
 				: newOperation;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LOGICAL_CONSTRAINT__OPERATION,
-				oldOperation, operation));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LOGICAL_CONSTRAINT__OPERATION, oldOperation, operation));
 		}
 	}
 

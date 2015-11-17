@@ -21,10 +21,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl#getBase_Constraint <em>Base Constraint</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -73,8 +73,9 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 			base_Constraint = (Constraint) eResolveProxy(oldBase_Constraint);
 			if (base_Constraint != oldBase_Constraint) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						CDAPackage.UNIMPLEMENTABLE__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.UNIMPLEMENTABLE__BASE_CONSTRAINT, oldBase_Constraint,
+						base_Constraint));
 				}
 			}
 		}
@@ -101,8 +102,9 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 		Constraint oldBase_Constraint = base_Constraint;
 		base_Constraint = newBase_Constraint;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.UNIMPLEMENTABLE__BASE_CONSTRAINT,
-				oldBase_Constraint, base_Constraint));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.UNIMPLEMENTABLE__BASE_CONSTRAINT, oldBase_Constraint,
+				base_Constraint));
 		}
 	}
 

@@ -19,10 +19,10 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.ClassValidation#getBase_Class <em>Base Class</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getClassValidation()
  * @model

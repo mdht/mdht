@@ -150,8 +150,35 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 					if (severityModified) {
 						severityModified = false;
-						if (severityCombo.getSelectionIndex() >= 0) {
-							validation.setSeverity(SeverityKind.get(severityCombo.getSelectionIndex() - 1));
+						int index = severityCombo.getSelectionIndex();
+						if (index >= 0) {
+
+							SeverityKind severity = null;
+							validation.setNegationIndicator(false);
+							switch (index) {
+								case 0: // not set
+									severity = SeverityKind.ERROR;
+
+								case 1: // SHALL
+									severity = SeverityKind.ERROR;
+								case 2: // SHOULD
+									severity = SeverityKind.WARNING;
+								case 3: // SHOULD NOT
+									severity = SeverityKind.WARNING;
+									validation.setNegationIndicator(true);
+									break;
+							}
+
+							// if SHOULD NOT has been selected
+							// use the negation indicator
+							if (index == 3) {
+								validation.setSeverity(SeverityKind.WARNING);
+								validation.setNegationIndicator(true);
+							} else {
+								validation.setSeverity(SeverityKind.get(index - 1));
+								validation.setNegationIndicator(false);
+							}
+
 						}
 					} else if (ruleIdModified) {
 						ruleIdModified = false;
@@ -233,7 +260,7 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 		/* ---- severity combo ---- */
 		severityCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
-		severityCombo.setItems(new String[] { "", "SHALL", "SHOULD", "MAY" });
+		severityCombo.setItems(new String[] { "", "SHALL", "SHOULD", "SHOULD NOT", "MAY" });
 		severityCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				severityModified = true;
@@ -361,10 +388,13 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 				severityCombo.select(1);
 				break;
 			case WARNING:
-				severityCombo.select(2);
+				int index = validation.isNegationIndicator()
+						? 3
+						: 2;
+				severityCombo.select(index);
 				break;
 			case INFO:
-				severityCombo.select(3);
+				severityCombo.select(4);
 				break;
 			default:
 				severityCombo.select(0);

@@ -28,12 +28,12 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getBase_Association <em>Base Association</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getAssociationType <em>Association Type</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -225,8 +225,9 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 			associationType = (org.eclipse.uml2.uml.Class) eResolveProxy(oldAssociationType);
 			if (associationType != oldAssociationType) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						CDAPackage.PARTICIPATION__ASSOCIATION_TYPE, oldAssociationType, associationType));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.PARTICIPATION__ASSOCIATION_TYPE, oldAssociationType,
+						associationType));
 				}
 			}
 		}
@@ -245,8 +246,9 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 			base_Association = (Association) eResolveProxy(oldBase_Association);
 			if (base_Association != oldBase_Association) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						CDAPackage.PARTICIPATION__BASE_ASSOCIATION, oldBase_Association, base_Association));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.PARTICIPATION__BASE_ASSOCIATION, oldBase_Association,
+						base_Association));
 				}
 			}
 		}
@@ -265,8 +267,8 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 			typeCode = (EnumerationLiteral) eResolveProxy(oldTypeCode);
 			if (typeCode != oldTypeCode) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.PARTICIPATION__TYPE_CODE,
-						oldTypeCode, typeCode));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.PARTICIPATION__TYPE_CODE, oldTypeCode, typeCode));
 				}
 			}
 		}
@@ -283,8 +285,8 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 		org.eclipse.uml2.uml.Class oldAssociationType = associationType;
 		associationType = newAssociationType;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPATION__ASSOCIATION_TYPE,
-				oldAssociationType, associationType));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PARTICIPATION__ASSOCIATION_TYPE, oldAssociationType, associationType));
 		}
 	}
 
@@ -298,8 +300,9 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 		Association oldBase_Association = base_Association;
 		base_Association = newBase_Association;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPATION__BASE_ASSOCIATION,
-				oldBase_Association, base_Association));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PARTICIPATION__BASE_ASSOCIATION, oldBase_Association,
+				base_Association));
 		}
 	}
 
@@ -313,8 +316,8 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 		EnumerationLiteral oldTypeCode = typeCode;
 		typeCode = newTypeCode;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPATION__TYPE_CODE, oldTypeCode,
-				typeCode));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PARTICIPATION__TYPE_CODE, oldTypeCode, typeCode));
 		}
 	}
 

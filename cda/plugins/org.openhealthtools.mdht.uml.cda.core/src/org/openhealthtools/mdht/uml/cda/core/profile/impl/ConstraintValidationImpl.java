@@ -26,12 +26,12 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl#getBase_Constraint <em>Base Constraint</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl#isEnabledDitaForConstraints
- * <em>Enabled Dita For Constraints</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl#isEnabledDitaForConstraints <em>Enabled Dita For Constraints
+ * </em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -206,8 +206,9 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 			base_Constraint = (Constraint) eResolveProxy(oldBase_Constraint);
 			if (base_Constraint != oldBase_Constraint) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT,
+						oldBase_Constraint, base_Constraint));
 				}
 			}
 		}
@@ -224,8 +225,9 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 		Constraint oldBase_Constraint = base_Constraint;
 		base_Constraint = newBase_Constraint;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT,
-				oldBase_Constraint, base_Constraint));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CONSTRAINT_VALIDATION__BASE_CONSTRAINT, oldBase_Constraint,
+				base_Constraint));
 		}
 	}
 
@@ -249,9 +251,9 @@ public class ConstraintValidationImpl extends ValidationImpl implements Constrai
 		boolean oldEnabledDitaForConstraints = enabledDitaForConstraints;
 		enabledDitaForConstraints = newEnabledDitaForConstraints;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET,
-				CDAPackage.CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS, oldEnabledDitaForConstraints,
-				enabledDitaForConstraints));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS,
+				oldEnabledDitaForConstraints, enabledDitaForConstraints));
 		}
 	}
 

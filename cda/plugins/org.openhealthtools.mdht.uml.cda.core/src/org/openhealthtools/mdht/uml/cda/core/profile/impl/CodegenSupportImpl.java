@@ -27,7 +27,6 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl#getBasePackage <em>Base Package</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl#getNsPrefix <em>Ns Prefix</em>}</li>
@@ -36,6 +35,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl#getPrefix <em>Prefix</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodegenSupportImpl#getBase_Namespace <em>Base Namespace</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -329,8 +329,9 @@ public class CodegenSupportImpl extends EObjectImpl implements CodegenSupport {
 			base_Namespace = (Namespace) eResolveProxy(oldBase_Namespace);
 			if (base_Namespace != oldBase_Namespace) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						CDAPackage.CODEGEN_SUPPORT__BASE_NAMESPACE, oldBase_Namespace, base_Namespace));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.CODEGEN_SUPPORT__BASE_NAMESPACE, oldBase_Namespace,
+						base_Namespace));
 				}
 			}
 		}
@@ -397,8 +398,8 @@ public class CodegenSupportImpl extends EObjectImpl implements CodegenSupport {
 		Namespace oldBase_Namespace = base_Namespace;
 		base_Namespace = newBase_Namespace;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODEGEN_SUPPORT__BASE_NAMESPACE,
-				oldBase_Namespace, base_Namespace));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CODEGEN_SUPPORT__BASE_NAMESPACE, oldBase_Namespace, base_Namespace));
 		}
 	}
 
@@ -412,8 +413,8 @@ public class CodegenSupportImpl extends EObjectImpl implements CodegenSupport {
 		String oldBasePackage = basePackage;
 		basePackage = newBasePackage;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODEGEN_SUPPORT__BASE_PACKAGE,
-				oldBasePackage, basePackage));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CODEGEN_SUPPORT__BASE_PACKAGE, oldBasePackage, basePackage));
 		}
 	}
 
@@ -427,8 +428,8 @@ public class CodegenSupportImpl extends EObjectImpl implements CodegenSupport {
 		String oldNsPrefix = nsPrefix;
 		nsPrefix = newNsPrefix;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODEGEN_SUPPORT__NS_PREFIX, oldNsPrefix,
-				nsPrefix));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CODEGEN_SUPPORT__NS_PREFIX, oldNsPrefix, nsPrefix));
 		}
 	}
 
@@ -456,8 +457,8 @@ public class CodegenSupportImpl extends EObjectImpl implements CodegenSupport {
 		String oldPackageName = packageName;
 		packageName = newPackageName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODEGEN_SUPPORT__PACKAGE_NAME,
-				oldPackageName, packageName));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CODEGEN_SUPPORT__PACKAGE_NAME, oldPackageName, packageName));
 		}
 	}
 
@@ -471,8 +472,7 @@ public class CodegenSupportImpl extends EObjectImpl implements CodegenSupport {
 		String oldPrefix = prefix;
 		prefix = newPrefix;
 		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, CDAPackage.CODEGEN_SUPPORT__PREFIX, oldPrefix, prefix));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODEGEN_SUPPORT__PREFIX, oldPrefix, prefix));
 		}
 	}
 

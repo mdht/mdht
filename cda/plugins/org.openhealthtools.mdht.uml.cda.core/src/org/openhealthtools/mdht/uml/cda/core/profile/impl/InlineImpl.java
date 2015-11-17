@@ -19,12 +19,12 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl#getBase_Class <em>Base Class</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl#getFilter <em>Filter</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl#isPublishSeperately <em>Publish Seperately</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -117,8 +117,8 @@ public class InlineImpl extends EObjectImpl implements Inline {
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.INLINE__BASE_CLASS,
-						oldBase_Class, base_Class));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.INLINE__BASE_CLASS, oldBase_Class, base_Class));
 				}
 			}
 		}
@@ -145,8 +145,8 @@ public class InlineImpl extends EObjectImpl implements Inline {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INLINE__BASE_CLASS, oldBase_Class,
-				base_Class));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INLINE__BASE_CLASS, oldBase_Class, base_Class));
 		}
 	}
 
@@ -194,8 +194,8 @@ public class InlineImpl extends EObjectImpl implements Inline {
 		boolean oldPublishSeperately = publishSeperately;
 		publishSeperately = newPublishSeperately;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INLINE__PUBLISH_SEPERATELY,
-				oldPublishSeperately, publishSeperately));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INLINE__PUBLISH_SEPERATELY, oldPublishSeperately, publishSeperately));
 		}
 	}
 

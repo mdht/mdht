@@ -26,11 +26,11 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl#getBase_Generalization <em>Base Generalization</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl#isRequiresParentId <em>Requires Parent Id</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -186,8 +186,9 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 			base_Generalization = (Generalization) eResolveProxy(oldBase_Generalization);
 			if (base_Generalization != oldBase_Generalization) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						CDAPackage.CONFORMS_TO__BASE_GENERALIZATION, oldBase_Generalization, base_Generalization));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.CONFORMS_TO__BASE_GENERALIZATION,
+						oldBase_Generalization, base_Generalization));
 				}
 			}
 		}
@@ -214,8 +215,9 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 		Generalization oldBase_Generalization = base_Generalization;
 		base_Generalization = newBase_Generalization;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONFORMS_TO__BASE_GENERALIZATION,
-				oldBase_Generalization, base_Generalization));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CONFORMS_TO__BASE_GENERALIZATION, oldBase_Generalization,
+				base_Generalization));
 		}
 	}
 
@@ -229,8 +231,9 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 		boolean oldRequiresParentId = requiresParentId;
 		requiresParentId = newRequiresParentId;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONFORMS_TO__REQUIRES_PARENT_ID,
-				oldRequiresParentId, requiresParentId));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CONFORMS_TO__REQUIRES_PARENT_ID, oldRequiresParentId,
+				requiresParentId));
 		}
 	}
 

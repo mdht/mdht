@@ -21,10 +21,10 @@ import org.eclipse.uml2.uml.Property;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation#getBase_Property <em>Base Property</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getPropertyValidation()
  * @model

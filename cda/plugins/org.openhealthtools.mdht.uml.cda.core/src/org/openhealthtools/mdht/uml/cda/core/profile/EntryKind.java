@@ -104,9 +104,6 @@ public enum EntryKind implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @param value
-	 *            the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EntryKind get(int value) {
@@ -124,9 +121,6 @@ public enum EntryKind implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @param literal
-	 *            the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EntryKind get(String literal) {
@@ -144,9 +138,6 @@ public enum EntryKind implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @param name
-	 *            the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EntryKind getByName(String name) {

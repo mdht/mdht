@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getTemplateId <em>Template Id</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getAssigningAuthorityName <em>Assigning Authority Name</em>}</li>
@@ -32,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getTemplateVersion <em>Template Version</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getTemplateMultiplicity <em>Template Multiplicity</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -317,8 +317,9 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 		String oldAssigningAuthorityName = assigningAuthorityName;
 		assigningAuthorityName = newAssigningAuthorityName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME,
-				oldAssigningAuthorityName, assigningAuthorityName));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME, oldAssigningAuthorityName,
+				assigningAuthorityName));
 		}
 	}
 
@@ -332,8 +333,9 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 		boolean oldContextDependent = contextDependent;
 		contextDependent = newContextDependent;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT,
-				oldContextDependent, contextDependent));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT, oldContextDependent,
+				contextDependent));
 		}
 	}
 
@@ -357,8 +359,8 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 		String oldTemplateVersion = templateVersion;
 		templateVersion = newTemplateVersion;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_VERSION,
-				oldTemplateVersion, templateVersion));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_VERSION, oldTemplateVersion, templateVersion));
 		}
 	}
 
@@ -382,8 +384,9 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 		String oldTemplateMultiplicity = templateMultiplicity;
 		templateMultiplicity = newTemplateMultiplicity;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_MULTIPLICITY,
-				oldTemplateMultiplicity, templateMultiplicity));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_MULTIPLICITY, oldTemplateMultiplicity,
+				templateMultiplicity));
 		}
 	}
 
@@ -397,8 +400,8 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 		String oldTemplateId = templateId;
 		templateId = newTemplateId;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_ID, oldTemplateId,
-				templateId));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_ID, oldTemplateId, templateId));
 		}
 	}
 

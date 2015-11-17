@@ -25,4 +25,7 @@ Export-Package: org.openhealthtools.mdht.uml.cda.core.internal.generate,
  org.openhealthtools.mdht.uml.cda.core.profile,
  org.openhealthtools.mdht.uml.cda.core.profile.impl,
  org.openhealthtools.mdht.uml.cda.core.profile.util,
+ org.openhealthtools.mdht.uml.term.core.profile,
+ org.openhealthtools.mdht.uml.term.core.profile.impl,
+ org.openhealthtools.mdht.uml.term.core.profile.util,
  org.openhealthtools.mdht.uml.cda.core.util

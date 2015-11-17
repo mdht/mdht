@@ -13,10 +13,10 @@ import org.eclipse.uml2.uml.Constraint;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable#getBase_Constraint <em>Base Constraint</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getUnimplementable()
  * @model

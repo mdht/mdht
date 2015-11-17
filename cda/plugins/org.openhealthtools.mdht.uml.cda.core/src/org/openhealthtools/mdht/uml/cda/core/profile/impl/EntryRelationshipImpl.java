@@ -26,10 +26,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -165,8 +165,8 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 				? TYPE_CODE_EDEFAULT
 				: newTypeCode;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__TYPE_CODE, oldTypeCode,
-				typeCode));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__TYPE_CODE, oldTypeCode, typeCode));
 		}
 	}
 

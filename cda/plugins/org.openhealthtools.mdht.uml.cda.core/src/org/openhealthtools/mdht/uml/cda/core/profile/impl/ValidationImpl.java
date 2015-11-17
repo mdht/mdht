@@ -32,7 +32,6 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getMessage <em>Message</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getSeverity <em>Severity</em>}</li>
@@ -40,7 +39,9 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#isMandatory <em>Mandatory</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getKind <em>Kind</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#isStrict <em>Strict</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#isNegationIndicator <em>Negation Indicator</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -167,6 +168,28 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	protected boolean strict = STRICT_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isNegationIndicator() <em>Negation Indicator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #isNegationIndicator()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean NEGATION_INDICATOR_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isNegationIndicator() <em>Negation Indicator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #isNegationIndicator()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean negationIndicator = NEGATION_INDICATOR_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
@@ -197,6 +220,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 				return getKind();
 			case CDAPackage.VALIDATION__STRICT:
 				return isStrict();
+			case CDAPackage.VALIDATION__NEGATION_INDICATOR:
+				return isNegationIndicator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -224,6 +249,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 				return kind != KIND_EDEFAULT;
 			case CDAPackage.VALIDATION__STRICT:
 				return strict != STRICT_EDEFAULT;
+			case CDAPackage.VALIDATION__NEGATION_INDICATOR:
+				return negationIndicator != NEGATION_INDICATOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -248,6 +275,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 					setSeverity((SeverityKind) newValue);
 				}
 				return;
+			case CDAPackage.VALIDATION__NEGATION_INDICATOR:
+				setNegationIndicator((Boolean) newValue);
 			case CDAPackage.VALIDATION__RULE_ID:
 				getRuleId().clear();
 				getRuleId().addAll((Collection<? extends String>) newValue);
@@ -304,6 +333,9 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 				return;
 			case CDAPackage.VALIDATION__STRICT:
 				setStrict(STRICT_EDEFAULT);
+				return;
+			case CDAPackage.VALIDATION__NEGATION_INDICATOR:
+				setNegationIndicator(NEGATION_INDICATOR_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -362,8 +394,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 		boolean oldMandatory = mandatory;
 		mandatory = newMandatory;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__MANDATORY, oldMandatory,
-				mandatory));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.VALIDATION__MANDATORY, oldMandatory, mandatory));
 		}
 	}
 
@@ -423,6 +455,32 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * 
 	 * @generated
 	 */
+	public boolean isNegationIndicator() {
+		return negationIndicator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setNegationIndicator(boolean newNegationIndicator) {
+		boolean oldNegationIndicator = negationIndicator;
+		negationIndicator = newNegationIndicator;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.VALIDATION__NEGATION_INDICATOR, oldNegationIndicator,
+				negationIndicator));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public void setMessage(String newMessage) {
 		String oldMessage = message;
 		message = newMessage;
@@ -443,8 +501,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 				? SEVERITY_EDEFAULT
 				: newSeverity;
 		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__SEVERITY, oldSeverity, severity));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.VALIDATION__SEVERITY, oldSeverity, severity));
 		}
 	}
 
@@ -473,6 +531,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 		result.append(kind);
 		result.append(", strict: ");
 		result.append(strict);
+		result.append(", negationIndicator: ");
+		result.append(negationIndicator);
 		result.append(')');
 		return result.toString();
 	}

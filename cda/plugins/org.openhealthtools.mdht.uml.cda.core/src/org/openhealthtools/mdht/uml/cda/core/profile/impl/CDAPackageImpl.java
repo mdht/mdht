@@ -287,9 +287,8 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
 	 * <p>
-	 * This method is used to initialize {@link CDAPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This method is used to initialize {@link CDAPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead,
+	 * they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
@@ -302,10 +301,9 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		}
 
 		// Obtain or create and register package
-		CDAPackageImpl theCDAPackage = (CDAPackageImpl) (EPackage.Registry.INSTANCE.get(
-			eNS_URI) instanceof CDAPackageImpl
-					? EPackage.Registry.INSTANCE.get(eNS_URI)
-					: new CDAPackageImpl());
+		CDAPackageImpl theCDAPackage = (CDAPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CDAPackageImpl
+				? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new CDAPackageImpl());
 
 		isInited = true;
 
@@ -343,15 +341,12 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	private boolean isInitialized = false;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
+	 * package
 	 * package URI value.
 	 * <p>
-	 * Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
+	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#eNS_URI
@@ -390,6 +385,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		createEAttribute(validationEClass, VALIDATION__MANDATORY);
 		createEAttribute(validationEClass, VALIDATION__KIND);
 		createEAttribute(validationEClass, VALIDATION__STRICT);
+		createEAttribute(validationEClass, VALIDATION__NEGATION_INDICATOR);
 
 		entryRelationshipEClass = createEClass(ENTRY_RELATIONSHIP);
 		createEAttribute(entryRelationshipEClass, ENTRY_RELATIONSHIP__TYPE_CODE);
@@ -1109,6 +1105,16 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * 
 	 * @generated
 	 */
+	public EAttribute getValidation_NegationIndicator() {
+		return (EAttribute) validationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EAttribute getValidation_Message() {
 		return (EAttribute) validationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1253,26 +1259,29 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(entryEClass, Entry.class, "Entry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntry_TypeCode(), this.getEntryKind(), "typeCode", null, 0, 1, Entry.class, !IS_TRANSIENT,
-			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(
+			getEntry_TypeCode(), this.getEntryKind(), "typeCode", null, 0, 1, Entry.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			associationValidationEClass, AssociationValidation.class, "AssociationValidation", !IS_ABSTRACT,
 			!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAssociationValidation_Base_Association(), theUMLPackage.getAssociation(), null,
-			"base_Association", null, 1, 1, AssociationValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-			!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(
+			getAssociationValidation_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association",
+			null, 1, 1, AssociationValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+			IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			validationEClass, Validation.class, "Validation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getValidation_Message(), theTypesPackage.getString(), "message", null, 0, 1, Validation.class,
+		initEAttribute(
+			getValidation_Message(), theTypesPackage.getString(), "message", null, 0, 1, Validation.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
 			getValidation_Severity(), this.getSeverityKind(), "severity", null, 0, 1, Validation.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getValidation_RuleId(), theTypesPackage.getString(), "ruleId", null, 0, -1, Validation.class, !IS_TRANSIENT,
-			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+			getValidation_RuleId(), theTypesPackage.getString(), "ruleId", null, 0, -1, Validation.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
 			getValidation_Mandatory(), theTypesPackage.getBoolean(), "mandatory", "false", 0, 1, Validation.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1282,18 +1291,24 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEAttribute(
 			getValidation_Strict(), theTypesPackage.getBoolean(), "strict", "false", 0, 1, Validation.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(
+			getValidation_NegationIndicator(), theTypesPackage.getBoolean(), "negationIndicator", "false", 0, 1,
+			Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+			!IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			entryRelationshipEClass, EntryRelationship.class, "EntryRelationship", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntryRelationship_TypeCode(), this.getEntryRelationshipKind(), "typeCode", null, 0, 1,
+		initEAttribute(
+			getEntryRelationship_TypeCode(), this.getEntryRelationshipKind(), "typeCode", null, 0, 1,
 			EntryRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			codegenSupportEClass, CodegenSupport.class, "CodegenSupport", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCodegenSupport_BasePackage(), theTypesPackage.getString(), "basePackage", null, 0, 1,
+		initEAttribute(
+			getCodegenSupport_BasePackage(), theTypesPackage.getString(), "basePackage", null, 0, 1,
 			CodegenSupport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
@@ -1317,23 +1332,25 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEClass(
 			propertyValidationEClass, PropertyValidation.class, "PropertyValidation", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPropertyValidation_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null,
-			1, 1, PropertyValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-			IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(
+			getPropertyValidation_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1,
+			PropertyValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			classValidationEClass, ClassValidation.class, "ClassValidation", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getClassValidation_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1,
+		initEReference(
+			getClassValidation_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1,
 			ClassValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			vocabSpecificationEClass, VocabSpecification.class, "VocabSpecification", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVocabSpecification_Code(), theTypesPackage.getString(), "code", null, 0, 1,
-			VocabSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-			!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(
+			getVocabSpecification_Code(), theTypesPackage.getString(), "code", null, 0, 1, VocabSpecification.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
 			getVocabSpecification_CodeSystem(), theTypesPackage.getString(), "codeSystem", null, 0, 1,
 			VocabSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
@@ -1353,13 +1370,15 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		initEClass(
 			nullFlavorEClass, NullFlavor.class, "NullFlavor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNullFlavor_NullFlavor(), this.getNullFlavorKind(), "nullFlavor", null, 0, 1, NullFlavor.class,
+		initEAttribute(
+			getNullFlavor_NullFlavor(), this.getNullFlavorKind(), "nullFlavor", null, 0, 1, NullFlavor.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			textValueEClass, TextValue.class, "TextValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTextValue_Value(), theTypesPackage.getString(), "value", null, 0, 1, TextValue.class,
-			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(
+			getTextValue_Value(), theTypesPackage.getString(), "value", null, 0, 1, TextValue.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
 			getTextValue_IgnoreCase(), theTypesPackage.getBoolean(), "ignoreCase", "false", 0, 1, TextValue.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1367,9 +1386,9 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEClass(
 			cdaTemplateEClass, CDATemplate.class, "CDATemplate", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCDATemplate_TemplateId(), theTypesPackage.getString(), "templateId", null, 0, 1,
-			CDATemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-			!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(
+			getCDATemplate_TemplateId(), theTypesPackage.getString(), "templateId", null, 0, 1, CDATemplate.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
 			getCDATemplate_AssigningAuthorityName(), theTypesPackage.getString(), "assigningAuthorityName", null, 0, 1,
 			CDATemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
@@ -1388,11 +1407,12 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 			!IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
-			constraintValidationEClass, ConstraintValidation.class, "ConstraintValidation", !IS_ABSTRACT, !IS_INTERFACE,
-			IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConstraintValidation_Base_Constraint(), theUMLPackage.getConstraint(), null,
-			"base_Constraint", null, 1, 1, ConstraintValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-			!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+			constraintValidationEClass, ConstraintValidation.class, "ConstraintValidation", !IS_ABSTRACT,
+			!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(
+			getConstraintValidation_Base_Constraint(), theUMLPackage.getConstraint(), null, "base_Constraint", null, 1,
+			1, ConstraintValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+			IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
 			getConstraintValidation_EnabledDitaForConstraints(), theTypesPackage.getBoolean(),
 			"enabledDitaForConstraints", "false", 0, 1, ConstraintValidation.class, !IS_TRANSIENT, !IS_VOLATILE,
@@ -1400,9 +1420,10 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		initEClass(
 			conformsToEClass, ConformsTo.class, "ConformsTo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConformsTo_Base_Generalization(), theUMLPackage.getGeneralization(), null,
-			"base_Generalization", null, 1, 1, ConformsTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-			!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(
+			getConformsTo_Base_Generalization(), theUMLPackage.getGeneralization(), null, "base_Generalization", null,
+			1, 1, ConformsTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
 			getConformsTo_RequiresParentId(), theTypesPackage.getBoolean(), "requiresParentId", "false", 0, 1,
 			ConformsTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
@@ -1412,17 +1433,21 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 			conceptDomainConstraintEClass, ConceptDomainConstraint.class, "ConceptDomainConstraint", !IS_ABSTRACT,
 			!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(codeSystemConstraintEClass, CodeSystemConstraint.class, "CodeSystemConstraint", !IS_ABSTRACT,
+		initEClass(
+			codeSystemConstraintEClass, CodeSystemConstraint.class, "CodeSystemConstraint", !IS_ABSTRACT,
 			!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(valueSetConstraintEClass, ValueSetConstraint.class, "ValueSetConstraint", !IS_ABSTRACT,
-			!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(actRelationshipEClass, ActRelationship.class, "ActRelationship", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(
+			valueSetConstraintEClass, ValueSetConstraint.class, "ValueSetConstraint", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActRelationship_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association",
-			null, 1, 1, ActRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-			IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(
+			actRelationshipEClass, ActRelationship.class, "ActRelationship", !IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
+		initEReference(
+			getActRelationship_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association", null, 1,
+			1, ActRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(
 			getActRelationship_AssociationType(), theUMLPackage.getClass_(), null, "associationType", null, 0, 1,
 			ActRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -1435,9 +1460,10 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEClass(
 			participationEClass, Participation.class, "Participation", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParticipation_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association",
-			null, 1, 1, Participation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-			IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(
+			getParticipation_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association", null, 1, 1,
+			Participation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(
 			getParticipation_AssociationType(), theUMLPackage.getClass_(), null, "associationType", null, 0, 1,
 			Participation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -1450,12 +1476,14 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEClass(
 			logicalConstraintEClass, LogicalConstraint.class, "LogicalConstraint", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLogicalConstraint_Operation(), this.getLogicalOperator(), "operation", null, 1, 1,
+		initEAttribute(
+			getLogicalConstraint_Operation(), this.getLogicalOperator(), "operation", null, 1, 1,
 			LogicalConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 
 		initEClass(inlineEClass, Inline.class, "Inline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInline_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Inline.class,
+		initEReference(
+			getInline_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Inline.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
@@ -1468,9 +1496,10 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEClass(
 			unimplementableEClass, Unimplementable.class, "Unimplementable", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnimplementable_Base_Constraint(), theUMLPackage.getConstraint(), null, "base_Constraint",
-			null, 1, 1, Unimplementable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-			IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(
+			getUnimplementable_Base_Constraint(), theUMLPackage.getConstraint(), null, "base_Constraint", null, 1, 1,
+			Unimplementable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(severityKindEEnum, SeverityKind.class, "SeverityKind");
@@ -1522,22 +1551,6 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		// Create resource
 		createResource(eNS_URI);
-
-		// Create annotations
-		// http://www.eclipse.org/uml2/2.0.0/UML
-		createUMLAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void createUMLAnnotations() {
-		String source = "http://www.eclipse.org/uml2/2.0.0/UML";
-		addAnnotation(this, source, new String[] { "originalName", "CDA" });
 	}
 
 } // CDAPackageImpl
