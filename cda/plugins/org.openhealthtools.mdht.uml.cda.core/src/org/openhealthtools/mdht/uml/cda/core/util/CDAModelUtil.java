@@ -41,6 +41,7 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -898,7 +899,7 @@ public class CDAModelUtil {
 
 		String propertyCdaName = null;
 		if (cdaProperty != null) {
-			propertyCdaName = cdaProperty.getName();
+			propertyCdaName = getCDAName(cdaProperty);
 		} else {
 			propertyCdaName = getCDAElementName(property);
 		}
@@ -970,27 +971,23 @@ public class CDAModelUtil {
 			}
 		}
 
-		/*
-		 * Append datatype restriction, if redefined to a specialized type
-		 */
-		List<Property> redefinedProperties = UMLUtil.getRedefinedProperties(property);
-		Property redefinedProperty = redefinedProperties.isEmpty()
-				? null
-				: redefinedProperties.get(0);
 
-		if (property.getType() != null &&
-				((redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType()))))) {
-			message.append(" with " + "@xsi:type=\"");
-			if (redefinedProperty != null && redefinedProperty.getType() != null &&
-					redefinedProperty.getType().getName() != null && !redefinedProperty.getType().getName().isEmpty()) {
-				message.append(redefinedProperty.getType().getName());
-			} else {
-				message.append(property.getType().getName());
+		if (property.getType() instanceof Classifier && cdaProperty != null &&
+				cdaProperty.getType() instanceof Classifier) {
+			Classifier propertyType = (Classifier) property.getType();
+			Classifier cdaPropertyType = (Classifier) cdaProperty.getType();
+			Class propertyCdaType = CDAModelUtil.getCDAClass(propertyType);
+			if (propertyCdaType == null)
+				propertyCdaType = CDAModelUtil.getCDADatatype(propertyType);
+			// if the datatype is not different from the immediate parent, then the xsi:type shouldn't be printed
+			if (propertyCdaType != null && cdaPropertyType != null && propertyCdaType != cdaPropertyType &&
+					propertyCdaType.getName() != null && !propertyCdaType.getName().isEmpty()) {
+				message.append(" with " + "@xsi:type=\"");
+				message.append(propertyCdaType.getName());
+				message.append("\"");
 			}
-			message.append("\"");
-
 		}
-
+		
 		// for vocab properties, put rule ID at end, use terminology constraint if specified
 		if (isHL7VocabAttribute(property)) {
 			String ruleIds = getTerminologyConformanceRuleIds(property);
@@ -1077,6 +1074,54 @@ public class CDAModelUtil {
 		}
 
 		return message.toString();
+	}
+
+	/**
+	 * getCDAName
+	 *
+	 * recursively, depth first, check the object graph for a CDA Name using the root of the "redefined"
+	 * property if it exists.
+	 *
+	 * Also handle special cases like sectionId which has a cdaName of ID
+	 *
+	 * @param cdaProperty
+	 *            an MDHT property
+	 * @return string
+	 *         the calculated CDA name
+	 */
+	private static String getCDAName(Property cdaProperty) {
+		EList<Property> redefines = cdaProperty.getRedefinedProperties();
+
+		// if there is a stereotype name, use it
+		String name = getStereotypeName(cdaProperty);
+		if (name != null) {
+			return name;
+		}
+
+		// if there are redefines, check for more but only along the first branch (0)
+		if (redefines != null && redefines.size() > 0) {
+			return getCDAName(redefines.get(0));
+		}
+
+		// eventually return the property Name of the root redefined element;
+
+		return cdaProperty.getName();
+	}
+
+	/**
+	 * Get the CDA name from a stereotype if it exists
+	 *
+	 * @param cdaProperty
+	 *            a Property
+	 * @return the xmlName or null if no stereotype exists
+	 */
+	private static String getStereotypeName(Property cdaProperty) {
+		Stereotype eAttribute = cdaProperty.getAppliedStereotype("Ecore::EAttribute");
+		String name = null;
+		if (eAttribute != null) {
+			name = (String) cdaProperty.getValue(eAttribute, "xmlName");
+		}
+		return name;
 	}
 
 	private static void appendSubsetsNotation(Property property, StringBuffer message, boolean markup,
@@ -2115,7 +2160,8 @@ public class CDAModelUtil {
 			elementName = "entry";
 		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
+				CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
 		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"ParticipantRole".equals(cdaTargetClass.getName())) {
