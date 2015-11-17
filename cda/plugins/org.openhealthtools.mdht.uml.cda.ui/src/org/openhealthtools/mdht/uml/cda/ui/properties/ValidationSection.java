@@ -168,11 +168,13 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 									break;
 								case 3: // SHOULD NOT
 									severity = SeverityKind.WARNING;
-									// for NOT
 									validation.setNegationIndicator(true);
 									break;
 								case 4: // MAY
 									severity = SeverityKind.INFO;
+									break;
+								default:
+									severity = SeverityKind.ERROR;
 									break;
 							}
 
