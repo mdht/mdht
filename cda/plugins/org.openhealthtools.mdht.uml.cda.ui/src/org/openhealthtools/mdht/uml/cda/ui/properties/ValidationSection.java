@@ -110,7 +110,7 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
-			// do nothing
+
 		}
 
 		public void focusLost(FocusEvent event) {
@@ -359,6 +359,18 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 	public void refresh() {
 		if (modelElement == null || modelElement.eResource() == null) {
 			return;
+		}
+
+		if (severityCombo != null) {
+			severityCombo.select(0);
+		}
+
+		if (kindCombo != null) {
+			kindCombo.select(0);
+		}
+
+		if (ruleIdText != null) {
+			ruleIdText.setText("");
 		}
 
 		Validation validation = (Validation) modelElement.getStereotypeApplication(getValidationStereotype());
