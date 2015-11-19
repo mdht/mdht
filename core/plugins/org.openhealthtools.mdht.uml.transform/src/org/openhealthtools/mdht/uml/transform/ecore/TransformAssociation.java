@@ -337,7 +337,7 @@ public abstract class TransformAssociation extends TransformAbstract {
 	 * @return
 	 */
 	protected boolean isOpen(Association association) {
-		return false;
+		return true;
 	}
 
 	protected boolean isImplicitAssociation(Property sourceProperty, Class sourceClass, Class targetClass) {
