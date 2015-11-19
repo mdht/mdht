@@ -23,6 +23,8 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
@@ -31,6 +33,24 @@ import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformAssociation;
 
 public class TransformCDAAssociation extends TransformAssociation {
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.openhealthtools.mdht.uml.transform.ecore.TransformAssociation#isOpen(org.eclipse.uml2.uml.Association)
+	 */
+	@Override
+	protected boolean isOpen(Association association) {
+
+		Validation validation = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(
+			association, Validation.class);
+
+		if (validation != null && validation.getKind().equals(ValidationKind.CLOSED)) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 
 	public TransformCDAAssociation(TransformerOptions options, IBaseModelReflection baseModelReflection) {
 		super(options, baseModelReflection);

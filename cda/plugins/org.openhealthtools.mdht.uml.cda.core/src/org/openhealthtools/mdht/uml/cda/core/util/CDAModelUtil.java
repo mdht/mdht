@@ -71,6 +71,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.PropertyList;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
@@ -567,12 +568,18 @@ public class CDAModelUtil {
 					? "</b>"
 					: "");
 			message.append(" contain ");
+			if (property.getUpper() == 0 && isClosed(property)) {
+				message.append("any ");
+			}
 		} else {
 
 			if (property.getUpper() < 0 || property.getUpper() > 1) {
 				message.append("contains ");
 			} else {
 				message.append("contain ");
+			}
+			if (property.getUpper() == 0 && isClosed(property)) {
+				message.append("any ");
 			}
 
 		}
@@ -589,18 +596,21 @@ public class CDAModelUtil {
 			if (markup && isInlineClass(endType) && !isPublishSeperately(endType)) {
 				StringBuilder sb = new StringBuilder();
 
+				message.append(openOrClosed(property));
+
+				// message.append(", where its type is ");
+
 				appendConformanceRuleIds(association, message, markup);
 
 				appendPropertyComments(sb, property, markup);
 
-				appendConformanceRules(sb, endType, (property.getUpper() == 1
-						? "This "
-						: "Such ") +
-						(property.getUpper() == 1
-								? elementName
-								: NameUtilities.pluralize(elementName)) +
-						" ",
-					markup);
+				// // (property.getUpper() == 1,? "This "
+				// : "Such ") +
+				// (property.getUpper() == 1
+				// ? elementName
+				// : NameUtilities.pluralize(elementName)) +
+				// " "
+				appendConformanceRules(sb, endType, "", markup);
 				message.append(" " + sb + " ");
 
 			} else {
@@ -841,6 +851,27 @@ public class CDAModelUtil {
 		return computeConformanceMessage(property, markup, xrefSource, true);
 	}
 
+	private static String openOrClosed(Property property) {
+		if (isClosed(property)) {
+			return " ";
+		} else {
+			return " such that it ";
+		}
+	}
+
+	private static boolean isClosed(Property property) {
+		Validation validation = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(
+			(property.getAssociation() != null
+					? property.getAssociation()
+					: property),
+			Validation.class);
+		if (validation != null && validation.getKind().equals(ValidationKind.CLOSED)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource,
 			boolean appendNestedConformanceRules) {
 
@@ -867,11 +898,17 @@ public class CDAModelUtil {
 					? "</b>"
 					: "");
 			message.append(" contain ");
+			if (property.getUpper() == 0 && isClosed(property)) {
+				message.append("any ");
+			}
 		} else {
 			if (property.getUpper() < 0 || property.getUpper() > 1) {
 				message.append("contains ");
 			} else {
 				message.append("contain ");
+			}
+			if (property.getUpper() == 0 && isClosed(property)) {
+				message.append("any ");
 			}
 		}
 
@@ -981,7 +1018,6 @@ public class CDAModelUtil {
 			}
 		}
 
-
 		if (property.getType() instanceof Classifier && cdaProperty != null &&
 				cdaProperty.getType() instanceof Classifier) {
 			Classifier propertyType = (Classifier) property.getType();
@@ -997,7 +1033,7 @@ public class CDAModelUtil {
 				message.append("\"");
 			}
 		}
-		
+
 		// for vocab properties, put rule ID at end, use terminology constraint if specified
 		if (isHL7VocabAttribute(property)) {
 			String ruleIds = getTerminologyConformanceRuleIds(property);
@@ -2172,8 +2208,8 @@ public class CDAModelUtil {
 			elementName = "entry";
 		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
-				CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+		} else
+			if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
 		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"ParticipantRole".equals(cdaTargetClass.getName())) {

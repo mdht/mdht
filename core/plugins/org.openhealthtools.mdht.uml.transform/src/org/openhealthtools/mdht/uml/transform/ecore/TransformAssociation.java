@@ -175,9 +175,12 @@ public abstract class TransformAssociation extends TransformAbstract {
 
 			// can't use quantifiers like 'one' and 'exists' with a selector because it filters a collection.
 			// Note that 'exists' isn't applicable to lower bounds greater than 1
-			final boolean one = ((selector == null) || (selector.length() == 0)) && (upper == 1);
+			// open - is association open or closed
+			final boolean open = isOpen(association);
+			final boolean one = (((selector == null) || (selector.length() == 0)) && (upper == 1)) && open;
 			final boolean notEmpty = (lower == 1) && (upper == LiteralUnlimitedNatural.UNLIMITED);
-			final boolean exists = notEmpty && ((selector == null) || (selector.length() == 0));
+			final boolean exists = (notEmpty && ((selector == null) || (selector.length() == 0))) && open;
+
 			final String comparator;
 			final String upperComparator;
 			if (one || exists || isEmpty || notEmpty) { // special cases
@@ -324,6 +327,17 @@ public abstract class TransformAssociation extends TransformAbstract {
 		removeModelElement(association);
 
 		return association;
+	}
+
+	/**
+	 *
+	 * by default - all constraints are open
+	 *
+	 * @param association
+	 * @return
+	 */
+	protected boolean isOpen(Association association) {
+		return false;
 	}
 
 	protected boolean isImplicitAssociation(Property sourceProperty, Class sourceClass, Class targetClass) {
