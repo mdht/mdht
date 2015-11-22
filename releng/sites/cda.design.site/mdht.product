@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MDHT CDA Designer Edition" uid="cda.design.product.id" id="cda.design.product" application="org.eclipse.ui.ide.workbench" version="2.5.11.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="MDHT CDA Designer Edition" uid="cda.design.product.id" id="cda.design.product" application="org.eclipse.ui.ide.workbench" version="2.5.12" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>

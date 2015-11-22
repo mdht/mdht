@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="org.dita.dost_2.5.11.qualifier.jar" id="org.dita.dost" version="2.5.11.qualifier">
+   <feature url="org.dita.dost_2.5.12.qualifier.jar" id="org.dita.dost" version="2.5.12.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature>
-   <feature url="org.openhealthtools.mdht_2.5.11.qualifier.jar" id="org.openhealthtools.mdht" version="2.5.11.qualifier">
+   <feature url="org.openhealthtools.mdht_2.5.12.qualifier.jar" id="org.openhealthtools.mdht" version="2.5.12.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature>
-   <feature url="org.openhealthtools.mdht.uml_2.5.11.qualifier.jar" id="org.openhealthtools.mdht.uml" version="2.5.11.qualifier">
+   <feature url="org.openhealthtools.mdht.uml_2.5.12.qualifier.jar" id="org.openhealthtools.mdht.uml" version="2.5.12.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature>
-   <feature url="org.openhealthtools.mdht.uml.cda.basic_2.5.11.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.basic" version="2.5.11.qualifier">
+   <feature url="org.openhealthtools.mdht.uml.cda.basic_2.5.12.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.basic" version="2.5.12.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature>
-   <feature url="org.openhealthtools.mdht.uml.cda.tooling_2.5.11.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.tooling" version="2.5.11.qualifier">
+   <feature url="org.openhealthtools.mdht.uml.cda.tooling_2.5.12.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.tooling" version="2.5.12.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature> 
    <category-def name="org.openhealthtools.mdht.uml.cda.basic.cat" label="MDHT CDA Design"/>

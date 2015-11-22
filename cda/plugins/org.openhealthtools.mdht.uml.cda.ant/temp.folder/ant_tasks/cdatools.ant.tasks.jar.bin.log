@@ -1,0 +1,15 @@
+# 11/18/15 3:51:01 PM EST
+# Eclipse Compiler for Java(TM) v20150602-1242, 3.11.0, Copyright IBM Corp 2000, 2015. All rights reserved.
+----------
+1. WARNING in /Users/seanmuir/git/mdht/mdht/cda/plugins/org.openhealthtools.mdht.uml.cda.ant/tasks/org/openhealthtools/mdht/uml/cda/ant/taskdefs/LoggingDiagnosticChain.java (at line 18)
+	import org.eclipse.emf.common.util.DiagnosticChain;
+	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The import org.eclipse.emf.common.util.DiagnosticChain is never used
+----------
+----------
+2. WARNING in /Users/seanmuir/git/mdht/mdht/cda/plugins/org.openhealthtools.mdht.uml.cda.ant/tasks/org/openhealthtools/mdht/uml/cda/ant/taskdefs/TransformToDita.java (at line 277)
+	Resource umlResource = umlModel.eResource();
+	         ^^^^^^^^^^^
+The value of the local variable umlResource is not used
+----------
+2 problems (2 warnings)
