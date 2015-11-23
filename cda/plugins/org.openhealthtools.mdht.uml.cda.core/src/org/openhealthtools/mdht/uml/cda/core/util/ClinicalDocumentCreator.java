@@ -633,6 +633,20 @@ public class ClinicalDocumentCreator {
 		return cda_ecore;
 	}
 
+	/**
+	 * Removes trailing digits from the name
+	 * 
+	 * @param name
+	 * @return
+	 */
+	private static String withoutDigits(String name) {
+		while (!"".equals(name) && Character.isDigit(name.charAt(name.length() - 1))) {
+			name = name.substring(0, name.length() - 1);
+		}
+		return name;
+	}
+
+
 	public String toXMLString(EObject eObject, Class clazz) {
 		Map<String, Object> options = new HashMap<String, Object>();
 		// generate no indentation in e.g. "<title>Adverse Reactions</title>", i.e. keep it in one line
@@ -653,7 +667,7 @@ public class ClinicalDocumentCreator {
 		xml = xml.replace("xmlns:cda=\"urn:hl7-org:v3\"", "xmlns=\"urn:hl7-org:v3\"");
 		String eName = eObject.eClass().getName();
 		if (!"ClinicalDocument".equals(eName)) {
-			String rootTag = eName.toLowerCase();
+			String rootTag = withoutDigits(eName.toLowerCase());
 			if (eObject.eContainmentFeature() != null) {
 				rootTag = eObject.eContainingFeature().getName();
 			} else if (clazz != null && CDACommonUtils.getOverallPropertyReference(clazz) != null) {
