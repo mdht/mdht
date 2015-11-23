@@ -41,6 +41,7 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -70,6 +71,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.PropertyList;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
@@ -566,12 +568,18 @@ public class CDAModelUtil {
 					? "</b>"
 					: "");
 			message.append(" contain ");
+			if (property.getUpper() == 0 && isClosed(property)) {
+				message.append("any ");
+			}
 		} else {
 
 			if (property.getUpper() < 0 || property.getUpper() > 1) {
 				message.append("contains ");
 			} else {
 				message.append("contain ");
+			}
+			if (property.getUpper() == 0 && isClosed(property)) {
+				message.append("any ");
 			}
 
 		}
@@ -588,18 +596,21 @@ public class CDAModelUtil {
 			if (markup && isInlineClass(endType) && !isPublishSeperately(endType)) {
 				StringBuilder sb = new StringBuilder();
 
+				message.append(openOrClosed(property));
+
+				// message.append(", where its type is ");
+
 				appendConformanceRuleIds(association, message, markup);
 
 				appendPropertyComments(sb, property, markup);
 
-				appendConformanceRules(sb, endType, (property.getUpper() == 1
-						? "This "
-						: "Such ") +
-						(property.getUpper() == 1
-								? elementName
-								: NameUtilities.pluralize(elementName)) +
-						" ",
-					markup);
+				// // (property.getUpper() == 1,? "This "
+				// : "Such ") +
+				// (property.getUpper() == 1
+				// ? elementName
+				// : NameUtilities.pluralize(elementName)) +
+				// " "
+				appendConformanceRules(sb, endType, "", markup);
 				message.append(" " + sb + " ");
 
 			} else {
@@ -840,6 +851,27 @@ public class CDAModelUtil {
 		return computeConformanceMessage(property, markup, xrefSource, true);
 	}
 
+	private static String openOrClosed(Property property) {
+		if (isClosed(property)) {
+			return " ";
+		} else {
+			return " such that it ";
+		}
+	}
+
+	private static boolean isClosed(Property property) {
+		Validation validation = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(
+			(property.getAssociation() != null
+					? property.getAssociation()
+					: property),
+			Validation.class);
+		if (validation != null && validation.getKind().equals(ValidationKind.CLOSED)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource,
 			boolean appendNestedConformanceRules) {
 
@@ -866,11 +898,17 @@ public class CDAModelUtil {
 					? "</b>"
 					: "");
 			message.append(" contain ");
+			if (property.getUpper() == 0 && isClosed(property)) {
+				message.append("any ");
+			}
 		} else {
 			if (property.getUpper() < 0 || property.getUpper() > 1) {
 				message.append("contains ");
 			} else {
 				message.append("contain ");
+			}
+			if (property.getUpper() == 0 && isClosed(property)) {
+				message.append("any ");
 			}
 		}
 
@@ -906,7 +944,7 @@ public class CDAModelUtil {
 
 		String propertyCdaName = null;
 		if (cdaProperty != null) {
-			propertyCdaName = cdaProperty.getName();
+			propertyCdaName = getCDAName(cdaProperty);
 		} else {
 			propertyCdaName = getCDAElementName(property);
 		}
@@ -980,25 +1018,20 @@ public class CDAModelUtil {
 			}
 		}
 
-		/*
-		 * Append datatype restriction, if redefined to a specialized type
-		 */
-		List<Property> redefinedProperties = UMLUtil.getRedefinedProperties(property);
-		Property redefinedProperty = redefinedProperties.isEmpty()
-				? null
-				: redefinedProperties.get(0);
-
-		if (property.getType() != null && ((redefinedProperty == null ||
-				(!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType()))))) {
-			message.append(" with " + "@xsi:type=\"");
-			if (redefinedProperty != null && redefinedProperty.getType() != null &&
-					redefinedProperty.getType().getName() != null && !redefinedProperty.getType().getName().isEmpty()) {
-				message.append(redefinedProperty.getType().getName());
-			} else {
-				message.append(property.getType().getName());
+		if (property.getType() instanceof Classifier && cdaProperty != null &&
+				cdaProperty.getType() instanceof Classifier) {
+			Classifier propertyType = (Classifier) property.getType();
+			Classifier cdaPropertyType = (Classifier) cdaProperty.getType();
+			Class propertyCdaType = CDAModelUtil.getCDAClass(propertyType);
+			if (propertyCdaType == null)
+				propertyCdaType = CDAModelUtil.getCDADatatype(propertyType);
+			// if the datatype is not different from the immediate parent, then the xsi:type shouldn't be printed
+			if (propertyCdaType != null && cdaPropertyType != null && propertyCdaType != cdaPropertyType &&
+					propertyCdaType.getName() != null && !propertyCdaType.getName().isEmpty()) {
+				message.append(" with " + "@xsi:type=\"");
+				message.append(propertyCdaType.getName());
+				message.append("\"");
 			}
-			message.append("\"");
-
 		}
 
 		// for vocab properties, put rule ID at end, use terminology constraint if specified
@@ -1087,6 +1120,54 @@ public class CDAModelUtil {
 		}
 
 		return message.toString();
+	}
+
+	/**
+	 * getCDAName
+	 *
+	 * recursively, depth first, check the object graph for a CDA Name using the root of the "redefined"
+	 * property if it exists.
+	 *
+	 * Also handle special cases like sectionId which has a cdaName of ID
+	 *
+	 * @param cdaProperty
+	 *            an MDHT property
+	 * @return string
+	 *         the calculated CDA name
+	 */
+	private static String getCDAName(Property cdaProperty) {
+		EList<Property> redefines = cdaProperty.getRedefinedProperties();
+
+		// if there is a stereotype name, use it
+		String name = getStereotypeName(cdaProperty);
+		if (name != null) {
+			return name;
+		}
+
+		// if there are redefines, check for more but only along the first branch (0)
+		if (redefines != null && redefines.size() > 0) {
+			return getCDAName(redefines.get(0));
+		}
+
+		// eventually return the property Name of the root redefined element;
+
+		return cdaProperty.getName();
+	}
+
+	/**
+	 * Get the CDA name from a stereotype if it exists
+	 *
+	 * @param cdaProperty
+	 *            a Property
+	 * @return the xmlName or null if no stereotype exists
+	 */
+	private static String getStereotypeName(Property cdaProperty) {
+		Stereotype eAttribute = cdaProperty.getAppliedStereotype("Ecore::EAttribute");
+		String name = null;
+		if (eAttribute != null) {
+			name = (String) cdaProperty.getValue(eAttribute, "xmlName");
+		}
+		return name;
 	}
 
 	private static void appendSubsetsNotation(Property property, StringBuffer message, boolean markup,
@@ -1240,6 +1321,8 @@ public class CDAModelUtil {
 			currentlyItem &= appendPropertyComments(propertyComments, property, markup);
 			if (currentlyItem) {
 				sb.append(li[0]).append(propertyComments).append(li[1]);
+			} else {
+				sb.append(propertyComments);
 			}
 
 			appendPropertyRules(sb, property, constraintMap, subConstraintMap, unprocessedConstraints, markup, !order);

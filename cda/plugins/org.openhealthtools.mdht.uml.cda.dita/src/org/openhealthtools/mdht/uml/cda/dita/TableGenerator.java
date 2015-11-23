@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
 
@@ -165,8 +165,9 @@ public class TableGenerator {
 			if (csc != null) {
 				// csc.getReference().getIdentifier();
 				if (csc.getReference() != null) {
-					codeSystemBuffer.append(String.format(
-						"%s %s", csc.getReference().getEnumerationName(), csc.getReference().getIdentifier()));
+					codeSystemBuffer.append(
+						String.format(
+							"%s %s", csc.getReference().getEnumerationName(), csc.getReference().getIdentifier()));
 				} else {
 					codeSystemBuffer.append(String.format("%s %s", csc.getName(), csc.getIdentifier()));
 				}
@@ -224,7 +225,8 @@ public class TableGenerator {
 		return "/cda:ClinicalDocument" + path;
 	}
 
-	private static class DatatypesValue extends org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch<Object> {
+	private static class DatatypesValue
+			extends org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch<Object> {
 
 		public String result;
 
@@ -346,7 +348,8 @@ public class TableGenerator {
 			}
 		}
 
-		tableBuffer.append("<section id=\"tableconformance\"><p><table frame=\"all\" scale=\"80\" pgwide=\"1\" ><tgroup cols=\"8\" align=\"left\" colsep = \"1\" rowsep = \"1\" > ");
+		tableBuffer.append(
+			"<section id=\"tableconformance\"><p><table frame=\"all\" scale=\"80\" pgwide=\"1\" ><tgroup cols=\"8\" align=\"left\" colsep = \"1\" rowsep = \"1\" > ");
 
 		tableBuffer.append("<colspec colname=\"col0\" colnum=\"0\" />");
 		tableBuffer.append("<colspec colname=\"col1\" colnum=\"1\" />");
@@ -357,12 +360,10 @@ public class TableGenerator {
 		tableBuffer.append("<colspec colname=\"col6\" colnum=\"6\" />");
 		tableBuffer.append("<colspec colname=\"col7\" colnum=\"7\" />");
 
-		tableBuffer.append("<thead> <row><entry namest=\"col0\" nameend=\"col7\" >" +
-				umlClass.getQualifiedName() +
-				"</entry>  </row>  <row><entry namest=\"col0\" nameend=\"col7\" >" +
-				startingXPath +
-				"/" +
-				"</entry>  </row>  <row><entry>Name</entry><entry>XPath</entry><entry>Cardinality</entry><entry>Severity</entry><entry>Nullable</entry><entry>Data Type</entry><entry>Conformance</entry><entry>Value(s)</entry></row></thead><tbody>");
+		tableBuffer.append(
+			"<thead> <row><entry namest=\"col0\" nameend=\"col7\" >" + umlClass.getQualifiedName() +
+					"</entry>  </row>  <row><entry namest=\"col0\" nameend=\"col7\" >" + startingXPath + "/" +
+					"</entry>  </row>  <row><entry>Name</entry><entry>XPath</entry><entry>Cardinality</entry><entry>Severity</entry><entry>Nullable</entry><entry>Data Type</entry><entry>Conformance</entry><entry>Value(s)</entry></row></thead><tbody>");
 
 		Hashtable<String, Element> elements = new Hashtable<String, Element>();
 
@@ -400,8 +401,10 @@ public class TableGenerator {
 				if (!(leftFeature instanceof EAttribute) && !(rightFeature instanceof EAttribute)) {
 
 					// if both data types or not data types, sort by business name
-					if ((CDAModelUtil.isDatatypeModel(leftProperty.getType()) && CDAModelUtil.isDatatypeModel(rightProperty.getType())) ||
-							(!CDAModelUtil.isDatatypeModel(leftProperty.getType()) && !CDAModelUtil.isDatatypeModel(rightProperty.getType()))) {
+					if ((CDAModelUtil.isDatatypeModel(leftProperty.getType()) &&
+							CDAModelUtil.isDatatypeModel(rightProperty.getType())) ||
+							(!CDAModelUtil.isDatatypeModel(leftProperty.getType()) &&
+									!CDAModelUtil.isDatatypeModel(rightProperty.getType()))) {
 						return NamedElementUtil.getBusinessName(leftProperty).compareToIgnoreCase(
 							NamedElementUtil.getBusinessName(rightProperty));
 					}
@@ -599,9 +602,10 @@ public class TableGenerator {
 
 			tableBuffer.append(String.format("<entry>%s</entry>", conformanceRules.toString()));
 
-			tableBuffer.append(String.format(
-				"<entry>%s %s</entry></row> \n", getCodeSystem((Class) element.getOwner(), property.getName()),
-				getFeatureValue(eObject, feature)));
+			tableBuffer.append(
+				String.format(
+					"<entry>%s %s</entry></row> \n", getCodeSystem((Class) element.getOwner(), property.getName()),
+					getFeatureValue(eObject, feature)));
 
 		}
 
@@ -668,7 +672,7 @@ public class TableGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseAssociation(org.eclipse.uml2.uml.Association)
 		 */
 		@Override
@@ -703,9 +707,25 @@ public class TableGenerator {
 				}
 			}
 
-			// System.out.println(from + " <<<<>>>>> " + to);
+			if (to instanceof Class && CDAModelUtil.isInlineClass((Class) to)) {
+				// If we have a reference to inline class
+				// check for uses of templated classes
+				walkInlineClass((Class) to);
+			}
+
 			return super.caseAssociation(association);
 
+		}
+
+		void walkInlineClass(Class inlineClass) {
+			for (Property p : inlineClass.getOwnedAttributes()) {
+				if (p.getType() instanceof Class && CDAModelUtil.getTemplateId((Class) p.getType()) != null) {
+					contains.add(p.getType());
+				}
+				if (p.getType() instanceof Class && CDAModelUtil.isInlineClass((Class) p.getType())) {
+					walkInlineClass((Class) p.getType());
+				}
+			}
 		}
 	};
 
@@ -729,12 +749,14 @@ public class TableGenerator {
 
 		StringBuffer tableBuffer = new StringBuffer();
 
-		tableBuffer.append("<section id=\"contextTable\"><p><table frame=\"all\" scale=\"80\" pgwide=\"1\" ><tgroup cols=\"2\" align=\"left\" colsep = \"1\" rowsep = \"1\" > ");
+		tableBuffer.append(
+			"<section id=\"contextTable\"><p><table frame=\"all\" scale=\"80\" pgwide=\"1\" ><tgroup cols=\"2\" align=\"left\" colsep = \"1\" rowsep = \"1\" > ");
 
 		tableBuffer.append("<colspec colname=\"col0\" colnum=\"0\" />");
 		tableBuffer.append("<colspec colname=\"col1\" colnum=\"1\" />");
 
-		tableBuffer.append("<thead><row><entry namest=\"col0\" nameend=\"col0\" >Contained By</entry><entry namest=\"col1\" nameend=\"col1\" >Contains</entry></row></thead><tbody>");
+		tableBuffer.append(
+			"<thead><row><entry namest=\"col0\" nameend=\"col0\" >Contained By</entry><entry namest=\"col1\" nameend=\"col1\" >Contains</entry></row></thead><tbody>");
 
 		AssociationSwitch associationSwitch = new AssociationSwitch(umlClass);
 
