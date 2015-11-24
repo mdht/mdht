@@ -473,6 +473,16 @@ public class ClinicalDocumentCreator {
 								return result;
 							}
 						}
+						if (property.getLower() == 0) {
+							EObject aParent = parent;
+							while (aParent != null) {
+								if (aParent.eClass() == eClass) {
+									// prevent endless recursion
+									return result;
+								}
+								aParent = aParent.eContainer();
+							}
+						}
 						child = EcoreUtil.create(eClass);
 						child = setOrAdd(parent, feature, child);
 					}
