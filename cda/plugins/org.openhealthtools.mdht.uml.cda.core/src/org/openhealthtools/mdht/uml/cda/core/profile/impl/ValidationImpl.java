@@ -395,8 +395,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 		boolean oldMandatory = mandatory;
 		mandatory = newMandatory;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.VALIDATION__MANDATORY, oldMandatory, mandatory));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__MANDATORY, oldMandatory,
+				mandatory));
 		}
 	}
 
@@ -470,9 +470,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 		boolean oldNegationIndicator = negationIndicator;
 		negationIndicator = newNegationIndicator;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.VALIDATION__NEGATION_INDICATOR, oldNegationIndicator,
-				negationIndicator));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__NEGATION_INDICATOR,
+				oldNegationIndicator, negationIndicator));
 		}
 	}
 
@@ -502,8 +501,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 				? SEVERITY_EDEFAULT
 				: newSeverity;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.VALIDATION__SEVERITY, oldSeverity, severity));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__SEVERITY, oldSeverity, severity));
 		}
 	}
 

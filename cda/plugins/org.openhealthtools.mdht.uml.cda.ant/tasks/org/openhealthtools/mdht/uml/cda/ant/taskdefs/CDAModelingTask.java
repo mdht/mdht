@@ -125,8 +125,8 @@ public class CDAModelingTask extends Task {
 	 */
 	protected void checkAttributes() throws BuildException {
 		if (modelLocations == null) {
-			assertTrue("The 'model' attribute or child element must be specified.", model != null &&
-					modelLocations == null);
+			assertTrue(
+				"The 'model' attribute or child element must be specified.", model != null && modelLocations == null);
 		} else {
 			for (ModelLocation modelLocation : modelLocations) {
 				assertTrue(
