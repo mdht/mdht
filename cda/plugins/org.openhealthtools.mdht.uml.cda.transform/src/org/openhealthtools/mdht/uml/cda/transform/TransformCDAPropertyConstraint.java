@@ -327,42 +327,6 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 			}
 
 			/*
-			 * Test for multiplicity restriction
-			 */
-			// if (property.getLower() != inheritedProperty.getLower() ||
-			// property.getUpper() != inheritedProperty.getUpper()) {
-			//
-			// body.append("Begin >>>> ");
-			// System.out.println(body.toString());
-			//
-			// body.append(selfName + "->size() >= " + property.getLower());
-			//
-			// body.append(" and " + selfName + "->size() <= " + property.getUpper());
-			//
-			// if (property.getUpper() == 0) {
-			// // element is prohibited in redefinition
-			// // place-holder for when this is supported in UML 2.2
-			// } else if (cdaProperty.getUpper() == 1) {
-			// // single-valued CDA property
-			// if (property.getLower() == 1) {
-			// if (propertyType instanceof Enumeration) {
-			// body.append("isDefined('" + cdaProperty.getName() + "')");
-			// } else {
-			// body.append("not " + selfName + ".oclIsUndefined()");
-			// }
-			// }
-			// } else if (cdaProperty.getUpper() > 0 || cdaProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
-			// // multi-valued CDA property
-			// if (property.getLower() == 1 && property.getUpper() == 1) {
-			// body.append(selfName + "->size() = 1");
-			// } else if (property.getLower() >= 1) {
-			// body.append("not " + selfName + "->isEmpty()");
-			// }
-			// }
-			// body.append(" <<<< End");
-			// }
-
-			/*
 			 * Test for type restriction
 			 */
 			if (!templateTypeQName.equals(inheritedTypeQName)) {

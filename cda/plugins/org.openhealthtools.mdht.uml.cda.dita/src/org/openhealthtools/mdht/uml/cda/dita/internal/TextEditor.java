@@ -73,7 +73,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setDitaEnabled(boolean)
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
 	@Override
@@ -149,8 +149,13 @@ public class TextEditor implements ConstraintEditor {
 
 	private IPath generateTempDita() {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IPath tmpFileInWorkspaceDir = workspace.getRoot().getLocation().append("tmp").append(
-			constraint.getContext().getName()).addFileExtension("dita");
+
+		// A constraint may not have a name yet, so use a made-up name in that case
+		String tmpName = constraint.getContext().getName() == null
+				? "tmp"
+				: constraint.getContext().getName();
+		IPath tmpFileInWorkspaceDir = workspace.getRoot().getLocation().append("tmp").append(tmpName).addFileExtension(
+			"dita");
 
 		DitaTransformerOptions transformerOptions = new DitaTransformerOptions();
 		transformerOptions.setExampleDepth(0);
@@ -166,7 +171,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setErrorText(org.eclipse.swt.widgets.Text)
 	 */
 	@Override
@@ -177,7 +182,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setCloseErrorText(org.eclipse.swt.widgets.Button)
 	 */
 	@Override
