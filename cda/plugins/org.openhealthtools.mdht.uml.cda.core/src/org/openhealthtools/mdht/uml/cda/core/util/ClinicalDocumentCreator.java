@@ -667,7 +667,7 @@ public class ClinicalDocumentCreator {
 		xml = xml.replace("xmlns:cda=\"urn:hl7-org:v3\"", "xmlns=\"urn:hl7-org:v3\"");
 		String eName = eObject.eClass().getName();
 		if (!"ClinicalDocument".equals(eName)) {
-			String rootTag = withoutDigits(eName.toLowerCase());
+			String rootTag = withoutDigits(eName.substring(0, 1).toLowerCase() + eName.substring(1));
 			if (eObject.eContainmentFeature() != null) {
 				rootTag = eObject.eContainingFeature().getName();
 			} else if (clazz != null && CDACommonUtils.getOverallPropertyReference(clazz) != null) {
