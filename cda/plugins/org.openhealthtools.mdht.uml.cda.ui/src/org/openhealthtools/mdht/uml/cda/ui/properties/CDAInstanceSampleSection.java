@@ -87,7 +87,7 @@ public class CDAInstanceSampleSection extends InstanceSampleSection {
 				creator.enableSampleDataExpansion(e.getSource() == buttonSample);
 				Collection<Property> props = Collections.emptyList();
 				if (e.getSource() == buttonSampleMax) {
-					props = CDACommonUtils.getAllContents(umlElement.eResource(), Property.class);
+					props = CDACommonUtils.getAllContents(umlElement.eResource().getResourceSet().getResources(), Property.class);
 				}
 				EObject newObject = creator.initializeSnippet((Class) umlElement, props);
 
