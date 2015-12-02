@@ -467,11 +467,11 @@
 							</fo:table-row>
 							<fo:table-row>
 								<fo:table-cell>
-									<fo:block text-align="right" xsl:use-attribute-sets="__frontmatter__owner"> Sponsored By:
+									<fo:block text-align="right" xsl:use-attribute-sets="__frontmatter__owner">Sponsored By:
 									</fo:block>
 								</fo:table-cell>
 							</fo:table-row>
-							<xsl:for-each select="$map/bookmeta/author">
+							<xsl:for-each select="$map/bookmeta/author[ string-length(@type)=0]">
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block text-align="right" xsl:use-attribute-sets="__frontmatter__owner">
@@ -480,6 +480,23 @@
 									</fo:table-cell>
 								</fo:table-row>
 							</xsl:for-each>
+							<xsl:if test="count($map/bookmeta/author[@type='cosponsor']) > 0"> 
+	 							<fo:table-row>
+									<fo:table-cell>
+										<fo:block text-align="right" xsl:use-attribute-sets="__frontmatter__owner">Co-sponsored By:
+										</fo:block>
+									</fo:table-cell>
+								</fo:table-row>
+								<xsl:for-each select="$map/bookmeta/author[@type='cosponsor']">
+									<fo:table-row>
+										<fo:table-cell>
+											<fo:block text-align="right" xsl:use-attribute-sets="__frontmatter__owner">
+												<xsl:apply-templates select="." />
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:for-each>
+							</xsl:if> 	
 						</fo:table-body>
 					</fo:table>
 				</fo:block>
