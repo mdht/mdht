@@ -587,7 +587,7 @@ public class CDAModelUtil {
 		String elementName = getCDAElementName(property);
 
 		String propertyPrefix = getNameSpacePrefix(UMLUtil.getInheritedProperty(property)!=null ? UMLUtil.getInheritedProperty(property) : property);
-		if (propertyPrefix != null) {
+		if (propertyPrefix != null && !elementName.contains(":")) {
 			elementName = propertyPrefix + ":" + elementName;
 		}
 		
