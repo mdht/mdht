@@ -1023,8 +1023,9 @@ public class CDAModelUtil {
 			Classifier propertyType = (Classifier) property.getType();
 			Classifier cdaPropertyType = (Classifier) cdaProperty.getType();
 			Class propertyCdaType = CDAModelUtil.getCDAClass(propertyType);
-			if (propertyCdaType == null)
+			if (propertyCdaType == null) {
 				propertyCdaType = CDAModelUtil.getCDADatatype(propertyType);
+			}
 			// if the datatype is not different from the immediate parent, then the xsi:type shouldn't be printed
 			if (propertyCdaType != null && cdaPropertyType != null && propertyCdaType != cdaPropertyType &&
 					propertyCdaType.getName() != null && !propertyCdaType.getName().isEmpty()) {
@@ -1871,7 +1872,7 @@ public class CDAModelUtil {
 
 		} else {
 			if (markup) {
-				message.append("<ul>");
+				message.append("<ol>");
 			}
 			for (Element element : constraint.getConstrainedElements()) {
 				message.append(LI[0]);
@@ -1879,7 +1880,7 @@ public class CDAModelUtil {
 				message.append(LI[1]);
 			}
 			if (markup) {
-				message.append("</ul>");
+				message.append("</ol>");
 			}
 		}
 
@@ -2208,8 +2209,8 @@ public class CDAModelUtil {
 			elementName = "entry";
 		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else
-			if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
+				CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
 		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"ParticipantRole".equals(cdaTargetClass.getName())) {
