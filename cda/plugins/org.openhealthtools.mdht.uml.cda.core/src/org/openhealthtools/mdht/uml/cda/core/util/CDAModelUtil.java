@@ -1110,7 +1110,7 @@ public class CDAModelUtil {
 						hadSideEffect |= sb.length() > len;
 					}
 					if (hadSideEffect) {
-						message.append(" " + sb);
+						message.append(openOrClosed(property) + " " + sb);
 
 					}
 				}
