@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for "business name" values
  *     Christian W. Damus - Handle element wrappers (artf3238)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
@@ -25,8 +25,11 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -52,13 +55,14 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 
 /**
  * The general properties section for NamedElement.
- * 
+ *
  * $Id: $
  */
 public class NamedElementSection extends WrapperAwareModelerPropertySection {
@@ -164,6 +168,14 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 							refreshBusinessNameText();
 							return Status.CANCEL_STATUS;
 						}
+						String name = businessNameText.getText();
+
+						// trigger the changed notification so saving can happen
+						// without actually changing the namedElement
+						namedElement.eNotify(new ENotificationImpl(
+							(InternalEObject) namedElement, Notification.SET, UMLPackage.NAMED_ELEMENT__NAME, name,
+							name, true));
+
 					}
 
 					return Status.OK_STATUS;
@@ -282,9 +294,9 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 	/*
 	 * Override super implementation to allow for objects that are not
 	 * IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.
 	 * AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */

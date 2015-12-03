@@ -1112,7 +1112,7 @@ public class CDAModelUtil {
 						hadSideEffect |= sb.length() > len;
 					}
 					if (hadSideEffect) {
-						message.append(" " + sb);
+						message.append(openOrClosed(property) + " " + sb);
 
 					}
 				}
@@ -1873,7 +1873,7 @@ public class CDAModelUtil {
 
 		} else {
 			if (markup) {
-				message.append("<ul>");
+				message.append("<ol>");
 			}
 			for (Element element : constraint.getConstrainedElements()) {
 				message.append(LI[0]);
@@ -1881,7 +1881,7 @@ public class CDAModelUtil {
 				message.append(LI[1]);
 			}
 			if (markup) {
-				message.append("</ul>");
+				message.append("</ol>");
 			}
 		}
 
@@ -2210,8 +2210,8 @@ public class CDAModelUtil {
 			elementName = "entry";
 		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else
-			if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
+				CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
 		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"ParticipantRole".equals(cdaTargetClass.getName())) {
