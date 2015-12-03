@@ -32,7 +32,6 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getMessage <em>Message</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getSeverity <em>Severity</em>}</li>
@@ -40,7 +39,9 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#isMandatory <em>Mandatory</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getKind <em>Kind</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#isStrict <em>Strict</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#isNegationIndicator <em>Negation Indicator</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -49,7 +50,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -60,7 +61,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -71,7 +72,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -82,7 +83,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -93,7 +94,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getRuleId() <em>Rule Id</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRuleId()
 	 * @generated
 	 * @ordered
@@ -104,7 +105,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -115,7 +116,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -126,7 +127,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -137,7 +138,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -148,7 +149,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #isStrict() <em>Strict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStrict()
 	 * @generated
 	 * @ordered
@@ -159,7 +160,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #isStrict() <em>Strict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStrict()
 	 * @generated
 	 * @ordered
@@ -167,9 +168,31 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	protected boolean strict = STRICT_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isNegationIndicator() <em>Negation Indicator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
+	 * @see #isNegationIndicator()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean NEGATION_INDICATOR_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isNegationIndicator() <em>Negation Indicator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isNegationIndicator()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean negationIndicator = NEGATION_INDICATOR_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ValidationImpl() {
@@ -179,7 +202,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,6 +220,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 				return getKind();
 			case CDAPackage.VALIDATION__STRICT:
 				return isStrict();
+			case CDAPackage.VALIDATION__NEGATION_INDICATOR:
+				return isNegationIndicator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,7 +229,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,6 +249,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 				return kind != KIND_EDEFAULT;
 			case CDAPackage.VALIDATION__STRICT:
 				return strict != STRICT_EDEFAULT;
+			case CDAPackage.VALIDATION__NEGATION_INDICATOR:
+				return negationIndicator != NEGATION_INDICATOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -248,6 +275,9 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 					setSeverity((SeverityKind) newValue);
 				}
 				return;
+			case CDAPackage.VALIDATION__NEGATION_INDICATOR:
+				setNegationIndicator((Boolean) newValue);
+				return;
 			case CDAPackage.VALIDATION__RULE_ID:
 				getRuleId().clear();
 				getRuleId().addAll((Collection<? extends String>) newValue);
@@ -270,7 +300,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +311,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,6 +335,9 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 			case CDAPackage.VALIDATION__STRICT:
 				setStrict(STRICT_EDEFAULT);
 				return;
+			case CDAPackage.VALIDATION__NEGATION_INDICATOR:
+				setNegationIndicator(NEGATION_INDICATOR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -312,7 +345,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getMessage() {
@@ -322,7 +355,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getRuleId() {
@@ -335,7 +368,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SeverityKind getSeverity() {
@@ -345,7 +378,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isMandatory() {
@@ -355,7 +388,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMandatory(boolean newMandatory) {
@@ -370,7 +403,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValidationKind getKind() {
@@ -380,7 +413,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setKind(ValidationKind newKind) {
@@ -396,7 +429,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isStrict() {
@@ -406,7 +439,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStrict(boolean newStrict) {
@@ -420,7 +453,32 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
+	 * @generated
+	 */
+	public boolean isNegationIndicator() {
+		return negationIndicator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public void setNegationIndicator(boolean newNegationIndicator) {
+		boolean oldNegationIndicator = negationIndicator;
+		negationIndicator = newNegationIndicator;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__NEGATION_INDICATOR,
+				oldNegationIndicator, negationIndicator));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMessage(String newMessage) {
@@ -434,7 +492,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSeverity(SeverityKind newSeverity) {
@@ -451,7 +509,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -473,6 +531,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 		result.append(kind);
 		result.append(", strict: ");
 		result.append(strict);
+		result.append(", negationIndicator: ");
+		result.append(negationIndicator);
 		result.append(')');
 		return result.toString();
 	}

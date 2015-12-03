@@ -26,10 +26,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.NullFlavorImpl#getNullFlavor <em>Null Flavor</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -165,8 +165,8 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 				? NULL_FLAVOR_EDEFAULT
 				: newNullFlavor;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.NULL_FLAVOR__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.NULL_FLAVOR__NULL_FLAVOR, oldNullFlavor, nullFlavor));
 		}
 	}
 

@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getBase_Class <em>Base Class</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getFilter <em>Filter</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately <em>Publish Seperately</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getInline()
  * @model

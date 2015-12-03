@@ -56,6 +56,8 @@ public interface ICDAProfileConstants {
 
 	public static final String VALIDATION_SEVERITY = "severity";
 
+	public static final String VALIDATION_NEGATION_INDICATOR = "negationIndicator";
+
 	public static final String VALIDATION_RULE_ID = "ruleId";
 
 	public static final String VALIDATION_MANDATORY = "mandatory";

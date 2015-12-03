@@ -28,12 +28,12 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl#getBase_Association <em>Base Association</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl#getAssociationType <em>Association Type</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -225,8 +225,9 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 			associationType = (org.eclipse.uml2.uml.Class) eResolveProxy(oldAssociationType);
 			if (associationType != oldAssociationType) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						CDAPackage.ACT_RELATIONSHIP__ASSOCIATION_TYPE, oldAssociationType, associationType));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.ACT_RELATIONSHIP__ASSOCIATION_TYPE, oldAssociationType,
+						associationType));
 				}
 			}
 		}
@@ -245,8 +246,9 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 			base_Association = (Association) eResolveProxy(oldBase_Association);
 			if (base_Association != oldBase_Association) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						CDAPackage.ACT_RELATIONSHIP__BASE_ASSOCIATION, oldBase_Association, base_Association));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.ACT_RELATIONSHIP__BASE_ASSOCIATION, oldBase_Association,
+						base_Association));
 				}
 			}
 		}
@@ -265,8 +267,8 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 			typeCode = (EnumerationLiteral) eResolveProxy(oldTypeCode);
 			if (typeCode != oldTypeCode) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.ACT_RELATIONSHIP__TYPE_CODE,
-						oldTypeCode, typeCode));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.ACT_RELATIONSHIP__TYPE_CODE, oldTypeCode, typeCode));
 				}
 			}
 		}
@@ -283,8 +285,9 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 		org.eclipse.uml2.uml.Class oldAssociationType = associationType;
 		associationType = newAssociationType;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__ASSOCIATION_TYPE,
-				oldAssociationType, associationType));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__ASSOCIATION_TYPE, oldAssociationType,
+				associationType));
 		}
 	}
 
@@ -298,8 +301,9 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 		Association oldBase_Association = base_Association;
 		base_Association = newBase_Association;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__BASE_ASSOCIATION,
-				oldBase_Association, base_Association));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__BASE_ASSOCIATION, oldBase_Association,
+				base_Association));
 		}
 	}
 
@@ -313,8 +317,8 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 		EnumerationLiteral oldTypeCode = typeCode;
 		typeCode = newTypeCode;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__TYPE_CODE, oldTypeCode,
-				typeCode));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__TYPE_CODE, oldTypeCode, typeCode));
 		}
 	}
 

@@ -172,9 +172,6 @@ public enum LogicalOperator implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @param literal
-	 *            the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LogicalOperator get(String literal) {
@@ -192,9 +189,6 @@ public enum LogicalOperator implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @param name
-	 *            the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LogicalOperator getByName(String name) {
@@ -212,9 +206,6 @@ public enum LogicalOperator implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @param value
-	 *            the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LogicalOperator get(int value) {

@@ -45,8 +45,7 @@ public enum ValidationKind implements Enumerator {
 	 * The '<em><b>OPEN</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>OPEN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>OPEN</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * 
@@ -61,8 +60,7 @@ public enum ValidationKind implements Enumerator {
 	 * The '<em><b>CLOSED</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>CLOSED</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>CLOSED</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * 
@@ -96,9 +94,6 @@ public enum ValidationKind implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @param literal
-	 *            the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ValidationKind get(String literal) {
@@ -116,9 +111,6 @@ public enum ValidationKind implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @param name
-	 *            the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ValidationKind getByName(String name) {
@@ -136,9 +128,6 @@ public enum ValidationKind implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @param value
-	 *            the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ValidationKind get(int value) {

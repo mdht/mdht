@@ -26,10 +26,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl#getBase_Association <em>Base Association</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -153,8 +153,9 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 			base_Association = (Association) eResolveProxy(oldBase_Association);
 			if (base_Association != oldBase_Association) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION, oldBase_Association, base_Association));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION,
+						oldBase_Association, base_Association));
 				}
 			}
 		}
@@ -171,8 +172,9 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 		Association oldBase_Association = base_Association;
 		base_Association = newBase_Association;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION,
-				oldBase_Association, base_Association));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION, oldBase_Association,
+				base_Association));
 		}
 	}
 

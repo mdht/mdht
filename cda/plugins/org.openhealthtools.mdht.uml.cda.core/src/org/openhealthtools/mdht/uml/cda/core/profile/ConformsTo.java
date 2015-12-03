@@ -21,11 +21,11 @@ import org.eclipse.uml2.uml.Generalization;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#getBase_Generalization <em>Base Generalization</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#isRequiresParentId <em>Requires Parent Id</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getConformsTo()
  * @model

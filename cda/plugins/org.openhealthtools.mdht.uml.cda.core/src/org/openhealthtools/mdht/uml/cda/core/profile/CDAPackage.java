@@ -45,7 +45,6 @@ import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
  * 
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='CDA'"
  * @generated
  */
 public interface CDAPackage extends EPackage {
@@ -168,6 +167,15 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VALIDATION__STRICT = eINSTANCE.getValidation_Strict();
+
+		/**
+		 * The meta object literal for the '<em><b>Negation Indicator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute VALIDATION__NEGATION_INDICATOR = eINSTANCE.getValidation_NegationIndicator();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl
@@ -890,6 +898,16 @@ public interface CDAPackage extends EPackage {
 	int VALIDATION__STRICT = 5;
 
 	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATION__NEGATION_INDICATOR = 6;
+
+	/**
 	 * The number of structural features of the '<em>Validation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -897,11 +915,11 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALIDATION_FEATURE_COUNT = 6;
+	int VALIDATION_FEATURE_COUNT = 7;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl <em>Association Validation</em>
-	 * }' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl
+	 * <em>Association Validation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
@@ -970,6 +988,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_VALIDATION__STRICT = VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_VALIDATION__NEGATION_INDICATOR = VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
@@ -1061,6 +1089,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTRY__STRICT = ASSOCIATION_VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY__NEGATION_INDICATOR = ASSOCIATION_VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
@@ -1163,6 +1201,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTRY_RELATIONSHIP__STRICT = ASSOCIATION_VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_RELATIONSHIP__NEGATION_INDICATOR = ASSOCIATION_VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
@@ -1348,6 +1396,16 @@ public interface CDAPackage extends EPackage {
 	int PROPERTY_VALIDATION__STRICT = VALIDATION__STRICT;
 
 	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_VALIDATION__NEGATION_INDICATOR = VALIDATION__NEGATION_INDICATOR;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1437,6 +1495,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLASS_VALIDATION__STRICT = VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_VALIDATION__NEGATION_INDICATOR = VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -1529,6 +1597,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int VOCAB_SPECIFICATION__STRICT = PROPERTY_VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VOCAB_SPECIFICATION__NEGATION_INDICATOR = PROPERTY_VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
@@ -1672,6 +1750,16 @@ public interface CDAPackage extends EPackage {
 	int NULL_FLAVOR__STRICT = PROPERTY_VALIDATION__STRICT;
 
 	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_FLAVOR__NEGATION_INDICATOR = PROPERTY_VALIDATION__NEGATION_INDICATOR;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1771,6 +1859,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_VALUE__STRICT = PROPERTY_VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_VALUE__NEGATION_INDICATOR = PROPERTY_VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
@@ -1882,6 +1980,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int CDA_TEMPLATE__STRICT = CLASS_VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CDA_TEMPLATE__NEGATION_INDICATOR = CLASS_VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2026,6 +2134,16 @@ public interface CDAPackage extends EPackage {
 	int CONSTRAINT_VALIDATION__STRICT = VALIDATION__STRICT;
 
 	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_VALIDATION__NEGATION_INDICATOR = VALIDATION__NEGATION_INDICATOR;
+
+	/**
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2125,6 +2243,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONFORMS_TO__STRICT = VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMS_TO__NEGATION_INDICATOR = VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Base Generalization</b></em>' reference.
@@ -2227,6 +2355,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONCEPT_DOMAIN_CONSTRAINT__STRICT = VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__NEGATION_INDICATOR = VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -2441,6 +2579,16 @@ public interface CDAPackage extends EPackage {
 	int CODE_SYSTEM_CONSTRAINT__STRICT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_SYSTEM_CONSTRAINT__NEGATION_INDICATOR = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Code System Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2448,7 +2596,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 6;
+	int CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValueSetConstraintImpl <em>Value Set Constraint</em>}'
@@ -2521,6 +2669,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int VALUE_SET_CONSTRAINT__STRICT = VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__NEGATION_INDICATOR = VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -2765,6 +2923,16 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGICAL_CONSTRAINT__STRICT = CONSTRAINT_VALIDATION__STRICT;
+
+	/**
+	 * The feature id for the '<em><b>Negation Indicator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__NEGATION_INDICATOR = CONSTRAINT_VALIDATION__NEGATION_INDICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
@@ -3711,6 +3879,19 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getValidation_Strict();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#isNegationIndicator
+	 * <em>Negation Indicator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Negation Indicator</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation#isNegationIndicator()
+	 * @see #getValidation()
+	 * @generated
+	 */
+	EAttribute getValidation_NegationIndicator();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getMessage <em>Message</em>}'.

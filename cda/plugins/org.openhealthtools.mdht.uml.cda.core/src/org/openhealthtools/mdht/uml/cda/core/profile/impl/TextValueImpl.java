@@ -24,11 +24,11 @@ import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.TextValueImpl#getValue <em>Value</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.TextValueImpl#isIgnoreCase <em>Ignore Case</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -202,8 +202,8 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 		boolean oldIgnoreCase = ignoreCase;
 		ignoreCase = newIgnoreCase;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.TEXT_VALUE__IGNORE_CASE, oldIgnoreCase,
-				ignoreCase));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.TEXT_VALUE__IGNORE_CASE, oldIgnoreCase, ignoreCase));
 		}
 	}
 

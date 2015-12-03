@@ -151,8 +151,36 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 					if (severityModified) {
 						severityModified = false;
-						if (severityCombo.getSelectionIndex() >= 0) {
-							validation.setSeverity(SeverityKind.get(severityCombo.getSelectionIndex() - 1));
+						int index = severityCombo.getSelectionIndex();
+						if (index >= 0) {
+
+							// map severity to SeverityKind
+							SeverityKind severity = null;
+							validation.setNegationIndicator(false);
+							switch (index) {
+								case 0: // not set
+									severity = SeverityKind.ERROR;
+									break;
+								case 1: // SHALL
+									severity = SeverityKind.ERROR;
+									break;
+								case 2: // SHOULD
+									severity = SeverityKind.WARNING;
+									break;
+								case 3: // SHOULD NOT
+									severity = SeverityKind.WARNING;
+									validation.setNegationIndicator(true);
+									break;
+								case 4: // MAY
+									severity = SeverityKind.INFO;
+									break;
+								default:
+									severity = SeverityKind.ERROR;
+									break;
+							}
+
+							validation.setSeverity(severity);
+
 						}
 					}
 					if (ruleIdModified) {
@@ -239,7 +267,7 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 		/* ---- severity combo ---- */
 		severityCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
-		severityCombo.setItems(new String[] { "", "SHALL", "SHOULD", "MAY" });
+		severityCombo.setItems(new String[] { "", "SHALL", "SHOULD", "SHOULD NOT", "MAY" });
 		severityCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				severityModified = true;
@@ -386,10 +414,13 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 				severityCombo.select(1);
 				break;
 			case WARNING:
-				severityCombo.select(2);
+				int index = validation.isNegationIndicator()
+						? 3
+						: 2;
+				severityCombo.select(index);
 				break;
 			case INFO:
-				severityCombo.select(3);
+				severityCombo.select(4);
 				break;
 			default:
 				severityCombo.select(0);
@@ -444,9 +475,9 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 *
+	 * 
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@Override

@@ -114,8 +114,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	public ValidationKind createValidationKindFromString(EDataType eDataType, String initialValue) {
 		ValidationKind result = ValidationKind.get(initialValue);
 		if (result == null) {
-			throw new IllegalArgumentException(
-				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
 		}
 		return result;
 	}
@@ -165,8 +165,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	public LogicalOperator createLogicalOperatorFromString(EDataType eDataType, String initialValue) {
 		LogicalOperator result = LogicalOperator.get(initialValue);
 		if (result == null) {
-			throw new IllegalArgumentException(
-				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
 		}
 		return result;
 	}
@@ -217,8 +217,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			case CDAPackage.LOGICAL_OPERATOR:
 				return convertLogicalOperatorToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
 	}
 
@@ -395,8 +395,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	public EntryKind createEntryKindFromString(EDataType eDataType, String initialValue) {
 		EntryKind result = EntryKind.get(initialValue);
 		if (result == null) {
-			throw new IllegalArgumentException(
-				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
 		}
 		return result;
 	}
@@ -421,8 +421,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	public EntryRelationshipKind createEntryRelationshipKindFromString(EDataType eDataType, String initialValue) {
 		EntryRelationshipKind result = EntryRelationshipKind.get(initialValue);
 		if (result == null) {
-			throw new IllegalArgumentException(
-				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
 		}
 		return result;
 	}
@@ -449,8 +449,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			case CDAPackage.LOGICAL_OPERATOR:
 				return createLogicalOperatorFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
 	}
 
@@ -474,8 +474,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	public NullFlavorKind createNullFlavorKindFromString(EDataType eDataType, String initialValue) {
 		NullFlavorKind result = NullFlavorKind.get(initialValue);
 		if (result == null) {
-			throw new IllegalArgumentException(
-				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
 		}
 		return result;
 	}
@@ -544,8 +544,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	public SeverityKind createSeverityKindFromString(EDataType eDataType, String initialValue) {
 		SeverityKind result = SeverityKind.get(initialValue);
 		if (result == null) {
-			throw new IllegalArgumentException(
-				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
 		}
 		return result;
 	}

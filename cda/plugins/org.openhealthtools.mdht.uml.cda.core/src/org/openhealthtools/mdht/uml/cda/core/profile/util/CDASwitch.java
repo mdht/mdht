@@ -77,8 +77,7 @@ public class CDASwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @param ePackage
-	 *            the package in question.
+	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -360,7 +359,7 @@ public class CDASwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property Validation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Concept Domain Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -368,11 +367,12 @@ public class CDASwitch<T> extends Switch<T> {
 	 * 
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property Validation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Concept Domain Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePropertyValidation(PropertyValidation object) {
+	public T caseTerm_ConceptDomainConstraint(
+			org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint object) {
 		return null;
 	}
 
@@ -394,24 +394,6 @@ public class CDASwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Concept Domain Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Concept Domain Constraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTerm_ConceptDomainConstraint(
-			org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Value Set Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -425,6 +407,23 @@ public class CDASwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTerm_ValueSetConstraint(org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Property Validation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Property Validation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePropertyValidation(PropertyValidation object) {
 		return null;
 	}
 

@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl#getCode <em>Code</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl#getCodeSystem <em>Code System</em>}</li>
@@ -32,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl#getCodeSystemVersion <em>Code System Version</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.VocabSpecificationImpl#getDisplayName <em>Display Name</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -353,8 +353,8 @@ public class VocabSpecificationImpl extends PropertyValidationImpl implements Vo
 		String oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VOCAB_SPECIFICATION__CODE_SYSTEM,
-				oldCodeSystem, codeSystem));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.VOCAB_SPECIFICATION__CODE_SYSTEM, oldCodeSystem, codeSystem));
 		}
 	}
 
@@ -368,8 +368,9 @@ public class VocabSpecificationImpl extends PropertyValidationImpl implements Vo
 		String oldCodeSystemName = codeSystemName;
 		codeSystemName = newCodeSystemName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VOCAB_SPECIFICATION__CODE_SYSTEM_NAME,
-				oldCodeSystemName, codeSystemName));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.VOCAB_SPECIFICATION__CODE_SYSTEM_NAME, oldCodeSystemName,
+				codeSystemName));
 		}
 	}
 
@@ -383,8 +384,9 @@ public class VocabSpecificationImpl extends PropertyValidationImpl implements Vo
 		String oldCodeSystemVersion = codeSystemVersion;
 		codeSystemVersion = newCodeSystemVersion;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VOCAB_SPECIFICATION__CODE_SYSTEM_VERSION,
-				oldCodeSystemVersion, codeSystemVersion));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.VOCAB_SPECIFICATION__CODE_SYSTEM_VERSION, oldCodeSystemVersion,
+				codeSystemVersion));
 		}
 	}
 
@@ -398,8 +400,8 @@ public class VocabSpecificationImpl extends PropertyValidationImpl implements Vo
 		String oldDisplayName = displayName;
 		displayName = newDisplayName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VOCAB_SPECIFICATION__DISPLAY_NAME,
-				oldDisplayName, displayName));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.VOCAB_SPECIFICATION__DISPLAY_NAME, oldDisplayName, displayName));
 		}
 	}
 

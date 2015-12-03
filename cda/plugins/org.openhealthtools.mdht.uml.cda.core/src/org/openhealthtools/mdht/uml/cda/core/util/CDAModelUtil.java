@@ -83,6 +83,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
+
 public class CDAModelUtil {
 
 	public static final String CDA_PACKAGE_NAME = "cda";
@@ -2659,6 +2660,31 @@ public class CDAModelUtil {
 		return severity;
 	}
 
+	/**
+	 * Get the value of the Negation Indicator, for the given element or return false
+	 *
+	 * @param element
+	 *            the element to check
+	 * @param validationStereotype
+	 *            the applied stereotype
+	 *
+	 * @return true if the Negation indicator exists and is set to true, false for all other circumstances
+	 */
+	public static Boolean getValidationNegation(Element element, Stereotype validationStereotype) {
+		Boolean negation = false;
+
+		if ((validationStereotype != null) && CDAProfileUtil.isValidationStereotype(validationStereotype)) {
+
+			Object value = element.getValue(validationStereotype, ICDAProfileConstants.VALIDATION_NEGATION_INDICATOR);
+			if (value instanceof Boolean) {
+				negation = (Boolean) value;
+			}
+
+		}
+
+		return negation;
+	}
+
 	public static String getValidationKeywordWithPropertyRange(Property property) {
 		String keyword = getValidationKeyword(property);
 		return addShallNot(keyword, property);
@@ -2666,22 +2692,34 @@ public class CDAModelUtil {
 
 	public static String getValidationKeyword(Property property) {
 		String severity = getValidationSeverity(property, ICDAProfileConstants.PROPERTY_VALIDATION);
+		Stereotype validationStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+			property, ICDAProfileConstants.PROPERTY_VALIDATION);
+
+		// check if the severity has been negated, as in SHOULD NOT
+		boolean isNegated = getValidationNegation(property, validationStereotype);
+
 		if (severity == null) {
 			// get other validation stereotype, usually for terminology
 			severity = getValidationSeverity((Element) property);
 		}
-		return getValidationKeyword(severity);
+
+		String keyword = getValidationKeyword(severity);
+		if (isNegated) {
+			keyword += " NOT";
+		}
+
+		return keyword;
 	}
 
 	public static String getValidationKeywordWithPropertyRange(Element element, Property property) {
 		// use first available validation stereotype
 		String keyword = getValidationKeyword(element);
-		return addShallNot(keyword, property);
+		keyword = addShallNot(keyword, property);
+		return keyword;
 	}
 
 	private static String addShallNot(String keyword, Property property) {
-		if (property.getLower() == 0 && property.getUpper() == 0 &&
-				("SHALL".equals(keyword) || "SHOULD".equals(keyword))) {
+		if (property.getLower() == 0 && property.getUpper() == 0 && ("SHALL".equals(keyword))) {
 			keyword += " NOT";
 		}
 		return keyword;
@@ -2690,6 +2728,7 @@ public class CDAModelUtil {
 	public static String getValidationKeyword(Element element) {
 		// use first available validation stereotype
 		String severity = getValidationSeverity(element);
+
 		return getValidationKeyword(severity);
 	}
 

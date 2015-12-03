@@ -23,12 +23,12 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getBase_Association <em>Base Association</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getAssociationType <em>Association Type</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getTypeCode <em>Type Code</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getParticipation()
  * @model

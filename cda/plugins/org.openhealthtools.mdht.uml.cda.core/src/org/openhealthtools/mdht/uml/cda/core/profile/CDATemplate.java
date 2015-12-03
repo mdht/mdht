@@ -19,7 +19,6 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateId <em>Template Id</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getAssigningAuthorityName <em>Assigning Authority Name</em>}</li>
@@ -27,6 +26,7 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateVersion <em>Template Version</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateMultiplicity <em>Template Multiplicity</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCDATemplate()
  * @model
@@ -141,8 +141,7 @@ public interface CDATemplate extends ClassValidation {
 	 * Returns the value of the '<em><b>Template Multiplicity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Template Multiplicity</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Template Multiplicity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * 

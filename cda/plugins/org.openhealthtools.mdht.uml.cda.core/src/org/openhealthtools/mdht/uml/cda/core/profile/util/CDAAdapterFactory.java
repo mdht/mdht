@@ -481,18 +481,18 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation
-	 * <em>Property Validation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
+	 * <em>Concept Domain Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * 
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
 	 * @generated
 	 */
-	public Adapter createPropertyValidationAdapter() {
+	public Adapter createTerm_ConceptDomainConstraintAdapter() {
 		return null;
 	}
 
@@ -513,22 +513,6 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
-	 * <em>Concept Domain Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
-	 * @generated
-	 */
-	public Adapter createTerm_ConceptDomainConstraintAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint
 	 * <em>Value Set Constraint</em>}'.
 	 * <!-- begin-user-doc -->
@@ -541,6 +525,22 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTerm_ValueSetConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation
+	 * <em>Property Validation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation
+	 * @generated
+	 */
+	public Adapter createPropertyValidationAdapter() {
 		return null;
 	}
 

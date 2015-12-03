@@ -26,10 +26,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.PropertyValidationImpl#getBase_Property <em>Base Property</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -153,8 +153,9 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						CDAPackage.PROPERTY_VALIDATION__BASE_PROPERTY, oldBase_Property, base_Property));
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, CDAPackage.PROPERTY_VALIDATION__BASE_PROPERTY, oldBase_Property,
+						base_Property));
 				}
 			}
 		}
@@ -171,8 +172,8 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROPERTY_VALIDATION__BASE_PROPERTY,
-				oldBase_Property, base_Property));
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROPERTY_VALIDATION__BASE_PROPERTY, oldBase_Property, base_Property));
 		}
 	}
 

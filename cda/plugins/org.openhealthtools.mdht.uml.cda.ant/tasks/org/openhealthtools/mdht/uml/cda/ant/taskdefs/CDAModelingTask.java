@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - add validateModel sub-task (artf3037)
  *     Sean Muir (National E-Health Transition Authority (NEHTA)) - add Path Map Support
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
@@ -43,7 +43,7 @@ import org.openhealthtools.mdht.uml.cda.ant.types.ModelLocation;
 /**
  * Base class for the tasks that are defined in this plugin. Provides common behavior
  * and facilities.
- * 
+ *
  * @version $id: $
  */
 public class CDAModelingTask extends Task {
@@ -120,13 +120,13 @@ public class CDAModelingTask extends Task {
 	/**
 	 * All the attribute checks should be performed in this method.
 	 * Subclasses should call super.checkAttributes().
-	 * 
+	 *
 	 * @throws BuildException
 	 */
 	protected void checkAttributes() throws BuildException {
 		if (modelLocations == null) {
-			assertTrue("The 'model' attribute or child element must be specified.", model != null &&
-					modelLocations == null);
+			assertTrue(
+				"The 'model' attribute or child element must be specified.", model != null && modelLocations == null);
 		} else {
 			for (ModelLocation modelLocation : modelLocations) {
 				assertTrue(
@@ -304,7 +304,7 @@ public class CDAModelingTask extends Task {
 
 	/**
 	 * Throws a <tt>BuildException</tt> if <tt>expression</tt> is false.
-	 * 
+	 *
 	 * @param message
 	 * @param expression
 	 * @throws BuildException

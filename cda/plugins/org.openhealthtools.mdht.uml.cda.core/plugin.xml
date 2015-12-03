@@ -48,4 +48,5 @@
             type="cda"
             class="org.openhealthtools.mdht.uml.cda.core.profile.util.CDAResourceFactoryImpl"/>
    </extension>
+
 </plugin>
