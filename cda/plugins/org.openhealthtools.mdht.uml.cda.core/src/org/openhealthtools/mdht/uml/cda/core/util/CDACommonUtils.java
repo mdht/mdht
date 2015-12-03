@@ -15,6 +15,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,6 +27,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -236,6 +238,24 @@ public class CDACommonUtils {
 	 */
 	static public String getPDFSection(Element element, boolean fullSection, boolean level2) {
 		int incr = Integer.getInteger("MDHT_SECTION_INCREMENT", 0);
+		if (incr == 0 && element.eResource() != null && element.eResource().getResourceSet() != null) {
+			Resource resource = element.eResource().getResourceSet().getResources().get(0);
+			String uri = resource.getURI().toString();
+			int index = uri.indexOf(".model/");
+			if (index != -1) {
+				try {
+					uri = uri.substring(0, index) + ".doc/dita/spec-book.ditamap";
+					InputStream inputStream = new URL(uri).openConnection().getInputStream();
+					String specBook = CDACommonUtils.toString(inputStream);
+					index = specBook.indexOf("<chapter format=\"ditamap\" href=\"content/content.ditamap\"/>");
+					if (index != -1) {
+						incr = StringUtils.countMatches(specBook.substring(0, index), "<chapter") - 1;
+					}
+				} catch (Exception e) {
+					System.err.println(e.getMessage());
+				}
+			}
+		}
 		String result = "";
 		EObject eObject = element;
 		while (eObject != null && !(eObject instanceof Package)) {
@@ -447,17 +467,47 @@ public class CDACommonUtils {
 			}
 		}
 		for (Property prop : allProperties)
-			propertyStepCache.put(prop, "" + (offset + allProperties.indexOf(prop) + 1));
+			propertyStepCache.put(prop, getCustomizedBulletItem(umlClass, offset + allProperties.indexOf(prop)));
 		int constraintIndex = 0;
 		for (Constraint constraint : umlClass.getOwnedRules()) {
 			if (constraint.getConstrainedElements().size() == 1 &&
 					constraint.getConstrainedElements().get(0) == umlClass && constraint.getName() != null &&
 					!constraint.getName().endsWith("TemplateId")) {
-				propertyStepCache.put(constraint, "" + (offset + allProperties.size() + constraintIndex + 1));
+				propertyStepCache.put(
+					constraint, getCustomizedBulletItem(umlClass, offset + allProperties.size() + constraintIndex));
 				constraintIndex++;
 			}
 		}
 		return propertyStepCache.get(focusedProperty);
+	}
+
+	/**
+	 * @param umlClass
+	 * @param index
+	 *            index of the conformance rule starting from zero in the level designated by the given class
+	 * @return
+	 */
+	public static String getCustomizedBulletItem(Class umlClass, int index) {
+		int level = 0;
+		EObject eObject = umlClass;
+		while (eObject != null && !(eObject instanceof Package)) {
+			if (eObject instanceof Class &&
+					eObject.eContainer() instanceof Package &&
+					(CDACommonUtils.isSection((Type) eObject) || CDACommonUtils.isClinicalDocument((Type) eObject) || CDACommonUtils.isClinicalStatement((Type) eObject))) {
+				break;
+			}
+			eObject = getContainerReference(eObject);
+			level++;
+		}
+		level = level % 3;
+		if (level == 1) {
+			String[] romans = new String[] { "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x" };
+			return StringUtils.repeat("x", index / 10) + romans[index % 10];
+		}
+		if (level == 2) {
+			return "" + (char) ('a' + index);
+		}
+		return "" + (index + 1);
 	}
 
 	/**
