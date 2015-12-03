@@ -587,6 +587,11 @@ public class CDAModelUtil {
 
 		String elementName = getCDAElementName(property);
 
+		String propertyPrefix = getNameSpacePrefix(UMLUtil.getInheritedProperty(property)!=null ? UMLUtil.getInheritedProperty(property) : property);
+		if (propertyPrefix != null && !elementName.contains(":")) {
+			elementName = propertyPrefix + ":" + elementName;
+		}
+		
 		message.append(getMultiplicityText(property));
 		message.append(multiplicityElementToggle(property, markup, elementName));
 
