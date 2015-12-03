@@ -487,7 +487,7 @@ public class CDACommonUtils {
 	 *            index of the conformance rule starting from zero in the level designated by the given class
 	 * @return
 	 */
-	private static String getCustomizedBulletItem(Class umlClass, int index) {
+	public static String getCustomizedBulletItem(Class umlClass, int index) {
 		int level = 0;
 		EObject eObject = umlClass;
 		while (eObject != null && !(eObject instanceof Package)) {
