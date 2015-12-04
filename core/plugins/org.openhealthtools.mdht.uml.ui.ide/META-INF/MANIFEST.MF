@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.ui.ide;singleton:=true
-Bundle-Version: 2.5.13.qualifier
+Bundle-Version: 2.5.15.qualifier
 Bundle-Activator: org.openhealthtools.mdht.uml.ui.ide.internal.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

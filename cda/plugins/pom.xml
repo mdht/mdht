@@ -116,4 +116,5 @@
 			</plugin>
 		</plugins>
 	</build>
+<version>2.5.15-SNAPSHOT</version>
 </project>
