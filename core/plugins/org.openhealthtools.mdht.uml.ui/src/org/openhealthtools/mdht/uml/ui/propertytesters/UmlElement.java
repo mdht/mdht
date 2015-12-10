@@ -13,6 +13,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.common.ui.util.IResourceConstants;
@@ -40,6 +41,11 @@ public class UmlElement extends PropertyTester {
 				return false;
 			case "isAnAssociation":
 				return unwrap(receiver) instanceof Association;
+			case "isProperty":
+				return unwrap(receiver) instanceof Property;
+			case "isNamedElement":
+				return unwrap(receiver) instanceof NamedElement;
+
 			default:
 				return false;
 
@@ -105,7 +111,8 @@ public class UmlElement extends PropertyTester {
 
 	private static Package getCurrentMDHTModel() {
 
-		TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(IResourceConstants.EDITING_DOMAIN_ID);
+		TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
+			IResourceConstants.EDITING_DOMAIN_ID);
 
 		if (editingDomain == null)
 			return null;
@@ -135,7 +142,7 @@ public class UmlElement extends PropertyTester {
 	/**
 	 * A util method to test if the selected item from a UI tree structure is a
 	 * descendant of the current IG model structure.
-	 * 
+	 *
 	 * @param provider
 	 *            - A model tree content provider where the selected item came
 	 *            from.
@@ -143,7 +150,7 @@ public class UmlElement extends PropertyTester {
 	 *            - Local IG model.
 	 * @param selectedItem
 	 *            - The currently selected item from the model tree.
-	 * 
+	 *
 	 * @return TRUE if the item rooted from current local IG model. FALSE if the
 	 *         item rooted from import models.
 	 */
@@ -172,7 +179,7 @@ public class UmlElement extends PropertyTester {
 	 * been localised to current IG model. A Nested class path from current
 	 * selected element backward up to first localised element will be checked
 	 * for existance.
-	 * 
+	 *
 	 * @param provider
 	 *            - A model tree content provider where the selected item came
 	 *            from.
