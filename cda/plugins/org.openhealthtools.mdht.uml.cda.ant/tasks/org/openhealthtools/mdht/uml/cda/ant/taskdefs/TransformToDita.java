@@ -57,6 +57,23 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	private Boolean includeVocabularyConstraints = null;
 
+	private Boolean reset = null;
+
+	/**
+	 * @return the reset
+	 */
+	public Boolean getReset() {
+		return reset;
+	}
+
+	/**
+	 * @param reset
+	 *            the reset to set
+	 */
+	public void setReset(Boolean reset) {
+		this.reset = reset;
+	}
+
 	private int exampleDepth;
 
 	/**
@@ -124,8 +141,9 @@ public class TransformToDita extends CDAModelingSubTask {
 							c.getDeclaredField("eINSTANCE");
 						}
 					} catch (Throwable t) {
-						logWarning("Unable to load Run time,  Samples will not be generated! " + t.getMessage() +
-								generatedPackage);
+						logWarning(
+							"Unable to load Run time,  Samples will not be generated! " + t.getMessage() +
+									generatedPackage);
 					}
 
 				}
@@ -150,6 +168,10 @@ public class TransformToDita extends CDAModelingSubTask {
 		}
 		if (includeVocabularyConstraints == null && project.getProperty("includeVocabularyConstraints") != null) {
 			includeVocabularyConstraints = Boolean.valueOf(project.getProperty("includeVocabularyConstraints"));
+		}
+
+		if (reset == null && project.getProperty("reset") != null) {
+			reset = Boolean.valueOf(project.getProperty("reset"));
 		}
 
 		if (noVerticalLinesInTables == null && project.getProperty("noVerticalLinesInTables") != null) {
@@ -264,6 +286,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 		if (includeVocabularyConstraints != null) {
 			options.setIncludeVocabularyConstraints(includeVocabularyConstraints);
+		}
+
+		if (reset != null) {
+			options.setReset(reset);
 		}
 
 		options.setExampleDepth(exampleDepth);

@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
@@ -46,19 +46,20 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<section conref=\"generated/_" + normalizedClassName + ".dita#classId/description\">");
 		writer.println("</section>");
 
-		writer.println("<section audience=\"contextTable\" conref=\"generated/_" + normalizedClassName +
-				".dita#classId/contextTable\">");
+		writer.println(
+			"<section audience=\"contextTable\" conref=\"generated/_" + normalizedClassName +
+					".dita#classId/contextTable\">");
 		writer.println("</section>");
 
 		writer.println("<!-- TODO: insert UML class diagram here -->");
 
 		writer.println();
-		writer.println("<ol audience=\"standards\" conref=\"generated/_" + normalizedClassName +
-				".dita#classId/conformance\">");
+		writer.println(
+			"<ol audience=\"standards\" conref=\"generated/_" + normalizedClassName + ".dita#classId/conformance\">");
 		writer.println("<li></li>");
 		writer.println("</ol>");
-		writer.println("<ol audience=\"developer\" conref=\"generated/_" + normalizedClassName +
-				".dita#classId/aggregate\">");
+		writer.println(
+			"<ol audience=\"developer\" conref=\"generated/_" + normalizedClassName + ".dita#classId/aggregate\">");
 		writer.println("<li></li>");
 		writer.println("</ol>");
 
@@ -67,8 +68,8 @@ public class TransformClass extends TransformAbstract {
 		if (cdaClass != null) {
 
 			if (transformerOptions.isIncludeTableView()) {
-				writer.println("<section conref=\"generated/_" + normalizedClassName +
-						".dita#classId/tableconformance\">");
+				writer.println(
+					"<section conref=\"generated/_" + normalizedClassName + ".dita#classId/tableconformance\">");
 				writer.println("</section>");
 			}
 
@@ -96,8 +97,8 @@ public class TransformClass extends TransformAbstract {
 		writer.print(TransformAbstract.getPublicationName(umlClass));
 
 		writer.println("</title>");
-		writer.println("<shortdesc conref=\"generated/_" + normalizedClassName +
-				".dita#classId/shortdesc\"></shortdesc>");
+		writer.println(
+			"<shortdesc conref=\"generated/_" + normalizedClassName + ".dita#classId/shortdesc\"></shortdesc>");
 		writer.println("<prolog conref=\"generated/_" + normalizedClassName + ".dita#classId/prolog\"></prolog>");
 	}
 
@@ -119,8 +120,9 @@ public class TransformClass extends TransformAbstract {
 
 				IFolder referenceDitaFolder = sourceProject.getFolder(projectPath);
 				if (referenceDitaFolder.exists()) {
-					transformerOptions.addReference(target.getQualifiedName(), targetProject.getName() + "/classes/" +
-							normalizeCodeName(target.getName()) + ".dita");
+					transformerOptions.addReference(
+						target.getQualifiedName(),
+						targetProject.getName() + "/classes/" + normalizeCodeName(target.getName()) + ".dita");
 				}
 			}
 		}
@@ -137,6 +139,9 @@ public class TransformClass extends TransformAbstract {
 		File file = filePath.toFile();
 		PrintWriter writer = null;
 
+		if (transformerOptions.isReset() && file.exists()) {
+			file.delete();
+		}
 		if (!file.exists()) {
 			try {
 				file.createNewFile();
