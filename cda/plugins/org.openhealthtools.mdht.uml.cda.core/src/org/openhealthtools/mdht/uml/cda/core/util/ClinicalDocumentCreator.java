@@ -702,4 +702,8 @@ public class ClinicalDocumentCreator {
 		enableSampleDataExpansion = value;
 	}
 
+	public CDASampler getSampler() {
+		return sampler;
+	}
+
 }

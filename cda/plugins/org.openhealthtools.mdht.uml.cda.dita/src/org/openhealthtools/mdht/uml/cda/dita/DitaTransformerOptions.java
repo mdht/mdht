@@ -100,6 +100,8 @@ public class DitaTransformerOptions {
 
 	private List<Classifier> pubClassifiers = new Vector<Classifier>();
 
+	private String xmlGeneratorType = null;
+
 	public DitaTransformerOptions() {
 		initializePreferences();
 	}
@@ -130,7 +132,7 @@ public class DitaTransformerOptions {
 
 	/**
 	 * The value of the appendConformanceRule attribute in the dita-transform ant task xml
-	 *
+	 * 
 	 * @return appendConformanceRules
 	 */
 	public boolean isAppendConformanceRules() {
@@ -140,11 +142,11 @@ public class DitaTransformerOptions {
 	/**
 	 * The value of the noVerticalLinesInTables attribute in the dita-transform ant task xml
 	 * If set, use <br>
-	 *
+	 * 
 	 * {@code <table frame="topbot" rowsep="1">} <br>
 	 * instead of <br>
 	 * {@code <table frame="all" rowsep="1" colsep="1"> }
-	 *
+	 * 
 	 * @return appendConformanceRules
 	 */
 	public boolean isNoVerticalLinesInTables() {
@@ -165,6 +167,14 @@ public class DitaTransformerOptions {
 
 	public void setCardinalityAfterElement(boolean cardinalityAfterElement) {
 		this.cardinalityAfterElement = cardinalityAfterElement;
+	}
+
+	public void setXmlGeneratorType(String xmlGeneratorType) {
+		this.xmlGeneratorType = xmlGeneratorType;
+	}
+
+	public String getXmlGeneratorType() {
+		return this.xmlGeneratorType;
 	}
 
 	/**

@@ -35,7 +35,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * Transform CDA conceptual model to DITA files for publishing.
- *
+ * 
  * @version $Id: $
  */
 public class TransformToDita extends CDAModelingSubTask {
@@ -48,6 +48,8 @@ public class TransformToDita extends CDAModelingSubTask {
 	private Boolean includeTableView = null;
 
 	private Boolean includeUsageNotes = null;
+
+	private String xmlGeneratorType = null;
 
 	private Boolean cardinalityAfterElement = null;
 
@@ -162,6 +164,9 @@ public class TransformToDita extends CDAModelingSubTask {
 		if (includeUsageNotes == null && project.getProperty("includeUsageNotes") != null) {
 			includeUsageNotes = Boolean.valueOf(project.getProperty("includeUsageNotes"));
 		}
+		if (xmlGeneratorType == null && project.getProperty("xmlGeneratorType") != null) {
+			xmlGeneratorType = project.getProperty("xmlGeneratorType");
+		}
 		if (cardinalityAfterElement == null && project.getProperty("cardinalityAfterElement") != null) {
 			cardinalityAfterElement = Boolean.valueOf(project.getProperty("cardinalityAfterElement"));
 		}
@@ -197,6 +202,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	public void setCardinalityAfterElement(boolean cardinalityAfter) {
 		cardinalityAfterElement = new Boolean(cardinalityAfter);
+	}
+
+	public void setXmlGeneratorType(String xmlGeneratorType) {
+		this.xmlGeneratorType = xmlGeneratorType;
 	}
 
 	public void setAppendConformanceRules(boolean appendConformanceRules) {
@@ -252,6 +261,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 		if (cardinalityAfterElement != null) {
 			options.setCardinalityAfterElement(cardinalityAfterElement);
+		}
+
+		if (xmlGeneratorType != null) {
+			options.setXmlGeneratorType(xmlGeneratorType);
 		}
 
 		if (appendConformanceRules != null) {
