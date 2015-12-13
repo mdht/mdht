@@ -83,7 +83,6 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
-
 public class CDAModelUtil {
 
 	public static final String CDA_PACKAGE_NAME = "cda";
@@ -587,11 +586,13 @@ public class CDAModelUtil {
 
 		String elementName = getCDAElementName(property);
 
-		String propertyPrefix = getNameSpacePrefix(UMLUtil.getInheritedProperty(property)!=null ? UMLUtil.getInheritedProperty(property) : property);
+		String propertyPrefix = getNameSpacePrefix(UMLUtil.getInheritedProperty(property) != null
+				? UMLUtil.getInheritedProperty(property)
+				: property);
 		if (propertyPrefix != null && !elementName.contains(":")) {
 			elementName = propertyPrefix + ":" + elementName;
 		}
-		
+
 		message.append(getMultiplicityText(property));
 		message.append(multiplicityElementToggle(property, markup, elementName));
 
@@ -1117,7 +1118,7 @@ public class CDAModelUtil {
 						hadSideEffect |= sb.length() > len;
 					}
 					if (hadSideEffect) {
-						message.append(openOrClosed(property) + " " + sb);
+						message.append(sb);
 
 					}
 				}
@@ -2215,8 +2216,8 @@ public class CDAModelUtil {
 			elementName = "entry";
 		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
-				CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+		} else
+			if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
 		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"ParticipantRole".equals(cdaTargetClass.getName())) {
