@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ocl2csharp
+Bundle-SymbolicName: org.openhealthtools.mdht.transformation.ocl2csharp;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.openhealthtools.mdht.transformation.ocl,
+ org.eclipse.ocl.uml,
+ org.eclipse.ocl.ecore,
+ org.eclipse.ui,
+ org.eclipse.equinox.registry,
+ org.openhealthtools.mdht.uml.ui.properties,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Export-Package: org.openhealthtools.mdht.transformation.ocl2csharp

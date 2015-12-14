@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Types of traceability tables</title>
+    </head>
+    <body>
+        <p> There are a wide range of tracability tables, catering for specific views onto the
+            domain. Only a subset of these views will be available to most Trace Matrix users. Each table view is simply a subset of the columns available, except for the "EMF Tree" view, which is the raw data from which the correlated columns are derived. The purpose of the current views are described here briefly. </p>
+
+        <h1><a name="overview">Overview</a></h1>
+        <p> The overview table comprises the most important columns of all aspects covered by
+            traces. It can be activated by clicking &quot;Overview&quot; tab in the traceability
+            editor.<br /><br /> Note that this table does not provide a tree, so the data is more or
+            less presented unstructured and the rows are in an unspecific order. </p>
+        <h1><a name="irview">IR View</a></h1>
+        <p> The IR View table provides a view onto the ReqIF file. </p>
+        <h1><a name="irerror">IR Error View</a></h1>
+        <p> The IR Error View table provides a view onto the ReqIF and its correlation with the SCS Path from the DocBook IR/SCS Mapping table, as well as any errors in the correlation. It assists Business Analsyts and Logoical modellers to coordinate their document and model handovers.</p>
+        <h1><a name="scsview">SCS View</a></h1>
+        <p> The SCS View table provides a view onto the SCS expanded structure file, showing the SCS Data component in a tree view, with cardinalities in another column. </p>
+        <h1><a name="cdaview">CDA View</a></h1>
+        <p> The CDA View table provides a view onto the MDHT CDA UML model, showing the UML Elements in a tree view. Additional columns show the CDA base types, multiplicities, default values and the generated Java methods. </p>
+        <h1><a name="pdfview">PDF View</a></h1>
+        <p> The PDF View table provides a tree structured preview of how the generated PDF file would be
+            generated and in the <b>Conformance</b> column, what generated conformance rule text is expected to be present in the PDF file. </p>
+        <h1><a name="fanoutview">Fan-Out View</a></h1>
+        <p> The Fan-Out View table is a more technical focused view and insert tree nodes whereever
+            fan-outs occur (e.g. when a data component is mapped to more than one MDHT elements like
+            an <i>Association</i> element pointing to a nested <i>Class</i> element, a tree node
+            would be inserted here). </p>
+        <p> Fan-Ins can also happen, e.g. when participation requirements flow into a single data </p>
+        <h1><a name="cardinalitymatchingview">Cardinality Matching View</a></h1>
+        <p> This view is designed to allow testers to compare the SCS Data Component cardinalities, with the SCS represented by its human-readable SCS Path expressions, against the correlated UML Multiplicities for matching MDHT UML Elements. The Requirements numbers are shown as well as any comments on the Requirements to SCS Maping for end-to-end completenes. </p>
+        <h1><a name="clinicalsafetyview">Clinical Safety View</a></h1>
+        <p> The Clinical Safety View table provides an end-to-end view of Requirements via SCS to CDA UML. It also includes all Comments columns, generated Conformance text and the Error column. It allows clinical safety staff a customised overview of the whole trace matrix for analysis during a specification draft.  </p>
+        <h1><a name="scstocdaview">SCS to CDA View</a></h1>
+        <p> The SCS to CDA View table allows tracing of Requirements to SCS Paths and focuses on the chosen mapings for SCS components to CDA types. It shows both the re-usable types from the XML details files, and the UML-based CDA base classes. Its main function is to analyse the correctness of XML Details file mapping elements and their use by the Logical Model Importer to create UML models.</p>
+        <h1><a name="reqifview">ReqIF View</a></h1>
+        <p> This view is for the representation of the full contents of a ReqIF File. It is structured as a tree view following the document structure from which it was created. It is special in that it is the only view which is navigated to from other views when a requirement number is CTRL-clicked in any other table.</p>
+        <h1><a name="emftreeview">EMF Tree View</a></h1>
+        <p> This view is not a set of columns from the trace matrix, but a display of the EMF model of traces from which the tables are constructed. It is for technical users who understand the tools that create trace models.  </p>
+    </body>
+</html>

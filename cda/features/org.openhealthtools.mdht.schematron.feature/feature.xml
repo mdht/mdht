@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.openhealthtools.mdht.schematron.feature"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%featureProvider">
+
+   <description url="http://mdht.projects.openhealthtools.org">
+      %description
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      %copyright
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      %license
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.core.jobs"/>
+      <import plugin="org.eclipse.equinox.registry"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.openhealthtools.mdht.uml.cda.core"/>
+      <import plugin="org.openhealthtools.mdht.transform.core"/>
+      <import plugin="org.openhealthtools.mdht.uml.cda.transform"/>
+      <import plugin="org.openhealthtools.mdht.uml.term.transform"/>
+      <import plugin="org.openhealthtools.mdht.transformation.ocl"/>
+      <import plugin="org.openhealthtools.mdht.api"/>
+      <import plugin="org.openhealthtools.mdht.uml.ui.properties"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <import plugin="org.eclipse.ocl"/>
+      <import plugin="org.eclipse.ocl.uml"/>
+      <import plugin="org.eclipse.ocl.ecore"/>
+   </requires>
+
+   <plugin
+         id="org.openhealthtools.mdht.transformation.ocl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+      id="org.openhealthtools.mdht.api.schematron"
+      download-size="0"
+      install-size="0"
+      version="0.0.0"
+      unpack="false"/>
+   
+   <plugin
+         id="org.openhealthtools.mdht.transformation.ocl2xpath"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   
+   <plugin
+      id="org.openhealthtools.mdht.api"
+      download-size="0"
+      install-size="0"
+      version="0.0.0"
+      unpack="false"/>
+   
+   <plugin
+      id="org.openhealthtools.mdht.metamodel.traceability"
+      download-size="0"
+      install-size="0"
+      version="0.0.0"
+      unpack="false"/>
+      
+</feature>

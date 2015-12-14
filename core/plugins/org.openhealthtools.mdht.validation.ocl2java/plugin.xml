@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+         
+      <objectContribution
+            objectClass="org.eclipse.emf.codegen.ecore.genmodel.GenModel"
+            adaptable="false"
+            id="org.openhealthtools.mdht.validation.ocl2java.contribution">
+                     
+         <action
+               class="org.openhealthtools.mdht.validation.ocl2java.GenerateJava8ValidatorAction"
+               enablesFor="*"
+               id="org.openhealthtools.mdht.validation.ocl2java.GenerateJava8ValidatorAction"
+               label="Generate MDHT Java 8 Validator"
+               style="push"/>
+      </objectContribution>
+         
+   </extension>
+   <extension
+         point="org.eclipse.emf.codegen.ecore.generatorAdapters">
+   </extension>
+   
+
+</plugin>

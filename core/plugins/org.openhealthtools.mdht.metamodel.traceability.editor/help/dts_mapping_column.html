@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Details File Mapping Column</title>
+    </head>
+    <body>
+	<h1>Details File Mapping Column </h1>
+	<h2>Description</h2>
+<p>
+ The CDA type which is specified as the mapping for an SCS data component in a logical model "Details" XML file in one of its  &lt;Mapping&gt;  elements. This information is used by the LMI to create the UML structure which is deduced from the type information in the context of the SCS Tree, and the CDA structure that was cteated for the parents of this SCS component. </p>
+	
+	<p> The &lt;Mapping&gt; element which this cell refers to contains an XPath expression that has a CDA Document path (and hence an iferrable CDA type) which gives the type of the equivalent CDA element for the SCS component, and the rest of the XPath expression forms a constraint, which often fixes the value. See <a href="dts_fixed_value_column.html"> Dts: Fixed Value</a>.
+        </p> 
+	<h2>Key Status</h2>
+	<p> Key
+	</p>
+	<h2>Technology Space</h2>
+        <p> Logical Model XML Details File
+        </p> 
+	<h2>Cardinality</h2>
+        <p> 0..* (in relation to SCS: Data Component)
+        </p> 
+	<h2>Correlates With</h2>  
+        <p> This value is used by the Logical Model Importer algorithm to choose the right type for the CDA equivalent of a data component, in its SCS context, and so it forms part of a trace 4 tuple: (<a href="scs_data_component.html">SCS: Data Compoenent</a>, <a href="dts_mapping_column.html">Dts: Mapping</a>, <a href="uml_type.html">UML: Type</a>, <a href="uml_element.html">UML: Element</a>). 
+        </p> 
+	<h2>Cells Navigate To</h2>
+        <p>  The XML Details file which is the source of the value.
+        </p> 
+    </body>
+</html>

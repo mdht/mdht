@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Trace Matrix Columns</title>
+    </head>
+    <body>
+	<h1> Column Groups </h1>
+        <p> Each column in a table view shows a model element, or one of its attributes. The columns have the cwnaming convention <b><i>Prefix: Element</i></b>, and are grouped according the source for the model (usually a file). The prefix in the name of the column indicates the source of the element. 
+
+	</p>
+	<p>The model sources are currently grouped/prefixed as follows:</p>
+	<dl>
+		<dt> <b>Req:</b> </dt>
+		<dd> The Information Requirements derived from the NEAR tooling, exported as a ReqIF file 
+		</dd>
+		<dt> <b>SCS:</b> </dt>
+		<dd> The Structured Content Specification, as represented by an XML Expanded Structure File. The content of these columns may also be derived from other Logical Model XML files that are referenced from the SCS 
+Expanded Structure.
+		</dd>
+		<dt> <b>Doc:</b> </dt>
+		<dd> The DocBook XML file containing the hand-edited Requirement Id to SCS Path mapping table.
+		</dd>
+		<dt> <b>Dts:</b> </dt>
+		<dd> The "details file" for a given DCM, or re-usable data component. This file is the source of a re-used &lt;Mapping&gt; element that the Logical Model Importer used to create an equivalent CDA UML class, which can found in the <i>UML:</i> prefixed columns.
+		</dd>
+		<dt> <b>UML:</b> </dt>
+		<dd> The MDHT CDA UML model elements that represent the Implementation Reference CDA constraints, constructed by the Logical Model Importer, or added by CDA modellers after LMI import. Some columns prefixed as <i>UML:</i> do not appear to be UML related, but are in fact deduced from the UML structure, rather than being directly derived from the generated artefacts of the MDHT document and code generation. e.g. <i>CDA IR Section</i>, which is deduced before the actual PDF document is generated.
+		</dd>
+	</dl>
+	<p>The exceptions to this column naming format of colon-separated prefixes are <i>Comments</i> columns that allow comments about traces between model sources to be added by Trace Matrix users.</p>
+        <h1>Special Columns</h1>
+	<p> <a href="error_column.html">Project</a>:
+	This column is typcially only shown when doing trace differencing, and indicates which rows in the Trace Matrix table come from which Eclipse Project.
+	</p>
+	<p> <a href="error_column.html">Error</a>:
+	This is a special column that aggregates any errors that are detected in correlations or mappings between the model sources. These may be LMI Import errors for SCS elements that cannot be inserted correctly into the UML CDA structure based on their re-usable mappings, or they may be failed correlations between columns that are meant to match.
+	</p>
+	<p>
+	Selecting any row containing a populated Error column cell will cause the "EMF Tree" view, if present, to highlight the corresponding trace where the error occurs.
+	</p>
+	
+        <h1>Comment Columns</h1>
+	<p> <a href="req_scs_comment.html">Req/SCS Comments.</a> 
+	This column allows the annotation of any mapping between an Information Requirement and an SCS Path (as deduced from the DocBook Requirement/SCS Mapping). Currently these comments are only stored with the mapping in a given project, and are not propagated to new drafts of the Logical or Implementation models.
+	</p>
+	<p> <a href="scs_dts_comment.html">SCS/Dts Comments.</a> 
+	This column allows the annotation of any mapping between an SCS Data Element and the "details" XML file in which a  &lt;Mapping&gt;  element describes how it should be represented in CDA. Currently these comments are only stored with the mapping in a given project, and are not propagated to new drafts of the Logical or Implementation models.
+	</p>
+
+        <h1>Information Requirements Columns</h1>
+	<p> <a href="req_no_column.html">Req: No.</a> The Information Requirement number from NEAR. </p>
+	<p> <a href="req_section_column.html">Req: Section.</a> A grouping of information requirements in NEAR realised as a document section contiaining related requirements in the published Information Requirements Specification. </p>
+	<p> <a href="req_eaid_column.html">Req: EA ID.</a> The Enterprise Architect identifier for the Information Requirement number in NEAR. </p>
+	<p> <a href="req_detail_column.html">Req: Detail.</a> The Information Requirement detailed description text. </p>
+	<p> <a href="req_description_column.html">Req: Description.</a> The Information Requirement high-level descrition. </p>
+	<p> <a href="req_rationale_column.html">Req: Rationale.</a> An Information Requirement rationale. </p>
+
+        <h1>SCS Columns</h1>
+	<p> <a href="scs_data_component.html">SCS: Data Component.</a> The name of the SCS Expanded Structure file node.</p>
+	<p> <a href="scs_cardinality.html">SCS: Cardinality.</a> The cardinality of the SCS data component as defined in the logical model derived from the Expanded Structure File.</p>
+
+        <h1>DocBook Mapping Table Columns</h1>
+	<p> <a href="doc_logical_path.html">Doc: Logical Path.</a> The text of any right-hand-side SCS Path that is asserted to implement an Information Requirement in the DocBook Requirments to SCS Mapping Table. The Requirement Number is not shown as a "Doc" column, as it is correlated with the <i>Req: No</i> column from the Requirements, and is shown only once under this heading in the table. </p>
+
+	<h1> Details File Columns</h1>
+	<p> <a href="dts_mapping_column.html">Dts: Mapping.</a> The CDA type which is specified as the mapping for an SCS data component in a "Details" XML file in one of its  &lt;Mapping&gt;  elements. This information is used by the LMI to create the UML structure which is deduced from the type information in the context of the SCS Tree, and the CDA structure that was cteated for the parents of this SCS component. </p>
+	<p> <a href="dts_fixed_value_column.html">Dts: fixed_value.</a> The fixed value specified for an SCS data component in an XPath expression in a  &lt;Mapping&gt;  element of a "Details" XML file. This information is used by the LMI to create an equivalent UML attribute default value. </p>
+
+	<h1> UML Columns</h1>
+	<p> <a href="uml_type.html">UML: Type.</a> The CDA Base Type for the MDHT UML Element, as deduced by the LMI from the  &lt;Mapping&gt;  elements of the logical model /ML Details files. </p>
+	<p> <a href="uml_element.html">UML: Element.</a> The specific MDHT UML Class or Association that uses the CDA type to specify the constraint equivalent to the SCS Data Component shown on the same row. </p>
+	<p> <a href="uml_multiplicity.html">UML: Multiplicity.</a> The multiplicity of the UML Element. </p>
+	<p> <a href="uml_value.html">UML: Value.</a> The default value of a UML Element which has a fixed value specified in the SCS. </p>
+	<p> <a href="uml_conformance.html">UML: Conformance.</a> The text of the conformance statement for the constraint generated by MDHT that will appear in the Implemenatation Reference Document. </p>
+	<p> <a href="uml_cda_ir_section.html">UML: CDA IR Section.</a> The deduced section number of the constraint that will be generated in the Implementation Reference Document. </p>
+	<p> <a href="uml_java.html">UML: Java.</a> The Java method generated by MDHT that will validate the constraint for the correlated UML Element. </p>
+
+	<h1> Experimental Columns not in production tool views </h1>
+	<p> <a href="req_cca_comments_column.html">Req: CCA Comments.</a> Comments on Information Requirements by CCA Staff for visibility to other roles in the specification and publication processes. </p>
+	<p> <a href="req_clinical_safety_comments_column.html">Req: Clinical Safety Comments.</a> Comments on Information Requirments by Clinical Safety Staff for visibility to other roles in the specification and publication processes. </p>
+	<p> <a href="req_clinical_safety_issue_column.html">Req: Clinical Safety Issue.</a> Issue cross references for Clinical Safety Staff, typically relating to Hazards or Jira tickets. </p>
+	<p> <a href="scs_dcm.html">SCS: DCM.</a> The name of a DCM Structure File from which the definition of an SCS data component is derived.</p>
+	<p> <a href="scs_archetype.html">SCS: Archetype.</a> The name of an Archetype XML File from which the definition of an SCS data component is derived.</p>
+
+    </body>
+</html>

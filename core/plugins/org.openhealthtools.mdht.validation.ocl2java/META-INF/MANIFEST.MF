@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ocl2java
+Bundle-SymbolicName: org.openhealthtools.mdht.validation.ocl2java;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.openhealthtools.mdht.validation.ocl2java.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.core.resources,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf.codegen.ecore,
+ org.openhealthtools.mdht.transformation.ocl2java,
+ org.openhealthtools.mdht.transformation.ocl,
+ org.eclipse.ocl.ecore
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

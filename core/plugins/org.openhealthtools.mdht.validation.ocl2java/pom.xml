@@ -1,0 +1,16 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<name>NEHTA MDHT Java8 Validator Plugin</name>
+	<groupId>au.gov.nehta.mdht.plugins</groupId>
+	<artifactId>org.openhealthtools.mdht.validation.ocl2java</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	
+	<description>Java8 Validator Generator</description>
+	<packaging>eclipse-plugin</packaging>
+	<parent>
+		<groupId>au.gov.nehta.mdht</groupId>
+		<artifactId>au.gov.nehta.mdht.plugins</artifactId>
+		<version>${build_version}</version>
+	</parent>
+</project>

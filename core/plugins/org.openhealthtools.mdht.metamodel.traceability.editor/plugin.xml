@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension
+         point="org.eclipse.core.runtime.applications"
+         id="TraceabilityEditorAdvisorApplication">
+      <!-- @generated traceability -->
+      <application>
+         <run class="traceability.presentation.TraceabilityEditorAdvisor$Application"/>
+      </application>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.perspectives">
+      <!-- @generated traceability -->
+      <perspective
+            name="%_UI_Perspective_label"
+            class="traceability.presentation.TraceabilityEditorAdvisor$Perspective"
+            id="traceability.presentation.TraceabilityEditorAdvisorPerspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <!-- @generated traceability -->
+      <command
+            name="%_UI_Menu_OpenURI_label"
+            description="%_UI_Menu_OpenURI_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="traceability.presentation.TraceabilityEditorAdvisorOpenURICommand"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <!-- @generated traceability -->
+      <actionSet
+            label="%_UI_TraceabilityEditorAdvisor_ActionSet_label"
+            visible="true"
+            id="TraceabilityEditorAdvisorActionSet">
+         <action
+               label="%_UI_Menu_About_label"
+               class="traceability.presentation.TraceabilityEditorAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="traceability.presentation.TraceabilityEditorAdvisorAboutAction"/>
+         <action
+               label="%_UI_Menu_OpenURI_label"
+               definitionId="traceability.presentation.TraceabilityEditorAdvisorOpenURICommand"
+               class="traceability.presentation.TraceabilityEditorAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="traceability.presentation.TraceabilityEditorAdvisorOpenURIAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <!-- @generated traceability -->
+      <actionSet
+            label="%_UI_TraceabilityModelWizard_ActionSet_label"
+            visible="true"
+            id="traceability.presentation.TraceabilityActionBarContributorActionSet">
+         <action
+               label="%_UI_TraceabilityModelWizard_label"
+               class="traceability.presentation.TraceabilityActionBarContributor$NewAction"
+               menubarPath="file/new/additions"
+               id="traceability.presentation.TraceabilityActionBarContributorNewAction"/>
+      </actionSet>
+   </extension>
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated traceability -->
+      <editor
+            id="traceability.presentation.ReflectiveTraceabilityEditorID"
+            name="%_UI_TraceabilityEditor_label"
+            icon="icons/full/obj16/TraceabilityModelFile.gif"
+            extensions="anytraces"
+            class="traceability.presentation.ReflectiveTraceabilityEditor"
+            contributorClass="traceability.presentation.TraceabilityActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="help/toc.xml"
+            primary="true">
+      </toc>
+   </extension>
+
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml"
+            plugin="org.openhealthtools.mdht.metamodel.traceability.editor">
+      </contexts>
+   </extension>
+
+</plugin>

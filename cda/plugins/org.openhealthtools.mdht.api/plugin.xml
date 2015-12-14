@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+       <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+       
+          <propertySection tab="property.tab.GeneralPropertySection" 
+             afterSection="property.section.uml2.ConstraintSection"
+	 	     class="org.openhealthtools.mdht.api.OCLConstraintSection" 
+	 	     id="property.section.uml2.ConstraintSection2">
+	            <input type="org.eclipse.uml2.uml.Constraint"/>
+	      </propertySection>
+	      
+	      
+      </propertySections>
+   </extension>
+   
+    <extension
+          point="org.eclipse.uml2.uml.dynamic_package">
+       <profile
+             location="platform:/plugin/org.openhealthtools.mdht.api/model/api.profile.uml#_0"
+             uri="http:///schemas/SchematronValidation/_wQfcwC7jEeWWyt46-8Ab6Q/0">
+       </profile>
+    </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+         id="org.openhealthtools.mdht.api.action.generateXml"
+         nameFilter="*.uml"
+         objectClass="org.eclipse.core.resources.IFile">
+         <action
+            class="org.openhealthtools.mdht.api.GenerateXMLAction"
+            enablesFor="+"
+            id="org.openhealthtools.mdht.api.action2"
+            label="Generate Positive / Negative XML Samples"
+            menubarPath="group.open"/>
+      </objectContribution>
+   </extension>
+   
+</plugin>

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Getting Started</title>
+    </head>
+    <body>
+	<h1>Getting Started </h1>
+	<h2>Finding Files to Open</h2>
+        <p> The Trace Matrix operates on files with a ".traces" extension. For MDHT projects, the initial traces file is is contained in the project named "org.openhealthtools.mdht.cda.ir.<i>spec-name</i>.model//model/<i>spec-name</i>.uml.traces/. For example the Shared Health Summary ("shs") trace file is at: org.openhealthtools.mdht.cda.ir.shs.model/model/shs.uml.traces.
+	</p><p>
+Double clicking on this file opens the Trace Matrix table viewer in the main Eclipse window.
+	</p><p>
+	The Trace Matrix will open at the first <a href="faq.html#view">table view</a> that is specified in the tool configuration. Usually this is the "Overview", which shows most of the important information columns across the range of Information Requirements, Logical Models, MDHT CDA UML, and generated documents and code. The view being shown is visible in the bottom right hand corner of the new Trace Matrix window pane:
+</p>
+<p>
+<img src="view-tabs.jpg" alt="view tabs"/>
+</p>
+	<h2>Filters and Searching</h2>
+	<p>
+	Two text-entry boxes appear at the bottom of the Trace Table named "Filter" and "Search" which allow the user to find specific content in the Trace Table.
+	</p>
+	<h3> Regular Expression Matching </h3>
+    	<p> Each text entry box has a tick-box next to it named "RE". When ticked, the "RE" indicates that the text box will match regular expressions to allow complex matches to be made with wildcards, etc.
+	</p>
+	<h3> Filtering </h3>
+<p>
+<img src="filter.jpg" alt="filter"/>
+</p>
+	<p>
+	A Filter applies a search term to <i>all table rows</i> in the Trace Matrix (even if they are not visible in the current View), and only displays rows that contain the search term indicated. Simply type in a term and hit the <i>RETURN</i> key. This may result in no rows being shown in a particular row if: (a) the search term does not match any content in the Matrix, or (b) if the columns in the view are not correlated with the matched rows. To clear the Filter, delete the text, and hit  <i>RETURN</i>  again.
+	</p>
+	<h3>Searching</h3>
+<p>
+<img src="search.jpg" alt="search"/>
+</p>
+	<p>
+	Searches only attempt to match content that is in the current View. A Search will highlight all matching table contents in dark green, and place the first row containing matching content in the pane. (However, it does not scroll the table sideways if it is too large to fit in the frame, so the scroll bar may need to be used). As with most tools, the <i>CTRL-G</i> key combination locates the next row on which a matching search term is located. To clear the Search, delete the text, and hit  <i>RETURN</i>  again.
+	</p>
+	<h2>Differencing Two MDHT Model Traces and their Associated Requirements and Model Elements</h2>
+	<h3> Generic Diffing </h3>
+	<p> 
+	Differencing of two arbitrary projects that contain Logical Model snapshots and MDHT Models wth trace files in the projects can be done by multiply selecting the "models" projects of interest in the Eclipse Package Explorer, and right-clicking on any selected project to reveal the "Compare logical traces" menu item.
+	This will initiate a comparison of the traces, and reveal the differences and similarities between them in a new window named "diff.traces". The file which the table view is showing is stored in the first models folder in the selection, and can be re-opened later without calculating new differences.
+	</p>
+	<p> <b>WARNING: This functionality is recommended only for model management roles, and most users are advised to use the following Git-based differencing approaches.</b>
+	</p>
+	<h3>Diffing Between Git Repsoitory Versions</h3>
+
+	Differencing of projects for most user roles is facilitated through Git, and the Trace Matrix tooling has two context menu items that can be seen when right-clicking on the (usually single) "models" project folder in the Eclipse Package Explorer pane:
+	<dl>
+		<dt> Compare logical traces to Git Commit... </dt>
+			<dd> This is the generic way to chose a date-based check-in or Git named repository version for differencing with the current project. It will show a list of check-ins committed in the repository from which the current version is checked out. </dd>
+		<dt> Compare logical traces to Git Branch, Tag, or Reference... </dt>
+			<dd> This approach works with named revisions checked into Git with Branch names, Tags used to describe the checkin - with version numbers, comments etc - or with a named Git Reference. It is assumed that appropriate Tags will be defined to allow user roles to determine specification versions, drafts and statuses for easy reference. </dd>
+
+	</dl>
+	
+
+	<h3>Error, All, Tree check-boxes</h3>
+	<p>
+	There are three other controls at the bottom of the Trace Matrix window:
+</p>
+<p>
+<img src="tick-boxes.jpg" alt="tick-boxes"/>
+</p>
+	<dl>
+		<dt> <b>E</b>: Errors</dt>
+			<dd> This check-box allows for the rows displayed to be filtered to show only those in which an <a href="error_column.html">Error column</a> value is present.</dd>
+		<dt> <b>A</b>: All values</dt>
+			<dd> This check-box allows for the default display of blank cells for repeats of the cell value above to be turned off, so that all cells' values are displayed.</dd>
+		<dt> <b>T</b>: Tree view of left-hand column</dt>
+			<dd> This check-box is ticked when a <a href="faq.html#tree">tree-based column</a> is shown in the left-hand column position, and it is organised into tree order, with show/hide functions for nodes. If you untick this check-box, the display of the left-hand column reverts to normal alpha-numeric values, and these can be sorted, or other columns may be used as the sort order for the rows displayed.</dd>
+
+	</dl>
+
+	
+
+	<h3>Filtering Differences</h3>
+<p>
+<img src="diff-filters.jpg" alt="diff filters"/>
+</p>
+	If you are viewing a trace.diff table after comparing two models, there are three additional tick-boxes you can use at the bottom of the window to filter traces to show content in any combination of:
+	<ul>
+	<li> items in both model projects: "=" (uncoloured) </li>
+	<li> items in both models with different attribute values in the models": != (yellow) </li>
+	<li> items only in the first project: "+" (green) </li>
+	<li> items only in the second project: "-" (red) </li>
+	</ul>
+	
+</body>
+
+</html>
