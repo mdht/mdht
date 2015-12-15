@@ -1,15 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<name>NEHTA MDHT Schematron Feature</name>
-	<groupId>au.gov.nehta.mdht.features</groupId>
-	<artifactId>org.openhealthtools.mdht.schematron.feature</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
-	
-	<packaging>eclipse-feature</packaging>
 	<parent>
-		<groupId>au.gov.nehta.mdht</groupId>
-		<artifactId>au.gov.nehta.mdht.features</artifactId>
-		<version>${build_version}</version>
+		<groupId>org.openhealthtools.mdht.cda</groupId>
+		<artifactId>features</artifactId>
+		<version>2.5.13-SNAPSHOT</version>
 	</parent>
+	<groupId>org.openhealthtools.mdht.cda</groupId>
+	<artifactId>org.openhealthtools.mdht.schematron.feature</artifactId>
+	<packaging>eclipse-feature</packaging>
 </project>
