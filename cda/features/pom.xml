@@ -17,6 +17,9 @@
 	<modules>
 		<module>org.openhealthtools.mdht.uml.cda.basic-feature</module>
 		<module>org.openhealthtools.mdht.uml.cda.tooling-feature</module>
+		<module>org.openhealthtools.mdht.csharp.feature</module>
+		<module>org.openhealthtools.mdht.java.feature</module>
+		<module>org.openhealthtools.mdht.schematron.feature</module>
 	</modules>
 
 	<build>

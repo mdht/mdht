@@ -43,6 +43,14 @@
 		<module>org.openhealthtools.mdht.uml.ui.navigator</module>
 		<module>org.openhealthtools.mdht.uml.ui.properties</module>
 		<module>org.openhealthtools.mdht.uml.validation</module>
+		<module>org.openhealthtools.mdht.metamodel.traceability</module>
+		<module>org.openhealthtools.mdht.metamodel.traceability.edit</module>
+		<module>org.openhealthtools.mdht.metamodel.traceability.editor</module>
+		<module>org.openhealthtools.mdht.transformation.ocl</module>
+		<module>org.openhealthtools.mdht.transformation.ocl2csharp</module>
+		<module>org.openhealthtools.mdht.transformation.ocl2java</module>
+		<module>org.openhealthtools.mdht.transformation.ocl2xpath</module>
+		<module>org.openhealthtools.mdht.validation.ocl2java</module>
 	</modules>
 	<build>
 		<plugins>

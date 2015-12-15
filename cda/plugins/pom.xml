@@ -38,6 +38,10 @@
 		<module>org.openhealthtools.mdht.uml.cda.transform</module>
 		<module>org.openhealthtools.mdht.uml.cda.ui</module>
 		<module>org.openhealthtools.mdht.uml.cda.validation</module>
+		<module>org.openhealthtools.mdht.api</module>
+		<module>org.openhealthtools.mdht.api.dotnet</module>
+		<module>org.openhealthtools.mdht.api.java</module>
+		<module>org.openhealthtools.mdht.api.schematron</module>
 	</modules>
 	<build>
 		<plugins>
