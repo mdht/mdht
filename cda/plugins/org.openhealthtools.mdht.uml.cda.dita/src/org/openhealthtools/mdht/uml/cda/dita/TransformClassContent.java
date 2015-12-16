@@ -477,7 +477,7 @@ public class TransformClassContent extends TransformAbstract {
 			
 			String xmlGeneratorType = transformerOptions.getXmlGeneratorType();
 
-			EObject eObject = instanceGenerator.createInstance(umlClass, exampleDepth > 0
+			EObject eObject = "custom-only".equals(xmlGeneratorType) ? null : instanceGenerator.createInstance(umlClass, exampleDepth > 0
 					? exampleDepth
 					: 2);
 			if (eObject==null && !"original-only".equals(xmlGeneratorType) || "custom".equals(xmlGeneratorType) || "custom-if-data-present".equals(xmlGeneratorType)) {
@@ -488,7 +488,15 @@ public class TransformClassContent extends TransformAbstract {
 				creator.enableSampleDataExpansion(true);
 				Collection<Property> props = Collections.emptyList();
 				EObject newObject = creator.initializeSnippet(umlClass, props);
-				if (newObject != null && (eObject==null || "custom".equals(xmlGeneratorType) || "custom-if-data-present".equals(xmlGeneratorType)) && creator.getSampler().isCustomDataUsed()) {
+				if (newObject == null && eObject == null && !"original".equals(xmlGeneratorType)) {
+					writer.print("Error: Custom XML generator could not create XML sample\n");
+					for (ModelStatus status : statuses) {
+						writer.print("Error code: " + status.getCode() + ": " + status.getMessage() + "\n");
+					}
+					writer.println("]]></codeblock>"); 
+					return;
+				}
+				if (newObject != null && (eObject==null || "custom".equals(xmlGeneratorType) || "custom-if-data-present".equals(xmlGeneratorType) && creator.getSampler().isCustomDataUsed())) {
 					String xml = creator.toXMLString(newObject, umlClass);
 					writer.write(xml);
 					writer.println("]]></codeblock>"); 
