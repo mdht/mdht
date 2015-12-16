@@ -319,6 +319,10 @@ public class ClinicalDocumentCreator {
 			setOrAdd(templateIdInstance, "root", templateId + (diversifyProperty.contains(templateIdProperty)
 					? "TYPO"
 					: ""));
+
+			String extension = CDAModelUtil.getTemplateVersion(parentClass);
+			if (extension != null)
+				setOrAdd(templateIdInstance, "extension", extension);
 			initialized.put(templateIdInstance, templateIdProperty);
 			if (mandatoryProperty.contains(templateIdProperty) &&
 					(parentProperty == null || mandatoryProperty.contains(parentProperty))) {
@@ -327,6 +331,10 @@ public class ClinicalDocumentCreator {
 		}
 
 		for (Property property : CDACommonUtils.allAttributes(parentClass)) {
+			if (property == templateIdProperty && templateId != null) {
+				// already initialized
+				continue;
+			}
 			result = initializeProperty(
 				property, parent, mandatoryProperty, prohibitedProperty, diversifyProperty, parentClass, result);
 		}
@@ -446,7 +454,7 @@ public class ClinicalDocumentCreator {
 					for (Object object : oldValue instanceof List
 							? (List<?>) oldValue
 							: Arrays.asList(oldValue)) {
-						if (getInitializedByClass(object) == childClass && structuralRequired) {
+						if (getInitializedByClass(object) == childClass && property.getUpper() == 1) {
 							child = (EObject) object;
 						}
 					}
@@ -489,6 +497,18 @@ public class ClinicalDocumentCreator {
 								return result;
 							}
 						}
+						if (property.getLower() == 0) {
+							int level = 0;
+							EObject aParent = parent;
+							while (aParent != null) {
+								if (aParent.eClass() == eClass || level >= 10) {
+									// prevent endless recursion
+									return result;
+								}
+								aParent = aParent.eContainer();
+								level++;
+							}
+						}
 						child = EcoreUtil.create(eClass);
 						child = setOrAdd(parent, feature, child);
 					}
@@ -498,8 +518,8 @@ public class ClinicalDocumentCreator {
 								? "TYPO"
 								: ""));
 					}
-					if (codeSystemConstraint != null && codeSystemConstraint.getIdentifier() != null) {
-						setOrAdd(child, "codeSystem", codeSystemConstraint.getIdentifier());
+					if (codeSystemConstraint != null && CDACommonUtils.getCodeSystem(codeSystemConstraint) != null) {
+						setOrAdd(child, "codeSystem", CDACommonUtils.getCodeSystem(codeSystemConstraint));
 					}
 					if (codeSystemConstraint != null && codeSystemConstraint.getDisplayName() != null) {
 						setOrAdd(child, "displayName", codeSystemConstraint.getDisplayName());
@@ -672,7 +692,10 @@ public class ClinicalDocumentCreator {
 	}
 
 	public String toXMLString(EObject eObject, Class clazz) {
-		Map<String, Object> options = new HashMap<String, Object>();
+		return toXMLString(eObject, clazz, new HashMap<String, Object>());
+	}
+
+	public String toXMLString(EObject eObject, Class clazz, Map<String, Object> options) {
 		// generate no indentation in e.g. "<title>Adverse Reactions</title>", i.e. keep it in one line
 		options.put(XMLResource.OPTION_EXTENDED_META_DATA, BasicExtendedMetaData.INSTANCE);
 		options.put(XMLResource.OPTION_ENCODING, "UTF-8");
@@ -726,6 +749,10 @@ public class ClinicalDocumentCreator {
 
 	public void enableSampleDataExpansion(boolean value) {
 		enableSampleDataExpansion = value;
+	}
+
+	public EObject getClinicalDocument() {
+		return aClinicalDocument;
 	}
 
 }
