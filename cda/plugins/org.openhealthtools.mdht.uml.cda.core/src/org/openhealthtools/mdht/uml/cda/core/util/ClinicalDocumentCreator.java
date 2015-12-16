@@ -1,7 +1,7 @@
 /**
  * Copyright: NEHTA 2015
- * Author: Joerg Kiegeland, Distributed Models Pty Ltd 
- * 
+ * Author: Joerg Kiegeland, Distributed Models Pty Ltd
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.util.BasicExtendedMetaData;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
@@ -116,8 +117,9 @@ public class ClinicalDocumentCreator {
 			if (es.eIsProxy()) {
 				ecoreClinicalDocument = null;
 				cda_ecore = null;
-				CDACommonUtils.addStatus(statuses, IStatus.INFO, PLUGIN, 1, "Pathmap to CDA .ecore files not resolved: " +
-						((BasicEObjectImpl) es).eProxyURI() + ". Will not use any CDA extension!");
+				CDACommonUtils.addStatus(
+					statuses, IStatus.INFO, PLUGIN, 1, "Pathmap to CDA .ecore files not resolved: " +
+							((BasicEObjectImpl) es).eProxyURI() + ". Will not use any CDA extension!");
 				break;
 			}
 		}
@@ -138,7 +140,7 @@ public class ClinicalDocumentCreator {
 
 	/**
 	 * Saves the currently constructed clinical document to the given file
-	 * 
+	 *
 	 * @param file
 	 * @throws Exception
 	 */
@@ -146,7 +148,7 @@ public class ClinicalDocumentCreator {
 		try {
 			Map<String, Object> options = new HashMap<String, Object>();
 			// generate no indentation in e.g. "<title>Adverse Reactions</title>", i.e. keep it in one line
-			options.put(XMLResource.OPTION_EXTENDED_META_DATA, BasicExtendedMetaData.INSTANCE);
+			options.put(XMLResource.OPTION_EXTENDED_META_DATA, ExtendedMetaData.INSTANCE);
 			options.put(XMLResource.OPTION_ENCODING, "UTF-8");
 			String xml = XMLHelperImpl.saveString(options, Arrays.asList(aClinicalDocument), null, null);
 
@@ -192,7 +194,7 @@ public class ClinicalDocumentCreator {
 	/**
 	 * Initializes a clinical document containing the given clazz while enforcing the mandatory property, skipping the prohibited property and making
 	 * a difference to the diversify property
-	 * 
+	 *
 	 * @param clazz
 	 *            mandatory
 	 * @param mandatoryProperty
@@ -210,8 +212,9 @@ public class ClinicalDocumentCreator {
 		int count = statuses.size();
 		createClinicalDocument();
 		List<Property> propertyPath = CDACommonUtils.getPropertyPath(clazz);
-		if (mandatoryProperty != null)
+		if (mandatoryProperty != null) {
 			propertyPath.add(mandatoryProperty);
+		}
 		Object result = initialize(
 			umlClinicalDocument, aClinicalDocument, propertyPath,
 			new HashSet<Property>(Arrays.asList(prohibitedProperty)), Arrays.asList(diversifyProperty), null, null);
@@ -229,8 +232,9 @@ public class ClinicalDocumentCreator {
 		}
 		if (count == statuses.size() && mandatoryProperty != null) {
 			CDACommonUtils.addStatus(
-				statuses, IStatus.WARNING, PLUGIN, 6, CDACommonUtils.getUmlContextDoubled(mandatoryProperty) +
-						" could not be initialized", mandatoryProperty);
+				statuses, IStatus.WARNING, PLUGIN, 6,
+				CDACommonUtils.getUmlContextDoubled(mandatoryProperty) + " could not be initialized",
+				mandatoryProperty);
 		}
 		discardClinicalDocument();
 		return null;
@@ -238,7 +242,7 @@ public class ClinicalDocumentCreator {
 
 	/**
 	 * Initializes only an instance for the given class, without embedding it into a clinical document
-	 * 
+	 *
 	 * @param clazz
 	 * @return
 	 */
@@ -247,16 +251,24 @@ public class ClinicalDocumentCreator {
 		Classifier cdaChildClass = CDACommonUtils.getCDAType(clazz);
 		if (cdaChildClass == null) {
 			CDACommonUtils.addStatus(
-				statuses, IStatus.ERROR, PLUGIN, 9, "Found no CDA base class for " + CDACommonUtils.getUmlContext(clazz),
-				clazz);
+				statuses, IStatus.ERROR, PLUGIN, 9,
+				"Found no CDA base class for " + CDACommonUtils.getUmlContext(clazz), clazz);
 			return null;
 		}
 		EClass eClass = null;
-		for (EPackage ePackage : CDACommonUtils.getAllContents(aClinicalDocument.eClass().eResource(), EPackage.class)) {
+		for (EPackage ePackage : CDACommonUtils.getAllContents(
+			aClinicalDocument.eClass().eResource(), EPackage.class)) {
 			// look in the root package (named "cda") or its child extension package (not named "cda"!)
 			if ("cda".equals(ePackage.getName()) == "cda".equals(cdaChildClass.getNearestPackage().getName())) {
 				eClass = (EClass) ePackage.getEClassifier(cdaChildClass.getName());
 			}
+		}
+
+		if (eClass == null) {
+			CDACommonUtils.addStatus(
+				statuses, IStatus.ERROR, PLUGIN, 9, "Found no Runtime class for " + CDACommonUtils.getUmlContext(clazz),
+				clazz);
+			return null;
 		}
 
 		EObject eObject = EcoreUtil.create(eClass);
@@ -270,15 +282,14 @@ public class ClinicalDocumentCreator {
 
 	/**
 	 * Initializes a clinical document with the given mandatory properties
-	 * 
+	 *
 	 * @param mandatoryProperty
 	 *            if not all dependent properties are also included for a given property in this list, a given property may be not initialized
 	 * @return
 	 */
 	public void initialize(Collection<Property> mandatoryProperty) {
 		createClinicalDocument();
-		initialize(
-			umlClinicalDocument, aClinicalDocument, mandatoryProperty, new HashSet<Property>(),
+		initialize(umlClinicalDocument, aClinicalDocument, mandatoryProperty, new HashSet<Property>(),
 			Collections.<Property> emptyList(), null, null);
 	}
 
@@ -293,12 +304,10 @@ public class ClinicalDocumentCreator {
 		Property oldProperty = initialized.put(parent, parentProperty);
 		if (oldProperty != null) {
 			CDACommonUtils.addStatus(
-				statuses,
-				IStatus.WARNING,
-				PLUGIN,
-				5,
+				statuses, IStatus.WARNING, PLUGIN, 5,
 				"Double-initialization by " + CDACommonUtils.getUmlContext(parentProperty) + " and " +
-						CDACommonUtils.getUmlContext(oldProperty), parentProperty, oldProperty);
+						CDACommonUtils.getUmlContext(oldProperty),
+				parentProperty, oldProperty);
 		}
 
 		String templateId = CDACommonUtils.getTemplateId(parentClass);
@@ -327,7 +336,7 @@ public class ClinicalDocumentCreator {
 
 	/**
 	 * Creates another value for the given UML property besides the one already created (propertyInstance)
-	 * 
+	 *
 	 * @param property
 	 * @param propertyInstance
 	 * @return the new property value
@@ -336,9 +345,8 @@ public class ClinicalDocumentCreator {
 		initialized.remove(propertyInstance);
 		EObject parent = propertyInstance.eContainer();
 		Class parentClass = (Class) getInitializedByClass(parent);
-		return initializeProperty(
-			property, parent, Arrays.asList(property), new HashSet<Property>(), Collections.<Property> emptyList(),
-			parentClass, null);
+		return initializeProperty(property, parent, Arrays.asList(property), new HashSet<Property>(),
+			Collections.<Property> emptyList(), parentClass, null);
 	}
 
 	/**
@@ -353,7 +361,8 @@ public class ClinicalDocumentCreator {
 	 * @return
 	 */
 	protected Object initializeProperty(Property property, EObject parent, Collection<Property> mandatoryProperty,
-			Set<Property> prohibitedProperty, Collection<Property> diversifyProperty, Class parentClass, Object result) {
+			Set<Property> prohibitedProperty, Collection<Property> diversifyProperty, Class parentClass,
+			Object result) {
 		EStructuralFeature feature = getStructuralFeature(parent, property);
 		if (feature == null || prohibitedProperty.contains(property)) {
 			return result;
@@ -372,20 +381,24 @@ public class ClinicalDocumentCreator {
 					EDataType eDataType = (EDataType) feature.getEType();
 					Object def = null;
 					String dv = sampler.getSample();
-					if (dv == null)
+					if (dv == null) {
 						dv = CDACommonUtils.getDefault(property);
+					}
 					try {
-						if (parent.eGet(feature) instanceof FeatureMap)
+						if (parent.eGet(feature) instanceof FeatureMap) {
 							def = getValueForFeaturemap(feature, dv);
-						else if (dv != null)
+						} else if (dv != null) {
 							def = EcoreUtil.createFromString(eDataType, dv);
+						}
 					} catch (Exception e) {
 						CDACommonUtils.addStatus(
-							statuses, IStatus.ERROR, PLUGIN, 7, "Cannot parse default value \"" + dv +
-									"\" for property " + CDACommonUtils.getUmlContextDoubled(property) + " as " +
+							statuses, IStatus.ERROR, PLUGIN, 7,
+							"Cannot parse default value \"" + dv + "\" for property " +
+									CDACommonUtils.getUmlContextDoubled(property) + " as " +
 									(eDataType.getName() != null
 											? eDataType.getName()
-											: eDataType), e, property);
+											: eDataType),
+							e, property);
 					}
 					Object val = null;
 					if (!diversifyProperty.contains(property) && def != null) {
@@ -394,8 +407,9 @@ public class ClinicalDocumentCreator {
 					} else if (eDataType instanceof EEnum) {
 						EEnum eEnum = (EEnum) eDataType;
 						EEnumLiteral literal = eEnum.getEEnumLiteral(eEnum.getELiterals().size() - 1);
-						if (def != null && literal == def)
+						if (def != null && literal == def) {
 							literal = eEnum.getEEnumLiteral(eEnum.getELiterals().size() - 2);
+						}
 						val = setOrAdd(parent, feature, literal.getInstance());
 					} else if (eDataType.getInstanceClass() != null &&
 							eDataType.getInstanceClass().isAssignableFrom(String.class)) {
@@ -418,7 +432,8 @@ public class ClinicalDocumentCreator {
 							"Cannot initialize value for property " + CDACommonUtils.getUmlContextDoubled(property) +
 									" for datatype " + (eDataType.getName() != null
 											? eDataType.getName()
-											: eDataType), property);
+											: eDataType),
+							property);
 					}
 					if (mandatoryProperty.contains(property)) {
 						initialized.put(val, property);
@@ -439,8 +454,9 @@ public class ClinicalDocumentCreator {
 						EClass eClass = (EClass) feature.getEType();
 						Classifier cdaChildClass = CDACommonUtils.getCDAType(childClass);
 						if (cdaChildClass == null) {
-							CDACommonUtils.addStatus(statuses, IStatus.ERROR, PLUGIN, 9, "Found no CDA base class for " +
-									CDACommonUtils.getUmlContext(childClass), childClass);
+							CDACommonUtils.addStatus(
+								statuses, IStatus.ERROR, PLUGIN, 9,
+								"Found no CDA base class for " + CDACommonUtils.getUmlContext(childClass), childClass);
 							return result;
 						}
 						if (!cdaChildClass.getName().equals(eClass.getName())) {
@@ -468,8 +484,8 @@ public class ClinicalDocumentCreator {
 								eClass = (EClass) otherClass;
 							} else {
 								CDACommonUtils.addStatus(
-									statuses, IStatus.ERROR, PLUGIN, 10, "Cannot find a different class other than " +
-											eClass.getName(), property);
+									statuses, IStatus.ERROR, PLUGIN, 10,
+									"Cannot find a different class other than " + eClass.getName(), property);
 								return result;
 							}
 						}
@@ -540,13 +556,15 @@ public class ClinicalDocumentCreator {
 	}
 
 	public Type getInitializedByClass(Object object) {
-		if (object == aClinicalDocument)
+		if (object == aClinicalDocument) {
 			return umlClinicalDocument;
+		}
 		Property parentProperty = initialized.get(object);
-		if (parentProperty != null && object != null)
+		if (parentProperty != null && object != null) {
 			return parentProperty.getType();
-		else
+		} else {
 			return null;
+		}
 	}
 
 	public Property getInitializedByProperty(Object object) {
@@ -566,14 +584,16 @@ public class ClinicalDocumentCreator {
 						if (specifics == null) {
 							specificsOf.put(general, specifics = new ArrayList<Classifier>());
 						}
-						if (!specifics.contains(specific))
+						if (!specifics.contains(specific)) {
 							specifics.add(specific);
+						}
 					}
 				}
 			}
 		}
-		if (specificsOf.get(clazz) != null)
+		if (specificsOf.get(clazz) != null) {
 			return specificsOf.get(clazz);
+		}
 		return Collections.emptyList();
 	}
 
@@ -587,8 +607,10 @@ public class ClinicalDocumentCreator {
 		if (cdaProperty != null && parent != null) {
 			EStructuralFeature feature = parent.eClass().getEStructuralFeature(cdaProperty.getName());
 			if (feature == null) {
-				CDACommonUtils.addStatus(statuses, IStatus.WARNING, PLUGIN, 4, "No Java/Ecore mapping for property " +
-						CDACommonUtils.getUmlContextDoubled(property) + ")", property);
+				CDACommonUtils.addStatus(
+					statuses, IStatus.WARNING, PLUGIN, 4,
+					"No Java/Ecore mapping for property " + CDACommonUtils.getUmlContextDoubled(property) + ")",
+					property);
 			}
 			return feature;
 		}
@@ -602,12 +624,14 @@ public class ClinicalDocumentCreator {
 			FeatureMapUtil.addText(featureMap, (String) value);
 		} else if (feature.isMany()) {
 			List list = (List) eObject.eGet(feature);
-			if (value instanceof List)
+			if (value instanceof List) {
 				list.addAll((List) value);
-			else
+			} else {
 				list.add(value);
-		} else
+			}
+		} else {
 			eObject.eSet(feature, value);
+		}
 		return value;
 	}
 
@@ -621,8 +645,9 @@ public class ClinicalDocumentCreator {
 
 	public Property getTemplateIdProperty(Class clazz) {
 		Property result = CDACommonUtils.findAttribute(clazz, "templateId");
-		if (result != null)
+		if (result != null) {
 			result = CDACommonUtils.getCDAProperty(result);
+		}
 		return result;
 	}
 
@@ -635,7 +660,7 @@ public class ClinicalDocumentCreator {
 
 	/**
 	 * Removes trailing digits from the name
-	 * 
+	 *
 	 * @param name
 	 * @return
 	 */
@@ -645,7 +670,6 @@ public class ClinicalDocumentCreator {
 		}
 		return name;
 	}
-
 
 	public String toXMLString(EObject eObject, Class clazz) {
 		Map<String, Object> options = new HashMap<String, Object>();
@@ -672,8 +696,9 @@ public class ClinicalDocumentCreator {
 				rootTag = eObject.eContainingFeature().getName();
 			} else if (clazz != null && CDACommonUtils.getOverallPropertyReference(clazz) != null) {
 				Property cdaProperty = CDACommonUtils.getCDAProperty(CDACommonUtils.getOverallPropertyReference(clazz));
-				if (cdaProperty != null)
+				if (cdaProperty != null) {
 					rootTag = cdaProperty.getName();
+				}
 			}
 			xml = xml.replace("<" + eName, "<" + rootTag);
 			xml = xml.replace("</" + eName, "</" + rootTag);
@@ -688,7 +713,8 @@ public class ClinicalDocumentCreator {
 		}
 		// int index = xml.indexOf("<"+eName);
 		// xml = xml.substring(0, index) +
-		// "<ClinicalDocument xmlns:ext=\"http://ns.electronichealth.net.au/Ci/Cda/Extensions/3.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"urn:hl7-org:v3\">"
+		// "<ClinicalDocument xmlns:ext=\"http://ns.electronichealth.net.au/Ci/Cda/Extensions/3.0\"
+		// xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"urn:hl7-org:v3\">"
 		// + xml.substring(xml.indexOf(">", index) + 1);
 
 		return xml;
