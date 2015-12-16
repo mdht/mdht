@@ -1,13 +1,14 @@
 /*******************************************************************************
- * Copyright (c) 2012 Christian W. Damus and others.
+ * Copyright (c) 2012,2015 Christian W. Damus and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *     Sean Muir - extended support for business names
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.command;
 
@@ -20,6 +21,8 @@ import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.command.CopyCommand;
 import org.eclipse.emf.edit.command.InitializeCopyCommand;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 
 /**
  * A initialize-copy-command wrapper that stashes the copies of stereotype applications previously ensured by the {@link CreateCopyCommandWrapper} for
@@ -35,9 +38,13 @@ public class InitializeCopyCommandWrapper implements UMLCommandWrapper {
 
 		if (parameter.getOwner() instanceof Element) {
 			final Element element = (Element) parameter.getOwner();
-			final Collection<? extends EObject> stereotypeApplications = AddCommandWrapper.StereotypesCache.getStereotypeApplications(element);
+			final Collection<? extends EObject> stereotypeApplications = AddCommandWrapper.StereotypesCache.getStereotypeApplications(
+				element);
+			final String businessName = parameter.getOwner() instanceof NamedElement
+					? NamedElementUtil.getPropertyValue((NamedElement) parameter.getOwner(), "label")
+					: null;
 
-			if (!stereotypeApplications.isEmpty()) {
+			if (!stereotypeApplications.isEmpty() || businessName != null) {
 				final CopyCommand.Helper copyHelper = (CopyCommand.Helper) parameter.getValue();
 
 				class Impl extends CommandWrapper {
@@ -52,18 +59,26 @@ public class InitializeCopyCommandWrapper implements UMLCommandWrapper {
 						// and make sure that the CacheAdapter knows the stereotype application copies
 						EObject copy = copyHelper.getCopy(element);
 						if (copy != null) {
-							Collection<EObject> stereotypeCopies = new java.util.ArrayList<EObject>(
-								stereotypeApplications.size());
 
-							for (EObject next : stereotypeApplications) {
-								EObject stereotypeCopy = copyHelper.getCopy(next);
-								if (stereotypeCopy != null) {
-									stereotypeCopies.add(stereotypeCopy);
-								}
+							if (businessName != null) {
+								AddCommandWrapper.BusinessNamesCache.setBusinessNames(copy, businessName);
 							}
 
-							// put the stereotype copies where the add-command wrapper can find them at paste time
-							AddCommandWrapper.StereotypesCache.setStereotypeApplications(copy, stereotypeCopies);
+							if (stereotypeApplications.isEmpty()) {
+								Collection<EObject> stereotypeCopies = new java.util.ArrayList<EObject>(
+									stereotypeApplications.size());
+
+								for (EObject next : stereotypeApplications) {
+									EObject stereotypeCopy = copyHelper.getCopy(next);
+									if (stereotypeCopy != null) {
+										stereotypeCopies.add(stereotypeCopy);
+									}
+								}
+
+								// put the stereotype copies where the add-command wrapper can find them at paste time
+								AddCommandWrapper.StereotypesCache.setStereotypeApplications(copy, stereotypeCopies);
+							}
+
 						}
 					}
 				}
