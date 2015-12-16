@@ -476,6 +476,9 @@ public class TransformClassContent extends TransformAbstract {
 			transformerOptions.isIncludeTableView();
 			
 			String xmlGeneratorType = transformerOptions.getXmlGeneratorType();
+			if (xmlGeneratorType == null) {
+				xmlGeneratorType = "custom-if-data-present";
+			}
 
 			EObject eObject = "custom-only".equals(xmlGeneratorType) ? null : instanceGenerator.createInstance(umlClass, exampleDepth > 0
 					? exampleDepth
@@ -489,9 +492,9 @@ public class TransformClassContent extends TransformAbstract {
 				Collection<Property> props = Collections.emptyList();
 				EObject newObject = creator.initializeSnippet(umlClass, props);
 				if (newObject == null && eObject == null && !"original".equals(xmlGeneratorType)) {
-					writer.print("Error: Custom XML generator could not create XML sample\n");
+					writer.println("Error: Custom XML generator could not create XML sample");
 					for (ModelStatus status : statuses) {
-						writer.print("Error code: " + status.getCode() + ": " + status.getMessage() + "\n");
+						writer.println("Error code " + status.getCode() + ": " + status.getMessage());
 					}
 					writer.println("]]></codeblock>"); 
 					return;
@@ -500,6 +503,9 @@ public class TransformClassContent extends TransformAbstract {
 					String xml = creator.toXMLString(newObject, umlClass);
 					writer.write(xml);
 					writer.println("]]></codeblock>"); 
+					for (ModelStatus status : statuses) {
+						writer.println("<!--Error code " + status.getCode() + ": " + status.getMessage() + "-->");
+					}
 					return;
 				}
 			}
