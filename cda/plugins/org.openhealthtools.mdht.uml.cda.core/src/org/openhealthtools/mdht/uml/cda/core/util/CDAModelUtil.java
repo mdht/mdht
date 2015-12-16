@@ -690,6 +690,8 @@ public class CDAModelUtil {
 
 		message.append(multiplicityElementToggle(property, markup, elementName));
 
+		message.append(openOrClosed(property));
+
 		appendConformanceRuleIds(association, message, markup);
 
 		if (appendNestedConformanceRules && property.getType() instanceof Class) {
@@ -2216,8 +2218,8 @@ public class CDAModelUtil {
 			elementName = "entry";
 		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else
-			if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
+				CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
 		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"ParticipantRole".equals(cdaTargetClass.getName())) {
