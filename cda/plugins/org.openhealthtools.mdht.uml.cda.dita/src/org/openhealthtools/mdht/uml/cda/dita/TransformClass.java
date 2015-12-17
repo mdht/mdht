@@ -67,11 +67,12 @@ public class TransformClass extends TransformAbstract {
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
 		if (cdaClass != null) {
 
-			if (transformerOptions.isIncludeTableView()) {
-				writer.println(
-					"<section conref=\"generated/_" + normalizedClassName + ".dita#classId/tableconformance\">");
-				writer.println("</section>");
-			}
+			// if (transformerOptions.isIncludeTableView()) {
+			writer.println(
+				"<section audience=\"tableconformance\"  conref=\"generated/_" + normalizedClassName +
+						".dita#classId/tableconformance\">");
+			writer.println("</section>");
+			// }
 
 			writer.println("<p> </p>"); // need a blank line before example code block
 			writer.println("<p><b>" + TransformAbstract.getPublicationName(umlClass) + " example</b></p>");
