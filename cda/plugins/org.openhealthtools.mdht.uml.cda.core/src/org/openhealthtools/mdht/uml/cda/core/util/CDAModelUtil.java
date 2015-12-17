@@ -1112,11 +1112,6 @@ public class CDAModelUtil {
 						hadSideEffect |= sb.length() > len;
 					}
 					if (hadSideEffect) {
-						System.out.println(cdaProperty.upperBound() > 1);
-						System.out.println(property.getType() instanceof Class);
-						System.out.println(property.getType() instanceof Class &&
-								CDAModelUtil.isInlineClass((Class) property.getType()));
-
 						if (cdaProperty.upperBound() != 1 && property.getType() instanceof Class &&
 								CDAModelUtil.isInlineClass((Class) property.getType())) {
 							message.append(openOrClosed(property) + " " + sb);
