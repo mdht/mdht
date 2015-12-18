@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>org.openhealthtools.mdht</groupId>
 		<artifactId>root</artifactId>
-		<version>2.5.13-SNAPSHOT</version>
+		<version>2.5.15</version>
 		<relativePath>../../</relativePath>
 	</parent>
 
@@ -147,5 +147,4 @@
 			</plugin>
 		</plugins>
 	</build>
-<version>2.5.15-SNAPSHOT</version>
 </project>
