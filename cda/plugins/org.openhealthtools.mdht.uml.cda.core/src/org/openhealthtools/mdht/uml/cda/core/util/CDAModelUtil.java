@@ -1147,7 +1147,7 @@ public class CDAModelUtil {
 
 		// if there is a stereotype name, use it
 		String name = getStereotypeName(cdaProperty);
-		if (name != null) {
+		if (name != null && !name.isEmpty()) {
 			return name;
 		}
 
