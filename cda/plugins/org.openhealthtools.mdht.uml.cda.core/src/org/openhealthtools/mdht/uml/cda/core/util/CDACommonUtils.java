@@ -911,11 +911,7 @@ public class CDACommonUtils {
 	}
 
 	public static String getUmlContext(Property property) {
-		if (getContainerReference(property) instanceof Class) {
-			Class class1 = getClassReference(property);
-			return getUmlContext(class1) + "/" + property.getName();
-		}
-		return property.getName();
+		return property.getQualifiedName();
 	}
 
 	public static String getUmlContextDoubled(Property property) {
@@ -995,10 +991,9 @@ public class CDACommonUtils {
 				result.add(prop);
 		}
 		addInheritedPrivateAttributes(cls, result, propertyNames);
-		List<Property> redefinedProperties = new ArrayList<Property>();
+		Set<Property> redefinedProperties = new HashSet<Property>();
 		for (Property prop : result) {
-			if (getCDAProperty(prop) != null && getCDAProperty(prop) != prop)
-				redefinedProperties.add(getCDAProperty(prop));
+			redefinedProperties.addAll(prop.getRedefinedProperties());
 		}
 		result.removeAll(redefinedProperties);
 		return result;
@@ -1045,6 +1040,12 @@ public class CDACommonUtils {
 			}
 		}
 		return null;
+	}
+
+	public static String getCodeSystem(CodeSystemConstraint codeSystemConstraint) {
+		if (codeSystemConstraint.getReference() != null)
+			return codeSystemConstraint.getReference().getIdentifier();
+		return codeSystemConstraint.getIdentifier();
 	}
 
 }
