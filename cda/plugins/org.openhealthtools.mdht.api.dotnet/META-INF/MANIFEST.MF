@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Dotnet
 Bundle-SymbolicName: org.openhealthtools.mdht.api.dotnet;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 2.5.15.qualifier
 Bundle-Activator: org.openhealthtools.mdht.api.dotnet.Activator
 Require-Bundle: org.eclipse.ocl.uml,
  org.eclipse.ocl.ecore,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.openhealthtools.mdht.traceabilitytables.feature"
+      id="org.openhealthtools.mdht.traceability.feature"
       label="%featureName"
-      version="1.0.0.qualifier"
+      version="2.5.15.qualifier"
       provider-name="%featureProvider">
 
    <description url="http://mdht.projects.openhealthtools.org">

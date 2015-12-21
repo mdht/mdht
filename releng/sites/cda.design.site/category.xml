@@ -15,16 +15,16 @@
    <feature url="org.openhealthtools.mdht.uml.cda.tooling_2.5.15.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.tooling" version="2.5.15.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature> 
-   <feature url="org.openhealthtools.mdht.csharp.5.13.qualifier.jar" id="org.openhealthtools.mdht.csharp" version="2.5.13.qualifier">
+   <feature url="org.openhealthtools.mdht.csharp_2.5.15.qualifier.jar" id="org.openhealthtools.mdht.csharp.feature" version="2.5.15.qualifier">
+      <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
+   </feature>
+   <feature url="org.openhealthtools.mdht.java_2.5.15.qualifier.jar" id="org.openhealthtools.mdht.java.feature" version="2.5.15.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature> 
-   <feature url="org.openhealthtools.mdht.java.5.13.qualifier.jar" id="org.openhealthtools.mdht.java" version="2.5.13.qualifier">
+   <feature url="org.openhealthtools.mdht.schematron_2.5.15.qualifier.jar" id="org.openhealthtools.mdht.schematron.feature" version="2.5.15.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature> 
-   <feature url="org.openhealthtools.mdht.schematron.5.13.qualifier.jar" id="org.openhealthtools.mdht.schematron" version="2.5.13.qualifier">
-      <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
-   </feature> 
-   <feature url="org.openhealthtools.mdht.traceability.5.13.qualifier.jar" id="org.openhealthtools.mdht.traceability" version="2.5.13.qualifier">
+   <feature url="org.openhealthtools.mdht.traceability_2.5.15.qualifier.jar" id="org.openhealthtools.mdht.traceability.feature" version="2.5.15.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature> 
    <category-def name="org.openhealthtools.mdht.uml.cda.basic.cat" label="MDHT CDA Design"/>
