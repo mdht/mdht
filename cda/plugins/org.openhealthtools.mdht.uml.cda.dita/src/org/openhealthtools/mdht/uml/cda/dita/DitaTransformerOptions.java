@@ -62,6 +62,23 @@ public class DitaTransformerOptions {
 
 	private boolean includeVocabularyConstraints = false;
 
+	private boolean reset = false;
+
+	/**
+	 * @return the reset
+	 */
+	public boolean isReset() {
+		return reset;
+	}
+
+	/**
+	 * @param reset
+	 *            the reset to set
+	 */
+	public void setReset(boolean reset) {
+		this.reset = reset;
+	}
+
 	private int exampleDepth;
 
 	/**
@@ -141,9 +158,15 @@ public class DitaTransformerOptions {
 	 * The value of the noVerticalLinesInTables attribute in the dita-transform ant task xml
 	 * If set, use <br>
 	 *
-	 * {@code <table frame="topbot" rowsep="1">} <br>
+	 * {@code
+	 *
+	<table frame="topbot" rowsep="1">
+	 * } <br>
 	 * instead of <br>
-	 * {@code <table frame="all" rowsep="1" colsep="1"> }
+	 * {@code
+	 *
+	<table frame="all" rowsep="1" colsep="1">
+	 *  }
 	 *
 	 * @return appendConformanceRules
 	 */

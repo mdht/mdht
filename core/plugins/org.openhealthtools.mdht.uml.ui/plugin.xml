@@ -684,14 +684,14 @@
             class="org.openhealthtools.mdht.uml.ui.propertytesters.UmlElement"
             id="org.eclipse.emf.edit.provider.DelegatingWrapperItemProvider"
             namespace="org.openhealthtools.mdht.uml.ui"
-            properties="instanceOf, isLocalised, fromLocal,isAnAssociation"
+            properties="instanceOf, isLocalised, fromLocal,isAnAssociation, isProperty,isNamedElement"
             type="org.eclipse.emf.edit.provider.DelegatingWrapperItemProvider">
       </propertyTester>
       <propertyTester
             class="org.openhealthtools.mdht.uml.ui.propertytesters.UmlElement"
             id="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             namespace="org.openhealthtools.mdht.uml.ui"
-            properties="instanceOf, isLocalised, fromLocal,isAnAssociation"
+            properties="instanceOf, isLocalised, fromLocal,isAnAssociation, isProperty,isNamedElement"
             type="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem">
       </propertyTester>
    </extension>

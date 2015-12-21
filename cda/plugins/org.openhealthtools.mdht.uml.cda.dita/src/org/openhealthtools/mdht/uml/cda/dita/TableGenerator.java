@@ -17,9 +17,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -31,6 +33,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
@@ -299,6 +302,7 @@ public class TableGenerator {
 
 		org.eclipse.uml2.uml.Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
 		if (cdaClass == null || umlClass.isAbstract()) {
+
 			return "";
 		}
 
@@ -306,13 +310,16 @@ public class TableGenerator {
 
 		final EClass eClass = getEClass(umlClass);
 
+		String startingXPath = "";
+
+		EObject eObject = null;
+
 		if (eClass == null) {
-			return "";
+
+			return null;
 		}
 
 		ClinicalDocument doc = org.openhealthtools.mdht.uml.cda.CDAFactory.eINSTANCE.createClinicalDocument();
-
-		EObject eObject;
 
 		eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
 
@@ -329,7 +336,6 @@ public class TableGenerator {
 		} catch (InvocationTargetException e) {
 		}
 
-		String startingXPath = "";
 		if (CDAModelUtil.isSection(umlClass) && CDAModelUtil.getCDAClass(umlClass) != null) {
 			doc.addSection((Section) eObject);
 			startingXPath = getPath(eObject);
@@ -348,22 +354,36 @@ public class TableGenerator {
 			}
 		}
 
-		tableBuffer.append(
-			"<section id=\"tableconformance\"><p><table frame=\"all\" scale=\"80\" pgwide=\"1\" ><tgroup cols=\"8\" align=\"left\" colsep = \"1\" rowsep = \"1\" > ");
+		/*
+		 * XPath
+		 *
+		 * Card.
+		 *
+		 * Verb
+		 *
+		 * Data Type
+		 *
+		 * CONF#
+		 *
+		 * Fixed Value
+		 */
 
-		tableBuffer.append("<colspec colname=\"col0\" colnum=\"0\" />");
-		tableBuffer.append("<colspec colname=\"col1\" colnum=\"1\" />");
-		tableBuffer.append("<colspec colname=\"col2\" colnum=\"2\" />");
-		tableBuffer.append("<colspec colname=\"col3\" colnum=\"3\" />");
-		tableBuffer.append("<colspec colname=\"col4\" colnum=\"4\" />");
-		tableBuffer.append("<colspec colname=\"col5\" colnum=\"5\" />");
-		tableBuffer.append("<colspec colname=\"col6\" colnum=\"6\" />");
-		tableBuffer.append("<colspec colname=\"col7\" colnum=\"7\" />");
+		tableBuffer.append(
+			"<section id=\"tableconformance\"><p><table frame=\"all\" scale=\"80\" pgwide=\"1\" ><tgroup cols=\"6\" align=\"left\" colsep = \"1\" rowsep = \"1\" > ");
+
+		tableBuffer.append("<colspec colname=\"col0\" colnum=\"0\" colwidth=\"3*\"  />");
+		tableBuffer.append("<colspec colname=\"col1\" colnum=\"1\" colwidth=\"1*\"  />");
+		tableBuffer.append("<colspec colname=\"col2\" colnum=\"2\" colwidth=\"1*\"  />");
+		tableBuffer.append("<colspec colname=\"col3\" colnum=\"3\" colwidth=\"2*\"  />");
+		tableBuffer.append("<colspec colname=\"col4\" colnum=\"4\" colwidth=\"2*\"  />");
+		tableBuffer.append("<colspec colname=\"col5\" colnum=\"5\" colwidth=\"3*\"  />");
+		// tableBuffer.append("<colspec colname=\"col6\" colnum=\"6\" />");
+		// tableBuffer.append("<colspec colname=\"col7\" colnum=\"7\" />");
 
 		tableBuffer.append(
-			"<thead> <row><entry namest=\"col0\" nameend=\"col7\" >" + umlClass.getQualifiedName() +
-					"</entry>  </row>  <row><entry namest=\"col0\" nameend=\"col7\" >" + startingXPath + "/" +
-					"</entry>  </row>  <row><entry>Name</entry><entry>XPath</entry><entry>Cardinality</entry><entry>Severity</entry><entry>Nullable</entry><entry>Data Type</entry><entry>Conformance</entry><entry>Value(s)</entry></row></thead><tbody>");
+			"<thead> <row><entry namest=\"col0\" nameend=\"col5\" >" + umlClass.getQualifiedName() +
+					"</entry>  </row>  <row><entry namest=\"col0\" nameend=\"col5\" >" + startingXPath + "/" +
+					"</entry>  </row> <row><entry>XPath</entry><entry>Card.</entry><entry>Verb</entry><entry>Data Type</entry><entry>CONF#</entry><entry>Fixed Value</entry></row></thead><tbody>");
 
 		Hashtable<String, Element> elements = new Hashtable<String, Element>();
 
@@ -381,6 +401,10 @@ public class TableGenerator {
 
 				if (!(o2 instanceof Property)) {
 					return +1;
+				}
+
+				if (eClass == null) {
+					return 0;
 				}
 
 				Property leftProperty = (Property) o1;
@@ -468,17 +492,17 @@ public class TableGenerator {
 
 			boolean isAttribute = feature instanceof EAttribute;
 
-			String businessName = NamedElementUtil.getBusinessName(property);
+			NamedElementUtil.getBusinessName(property);
 
-			if (businessName.compareTo(property.getName()) == 0) {
-				tableBuffer.append(String.format("<row><entry>%s</entry>", property.getName()));
-			} else {
-				tableBuffer.append(String.format("<row><entry>%s ( %s )</entry>", businessName, property.getName()));
-
-			}
+			// if (businessName.compareTo(property.getName()) == 0) {
+			// tableBuffer.append(String.format("<row><entry>%s</entry>", property.getName()));
+			// } else {
+			// tableBuffer.append(String.format("<row><entry>%s ( %s )</entry>", businessName, property.getName()));
+			//
+			// }
 
 			String relativePath = null;
-			if (eObject instanceof Section && CDAModelUtil.isClinicalStatement(property.getType())) {
+			if (eObject != null && eObject instanceof Section && CDAModelUtil.isClinicalStatement(property.getType())) {
 
 				Section section = (Section) eObject;
 
@@ -559,38 +583,58 @@ public class TableGenerator {
 
 			}
 
-			// (Section) eObject
+			// Xpath
 
 			if (relativePath != null) {
-				tableBuffer.append(String.format("<entry>%s</entry>", relativePath));
+				tableBuffer.append(String.format("<row><entry>%s</entry>", relativePath));
 			} else {
-				tableBuffer.append(String.format("<entry>%s</entry>", (isAttribute
+				tableBuffer.append(String.format("<row><entry>%s</entry>", (isAttribute
 						? "@"
 						: "") + property.getName()));
 			}
 
+			// Cardinality
 			tableBuffer.append(String.format("<entry>%s..%s</entry>", property.getLower(), (property.getUpper() >= 0
 					? property.getUpper()
 					: "*")));
 
 			Validation validation = getValidation((Class) element.getOwner(), property.getName());
 
+			// Verb
 			tableBuffer.append(String.format("<entry>%s</entry>", (validation != null
 					? getSeverity(validation.getSeverity())
 					: "")));
 
-			if (isAttribute) {
-				tableBuffer.append(String.format("<entry>%s</entry>", "NO"));
-			} else {
-				tableBuffer.append(String.format("<entry>%s</entry>", (validation != null
-						? (validation.isMandatory()
-								? "NO"
-								: "YES")
-						: "YES")));
+			// if (isAttribute) {
+			// tableBuffer.append(String.format("<entry>%s</entry>", "NO"));
+			// } else {
+			// tableBuffer.append(String.format("<entry>%s</entry>", (validation != null
+			// ? (validation.isMandatory()
+			// ? "NO"
+			// : "YES")
+			// : "YES")));
+			//
+			// }
+
+			// Data Type
+
+			String datatype = "";
+
+			if (property.getType() != null) {
+				if (property.getType() instanceof Class) {
+					Class cdaDatatype = CDAModelUtil.getCDADatatype((Classifier) property.getType());
+					if (cdaDatatype != null) {
+						datatype = cdaDatatype.getName();
+					} else {
+						datatype = property.getType().getName();
+					}
+				} else {
+					datatype = property.getType().getName();
+				}
 
 			}
 
-			tableBuffer.append(String.format("<entry>%s</entry>", getDataTypeName(property.getType().getName())));
+			tableBuffer.append(String.format("<entry>%s</entry>", datatype));
 
 			StringBuffer conformanceRules = new StringBuffer();
 
@@ -600,6 +644,7 @@ public class TableGenerator {
 				}
 			}
 
+			// CONF#
 			tableBuffer.append(String.format("<entry>%s</entry>", conformanceRules.toString()));
 
 			tableBuffer.append(
@@ -630,6 +675,15 @@ public class TableGenerator {
 	}
 
 	private static class AssociationSwitch extends UMLSwitch<String> {
+
+		int getRowCount() {
+			if (containsSet.size() > containedBySet.size()) {
+				return containsSet.size();
+			} else {
+				return containedBySet.size();
+			}
+
+		}
 
 		/**
 		 * @return the containedBy
@@ -668,7 +722,25 @@ public class TableGenerator {
 
 		ArrayList<Type> containedBy = new ArrayList<Type>();
 
+		Set<Type> containedBySet = new HashSet<Type>();
+
 		ArrayList<Type> contains = new ArrayList<Type>();
+
+		Set<Type> containsSet = new HashSet<Type>();
+
+		private void addContains(Type type) {
+
+			if (containsSet.add(type)) {
+				contains.add(type);
+			}
+
+		}
+
+		private void addContainedBy(Type type) {
+			if (containedBySet.add(type)) {
+				containedBy.add(type);
+			}
+		}
 
 		/*
 		 * (non-Javadoc)
@@ -697,13 +769,13 @@ public class TableGenerator {
 
 			if (from != null && from.getQualifiedName().equals(umlClass.getQualifiedName())) {
 				if (to instanceof Class && CDAModelUtil.getTemplateId((Class) to) != null) {
-					contains.add(to);
+					addContains(to);
 				}
 			}
 
 			if (to != null && to.getQualifiedName().equals(umlClass.getQualifiedName())) {
 				if (from instanceof Class && CDAModelUtil.getTemplateId((Class) from) != null) {
-					containedBy.add(from);
+					addContainedBy(from);
 				}
 			}
 
@@ -770,11 +842,7 @@ public class TableGenerator {
 
 		associationSwitch.sort();
 
-		int maxRows = associationSwitch.getContainedBy().size();
-
-		if (associationSwitch.getContains().size() > maxRows) {
-			maxRows = associationSwitch.getContains().size();
-		}
+		int maxRows = associationSwitch.getRowCount();
 
 		if (maxRows > 0) {
 			for (int rowCtr = 0; rowCtr < maxRows; rowCtr++) {
