@@ -150,7 +150,10 @@ public class CDAModelUtil {
 
 		for (Classifier parent : templateProperty.getClass_().allParents()) {
 			for (Property inherited : parent.getAttributes()) {
-				if (inherited.getName() != null && inherited.getName().equals(templateProperty.getName()) &&
+				Property cdaProperty = namedProperty(templateProperty);
+				if (cdaProperty == null)
+					continue;
+				if (inherited.getName() != null && inherited.getName().equals(getCDAName(cdaProperty)) &&
 						(isCDAModel(inherited) || isDatatypeModel(inherited))) {
 					return inherited;
 				}
@@ -932,18 +935,7 @@ public class CDAModelUtil {
 
 		String propertyPrefix = getNameSpacePrefix(property);
 
-		// Try to get CDA Name
-		IExtensionRegistry reg = Platform.getExtensionRegistry();
-		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.cda.core.TransformProvider");
-		IExtension[] extensions = ep.getExtensions();
-		TransformProvider newContributor = null;
-		Property cdaProperty = null;
-		try {
-			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension("transform-class");
-			cdaProperty = newContributor.GetTransform(property);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		Property cdaProperty = namedProperty(property);
 
 		String propertyCdaName = null;
 		if (cdaProperty != null) {
@@ -1127,6 +1119,26 @@ public class CDAModelUtil {
 		}
 
 		return message.toString();
+	}
+
+	/**
+	 * @param property
+	 * @return
+	 */
+	private static Property namedProperty(Property property) {
+		// Try to get CDA Name
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.cda.core.TransformProvider");
+		IExtension[] extensions = ep.getExtensions();
+		TransformProvider newContributor = null;
+		Property cdaProperty = null;
+		try {
+			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension("transform-class");
+			cdaProperty = newContributor.GetTransform(property);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return cdaProperty;
 	}
 
 	/**
