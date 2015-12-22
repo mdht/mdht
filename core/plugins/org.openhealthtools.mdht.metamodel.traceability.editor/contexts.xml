@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<contexts>
+	<context id="OverviewTable" title="Overview Table">
+		<description>Choose an appropriate topic explaining the Overview table below.</description>
+		<topic href="help/table_types.html#overview" label="Overview Table"/>
+		<topic href="help/generic_table.html" label="Traceability tables in general"/>
+	</context>
+	<context id="IRViewTable" title="IR View Table">
+		<description>Choose an appropriate topic explaining the IR View table below.</description>
+		<topic href="help/table_types.html#irview" label="IR View Table"/>
+		<topic href="help/generic_table.html" label="Traceability tables in general"/>
+	</context>
+	<context id="SCSViewTable" title="SCS View Table">
+		<description>Choose an appropriate topic explaining the SCS View table below.</description>
+		<topic href="help/table_types.html#scsview" label="SCS View Table"/>
+		<topic href="help/generic_table.html" label="Traceability tables in general"/>
+	</context>
+	<context id="CDAViewTable" title="CDA View Table">
+		<description>Choose an appropriate topic explaining the CDA View table below.</description>
+		<topic href="help/table_types.html#cdaview" label="CDA View Table"/>
+		<topic href="help/generic_table.html" label="Traceability tables in general"/>
+	</context>
+	<context id="PDFViewTable" title="PDF View Table">
+		<description>Choose an appropriate topic explaining the PDF View table below.</description>
+		<topic href="help/table_types.html#pdfview" label="PDF View Table"/>
+		<topic href="help/generic_table.html" label="Traceability tables in general"/>
+	</context>
+	<context id="FanOutViewTable" title="Fan-Out View Table">
+		<description>Choose an appropriate topic explaining the Fan-Out View table below.</description>
+		<topic href="help/table_types.html#fanoutview" label="Fan-Out View Table"/>
+		<topic href="help/generic_table.html" label="Traceability tables in general"/>
+	</context>
+	<context id="EMFTree" title="EMF Tree View">
+		<description>Choose an appropriate topic explaining the EMF Tree below.</description>
+		<topic href="help/emftree.html" label="EMF Tree"/>
+	</context>
+	<context id="tablecustomization" title="Table customization">
+		<description>Choose an appropriate topic explaining the table customization below.</description>
+		<topic href="help/generic_table.html#tablecustomization" label="Table customization"/>
+	</context>
+	<context id="tracedifffiltering" title="Trace difference filtering">
+		<description>Choose an appropriate topic explaining the Trace difference filtering below.</description>
+		<topic href="help/generic_table.html#tracedifffiltering" label="Trace difference filtering"/>
+	</context>
+	<context id="filterexpression" title="Filter expression">
+		<description>Choose an appropriate topic explaining the Filter expression below.</description>
+		<topic href="help/generic_table.html#filterexpression" label="Filter expression"/>
+	</context>
+	<context id="searchexpression" title="Search expression">
+		<description>Choose an appropriate topic explaining the Search expression below.</description>
+		<topic href="help/generic_table.html#searchexpression" label="Search expression"/>
+	</context>
+</contexts>

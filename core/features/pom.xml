@@ -19,6 +19,7 @@
 		<!-- <module>org.openhealthtools.mdht.test-feature</module> -->
 		<module>org.openhealthtools.mdht.uml-feature</module>
 		<!-- <module>org.openhealthtools.mdht.uml.hdf-feature</module> -->
+		<module>org.openhealthtools.mdht.traceability.feature</module>
 	</modules>
 	<build>
 		<plugins>

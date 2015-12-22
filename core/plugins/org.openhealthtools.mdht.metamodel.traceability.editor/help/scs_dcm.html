@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>SCS DCM Column</title>
+    </head>
+    <body>
+	<h1>SCS DCM Column </h1>
+	<h2>Description</h2>
+	<p> This is an experimental feature to demonstrate the ability to locate any DCMs that are re-used in the SCS in eXist, and to open the equivalent web page. Currently this rendering of the DCM does not show the original cardinalities, only the relationships to other DCMs referenced within the structure, and so it is not a useful tool for QA Testers who were presumed to be the primary users of this feature.
+        </p> 
+	<h2>Key Status</h2>
+	<p> N/A
+	</p>
+	<h2>Technology Space</h2>
+        <p> eXist CSS rendered XML logical model structure file
+        </p> 
+	<h2>Cardinality</h2>
+        <p> <a href="scs_data_component.html">SCS: Data Component</a> maps 1 to 0..1 SCS: DCM
+        </p> 
+	<h2>Attribute of</h2>
+        <p> <a href="scs_data_component.html">SCS: Data Component</a>
+        </p> 
+        <h2>Cell Navigation Links To</h2>
+        <p> The eXist web page that renders the DCM using a human-readable stype sheet. The page is located via the concatenation of the folowing paths:
+	<b> http://cidb.cti:8060/exist/rest/ </b> [Path to DCM] [DCM Name]-Structure.xml?_xsl=/db/nehta/ndsm/dev/resources/stylesheets/nehta-structure2svg.xsl&amp;_cache=no
+        </p>
+    </body>
+</html>

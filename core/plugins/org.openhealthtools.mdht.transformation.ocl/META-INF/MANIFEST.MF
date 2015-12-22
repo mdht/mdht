@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ocl
+Bundle-SymbolicName: org.openhealthtools.mdht.transformation.ocl
+Bundle-Version: 2.5.15.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.uml2.uml;visibility:=reexport,
+ com.google.guava;visibility:=reexport,
+ org.eclipse.emf.mapping,
+ org.eclipse.emf.mapping.ecore2xml,
+ org.apache.commons.lang;visibility:=reexport,
+ org.eclipse.core.resources,
+ org.eclipse.ocl.ecore,
+ org.eclipse.ocl.uml
+Export-Package: org.openhealthtools.mdht.transformation.ocl

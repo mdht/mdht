@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_LROiAC6eEeWWyt46-8Ab6Q" name="SchematronValidation" URI="http://" metaclassReference="_Q1cBkC7XEeWWyt46-8Ab6Q _Q1cBkS7XEeWWyt46-8Ab6Q">
+  <eAnnotations xmi:id="_wQgD0C7jEeWWyt46-8Ab6Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_wUJCkDDkEeWY9JiCabfOAw" name="SchematronValidation" nsURI="http://" nsPrefix="SchematronValidation">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_wUJCkTDkEeWY9JiCabfOAw" name="SchematronSupport">
+        <eAnnotations xmi:id="_wUJCkjDkEeWY9JiCabfOAw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_uUL0AC7WEeWWyt46-8Ab6Q"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_wUJCkzDkEeWY9JiCabfOAw" name="base_Package" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_wUJClTDkEeWY9JiCabfOAw" name="errorMessageTemplate" ordered="false" lowerBound="1" defaultValueLiteral="Error: {clinical-document-business-name} - {pdf-section-number} {uml-business-name}{newline}Conformance: {conformance-rule}{newline}Analysis: {analysis}{newline}Validation message: {custom-validation-message}">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_wUJClzDkEeWY9JiCabfOAw" name="xpathResourceRowTemplate" ordered="false" lowerBound="1" defaultValueLiteral="{level-2-pdf-section-number}{tab}{level-2-pdf-section-name}{tab}{pdf-section-number}{tab}{conformance-rule}{tab}{uml-context-class-business-name}.{uml-business-name}{tab}{uml-multiplicity}{tab}{data-element-level}{tab}{full-xpath}{tab}{xpath-test}{tab}{xpath-context}[{xpath-test}]{tab}{cda-type}{tab}{clinical-document-code}{tab}{clinical-document-code-system}{tab}{clinical-document-display-name}{newline}">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_wUJCmTDkEeWY9JiCabfOAw" name="summaryRowTemplate" ordered="false" lowerBound="1" defaultValueLiteral="&lt;tr>&lt;td>{level-2-pdf-section-number}&lt;/td>&lt;td>{level-2-pdf-section-name}&lt;/td>&lt;td>{pdf-section-number}&lt;/td>&lt;td>{conformance-rule}&lt;/td>&lt;td>{uml-context-class-business-name}.{uml-business-name}&lt;/td>&lt;td>{uml-multiplicity}&lt;/td>&lt;td>{data-element-level}&lt;/td>&lt;td>{full-xpath}&lt;/td>&lt;td>{xpath-test}&lt;/td>&lt;td>{xpath-context}[{xpath-test}]&lt;/td>&lt;td>{cda-type}&lt;/td>&lt;td>{clinical-document-code}&lt;/td>&lt;td>{clinical-document-code-system}&lt;/td>&lt;td>{clinical-document-display-name}&lt;/td>&lt;td>{uml-context}&lt;/td>&lt;td>{test-file-anchors}&lt;/td>&lt;/tr>{newline}">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_wUJCmzDkEeWY9JiCabfOAw" name="fileNameTemplate" ordered="false" lowerBound="1" defaultValueLiteral="{clinical-document-business-name}_{data-element-level-abbr}_{uml-context-class-business-name}_{uml-element-name}_{pdf-section-number}_mdht">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_wUJCnTDkEeWY9JiCabfOAw" name="entIdTemplate" ordered="false" lowerBound="1" defaultValueLiteral="ent-{clinical-document-business-name}_{data-element-level-abbr}_{uml-context-class-business-name}_{uml-element-name}_{pdf-section-number}-error_mdht">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_wUJCnzDkEeWY9JiCabfOAw" name="patternIdTemplate" ordered="false" lowerBound="1" defaultValueLiteral="p-{clinical-document-business-name}_{data-element-level-abbr}_{uml-context-class-business-name}_{uml-element-name}_{pdf-section-number}-error_mdht">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_wUJCoTDkEeWY9JiCabfOAw" name="xmlTestFilenameTemplate" ordered="false" lowerBound="1" defaultValueLiteral="{document-name-abbr}_{data-element-level-abbr}_{uml-context-class-business-name}_{uml-business-name}_{pdf-section-number}_{test-type}_mdht">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_wUJCozDkEeWY9JiCabfOAw" name="SchematronConfig">
+        <eAnnotations xmi:id="_wUJCpDDkEeWY9JiCabfOAw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_UdaN0C7XEeWWyt46-8Ab6Q"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_wUJCpTDkEeWY9JiCabfOAw" name="base_NamedElement" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_wUJCpzDkEeWY9JiCabfOAw" name="noSchematronGen" ordered="false" lowerBound="1" defaultValueLiteral="false">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//Boolean"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_wUJCqTDkEeWY9JiCabfOAw" name="validationMessageTemplate" ordered="false" lowerBound="1" defaultValueLiteral="n/a">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:id="_m3jqYC7WEeWWyt46-8Ab6Q">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_m4FO0C7WEeWWyt46-8Ab6Q">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_Q1cBkC7XEeWWyt46-8Ab6Q">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+  </elementImport>
+  <elementImport xmi:id="_Q1cBkS7XEeWWyt46-8Ab6Q">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_uUL0AC7WEeWWyt46-8Ab6Q" name="SchematronSupport">
+    <ownedAttribute xmi:id="_SuQkYC7XEeWWyt46-8Ab6Q" name="base_Package" association="_SuP9UC7XEeWWyt46-8Ab6Q">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_iaqy4C7XEeWWyt46-8Ab6Q" name="errorMessageTemplate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_Rb5N8DDiEeWY9JiCabfOAw" value="Error: {clinical-document-business-name} - {pdf-section-number} {uml-business-name}{newline}Conformance: {conformance-rule}{newline}Analysis: {analysis}{newline}Validation message: {custom-validation-message}"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_8IO9QC7XEeWWyt46-8Ab6Q" name="xpathResourceRowTemplate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_XAFPQDDiEeWY9JiCabfOAw" value="{level-2-pdf-section-number}{tab}{level-2-pdf-section-name}{tab}{pdf-section-number}{tab}{conformance-rule}{tab}{uml-context-class-business-name}.{uml-business-name}{tab}{uml-multiplicity}{tab}{data-element-level}{tab}{full-xpath}{tab}{xpath-test}{tab}{xpath-context}[{xpath-test}]{tab}{cda-type}{tab}{clinical-document-code}{tab}{clinical-document-code-system}{tab}{clinical-document-display-name}{newline}"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_MyrhUC7YEeWWyt46-8Ab6Q" name="summaryRowTemplate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_kLF4ADDiEeWY9JiCabfOAw" value="&lt;tr>&lt;td>{level-2-pdf-section-number}&lt;/td>&lt;td>{level-2-pdf-section-name}&lt;/td>&lt;td>{pdf-section-number}&lt;/td>&lt;td>{conformance-rule}&lt;/td>&lt;td>{uml-context-class-business-name}.{uml-business-name}&lt;/td>&lt;td>{uml-multiplicity}&lt;/td>&lt;td>{data-element-level}&lt;/td>&lt;td>{full-xpath}&lt;/td>&lt;td>{xpath-test}&lt;/td>&lt;td>{xpath-context}[{xpath-test}]&lt;/td>&lt;td>{cda-type}&lt;/td>&lt;td>{clinical-document-code}&lt;/td>&lt;td>{clinical-document-code-system}&lt;/td>&lt;td>{clinical-document-display-name}&lt;/td>&lt;td>{uml-context}&lt;/td>&lt;td>{test-file-anchors}&lt;/td>&lt;/tr>{newline}"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_pUmpsC7YEeWWyt46-8Ab6Q" name="fileNameTemplate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_IMQn4DDdEeWY9JiCabfOAw" value="{clinical-document-business-name}_{data-element-level-abbr}_{uml-context-class-business-name}_{uml-element-name}_{pdf-section-number}_mdht"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_CUjgIC7ZEeWWyt46-8Ab6Q" name="entIdTemplate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_MtORoDDdEeWY9JiCabfOAw" value="ent-{clinical-document-business-name}_{data-element-level-abbr}_{uml-context-class-business-name}_{uml-element-name}_{pdf-section-number}-error_mdht"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_bs_IAC7ZEeWWyt46-8Ab6Q" name="patternIdTemplate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_QgvmkDDdEeWY9JiCabfOAw" value="p-{clinical-document-business-name}_{data-element-level-abbr}_{uml-context-class-business-name}_{uml-element-name}_{pdf-section-number}-error_mdht"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qG_6gC7ZEeWWyt46-8Ab6Q" name="xmlTestFilenameTemplate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_gyxqoDDdEeWY9JiCabfOAw" value="{document-name-abbr}_{data-element-level-abbr}_{uml-context-class-business-name}_{uml-business-name}_{pdf-section-number}_{test-type}_mdht"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_SuP9UC7XEeWWyt46-8Ab6Q" name="Package_schematronSupport" memberEnd="_SuP9US7XEeWWyt46-8Ab6Q _SuQkYC7XEeWWyt46-8Ab6Q">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_SuP9US7XEeWWyt46-8Ab6Q" name="extension_schematronSupport" type="_uUL0AC7WEeWWyt46-8Ab6Q" aggregation="composite" association="_SuP9UC7XEeWWyt46-8Ab6Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_UdaN0C7XEeWWyt46-8Ab6Q" name="SchematronConfig">
+    <ownedAttribute xmi:id="_ZC3WAS7XEeWWyt46-8Ab6Q" name="base_NamedElement" association="_ZC2u8C7XEeWWyt46-8Ab6Q">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_B-OY4C7bEeWWyt46-8Ab6Q" name="noSchematronGen">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_HAsNMC7bEeWWyt46-8Ab6Q" value="false"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_K9bvkC7bEeWWyt46-8Ab6Q" name="validationMessageTemplate">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_Si8SYDDeEeWY9JiCabfOAw" value="n/a"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_ZC2u8C7XEeWWyt46-8Ab6Q" name="NamedElement_schematronNamedElementSupport" memberEnd="_ZC3WAC7XEeWWyt46-8Ab6Q _ZC3WAS7XEeWWyt46-8Ab6Q">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_ZC3WAC7XEeWWyt46-8Ab6Q" name="extension_schematronNamedElementSupport" type="_UdaN0C7XEeWWyt46-8Ab6Q" aggregation="composite" association="_ZC2u8C7XEeWWyt46-8Ab6Q"/>
+  </packagedElement>
+</uml:Profile>

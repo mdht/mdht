@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.openhealthtools.mdht.api.schematron.action.generateSchematron"
+            nameFilter="*.uml"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.openhealthtools.mdht.api.schematron.action.GenerateSchematronAction"
+               enablesFor="+"
+               id="org.openhealthtools.mdht.api.schematron.action2"
+               label="Generate Schematron"
+               menubarPath="group.open"/>
+      </objectContribution>
+   </extension>
+   
+</plugin>

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ocl2java
+Bundle-SymbolicName: org.openhealthtools.mdht.transformation.ocl2java;singleton:=true
+Bundle-Version: 2.5.15.qualifier
+Require-Bundle: org.openhealthtools.mdht.transformation.ocl,
+ org.eclipse.ocl.uml,
+ org.eclipse.ocl.ecore,
+ org.eclipse.ui,
+ org.eclipse.equinox.registry,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: org.openhealthtools.mdht.transformation.ocl2java

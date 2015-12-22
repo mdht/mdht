@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Types of Traceability Table Views</title>
+    </head>
+    <body>
+        <p> As the Trace Matrix is a fully correlated view of how artefacts relate, the full contents of any given project will usually need to be viewed as a set of columns that are related for some work purpose, rather than browsing the entire set of rows and columns in a single table. There are <a href="column_list.html">help entries for all available columns</a> which explain their source, and how they are related to other columns in the same source, and whether they are correlated with columns from other sources. </p>
+        <h1>General functions</h1>
+        <p> A traceability table view comprises a set of columns which are considered to be relevant for
+            a specific user role or traceability purpose. However, columns can be added or removed using the
+            context menu of the table.
+	</p><p>In general, the order of the columns from left to
+            right resembles the waterfall model in the processing pipeline of data; however, columns
+            can be moved from their original positions by drag&amp;drop. Each column is sortable by clicking on the column header. </p>
+	<p> By default, object-based cell contents are left blank if they are the same as the object above. This allows easier visualisation of fan-out traces. E.g. when a single Requirment is mapped to several Logical Model components. The key column (Req: No.) is shown once, and with blank cells below it, and each mapping for that requirement is shown as a separate value in the next column.</p>
+	<p> There are two kinds of Views: Tree-based views, and flat views. Tree-based views have a special left-hand column that shows the structure of a tree-based model. Examples are: Requirements as structured in the sections in the Requirements Document; SCS Expanded Structure data components as structured in their XML Tree; MDHT UML Model Elements as stuctured in their specialisation of a CDA Document and its sections and data structures. Views that have a tree-orientation open with the  <b>T</b> checkbox at the bottom ticked, and sorting of all other contents is according to the tree structure. Nodes in the tree can be revealed and hidden by clicking the small triagular icons on the left of each node. The column-header has a right-click context menu for "Expand All" and "Collapse All" so that the tree can completely revealed, or completely hidden under its root node.</p>
+<p><b>NOTE: Sorting according to another column's contents while the "T" check box is active will only sort other column's contents within each left-hand column tree node.</b></p>
+        <h1><a name="tablecustomization">Table Display Checkboxes</a></h1>
+        <p> The table contents can be customized when displaying traces in various aspects:<br />
+            <br /> Checkbox <b>E</b> if checked, only show traces which have errors attached in the Error column (if the Error column is not in the current column set this can produce a non-obvious result, so this check box is set to unchecked each time a trace is re-opened).
+            <br /> Checkbox <b>A</b> if checked, show "All", that is: no blank cells for the repetition of the above cell's value
+            <br /> Checkbox <b>T</b> if unchecked, flatten the tree structure to allow for sorting by another column's contents. If re-checked, the tree view is re-instated, and the tree fully collapsed.
+            </p>
+        <h1><a name="tracedifffiltering">Trace difference filtering</a></h1>
+        <p> When two trace models are compared, a variety of filter options can be defined.</p>
+        <ul>
+            <li><b>Checkbox =</b> (no colour) if checked, shows traces which match by the identity and content of objects they trace.</li>
+            <li><b>Checkbox !=</b> (yellow) if checked, shows traces which match by identity of objects traced but which have changed text or attribute values. The changed values will be highligted in yellow if in a visible column). </li>
+            <li><b>Checkbox +</b> (green) if checked, shows traces from the first project which are not present
+                in the second project. All columns related to traced objects will appear green. </li>
+            <li><b>Checkbox -</b> (red) if checked, shows traces from the second project which are not present in the first project. All columns relating to the missing traces will be shown in red.</li>
+        </ul>
+        <h1><a name="filterexpression">Filter expression</a></h1>
+        <p> After entering a filter expression and pressing <b>ENTER</b>, only those table rows are
+            displayed which contain at least the filter expression.<br /><br /> If the checkbox
+                <b>RE</b> is selected, the filter expression is interpreted as regular expression. </p>
+        <h1><a name="searchexpression">Search expression</a></h1>
+        <p> After entering a search expression and pressing <b>ENTER</b>, those table cells which contain matching content are highlighted.<br />
+		<br /> If the checkbox <b>RE</b> is selected, the search expression is interpreted as regular expression. <br/><br/>
+            Pressing Ctrl-G selects the first row containing a matching cell, and iteratively pressing this key combination iterates over all such matching rows.</p>
+        <h1><a name="tracecreation">Creating traces manually</a></h1>
+        <p> Traces can be also created manually between the columns <b>Req: No, Doc: Logical Path, SCS: Data Component, Dts: Mapping, UML: Element</b>.
+            In order to do so, select a cell X in one of those columns and click "Select X for tracing" from the context menu.
+            Then select another cell Y in another column of another row, and click "Create trace between X and Y" to establish a trace.
+            </p>
+        <br />
+    </body>
+</html>

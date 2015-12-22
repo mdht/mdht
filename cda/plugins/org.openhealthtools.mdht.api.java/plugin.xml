@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.openhealthtools.mdht.api.java.action.generateJava"
+            nameFilter="*.uml"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.openhealthtools.mdht.api.java.action.GenerateJavaAction"
+               enablesFor="+"
+               id="org.openhealthtools.mdht.api.java.action2"
+               label="Generate Java 8"
+               menubarPath="group.open"/>
+      </objectContribution>
+   </extension>
+   
+   <extension
+         point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
+      <editor
+            component="org.openhealthtools.mdht.api.java.JavaConstraintEditor"
+            language="Java">
+      </editor>
+   </extension>
+   
+</plugin>

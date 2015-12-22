@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.openhealthtools.mdht.metamodel.traceability/src"
+    modelPluginID="org.openhealthtools.mdht.metamodel.traceability" modelName="Traceability"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" operationReflection="true" runtimePlatform="RAP"
+    importOrganizing="true">
+  <foreignModel>traceability.ecore</foreignModel>
+  <genPackages prefix="Traceability" resource="XMI" disposableProviderFactory="true"
+      fileExtensions="traces" ecorePackage="traceability.ecore#/">
+    <genClasses ecoreClass="traceability.ecore#//Trace">
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference traceability.ecore#//Trace/source"/>
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference traceability.ecore#//Trace/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Trace/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traceability.ecore#//Trace/children"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference traceability.ecore#//Trace/parent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Trace/value"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//LogEntry">
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference traceability.ecore#//LogEntry/participants"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//LogEntry/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//LogEntry/severity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//LogEntry/messageType"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//Traces">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Traces/originalSourceURL"/>
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference traceability.ecore#//Traces/sourceModel"/>
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference traceability.ecore#//Traces/targetModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Traces/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Traces/fullName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Traces/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Traces/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//Traces/comments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traceability.ecore#//Traces/traces"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//TraceDiff">
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference traceability.ecore#//TraceDiff/participants"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//DiffCategory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//DiffCategory/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traceability.ecore#//DiffCategory/diffs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traceability.ecore#//DiffCategory/modelIndex"/>
+    </genClasses>
+    <genClasses ecoreClass="traceability.ecore#//TraceDiffs">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference traceability.ecore#//TraceDiffs/comparedTraces"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

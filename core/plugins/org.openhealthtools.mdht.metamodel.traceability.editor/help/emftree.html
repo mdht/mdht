@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>EMF Tree</title>
+    </head>
+    <body>
+        <p> The EMF Tree provides a EMF-native view onto the traceability model. <i>All</i>
+            information in the traceability tables originate from the traceability model and the
+            domain elements it links to.</p>
+        <h1>Tree item types</h1>
+        <p>Most of the items in the EMF Tree are <i>Trace</i> instances which map source elements to
+            target elements, e.g. a requirement to a data component. However also items for error
+            message can be contained in the EMF Tree. Error message are graded into <i>hints</i>,
+                <i>warnings</i> and <i>errors</i>, associated with an appropriate icon. Also, there
+            are <i>Category</i> nodes for structuring traces.</p>
+        <h1>Tree structure</h1>
+        <p> There are category items to group requirement, SCS and vocabulary traces/errors.
+            Traces/errors for the LMI import are not put into a category but placed in the outermost
+            level, to ease the access to them.</p>
+        <h1>Interactivity</h1>
+        <p> Traces/errors have commonly child nodes which are the subjects of an trace/error. By
+            double-clicking them, they can be opened and navigated in their (default Eclipse)
+            editor.</p>
+    </body>
+</html>
