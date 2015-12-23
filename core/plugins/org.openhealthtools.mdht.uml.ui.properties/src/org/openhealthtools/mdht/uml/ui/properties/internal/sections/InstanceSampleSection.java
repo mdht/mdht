@@ -42,6 +42,8 @@ import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -357,6 +359,17 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 								bodyModified = false;
 								modifyFields(propPath, combo.getText(), false);
 							}
+						}
+					});
+					combo.addSelectionListener(new SelectionListener() {
+						public void widgetDefaultSelected(SelectionEvent e) {
+							bodyModified = true;
+							modifyFields(propPath, combo.getText(), false);
+						}
+
+						public void widgetSelected(SelectionEvent e) {
+							bodyModified = true;
+							modifyFields(propPath, combo.getText(), false);
 						}
 					});
 					combo.addModifyListener(modifyListener);
