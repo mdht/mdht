@@ -160,6 +160,55 @@ public class CDAModelUtil {
 		return null;
 	}
 
+	public static Property getCDAPropertyCITS28(Property templateProperty) {
+		if (templateProperty.getClass_() == null) {
+			return null;
+		}
+
+		// if the provided property is from a CDA class/datatype and not a template
+		if (isCDAModel(templateProperty) || isDatatypeModel(templateProperty)) {
+			return templateProperty;
+		}
+
+		// CITS28..
+		// Try to get CDA Name
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.cda.core.TransformProvider");
+		IExtension[] extensions = ep.getExtensions();
+		TransformProvider newContributor = null;
+		Property cdaProperty = null;
+		try {
+			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension(
+				"transform-class");
+			cdaProperty = newContributor.GetTransform(templateProperty);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		String propertyCdaName = null;
+		if (cdaProperty != null) {
+			propertyCdaName = getCDAName(cdaProperty);
+		} else {
+			propertyCdaName = getCDAElementName(templateProperty);
+		}
+
+		if (propertyCdaName == null || propertyCdaName.isEmpty()) {
+			propertyCdaName = templateProperty.getName();
+		}
+		// ..CITS28
+
+		for (Classifier parent : templateProperty.getClass_().allParents()) {
+			for (Property inherited : parent.getAttributes()) {
+				if (inherited.getName() != null && inherited.getName().equals(propertyCdaName) &&
+						(isCDAModel(inherited) || isDatatypeModel(inherited))) {
+					return inherited;
+				}
+			}
+		}
+
+		return null;
+	}
+
 	/**
 	 * Returns the nearest inherited property with the same name, or null if not found.
 	 * 
@@ -852,6 +901,36 @@ public class CDAModelUtil {
 		return nameSpacePrefix;
 	}
 
+	private static String getNameSpacePrefixCITS28(Property property) {
+
+		Property cdaBaseProperty = CDAModelUtil.getCDAPropertyCITS28(property);
+		String nameSpacePrefix = null;
+		if (cdaBaseProperty != null) {
+			Stereotype eReferenceStereoetype = cdaBaseProperty.getAppliedStereotype(CDAModelUtil.EREFERENCE);
+			if (eReferenceStereoetype != null) {
+				String nameSpace = (String) cdaBaseProperty.getValue(eReferenceStereoetype, CDAModelUtil.XMLNAMESPACE);
+				if (!StringUtils.isEmpty(nameSpace)) {
+					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(
+						cdaBaseProperty.getNearestPackage());
+					Stereotype ePackageStereoetype = topPackage.getApplicableStereotype(CDAModelUtil.EPACKAGE);
+					if (ePackageStereoetype != null) {
+						if (nameSpace.equals(topPackage.getValue(ePackageStereoetype, CDAModelUtil.NSURI))) {
+							nameSpacePrefix = (String) topPackage.getValue(ePackageStereoetype, CDAModelUtil.NSPREFIX);
+						} else {
+							for (Package nestedPackage : topPackage.getNestedPackages()) {
+								if (nameSpace.equals(nestedPackage.getValue(ePackageStereoetype, CDAModelUtil.NSURI))) {
+									nameSpacePrefix = (String) nestedPackage.getValue(
+										ePackageStereoetype, CDAModelUtil.NSPREFIX);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return nameSpacePrefix;
+	}
+
 	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource) {
 		return computeConformanceMessage(property, markup, xrefSource, true);
 	}
@@ -930,7 +1009,7 @@ public class CDAModelUtil {
 			message.append("@");
 		}
 
-		String propertyPrefix = getNameSpacePrefix(property);
+		String propertyPrefix = getNameSpacePrefixCITS28(property);
 
 		// Try to get CDA Name
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
