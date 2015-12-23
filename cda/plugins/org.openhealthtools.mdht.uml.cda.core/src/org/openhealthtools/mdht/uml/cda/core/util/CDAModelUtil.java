@@ -930,8 +930,6 @@ public class CDAModelUtil {
 			message.append("@");
 		}
 
-		String propertyPrefix = getNameSpacePrefix(property);
-
 		// Try to get CDA Name
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
 		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.cda.core.TransformProvider");
@@ -951,6 +949,10 @@ public class CDAModelUtil {
 		} else {
 			propertyCdaName = getCDAElementName(property);
 		}
+
+		String propertyPrefix = getNameSpacePrefix(cdaProperty != null
+				? cdaProperty
+				: property);
 
 		message.append(propertyPrefix != null
 				? propertyPrefix + ":" + propertyCdaName
