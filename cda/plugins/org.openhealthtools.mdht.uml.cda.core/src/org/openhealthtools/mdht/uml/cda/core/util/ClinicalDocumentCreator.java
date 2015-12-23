@@ -312,7 +312,7 @@ public class ClinicalDocumentCreator {
 
 		String templateId = CDACommonUtils.getTemplateId(parentClass);
 		Property templateIdProperty = getTemplateIdProperty(parentClass);
-		if (templateId != null && !prohibitedProperty.contains(templateIdProperty)) {
+		if (templateId != null && templateIdProperty != null && !prohibitedProperty.contains(templateIdProperty)) {
 			EStructuralFeature templateIdFeatureFeature = parent.eClass().getEStructuralFeature("templateId");
 			EObject templateIdInstance = EcoreUtil.create((EClass) templateIdFeatureFeature.getEType());
 			templateIdInstance = setOrAdd(parent, templateIdFeatureFeature, templateIdInstance);
