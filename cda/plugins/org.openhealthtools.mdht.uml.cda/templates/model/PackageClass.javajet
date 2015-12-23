@@ -279,8 +279,7 @@ public interface <%=genPackage.getPackageInterfaceName()%> extends <%=genModel.g
      */
     public static <%=genPackage.getImportedPackageInterfaceName()%> init()
     {
-        if (isInited) return (<%=genPackage.getImportedPackageInterfaceName()%>)<%=genModel.getImportedName("org.eclipse.emf.ecore.EPackage")%>.Registry.INSTANCE.getEPackage(<%=genPackage.getImportedPackageInterfaceName()%>.eNS_URI);
-
+  
     <%if (genModel.getRuntimePlatform() == GenRuntimePlatform.GWT) {%>
         initializeRegistryHelpers();
 
@@ -288,8 +287,7 @@ public interface <%=genPackage.getPackageInterfaceName()%> extends <%=genModel.g
         // Obtain or create and register package
         <%=genPackage.getPackageClassName()%> the<%=genPackage.getBasicPackageName()%> = (<%=genPackage.getPackageClassName()%>)(<%=genModel.getImportedName("org.eclipse.emf.ecore.EPackage")%>.Registry.INSTANCE.get(eNS_URI) instanceof <%=genPackage.getPackageClassName()%> ? <%=genModel.getImportedName("org.eclipse.emf.ecore.EPackage")%>.Registry.INSTANCE.get(eNS_URI) : new <%=genPackage.getPackageClassName()%>());
 
-        isInited = true;
-
+  
     <%if (!genPackage.getPackageSimpleDependencies().isEmpty()) {%>
         // Initialize simple dependencies
     <%for (GenPackage dep : genPackage.getPackageSimpleDependencies()) {%>

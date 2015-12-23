@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: DITAOT
 Bundle-SymbolicName: org.dita.dost;singleton:=true
-Bundle-Version: 2.5.15.qualifier
+Bundle-Version: 2.5.16.qualifier
 Bundle-Activator: org.dita.dost.internal.Activator
 Bundle-Vendor: DITAOT
 Require-Bundle: org.eclipse.core.runtime,

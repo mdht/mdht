@@ -10,7 +10,7 @@
         Dan Brown (Audacious Inquiry) - added postProcessing target and related properties
  -->
 <project name="common">
-	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda"/>
+	<eclipse.convertPath resourcePath="org.openhealthtools.mdht.uml.cda" property="cdaPluginPath"/>
 	<property name="modelPath.uml" location="${basedir}.model/model/${modelName}.uml"/>
 	<property name="ecoreModelPath.uml" location="${basedir}/model/${modelName}_Ecore.uml"/>
 	<property name="domainModelPath.uml" location="${basedir}/model/${modelName}_domain_Ecore.uml"/>
@@ -20,7 +20,7 @@
     <property name="filteredModelPath.uml" location="${basedir}/model/${modelName}_filtered.uml"/>
 	<property name="propertiesFilePath" value="${basedir}/plugin.properties" />
 	
-    <property name="validation.failOnError" value="true"/>
+    <property name="validation.failOnError" value="false"/>
 	<property name="runPostProcessing" value="false"/>
 	
 	<target name="all">
