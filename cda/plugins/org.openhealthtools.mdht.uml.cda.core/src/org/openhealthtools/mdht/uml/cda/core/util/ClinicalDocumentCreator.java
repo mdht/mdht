@@ -682,7 +682,7 @@ public class ClinicalDocumentCreator {
 	 * @param name
 	 * @return
 	 */
-	private static String withoutDigits(String name) {
+	public static String withoutDigits(String name) {
 		while (!"".equals(name) && Character.isDigit(name.charAt(name.length() - 1))) {
 			name = name.substring(0, name.length() - 1);
 		}
