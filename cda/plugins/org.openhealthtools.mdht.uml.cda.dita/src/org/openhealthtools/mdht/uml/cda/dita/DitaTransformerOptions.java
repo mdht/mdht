@@ -117,6 +117,8 @@ public class DitaTransformerOptions {
 
 	private List<Classifier> pubClassifiers = new Vector<Classifier>();
 
+	private String xmlGeneratorType = null;
+
 	public DitaTransformerOptions() {
 		initializePreferences();
 	}
@@ -147,7 +149,7 @@ public class DitaTransformerOptions {
 
 	/**
 	 * The value of the appendConformanceRule attribute in the dita-transform ant task xml
-	 *
+	 * 
 	 * @return appendConformanceRules
 	 */
 	public boolean isAppendConformanceRules() {
@@ -188,6 +190,14 @@ public class DitaTransformerOptions {
 
 	public void setCardinalityAfterElement(boolean cardinalityAfterElement) {
 		this.cardinalityAfterElement = cardinalityAfterElement;
+	}
+
+	public void setXmlGeneratorType(String xmlGeneratorType) {
+		this.xmlGeneratorType = xmlGeneratorType;
+	}
+
+	public String getXmlGeneratorType() {
+		return this.xmlGeneratorType;
 	}
 
 	/**

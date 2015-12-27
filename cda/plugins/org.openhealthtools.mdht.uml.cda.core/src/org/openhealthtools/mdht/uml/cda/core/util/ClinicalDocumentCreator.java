@@ -753,4 +753,8 @@ public class ClinicalDocumentCreator {
 		return aClinicalDocument;
 	}
 
+	public CDASampler getSampler() {
+		return sampler;
+	}
+
 }
