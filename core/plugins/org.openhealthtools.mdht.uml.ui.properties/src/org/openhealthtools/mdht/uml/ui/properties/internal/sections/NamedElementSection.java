@@ -144,7 +144,7 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 						localNameModified = false;
 						this.setLabel("Set Name");
 
-						String oldPropertyKey = NamedElementUtil.getLabelPropertyKey(namedElement);
+						String oldPropertyKey = NamedElementUtil.getPropertyKey(namedElement, "label");
 						Map<String, String> parsedProperties = properties != null
 								? UMLUtil.parseProperties(properties)
 								: new LinkedHashMap<String, String>();
@@ -153,7 +153,7 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 						namedElement.setName(localNameText.getText());
 
 						if (oldProperty != null) {
-							String newPropertyKey = NamedElementUtil.getLabelPropertyKey(namedElement);
+							String newPropertyKey = NamedElementUtil.getPropertyKey(namedElement, "label");
 							parsedProperties.put(newPropertyKey, oldProperty.replace(oldPropertyKey, newPropertyKey));
 
 							UMLUtil.writeProperties(propertiesURI, parsedProperties);
@@ -172,9 +172,10 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 
 						// trigger the changed notification so saving can happen
 						// without actually changing the namedElement
-						namedElement.eNotify(new ENotificationImpl(
-							(InternalEObject) namedElement, Notification.SET, UMLPackage.NAMED_ELEMENT__NAME, name,
-							name, true));
+						namedElement.eNotify(
+							new ENotificationImpl(
+								(InternalEObject) namedElement, Notification.SET, UMLPackage.NAMED_ELEMENT__NAME, name,
+								name, true));
 
 					}
 
