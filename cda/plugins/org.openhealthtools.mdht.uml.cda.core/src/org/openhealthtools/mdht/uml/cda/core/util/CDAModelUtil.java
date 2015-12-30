@@ -150,7 +150,8 @@ public class CDAModelUtil {
 
 		for (Classifier parent : templateProperty.getClass_().allParents()) {
 			for (Property inherited : parent.getAttributes()) {
-				if (inherited.getName() != null && inherited.getName().equals(templateProperty.getName()) &&
+				if (inherited.getName() != null &&
+						inherited.getName().equals(ClinicalDocumentCreator.withoutDigits(templateProperty.getName())) &&
 						(isCDAModel(inherited) || isDatatypeModel(inherited))) {
 					return inherited;
 				}
