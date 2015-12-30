@@ -15,6 +15,7 @@
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -144,18 +145,32 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 						localNameModified = false;
 						this.setLabel("Set Name");
 
-						String oldPropertyKey = NamedElementUtil.getLabelPropertyKey(namedElement);
+						boolean shouldSave = false;
+
+						String oldPropertyKey = NamedElementUtil.getPropertyKey(namedElement, "label");
 						Map<String, String> parsedProperties = properties != null
 								? UMLUtil.parseProperties(properties)
 								: new LinkedHashMap<String, String>();
 						String oldProperty = parsedProperties.remove(oldPropertyKey);
 
 						namedElement.setName(localNameText.getText());
-
+						String newPropertyKey = NamedElementUtil.getPropertyKey(namedElement, "label");
 						if (oldProperty != null) {
-							String newPropertyKey = NamedElementUtil.getLabelPropertyKey(namedElement);
 							parsedProperties.put(newPropertyKey, oldProperty.replace(oldPropertyKey, newPropertyKey));
+							shouldSave = true;
+						}
 
+						for (Iterator<String> keyIterator = parsedProperties.keySet().iterator(); keyIterator.hasNext();) {
+							String key = keyIterator.next();
+							if (key.startsWith(oldPropertyKey)) {
+								parsedProperties.put(
+									key.replaceFirst(oldPropertyKey, newPropertyKey),
+									parsedProperties.get(key).replaceFirst(oldPropertyKey, newPropertyKey));
+								parsedProperties.remove(key);
+								shouldSave = true;
+							}
+						}
+						if (shouldSave) {
 							UMLUtil.writeProperties(propertiesURI, parsedProperties);
 						}
 
@@ -172,9 +187,10 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 
 						// trigger the changed notification so saving can happen
 						// without actually changing the namedElement
-						namedElement.eNotify(new ENotificationImpl(
-							(InternalEObject) namedElement, Notification.SET, UMLPackage.NAMED_ELEMENT__NAME, name,
-							name, true));
+						namedElement.eNotify(
+							new ENotificationImpl(
+								(InternalEObject) namedElement, Notification.SET, UMLPackage.NAMED_ELEMENT__NAME, name,
+								name, true));
 
 					}
 
