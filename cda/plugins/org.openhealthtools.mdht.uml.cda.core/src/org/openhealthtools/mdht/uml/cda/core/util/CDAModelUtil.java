@@ -656,7 +656,7 @@ public class CDAModelUtil {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 
-		String elementName = getCDAElementName(property);
+		String elementName = resolveCdaPropertyName(property);
 
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
