@@ -585,7 +585,7 @@ public class CDAModelUtil {
 
 		}
 
-		String elementName = getCDAElementName(property);
+		String elementName = resolveCdaPropertyName(property);
 
 		String propertyPrefix = getNameSpacePrefix(UMLUtil.getInheritedProperty(property) != null
 				? UMLUtil.getInheritedProperty(property)
@@ -656,7 +656,7 @@ public class CDAModelUtil {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 
-		String elementName = getCDAElementName(property);
+		String elementName = resolveCdaPropertyName(property);
 
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
@@ -932,29 +932,11 @@ public class CDAModelUtil {
 
 		String propertyPrefix = getNameSpacePrefix(property);
 
-		// Try to get CDA Name
-		IExtensionRegistry reg = Platform.getExtensionRegistry();
-		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.cda.core.TransformProvider");
-		IExtension[] extensions = ep.getExtensions();
-		TransformProvider newContributor = null;
-		Property cdaProperty = null;
-		try {
-			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension("transform-class");
-			cdaProperty = newContributor.GetTransform(property);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		String propertyCdaName = null;
-		if (cdaProperty != null) {
-			propertyCdaName = getCDAName(cdaProperty);
-		} else {
-			propertyCdaName = getCDAElementName(property);
-		}
+		String cdaPropertyName = resolveCdaPropertyName(property);
 
 		message.append(propertyPrefix != null
-				? propertyPrefix + ":" + propertyCdaName
-				: propertyCdaName);
+				? propertyPrefix + ":" + cdaPropertyName
+				: cdaPropertyName);
 
 		message.append(markup
 				? "</b>"
@@ -1019,6 +1001,7 @@ public class CDAModelUtil {
 			}
 		}
 
+		Property cdaProperty = transformToCDAProperty(property);
 		if (property.getType() instanceof Classifier && cdaProperty != null &&
 				cdaProperty.getType() instanceof Classifier) {
 			Classifier propertyType = (Classifier) property.getType();
@@ -1112,6 +1095,7 @@ public class CDAModelUtil {
 						hadSideEffect |= sb.length() > len;
 					}
 					if (hadSideEffect) {
+
 						if (cdaProperty.upperBound() != 1 && property.getType() instanceof Class &&
 								CDAModelUtil.isInlineClass((Class) property.getType())) {
 							message.append(openOrClosed(property) + " " + sb);
@@ -1127,6 +1111,61 @@ public class CDAModelUtil {
 		}
 
 		return message.toString();
+	}
+
+	/**
+	 * Fully resolve the CDA Name of a property.
+	 * 
+	 * Note that this may not necessarily be the UML name of the property
+	 * as in redefined and subsets properties, so go looking for the correct name
+	 * 
+	 * @param property
+	 *            the name to be resolved
+	 * @return string property name as it would appear in CDA
+	 */
+	private static String resolveCdaPropertyName(Property property) {
+		Property cdaProperty = transformToCDAProperty(property);
+
+		String propertyCdaName = null;
+		if (cdaProperty != null) {
+			propertyCdaName = getCDAName(cdaProperty);
+		} else {
+			propertyCdaName = getCDAElementName(property);
+		}
+		return propertyCdaName;
+	}
+
+	/**
+	 * transformToCDAProperty uses the Extension-point trick
+	 * to access attributes on downstream projects without creating
+	 * a dependency.
+	 * 
+	 * In this case it uses CDABaseModelReflection
+	 * 
+	 * @see also TransformSupplier and org.openhealthtools.mdht.uml.cda.core.TransformProvider
+	 * 
+	 *      Used when resolving CDAName as opposed to UML name
+	 * 
+	 * @param property
+	 *            a CDA Property
+	 * @return a transformed view of that property or null
+	 */
+	private static Property transformToCDAProperty(Property property) {
+		// Get the extension point
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.cda.core.TransformProvider");
+		IExtension[] extensions = ep.getExtensions();
+		TransformProvider newContributor = null;
+		Property cdaProperty = null;
+
+		// then apply the transform
+		try {
+			newContributor = (TransformProvider) extensions[0].getConfigurationElements()[0].createExecutableExtension("transform-class");
+			cdaProperty = newContributor.GetTransform(property);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return cdaProperty;
 	}
 
 	/**
