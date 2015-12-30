@@ -150,7 +150,10 @@ public class CDAModelUtil {
 
 		for (Classifier parent : templateProperty.getClass_().allParents()) {
 			for (Property inherited : parent.getAttributes()) {
-				if (inherited.getName() != null && inherited.getName().equals(templateProperty.getName()) &&
+				Property cdaProperty = transformToCDAProperty(templateProperty);
+				if (cdaProperty == null)
+					continue;
+				if (inherited.getName() != null && inherited.getName().equals(getCDAName(cdaProperty)) &&
 						(isCDAModel(inherited) || isDatatypeModel(inherited))) {
 					return inherited;
 				}
