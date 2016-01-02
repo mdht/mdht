@@ -475,9 +475,13 @@ public class TransformClassContent extends TransformAbstract {
 
 			transformerOptions.isIncludeTableView();
 			
-			String xmlGeneratorType = transformerOptions.getXmlGeneratorType();
 
-			EObject eObject = instanceGenerator.createInstance(umlClass, exampleDepth > 0
+			String xmlGeneratorType = transformerOptions.getXmlGeneratorType();
+			if (xmlGeneratorType == null) {
+				xmlGeneratorType = "custom-if-data-present";
+			}
+
+			EObject eObject = "custom-only".equals(xmlGeneratorType) ? null : instanceGenerator.createInstance(umlClass, exampleDepth > 0
 					? exampleDepth
 					: 2);
 			if (eObject==null && !"original-only".equals(xmlGeneratorType) || "custom".equals(xmlGeneratorType) || "custom-if-data-present".equals(xmlGeneratorType)) {
@@ -488,10 +492,21 @@ public class TransformClassContent extends TransformAbstract {
 				creator.enableSampleDataExpansion(true);
 				Collection<Property> props = Collections.emptyList();
 				EObject newObject = creator.initializeSnippet(umlClass, props);
-				if (newObject != null && (eObject==null || "custom".equals(xmlGeneratorType) || "custom-if-data-present".equals(xmlGeneratorType)) && creator.getSampler().isCustomDataUsed()) {
+				if (newObject == null && eObject == null && !"original".equals(xmlGeneratorType)) {
+					writer.println("Error: Custom XML generator could not create XML sample");
+					for (ModelStatus status : statuses) {
+						writer.println("Error code " + status.getCode() + ": " + status.getMessage());
+					}
+					writer.println("]]></codeblock>"); 
+					return;
+				}
+				if (newObject != null && (eObject==null || "custom".equals(xmlGeneratorType) || "custom-if-data-present".equals(xmlGeneratorType) && creator.getSampler().isCustomDataUsed())) {
 					String xml = creator.toXMLString(newObject, umlClass);
 					writer.write(xml);
 					writer.println("]]></codeblock>"); 
+					for (ModelStatus status : statuses) {
+						writer.println("<!--Error code " + status.getCode() + ": " + status.getMessage() + "-->");
+					}
 					return;
 				}
 			}
