@@ -77,7 +77,7 @@ public class GenerateJavaAction extends GenerateAPIForProgrammingLanguageAction 
 	}
 
 	@Override
-	protected File genfolder(File modelFolder) {
+	protected File genfolder(File modelFolder, String suffix) {
 		String folder = System.getProperty("JAVA_TARGET_FOLDER");
 		if (folder != null)
 			return new File(folder);

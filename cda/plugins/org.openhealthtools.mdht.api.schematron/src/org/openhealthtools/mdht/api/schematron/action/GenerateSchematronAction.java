@@ -56,8 +56,8 @@ public class GenerateSchematronAction extends GenerateAPIAction {
 		return "text/xml";
 	}
 
-	protected File genfolder(File modelFolder) {
-		return new File(modelFolder, "genschematron");
+	protected File genfolder(File modelFolder, String suffix) {
+		return new File(modelFolder, "genschematron" + (suffix == null ? "" : "-" + suffix));
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class GenerateSchematronAction extends GenerateAPIAction {
 		schematron.append("\n</phase>\n\n\n");
 		schematron.append("</schema>\n");
 		schematronPreludium.append("]>\n\n");
-		File schFile = new File(genfolder, umlFile.getName().substring(0, umlFile.getName().indexOf(".")) + getRootFileExtension());
+		File schFile = new File(genfolder, modelname + getRootFileExtension());
 		CDACommonUtils.stringToFile(schematronPreludium.toString() + schematron.toString(), schFile);
 		monitor.done();
 	}

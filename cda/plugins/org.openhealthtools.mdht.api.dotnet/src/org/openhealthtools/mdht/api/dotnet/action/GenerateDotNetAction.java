@@ -42,7 +42,7 @@ public class GenerateDotNetAction extends GenerateAPIForProgrammingLanguageActio
 	}
 
 	@Override
-	protected File genfolder(File modelFolder) {
+	protected File genfolder(File modelFolder, String suffix) {
 		String folder = System.getProperty("DOTNET_TARGET_FOLDER");
 		if (folder != null)
 			return new File(folder);

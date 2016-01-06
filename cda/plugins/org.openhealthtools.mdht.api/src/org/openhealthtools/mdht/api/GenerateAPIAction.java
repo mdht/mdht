@@ -109,7 +109,14 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 
 	protected Class umlClinicalDocument;
 
+	/**
+	 * List of ClinicalDocuments available in this model
+	 */
+	private List<Class> clinicalDocuments;
+
 	private String specName;
+	
+	protected String modelname;
 
 	private String specInitials;
 
@@ -130,7 +137,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 	protected String template;
 
 	/**
-	 * Current template variable parameters: the first object being the template variable itself, the following objects representing the UML context required to resolve the template variable
+	 * Current template variable parameters: the first object being the template variable itself, the following objects representing the UML context
+	 * required to resolve the template variable
 	 */
 	private Object[] templateVariableParameters;
 
@@ -181,7 +189,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 			final IFile modelFile = (IFile) iterator.next();
 			final Shell shell = Display.getDefault().getActiveShell();
 
-			Job job = new Job("Generate " + getTargetLanguage() + " for " + modelFile.getName().substring(0, modelFile.getName().length() - ".uml".length())) {
+			Job job = new Job("Generating " + getTargetLanguage() + " for " +
+					modelFile.getName().substring(0, modelFile.getName().length() - ".uml".length())) {
 				public IStatus run(IProgressMonitor monitor) {
 					try {
 						// duplicate this action to isolate against parallel running API jobs
@@ -208,7 +217,7 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 	protected IStatus genAPI(final IFile modelFile, IProgressMonitor monitor, Shell shell) {
 		IStatus status;
 		umlFile = modelFile;
-		String modelname = modelFile.getName().substring(0, modelFile.getName().lastIndexOf("."));
+		modelname = modelFile.getName().substring(0, modelFile.getName().lastIndexOf("."));
 		try {
 			try {
 				this.specName = "Undefined Clinical Document";
@@ -226,17 +235,16 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 				};
 
 				CDACommonUtils.patchResourceSet(resourceSet);
-				trafo = createTrafo(resourceSet);
+				trafo = createTrafo(resourceSet);				
 
-				genfolder = genfolder(modelFile.getLocation().toFile().getParentFile());
-				summaryFile = new File(genfolder, "summary.html");
-
-				resource = resourceSet.getResource(URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true), true);
+				resource = resourceSet.getResource(
+					URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true), true);
 				Package pack = (Package) resource.getContents().get(0);
 				irResources = new ArrayList<Resource>();
 				irResources.add(resource);
 
-				Resource profileRes = pack.eResource().getResourceSet().getResource(URI.createURI("platform:/plugin/" + Activator.PLUGIN_ID + "/model/api.profile.uml"), true);
+				Resource profileRes = pack.eResource().getResourceSet().getResource(
+					URI.createURI("platform:/plugin/" + Activator.PLUGIN_ID + "/model/api.profile.uml"), true);
 				profile = (Profile) profileRes.getContents().get(0);
 
 				monitor.worked(1);
@@ -245,65 +253,154 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 					throw new RuntimeException("Canceled by user");
 
 				umlClinicalDocument = null;
+				clinicalDocuments = new ArrayList<Class>();
 				for (NamedElement ne : pack.getPackagedElements()) {
 					if (ne instanceof Class && CDACommonUtils.isClinicalDocument((Class) ne)) {
+						clinicalDocuments.add((Class) ne);
 						umlClinicalDocument = (Class) ne;
 						CDACommonUtils.buildupPropertyForClinicalDocument(umlClinicalDocument);
 						specName = CDACommonUtils.getBusinessName(ne);
 					}
 				}
 				if (umlClinicalDocument == null && !"datatypes".equals(pack.getName())) {
-					CDACommonUtils.addStatus(statuses, IStatus.ERROR, getPlugin(), 3, "Cannot find a clinical document template in the UML model!");
+					CDACommonUtils.addStatus(
+						statuses, IStatus.ERROR, getPlugin(), 3,
+						"Cannot find a clinical document template in the UML model!");
 					return alertGenerationResult(shell, null);
 				}
 
-				classes = new ArrayList<Class>();
-				calcClasses(umlClinicalDocument, classes);
+				status = null;
 
-				for (Class clazz : classes) {
-					if (clazz.eResource() != null && !irResources.contains(clazz.eResource()))
-						irResources.add(clazz.eResource());
-				}
+				// old behaviour for models with only one ClinicalDocument as I can't be bothered having pointless arguments
+				if (clinicalDocuments.size() == 1) {
 
-				URI tracesUri = URI.createFileURI(new File(genfolder, modelname + ".schematron.uml.anytraces").toString());
-				currentCategory = TraceabilityUtils.createTraceModel(tracesUri, resource.getURI().toString(), resourceSet, false, getTargetLanguage());
-				currentCategory.setSourceModel(pack);
+					genfolder = genfolder(modelFile.getLocation().toFile().getParentFile(), null);
+					summaryFile = new File(genfolder, "summary.html");
+					
+					classes = new ArrayList<Class>();
+					calcClasses(umlClinicalDocument, classes);
 
-				specContractedName = specName.replace(" ", "");
-				specInitials = WordUtils.initials(specName);
-				creator = new ClinicalDocumentCreator(umlClinicalDocument, resource.getResourceSet(), statuses);
-
-				fixUMLModel();
-				boolean directSave = Boolean.getBoolean("USE_FLATTENED_ORIGINAL_OCL_GENERATOR");
-				if (directSave) {
-					saveModelCopies(monitor, true);
-				}
-				if (trafo != null) {
-					for (Resource resource : irResources) {
-						TransformationBuilder builder = Boolean.getBoolean("USE_FLATTENED_ORIGINAL_OCL_GENERATOR") ? EcoreTransformationBuilder.create() : Boolean.getBoolean("USE_ORIGINAL_OCL_GENERATOR") ? org.openhealthtools.mdht.api.transform.original.APITransformationBuilder.create() : APITransformationBuilder.create();
-						builder.build().execute(CDACommonUtils.getAllContents(resource), new NullTransformMonitor());
+					for (Class clazz : classes) {
+						if (clazz.eResource() != null && !irResources.contains(clazz.eResource()))
+							irResources.add(clazz.eResource());
 					}
-					monitor.worked(19);
-					if (monitor.isCanceled())
-						throw new RuntimeException("Canceled by user");
+
+					URI tracesUri = URI.createFileURI(new File(genfolder, modelname + ".schematron.uml.anytraces").toString());
+					currentCategory = TraceabilityUtils.createTraceModel(
+						tracesUri, resource.getURI().toString(), resourceSet, false, getTargetLanguage());
+					currentCategory.setSourceModel(pack);
+
+					specContractedName = specName.replace(" ", "");
+					specInitials = WordUtils.initials(specName);
+					creator = new ClinicalDocumentCreator(umlClinicalDocument, resource.getResourceSet(), statuses);
+
+					fixUMLModel();
+					boolean directSave = Boolean.getBoolean("USE_FLATTENED_ORIGINAL_OCL_GENERATOR");
+					if (directSave) {
+						saveModelCopies(monitor, true);
+					}
+					if (trafo != null) {
+						for (Resource resource : irResources) {
+							TransformationBuilder builder = Boolean.getBoolean("USE_FLATTENED_ORIGINAL_OCL_GENERATOR")
+									? EcoreTransformationBuilder.create()
+									: Boolean.getBoolean("USE_ORIGINAL_OCL_GENERATOR")
+											? org.openhealthtools.mdht.api.transform.original.APITransformationBuilder.create()
+											: APITransformationBuilder.create();
+							builder.build().execute(CDACommonUtils.getAllContents(resource), new NullTransformMonitor());
+						}
+						monitor.worked(19);
+						if (monitor.isCanceled())
+							throw new RuntimeException("Canceled by user");
+					}
+
+					// in case some classes got deleted by the previous transformation
+					classes = new ArrayList<Class>();
+					calcClasses(umlClinicalDocument, classes);
+
+					long start = System.currentTimeMillis();
+
+					monitor.setTaskName("Building " + getTargetLanguage() + " file");
+					genAPICode(pack, monitor);
+
+					long end = System.currentTimeMillis();
+					System.out.println(getTargetLanguage() + " generation took " + (end - start) + "ms");
+
+					if (!directSave) {
+						saveModelCopies(monitor, false);
+					}
+					status = alertGenerationResult(shell, null);
+
+				} else { // if there are multiple ClinicalDocuments present in a model, create a genschematron folder for each of them
+
+					fixUMLModel(); // fix only once
+					
+					for (Class umlClinicalDocument : clinicalDocuments) {
+						CDACommonUtils.buildupPropertyForClinicalDocument(umlClinicalDocument);
+						specName = CDACommonUtils.getBusinessName(umlClinicalDocument);
+						genfolder = genfolder(modelFile.getLocation().toFile().getParentFile(), specName);
+						summaryFile = new File(genfolder, "summary.html");
+						
+						modelname = modelFile.getName().substring(0, modelFile.getName().lastIndexOf(".")) + "-" + specName;
+
+						classes = new ArrayList<Class>();
+						calcClasses(umlClinicalDocument, classes);
+
+						for (Class clazz : classes) {
+							if (clazz.eResource() != null && !irResources.contains(clazz.eResource()))
+								irResources.add(clazz.eResource());
+						}
+
+						URI tracesUri = URI.createFileURI(new File(genfolder, modelname + ".schematron.uml.anytraces").toString());
+						currentCategory = TraceabilityUtils.createTraceModel(
+							tracesUri, resource.getURI().toString(), resourceSet, false, getTargetLanguage());
+						currentCategory.setSourceModel(pack);
+
+						specContractedName = specName.replace(" ", "");
+						specInitials = WordUtils.initials(specName);
+						creator = new ClinicalDocumentCreator(umlClinicalDocument, resource.getResourceSet(), statuses);
+
+						boolean directSave = Boolean.getBoolean("USE_FLATTENED_ORIGINAL_OCL_GENERATOR");
+						if (directSave) {
+							saveModelCopies(monitor, true);
+						}
+						if (trafo != null) {
+							for (Resource resource : irResources) {
+								TransformationBuilder builder = Boolean.getBoolean("USE_FLATTENED_ORIGINAL_OCL_GENERATOR")
+										? EcoreTransformationBuilder.create()
+										: Boolean.getBoolean("USE_ORIGINAL_OCL_GENERATOR")
+												? org.openhealthtools.mdht.api.transform.original.APITransformationBuilder.create()
+												: APITransformationBuilder.create();
+								try {
+									builder.build().execute(
+										CDACommonUtils.getAllContents(resource), new NullTransformMonitor());
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
+							monitor.worked(19);
+							if (monitor.isCanceled())
+								throw new RuntimeException("Canceled by user");
+						}
+
+						// in case some classes got deleted by the previous transformation
+						classes = new ArrayList<Class>();
+						calcClasses(umlClinicalDocument, classes);
+
+						long start = System.currentTimeMillis();
+
+						monitor.setTaskName("Building " + getTargetLanguage() + " file");
+						genAPICode(pack, monitor);
+
+						long end = System.currentTimeMillis();
+						System.out.println(getTargetLanguage() + " generation took " + (end - start) + "ms");
+
+						if (!directSave) {
+							saveModelCopies(monitor, false);
+						}
+						status = alertGenerationResult(shell, null);
+					}
+
 				}
-
-				// in case some classes got deleted by the previous transformation
-				classes = new ArrayList<Class>();
-				calcClasses(umlClinicalDocument, classes);
-
-				long start = System.currentTimeMillis();
-
-				monitor.setTaskName("Building " + getTargetLanguage() + " file");
-				genAPICode(pack, monitor);
-
-				long end = System.currentTimeMillis();
-				System.out.println(getTargetLanguage() + " generation took " + (end - start) + "ms");
-
-				if (!directSave) {
-					saveModelCopies(monitor, false);
-				}
-				status = alertGenerationResult(shell, null);
 			} catch (Exception e) {
 				status = alertGenerationResult(shell, e);
 			}
@@ -320,7 +417,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 		return status;
 	}
 
-	private void saveModelCopies(IProgressMonitor monitor, boolean changeURIOnly) throws IOException, FileNotFoundException {
+	private void saveModelCopies(IProgressMonitor monitor, boolean changeURIOnly) throws IOException,
+			FileNotFoundException {
 		if (trafo == null) {
 			return;
 		}
@@ -336,7 +434,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 	}
 
 	private File getModelCopyFile(Resource resource) {
-		File file = new File(genfolder, resource.getURI().trimFileExtension().appendFileExtension("schematron.uml").lastSegment());
+		File file = new File(
+			genfolder, resource.getURI().trimFileExtension().appendFileExtension("schematron.uml").lastSegment());
 		return file;
 	}
 
@@ -350,22 +449,28 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 	}
 
 	/**
+	 * @param suffix TODO
 	 * @return folder where contents shall be generated
 	 */
-	abstract protected File genfolder(File modelFolder);
+	abstract protected File genfolder(File modelFolder, String suffix);
 
 	private IStatus alertGenerationResult(final Shell shell, Exception e) {
 		if (e != null)
 			e.printStackTrace();
 
 		if (e != null)
-			CDACommonUtils.addStatus(statuses, IStatus.ERROR, getPlugin(), 0, "Transformation terminated with an exception", e);
+			CDACommonUtils.addStatus(
+				statuses, IStatus.ERROR, getPlugin(), 0, "Transformation terminated with an exception", e);
 
 		if (currentCategory != null) {
 			for (ModelStatus status : statuses) {
 				LogEntry trace = TraceabilityFactory.eINSTANCE.createLogEntry();
 				trace.setMessage(status.getMessage());
-				trace.setSeverity(status.getSeverity() == IStatus.ERROR ? 0 : status.getSeverity() == IStatus.WARNING ? 1 : 2);
+				trace.setSeverity(status.getSeverity() == IStatus.ERROR
+						? 0
+						: status.getSeverity() == IStatus.WARNING
+								? 1
+								: 2);
 				trace.setMessageType(status.getCode());
 				for (EObject participant : status.getParticipants()) {
 					if (participant != null) {
@@ -379,7 +484,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 						Resource res = participant.eResource();
 						if (participant instanceof Constraint && irResources.contains(res)) {
 							// the constraint don't exist in the original UML model, so point to the copy of it
-							URI uri = URI.createFileURI(getModelCopyFile(res).toString()).appendFragment(res.getURIFragment(participant));
+							URI uri = URI.createFileURI(getModelCopyFile(res).toString()).appendFragment(
+								res.getURIFragment(participant));
 							((InternalEObject) participant).eSetProxyURI(uri);
 						} else if (res != null) {
 							URI resolved = res.getResourceSet().getURIConverter().normalize(res.getURI());
@@ -407,7 +513,9 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 									// if file exists in the workspace, open a workspace resource instead of an external file!
 									i = new FileEditorInput(file);
 								}
-								IDE.openEditor(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage(), i, "traceability.presentation.ReflectiveTraceabilityEditorID");
+								IDE.openEditor(
+									PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage(), i,
+									"traceability.presentation.ReflectiveTraceabilityEditorID");
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
@@ -423,7 +531,9 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 		if (statuses.isEmpty())
 			return Status.OK_STATUS;
 
-		String message = this.specName + ": " + getTargetLanguage() + (e != null ? " generation did not finish" : " generation finished with problems");
+		String message = this.specName + ": " + getTargetLanguage() + (e != null
+				? " generation did not finish"
+				: " generation finished with problems");
 
 		return new MultiStatus(getPlugin(), IStatus.ERROR, statuses.toArray(new IStatus[] {}), message, e);
 	}
@@ -461,16 +571,32 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 					String xpath1 = trafo.getTypeCheck(class1);
 					for (Property property2 : clazz.getAttributes()) {
 						Property baseProperty2 = CDACommonUtils.getCDAProperty(property2);
-						if (baseProperty2 != null && property2.getType() instanceof Class && clazz.getAttributes().indexOf(property1) < clazz.getAttributes().indexOf(property2)) {
+						if (baseProperty2 != null && property2.getType() instanceof Class &&
+								clazz.getAttributes().indexOf(property1) < clazz.getAttributes().indexOf(property2)) {
 							Class class2 = (Class) property2.getType();
 							String xpath2 = trafo.getTypeCheck(class2);
-							if (property1 != property2 && baseProperty1 == baseProperty2 && xpath1 != null && xpath1.equals(xpath2)) {
-								CDACommonUtils.addStatus(statuses, IStatus.WARNING, getPlugin(), 14, property1.getQualifiedName() + " and  " + property2.getQualifiedName() + " have the same xpath type expression " + xpath1, property1, property2);
+							if (property1 != property2 && baseProperty1 == baseProperty2 && xpath1 != null &&
+									xpath1.equals(xpath2)) {
+								CDACommonUtils.addStatus(
+									statuses, IStatus.WARNING, getPlugin(), 14, property1.getQualifiedName() +
+											" and  " + property2.getQualifiedName() +
+											" have the same xpath type expression " + xpath1, property1, property2);
 							}
-							if (property1 != property2 && baseProperty1 == baseProperty2 && (xpath1 == null || xpath2 == null)) {
-								Property property = xpath1 == null ? property1 : property2;
+							if (property1 != property2 && baseProperty1 == baseProperty2 &&
+									(xpath1 == null || xpath2 == null)) {
+								Property property = xpath1 == null
+										? property1
+										: property2;
 								Class class_ = (Class) property.getType();
-								CDACommonUtils.addStatus(statuses, IStatus.WARNING, getPlugin(), 15, mentionSection(class_.getQualifiedName() + " is missing a OCL filter, template ID, code or classCode definition", clazz, property), class_);
+								CDACommonUtils.addStatus(
+									statuses,
+									IStatus.WARNING,
+									getPlugin(),
+									15,
+									mentionSection(
+										class_.getQualifiedName() +
+												" is missing a OCL filter, template ID, code or classCode definition",
+										clazz, property), class_);
 							}
 						}
 					}
@@ -482,29 +608,56 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 				Property property = (Property) CDACommonUtils.getMDHTRepresentative(association);
 				if (property.eContainer() instanceof Class && CDACommonUtils.hasPropertyPath(property)) {
 					Class class1 = (Class) property.eContainer();
-					Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
-					Object severity = stereotype != null ? association.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY) : null;
+					Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+						association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
+					Object severity = stereotype != null
+							? association.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY)
+							: null;
 					if (severity == null)
-						CDACommonUtils.addStatus(statuses, IStatus.WARNING, getPlugin(), 30, mentionSection(property.getQualifiedName() + " has no severity applied, hence this association will have no constraint generated", class1, property), property);
+						CDACommonUtils.addStatus(
+							statuses,
+							IStatus.WARNING,
+							getPlugin(),
+							30,
+							mentionSection(
+								property.getQualifiedName() +
+										" has no severity applied, hence this association will have no constraint generated",
+								class1, property), property);
 				}
 			}
 		}
 		for (Property property : CDACommonUtils.getAllContents(irResources, Property.class)) {
-			if (property.getAssociation() == null && property.eContainer() instanceof Class && CDACommonUtils.hasPropertyPath(property)) {
+			if (property.getAssociation() == null && property.eContainer() instanceof Class &&
+					CDACommonUtils.hasPropertyPath(property)) {
 				Class class1 = (Class) property.eContainer();
-				Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.PROPERTY_VALIDATION);
-				Object severity = stereotype != null ? property.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY) : null;
+				Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+					property, ICDAProfileConstants.PROPERTY_VALIDATION);
+				Object severity = stereotype != null
+						? property.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY)
+						: null;
 				if (severity == null)
-					CDACommonUtils.addStatus(statuses, IStatus.WARNING, getPlugin(), 31, mentionSection(property.getQualifiedName() + " has no severity applied, hence this property will have no constraint generated", class1, property), property);
+					CDACommonUtils.addStatus(
+						statuses,
+						IStatus.WARNING,
+						getPlugin(),
+						31,
+						mentionSection(
+							property.getQualifiedName() +
+									" has no severity applied, hence this property will have no constraint generated",
+							class1, property), property);
 			}
 		}
 		Map<String, NamedElement> nameCheck = new HashMap<String, NamedElement>();
 		for (NamedElement namedElement : CDACommonUtils.getAllContents(irResources, NamedElement.class)) {
-			if (namedElement.getName() != null && namedElement.getQualifiedName() != null && !(namedElement instanceof InstanceValue) && !(namedElement instanceof Constraint)) {
+			if (namedElement.getName() != null && namedElement.getQualifiedName() != null &&
+					!(namedElement instanceof InstanceValue) && !(namedElement instanceof Constraint)) {
 				NamedElement existing = nameCheck.put(namedElement.getQualifiedName(), namedElement);
 				if (existing != null && existing != namedElement) {
-					CDACommonUtils.addStatus(statuses, IStatus.WARNING, getPlugin(), 32, "Two UML elements share the same qualified name: " + namedElement.getQualifiedName(), namedElement, existing);
-					System.out.println("Two UML elements share the same qualified name: " + namedElement.getQualifiedName());
+					CDACommonUtils.addStatus(
+						statuses, IStatus.WARNING, getPlugin(), 32, "Two UML elements share the same qualified name: " +
+								namedElement.getQualifiedName(), namedElement, existing);
+					System.out.println("Two UML elements share the same qualified name: " +
+							namedElement.getQualifiedName());
 				}
 			}
 		}
@@ -518,7 +671,9 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 	 * @return
 	 */
 	protected String getStereotype(NamedElement element, String name) {
-		Stereotype stereotype = (Stereotype) profile.getPackagedElement(element instanceof Package ? "SchematronSupport" : "SchematronConfig");
+		Stereotype stereotype = (Stereotype) profile.getPackagedElement(element instanceof Package
+				? "SchematronSupport"
+				: "SchematronConfig");
 		if (element.hasValue(stereotype, name)) {
 			Object object = element.getValue(stereotype, name);
 			if (object != null)
@@ -538,7 +693,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 	 */
 	abstract protected void genAPICode(final Package pack, IProgressMonitor monitor) throws Exception;
 
-	abstract protected OCLTransformation<Package, Classifier, ?, Property, ?, ?, ?, ?, ?, ?, ?, ?> createTrafo(final ResourceSet resourceSet);
+	abstract protected OCLTransformation<Package, Classifier, ?, Property, ?, ?, ?, ?, ?, ?, ?, ?> createTrafo(
+			final ResourceSet resourceSet);
 
 	protected NamedElement getConstrainedElement(Constraint constraint) {
 		if (constraint.getConstrainedElements().isEmpty())
@@ -554,13 +710,16 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 		}
 
 		Class clazz = (Class) constraint.getContext();
-		if (constraint.getName() != null && constraint.getName().endsWith("TemplateId") && creator.getTemplateIdProperty(clazz) != null && element instanceof Class) {
+		if (constraint.getName() != null && constraint.getName().endsWith("TemplateId") &&
+				creator.getTemplateIdProperty(clazz) != null && element instanceof Class) {
 			element = creator.getTemplateIdProperty(clazz);
 		} else if (element == constraint.getContext()) {
 			element = constraint;
 		}
 
-		final OpaqueExpression spec = (constraint.getSpecification() instanceof OpaqueExpression) ? (OpaqueExpression) constraint.getSpecification() : null;
+		final OpaqueExpression spec = (constraint.getSpecification() instanceof OpaqueExpression)
+				? (OpaqueExpression) constraint.getSpecification()
+				: null;
 		if (spec == null)
 			return null;
 
@@ -593,7 +752,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 	/**
 	 * @param propertyPath
 	 * @param checkRedefines
-	 *            whether skipping of predicates should be based on redefines/subsets (<code>true</code>) or singlevalued/multivalued (<code>false</code>) considerations
+	 *            whether skipping of predicates should be based on redefines/subsets (<code>true</code>) or singlevalued/multivalued (
+	 *            <code>false</code>) considerations
 	 * @return
 	 */
 	protected String getCdaContext(List<Property> propertyPath, boolean checkRedefines) {
@@ -608,7 +768,9 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 			context = trafo.step(context, childProperty);
 			String i = trafo.newVar();
 			if (lastPredicate != null) {
-				context = trafo.predicate(context, ((CDAOCLHandler) trafo.getDomainSpecificOCLHandler()).getCodeOrClasscodeCheckForPredicate(lastPredicate, i), i);
+				context = trafo.predicate(
+					context, ((CDAOCLHandler) trafo.getDomainSpecificOCLHandler()).getCodeOrClasscodeCheckForPredicate(
+						lastPredicate, i), i);
 				lastPredicate = null;
 				continue;
 			}
@@ -624,7 +786,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 				continue;
 			}
 			Class class1 = (Class) childProperty.getType();
-			if (propertyPath.size() > nextProperty && propertyPath.get(nextProperty) == CDACommonUtils.getPropertyForTypeCheck(class1)) {
+			if (propertyPath.size() > nextProperty &&
+					propertyPath.get(nextProperty) == CDACommonUtils.getPropertyForTypeCheck(class1)) {
 				lastPredicate = CDACommonUtils.getPredicateForTypeCheck(class1);
 				continue;
 			}
@@ -638,7 +801,10 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 
 	private boolean isRedefines(Property property) {
 		Property baseProperty = CDACommonUtils.getCDAProperty(property);
-		if (baseProperty != null && baseProperty != property && (property.getName().equals(baseProperty.getName()) || property.getRedefinedProperties().contains(baseProperty)) && property.eContainer() instanceof Class) {
+		if (baseProperty != null &&
+				baseProperty != property &&
+				(property.getName().equals(baseProperty.getName()) || property.getRedefinedProperties().contains(
+					baseProperty)) && property.eContainer() instanceof Class) {
 			Class clazz = (Class) property.eContainer();
 			for (Property otherProperty : clazz.getAttributes()) {
 				if (otherProperty != property && CDACommonUtils.getCDAProperty(otherProperty) == baseProperty) {
@@ -677,8 +843,10 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 
 	/**
 	 * @param params
-	 *            first item is the template variable, following items UML elements representing context for the template variable (e.g. the {uml-element-name} of a given UML element)
-	 * @return whether a template variable needs to be calculated in order to be replaced in the template (<code>true</code>) or whether the template variable is already resolved (<code>false</code>) or not required to be resolved (<code>false</code>)
+	 *            first item is the template variable, following items UML elements representing context for the template variable (e.g. the
+	 *            {uml-element-name} of a given UML element)
+	 * @return whether a template variable needs to be calculated in order to be replaced in the template (<code>true</code>) or whether the template
+	 *         variable is already resolved (<code>false</code>) or not required to be resolved (<code>false</code>)
 	 */
 	protected boolean needResolve(Object... params) {
 		String name = (String) params[0];
@@ -782,7 +950,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 				CodeSystemConstraint codeSystemConstraint = CDACommonUtils.getCodeSystemConstraint(property);
 				if (codeSystemConstraint != null) {
 					String result = (String) codeSystemConstraint.eGet(attribute);
-					if (result == null && attribute == TermPackage.eINSTANCE.getCodeSystemConstraint_Identifier() && codeSystemConstraint.getReference() != null)
+					if (result == null && attribute == TermPackage.eINSTANCE.getCodeSystemConstraint_Identifier() &&
+							codeSystemConstraint.getReference() != null)
 						return codeSystemConstraint.getReference().getIdentifier();
 					return result;
 				}
@@ -795,7 +964,9 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 		if (element instanceof Property && ((Property) element).getAssociation() != null)
 			element = ((Property) element).getAssociation();
 		Validation cv = CDAProfileUtil.getValidation(element);
-		return cv != null ? cv.getSeverity().toString() : null;
+		return cv != null
+				? cv.getSeverity().toString()
+				: null;
 	}
 
 	protected String resolve(String template, Class clazz, NamedElement element, String testType) {
@@ -848,7 +1019,9 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 	}
 
 	private String getBody(Constraint constraint, String language) {
-		final OpaqueExpression spec = (constraint.getSpecification() instanceof OpaqueExpression) ? (OpaqueExpression) constraint.getSpecification() : null;
+		final OpaqueExpression spec = (constraint.getSpecification() instanceof OpaqueExpression)
+				? (OpaqueExpression) constraint.getSpecification()
+				: null;
 		if (spec == null)
 			return null;
 		int analysisIndex = spec.getLanguages().indexOf(language);
@@ -862,7 +1035,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 		if (constraint.getName() != null && !"".equals(constraint.getName())) {
 			return constraint.getName();
 		}
-		return constraint.getContext().getName() + "(" + (constraint.getContext().getOwnedRules().indexOf(constraint) + 1) + ")";
+		return constraint.getContext().getName() + "(" +
+				(constraint.getContext().getOwnedRules().indexOf(constraint) + 1) + ")";
 	}
 
 	/**
@@ -930,7 +1104,8 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 
 	static public String getPDFSection(Class context, Element constrainedElement) {
 		if (isTemplateId(constrainedElement)) {
-			return CDACommonUtils.getPDFSection(context, true) + "." + CDACommonUtils.getCustomizedBulletItem(context, 0);
+			return CDACommonUtils.getPDFSection(context, true) + "." +
+					CDACommonUtils.getCustomizedBulletItem(context, 0);
 		}
 		return CDACommonUtils.getPDFSection(constrainedElement, true);
 	}
@@ -938,13 +1113,17 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 	static public String getPDFSectionOrder(Class context, Element constrainedElement) {
 		String result = "";
 		for (String part : getPDFSection(context, constrainedElement).split("\\.")) {
-			result += (part.length() == 1 ? "0" + part : part) + ".";
+			result += (part.length() == 1
+					? "0" + part
+					: part) + ".";
 		}
 		return result.substring(0, result.length() - 1);
 	}
 
 	static public String getLevel2PDFSectionNumber(Class context, Element constrainedElement) {
-		String result = CDACommonUtils.getPDFSection(isTemplateId(constrainedElement) ? context : constrainedElement, true, true);
+		String result = CDACommonUtils.getPDFSection(isTemplateId(constrainedElement)
+				? context
+				: constrainedElement, true, true);
 		if (result.indexOf(" ") != -1) {
 			return result.substring(0, result.indexOf(" "));
 		}
@@ -952,7 +1131,9 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 	}
 
 	static public String getLevel2PDFSectionName(Class context, Element constrainedElement) {
-		String result = CDACommonUtils.getPDFSection(isTemplateId(constrainedElement) ? context : constrainedElement, true, true);
+		String result = CDACommonUtils.getPDFSection(isTemplateId(constrainedElement)
+				? context
+				: constrainedElement, true, true);
 		if (result.indexOf(" ") != -1) {
 			return result.substring(result.indexOf(" ") + 1);
 		}
