@@ -212,7 +212,7 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 		try {
 			try {
 				this.specName = "Undefined Clinical Document";
-				monitor.setTaskName("Load UML model");
+				monitor.setTaskName("Loading UML model");
 				ResourceSet resourceSet = new ResourceSetImpl() {
 
 					@Override
@@ -308,7 +308,7 @@ abstract public class GenerateAPIAction implements IObjectActionDelegate {
 				status = alertGenerationResult(shell, e);
 			}
 		} finally {
-			monitor.setTaskName("Refresh workspace");
+			monitor.setTaskName("Refreshing workspace");
 			try {
 				modelFile.getParent().getParent().refreshLocal(IResource.DEPTH_INFINITE, monitor);
 			} catch (CoreException e) {
