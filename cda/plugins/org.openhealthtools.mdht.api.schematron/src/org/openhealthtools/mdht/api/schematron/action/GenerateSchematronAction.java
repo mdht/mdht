@@ -128,7 +128,7 @@ public class GenerateSchematronAction extends GenerateAPIAction {
 					EntityResources entity = resourcesOfEntity.get(fileName);
 					if (entity == null) {
 						String entId = toValidFileName(resolve(entIdTemplate, clazz, element, constraint));
-						String patternId = toValidFileName(resolve(patternIdTemplate, clazz, element, constraint));
+						String patternId = toValidPatternName(resolve(patternIdTemplate, clazz, element, constraint));
 						resourcesOfEntity.put(fileName, entity = new EntityResources(fileName, entId, patternId, xpathResourceRowTemplate));
 					}
 
@@ -226,6 +226,13 @@ public class GenerateSchematronAction extends GenerateAPIAction {
 		filename = filename.replace(".", "_").replace(" ", ""); // cosmetics
 		filename = filename.replaceAll("[:\\\\/*\"?|<>']", ""); // remove invalid characters
 		return filename;
+	}
+	
+	// creates a valid Schematron pattern name that hopefully conforms to http://www.w3.org/TR/xmlschema-2/#cvc-pattern-valid
+	protected String toValidPatternName(String patternname) {
+		patternname = patternname.replace(".", "_").replace(" ", ""); // cosmetics
+		patternname = patternname.replaceAll("[:\\\\/*\"?|<>'\\(\\)]", ""); // remove invalid characters
+		return patternname;
 	}
 
 	protected OCLTransformation<Package, Classifier, ?, Property, ?, ?, ?, ?, ?, ?, ?, ?> createTrafo(final ResourceSet resourceSet) {
