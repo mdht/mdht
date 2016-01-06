@@ -107,6 +107,13 @@
                 label="%addIGRulePrefixOption1.label"
                 menubarPath="cdatools/updateRulesMenu/addPrefixMenu/rulesSubMenuGroup2">
           </action>
+          <action
+                class="org.openhealthtools.mdht.uml.ui.dev.actions.ResolveModelingShortcuts"
+                enablesFor="1"
+                id="org.openhealthtools.mdht.uml.cda.ui.dev.action1"
+                label="Resolve Modeling Shortcuts"
+                menubarPath="cdatools/transform">
+          </action>
 			
       </objectContribution>
    </extension>
