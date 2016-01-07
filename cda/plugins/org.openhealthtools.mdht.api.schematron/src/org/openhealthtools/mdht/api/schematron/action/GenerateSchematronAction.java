@@ -168,7 +168,7 @@ public class GenerateSchematronAction extends GenerateAPIAction {
 				pattern.append("\n");
 				contextasserts.append("	<assert test=\"" + escapeAttributeValue(getCdaContext(clazz, true)) + "\">Cannot find context " + getCdaContext(clazz, true) + "</assert>\n");
 				writeEntity(schematronPreludium, schematron, pattern.toString(), entity.entId, entity.fileName + (alreadyContained ? "ALREADYTCONTAINRD" : ""));
-				CDACommonUtils.stringToFile(entity.xpathResource.toString(), getCSVFile(entity.fileName));
+//				CDACommonUtils.stringToFile(entity.xpathResource.toString(), getCSVFile(entity.fileName));
 
 			}
 
@@ -231,7 +231,7 @@ public class GenerateSchematronAction extends GenerateAPIAction {
 	// creates a valid Schematron pattern name that hopefully conforms to http://www.w3.org/TR/xmlschema-2/#cvc-pattern-valid
 	protected String toValidPatternName(String patternname) {
 		patternname = patternname.replace(".", "_").replace(" ", ""); // cosmetics
-		patternname = patternname.replaceAll("[:\\\\/*\"?|<>'\\(\\)]", ""); // remove invalid characters
+		patternname = patternname.replaceAll("[:\\\\/*\"?|<>'\\(\\)\\{\\}]", ""); // remove invalid characters
 		return patternname;
 	}
 
