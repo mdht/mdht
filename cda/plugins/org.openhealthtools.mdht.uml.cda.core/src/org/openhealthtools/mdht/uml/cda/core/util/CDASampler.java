@@ -34,6 +34,11 @@ public class CDASampler {
 	private String umlContext = "";
 
 	/**
+	 * whether custom data is actually retrieved by a call to getSample() (and then normally built into a model)
+	 */
+	private boolean customDataUsed;
+
+	/**
 	 * Merges the sample CDA content annotations for the givem UML class
 	 * 
 	 * @param umlClass
@@ -152,7 +157,9 @@ public class CDASampler {
 	 * @return
 	 */
 	public String getSample() {
-		return samples.get("");
+		String result = samples.get("");
+		this.customDataUsed |= result != null;
+		return result;
 	}
 
 	public String getSample(String def) {
@@ -189,6 +196,10 @@ public class CDASampler {
 				// nothing to do
 			}
 		}
+	}
+
+	public boolean isCustomDataUsed() {
+		return customDataUsed;
 	}
 
 }

@@ -22,6 +22,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -30,6 +31,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.compare.rangedifferencer.IRangeComparator;
 import org.eclipse.compare.rangedifferencer.RangeDifference;
 import org.eclipse.compare.rangedifferencer.RangeDifferencer;
@@ -40,6 +42,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
@@ -56,6 +59,7 @@ import org.eclipse.uml2.uml.Substitution;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
+import org.openhealthtools.mdht.uml.cda.core.util.CDACommonUtils;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ClinicalDocumentCreator;
@@ -470,11 +474,17 @@ public class TransformClassContent extends TransformAbstract {
 			int exampleDepth = transformerOptions.getExampleDepth();
 
 			transformerOptions.isIncludeTableView();
+			
 
-			EObject eObject = instanceGenerator.createInstance(umlClass, exampleDepth > 0
+			String xmlGeneratorType = transformerOptions.getXmlGeneratorType();
+			if (xmlGeneratorType == null) {
+				xmlGeneratorType = "custom-if-data-present";
+			}
+
+			EObject eObject = "custom-only".equals(xmlGeneratorType) ? null : instanceGenerator.createInstance(umlClass, exampleDepth > 0
 					? exampleDepth
 					: 2);
-			if (eObject==null) {
+			if (eObject==null && !"original-only".equals(xmlGeneratorType) || "custom".equals(xmlGeneratorType) || "custom-if-data-present".equals(xmlGeneratorType)) {
 				ArrayList<ModelStatus> statuses = new ArrayList<ModelStatus>();
 				ClinicalDocumentCreator creator = new ClinicalDocumentCreator(
 					null, umlClass.eResource().getResourceSet(), statuses);
@@ -482,10 +492,21 @@ public class TransformClassContent extends TransformAbstract {
 				creator.enableSampleDataExpansion(true);
 				Collection<Property> props = Collections.emptyList();
 				EObject newObject = creator.initializeSnippet(umlClass, props);
-				if (newObject != null) {
+				if (newObject == null && eObject == null && !"original".equals(xmlGeneratorType)) {
+					writer.println("Error: Custom XML generator could not create XML sample");
+					for (ModelStatus status : statuses) {
+						writer.println("Error code " + status.getCode() + ": " + status.getMessage());
+					}
+					writer.println("]]></codeblock>"); 
+					return;
+				}
+				if (newObject != null && (eObject==null || "custom".equals(xmlGeneratorType) || "custom-if-data-present".equals(xmlGeneratorType) && creator.getSampler().isCustomDataUsed())) {
 					String xml = creator.toXMLString(newObject, umlClass);
 					writer.write(xml);
 					writer.println("]]></codeblock>"); 
+					for (ModelStatus status : statuses) {
+						writer.println("<!--Error code " + status.getCode() + ": " + status.getMessage() + "-->");
+					}
 					return;
 				}
 			}
