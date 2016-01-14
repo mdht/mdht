@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Export-Package: org.openhealthtools.mdht.api.dotnet.action
+Require-Bundle: org.eclipse.ocl.uml,org.eclipse.ocl.ecore,org.eclipse.
+ ui,org.eclipse.equinox.registry,org.eclipse.core.runtime,org.openheal
+ thtools.mdht.uml.ui.properties,org.openhealthtools.mdht.api,org.openh
+ ealthtools.mdht.transformation.ocl,org.openhealthtools.mdht.transform
+ ation.ocl2csharp,org.openhealthtools.mdht.uml.cda.core
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 2.5.16.201512222243
+Bundle-Name: Dotnet
+Bundle-Activator: org.openhealthtools.mdht.api.dotnet.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.openhealthtools.mdht.api.dotnet;singleton:=tr
+ ue
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

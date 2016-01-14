@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Export-Package: org.openhealthtools.mdht.transformation.ocl2xpath
+Require-Bundle: org.openhealthtools.mdht.transformation.ocl,org.eclips
+ e.ocl,org.eclipse.ocl.uml,org.eclipse.ocl.ecore
+Bundle-Version: 2.5.16.201512222243
+Bundle-Name: Ocl2xpath
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.openhealthtools.mdht.transformation.ocl2xpath
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

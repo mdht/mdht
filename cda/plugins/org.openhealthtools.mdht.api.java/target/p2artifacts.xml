@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='org.openhealthtools.mdht.api.java' version='2.5.16.201512222243'>
+    <properties size='5'>
+      <property name='artifact.size' value='13561'/>
+      <property name='download.size' value='13561'/>
+      <property name='maven-groupId' value='org.openhealthtools.mdht.cda'/>
+      <property name='maven-artifactId' value='org.openhealthtools.mdht.api.java'/>
+      <property name='maven-version' value='2.5.16-SNAPSHOT'/>
+    </properties>
+  </artifact>
+</artifacts>

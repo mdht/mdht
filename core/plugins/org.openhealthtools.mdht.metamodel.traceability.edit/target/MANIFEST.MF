@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.core.runtime,org.openhealthtools.mdht.meta
+ model.traceability;visibility:=reexport,org.eclipse.emf.edit;visibili
+ ty:=reexport
+Export-Package: traceability.provider
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 2.5.16.201512222243
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-Activator: traceability.provider.TraceabilityEditPlugin$Impleme
+ ntation
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.openhealthtools.mdht.metamodel.traceability.e
+ dit;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

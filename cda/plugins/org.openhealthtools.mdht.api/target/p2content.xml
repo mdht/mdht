@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='org.openhealthtools.mdht.api' version='2.5.16.201512222243'>
+    <update id='org.openhealthtools.mdht.api' range='[0.0.0,2.5.16.201512222243)' severity='0'/>
+    <properties size='4'>
+      <property name='org.eclipse.equinox.p2.name' value='Api'/>
+      <property name='maven-groupId' value='org.openhealthtools.mdht.cda'/>
+      <property name='maven-artifactId' value='org.openhealthtools.mdht.api'/>
+      <property name='maven-version' value='2.5.16-SNAPSHOT'/>
+    </properties>
+    <provides size='4'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='org.openhealthtools.mdht.api' version='2.5.16.201512222243'/>
+      <provided namespace='osgi.bundle' name='org.openhealthtools.mdht.api' version='2.5.16.201512222243'/>
+      <provided namespace='java.package' name='org.openhealthtools.mdht.api' version='0.0.0'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+    </provides>
+    <requires size='23'>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.workbench' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.jface' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.jface.text' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.editors' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.ide' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.jobs' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.equinox.registry' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.emf.ecore' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.openhealthtools.mdht.uml.cda.core' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.openhealthtools.mdht.transform.core' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.openhealthtools.mdht.uml.cda.transform' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.openhealthtools.mdht.uml.term.transform' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.openhealthtools.mdht.transformation.ocl' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.openhealthtools.mdht.uml.ui.properties' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.forms' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.views.properties.tabbed' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.gmf.runtime.diagram.ui.properties' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.uml2.uml' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.openhealthtools.mdht.metamodel.traceability' range='0.0.0'/>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='org.openhealthtools.mdht.api' version='2.5.16.201512222243'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: org.openhealthtools.mdht.api;singleton:=true&#xA;Bundle-Version: 2.5.16.201512222243&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>

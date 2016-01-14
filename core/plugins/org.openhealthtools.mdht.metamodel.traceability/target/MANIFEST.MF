@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.emf.ecore,org.ecl
+ ipse.emf.ecore.xmi;visibility:=reexport
+Export-Package: traceability,traceability.impl,traceability.util
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 2.5.16.201512222243
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.openhealthtools.mdht.metamodel.traceability;s
+ ingleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='org.openhealthtools.mdht.transformation.ocl' version='2.5.16.201512222243'>
+    <properties size='5'>
+      <property name='artifact.size' value='15121'/>
+      <property name='download.size' value='15121'/>
+      <property name='maven-groupId' value='org.openhealthtools.mdht'/>
+      <property name='maven-artifactId' value='org.openhealthtools.mdht.transformation.ocl'/>
+      <property name='maven-version' value='2.5.16-SNAPSHOT'/>
+    </properties>
+  </artifact>
+</artifacts>

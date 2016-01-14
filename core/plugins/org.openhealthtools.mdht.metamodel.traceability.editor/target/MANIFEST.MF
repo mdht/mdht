@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.ui,org.eclipse.ui
+ .views,org.eclipse.emf.edit.ui,org.eclipse.emf.edit,org.eclipse.help,
+ org.eclipse.ui.ide,org.eclipse.core.resources;visibility:=reexport,or
+ g.eclipse.core.commands;visibility:=reexport,org.eclipse.emf.ecore.xm
+ i;visibility:=reexport,org.openhealthtools.mdht.metamodel.traceabilit
+ y.edit;visibility:=reexport,org.eclipse.nebula.widgets.xviewer,org.ap
+ ache.commons.lang,com.google.guava
+Export-Package: traceability.presentation,traceability.presentation.ta
+ ble,traceability.presentation.table.images
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 2.5.16.201512222243
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-Activator: traceability.presentation.TraceabilityEditorPlugin$I
+ mplementation
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.openhealthtools.mdht.metamodel.traceability.e
+ ditor;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+
