@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Generate OCL for enumeration properties (artf3099)
  *     Rama Ramakrishnan - Increased the maximum limit of allowable enumerations to 400
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.util;
@@ -68,7 +68,7 @@ public class TermProfileUtil {
 	/**
 	 * Returns stereotype if applied, or first sub-stereotype applied that is a
 	 * specialization of the given stereotype.
-	 * 
+	 *
 	 * @return stereotype, or null if not applied
 	 */
 	public static Stereotype getAppliedStereotype(Element element, String stereotypeName) {
@@ -197,15 +197,18 @@ public class TermProfileUtil {
 	 * This method returns enumerations only if the enumerations are less than 400.
 	 * A discussion on this number is available at
 	 * https://www.projects.openhealthtools.org/sf/discussion/do/listPosts/projects.mdht/discussion.forum1118.topc12096
-	 * 
+	 *
 	 * @param enumeration
 	 * @return
 	 */
 	static Iterable<EnumerationLiteral> getSmallEnumeration(Enumeration enumeration) {
-		List<EnumerationLiteral> literals = enumeration.getOwnedLiterals();
+		if (enumeration != null) {
+			List<EnumerationLiteral> literals = enumeration.getOwnedLiterals();
 
-		return ((literals.size() > 0) && (literals.size() < 400))
-				? literals
-				: null;
+			return ((literals.size() > 0) && (literals.size() < 400))
+					? literals
+					: null;
+		}
+		return null;
 	}
 }
