@@ -494,7 +494,7 @@ public class CDACommonUtils {
 		for (Constraint constraint : umlClass.getOwnedRules()) {
 			if (constraint.getConstrainedElements().size() == 1 &&
 					constraint.getConstrainedElements().get(0) == umlClass && constraint.getName() != null &&
-					!constraint.getName().endsWith("TemplateId")) {
+					!constraint.getName().endsWith("TemplateId") || constraint.getConstrainedElements().size() > 1) {
 				propertyStepCache.put(
 					constraint, getCustomizedBulletItem(umlClass, offset + allProperties.size() + constraintIndex));
 				constraintIndex++;
