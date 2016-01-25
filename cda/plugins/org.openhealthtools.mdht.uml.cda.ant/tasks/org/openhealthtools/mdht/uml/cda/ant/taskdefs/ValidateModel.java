@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - validate UML model in UML-to-Ecore transformation
  *     Sean Muir (National E-Health Transition Authority (NEHTA)) - add Path Map Support
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
@@ -63,7 +63,7 @@ public class ValidateModel extends CDAModelingSubTask {
 		logInfo("Validating UML source model...");
 
 		UMLDiagnostician diagnostician = new UMLDiagnostician(monitor);
-		final Diagnostic health = new LoggingDiagnosticChain(this);
+		final Diagnostic health = new LoggingDiagnosticChain(this, Diagnostic.ERROR);
 		try {
 			diagnostician.validate(defaultModel, (DiagnosticChain) health);
 		} catch (Exception e) {
@@ -75,8 +75,8 @@ public class ValidateModel extends CDAModelingSubTask {
 		org.eclipse.emf.common.util.URI modelPath = umlResource.getURI();
 		FileWriter fr;
 		try {
-			fr = new FileWriter(modelPath.toFileString().replaceFirst(
-				modelPath.segment(modelPath.segmentCount() - 1), ".modelStatus"));
+			fr = new FileWriter(
+				modelPath.toFileString().replaceFirst(modelPath.segment(modelPath.segmentCount() - 1), ".modelStatus"));
 			fr.write(String.valueOf(health.getSeverity()));
 			fr.close();
 		} catch (IOException e) {
