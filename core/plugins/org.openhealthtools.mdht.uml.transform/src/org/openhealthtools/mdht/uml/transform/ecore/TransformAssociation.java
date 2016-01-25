@@ -40,6 +40,20 @@ import org.openhealthtools.mdht.uml.transform.internal.Logger;
 
 public abstract class TransformAssociation extends TransformAbstract {
 
+	private String getName(Class theClass) {
+		return theClass != null
+				? theClass.getQualifiedName()
+				: "CLASS NOT FOUND!";
+	}
+
+	protected void logUnsupportedAssociation(Class sourceClass, Class baseSourceClass, Class targetClass,
+			Class baseTargetClass, int level) {
+		String message = "Unsupported association: " + getName(baseSourceClass) + "(" + getName(sourceClass) + ")" +
+				" -> " + getName(baseTargetClass) + "(" + getName(targetClass) + ")";
+
+		Logger.log(level, message);
+	}
+
 	public TransformAssociation(TransformerOptions options, IBaseModelReflection baseModelReflection) {
 		super(options, baseModelReflection);
 	}
@@ -82,10 +96,7 @@ public abstract class TransformAssociation extends TransformAbstract {
 		Class baseTargetClass = getBaseClass(targetClass);
 
 		if (baseSourceClass == null || baseTargetClass == null) {
-			String message = "Unsupported association: " + sourceClass.getQualifiedName() + " -> " +
-					sourceProperty.getType().getQualifiedName();
-			Logger.log(Logger.ERROR, message);
-
+			logUnsupportedAssociation(sourceClass, baseSourceClass, targetClass, baseTargetClass, Logger.ERROR);
 			removeModelElement(sourceProperty);
 			removeModelElement(association);
 			return null;
@@ -144,9 +155,8 @@ public abstract class TransformAssociation extends TransformAbstract {
 			String variableDeclaration = variableDeclarationOut[0];
 
 			if ((associationEnd == null) || (variableDeclaration == null)) {
-				String message = "Unsupported association: " + sourceClass.getQualifiedName() + " -> " +
-						targetClass.getQualifiedName();
-				Logger.log(Logger.ERROR, message);
+
+				logUnsupportedAssociation(sourceClass, baseSourceClass, targetClass, baseTargetClass, Logger.ERROR);
 
 				removeModelElement(sourceProperty);
 				removeModelElement(association);
