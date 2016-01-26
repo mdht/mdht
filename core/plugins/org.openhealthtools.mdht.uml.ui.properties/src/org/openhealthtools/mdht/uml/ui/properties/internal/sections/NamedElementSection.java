@@ -14,7 +14,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
-import java.io.IOException;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -30,7 +30,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
@@ -55,6 +54,7 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
@@ -124,11 +124,60 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Rename " + namedElement.getName()) {
 
 				URI propertiesURI = null;
 
 				String properties = null;
+
+				boolean hasBusinessName = false;
+
+				// cache the new name and namedelement for redo
+				String oldElementName = null;
+
+				String newElementName = null;
+
+				NamedElement thenNamedElement;
+
+				private void rename(String newName) {
+
+					HashMap<String, String> oldBusinessNames = new HashMap<String, String>();
+
+					Map<String, String> parsedProperties = properties != null
+							? UMLUtil.parseProperties(properties)
+							: new LinkedHashMap<String, String>();
+
+					if (!parsedProperties.isEmpty()) {
+						String businessNameKey = NamedElementUtil.getLabelPropertyKey(thenNamedElement);
+						if (parsedProperties.containsKey(businessNameKey)) {
+							oldBusinessNames.put(businessNameKey, parsedProperties.get(businessNameKey));
+						}
+
+						if (thenNamedElement instanceof org.eclipse.uml2.uml.Class) {
+							for (Property property : ((org.eclipse.uml2.uml.Class) thenNamedElement).getOwnedAttributes()) {
+								businessNameKey = NamedElementUtil.getLabelPropertyKey(property);
+								if (parsedProperties.containsKey(businessNameKey)) {
+									oldBusinessNames.put(businessNameKey, parsedProperties.get(businessNameKey));
+								}
+							}
+						}
+
+						for (String key : oldBusinessNames.keySet()) {
+							String newKey = key.replaceFirst(thenNamedElement.getName(), newName);
+							String newValue = parsedProperties.get(key).replaceFirst(
+								thenNamedElement.getName(), newName);
+
+							parsedProperties.put(newKey, newValue);
+							parsedProperties.remove(key);
+						}
+
+						if (!oldBusinessNames.isEmpty()) {
+							hasBusinessName = true;
+							UMLUtil.writeProperties(propertiesURI, parsedProperties);
+						}
+					}
+					thenNamedElement.setName(newName);
+				}
 
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
@@ -142,22 +191,11 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 
 					if (localNameModified) {
 						localNameModified = false;
-						this.setLabel("Set Name");
 
-						String oldPropertyKey = NamedElementUtil.getLabelPropertyKey(namedElement);
-						Map<String, String> parsedProperties = properties != null
-								? UMLUtil.parseProperties(properties)
-								: new LinkedHashMap<String, String>();
-						String oldProperty = parsedProperties.remove(oldPropertyKey);
-
-						namedElement.setName(localNameText.getText());
-
-						if (oldProperty != null) {
-							String newPropertyKey = NamedElementUtil.getLabelPropertyKey(namedElement);
-							parsedProperties.put(newPropertyKey, oldProperty.replace(oldPropertyKey, newPropertyKey));
-
-							UMLUtil.writeProperties(propertiesURI, parsedProperties);
-						}
+						oldElementName = namedElement.getName();
+						newElementName = localNameText.getText();
+						thenNamedElement = namedElement;
+						rename(localNameText.getText());
 
 						refreshBusinessNameText();
 					} else if (businessNameModified) {
@@ -172,9 +210,10 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 
 						// trigger the changed notification so saving can happen
 						// without actually changing the namedElement
-						namedElement.eNotify(new ENotificationImpl(
-							(InternalEObject) namedElement, Notification.SET, UMLPackage.NAMED_ELEMENT__NAME, name,
-							name, true));
+						namedElement.eNotify(
+							new ENotificationImpl(
+								(InternalEObject) namedElement, Notification.SET, UMLPackage.NAMED_ELEMENT__NAME, name,
+								name, true));
 
 					}
 
@@ -185,29 +224,18 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 				protected IStatus doUndo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 					IStatus result = super.doUndo(monitor, info);
 
-					if (result.isOK()) {
-						URIConverter uriConverter = getEditingDomain().getResourceSet().getURIConverter();
+					if (hasBusinessName) {
 
-						if (uriConverter.exists(propertiesURI, null)) {
+						Map<String, String> parsedProperties = properties != null
+								? UMLUtil.parseProperties(properties)
+								: new LinkedHashMap<String, String>();
 
-							if (properties == null) {
-								properties = UMLUtil.readProperties(propertiesURI);
+						UMLUtil.writeProperties(propertiesURI, parsedProperties);
 
-								try {
-									uriConverter.delete(propertiesURI, null);
-								} catch (IOException ioe) {
-									return Status.CANCEL_STATUS;
-								}
-							} else {
-								Map<String, String> parsedProperties = UMLUtil.parseProperties(properties);
-								properties = UMLUtil.readProperties(propertiesURI);
-								UMLUtil.writeProperties(propertiesURI, parsedProperties);
-							}
-						}
+					}
 
-						if (!businessNameText.isDisposed()) {
-							refreshBusinessNameText();
-						}
+					if (!this.newElementName.equals(oldElementName)) {
+						this.thenNamedElement.setName(oldElementName);
 					}
 
 					return result;
@@ -215,22 +243,13 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 
 				@Override
 				protected IStatus doRedo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-					IStatus result = super.doRedo(monitor, info);
+					// IStatus result = super.doRedo(monitor, info);
 
-					if (result.isOK()) {
-
-						if (properties != null) {
-							Map<String, String> parsedProperties = UMLUtil.parseProperties(properties);
-							properties = UMLUtil.readProperties(propertiesURI);
-							UMLUtil.writeProperties(propertiesURI, parsedProperties);
-						}
-
-						if (!businessNameText.isDisposed()) {
-							refreshBusinessNameText();
-						}
+					if (newElementName != null) {
+						this.rename(newElementName);
 					}
 
-					return result;
+					return super.doRedo(monitor, info);
 				}
 			};
 
