@@ -196,7 +196,7 @@ public class NamedElementUtil extends UMLUtil {
 	 * @return A label property key for the named element.
 	 */
 	public static String getLabelPropertyKey(NamedElement namedElement) {
-		String value = getPropertyValue(namedElement, "label");
+		String value = getPropertyKey(namedElement, "label");
 		return (value == null)
 				? namedElement.getName()
 				: value;
