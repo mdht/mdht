@@ -264,7 +264,10 @@ public class CDACommonUtils {
 				Class class1 = (Class) eObject;
 				if (class1.eContainer() instanceof Package) {
 					Package package1 = (Package) class1.eContainer();
-					step = getMainSection(incr, class1, package1);
+					int mainSection = getMainSection(class1, package1);
+					if (mainSection != -1) {
+						step = (mainSection + incr) + "." + (getCDAContents(package1, mainSection).indexOf(class1) + 1);
+					}
 					Property property = getOverallPropertyReference(class1);
 					if ("?".equals(step) && property != null) {
 						step = getPropertyStep(getClassReference(property), property);
@@ -308,24 +311,31 @@ public class CDACommonUtils {
 	}
 
 	/**
-	 * @param incr
 	 * @param class1
 	 *            the class to retrieve the section number for
 	 * @param package1
 	 *            the package the given class is contained
-	 * @return if class is not nested in the PDF file, then returns its section number (consisting of two numbers), otherwise returns "?"
+	 * @return if class is not nested in the PDF file, then returns its section number, otherwise returns -1
 	 */
-	private static String getMainSection(int incr, Class class1, Package package1) {
-		if (CDACommonUtils.isSection(class1)) {
-			return (3 + incr) + "." + (getCDAContents(package1, "Section").indexOf(class1) + 1);
-		} else if (CDACommonUtils.isClinicalDocument(class1)) {
-			return (2 + incr) + "." + (getCDAContents(package1, "ClinicalDocument").indexOf(class1) + 1);
-		} else if (CDACommonUtils.isClinicalStatement(class1)) {
-			return (4 + incr) + "." + (getCDAContents(package1, "ClinicalStatement").indexOf(class1) + 1);
-		} else {
-			return (5 + incr) + "." + (getCDAContents(package1, null).indexOf(class1) + 1);
+	private static int getMainSection(Class class1, Package package1) {
+		if (CDACommonUtils.isClinicalDocument(class1)) {
+			return 2;
 		}
-		// return "?";
+		if (CDACommonUtils.isSection(class1)) {
+			return 3;
+		}
+		if (CDACommonUtils.isClinicalStatement(class1)) {
+			return 4;
+		}
+		Resource res = class1.eResource();
+		if (res != null && res.getResourceSet() != null && res.getResourceSet().getResources().get(0) == res) {
+			return 5;
+		}
+		EObject parent = getContainerReference(class1);
+		if (!(parent != null && parent.eResource() == class1.eResource())) {
+			return 6;
+		}
+		return -1;
 	}
 
 	/**
@@ -375,20 +385,12 @@ public class CDACommonUtils {
 	 * @param typeName
 	 * @return all packaged elements in the given package having the given type string
 	 */
-	public static List<NamedElement> getCDAContents(Package package1, String typeName) {
+	public static List<NamedElement> getCDAContents(Package package1, int section) {
 		List<NamedElement> result = new ArrayList<NamedElement>();
 		for (PackageableElement element : package1.getPackagedElements()) {
 			if (element instanceof Class) {
 				Class class1 = (Class) element;
-				if (typeName == null) {
-					if (!CDACommonUtils.isSection(class1) && !CDACommonUtils.isClinicalDocument(class1) &&
-							!CDACommonUtils.isClinicalStatement(class1)) {
-						result.add(element);
-					}
-					continue;
-				}
-				if (CDACommonUtils.isCDAType(class1, typeName) || typeName.equals("ClinicalStatement") &&
-						CDACommonUtils.isClinicalStatement(class1)) {
+				if (getMainSection(class1, package1) == section) {
 					result.add(element);
 				}
 			}
@@ -514,7 +516,7 @@ public class CDACommonUtils {
 		EObject eObject = umlClass;
 		while (eObject != null && !(eObject instanceof Package)) {
 			if (eObject instanceof Class && eObject.eContainer() instanceof Package &&
-					!"?".equals(getMainSection(0, (Class) eObject, (Package) eObject.eContainer()))) {
+					getMainSection((Class) eObject, (Package) eObject.eContainer()) != -1) {
 				break;
 			}
 			eObject = getContainerReference(eObject);
