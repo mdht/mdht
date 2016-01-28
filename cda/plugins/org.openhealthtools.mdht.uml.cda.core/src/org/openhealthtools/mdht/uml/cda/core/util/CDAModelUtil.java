@@ -604,7 +604,7 @@ public class CDAModelUtil {
 
 		if (appendNestedConformanceRules && endType != null) {
 
-			if (markup && isInlineClass(endType) && !isPublishSeperately(endType)) {
+			if (markup && isDisplayInline(endType)) {
 				StringBuilder sb = new StringBuilder();
 
 				message.append(openOrClosed(property));
@@ -2914,6 +2914,43 @@ public class CDAModelUtil {
 
 		return false;
 
+	}
+
+	/**
+	 * For any given property, correctly check all Inline stereotypes and negation indicators
+	 * to determine if this property should display inline.
+	 * 
+	 * @param endType
+	 *            any UML Class
+	 * @return true iff the property has been correctly stereotyped to display inline, false otherwise
+	 */
+	public static boolean isDisplayInline(Class endType) {
+		if (endType == null)
+			return false;
+
+		if (CDAModelUtil.isInlineClass(endType) && !CDAModelUtil.isPublishSeperately(endType)) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * A convenience wrapper around isDisplayInline(Class endType) for properties.
+	 * 
+	 * For any given property, correctly check all Inline stereotypes and negation indicators
+	 * to determine if this property should display inline.
+	 * 
+	 * @param clazz
+	 *            any UML Class
+	 * @return true iff the property has been correctly stereotyped to display inline, false otherwise
+	 */
+	public static boolean isDisplayInline(Property property) {
+		Class endType = (property.getType() instanceof Class)
+				? (Class) property.getType()
+				: null;
+
+		return isDisplayInline(endType);
 	}
 
 	public static String getInlineFilter(Class inlineClass) {
