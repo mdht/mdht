@@ -48,7 +48,7 @@ public class TransformClass extends TransformAbstract {
 
 		writer.println(
 			"<section audience=\"contextTable\" conref=\"generated/_" + normalizedClassName +
-					".dita#classId/contextTable\">");
+				".dita#classId/contextTable\">");
 		writer.println("</section>");
 
 		writer.println("<!-- TODO: insert UML class diagram here -->");
@@ -70,7 +70,7 @@ public class TransformClass extends TransformAbstract {
 			// if (transformerOptions.isIncludeTableView()) {
 			writer.println(
 				"<section audience=\"tableconformance\"  conref=\"generated/_" + normalizedClassName +
-						".dita#classId/tableconformance\">");
+					".dita#classId/tableconformance\">");
 			writer.println("</section>");
 			// }
 
@@ -167,7 +167,8 @@ public class TransformClass extends TransformAbstract {
 
 		// Loop over properties and generalizations - create references ditamap
 		for (Property property : umlClass.getOwnedAttributes()) {
-			if (property.getType() != null && property.getAssociation() != null) {
+			if (property.getType() != null && property.getAssociation() != null &&
+					!CDAModelUtil.isDisplayInline(property)) {
 				addReference(umlClass, property.getType());
 			}
 		}
