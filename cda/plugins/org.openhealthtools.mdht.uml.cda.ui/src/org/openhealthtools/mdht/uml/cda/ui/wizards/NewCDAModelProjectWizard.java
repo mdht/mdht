@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir - initial API and implementation
  *     IBM Corporation - fixed issue related to project manifests (artf2756)
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.wizards;
 
@@ -114,8 +114,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		}
 
 		if (checkForSpaces()) {
-			MessageDialog.openWarning(
-				getShell(), "MDHT CDA Project Wizard Exception",
+			MessageDialog.openWarning(getShell(), "MDHT CDA Project Wizard Exception",
 				"Unable to create CDA Project, Unable to support Spaces ' ' within installation or workspace location");
 			return;
 		}
@@ -139,7 +138,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 			final String modelName = newCDATemplatePage.getModelName().toLowerCase();
 
-			modelProject = root.getProject(String.format("%s.%s.model", newCDATemplatePage.getBasePackage(), modelName));
+			modelProject = root.getProject(
+				String.format("%s.%s.model", newCDATemplatePage.getBasePackage(), modelName));
 			generatedProject = root.getProject(String.format("%s.%s", newCDATemplatePage.getBasePackage(), modelName));
 			docProject = root.getProject(String.format("%s.%s.doc", newCDATemplatePage.getBasePackage(), modelName));
 
@@ -150,16 +150,17 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 					monitor.beginTask("Creating Projects", 9);
 
 					try {
+						// Added sleep to prevent deadlock under mars - very simple solution but not look into actual cause
 						modelProject.create(monitor);
-
-						modelProject.open(monitor);
-
+						Thread.sleep(250);
 						generatedProject.create(monitor);
-
-						generatedProject.open(monitor);
-
+						Thread.sleep(250);
 						docProject.create(monitor);
-
+						Thread.sleep(250);
+						modelProject.open(monitor);
+						Thread.sleep(250);
+						generatedProject.open(monitor);
+						Thread.sleep(250);
 						docProject.open(monitor);
 
 						// Use pde internal functionality to create plugin
@@ -213,7 +214,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 						monitor.worked(1);
 
 						monitor.setTaskName("Create Manifest for Generated Project");
-						createGeneratedProjectManifest(generatedProject, newCDATemplatePage.getBasePackage(), modelName);
+						createGeneratedProjectManifest(
+							generatedProject, newCDATemplatePage.getBasePackage(), modelName);
 						monitor.worked(1);
 
 						monitor.setTaskName("Create Manifest for Doc Project");
@@ -235,9 +237,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 						monitor.setTaskName("Create UML Model");
 						createFolder(modelProject, "model");
 
-						createUMLModel(
-							modelProject, newCDATemplatePage.getNamespaceURI(), newCDATemplatePage.getBasePackage(),
-							modelName);
+						createUMLModel(modelProject, newCDATemplatePage.getNamespaceURI(),
+							newCDATemplatePage.getBasePackage(), modelName);
 						monitor.worked(1);
 
 						monitor.setTaskName("Create Model Plugin");
@@ -261,7 +262,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 						monitor.worked(1);
 
 						monitor.setTaskName("Create GenModel");
-						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.createGenModel(generatedProject, monitor);
+						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.createGenModel(
+							generatedProject, monitor);
 						monitor.worked(1);
 
 						monitor.setTaskName("Run MDHT Transformation");
@@ -303,7 +305,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			Logger.logException(exception);
 
 			Status status = new Status(
-				IStatus.ERROR, Activator.PLUGIN_ID, 0, exception.getCause().getLocalizedMessage(), exception.getCause());
+				IStatus.ERROR, Activator.PLUGIN_ID, 0, exception.getCause().getLocalizedMessage(),
+				exception.getCause());
 
 			ErrorDialog.openError(
 				getShell(), "MDHT CDA Project Wizard Exception", "Unable to create new CDA Project", status);
@@ -459,7 +462,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			project, resourceSet, options, VOCABURI, String.format("model/%s-vocab.uml", modelName.toLowerCase()),
 			String.format("%s-vocab", modelName.toLowerCase()));
 
-		CodegenSupport codegenSupport = (CodegenSupport) templatePackage.applyStereotype(templatePackage.getApplicableStereotype("CDA::CodegenSupport"));
+		CodegenSupport codegenSupport = (CodegenSupport) templatePackage.applyStereotype(
+			templatePackage.getApplicableStereotype("CDA::CodegenSupport"));
 
 		codegenSupport.setBase_Namespace(templatePackage);
 
@@ -475,7 +479,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 		Class cdaClass = templatePackage.createOwnedClass(newCDATemplatePage.getCDADocumentName(), false);
 
-		CDATemplate template = (CDATemplate) cdaClass.applyStereotype(cdaClass.getApplicableStereotype("CDA::CDATemplate"));
+		CDATemplate template = (CDATemplate) cdaClass.applyStereotype(
+			cdaClass.getApplicableStereotype("CDA::CDATemplate"));
 
 		template.setBase_Class(cdaClass);
 
@@ -521,8 +526,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		writer.println("<?eclipse version=\"3.0\"?>");
 		writer.println("<project name=\"CDA Model Transformation\"  basedir=\".\" default=\"all\">");
 
-		writer.println("<eclipse.convertPath resourcePath=\"" + transformCommonProject +
-				"\" property=\"cdaPluginPath\"/>");
+		writer.println(
+			"<eclipse.convertPath resourcePath=\"" + transformCommonProject + "\" property=\"cdaPluginPath\"/>");
 		writer.println("<property name=\"modelName\" value=\"" + modelName.toLowerCase() + "\"/>");
 		writer.println("<macrodef name=\"convertEcorePaths\">");
 		writer.println("<attribute name=\"filePath\"/>");
@@ -530,8 +535,9 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 		// writer.println("<mapping source=\"pathmap://" + modelName.toUpperCase() + "_MODEL///\" target=\"model/\">");
 
-		writer.println("<replace file=\"@{filePath}\" token=\"pathmap://" + modelName.toUpperCase() + "_MODEL///" +
-				modelName + ".uml\" value=\"" + modelName + "_Ecore.uml\"/>");
+		writer.println(
+			"<replace file=\"@{filePath}\" token=\"pathmap://" + modelName.toUpperCase() + "_MODEL///" + modelName +
+					".uml\" value=\"" + modelName + "_Ecore.uml\"/>");
 
 		for (String cdaPackage : cdaPackages.keySet()) {
 
@@ -546,20 +552,21 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 				if (aPackage.eResource() != null && aPackage.eResource().getURI() != null &&
 						ecoreModel.getResources().size() == 1) {
 
-					writer.println("<replace file=\"@{filePath}\" token=\"" + aPackage.eResource().getURI() +
-							"\" value=\"" + "../.." + ecoreModel.getResources().get(0).getFullPath().toFile() + "\"/> ");
+					writer.println(
+						"<replace file=\"@{filePath}\" token=\"" + aPackage.eResource().getURI() + "\" value=\"" +
+								"../.." + ecoreModel.getResources().get(0).getFullPath().toFile() + "\"/> ");
 				}
 
 				if (cdaPackages.get(cdaPackage).eResource() != null) {
-					for (Resource controlledResource : org.openhealthtools.mdht.uml.common.util.UMLUtil.getControlledResources(cdaPackages.get(
-						cdaPackage).eResource())) {
+					for (Resource controlledResource : org.openhealthtools.mdht.uml.common.util.UMLUtil.getControlledResources(
+						cdaPackages.get(cdaPackage).eResource())) {
 
 						if (controlledResource != null && controlledResource.getURI() != null &&
 								ecoreModel.getResources().size() == 1) {
 
-							writer.println("<replace file=\"@{filePath}\" token=\"" + controlledResource.getURI() +
-									"\" value=\"" + "../.." + ecoreModel.getResources().get(0).getFullPath().toFile() +
-									"\"/> ");
+							writer.println(
+								"<replace file=\"@{filePath}\" token=\"" + controlledResource.getURI() + "\" value=\"" +
+										"../.." + ecoreModel.getResources().get(0).getFullPath().toFile() + "\"/> ");
 						}
 
 					}
@@ -680,9 +687,10 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		writer.println("Bundle-Name: %pluginName");
 		writer.println(String.format("Bundle-SymbolicName: %s;singleton:=true", project.getName()));
 		writer.println("Bundle-ActivationPolicy: lazy");
-		writer.println(String.format(
-			"Bundle-Activator: %s.%s.%sPlugin$Implementation", basePackage, modelName,
-			modelName.substring(0, 1).toUpperCase() + modelName.substring(1)));
+		writer.println(
+			String.format(
+				"Bundle-Activator: %s.%s.%sPlugin$Implementation", basePackage, modelName,
+				modelName.substring(0, 1).toUpperCase() + modelName.substring(1)));
 		writer.println("Bundle-ClassPath: .");
 		writer.println("Bundle-Vendor: %providerName");
 		writer.println("Bundle-Localization: plugin");
