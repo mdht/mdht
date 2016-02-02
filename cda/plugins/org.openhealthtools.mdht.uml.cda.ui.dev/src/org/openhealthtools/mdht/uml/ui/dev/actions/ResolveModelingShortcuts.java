@@ -103,9 +103,10 @@ public class ResolveModelingShortcuts implements IObjectActionDelegate {
 			v2 = (Validation) p.getAssociation().getStereotypeApplication(s);
 		}
 
-		validation.setSeverity(v2.getSeverity());
-		validation.getRuleId().addAll(v2.getRuleId());
-
+		if (v2 != null) {
+			validation.setSeverity(v2.getSeverity());
+			validation.getRuleId().addAll(v2.getRuleId());
+		}
 		// stucturedBody.getNestedClassifiers().add(component3);
 
 	}
