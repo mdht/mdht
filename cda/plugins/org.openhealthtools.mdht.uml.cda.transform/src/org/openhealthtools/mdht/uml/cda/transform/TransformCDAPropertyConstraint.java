@@ -318,9 +318,15 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 					if (property.getLower() == 1 && property.getUpper() == 1) {
 						body.append(selfName + "->size() = 1");
 					} else {
-						body.append(selfName + "->size() >= " + property.getLower());
+						if (property.getLower() != 0) {
+							// "..->size() >= 0" is an unnecessary tautology, so skip this case
+							body.append(selfName + "->size() >= " + property.getLower());
+						}
 						if (property.getUpper() != LiteralUnlimitedNatural.UNLIMITED) {
-							body.append(" and " + selfName + "->size() <= " + property.getUpper());
+							if (body.length() > 0) {
+								body.append(" and ");
+							}
+							body.append(selfName + "->size() <= " + property.getUpper());
 						}
 					}
 				}

@@ -180,7 +180,8 @@ public class TransformCDAAssociation extends TransformAssociation {
 			if (property != null) {
 				associationEndOut[0] = property.getName();
 
-				variableDeclarationOut[0] = property.getName() + " : cda::" + property.getType().getName();
+				// CHANGE6: don't hard-code "cda::" as it could be in a sub-package, so use getQualifiedName instead
+				variableDeclarationOut[0] = property.getName() + " : " + property.getType().getQualifiedName();
 
 				// do not generate a getter already there
 				result = true;

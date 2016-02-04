@@ -174,6 +174,24 @@ public abstract class TransformAbstract extends AbstractTransform {
 			hasNullFlavor = isSubTypeOfANY((Class) baseProperty.getType());
 		}
 
+		if (enableVariation_UseOriginalLowerbound()) {
+			if (hasNullFlavor && property.getLower() == 0) {
+				if (baseProperty.upperBound() == 1) {
+					nullFlavorBody = "((not " + selfName + ".oclIsUndefined()) and " + selfName +
+							".isNullFlavorUndefined()) implies (" + body + ")";
+				} else {
+					// must have size()==1 to have nullFlavor
+					nullFlavorBody = "((not " + selfName + "->isEmpty()) and " + selfName +
+							"->exists(element | element.isNullFlavorUndefined()))" + " implies (" + body + ")";
+				}
+			} else if (property.getLower() == 0) {
+				if (baseProperty.upperBound() == 1) {
+					nullFlavorBody = "(not " + selfName + ".oclIsUndefined()) implies (" + body + ")";
+				} else {
+					nullFlavorBody = "(not " + selfName + "->isEmpty()) implies (" + body + ")";
+				}
+			}
+		} else
 		if (hasNullFlavor && !getEcoreProfile().isMandatory(property)) {
 			if (baseProperty.upperBound() == 1) {
 				nullFlavorBody = "(" + selfName + ".oclIsUndefined() or " + selfName +
@@ -351,5 +369,31 @@ public abstract class TransformAbstract extends AbstractTransform {
 			retVal = parentNames.contains("ANY");
 		}
 		return retVal;
+	}
+	
+	/**
+	 * Enable change type 2.
+	 * 
+	 * Even as the original type is not available in the Java runtime for the generated Java code, it is useful to know the original type for
+	 * Schematron purposes,
+	 * as the Schematron generator can generate special type checking xpath for the specialized type.
+	 * 
+	 * @return whether to use the type system of the concrete UML model (<code>true</code>) or the CDA base model (<code>false</code>)
+	 */
+	public boolean enableVariation_UseOriginalType() {
+		return false;
+	}
+
+	/**
+	 * Enable change type 3/4.
+	 * 
+	 * In order to report that a conformance requirement is not met, we need a scenario that fails.
+	 * In order to accomplish this, we imply a lower bound of 1 for all constraints.
+	 * If not we would be checking for size >=0 and size <=1 which would not fail
+	 * 
+	 * @return whether to use the original lower bound value (<code>true</code>) or the implied one (<code>false</code>)
+	 */
+	public boolean enableVariation_UseOriginalLowerbound() {
+		return false;
 	}
 }
