@@ -105,10 +105,12 @@ public abstract class TransformAssociation extends TransformAbstract {
 		// Support target class without templateId by using its superclass template.
 		// For untemplated classes (subclasses of CDA), use the base CDA class (last parent).
 		Class constraintTarget = targetClass;
-		List<Classifier> parents = new ArrayList<Classifier>(targetClass.getGenerals());
-		while (!parents.isEmpty() && !getEcoreProfile().isPrimaryEClass(constraintTarget)) {
-			if (parents.get(0) instanceof Class) {
-				constraintTarget = (Class) parents.remove(0);
+		if (!enableVariation_UseOriginalType()) {
+			List<Classifier> parents = new ArrayList<Classifier>(targetClass.getGenerals());
+			while (!parents.isEmpty() && !getEcoreProfile().isPrimaryEClass(constraintTarget)) {
+				if (parents.get(0) instanceof Class) {
+					constraintTarget = (Class) parents.remove(0);
+				}
 			}
 		}
 
@@ -181,13 +183,13 @@ public abstract class TransformAssociation extends TransformAbstract {
 			final boolean isEmpty = (upper == 0);
 			final int lower = isEmpty
 					? 0
-					: Math.max(1, sourceProperty.getLower());
+					: Math.max(enableVariation_UseOriginalLowerbound() ? 0: 1, sourceProperty.getLower());
 
 			// can't use quantifiers like 'one' and 'exists' with a selector because it filters a collection.
 			// Note that 'exists' isn't applicable to lower bounds greater than 1
 			// open - is association open or closed
 			final boolean open = isOpen(association);
-			final boolean one = (((selector == null) || (selector.length() == 0)) && (upper == 1)) && open;
+			final boolean one = (((selector == null) || (selector.length() == 0)) && (upper == 1)) && open && (enableVariation_UseOriginalLowerbound() ? lower == 1 : true);
 			final boolean notEmpty = (lower == 1) && (upper == LiteralUnlimitedNatural.UNLIMITED);
 			final boolean exists = (notEmpty && ((selector == null) || (selector.length() == 0))) && open;
 
@@ -205,7 +207,7 @@ public abstract class TransformAssociation extends TransformAbstract {
 				// don't use %d in case locale introduces a thousands separator
 				// range = String.format("%s..%s", lower, upper);
 				// range = null;
-				comparator = " >= " + lower;
+				comparator = lower == 0 ? null : " >= " + lower;
 				upperComparator = " <= " + upper;
 			} else {
 				// if the upper < lower, then it only makes sense if upper is -1 (*)
@@ -256,6 +258,9 @@ public abstract class TransformAssociation extends TransformAbstract {
 					if (upperComparator == null) {
 						// compare the cardinality against some number
 						constraintBody.append(comparator);
+					} else if (comparator == null) {
+						// compare the cardinality against some number
+						constraintBody.append(upperComparator);
 					} else {
 						String select = constraintBody.toString();
 						constraintBody.append(comparator).append(" and ").append(select).append(upperComparator);
@@ -391,6 +396,10 @@ public abstract class TransformAssociation extends TransformAbstract {
 			constraintTarget.getName(),
 			org.eclipse.uml2.common.util.UML2Util.getValidJavaIdentifier(constraintTarget.getName()));
 
+		if (enableVariation_UseOriginalType()) {
+			return retVal;
+		}
+		
 		String[] arrStr = retVal.split("::");
 		if (arrStr.length > 2) {
 			retVal = getBaseClass(constraintTarget).getQualifiedName();
