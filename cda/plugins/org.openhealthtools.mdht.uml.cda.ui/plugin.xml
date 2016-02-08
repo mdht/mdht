@@ -525,4 +525,25 @@
       <initializer class="org.openhealthtools.mdht.uml.cda.ui.editors.MDHTPreferenceInitializer"/>
    </extension>
             
+   <!-- Hide menu item to add an UML constraint in case an CDA association is selected -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml.element">
+         <visibility>
+            <and>
+               <objectState name="umlType" value="Association"/>
+	           <objectState name="hasStereotype" value="CDA::AssociationValidation"/>
+            </and>
+         </visibility>
+         <action
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLConstraintAction"
+               id="mdht.actions.addUML.constraint2"
+               label="Constraint"
+               menubarPath="mdht.addUML/constraintGroup/"
+               overrideActionId="mdht.actions.addUML.constraint">
+         </action>
+      </objectContribution>
+   </extension>
+   
 </plugin>
