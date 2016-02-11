@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.openhealthtools.mdht.transform.core
 Bundle-Version: 2.5.19.qualifier
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport
 Export-Package: org.openhealthtools.mdht.transform.core,org.openhealth
  tools.mdht.transform.core.impl

@@ -17,5 +17,5 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.edit,org.openhealthtools.
  mdht.uml.edit.command,org.openhealthtools.mdht.uml.edit.provider,org.
  openhealthtools.mdht.uml.edit.reflection
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.eclipse.ui.plugin

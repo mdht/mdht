@@ -7,7 +7,7 @@ Bundle-ClassPath: .,
  schema/
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.openhealthtools.mdht.uml.cda,org.openhealthtools.m
  dht.uml.cda.impl,org.openhealthtools.mdht.uml.cda.internal.resource;x
  -internal:=true,org.openhealthtools.mdht.uml.cda.operations,org.openh

@@ -6,7 +6,7 @@ Bundle-Version: 2.5.19.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.openhealthtools.mdht.uml.hl7.datatypes,org.openhea
  lthtools.mdht.uml.hl7.datatypes.impl,org.openhealthtools.mdht.uml.hl7
  .datatypes.operations,org.openhealthtools.mdht.uml.hl7.datatypes.util

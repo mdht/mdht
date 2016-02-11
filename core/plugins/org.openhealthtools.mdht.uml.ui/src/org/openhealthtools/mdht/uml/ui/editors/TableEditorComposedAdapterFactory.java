@@ -4,14 +4,15 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     dcarlson - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.editors;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -22,12 +23,12 @@ import org.openhealthtools.mdht.uml.edit.provider.SimpleListNotifier;
 
 /**
  * @author dcarlson
- * 
+ *
  */
 public class TableEditorComposedAdapterFactory extends ComposedAdapterFactory {
 
 	/**
-	 * 
+	 *
 	 */
 	public TableEditorComposedAdapterFactory() {
 		super();
@@ -74,4 +75,7 @@ public class TableEditorComposedAdapterFactory extends ComposedAdapterFactory {
 		return super.adapt(target, type);
 	}
 
+	public List<AdapterFactory> getAdapterFactories() {
+		return adapterFactories;
+	}
 }

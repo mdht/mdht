@@ -21,4 +21,4 @@ Export-Package: org.openhealthtools.mdht.uml.ui.properties.filters,org
  .openhealthtools.mdht.uml.ui.properties.internal.sections,org.openhea
  lthtools.mdht.uml.ui.properties.sections
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -12,5 +12,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.ui.properties,
  org.eclipse.uml2.uml,
  org.eclipse.gmf.runtime.notation
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

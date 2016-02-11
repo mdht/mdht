@@ -23,4 +23,4 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.ui.navigator,org.openheal
  thtools.mdht.uml.ui.navigator.actions
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

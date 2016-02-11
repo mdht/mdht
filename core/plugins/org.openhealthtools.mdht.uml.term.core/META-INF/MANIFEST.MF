@@ -5,7 +5,7 @@ Bundle-Localization: plugin
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.term.core;singleton:=true
 Bundle-Version: 2.5.19.qualifier
 Bundle-Vendor: %providerName
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.uml2.uml,
  org.openhealthtools.mdht.uml.common;visibility:=reexport
 Export-Package: org.openhealthtools.mdht.uml.term.core.profile,org.ope

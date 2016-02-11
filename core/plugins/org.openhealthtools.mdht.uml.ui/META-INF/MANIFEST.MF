@@ -26,4 +26,4 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.ui.actions,org.openhealth
  tools.mdht.uml.ui.editors
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

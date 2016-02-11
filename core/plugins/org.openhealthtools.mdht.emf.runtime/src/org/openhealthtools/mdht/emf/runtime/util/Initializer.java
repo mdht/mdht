@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     John T.E. Timm (IBM Corporation) - initial API
  *     Christian W. Damus - initial implementation and elaboration (artf3272)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.emf.runtime.util;
 
@@ -30,24 +30,24 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * A protocol for initialization of new objects in EMF-based documents
- * 
+ *
  * @param <T>
  *            the kind of object that I initialize
  */
 public interface Initializer<T extends EObject> {
 	/**
 	 * Initializes a new object.
-	 * 
+	 *
 	 * @param object
 	 *            the object to initialize
-	 * 
+	 *
 	 * @return the same {@code object} again for call chaining; not some replacement object
 	 */
 	T initialize(T object);
 
 	/**
 	 * Queries the kind of object that I initialize.
-	 * 
+	 *
 	 * @return my initialization target
 	 */
 	Class<? extends T> getTargetType();
@@ -72,12 +72,12 @@ public interface Initializer<T extends EObject> {
 		/**
 		 * Obtains all of the initializers specifically {@linkplain #addInitializer(EClass, Initializer) registered} for an {@code eclass} and its
 		 * superclasses.
-		 * 
+		 *
 		 * @param eclass
 		 *            the eclass for which to get initializers
-		 * 
+		 *
 		 * @return the initializers
-		 * 
+		 *
 		 * @see #getInitializers(EClass, boolean)
 		 */
 		<T extends EObject> Iterable<? extends Initializer<? super T>> getInitializers(EClass eclass);
@@ -85,28 +85,28 @@ public interface Initializer<T extends EObject> {
 		/**
 		 * Obtains the initializers specifically {@linkplain #addInitializer(EClass, Initializer) registered} for an {@code eclass} and, optionally,
 		 * its superclasses.
-		 * 
+		 *
 		 * @param eclass
 		 *            the eclass for which to get initializers
 		 * @param inherit
 		 *            whether to inderit initializers from superclasses
-		 * 
+		 *
 		 * @return the initializers
-		 * 
+		 *
 		 * @see #getInitializers(EClass, boolean)
 		 */
 		<T extends EObject> Iterable<? extends Initializer<? super T>> getInitializers(EClass eclass, boolean inherit);
 
 		/**
 		 * Adds an initializer for the specified {@code eclass}. Has no effect if this {@code initializer} is already registered.
-		 * 
+		 *
 		 * @param eclass
 		 *            an eclass to initialize
 		 * @param initializer
 		 *            an initializer to register
-		 * 
+		 *
 		 * @return myself, for convenience of call chaining
-		 * 
+		 *
 		 * @throws IllegalArgumentException
 		 *             if the {@code initializer} does not {@linkplain Initializer#getTargetType() target} the eclass's
 		 *             {@linkplain EClassifier#getInstanceClass() instance class}
@@ -115,18 +115,18 @@ public interface Initializer<T extends EObject> {
 
 		/**
 		 * Adds initializers for the specified {@code eclass}.
-		 * 
+		 *
 		 * @param eclass
 		 *            an eclass to initialize
 		 * @param initializers
 		 *            a bunch of initializers to register
-		 * 
+		 *
 		 * @return myself, for convenience of call chaining
-		 * 
+		 *
 		 * @throws IllegalArgumentException
 		 *             if any of the {@code initializers} does not {@linkplain Initializer#getTargetType() target} the eclass's
 		 *             {@linkplain EClassifier#getInstanceClass() instance class}
-		 * 
+		 *
 		 * @see #addInitializer(EClass, Initializer)
 		 */
 		Registry addAllInitializers(EClass eclass, Iterable<? extends Initializer<? extends EObject>> initializers);
@@ -134,10 +134,10 @@ public interface Initializer<T extends EObject> {
 		/**
 		 * Creates the initializers for the classes in the specified {@code epackage} using the {@linkplain Factory factory} that was generated for
 		 * it.
-		 * 
+		 *
 		 * @param epackage
 		 *            an epackage to initialize
-		 * 
+		 *
 		 * @return myself, for convenience of call chaining
 		 */
 		Registry initializeEPackage(EPackage epackage);
@@ -146,34 +146,34 @@ public interface Initializer<T extends EObject> {
 		 * Creates the initializers for the classes in the specified {@code epackage} isunci the specified {@code factory}. It would be highly unusual
 		 * not to use the package's own generated factory, unless it doesn't have one (such as is the case for legacy packages generated with MDHT 1.1
 		 * or earlier).
-		 * 
+		 *
 		 * @param epackage
 		 *            an epackage to initialize
 		 * @param factory
 		 *            the initializer factory
-		 * 
+		 *
 		 * @return myself, for convenience of call chaining
 		 */
 		Registry initializeEPackage(EPackage epackage, Initializer.Factory factory);
 
 		/**
 		 * Gets the factory that creates the initializers in the set identified by the given URI.
-		 * 
+		 *
 		 * @param initializersURI
 		 *            the unique identifier of the initializer-set, as referenced from the Ecore package's annotation
-		 * 
+		 *
 		 * @return the factory, or {@code null} if none is registered for this URI
 		 */
 		Factory getFactory(String initializersURI);
 
 		/**
 		 * Registers an initializer factory.
-		 * 
+		 *
 		 * @param initializersURI
 		 *            the unique identifier of the initializer-set, as referenced from the Ecore package's annotation
 		 * @param factory
 		 *            the factory that creates these initializers
-		 * 
+		 *
 		 * @return myself, for convenienc of call chaining
 		 */
 		Registry registerFactory(String initializersURI, Factory factory);
@@ -256,8 +256,8 @@ public interface Initializer<T extends EObject> {
 
 			public Registry addInitializer(EClass eclass, Initializer<? extends EObject> initializer) {
 				if (!initializer.getTargetType().isAssignableFrom(eclass.getInstanceClass())) {
-					throw new IllegalArgumentException(String.format(
-						"Cannot initialize EClass %s with %s.", eclass.getName(), initializer));
+					throw new IllegalArgumentException(
+						String.format("Cannot initialize EClass %s with %s.", eclass.getName(), initializer));
 				}
 
 				List<Initializer<? extends EObject>> list = initializers.get(eclass);
@@ -286,8 +286,8 @@ public interface Initializer<T extends EObject> {
 				// all-or-nothing
 				for (Initializer<?> next : initializers) {
 					if (!next.getTargetType().isAssignableFrom(eclass.getInstanceClass())) {
-						throw new IllegalArgumentException(String.format(
-							"Cannot initialize EClass %s with %s.", eclass.getName(), next));
+						throw new IllegalArgumentException(
+							String.format("Cannot initialize EClass %s with %s.", eclass.getName(), next));
 					}
 				}
 
@@ -360,10 +360,10 @@ public interface Initializer<T extends EObject> {
 
 		/**
 		 * Creates the initializers for an {@code eclass}.
-		 * 
+		 *
 		 * @param eclass
 		 *            the eclass for which to create initializers
-		 * 
+		 *
 		 * @return the initializers
 		 */
 		Iterable<? extends Initializer<? extends EObject>> createInitializers(EClass eclass);
@@ -385,10 +385,10 @@ public interface Initializer<T extends EObject> {
 
 		/**
 		 * Gets a local initializer registry for the specified resource set.
-		 * 
+		 *
 		 * @param resourceSet
 		 *            a resource set
-		 * 
+		 *
 		 * @return the resource set's local initializer registry (never {@code null})
 		 */
 		public static Registry getRegistry(ResourceSet resourceSet) {
@@ -404,10 +404,10 @@ public interface Initializer<T extends EObject> {
 
 		/**
 		 * Gets a local initializer registry for the specified object, or the global registry if the object is not in a resource set.
-		 * 
+		 *
 		 * @param object
 		 *            an object
-		 * 
+		 *
 		 * @return the best initializer registry for the object (never {@code null})
 		 */
 		public static Registry getRegistry(EObject object) {
@@ -425,28 +425,29 @@ public interface Initializer<T extends EObject> {
 
 		/**
 		 * Initializes an {@code object} using the {@linkplain Initializer initializers} registered for its type.
-		 * 
+		 *
 		 * @param object
 		 *            an object to initialize
-		 * 
+		 *
 		 * @return the {@code object} argument for convenience of call chaining
 		 */
+		@SuppressWarnings({ "unchecked", "rawtypes" })
 		public static <T extends EObject> T init(T object) {
-			init(object, getRegistry(object).getInitializers(object.eClass()));
+			init((EObject) object, (Iterable) getRegistry(object).getInitializers(object.eClass()));
 			return object;
 		}
 
 		/**
 		 * Initializes an {@code object} using the given {@code initializers}. The caller is responsible for ensuring that the {@code initializers}
 		 * given are applicable to the {@code object}.
-		 * 
+		 *
 		 * @param object
 		 *            an object to initialize
 		 * @param initializers
 		 *            some initializers (possibly empty) to initialize the object with
-		 * 
+		 *
 		 * @return the {@code eObject} argument for convenience of call chaining
-		 * 
+		 *
 		 * @throws ClassCastException
 		 *             if any of the {@code initializers} is not applicable to the {@code object}
 		 */
@@ -465,22 +466,23 @@ public interface Initializer<T extends EObject> {
 
 		/**
 		 * Queries whether an {@code epackage} has generated initializers for its classes.
-		 * 
+		 *
 		 * @param epackage
 		 *            an epackage
-		 * 
+		 *
 		 * @return whether it has generated initializers
 		 */
 		public static boolean hasInitializers(EPackage epackage) {
-			return EcoreUtil.getAnnotation(epackage, INITIALIZERS_ANNOTATION_SOURCE, INITIALIZERS_ANNOTATION_DETAIL) != null;
+			return EcoreUtil.getAnnotation(
+				epackage, INITIALIZERS_ANNOTATION_SOURCE, INITIALIZERS_ANNOTATION_DETAIL) != null;
 		}
 
 		/**
 		 * Gets the initializer factories of an {@code epackage}, if it has any.
-		 * 
+		 *
 		 * @param epackage
 		 *            the package for which to get the initializer factories
-		 * 
+		 *
 		 * @return the initializer factories, or an empty collection if the package does not have any (for example, if it is a legacy package
 		 *         generated with
 		 *         MDHT 1.1 or earlier)

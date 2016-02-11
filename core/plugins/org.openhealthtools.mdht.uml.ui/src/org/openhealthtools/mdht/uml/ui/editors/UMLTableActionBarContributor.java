@@ -127,7 +127,7 @@ public class UMLTableActionBarContributor extends EditorActionBarContributor imp
 			final IWorkbenchPartSite site = activeEditor.getSite();
 			result = contextManagers.get(site);
 			if (result == null) {
-				result = new UMLContextManager((IContextService) site.getService(IContextService.class));
+				result = new UMLContextManager(site.getService(IContextService.class));
 				contextManagers.put(site, result);
 				result.activateAll();
 
@@ -167,9 +167,13 @@ public class UMLTableActionBarContributor extends EditorActionBarContributor imp
 				if (activeEditor instanceof UMLTableEditor) {
 					UMLTableEditor umlTableEditor = (UMLTableEditor) activeEditor;
 					AdapterFactory adapterFactory = umlTableEditor.getAdapterFactory();
-					if (adapterFactory instanceof UML2ExtendedAdapterFactory) {
-						((UML2ExtendedAdapterFactory) adapterFactory).setShowBusinessNames(checked);
-						umlTableEditor.refresh();
+					if (adapterFactory instanceof TableEditorComposedAdapterFactory) {
+						for (AdapterFactory factory : ((TableEditorComposedAdapterFactory) adapterFactory).getAdapterFactories()) {
+							if (factory instanceof UML2ExtendedAdapterFactory) {
+								((UML2ExtendedAdapterFactory) factory).setShowBusinessNames(checked);
+								umlTableEditor.refresh();
+							}
+						}
 					}
 				}
 			}

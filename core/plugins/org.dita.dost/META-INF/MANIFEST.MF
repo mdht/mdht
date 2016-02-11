@@ -22,7 +22,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.apache.commons.logging,
  org.openhealthtools.mdht.uml.common,
  com.ibm.xtools.uml.navigator;resolution:=optional
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
  DITA-OT/lib/commons-codec-1.4.jar,

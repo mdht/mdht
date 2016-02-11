@@ -19,7 +19,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.mapping.ecore2xml;visibility:=reexport,
  org.openhealthtools.mdht.uml.cda;visibility:=reexport,
  org.eclipse.core.resources;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.cda.core.internal.generate,
  org.openhealthtools.mdht.uml.cda.core.profile,

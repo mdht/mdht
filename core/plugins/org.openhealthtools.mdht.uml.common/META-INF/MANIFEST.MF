@@ -17,4 +17,4 @@ Export-Package: org.openhealthtools.mdht.uml.common,org.openhealthtool
  s.mdht.uml.common.modelfilter,org.openhealthtools.mdht.uml.common.not
  ation,org.openhealthtools.mdht.uml.common.search,org.openhealthtools.
  mdht.uml.common.util
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

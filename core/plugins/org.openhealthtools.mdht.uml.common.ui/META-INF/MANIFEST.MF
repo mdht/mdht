@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.common;visibility:=reexport,
  org.openhealthtools.mdht.uml.edit,
  org.eclipse.core.expressions
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.common.ui.actions,org.ope
  nhealthtools.mdht.uml.common.ui.dialogs,org.openhealthtools.mdht.uml.
