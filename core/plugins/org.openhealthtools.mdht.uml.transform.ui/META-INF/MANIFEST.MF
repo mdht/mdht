@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.openhealthtools.mdht.uml.transform.ui;singleton:=true
 Bundle-Localization: plugin
 Bundle-Version: 2.5.19.qualifier
 Bundle-Vendor: %pluginProvider
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.common.core,
  org.eclipse.gmf.runtime.notation,

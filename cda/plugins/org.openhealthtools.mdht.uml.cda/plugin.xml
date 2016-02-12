@@ -15,8 +15,7 @@
 -->
 
 <plugin>
-   <extension-point id="extension" name="org.openhealthtools.mdht.uml.cda" schema="schema/extension.exsd"/>
-
+ 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="urn:hl7-org:v3"

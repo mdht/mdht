@@ -20,3 +20,4 @@ Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.ocl.uml;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.openhealthtools.mdht.uml.validation.internal.ValidationPlugin$Implementation
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
