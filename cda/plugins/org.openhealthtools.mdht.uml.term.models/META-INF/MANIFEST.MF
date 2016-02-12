@@ -3,6 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.term.models;singleton:=true
 Bundle-Version: 2.5.0.qualifier
-Require-Bundle: org.openhealthtools.mdht.uml.term.core
+Require-Bundle: org.eclipse.mdht.uml.term.core
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

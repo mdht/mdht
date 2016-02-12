@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.mdht.uml.cda.resources;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-Activator: org.openhealthtools.mdht.uml.cda.resources.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.uml2.uml,
+ org.eclipse.mdht.uml.common,
+ org.eclipse.mdht.uml.term.core,
+ org.eclipse.mdht.uml.validation,
+ org.eclipse.ocl.ecore
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.openhealthtools.mdht.uml.cda.resources.util

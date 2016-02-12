@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.eclipse.mdht.uml.term.ui;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Activator: org.openhealthtools.mdht.uml.term.ui.internal.Activator
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.transaction,
+ org.eclipse.emf.workspace,
+ org.eclipse.gmf.runtime.common.core,
+ org.eclipse.gmf.runtime.diagram.ui.properties,
+ org.eclipse.mdht.uml.common,
+ org.eclipse.mdht.uml.common.ui,
+ org.eclipse.mdht.uml.ui.properties,
+ org.eclipse.mdht.uml.term.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.openhealthtools.mdht.uml.term.ui.actions,org.openh
+ ealthtools.mdht.uml.term.ui.filters,org.openhealthtools.mdht.uml.term
+ .ui.properties,org.openhealthtools.mdht.uml.term.ui.notation
+

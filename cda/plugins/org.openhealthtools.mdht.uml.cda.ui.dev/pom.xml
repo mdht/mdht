@@ -8,7 +8,7 @@
     <version>2.5.0-SNAPSHOT</version>
   </parent>
   <groupId>org.openhealthtools.mdht.cda</groupId>
-  <artifactId>org.openhealthtools.mdht.uml.cda.ui.dev</artifactId>
+  <artifactId>org.eclipse.mdht.uml.cda.ui.dev</artifactId>
  
   <packaging>eclipse-plugin</packaging>
 		<build>

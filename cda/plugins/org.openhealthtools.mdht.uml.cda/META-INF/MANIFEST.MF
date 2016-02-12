@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda;singleton:=true
-Bundle-Version: 2.5.19.qualifier
+Bundle-Version: 3.0.0.qualifier
 Bundle-ClassPath: .,
  schema/
 Bundle-Vendor: %providerName
@@ -21,6 +21,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.types;visibility:=reexport,
  org.eclipse.uml2.common;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.rim;visibility:=reexport,
- org.openhealthtools.mdht.emf.runtime;visibility:=reexport
+ org.eclipse.mdht.emf.runtime;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.openhealthtools.mdht.uml.cda.CDAPlugin$Implementation
