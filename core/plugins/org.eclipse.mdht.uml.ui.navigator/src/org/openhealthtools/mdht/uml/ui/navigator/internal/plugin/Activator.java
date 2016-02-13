@@ -25,7 +25,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.openhealthtools.mdht.uml.ui.navigator";
+	public static final String PLUGIN_ID = "org.eclipse.mdht.uml.ui.navigator";
 
 	// The shared instance
 	private static Activator plugin;

@@ -21,7 +21,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends Plugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.openhealthtools.mdht.uml.cda.dita";
+	public static final String PLUGIN_ID = "org.eclipse.mdht.uml.cda.dita";
 
 	// The shared instance
 	private static Activator plugin;

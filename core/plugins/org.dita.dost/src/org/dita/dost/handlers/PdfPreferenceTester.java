@@ -29,7 +29,7 @@ public class PdfPreferenceTester extends PropertyTester {
 	 * Plugin key is a soft reference to org.openhealthtools.mdht so as not to create
 	 * cyclic dependencies.
 	 */
-	private static final String MDHT_PLUGIN_ID = "org.openhealthtools.mdht.uml.cda.ui";
+	private static final String MDHT_PLUGIN_ID = "org.eclipse.mdht.uml.cda.ui";
 
 	/* preference key from org.openhealthtools.mdht.uml.cda.ui.editors.MDHTPreferences */
 	private static final String PDF_GEN_STORE_VALUE = "DisablePDFCheckValue";

@@ -17,7 +17,7 @@
 <plugin>
   <!-- Replace 'ant_tasks/cdatools.ant.tasks.jar' by '.' to be able to debug without regenerating jars -->
   <extension point="org.eclipse.ant.core.extraClasspathEntries">
-    <extraClasspathEntry library="ant_tasks/cdatools.ant.tasks.jar" />
+    <extraClasspathEntry library="." />
   </extension>
 
   <extension point="org.eclipse.ant.core.antTasks">

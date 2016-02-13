@@ -45,7 +45,7 @@ import org.xml.sax.SAXException;
 public class UmlPlugin extends EMFPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.openhealthtools.mdht.uml.common";
+	public static final String PLUGIN_ID = "org.eclipse.mdht.uml.common";
 
 	/**
 	 * The singleton instance of the plugin.

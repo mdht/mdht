@@ -23,7 +23,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.openhealthtools.mdht.cda.xml.ui";
+	public static final String PLUGIN_ID = "org.eclipse.mdht.cda.xml.ui";
 
 	// The shared instance
 	private static Activator plugin;
