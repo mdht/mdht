@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Handle element wrappers (artf3238)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
@@ -81,7 +81,8 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 			}
 
 			if (itemPropertySource instanceof ElementItemProvider) {
-				stereotypeApplicationItemPropertyDescriptors = ((ElementItemProvider) itemPropertySource).getStereotypeApplicationPropertyDescriptors(object);
+				stereotypeApplicationItemPropertyDescriptors = ((ElementItemProvider) itemPropertySource).getStereotypeApplicationPropertyDescriptors(
+					object);
 
 				if (stereotypeApplicationItemPropertyDescriptors != null) {
 
@@ -130,7 +131,8 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 	protected static class UMLPropertyDescriptor extends PropertyDescriptor {
 		private final boolean readOnly;
 
-		protected UMLPropertyDescriptor(Object object, IItemPropertyDescriptor itemPropertyDescriptor, boolean readOnly) {
+		protected UMLPropertyDescriptor(Object object, IItemPropertyDescriptor itemPropertyDescriptor,
+				boolean readOnly) {
 			super(object, itemPropertyDescriptor);
 
 			this.readOnly = readOnly;
@@ -176,7 +178,7 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 			}
 		}
 		if (object instanceof IAdaptable) {
-			return (IPropertySource) ((IAdaptable) object).getAdapter(IPropertySource.class);
+			return ((IAdaptable) object).getAdapter(IPropertySource.class);
 		}
 		return null;
 	}
@@ -195,7 +197,7 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 			return ((View) selected).getElement();
 		}
 		if (selected instanceof IAdaptable) {
-			EObject eObject = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
+			EObject eObject = ((IAdaptable) selected).getAdapter(EObject.class);
 			if (eObject != null) {
 				return eObject;
 			}
@@ -215,7 +217,8 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 			return;
 		}
 
-		final StructuredSelection structuredSelection = (StructuredSelection) Selections.unwrap((StructuredSelection) selection);
+		final StructuredSelection structuredSelection = (StructuredSelection) Selections.unwrap(
+			(StructuredSelection) selection);
 		inputIsWrapper = structuredSelection != selection;
 
 		ArrayList<Object> transformedSelection = new ArrayList<Object>(structuredSelection.size());

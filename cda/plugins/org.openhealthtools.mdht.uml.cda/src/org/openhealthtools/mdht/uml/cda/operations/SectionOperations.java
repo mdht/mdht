@@ -152,21 +152,23 @@ public class SectionOperations extends ActOperations {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.SECTION);
 			try {
-				VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
+					VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(section)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.SECTION__CLASS_CODE,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateClassCode",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(section, context) }),
-					new Object[] { section }));
+				diagnostics.add(
+					new BasicDiagnostic(
+						Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.SECTION__CLASS_CODE,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+							"_UI_GenericInvariant_diagnostic",
+							new Object[] {
+									"validateClassCode",
+									org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(section, context) }),
+						new Object[] { section }));
 			}
 			return false;
 		}
@@ -208,21 +210,23 @@ public class SectionOperations extends ActOperations {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.SECTION);
 			try {
-				VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
+					VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(section)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.SECTION__MOOD_CODE,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateMoodCode",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(section, context) }),
-					new Object[] { section }));
+				diagnostics.add(
+					new BasicDiagnostic(
+						Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.SECTION__MOOD_CODE,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+							"_UI_GenericInvariant_diagnostic",
+							new Object[] {
+									"validateMoodCode",
+									org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(section, context) }),
+						new Object[] { section }));
 			}
 			return false;
 		}
@@ -232,7 +236,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addAct(Section section, Act act) {
@@ -244,7 +248,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addEncounter(Section section, Encounter encounter) {
@@ -256,7 +260,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addObservation(Section section, Observation observation) {
@@ -268,7 +272,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addObservationMedia(Section section, ObservationMedia observationMedia) {
@@ -280,7 +284,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addOrganizer(Section section, Organizer organizer) {
@@ -292,7 +296,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addProcedure(Section section, Procedure procedure) {
@@ -304,7 +308,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addRegionOfInterest(Section section, RegionOfInterest regionOfInterest) {
@@ -316,7 +320,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addSection(Section section, Section newSection) {
@@ -328,7 +332,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addSubstanceAdministration(Section section, SubstanceAdministration substanceAdministration) {
@@ -340,7 +344,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addSupply(Section section, Supply supply) {
@@ -352,7 +356,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static StrucDocText createStrucDocText(Section section, String xmlString) {
@@ -416,7 +420,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static ClinicalDocument getClinicalDocument(Section section) {
@@ -720,7 +724,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<Section> getAllSections(Section section) {
@@ -971,7 +975,8 @@ public class SectionOperations extends ActOperations {
 			helper.setOperationContext(
 				CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(44));
 			try {
-				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
+				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(
+					HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
@@ -1013,7 +1018,8 @@ public class SectionOperations extends ActOperations {
 			helper.setOperationContext(
 				CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(45));
 			try {
-				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
+				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(
+					HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
@@ -1139,7 +1145,8 @@ public class SectionOperations extends ActOperations {
 			helper.setOperationContext(
 				CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(48));
 			try {
-				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
+				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(
+					HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
@@ -1181,7 +1188,8 @@ public class SectionOperations extends ActOperations {
 			helper.setOperationContext(
 				CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(49));
 			try {
-				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
+				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(
+					HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
@@ -1321,7 +1329,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<ClinicalStatement> getEntryTargets(Section section, x_ActRelationshipEntry typeCode,
@@ -1336,7 +1344,7 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<ClinicalStatement> getEntryTargets(Section section, Object targetClass) {

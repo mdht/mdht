@@ -4,13 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adjusting alignmnent of field labels
  *     Christian W. Damus - Handle element wrappers (artf3238)
  *                        - implement handling of live validation roll-back (artf3318)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
@@ -74,7 +74,7 @@ import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPr
 
 /**
  * The general properties section for Property.
- * 
+ *
  * $Id: $
  */
 public class PropertySection extends WrapperAwareModelerPropertySection {
@@ -208,7 +208,8 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 						subsetsModified = false;
 						property.getSubsettedProperties().clear();
 						if (subsetsCombo.getSelectionIndex() > 0) {
-							Property subsetted = inheritedCollectionProperties.get(subsetsCombo.getSelectionIndex() - 1);
+							Property subsetted = inheritedCollectionProperties.get(
+								subsetsCombo.getSelectionIndex() - 1);
 							property.getSubsettedProperties().add(subsetted);
 
 							property.getRedefinedProperties().clear();
@@ -441,9 +442,10 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 
 		/* ---- Aggregation combo ---- */
 		aggregationCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
-		aggregationCombo.setItems(new String[] {
-				AggregationKind.NONE_LITERAL.getName(), AggregationKind.SHARED_LITERAL.getName(),
-				AggregationKind.COMPOSITE_LITERAL.getName() });
+		aggregationCombo.setItems(
+			new String[] {
+					AggregationKind.NONE_LITERAL.getName(), AggregationKind.SHARED_LITERAL.getName(),
+					AggregationKind.COMPOSITE_LITERAL.getName() });
 		aggregationCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				aggregationModified = true;
@@ -555,9 +557,9 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@Override
@@ -661,7 +663,7 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification
@@ -688,7 +690,7 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 	/**
 	 * Display a multiplicity string of the format [lower..upper], unless
 	 * both lower and upper are == 1.
-	 * 
+	 *
 	 * @param multElement
 	 * @return
 	 */

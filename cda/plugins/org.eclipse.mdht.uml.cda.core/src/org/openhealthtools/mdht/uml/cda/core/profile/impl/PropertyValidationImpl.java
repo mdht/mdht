@@ -38,7 +38,7 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyValidationImpl() {
@@ -58,7 +58,7 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -68,7 +68,7 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +86,7 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +101,7 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property getBase_Property() {
@@ -153,9 +153,8 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.PROPERTY_VALIDATION__BASE_PROPERTY, oldBase_Property,
-						base_Property));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						CDAPackage.PROPERTY_VALIDATION__BASE_PROPERTY, oldBase_Property, base_Property));
 				}
 			}
 		}
@@ -165,15 +164,15 @@ public class PropertyValidationImpl extends ValidationImpl implements PropertyVa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PROPERTY_VALIDATION__BASE_PROPERTY, oldBase_Property, base_Property));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROPERTY_VALIDATION__BASE_PROPERTY,
+				oldBase_Property, base_Property));
 		}
 	}
 

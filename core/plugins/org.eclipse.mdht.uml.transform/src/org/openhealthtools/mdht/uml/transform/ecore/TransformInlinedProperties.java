@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Sean Muir (JKM Software) - initial API and implementation
  *    Christian W. Damus - generate query invariants for in-line associations (artf3100)
@@ -13,7 +13,7 @@
  *                       - support nested datatype subclasses (artf3350)
  *    Rama Ramakrishnan  - Made some operations public for access by sub classes
  *    					 - Also updated appendInlinedOCLConstraint to not create multiple constraints, when a constraint
- *    					   already exists for a  Property                   
+ *    					   already exists for a  Property
  * $Id$
  */
 package org.openhealthtools.mdht.uml.transform.ecore;
@@ -100,7 +100,7 @@ public class TransformInlinedProperties extends TransformAbstract {
 
 	/**
 	 * This will be removed once we have a constraint based profle
-	 * 
+	 *
 	 * @deprecated
 	 * @param _class
 	 * @return
@@ -125,7 +125,7 @@ public class TransformInlinedProperties extends TransformAbstract {
 
 	/**
 	 * This will be removed once we establish a constraint based profile
-	 * 
+	 *
 	 * @deprecated
 	 * @param inlineClass
 	 * @return
@@ -205,10 +205,12 @@ public class TransformInlinedProperties extends TransformAbstract {
 
 					bucketAnnotations.saveAnnotations();
 				} else {
-					Logger.log(Logger.ERROR, String.format(
-						"Unsupported inlined association or datatype property %s from %s; %s has no base element",
-						property.getName(), property.getNamespace().getQualifiedName(),
-						property.getNamespace().getQualifiedName()));
+					Logger.log(
+						Logger.ERROR,
+						String.format(
+							"Unsupported inlined association or datatype property %s from %s; %s has no base element",
+							property.getName(), property.getNamespace().getQualifiedName(),
+							property.getNamespace().getQualifiedName()));
 				}
 			}
 
@@ -279,9 +281,9 @@ public class TransformInlinedProperties extends TransformAbstract {
 	}
 
 	/**
-	 * 
+	 *
 	 * collectConstraints walks the untemplated associations recursively to create a for->all() ocl
-	 * 
+	 *
 	 * TODO Message munging to get a readable validation message is bound to the current validation generation which needs to change, after dynamic
 	 * validation message generation should be able to create better message
 	 */
@@ -346,9 +348,10 @@ public class TransformInlinedProperties extends TransformAbstract {
 					ownerBaseType = getBaseDatatype(inlineClass, bucketClass);
 				}
 
-				collectConstraints(property, bucketClass, bucketAnnotations, propertyType, message + " " +
-						associationMessage, path + "." + getNullSafePath(ownerBaseType, propertyType, property) +
-						getInlineFilter(propertyType), stack + inlineClass.getName(), constraints, property.getName());
+				collectConstraints(property, bucketClass, bucketAnnotations, propertyType,
+					message + " " + associationMessage,
+					path + "." + getNullSafePath(ownerBaseType, propertyType, property) + getInlineFilter(propertyType),
+					stack + inlineClass.getName(), constraints, property.getName());
 			}
 		}
 
@@ -421,8 +424,8 @@ public class TransformInlinedProperties extends TransformAbstract {
 					}
 
 				}
-				String constraintMessage = properties.getProperty(generatePropertyMessageKey(
-					inlineClass, constraint.getName()));
+				String constraintMessage = properties.getProperty(
+					generatePropertyMessageKey(inlineClass, constraint.getName()));
 				if (constraintMessage != null) {
 					constraintMessage = constraintMessage.replaceAll(splitName, associationName);
 				} else {
@@ -430,8 +433,8 @@ public class TransformInlinedProperties extends TransformAbstract {
 				}
 
 				Constraint inlinedConstraint = appendInlinedOCLConstraint(
-					bucketClass, calculatedConstraintName, constraintSeverity, message + " " + constraintMessage, path +
-							getInlineFilter(inlineClass) + "->reject(" + relativeOCL + ")");
+					bucketClass, calculatedConstraintName, constraintSeverity, message + " " + constraintMessage,
+					path + getInlineFilter(inlineClass) + "->reject(" + relativeOCL + ")");
 
 				// handle constraint dependencies
 				String dependency = getConstraintDependency(inlineClassAnnotations, constraint.getName());

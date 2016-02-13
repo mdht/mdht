@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
@@ -46,7 +46,7 @@ import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 
 /**
- * 
+ *
  * @version $Id: $
  */
 public class ProfileExtItemProvider extends ProfileItemProvider implements ITableItemLabelProvider, ICellModifier {
@@ -67,15 +67,16 @@ public class ProfileExtItemProvider extends ProfileItemProvider implements ITabl
 		AdapterFactory adapterFactory = getAdapterFactory();
 		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
 				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
-				? NamedElementUtil.getBusinessName(namedElement)
-				: namedElement.getName();
+						? NamedElementUtil.getBusinessName(namedElement)
+						: namedElement.getName();
 	}
 
 	@Override
 	public String getText(Object object) {
 		String label = getName((Profile) object);
 		return label == null || label.length() == 0
-				? getString("_UI_Profile_type") : //$NON-NLS-1$
+				? getString("_UI_Profile_type") //$NON-NLS-1$
+				:
 				label;
 	}
 
@@ -142,7 +143,7 @@ public class ProfileExtItemProvider extends ProfileItemProvider implements ITabl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -154,7 +155,7 @@ public class ProfileExtItemProvider extends ProfileItemProvider implements ITabl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
@@ -168,7 +169,7 @@ public class ProfileExtItemProvider extends ProfileItemProvider implements ITabl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

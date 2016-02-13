@@ -91,7 +91,8 @@ public enum x_ActClassDocumentEntryOrganizer implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<x_ActClassDocumentEntryOrganizer> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<x_ActClassDocumentEntryOrganizer> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>xAct Class Document Entry Organizer</b></em>' literal with the specified literal value.

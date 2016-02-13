@@ -37,7 +37,7 @@ public interface EntryRelationship extends AssociationValidation {
 	 * If the meaning of the '<em>Type Code</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind
 	 * @see #setTypeCode(EntryRelationshipKind)
@@ -51,7 +51,7 @@ public interface EntryRelationship extends AssociationValidation {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship#getTypeCode <em>Type Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind

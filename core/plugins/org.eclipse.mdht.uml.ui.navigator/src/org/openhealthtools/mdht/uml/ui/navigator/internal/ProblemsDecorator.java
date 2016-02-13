@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.navigator.internal;
@@ -40,30 +40,31 @@ import org.eclipse.swt.graphics.Image;
 import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Activator;
 
-
 public class ProblemsDecorator implements ILabelDecorator {
-	/** Resources whose markers are cached. */;
+	/** Resources whose markers are cached. */
+	;
 	private List cachedResources = new ArrayList();
-	
+
 	/** key=EObject, value=IMarker */
 	private Map errorMarkers = new HashMap();
+
 	private Map warningMarkers = new HashMap();
 
-    /**
-     * Refresh problem markers after validation.
-     */
-    private IValidationListener validationListener = new IValidationListener() {
+	/**
+	 * Refresh problem markers after validation.
+	 */
+	private IValidationListener validationListener = new IValidationListener() {
 		public void validationOccurred(final ValidationEvent event) {
-			if (event.getClientContextIds().contains("org.openhealthtools.mdht.uml.ui.validation.refresh")
-					&& event.getEvaluationMode() == EvaluationMode.BATCH) {
+			if (event.getClientContextIds().contains("org.openhealthtools.mdht.uml.ui.validation.refresh") &&
+					event.getEvaluationMode() == EvaluationMode.BATCH) {
 				cachedResources.clear();
 				errorMarkers.clear();
 				warningMarkers.clear();
 				cacheMarkers(event.getValidationTargets());
 			}
 		}
-    };
-    
+	};
+
 	public ProblemsDecorator() {
 		ModelValidationService.getInstance().addValidationListener(validationListener);
 	}
@@ -71,12 +72,12 @@ public class ProblemsDecorator implements ILabelDecorator {
 	public void dispose() {
 		ModelValidationService.getInstance().removeValidationListener(validationListener);
 	}
-	
+
 	protected void cacheMarkers(Collection targets) {
 		for (Iterator iterator = targets.iterator(); iterator.hasNext();) {
 			Object target = iterator.next();
 			if (target instanceof EObject) {
-				cacheMarkers((EObject)target);
+				cacheMarkers((EObject) target);
 			}
 		}
 	}
@@ -96,15 +97,14 @@ public class ProblemsDecorator implements ILabelDecorator {
 					URI markerURI = URI.createURI(markerURIAttr.toString());
 					markerEObject = eObject.eResource().getEObject(markerURI.fragment());
 				}
-				int markerSeverity = ((Integer)markers[i].getAttribute(IMarker.SEVERITY)).intValue();
+				int markerSeverity = ((Integer) markers[i].getAttribute(IMarker.SEVERITY)).intValue();
 				if (IMarker.SEVERITY_ERROR == markerSeverity) {
 					EObject errorObject = markerEObject;
 					while (errorObject != null) {
 						errorMarkers.put(errorObject, markers[i]);
 						errorObject = errorObject.eContainer();
 					}
-				}
-				else if (IMarker.SEVERITY_WARNING == markerSeverity) {
+				} else if (IMarker.SEVERITY_WARNING == markerSeverity) {
 					EObject warningObject = markerEObject;
 					while (warningObject != null) {
 						warningMarkers.put(warningObject, markers[i]);
@@ -119,19 +119,19 @@ public class ProblemsDecorator implements ILabelDecorator {
 
 	private IMarker[] getValidationMarkers(EObject eObject) {
 		IFile file = WorkspaceSynchronizer.getFile(eObject.eResource());
-		
+
 		if (file != null) {
 			try {
-				//return file.findMarkers(MarkerUtil.VALIDATION_MARKER_TYPE, true, IResource.DEPTH_ZERO);
+				// return file.findMarkers(MarkerUtil.VALIDATION_MARKER_TYPE, true, IResource.DEPTH_ZERO);
 				return file.findMarkers(EValidator.MARKER, true, IResource.DEPTH_ZERO);
-				
+
 			} catch (CoreException e) {
 				// ignore these markers
 			}
 		}
 		return new IMarker[0];
 	}
-	
+
 	public boolean hasError(EObject eObject) {
 		URI resourceURI = eObject.eResource().getURI();
 		if (!cachedResources.contains(resourceURI)) {
@@ -147,37 +147,37 @@ public class ProblemsDecorator implements ILabelDecorator {
 		}
 		return warningMarkers.get(eObject) != null;
 	}
-	
+
 	public Image decorateImage(Image image, Object element) {
 		EObject eObject = null;
 		if (element instanceof EObject) {
 			eObject = (EObject) element;
-		}
-		else if (element instanceof UMLDomainNavigatorItem) {
-			eObject = ((UMLDomainNavigatorItem)element).getEObject();
+		} else if (element instanceof UMLDomainNavigatorItem) {
+			eObject = ((UMLDomainNavigatorItem) element).getEObject();
 		}
 		if (eObject != null && eObject.eResource() != null) {
 			if (hasError(eObject)) {
 				return getErrorIcon(image);
-			}
-			else if (hasWarning(eObject)) {
+			} else if (hasWarning(eObject)) {
 				return getWarningIcon(image);
 			}
 		}
-		
+
 		return image;
 	}
 
 	private Image getErrorIcon(Image baseImage) {
 		ImageDescriptor errorIcon = Activator.getBundledImageDescriptor("icons/ovr16/error_co.gif");
-		ImageDescriptor decorated = new org.eclipse.jface.viewers.DecorationOverlayIcon(baseImage, errorIcon, IDecoration.BOTTOM_LEFT);
+		ImageDescriptor decorated = new org.eclipse.jface.viewers.DecorationOverlayIcon(
+			baseImage, errorIcon, IDecoration.BOTTOM_LEFT);
 
 		return ExtendedImageRegistry.getInstance().getImage(decorated);
 	}
 
 	private Image getWarningIcon(Image baseImage) {
 		ImageDescriptor errorIcon = Activator.getBundledImageDescriptor("icons/ovr16/warning_co.gif");
-		ImageDescriptor decorated = new org.eclipse.jface.viewers.DecorationOverlayIcon(baseImage, errorIcon, IDecoration.BOTTOM_LEFT);
+		ImageDescriptor decorated = new org.eclipse.jface.viewers.DecorationOverlayIcon(
+			baseImage, errorIcon, IDecoration.BOTTOM_LEFT);
 
 		return ExtendedImageRegistry.getInstance().getImage(decorated);
 	}

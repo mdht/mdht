@@ -87,8 +87,8 @@ public class IVXB_PQImpl extends PQImpl implements IVXB_PQ {
 		Boolean oldInclusive = inclusive;
 		inclusive = newInclusive;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.IVXB_PQ__INCLUSIVE, oldInclusive, inclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVXB_PQ__INCLUSIVE, oldInclusive,
+				inclusive));
 		}
 	}
 

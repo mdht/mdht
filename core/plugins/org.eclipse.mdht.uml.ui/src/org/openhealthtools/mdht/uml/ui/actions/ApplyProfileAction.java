@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.window.Window;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -104,7 +105,7 @@ public class ApplyProfileAction extends UMLCommandAction {
 				Collections.EMPTY_LIST, label, choiceOfValues, false, false, true);
 			dialog.open();
 
-			if (dialog.getReturnCode() == FeatureEditorDialog.OK) {
+			if (dialog.getReturnCode() == Window.OK) {
 				editingDomain.getCommandStack().execute(new RefreshingChangeCommand(editingDomain, new Runnable() {
 
 					public void run() {

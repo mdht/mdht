@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProvider;
 
 /**
- * 
+ *
  * @version $Id: $
  */
 public class ResourceExtItemProvider extends ResourceItemProvider {
@@ -39,7 +39,7 @@ public class ResourceExtItemProvider extends ResourceItemProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceItemProvider#getChildren(java.lang.Object)
 	 */
 	@Override
@@ -57,7 +57,7 @@ public class ResourceExtItemProvider extends ResourceItemProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceItemProvider#getImage(java.lang.Object)
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class ResourceExtItemProvider extends ResourceItemProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceItemProvider#getText(java.lang.Object)
 	 */
 	@Override

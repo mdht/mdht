@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
@@ -37,7 +37,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
  * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetContextBindingImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetContextBinding {
@@ -45,7 +45,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * The default value of the '{@link #getEffectiveDate() <em>Effective Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffectiveDate()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * The cached value of the '{@link #getEffectiveDate() <em>Effective Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffectiveDate()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * The cached value of the '{@link #getConceptDomain() <em>Concept Domain</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConceptDomain()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * The cached value of the '{@link #getValueSet() <em>Value Set</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValueSet()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * The cached value of the '{@link #getUsageContext() <em>Usage Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUsageContext()
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ValueSetContextBindingImpl() {
@@ -120,7 +120,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -130,7 +130,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConceptDomain basicGetConceptDomain() {
@@ -140,7 +140,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UsageContext basicGetUsageContext() {
@@ -150,7 +150,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSetVersion basicGetValueSet() {
@@ -160,7 +160,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class getBase_Class() {
@@ -296,9 +296,8 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__BASE_CLASS, oldBase_Class,
-						base_Class));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						TermPackage.VALUE_SET_CONTEXT_BINDING__BASE_CLASS, oldBase_Class, base_Class));
 				}
 			}
 		}
@@ -308,7 +307,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConceptDomain getConceptDomain() {
@@ -317,9 +316,8 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 			conceptDomain = (ConceptDomain) eResolveProxy(oldConceptDomain);
 			if (conceptDomain != oldConceptDomain) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN,
-						oldConceptDomain, conceptDomain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						TermPackage.VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN, oldConceptDomain, conceptDomain));
 				}
 			}
 		}
@@ -329,7 +327,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getEffectiveDate() {
@@ -339,7 +337,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UsageContext getUsageContext() {
@@ -348,9 +346,8 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 			usageContext = (UsageContext) eResolveProxy(oldUsageContext);
 			if (usageContext != oldUsageContext) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT,
-						oldUsageContext, usageContext));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						TermPackage.VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT, oldUsageContext, usageContext));
 				}
 			}
 		}
@@ -360,7 +357,7 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSetVersion getValueSet() {
@@ -369,9 +366,8 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 			valueSet = (ValueSetVersion) eResolveProxy(oldValueSet);
 			if (valueSet != oldValueSet) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__VALUE_SET, oldValueSet,
-						valueSet));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						TermPackage.VALUE_SET_CONTEXT_BINDING__VALUE_SET, oldValueSet, valueSet));
 				}
 			}
 		}
@@ -381,85 +377,82 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__BASE_CLASS, oldBase_Class, base_Class));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__BASE_CLASS,
+				oldBase_Class, base_Class));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setConceptDomain(ConceptDomain newConceptDomain) {
 		ConceptDomain oldConceptDomain = conceptDomain;
 		conceptDomain = newConceptDomain;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN, oldConceptDomain,
-				conceptDomain));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN,
+				oldConceptDomain, conceptDomain));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setEffectiveDate(String newEffectiveDate) {
 		String oldEffectiveDate = effectiveDate;
 		effectiveDate = newEffectiveDate;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__EFFECTIVE_DATE, oldEffectiveDate,
-				effectiveDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__EFFECTIVE_DATE,
+				oldEffectiveDate, effectiveDate));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setUsageContext(UsageContext newUsageContext) {
 		UsageContext oldUsageContext = usageContext;
 		usageContext = newUsageContext;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT, oldUsageContext,
-				usageContext));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT,
+				oldUsageContext, usageContext));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValueSet(ValueSetVersion newValueSet) {
 		ValueSetVersion oldValueSet = valueSet;
 		valueSet = newValueSet;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__VALUE_SET, oldValueSet, valueSet));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__VALUE_SET,
+				oldValueSet, valueSet));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.transform.core;
 
@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.transform.core.impl.Transformation;
  * <li>A {@linkplain RuleKind#WALK walk} rule, if it is a {@linkplain PhaseKind#TRANSFORM transform} phase</li>
  * <li>A {@linkplain RuleKind#SAVE save} rule, if it is a {@linkplain PhaseKind#FINALIZATION finalization} phase</li>
  * </ul>
- * 
+ *
  * @see TransformationBuilder
  * @see RuleBuilder
  */
@@ -54,7 +54,7 @@ public class PhaseBuilder {
 
 	/**
 	 * Gets an builder to modify an existing rule.
-	 * 
+	 *
 	 * @param id
 	 *            the rule ID to get. This rule must already exist
 	 */
@@ -71,7 +71,7 @@ public class PhaseBuilder {
 
 	/**
 	 * Finishes building phases and returns to the transformation builder.
-	 * 
+	 *
 	 * @return the transformation builder
 	 */
 	public TransformationBuilder done() {

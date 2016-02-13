@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
@@ -59,7 +59,7 @@ public class AddPublicationSample implements IObjectActionDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	public void run(IAction action) {
@@ -91,8 +91,8 @@ public class AddPublicationSample implements IObjectActionDelegate {
 
 					IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
-					IProject docProject = root.getProject(topPackage.eResource().getURI().segment(1).replace(
-						".model", ".doc"));
+					IProject docProject = root.getProject(
+						topPackage.eResource().getURI().segment(1).replace(".model", ".doc"));
 
 					if (docProject.exists()) {
 
@@ -149,7 +149,7 @@ public class AddPublicationSample implements IObjectActionDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
@@ -179,7 +179,7 @@ public class AddPublicationSample implements IObjectActionDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IObjectActionDelegate#setActivePart(org.eclipse.jface.action.IAction, org.eclipse.ui.IWorkbenchPart)
 	 */
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {

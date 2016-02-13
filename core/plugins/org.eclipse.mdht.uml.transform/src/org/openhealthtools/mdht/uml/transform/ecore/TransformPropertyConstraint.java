@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added CS type check
@@ -72,10 +72,10 @@ public abstract class TransformPropertyConstraint extends TransformAbstract {
 	 * <b>NOTE</b> that this method is called by the superclass constructor, so the subclass instance will not yet be initialized. Therefore,
 	 * implementers of this method may not rely on instance variables of their class having been initialized.
 	 * </p>
-	 * 
+	 *
 	 * @param stereotypeKind
 	 *            the kind of validation stereotype for which to create a constraint handler
-	 * 
+	 *
 	 * @return the appropriate constraint handler, or {@code null} if the specified validation stereotype is not supported
 	 */
 	protected abstract PropertyConstraintHandler createConstraintHandler(ValidationStereotypeKind stereotypeKind);
@@ -336,7 +336,7 @@ public abstract class TransformPropertyConstraint extends TransformAbstract {
 
 		/**
 		 * Configure the initializer annotation stereotype for the specified {@code property}.
-		 * 
+		 *
 		 * @return <code>true</code> if any initialization annotation details were set; <code>false</code> if no details were set at all
 		 */
 		protected final boolean addAnnotation(Property property, ValidationStereotypeKind stereotypeKind,

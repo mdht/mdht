@@ -30,7 +30,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	 * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperation()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperation()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LogicalConstraintImpl() {
@@ -61,7 +61,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LogicalOperator getOperation() {
@@ -82,7 +82,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOperation(LogicalOperator newOperation) {
@@ -91,15 +91,15 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 				? OPERATION_EDEFAULT
 				: newOperation;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LOGICAL_CONSTRAINT__OPERATION, oldOperation, operation));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LOGICAL_CONSTRAINT__OPERATION,
+				oldOperation, operation));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class LogicalConstraintImpl extends ConstraintValidationImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -4,13 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - using annotations instead of expressions for Java bodies
  *     Kenn Hussey - fixing problems with generating facade for HITSP
  *     Christian W. Damus - factor out CDA dependencies from UML-to-Ecore transformation (artf3350)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
@@ -32,6 +32,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.transform.AbstractTransform;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformAbstract;
 
@@ -62,12 +63,12 @@ public class GenMethodHelper {
 		Operation operation = null;
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
-			businessName = TransformAbstract.normalizeCodeName(property.getLabel(false));
+			businessName = AbstractTransform.normalizeCodeName(property.getLabel(false));
 		} else {
-			businessName = TransformAbstract.normalizeCodeName(property.getName());
+			businessName = AbstractTransform.normalizeCodeName(property.getName());
 		}
 
-		String operationName = "add" + TransformAbstract.capitalize(businessName);
+		String operationName = "add" + AbstractTransform.capitalize(businessName);
 
 		String[] paramNamesArray = { "value" };
 		EList<String> parmNames = new UnmodifiableEList<String>(1, paramNamesArray);
@@ -84,7 +85,8 @@ public class GenMethodHelper {
 		return operation;
 	}
 
-	public Operation genAssociationGetterOperation(Classifier classifier, Property sourceProperty, Classifier domainType) {
+	public Operation genAssociationGetterOperation(Classifier classifier, Property sourceProperty,
+			Classifier domainType) {
 		Class sourceClass = sourceProperty.getClass_();
 		Class targetClass = (Class) sourceProperty.getType();
 
@@ -94,9 +96,9 @@ public class GenMethodHelper {
 
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
-			businessName = TransformAbstract.normalizeCodeName(sourceProperty.getLabel(false));
+			businessName = AbstractTransform.normalizeCodeName(sourceProperty.getLabel(false));
 		} else {
-			businessName = TransformAbstract.normalizeCodeName(sourceProperty.getName());
+			businessName = AbstractTransform.normalizeCodeName(sourceProperty.getName());
 		}
 
 		Operation operation = null;
@@ -105,8 +107,8 @@ public class GenMethodHelper {
 		// operationName += CDAModelUtil.getModelPrefix(sourceProperty);
 		// }
 		operationName += ((sourceProperty.getUpper() == 1)
-				? TransformAbstract.capitalize(businessName)
-				: TransformAbstract.capitalize(TransformAbstract.pluralize(businessName)));
+				? AbstractTransform.capitalize(businessName)
+				: AbstractTransform.capitalize(AbstractTransform.pluralize(businessName)));
 
 		if (classifier instanceof Class) {
 			operation = ((Class) classifier).createOwnedOperation(operationName, null, null, domainType);
@@ -135,11 +137,12 @@ public class GenMethodHelper {
 				CDAModelUtil.isSection(targetClass)) {
 			// ClinicalDocument -> Section || Section -> Section
 			operationBody.append("self.getAllSections()->select(");
-			operationBody.append("section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" +
-					domainTypeQName + "))");
+			operationBody.append(
+				"section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" + domainTypeQName +
+						"))");
 
 		} else {
-			operationBody.append("self.get" + TransformAbstract.pluralize(cdaTargetName) + "()->select(");
+			operationBody.append("self.get" + AbstractTransform.pluralize(cdaTargetName) + "()->select(");
 			operationBody.append(cdaTargetLowerName + " : " + cdaTargetQName + " | ");
 			operationBody.append("not " + cdaTargetLowerName + ".oclIsUndefined() and ");
 			operationBody.append(cdaTargetLowerName + ".oclIsKindOf(" + domainTypeQName + "))");
@@ -161,15 +164,15 @@ public class GenMethodHelper {
 		Operation operation = null;
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
-			businessName = TransformAbstract.normalizeCodeName(property.getLabel(false));
+			businessName = AbstractTransform.normalizeCodeName(property.getLabel(false));
 		} else {
-			businessName = TransformAbstract.normalizeCodeName(property.getName());
+			businessName = AbstractTransform.normalizeCodeName(property.getName());
 		}
 
 		String operationVerb = (property.getUpper() == 1)
 				? "with"
 				: "add";
-		String operationName = operationVerb + TransformAbstract.capitalize(businessName);
+		String operationName = operationVerb + AbstractTransform.capitalize(businessName);
 		StringBuffer operationBody = new StringBuffer();
 
 		if (classifier instanceof Interface) {
@@ -185,15 +188,19 @@ public class GenMethodHelper {
 			Property cdaProperty = CDAModelUtil.getCDAProperty(property);
 
 			if (CDAModelUtil.isDatatypeModel(property.getType())) {
-				operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage.eINSTANCE;" +
-						LF);
-				operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory.eINSTANCE;" +
-						LF);
+				operationBody.append(
+					"org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage.eINSTANCE;" +
+							LF);
+				operationBody.append(
+					"org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory.eINSTANCE;" +
+							LF);
 			} else if (CDAModelUtil.isCDAModel(property.getType())) {
-				operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.cda.CDAPackage.eINSTANCE;" +
-						LF);
-				operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.cda.CDAFactory.eINSTANCE;" +
-						LF);
+				operationBody.append(
+					"org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.cda.CDAPackage.eINSTANCE;" +
+							LF);
+				operationBody.append(
+					"org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.cda.CDAFactory.eINSTANCE;" +
+							LF);
 			} else {
 				String nsURI = null;
 				Package umlPackage = property.getType().getNearestPackage();
@@ -213,21 +220,25 @@ public class GenMethodHelper {
 					return null;
 				}
 
-				operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEPackage(\"" +
-						nsURI + "\");" + LF);
-				operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEFactory(\"" +
-						nsURI + "\");" + LF);
+				operationBody.append(
+					"org.eclipse.emf.ecore.EPackage ePackage = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEPackage(\"" +
+							nsURI + "\");" + LF);
+				operationBody.append(
+					"org.eclipse.emf.ecore.EFactory eFactory = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEFactory(\"" +
+							nsURI + "\");" + LF);
 			}
 
-			operationBody.append("org.eclipse.emf.ecore.EClass eClass = (org.eclipse.emf.ecore.EClass) ePackage.getEClassifier(\"" +
-					property.getType().getName() + "\");" + LF);
+			operationBody.append(
+				"org.eclipse.emf.ecore.EClass eClass = (org.eclipse.emf.ecore.EClass) ePackage.getEClassifier(\"" +
+						property.getType().getName() + "\");" + LF);
 			operationBody.append("org.eclipse.emf.ecore.EObject eObject = eFactory.create(eClass);" + LF);
 
 			// run init() on template classes
 			if (property.getType() instanceof Class && CDAModelUtil.getTemplateId((Class) property.getType()) != null) {
 				operationBody.append("try {" + LF);
-				operationBody.append("	java.lang.reflect.Method initMethod = eObject.getClass().getMethod(\"init\", new java.lang.Class[0]);" +
-						LF);
+				operationBody.append(
+					"	java.lang.reflect.Method initMethod = eObject.getClass().getMethod(\"init\", new java.lang.Class[0]);" +
+							LF);
 				operationBody.append("	initMethod.invoke(eObject, new Object[0]);" + LF);
 				operationBody.append("} catch (Exception e) {" + LF);
 				operationBody.append("	// no init() method" + LF);
@@ -237,20 +248,24 @@ public class GenMethodHelper {
 			// instantiate domain class wrapper, only if domainType is in same package as interface we are building
 			if (transformerOptions.isGenerateDomainClasses() && cdaTargetClass != null &&
 					classifier.getNearestPackage() == domainType.getNearestPackage()) {
-				operationBody.append("org.eclipse.emf.ecore.EPackage domainPackage = this.eClass().getEPackage();" + LF);
-				operationBody.append("org.eclipse.emf.ecore.EFactory domainFactory = domainPackage.getEFactoryInstance();" +
-						LF);
-				operationBody.append("org.eclipse.emf.ecore.EClass domainEClass = (org.eclipse.emf.ecore.EClass) domainPackage.getEClassifier(\"" +
-						domainType.getName() + "\");" + LF);
-				operationBody.append("I" + domainType.getName() + " value = (" + "I" + domainType.getName() +
-						")domainFactory.create(domainEClass);" + LF);
+				operationBody.append(
+					"org.eclipse.emf.ecore.EPackage domainPackage = this.eClass().getEPackage();" + LF);
+				operationBody.append(
+					"org.eclipse.emf.ecore.EFactory domainFactory = domainPackage.getEFactoryInstance();" + LF);
+				operationBody.append(
+					"org.eclipse.emf.ecore.EClass domainEClass = (org.eclipse.emf.ecore.EClass) domainPackage.getEClassifier(\"" +
+							domainType.getName() + "\");" + LF);
+				operationBody.append(
+					"I" + domainType.getName() + " value = (" + "I" + domainType.getName() +
+							")domainFactory.create(domainEClass);" + LF);
 
-				operationBody.append("value.setCDAType((org.openhealthtools.mdht.uml.cda." + cdaTargetClass.getName() +
-						")eObject);" + LF);
+				operationBody.append(
+					"value.setCDAType((org.openhealthtools.mdht.uml.cda." + cdaTargetClass.getName() + ")eObject);" +
+							LF);
 
 			} else {
-				operationBody.append(domainType.getName() + " value = " + "(" + domainType.getName() + ") eObject;" +
-						LF);
+				operationBody.append(
+					domainType.getName() + " value = " + "(" + domainType.getName() + ") eObject;" + LF);
 			}
 
 			if (transformerOptions.isGenerateDomainClasses()) {
@@ -263,37 +278,38 @@ public class GenMethodHelper {
 				operationBody.append("return value;");
 			} else if ((CDAModelUtil.isSection(sourceClass) || CDAModelUtil.isClinicalStatement(sourceClass)) &&
 					CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
-				operationBody.append("add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." +
-						cdaTargetClass.getName() + ")eObject);" + LF);
+				operationBody.append(
+					"add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." +
+							cdaTargetClass.getName() + ")eObject);" + LF);
 				operationBody.append("return value;");
 			} else if (cdaProperty == null) {
 				System.err.println("Unsupported facade property: " + property.getQualifiedName());
 				operationBody = new StringBuffer();
 			} else if (CDAModelUtil.isDatatypeModel(property.getType())) {
 				if (cdaProperty.getUpper() == 1) {
-					operationBody.append("set" + TransformAbstract.capitalize(cdaProperty.getName()) + "(value);" + LF);
+					operationBody.append("set" + AbstractTransform.capitalize(cdaProperty.getName()) + "(value);" + LF);
 				} else {
-					operationBody.append("get" +
-							TransformAbstract.capitalize(TransformAbstract.pluralize(cdaProperty.getName())) +
-							"().add(value);" + LF);
+					operationBody.append(
+						"get" + AbstractTransform.capitalize(AbstractTransform.pluralize(cdaProperty.getName())) +
+								"().add(value);" + LF);
 				}
 				operationBody.append("return value;");
 			} else if (CDAModelUtil.isCDAModel(property.getType())) {
 				if (cdaProperty.getUpper() == 1) {
-					operationBody.append("set" + TransformAbstract.capitalize(cdaProperty.getName()) + "(value);" + LF);
+					operationBody.append("set" + AbstractTransform.capitalize(cdaProperty.getName()) + "(value);" + LF);
 				} else {
-					operationBody.append("get" +
-							TransformAbstract.capitalize(TransformAbstract.pluralize(cdaProperty.getName())) +
-							"().add(value);" + LF);
+					operationBody.append(
+						"get" + AbstractTransform.capitalize(AbstractTransform.pluralize(cdaProperty.getName())) +
+								"().add(value);" + LF);
 				}
 				operationBody.append("return value;");
 			} else {
 				if (property.getUpper() == 1) {
-					operationBody.append("set" + TransformAbstract.capitalize(property.getName()) + "(value);" + LF);
+					operationBody.append("set" + AbstractTransform.capitalize(property.getName()) + "(value);" + LF);
 				} else {
-					operationBody.append("get" +
-							TransformAbstract.capitalize(TransformAbstract.pluralize(property.getName())) +
-							"().add(value);" + LF);
+					operationBody.append(
+						"get" + AbstractTransform.capitalize(AbstractTransform.pluralize(property.getName())) +
+								"().add(value);" + LF);
 				}
 				operationBody.append("return value;");
 			}
@@ -315,14 +331,14 @@ public class GenMethodHelper {
 		Operation operation = null;
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
-			businessName = TransformAbstract.normalizeCodeName(property.getLabel(false));
+			businessName = AbstractTransform.normalizeCodeName(property.getLabel(false));
 		} else {
-			businessName = TransformAbstract.normalizeCodeName(property.getName());
+			businessName = AbstractTransform.normalizeCodeName(property.getName());
 		}
 
 		String operationName = "get" + ((property.getUpper() == 1)
-				? TransformAbstract.capitalize(businessName)
-				: TransformAbstract.capitalize(TransformAbstract.pluralize(businessName)));
+				? AbstractTransform.capitalize(businessName)
+				: AbstractTransform.capitalize(AbstractTransform.pluralize(businessName)));
 		StringBuffer operationBody = new StringBuffer();
 
 		if (classifier instanceof Interface) {
@@ -352,15 +368,15 @@ public class GenMethodHelper {
 		Operation operation = null;
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
-			businessName = TransformAbstract.normalizeCodeName(property.getLabel(false));
+			businessName = AbstractTransform.normalizeCodeName(property.getLabel(false));
 		} else {
-			businessName = TransformAbstract.normalizeCodeName(property.getName());
+			businessName = AbstractTransform.normalizeCodeName(property.getName());
 		}
 
 		String operationVerb = (property.getUpper() == 1)
 				? "set"
 				: "add";
-		String operationName = operationVerb + TransformAbstract.capitalize(businessName);
+		String operationName = operationVerb + AbstractTransform.capitalize(businessName);
 		StringBuffer operationBody = new StringBuffer();
 
 		String[] paramNamesArray = { "value" };
@@ -389,34 +405,35 @@ public class GenMethodHelper {
 			operationBody.append("addSection((org.openhealthtools.mdht.uml.cda.Section)value);" + LF);
 		} else if ((CDAModelUtil.isSection(sourceClass) || CDAModelUtil.isClinicalStatement(sourceClass)) &&
 				CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
-			operationBody.append("add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." +
-					cdaTargetClass.getName() + ")value);" + LF);
+			operationBody.append(
+				"add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." + cdaTargetClass.getName() +
+						")value);" + LF);
 		} else if (cdaProperty == null) {
 			System.err.println("Unsupported facade property: " + property.getQualifiedName());
 			operationBody = new StringBuffer();
 		} else if (CDAModelUtil.isDatatypeModel(property.getType())) {
 			if (cdaProperty.getUpper() == 1) {
-				operationBody.append("set" + TransformAbstract.capitalize(cdaProperty.getName()) + "(value);" + LF);
+				operationBody.append("set" + AbstractTransform.capitalize(cdaProperty.getName()) + "(value);" + LF);
 			} else {
-				operationBody.append("get" +
-						TransformAbstract.capitalize(TransformAbstract.pluralize(cdaProperty.getName())) +
-						"().add(value);" + LF);
+				operationBody.append(
+					"get" + AbstractTransform.capitalize(AbstractTransform.pluralize(cdaProperty.getName())) +
+							"().add(value);" + LF);
 			}
 		} else if (CDAModelUtil.isCDAModel(property.getType())) {
 			if (cdaProperty.getUpper() == 1) {
-				operationBody.append("set" + TransformAbstract.capitalize(cdaProperty.getName()) + "(value);" + LF);
+				operationBody.append("set" + AbstractTransform.capitalize(cdaProperty.getName()) + "(value);" + LF);
 			} else {
-				operationBody.append("get" +
-						TransformAbstract.capitalize(TransformAbstract.pluralize(cdaProperty.getName())) +
-						"().add(value);" + LF);
+				operationBody.append(
+					"get" + AbstractTransform.capitalize(AbstractTransform.pluralize(cdaProperty.getName())) +
+							"().add(value);" + LF);
 			}
 		} else {
 			if (property.getUpper() == 1) {
-				operationBody.append("set" + TransformAbstract.capitalize(property.getName()) + "(value);" + LF);
+				operationBody.append("set" + AbstractTransform.capitalize(property.getName()) + "(value);" + LF);
 			} else {
-				operationBody.append("get" +
-						TransformAbstract.capitalize(TransformAbstract.pluralize(property.getName())) +
-						"().add(value);" + LF);
+				operationBody.append(
+					"get" + AbstractTransform.capitalize(AbstractTransform.pluralize(property.getName())) +
+							"().add(value);" + LF);
 			}
 		}
 

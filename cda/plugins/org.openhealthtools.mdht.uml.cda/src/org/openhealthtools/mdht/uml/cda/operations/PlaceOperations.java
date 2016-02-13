@@ -92,21 +92,23 @@ public class PlaceOperations extends EntityOperations {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.PLACE);
 			try {
-				VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
+					VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(place)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.PLACE__CLASS_CODE,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateClassCode",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(place, context) }),
-					new Object[] { place }));
+				diagnostics.add(
+					new BasicDiagnostic(
+						Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.PLACE__CLASS_CODE,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+							"_UI_GenericInvariant_diagnostic",
+							new Object[] {
+									"validateClassCode",
+									org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(place, context) }),
+						new Object[] { place }));
 			}
 			return false;
 		}
@@ -143,26 +145,29 @@ public class PlaceOperations extends EntityOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static boolean validateDeterminerCode(Place place, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateDeterminerCode(Place place, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.PLACE);
 			try {
-				VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
+					VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(place)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.PLACE__DETERMINER_CODE,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateDeterminerCode",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(place, context) }),
-					new Object[] { place }));
+				diagnostics.add(
+					new BasicDiagnostic(
+						Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.PLACE__DETERMINER_CODE,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+							"_UI_GenericInvariant_diagnostic",
+							new Object[] {
+									"validateDeterminerCode",
+									org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(place, context) }),
+						new Object[] { place }));
 			}
 			return false;
 		}
@@ -197,7 +202,8 @@ public class PlaceOperations extends EntityOperations {
 	public static EList<EN> getNames(Place place) {
 		if (GET_NAMES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PLACE, CDAPackage.Literals.PLACE.getEAllOperations().get(16));
+			helper.setOperationContext(
+				CDAPackage.Literals.PLACE, CDAPackage.Literals.PLACE.getEAllOperations().get(16));
 			try {
 				GET_NAMES__EOCL_QRY = helper.createQuery(GET_NAMES__EOCL_EXP);
 			} catch (ParserException pe) {
@@ -238,7 +244,8 @@ public class PlaceOperations extends EntityOperations {
 	public static EList<AD> getAddrs(Place place) {
 		if (GET_ADDRS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PLACE, CDAPackage.Literals.PLACE.getEAllOperations().get(17));
+			helper.setOperationContext(
+				CDAPackage.Literals.PLACE, CDAPackage.Literals.PLACE.getEAllOperations().get(17));
 			try {
 				GET_ADDRS__EOCL_QRY = helper.createQuery(GET_ADDRS__EOCL_EXP);
 			} catch (ParserException pe) {

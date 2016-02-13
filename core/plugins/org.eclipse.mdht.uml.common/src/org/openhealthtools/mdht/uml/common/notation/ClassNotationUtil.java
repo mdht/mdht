@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.notation;
@@ -22,7 +22,7 @@ public class ClassNotationUtil {
 
 	/**
 	 * return the full label of the class, given UML2 specification.
-	 * 
+	 *
 	 * @return the string corresponding to the label of the class
 	 */
 	public static String getLabel(Class clazz) {
@@ -44,10 +44,10 @@ public class ClassNotationUtil {
 
 	/**
 	 * Return the custom label of the class, given UML2 specification and a custom style.
-	 * 
+	 *
 	 * @param style
 	 *            the integer representing the style of the label
-	 * 
+	 *
 	 * @return the string corresponding to the label of the class
 	 */
 	public static String getCustomLabel(Class clazz, int style) {
@@ -91,11 +91,11 @@ public class ClassNotationUtil {
 	 * Returns the modifier of the class, separated by a comma, as as single
 	 * line if <code>multiline</code> is <code>false</code> or as a multiline
 	 * string if <code>multiline</code> is <code>false</code>.
-	 * 
+	 *
 	 * @param multiLine
 	 *            boolean that indicates if the string should have several lines
 	 *            when set to <code>true</code> or only one line when set to <code>false</code>.
-	 * 
+	 *
 	 * @return a string giving all modifiers for the class
 	 */
 	protected static String getModifiersAsString(Class clazz, boolean multiLine) {

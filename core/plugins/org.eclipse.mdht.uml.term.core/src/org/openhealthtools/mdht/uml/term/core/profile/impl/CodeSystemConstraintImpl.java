@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
@@ -46,7 +46,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
  * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl#getBase_Property <em>Base Property</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemConstraint {
@@ -54,7 +54,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -109,7 +109,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -120,7 +120,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -131,7 +131,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The default value of the '{@link #getBinding() <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
@@ -142,7 +142,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The cached value of the '{@link #getBinding() <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
@@ -153,7 +153,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCode()
 	 * @generated
 	 * @ordered
@@ -164,7 +164,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCode()
 	 * @generated
 	 * @ordered
@@ -175,7 +175,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The default value of the '{@link #getDisplayName() <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDisplayName()
 	 * @generated
 	 * @ordered
@@ -186,7 +186,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The cached value of the '{@link #getDisplayName() <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDisplayName()
 	 * @generated
 	 * @ordered
@@ -197,7 +197,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The cached value of the '{@link #getQualifier() <em>Qualifier</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQualifier()
 	 * @generated
 	 * @ordered
@@ -208,7 +208,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -218,7 +218,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CodeSystemConstraintImpl() {
@@ -228,7 +228,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -238,7 +238,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CodeSystemVersion basicGetReference() {
@@ -248,7 +248,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +326,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -368,7 +368,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +379,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -419,7 +419,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property getBase_Property() {
@@ -428,9 +428,8 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY,
-						oldBase_Property, base_Property));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						TermPackage.CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY, oldBase_Property, base_Property));
 				}
 			}
 		}
@@ -440,7 +439,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BindingKind getBinding() {
@@ -450,7 +449,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getCode() {
@@ -460,7 +459,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDisplayName() {
@@ -470,7 +469,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -480,7 +479,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -490,7 +489,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<CR> getQualifier() {
@@ -503,7 +502,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CodeSystemVersion getReference() {
@@ -512,9 +511,8 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 			reference = (CodeSystemVersion) eResolveProxy(oldReference);
 			if (reference != oldReference) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE, oldReference,
-						reference));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE, oldReference, reference));
 				}
 			}
 		}
@@ -524,7 +522,7 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getVersion() {
@@ -534,23 +532,22 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY, oldBase_Property,
-				base_Property));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY,
+				oldBase_Property, base_Property));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBinding(BindingKind newBinding) {
@@ -559,105 +556,105 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 				? BINDING_EDEFAULT
 				: newBinding;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__BINDING, oldBinding, binding));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__BINDING,
+				oldBinding, binding));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__CODE, oldCode, code));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__CODE, oldCode, code));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDisplayName(String newDisplayName) {
 		String oldDisplayName = displayName;
 		displayName = newDisplayName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__DISPLAY_NAME, oldDisplayName, displayName));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__DISPLAY_NAME,
+				oldDisplayName, displayName));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__IDENTIFIER, oldIdentifier, identifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__IDENTIFIER,
+				oldIdentifier, identifier));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__NAME, oldName, name));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__NAME, oldName, name));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setReference(CodeSystemVersion newReference) {
 		CodeSystemVersion oldReference = reference;
 		reference = newReference;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE, oldReference, reference));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE,
+				oldReference, reference));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__VERSION, oldVersion, version));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__VERSION,
+				oldVersion, version));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

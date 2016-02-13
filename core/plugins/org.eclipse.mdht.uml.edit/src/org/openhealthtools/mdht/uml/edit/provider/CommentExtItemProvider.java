@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
@@ -24,7 +24,7 @@ import org.eclipse.uml2.uml.edit.providers.CommentItemProvider;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 
 /**
- * 
+ *
  * @version $Id: $
  */
 public class CommentExtItemProvider extends CommentItemProvider implements ITableItemLabelProvider, ICellModifier {
@@ -38,7 +38,7 @@ public class CommentExtItemProvider extends CommentItemProvider implements ITabl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.CommentItemProvider#getImage(java.lang.Object)
 	 */
 	@Override
@@ -48,7 +48,7 @@ public class CommentExtItemProvider extends CommentItemProvider implements ITabl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.CommentItemProvider#getText(java.lang.Object)
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class CommentExtItemProvider extends CommentItemProvider implements ITabl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
@@ -69,7 +69,7 @@ public class CommentExtItemProvider extends CommentItemProvider implements ITabl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.CommentItemProvider#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class CommentExtItemProvider extends CommentItemProvider implements ITabl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -112,7 +112,7 @@ public class CommentExtItemProvider extends CommentItemProvider implements ITabl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
@@ -121,7 +121,7 @@ public class CommentExtItemProvider extends CommentItemProvider implements ITabl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

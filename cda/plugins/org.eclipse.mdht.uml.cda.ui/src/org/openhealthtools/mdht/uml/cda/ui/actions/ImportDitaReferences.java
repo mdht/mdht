@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (National E-Health Transition Authority (NEHTA)) - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
@@ -32,6 +32,7 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.actions.CopyFilesAndFoldersOperation;
@@ -46,9 +47,9 @@ import com.google.common.collect.Collections2;
  * directory (../../content)
  * This action will copy (overwrite) over the content from another dita project to include; The dita transformation looks for this content when
  * creating references
- * 
+ *
  * @author seanmuir
- * 
+ *
  */
 public class ImportDitaReferences implements IObjectActionDelegate {
 
@@ -86,7 +87,7 @@ public class ImportDitaReferences implements IObjectActionDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	@SuppressWarnings("rawtypes")
@@ -98,7 +99,7 @@ public class ImportDitaReferences implements IObjectActionDelegate {
 				if (element instanceof IProject) {
 					selectedProject = (IProject) element;
 				} else if (element instanceof IAdaptable) {
-					selectedProject = (IProject) ((IAdaptable) element).getAdapter(IProject.class);
+					selectedProject = ((IAdaptable) element).getAdapter(IProject.class);
 				}
 				if (selectedProject != null) {
 
@@ -137,7 +138,7 @@ public class ImportDitaReferences implements IObjectActionDelegate {
 
 					dialog.getResult();
 
-					if (dialog.getReturnCode() == ElementListSelectionDialog.OK) {
+					if (dialog.getReturnCode() == Window.OK) {
 
 						for (Object object : dialog.getResult()) {
 							importDitaProject(workspace, (IProject) object, selectedProject);
@@ -165,7 +166,7 @@ public class ImportDitaReferences implements IObjectActionDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
 	 */
 	public void selectionChanged(IAction arg0, ISelection selection) {

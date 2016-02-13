@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - customize diagnostician to use ModelValidationService (artf3285)
  *                        - validate model in UML-to-Ecore transformation (artf3037)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.validation.util;
@@ -40,13 +40,14 @@ public class UMLDiagnostician extends Diagnostician {
 	 * Initializes me with the global validator and adapter-factory registries. I will not track progress.
 	 */
 	public UMLDiagnostician() {
-		this(EValidator.Registry.INSTANCE, new ComposedAdapterFactory(
-			ComposedAdapterFactory.Descriptor.Registry.INSTANCE));
+		this(
+			EValidator.Registry.INSTANCE,
+			new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE));
 	}
 
 	/**
 	 * Initializes me with a validator registry and adapter factory. I will not track progress.
-	 * 
+	 *
 	 * @param eValidatorRegistry
 	 *            the registry in which to find validators to validate objects
 	 * @param adapterFactory
@@ -59,7 +60,7 @@ public class UMLDiagnostician extends Diagnostician {
 
 	/**
 	 * Initializes me with a validator registry, adapter factory, and monitor to track progress.
-	 * 
+	 *
 	 * @param eValidatorRegistry
 	 *            the registry in which to find validators to validate objects
 	 * @param adapterFactory
@@ -80,7 +81,7 @@ public class UMLDiagnostician extends Diagnostician {
 
 	/**
 	 * Initializes me with the shared validator registry and an adapter factory and a monitor to track progress.
-	 * 
+	 *
 	 * @param adapterFactory
 	 *            an optional adapter factory, used primarily to get object labels for construction of validation failure messages. May be
 	 *            {@code null}
@@ -93,18 +94,19 @@ public class UMLDiagnostician extends Diagnostician {
 
 	/**
 	 * Initializes me with the shared validator registry and composed registered adapter factories, and a monitor to track progress.
-	 * 
+	 *
 	 * @param progressMonitor
 	 *            an optional progress monitor, that will be ticked for every object validated. May be {@code null}
 	 */
 	public UMLDiagnostician(IProgressMonitor progressMonitor) {
-		this(EValidator.Registry.INSTANCE, new ComposedAdapterFactory(
-			ComposedAdapterFactory.Descriptor.Registry.INSTANCE), progressMonitor);
+		this(
+			EValidator.Registry.INSTANCE,
+			new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE), progressMonitor);
 	}
 
 	/**
 	 * Integrate the model validation service.
-	 * 
+	 *
 	 * @param registry
 	 *            a validator registry to adapt for model validation service
 	 * @return the adapted registry, which may be the same as the input if already adapted

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
  */
@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.Constraint;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Diagnostic</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -32,7 +32,7 @@ import org.eclipse.uml2.uml.Constraint;
  * <li>{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.openhealthtools.mdht.uml.validation.ValidationPackage#getDiagnostic()
  * @model
  * @generated
@@ -45,7 +45,7 @@ public interface Diagnostic extends EObject {
 	 * If the meaning of the '<em>Base Constraint</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Constraint</em>' reference.
 	 * @see #setBase_Constraint(Constraint)
 	 * @see org.openhealthtools.mdht.uml.validation.ValidationPackage#getDiagnostic_Base_Constraint()
@@ -58,7 +58,7 @@ public interface Diagnostic extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getBase_Constraint <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Constraint</em>' reference.
 	 * @see #getBase_Constraint()
@@ -75,7 +75,7 @@ public interface Diagnostic extends EObject {
 	 * If the meaning of the '<em>Evaluation Mode</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Evaluation Mode</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.validation.EvaluationModeKind
 	 * @see #setEvaluationMode(EvaluationModeKind)
@@ -89,7 +89,7 @@ public interface Diagnostic extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getEvaluationMode <em>Evaluation Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Evaluation Mode</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.validation.EvaluationModeKind
@@ -107,7 +107,7 @@ public interface Diagnostic extends EObject {
 	 * If the meaning of the '<em>Severity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Severity</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.validation.SeverityKind
 	 * @see #setSeverity(SeverityKind)
@@ -121,7 +121,7 @@ public interface Diagnostic extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getSeverity <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Severity</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.validation.SeverityKind
@@ -138,7 +138,7 @@ public interface Diagnostic extends EObject {
 	 * If the meaning of the '<em>Code</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #isSetCode()
 	 * @see #unsetCode()
@@ -153,7 +153,7 @@ public interface Diagnostic extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getCode <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Code</em>' attribute.
 	 * @see #isSetCode()
@@ -167,7 +167,7 @@ public interface Diagnostic extends EObject {
 	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getCode <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isSetCode()
 	 * @see #getCode()
 	 * @see #setCode(int)
@@ -179,7 +179,7 @@ public interface Diagnostic extends EObject {
 	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getCode <em>Code</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether the value of the '<em>Code</em>' attribute is set.
 	 * @see #unsetCode()
 	 * @see #getCode()
@@ -195,7 +195,7 @@ public interface Diagnostic extends EObject {
 	 * If the meaning of the '<em>Message</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Message</em>' attribute.
 	 * @see #setMessage(String)
 	 * @see org.openhealthtools.mdht.uml.validation.ValidationPackage#getDiagnostic_Message()
@@ -208,7 +208,7 @@ public interface Diagnostic extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getMessage <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Message</em>' attribute.
 	 * @see #getMessage()
@@ -219,7 +219,7 @@ public interface Diagnostic extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.openhealthtools.mdht.uml.validation.Status" required="true" ordered="false"
 	 *        contextDataType="org.openhealthtools.mdht.uml.validation.ValidationContext" contextRequired="true" contextOrdered="false"
 	 *        targetRequired="true" targetOrdered="false"
@@ -230,7 +230,7 @@ public interface Diagnostic extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.openhealthtools.mdht.uml.validation.Status" required="true" ordered="false"
 	 *        contextDataType="org.openhealthtools.mdht.uml.validation.ValidationContext" contextRequired="true" contextOrdered="false"
 	 *        targetRequired="true" targetOrdered="false" relatedMany="true" relatedOrdered="false"
@@ -241,7 +241,7 @@ public interface Diagnostic extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -250,7 +250,7 @@ public interface Diagnostic extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false" objectRequired="true" objectOrdered="false"
 	 * @generated
 	 */
@@ -259,7 +259,7 @@ public interface Diagnostic extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */

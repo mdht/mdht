@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
  */
@@ -37,7 +37,7 @@ import org.openhealthtools.mdht.uml.validation.internal.provider.ValidationProfi
  * <!-- begin-user-doc -->
  * A static utility class that provides operations related to '<em><b>Diagnostic</b></em>' model objects.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
@@ -51,14 +51,14 @@ import org.openhealthtools.mdht.uml.validation.internal.provider.ValidationProfi
  * <li>{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getConstraintProvider() <em>Get Constraint Provider</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class DiagnosticOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DiagnosticOperations() {
@@ -68,7 +68,7 @@ public class DiagnosticOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static IStatus fail(Diagnostic diagnostic, IValidationContext context, EObject target) {
@@ -90,10 +90,11 @@ public class DiagnosticOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
-	public static IStatus fail(Diagnostic diagnostic, IValidationContext context, EObject target, EList<EObject> related) {
+	public static IStatus fail(Diagnostic diagnostic, IValidationContext context, EObject target,
+			EList<EObject> related) {
 		return ConstraintStatus.createStatus(
 			context, target, related, getMessage(diagnostic), target, diagnostic.getBase_Constraint().getName());
 	}
@@ -101,7 +102,7 @@ public class DiagnosticOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<EClass> getTargets(Diagnostic diagnostic) {
@@ -141,7 +142,7 @@ public class DiagnosticOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static boolean targets(Diagnostic diagnostic, EObject object) {
@@ -175,13 +176,14 @@ public class DiagnosticOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static ConstraintProvider getConstraintProvider(Diagnostic diagnostic) {
 		ConstraintProvider result = null;
 
-		for (Package p = diagnostic.getBase_Constraint().getNearestPackage(); (result == null) && (p != null); p = p.getNestingPackage()) {
+		for (Package p = diagnostic.getBase_Constraint().getNearestPackage(); (result == null) &&
+				(p != null); p = p.getNestingPackage()) {
 			result = ValidationProfileUtil.getConstraintProvider(p);
 		}
 

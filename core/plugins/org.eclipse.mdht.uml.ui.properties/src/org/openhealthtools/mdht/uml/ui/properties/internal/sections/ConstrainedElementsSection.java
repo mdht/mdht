@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - UI for editing constrained elements (artf3318)
- *                        
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
@@ -103,8 +103,8 @@ public class ConstrainedElementsSection extends WrapperAwareModelerPropertySecti
 		data.top = new FormAttachment(0, 0);
 		listLabel.setLayoutData(data);
 
-		constrainedElementsList = new ListViewer(getWidgetFactory().createList(
-			composite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER));
+		constrainedElementsList = new ListViewer(
+			getWidgetFactory().createList(composite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER));
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		// if I set the width AND right, then I get proper wrapping for long text... whatever.
@@ -203,9 +203,9 @@ public class ConstrainedElementsSection extends WrapperAwareModelerPropertySecti
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")
@@ -259,7 +259,7 @@ public class ConstrainedElementsSection extends WrapperAwareModelerPropertySecti
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification
@@ -290,9 +290,9 @@ public class ConstrainedElementsSection extends WrapperAwareModelerPropertySecti
 				uml.getUMLMetaclasses(), "Add Constrained Element", "Select an UML metaclass to constrain.");
 		} else {
 			elementsToAdd = selectElements(
-				find(
-					constraint.getContext(), UMLPackage.Literals.CLASSIFIER, UMLPackage.Literals.CONSTRAINT,
-					UMLPackage.Literals.FEATURE), "Add Constrained Elements", "Select an element to constrain.");
+				find(constraint.getContext(), UMLPackage.Literals.CLASSIFIER, UMLPackage.Literals.CONSTRAINT,
+					UMLPackage.Literals.FEATURE),
+				"Add Constrained Elements", "Select an element to constrain.");
 		}
 
 		elementsToAdd.removeAll(constraint.getConstrainedElements());
@@ -422,7 +422,8 @@ public class ConstrainedElementsSection extends WrapperAwareModelerPropertySecti
 		});
 
 		constrainedElementsList.refresh();
-		constrainedElementsList.setSelection(new StructuredSelection(constraint.getConstrainedElements().get(newIndex)));
+		constrainedElementsList.setSelection(
+			new StructuredSelection(constraint.getConstrainedElements().get(newIndex)));
 	}
 
 	private Collection<?> getSelectedConstrainedElements() {

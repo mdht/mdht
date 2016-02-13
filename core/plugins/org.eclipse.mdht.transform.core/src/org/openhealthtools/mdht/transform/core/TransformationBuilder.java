@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.transform.core;
 
@@ -21,7 +21,7 @@ import org.openhealthtools.mdht.transform.core.impl.Transformation;
  * <li>An {@linkplain #initialization() initialization} phase</li>
  * <li>An {@linkplain #finalization() finalization} phase</li>
  * </ul>
- * 
+ *
  * @see PhaseBuilder
  * @see RuleBuilder
  */
@@ -34,7 +34,7 @@ public class TransformationBuilder {
 
 	/**
 	 * Creates a new transformation builder.
-	 * 
+	 *
 	 * @return the transformation builder
 	 */
 	public static TransformationBuilder create() {
@@ -43,10 +43,10 @@ public class TransformationBuilder {
 
 	/**
 	 * Creates a builder to edit an existing transformation.
-	 * 
+	 *
 	 * @param transformation
 	 *            the transformation to edit
-	 * 
+	 *
 	 * @return the builder
 	 */
 	public static TransformationBuilder on(ITransformation transformation) {
@@ -63,7 +63,7 @@ public class TransformationBuilder {
 
 	/**
 	 * Gets an builder to modify an existing phase.
-	 * 
+	 *
 	 * @param id
 	 *            the phase ID to get. This phase must already exist
 	 */

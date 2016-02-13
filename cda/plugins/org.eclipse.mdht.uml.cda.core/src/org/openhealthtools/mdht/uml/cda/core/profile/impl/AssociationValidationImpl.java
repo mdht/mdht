@@ -38,7 +38,7 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	 * The cached value of the '{@link #getBase_Association() <em>Base Association</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Association()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AssociationValidationImpl() {
@@ -58,7 +58,7 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Association basicGetBase_Association() {
@@ -68,7 +68,7 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +86,7 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +101,7 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Association getBase_Association() {
@@ -153,9 +153,8 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 			base_Association = (Association) eResolveProxy(oldBase_Association);
 			if (base_Association != oldBase_Association) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION,
-						oldBase_Association, base_Association));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION, oldBase_Association, base_Association));
 				}
 			}
 		}
@@ -165,16 +164,15 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Association(Association newBase_Association) {
 		Association oldBase_Association = base_Association;
 		base_Association = newBase_Association;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION, oldBase_Association,
-				base_Association));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION,
+				oldBase_Association, base_Association));
 		}
 	}
 

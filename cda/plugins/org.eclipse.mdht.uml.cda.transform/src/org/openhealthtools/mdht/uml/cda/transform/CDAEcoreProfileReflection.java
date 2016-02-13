@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
@@ -131,7 +131,8 @@ public class CDAEcoreProfileReflection extends AbstractEcoreProfileReflection {
 		if (codegenSupport != null) {
 			final String packageName = (String) package_.getValue(
 				codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_PACKAGE_NAME);
-			final String nsURI = (String) package_.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
+			final String nsURI = (String) package_.getValue(
+				codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
 			final String nsPrefix = (String) package_.getValue(
 				codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_NS_PREFIX);
 			final String basePackage = (String) package_.getValue(

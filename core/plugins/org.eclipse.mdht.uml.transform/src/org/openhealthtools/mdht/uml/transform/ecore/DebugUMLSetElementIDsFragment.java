@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.transform.ecore;
 
@@ -55,10 +55,12 @@ public class DebugUMLSetElementIDsFragment implements RuleBuilder.IFragmentDeleg
 					(child instanceof Parameter) || (child.eContainer() instanceof Parameter)) {
 				UMLUtil.setEObjectID((NamedElement) child);
 			} else if (child instanceof ProfileApplication) {
-				resource.setID(child, String.format(
-					"_apply_%s__%s",
-					UML2Util.getValidJavaIdentifier(((ProfileApplication) child).getAppliedProfile().getName()),
-					resource.getID(child.eContainer())));
+				resource.setID(
+					child,
+					String.format(
+						"_apply_%s__%s",
+						UML2Util.getValidJavaIdentifier(((ProfileApplication) child).getAppliedProfile().getName()),
+						resource.getID(child.eContainer())));
 			}
 
 			if (child instanceof Element) {

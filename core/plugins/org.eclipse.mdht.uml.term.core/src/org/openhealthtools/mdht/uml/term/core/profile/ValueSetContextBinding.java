@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile;
@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Value Set Context Binding</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetContextBinding()
  * @model
  * @generated
@@ -42,7 +42,7 @@ public interface ValueSetContextBinding extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetContextBinding_Base_Class()
@@ -58,7 +58,7 @@ public interface ValueSetContextBinding extends EObject {
 	 * If the meaning of the '<em>Concept Domain</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Concept Domain</em>' reference.
 	 * @see #setConceptDomain(ConceptDomain)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetContextBinding_ConceptDomain()
@@ -74,7 +74,7 @@ public interface ValueSetContextBinding extends EObject {
 	 * If the meaning of the '<em>Effective Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Effective Date</em>' attribute.
 	 * @see #setEffectiveDate(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetContextBinding_EffectiveDate()
@@ -90,7 +90,7 @@ public interface ValueSetContextBinding extends EObject {
 	 * If the meaning of the '<em>Usage Context</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Usage Context</em>' reference.
 	 * @see #setUsageContext(UsageContext)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetContextBinding_UsageContext()
@@ -106,7 +106,7 @@ public interface ValueSetContextBinding extends EObject {
 	 * If the meaning of the '<em>Value Set</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value Set</em>' reference.
 	 * @see #setValueSet(ValueSetVersion)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getValueSetContextBinding_ValueSet()
@@ -120,7 +120,7 @@ public interface ValueSetContextBinding extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -133,7 +133,7 @@ public interface ValueSetContextBinding extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Concept Domain</em>' reference.
 	 * @see #getConceptDomain()
@@ -146,7 +146,7 @@ public interface ValueSetContextBinding extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Effective Date</em>' attribute.
 	 * @see #getEffectiveDate()
@@ -159,7 +159,7 @@ public interface ValueSetContextBinding extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Usage Context</em>' reference.
 	 * @see #getUsageContext()
@@ -171,7 +171,7 @@ public interface ValueSetContextBinding extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding#getValueSet <em>Value Set</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value Set</em>' reference.
 	 * @see #getValueSet()

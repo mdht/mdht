@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
@@ -48,7 +48,7 @@ import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 
 /**
- * 
+ *
  * @version $Id: $
  */
 public class ModelExtItemProvider extends ModelItemProvider implements ITableItemLabelProvider, ICellModifier {
@@ -62,7 +62,7 @@ public class ModelExtItemProvider extends ModelItemProvider implements ITableIte
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.ModelItemProvider#getImage(java.lang.Object)
 	 */
 	@Override
@@ -74,26 +74,27 @@ public class ModelExtItemProvider extends ModelItemProvider implements ITableIte
 		AdapterFactory adapterFactory = getAdapterFactory();
 		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
 				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
-				? NamedElementUtil.getBusinessName(namedElement)
-				: namedElement.getName();
+						? NamedElementUtil.getBusinessName(namedElement)
+						: namedElement.getName();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.ModelItemProvider#getText(java.lang.Object)
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = getName((Model) object);
 		return label == null || label.length() == 0
-				? getString("_UI_Model_type") : //$NON-NLS-1$
+				? getString("_UI_Model_type") //$NON-NLS-1$
+				:
 				label;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
@@ -153,7 +154,7 @@ public class ModelExtItemProvider extends ModelItemProvider implements ITableIte
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -165,7 +166,7 @@ public class ModelExtItemProvider extends ModelItemProvider implements ITableIte
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
@@ -179,7 +180,7 @@ public class ModelExtItemProvider extends ModelItemProvider implements ITableIte
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

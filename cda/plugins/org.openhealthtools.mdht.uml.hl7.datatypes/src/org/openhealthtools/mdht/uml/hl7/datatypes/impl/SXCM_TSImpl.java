@@ -101,8 +101,8 @@ public class SXCM_TSImpl extends TSImpl implements SXCM_TS {
 		boolean oldOperatorESet = operatorESet;
 		operatorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.SXCM_TS__OPERATOR, oldOperator, operator, !oldOperatorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SXCM_TS__OPERATOR, oldOperator,
+				operator, !oldOperatorESet));
 		}
 	}
 
@@ -117,9 +117,8 @@ public class SXCM_TSImpl extends TSImpl implements SXCM_TS {
 		operator = OPERATOR_EDEFAULT;
 		operatorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.SXCM_TS__OPERATOR, oldOperator, OPERATOR_EDEFAULT,
-				oldOperatorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.SXCM_TS__OPERATOR, oldOperator,
+				OPERATOR_EDEFAULT, oldOperatorESet));
 		}
 	}
 

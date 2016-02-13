@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding check box action to show business names (or not)
  *     Christian W. Damus - more flexible contribution/filtering of actions (artf3238)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.editors;
@@ -45,7 +45,7 @@ import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 import org.openhealthtools.mdht.uml.ui.navigator.actions.EditCommandsFactory;
 
 /**
- * 
+ *
  */
 public class UMLTableActionBarContributor extends EditorActionBarContributor implements IMenuListener {
 
@@ -61,7 +61,7 @@ public class UMLTableActionBarContributor extends EditorActionBarContributor imp
 	private Collection<UMLContextAction> umlContextActions;
 
 	/**
-	 * 
+	 *
 	 */
 	public UMLTableActionBarContributor() {
 		super();
@@ -69,7 +69,7 @@ public class UMLTableActionBarContributor extends EditorActionBarContributor imp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor#init(org.eclipse.ui.IActionBars)
 	 */
 	@Override
@@ -102,7 +102,8 @@ public class UMLTableActionBarContributor extends EditorActionBarContributor imp
 			if (activeEditor instanceof UMLTableEditor) {
 				AdapterFactory adapterFactory = ((UMLTableEditor) activeEditor).getAdapterFactory();
 				if (adapterFactory instanceof UML2ExtendedAdapterFactory) {
-					showBusinessNamesAction.setChecked(((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames());
+					showBusinessNamesAction.setChecked(
+						((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames());
 				}
 			}
 

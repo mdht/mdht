@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Handle element wrappers (artf3238)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
@@ -50,7 +50,7 @@ import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPr
 
 /**
  * The general properties section for ElementImport.
- * 
+ *
  * $Id: $
  */
 public class ElementImportSection extends WrapperAwareModelerPropertySection {
@@ -64,8 +64,9 @@ public class ElementImportSection extends WrapperAwareModelerPropertySection {
 	private void openImportedElementDialog() {
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(elementImport);
 
-		final Classifier type = (Classifier) DialogLaunchUtil.chooseElement(new java.lang.Class[] {
-				Class.class, Enumeration.class }, editingDomain.getResourceSet(), getPart().getSite().getShell());
+		final Classifier type = (Classifier) DialogLaunchUtil.chooseElement(
+			new java.lang.Class[] { Class.class, Enumeration.class }, editingDomain.getResourceSet(),
+			getPart().getSite().getShell());
 
 		if (type != null) {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Set Imported Element") {
@@ -141,9 +142,9 @@ public class ElementImportSection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@Override
@@ -190,7 +191,7 @@ public class ElementImportSection extends WrapperAwareModelerPropertySection {
 
 	/**
 	 * Update if nessesary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification

@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.actions;
 
@@ -243,7 +243,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(umlPackage.eResource().getResourceSet());
 
-		final Stereotype valueSetVersionStereotype = (Stereotype) ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_VERSION);
+		final Stereotype valueSetVersionStereotype = (Stereotype) ctsProfile.getOwnedType(
+			ITermProfileConstants.VALUE_SET_VERSION);
 
 		String[] files = fdlg.getFileNames();
 
@@ -314,8 +315,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 							IElementFilter filter = new IElementFilter() {
 								public boolean accept(Element element) {
 									return (element instanceof Enumeration) &&
-											element.isStereotypeApplied(valueSetVersionStereotype) &&
-											valueSetID.equals(element.getValue(valueSetVersionStereotype, "identifier"));
+											element.isStereotypeApplied(valueSetVersionStereotype) && valueSetID.equals(
+												element.getValue(valueSetVersionStereotype, "identifier"));
 								}
 							};
 
@@ -351,7 +352,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 							// update for a reason
 
 							// Set/Reset the values
-							ValueSetVersion vsv = (ValueSetVersion) valueSet.getStereotypeApplication(valueSetVersionStereotype);
+							ValueSetVersion vsv = (ValueSetVersion) valueSet.getStereotypeApplication(
+								valueSetVersionStereotype);
 
 							valueSet.setName(popCleanValue(result, 0));
 
@@ -403,7 +405,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 					final Stereotype codeSystemStereotype = TermProfileUtil.getAppliedStereotype(
 						codeSystemEnumeration, ITermProfileConstants.CODE_SYSTEM_VERSION);
 
-					final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnumeration.getStereotypeApplication(codeSystemStereotype);
+					final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnumeration.getStereotypeApplication(
+						codeSystemStereotype);
 
 					valueSetVersion.setCodeSystem(codeSystem);
 
@@ -443,7 +446,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 								final Stereotype codeSystemStereotype = TermProfileUtil.getAppliedStereotype(
 									codeSystemEnumeration, ITermProfileConstants.CODE_SYSTEM_VERSION);
 
-								final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnumeration.getStereotypeApplication(codeSystemStereotype);
+								final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnumeration.getStereotypeApplication(
+									codeSystemStereotype);
 
 								vcs.setCodeSystem(codeSystem);
 
@@ -483,7 +487,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 		Enumeration codeSystemEnumeration = null;
 
-		final Stereotype codeSystemVersionStereotype = (Stereotype) ctsProfile.getOwnedType(ITermProfileConstants.CODE_SYSTEM_VERSION);
+		final Stereotype codeSystemVersionStereotype = (Stereotype) ctsProfile.getOwnedType(
+			ITermProfileConstants.CODE_SYSTEM_VERSION);
 
 		IElementFilter filter = new IElementFilter() {
 			public boolean accept(Element element) {
@@ -533,7 +538,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 			Stereotype stereotype = TermProfileUtil.applyStereotype(
 				codeSystemEnumeration, ITermProfileConstants.CODE_SYSTEM_VERSION);
 
-			CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnumeration.getStereotypeApplication(stereotype);
+			CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnumeration.getStereotypeApplication(
+				stereotype);
 
 			codeSystem.setIdentifier(codeSystemID);
 
@@ -554,9 +560,9 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 	/**
 	 * UMLModelMetricsDialog displays the results from the qvt transformation
 	 * Give them something to look at insted of just an okay button
-	 * 
+	 *
 	 * @author seanmuir
-	 * 
+	 *
 	 */
 	public class UMLModelMetricsDialog extends TitleAreaDialog {
 
@@ -617,12 +623,12 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 				valueSetsUpdatedItem.setText(new String[] { "Value Sets Updated", String.valueOf(valueSetsUpdated) });
 
 				final TableItem valueSetsAboveMax = new TableItem(table, SWT.NONE);
-				valueSetsAboveMax.setText(new String[] {
-						"Value Sets Codes too Large", String.valueOf(valueSetsAboveMaxCode) });
+				valueSetsAboveMax.setText(
+					new String[] { "Value Sets Codes too Large", String.valueOf(valueSetsAboveMaxCode) });
 
 				final TableItem codeSystemsCreatedItem = new TableItem(table, SWT.NONE);
-				codeSystemsCreatedItem.setText(new String[] {
-						"New Code Systems Defined", String.valueOf(codeSystemsCreated) });
+				codeSystemsCreatedItem.setText(
+					new String[] { "New Code Systems Defined", String.valueOf(codeSystemsCreated) });
 
 			}
 

@@ -191,12 +191,12 @@ public class CRImpl extends ANYImpl implements CR {
 		if (newValue != value) {
 			NotificationChain msgs = null;
 			if (value != null) {
-				msgs = ((InternalEObject) value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.CR__VALUE, null, msgs);
+				msgs = ((InternalEObject) value).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CR__VALUE, null, msgs);
 			}
 			if (newValue != null) {
-				msgs = ((InternalEObject) newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.CR__VALUE, null, msgs);
+				msgs = ((InternalEObject) newValue).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CR__VALUE, null, msgs);
 			}
 			msgs = basicSetValue(newValue, msgs);
 			if (msgs != null) {
@@ -225,7 +225,8 @@ public class CRImpl extends ANYImpl implements CR {
 		boolean oldInverted = inverted;
 		inverted = newInverted;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CR__INVERTED, oldInverted, inverted));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, DatatypesPackage.CR__INVERTED, oldInverted, inverted));
 		}
 	}
 

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Hai Bang National E-Health Transition Authority (NEHTA) - initial API and implementation
  *     Sean Muir National E-Health Transition Authority (NEHTA) - simplified tree traversal
@@ -53,7 +53,7 @@ public class AddLocalizedClassCommand extends AbstractHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#casePackage(org.eclipse.uml2.uml.Package)
 		 */
 		@Override
@@ -64,7 +64,7 @@ public class AddLocalizedClassCommand extends AbstractHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseClass(org.eclipse.uml2.uml.Class)
 		 */
 		@Override
@@ -75,7 +75,7 @@ public class AddLocalizedClassCommand extends AbstractHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseAssociation(org.eclipse.uml2.uml.Association)
 		 */
 		@Override
@@ -98,7 +98,7 @@ public class AddLocalizedClassCommand extends AbstractHandler {
 	/**
 	 * Given the current selected item in the tree, traverse up the tree structure to create the path(stack) of the named elements
 	 * Using this stack, create the inner classes and associations to duplicate the structure
-	 * 
+	 *
 	 * @param provider
 	 * @param selectedItem
 	 */
@@ -179,9 +179,10 @@ public class AddLocalizedClassCommand extends AbstractHandler {
 		IStructuredSelection selection = (IStructuredSelection) HandlerUtil.getCurrentSelectionChecked(event);
 
 		IWorkbenchPart activePart = HandlerUtil.getActivePartChecked(event);
-		IViewerProvider view = (IViewerProvider) activePart.getAdapter(IViewerProvider.class);
+		IViewerProvider view = activePart.getAdapter(IViewerProvider.class);
 		final TreeViewer tree = (TreeViewer) view.getViewer();
-		final boolean createNestClass = (Boolean) event.getObjectParameterForExecution(AddLocalizedClassCommand.OPT_NESTCLASS);
+		final boolean createNestClass = (Boolean) event.getObjectParameterForExecution(
+			AddLocalizedClassCommand.OPT_NESTCLASS);
 		final Object selectedObject = selection.getFirstElement();
 		final TransactionalEditingDomain editingDomain = getEditingDomain(selectedObject);
 
@@ -201,15 +202,16 @@ public class AddLocalizedClassCommand extends AbstractHandler {
 					new RecordingCommand(editingDomain, "Localise Class" + (createNestClass
 							? " (Nested)"
 							: "")) {
-						@Override
-						protected void doExecute() {
-							processSelection(
-								(ITreeContentProvider) tree.getContentProvider(), selectedObject, createNestClass);
-						}
-					});
+					@Override
+					protected void doExecute() {
+						processSelection(
+							(ITreeContentProvider) tree.getContentProvider(), selectedObject, createNestClass);
+					}
+				});
 
-				if (monitor.isCanceled())
+				if (monitor.isCanceled()) {
 					status = Status.CANCEL_STATUS;
+				}
 				monitor.done();
 
 				return status;
@@ -223,22 +225,26 @@ public class AddLocalizedClassCommand extends AbstractHandler {
 
 	private static EObject unwrap(Object wrapper) {
 		Object obj = null;
-		if (wrapper instanceof EObject)
+		if (wrapper instanceof EObject) {
 			return (EObject) wrapper;
+		}
 		if (wrapper instanceof DelegatingWrapperItemProvider) {
 			obj = ((DelegatingWrapperItemProvider) wrapper).getValue();
 		} else if (wrapper instanceof UMLDomainNavigatorItem) {
 			obj = ((UMLDomainNavigatorItem) wrapper).getEObject();
-		} else
+		} else {
 			return null;
+		}
 		return unwrap(obj);
 	}
 
 	private static TransactionalEditingDomain getEditingDomain(Object editingObject) {
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(unwrap(editingObject));
 
-		if (editingDomain == null)
-			editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(IResourceConstants.EDITING_DOMAIN_ID);
+		if (editingDomain == null) {
+			editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
+				IResourceConstants.EDITING_DOMAIN_ID);
+		}
 
 		return editingDomain;
 	}

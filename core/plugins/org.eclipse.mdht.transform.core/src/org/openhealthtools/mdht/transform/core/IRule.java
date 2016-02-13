@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.transform.core;
 
@@ -44,14 +44,14 @@ public interface IRule extends ITransformationComponent {
 
 	/**
 	 * Transforms the given {@code input} into an output.
-	 * 
+	 *
 	 * @param input
 	 *            the input element to transform
 	 * @param monitor
 	 *            a sink for messages
-	 * 
+	 *
 	 * @return my output of transformation of the {@code input}
-	 * 
+	 *
 	 * @throws TransformationException
 	 *             if I utterly fail to complete the transformation
 	 */

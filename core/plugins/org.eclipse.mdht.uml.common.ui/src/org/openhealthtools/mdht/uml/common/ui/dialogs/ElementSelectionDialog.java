@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.dialogs;
@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.common.ui.internal.l10n.Messages;
 /**
  * A dialog to select a type from a list of model elements.
  * Derived from Eclipse JDT UI Java type search dialog.
- * 
+ *
  * @version $Id: $
  */
 public class ElementSelectionDialog extends TwoPaneElementSelector {
@@ -113,7 +113,7 @@ public class ElementSelectionDialog extends TwoPaneElementSelector {
 
 	/**
 	 * Constructs a type selection dialog.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent shell.
 	 * @param context
@@ -122,8 +122,9 @@ public class ElementSelectionDialog extends TwoPaneElementSelector {
 	 *            list of elements to be displayed in the dialog
 	 */
 	public ElementSelectionDialog(Shell parent, IRunnableContext context, List typeList) {
-		super(parent, new ElementLabelProvider(ElementLabelProvider.SHOW_TYPE_ONLY), new ElementLabelProvider(
-			ElementLabelProvider.SHOW_TYPE_CONTAINER_ONLY + ElementLabelProvider.SHOW_RESOURCE_NAME_POSTFIX));
+		super(
+			parent, new ElementLabelProvider(ElementLabelProvider.SHOW_TYPE_ONLY), new ElementLabelProvider(
+				ElementLabelProvider.SHOW_TYPE_CONTAINER_ONLY + ElementLabelProvider.SHOW_RESOURCE_NAME_POSTFIX));
 
 		Assert.isNotNull(context);
 		this.typeList = typeList;

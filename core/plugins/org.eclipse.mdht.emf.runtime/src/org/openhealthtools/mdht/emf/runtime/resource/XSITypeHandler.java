@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - flexible XML resource implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.emf.runtime.resource;
 

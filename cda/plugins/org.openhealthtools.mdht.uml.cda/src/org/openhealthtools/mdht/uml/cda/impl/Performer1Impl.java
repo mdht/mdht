@@ -242,19 +242,20 @@ public class Performer1Impl extends ParticipationImpl implements Performer1 {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PERFORMER1__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PERFORMER1__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PERFORMER1__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PERFORMER1__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER1__TYPE_ID, newTypeId, newTypeId));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER1__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -309,20 +310,20 @@ public class Performer1Impl extends ParticipationImpl implements Performer1 {
 		if (newFunctionCode != functionCode) {
 			NotificationChain msgs = null;
 			if (functionCode != null) {
-				msgs = ((InternalEObject) functionCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PERFORMER1__FUNCTION_CODE, null, msgs);
+				msgs = ((InternalEObject) functionCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PERFORMER1__FUNCTION_CODE, null, msgs);
 			}
 			if (newFunctionCode != null) {
-				msgs = ((InternalEObject) newFunctionCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PERFORMER1__FUNCTION_CODE, null, msgs);
+				msgs = ((InternalEObject) newFunctionCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PERFORMER1__FUNCTION_CODE, null, msgs);
 			}
 			msgs = basicSetFunctionCode(newFunctionCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PERFORMER1__FUNCTION_CODE, newFunctionCode, newFunctionCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER1__FUNCTION_CODE, newFunctionCode,
+				newFunctionCode));
 		}
 	}
 
@@ -364,12 +365,12 @@ public class Performer1Impl extends ParticipationImpl implements Performer1 {
 		if (newTime != time) {
 			NotificationChain msgs = null;
 			if (time != null) {
-				msgs = ((InternalEObject) time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PERFORMER1__TIME, null, msgs);
+				msgs = ((InternalEObject) time).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PERFORMER1__TIME, null, msgs);
 			}
 			if (newTime != null) {
-				msgs = ((InternalEObject) newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PERFORMER1__TIME, null, msgs);
+				msgs = ((InternalEObject) newTime).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PERFORMER1__TIME, null, msgs);
 			}
 			msgs = basicSetTime(newTime, msgs);
 			if (msgs != null) {
@@ -418,20 +419,20 @@ public class Performer1Impl extends ParticipationImpl implements Performer1 {
 		if (newAssignedEntity != assignedEntity) {
 			NotificationChain msgs = null;
 			if (assignedEntity != null) {
-				msgs = ((InternalEObject) assignedEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PERFORMER1__ASSIGNED_ENTITY, null, msgs);
+				msgs = ((InternalEObject) assignedEntity).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PERFORMER1__ASSIGNED_ENTITY, null, msgs);
 			}
 			if (newAssignedEntity != null) {
-				msgs = ((InternalEObject) newAssignedEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PERFORMER1__ASSIGNED_ENTITY, null, msgs);
+				msgs = ((InternalEObject) newAssignedEntity).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PERFORMER1__ASSIGNED_ENTITY, null, msgs);
 			}
 			msgs = basicSetAssignedEntity(newAssignedEntity, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PERFORMER1__ASSIGNED_ENTITY, newAssignedEntity, newAssignedEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER1__ASSIGNED_ENTITY,
+				newAssignedEntity, newAssignedEntity));
 		}
 	}
 
@@ -458,9 +459,8 @@ public class Performer1Impl extends ParticipationImpl implements Performer1 {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PERFORMER1__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER1__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -475,9 +475,8 @@ public class Performer1Impl extends ParticipationImpl implements Performer1 {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.PERFORMER1__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PERFORMER1__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -513,8 +512,8 @@ public class Performer1Impl extends ParticipationImpl implements Performer1 {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PERFORMER1__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER1__TYPE_CODE, oldTypeCode,
+				typeCode, !oldTypeCodeESet));
 		}
 	}
 
@@ -529,9 +528,8 @@ public class Performer1Impl extends ParticipationImpl implements Performer1 {
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.PERFORMER1__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
-				oldTypeCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PERFORMER1__TYPE_CODE, oldTypeCode,
+				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
 		}
 	}
 

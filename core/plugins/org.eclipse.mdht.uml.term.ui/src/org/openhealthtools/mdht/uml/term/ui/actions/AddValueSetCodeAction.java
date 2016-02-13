@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.actions;
@@ -64,7 +64,8 @@ public class AddValueSetCodeAction implements IObjectActionDelegate {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
-					EnumerationLiteral newCode = selectedEnumeration.createOwnedLiteral(Messages.AddValueSetCode_default_name);
+					EnumerationLiteral newCode = selectedEnumeration.createOwnedLiteral(
+						Messages.AddValueSetCode_default_name);
 					TermProfileUtil.applyStereotype(newCode, ITermProfileConstants.VALUE_SET_CODE);
 
 					if (activePart instanceof ISetSelectionTarget) {

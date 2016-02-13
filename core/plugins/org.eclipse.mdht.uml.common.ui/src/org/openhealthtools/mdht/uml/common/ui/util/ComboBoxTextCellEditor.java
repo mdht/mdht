@@ -66,7 +66,7 @@ public class ComboBoxTextCellEditor extends CellEditor {
 	/**
 	 * Creates a new cell editor with no control and no st of choices. Initially,
 	 * the cell editor has no cell validator.
-	 * 
+	 *
 	 * @since 2.1
 	 * @see CellEditor#setStyle
 	 * @see CellEditor#create
@@ -83,7 +83,7 @@ public class ComboBoxTextCellEditor extends CellEditor {
 	 * editor value is the zero-based index of the selected item.
 	 * Initially, the cell editor has no cell validator and
 	 * the first item in the list is selected.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent control
 	 * @param items
@@ -99,7 +99,7 @@ public class ComboBoxTextCellEditor extends CellEditor {
 	 * editor value is the zero-based index of the selected item.
 	 * Initially, the cell editor has no cell validator and
 	 * the first item in the list is selected.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent control
 	 * @param items
@@ -115,7 +115,7 @@ public class ComboBoxTextCellEditor extends CellEditor {
 
 	/**
 	 * Returns the list of choices for the combo box
-	 * 
+	 *
 	 * @return the list of choices for the combo box
 	 */
 	public String[] getItems() {
@@ -124,7 +124,7 @@ public class ComboBoxTextCellEditor extends CellEditor {
 
 	/**
 	 * Sets the list of choices for the combo box
-	 * 
+	 *
 	 * @param items
 	 *            the list of choices for the combo box
 	 */
@@ -185,7 +185,7 @@ public class ComboBoxTextCellEditor extends CellEditor {
 	 * The <code>ComboBoxCellEditor</code> implementation of
 	 * this <code>CellEditor</code> framework method returns
 	 * the current string text value.
-	 * 
+	 *
 	 * @return the current string text value of combo box
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class ComboBoxTextCellEditor extends CellEditor {
 	 * The <code>ComboBoxCellEditor</code> implementation of
 	 * this <code>CellEditor</code> framework method
 	 * accepts a selection string text value.
-	 * 
+	 *
 	 * @param value
 	 *            the string value of selection text
 	 */
@@ -296,7 +296,7 @@ public class ComboBoxTextCellEditor extends CellEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.CellEditor#focusLost()
 	 */
 	@Override
@@ -308,7 +308,7 @@ public class ComboBoxTextCellEditor extends CellEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.CellEditor#keyReleaseOccured(org.eclipse.swt.events.KeyEvent)
 	 */
 	@Override

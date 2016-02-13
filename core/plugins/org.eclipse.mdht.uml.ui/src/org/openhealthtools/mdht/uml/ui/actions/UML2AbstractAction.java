@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.actions;
@@ -50,7 +50,7 @@ public abstract class UML2AbstractAction implements IObjectActionDelegate, IView
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IViewActionDelegate#init(org.eclipse.ui.IViewPart)
 	 */
 	public void init(IViewPart view) {
@@ -59,7 +59,7 @@ public abstract class UML2AbstractAction implements IObjectActionDelegate, IView
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IEditorActionDelegate#setActiveEditor(org.eclipse.jface.action.IAction, org.eclipse.ui.IEditorPart)
 	 */
 	public void setActiveEditor(IAction action, IEditorPart targetEditor) {
@@ -99,7 +99,7 @@ public abstract class UML2AbstractAction implements IObjectActionDelegate, IView
 	protected View getSelectedView() {
 		if (editingDomain != null) {
 			for (Object selected : ((IStructuredSelection) currentSelection).toArray()) {
-				View view = (View) ((IAdaptable) selected).getAdapter(View.class);
+				View view = ((IAdaptable) selected).getAdapter(View.class);
 
 				if (view != null) {
 					return view;
@@ -137,10 +137,10 @@ public abstract class UML2AbstractAction implements IObjectActionDelegate, IView
 		EObject eObject = null;
 		if (selection instanceof IAdaptable) {
 			// Try to adapt to View first, since Notation OK
-			eObject = (EObject) ((IAdaptable) selection).getAdapter(View.class);
+			eObject = ((IAdaptable) selection).getAdapter(View.class);
 
 			if (eObject == null) {
-				eObject = (EObject) ((IAdaptable) selection).getAdapter(EObject.class);
+				eObject = ((IAdaptable) selection).getAdapter(EObject.class);
 			}
 		} else if (selection instanceof EObject) {
 			eObject = (EObject) selection;

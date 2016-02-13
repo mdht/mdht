@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir - initial API and implementation
  *     Sean Muir - Ported to stand alone Dita and Abstract Handler
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.dita.dost.handlers;
@@ -24,6 +24,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.debug.core.ILaunch;
@@ -50,7 +51,7 @@ public class PublishDitaHandler extends AbstractHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.operation.IRunnableWithProgress#run(org.eclipse.core.runtime.IProgressMonitor)
 		 */
 		public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
@@ -86,7 +87,7 @@ public class PublishDitaHandler extends AbstractHandler {
 
 			if (!monitor.isCanceled() && ditaMap.getProject() != null) {
 				try {
-					ditaMap.getProject().refreshLocal(IProject.DEPTH_INFINITE, monitor);
+					ditaMap.getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
 				} catch (CoreException e) {
 				}
 			}

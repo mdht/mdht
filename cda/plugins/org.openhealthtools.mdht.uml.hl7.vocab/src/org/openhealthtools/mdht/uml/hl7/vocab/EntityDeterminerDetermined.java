@@ -91,7 +91,8 @@ public enum EntityDeterminerDetermined implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<EntityDeterminerDetermined> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<EntityDeterminerDetermined> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Entity Determiner Determined</b></em>' literal with the specified literal value.

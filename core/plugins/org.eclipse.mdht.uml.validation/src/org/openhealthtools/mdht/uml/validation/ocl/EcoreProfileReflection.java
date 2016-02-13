@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.validation.ocl;
 
@@ -61,7 +61,7 @@ class EcoreProfileReflection extends UMLReflectionImpl {
 	 * Because Ecore doesn't support property redefinition, extend the inherited implementation to filter out rename redefinitions and replace them
 	 * with the renamed element. Redefinitions that don't rename the property are not a concern because determination of the property type is handled
 	 * by the overridden {@link #getOCLType(Object)} method.
-	 * 
+	 *
 	 * @see <a href="https://www.projects.openhealthtools.org/sf/tracker/do/viewArtifact/projects.mdht/tracker.user_stories/artf3317">artf3317</a>
 	 */
 	@Override

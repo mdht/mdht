@@ -132,7 +132,8 @@ public enum EntityClassOrganization implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final EntityClassOrganization[] VALUES_ARRAY = new EntityClassOrganization[] { NAT, ORG, PUB, STATE, };
+	private static final EntityClassOrganization[] VALUES_ARRAY = new EntityClassOrganization[] {
+			NAT, ORG, PUB, STATE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Entity Class Organization</b></em>' enumerators.
@@ -140,7 +141,8 @@ public enum EntityClassOrganization implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<EntityClassOrganization> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<EntityClassOrganization> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Entity Class Organization</b></em>' literal with the specified literal value.

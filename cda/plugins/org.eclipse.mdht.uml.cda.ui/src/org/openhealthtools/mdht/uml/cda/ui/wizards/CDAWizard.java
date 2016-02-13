@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.wizards;
 
@@ -341,14 +341,18 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 
 							URI modelFile = null;
 							if (plugin.exists()) {
-								URI pathMap = org.openhealthtools.mdht.uml.common.UmlPlugin.getPathMap(plugin.getContents());
+								URI pathMap = org.openhealthtools.mdht.uml.common.UmlPlugin.getPathMap(
+									plugin.getContents());
 								if (pathMap != null) {
 									modelFile = pathMap.appendSegment(resource.getName());
 								} else {
-									modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+									modelFile = URI.createFileURI(
+										project.getFolder(model).getFile(
+											resource.getName()).getRawLocation().toOSString());
 								}
 							} else {
-								modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+								modelFile = URI.createFileURI(
+									project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
 							}
 
 							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(
@@ -372,8 +376,7 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 											for (IResource genmodel : generatedProject.getFolder(model).members()) {
 												if (genmodel.getName().endsWith(".genmodel")) {
 													cdaDocumentsGenModels.put(
-														p.getQualifiedName(),
-														CDAUIUtil.getGenModel(
+														p.getQualifiedName(), CDAUIUtil.getGenModel(
 															generatedProject, genmodel.getProjectRelativePath()));
 												}
 											}
@@ -466,11 +469,12 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 
 										// Add model plugin to required bundles
 										references.put(
-											bundle.getSymbolicName(), new PluginReference(
-												bundle.getSymbolicName(), null, 0));
+											bundle.getSymbolicName(),
+											new PluginReference(bundle.getSymbolicName(), null, 0));
 
-										references.put("org.openhealthtools.mdht.builder.cda", new PluginReference(
-											"org.openhealthtools.mdht.builder.cda", null, 0));
+										references.put(
+											"org.openhealthtools.mdht.builder.cda",
+											new PluginReference("org.openhealthtools.mdht.builder.cda", null, 0));
 
 										// Add model plugin required bundles to
 										// the plugin
@@ -478,8 +482,9 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 										try {
 											for (ManifestElement manifestElement : ManifestElement.parseHeader(
 												Constants.REQUIRE_BUNDLE, (String) header)) {
-												references.put(manifestElement.getValue(), new PluginReference(
-													manifestElement.getValue(), null, 0));
+												references.put(
+													manifestElement.getValue(),
+													new PluginReference(manifestElement.getValue(), null, 0));
 											}
 										} catch (Exception e) {
 											Logger.logException(e);

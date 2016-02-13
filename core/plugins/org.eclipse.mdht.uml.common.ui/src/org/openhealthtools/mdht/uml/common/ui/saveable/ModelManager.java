@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.saveable;
@@ -169,7 +169,8 @@ public class ModelManager {
 	}
 
 	public Resource getResource(IFile file) {
-		ModelDocument saveable = uriToDocumentMap.get(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
+		ModelDocument saveable = uriToDocumentMap.get(
+			URI.createPlatformResourceURI(file.getFullPath().toString(), true));
 		// if (saveable == null)
 		// saveable = (ModelDocument) uriToDocumentMap.get(
 		// URI.createURI(file.getFullPath().toString()));
@@ -214,7 +215,7 @@ public class ModelManager {
 
 	/**
 	 * Returns all open model documents.
-	 * 
+	 *
 	 * @return all open model documents
 	 */
 	public Collection<ModelDocument> getDocuments() {
@@ -223,7 +224,7 @@ public class ModelManager {
 
 	/**
 	 * Returns all open model documents as Saveable array.
-	 * 
+	 *
 	 * @return all open model documents
 	 */
 	public Saveable[] getSaveables() {
@@ -266,9 +267,9 @@ public class ModelManager {
 						if (delta.getResource().getType() == IResource.FILE) {
 							if (delta.getKind() == IResourceDelta.REMOVED ||
 									delta.getKind() == IResourceDelta.CHANGED &&
-									delta.getFlags() != IResourceDelta.MARKERS) {
-								ModelDocument modelDocument = getModelDocument(URI.createPlatformResourceURI(
-									delta.getFullPath().toString(), true));
+											delta.getFlags() != IResourceDelta.MARKERS) {
+								ModelDocument modelDocument = getModelDocument(
+									URI.createPlatformResourceURI(delta.getFullPath().toString(), true));
 								Resource resource = modelDocument != null
 										? modelDocument.getResource()
 										: null;

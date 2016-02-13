@@ -129,7 +129,8 @@ public class TemplateSection extends ValidationSection {
 	protected void modifyFields() {
 		super.modifyFields();
 
-		if (!(templateIdModified || templateVersionModified || assigningAuthorityModified || templateMultiplicityModified)) {
+		if (!(templateIdModified || templateVersionModified || assigningAuthorityModified ||
+				templateMultiplicityModified)) {
 			return;
 		}
 
@@ -366,7 +367,8 @@ public class TemplateSection extends ValidationSection {
 		}
 		String multiplicityVal = null;
 		if (stereotype != null) {
-			multiplicityVal = (String) modelElement.getValue(stereotype, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY);
+			multiplicityVal = (String) modelElement.getValue(
+				stereotype, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY);
 		}
 
 		multiplicityCombo.setText(CDATemplateComputeBuilder.getMultiplicityRange(multiplicityVal));

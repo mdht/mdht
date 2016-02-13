@@ -16,7 +16,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CDAXMLProcessor extends XMLProcessor {
@@ -25,7 +25,7 @@ public class CDAXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CDAXMLProcessor() {
@@ -37,7 +37,7 @@ public class CDAXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the CDAResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

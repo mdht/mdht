@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.validation.internal.provider;
 
@@ -75,10 +75,10 @@ public class ValidationProfileUtil {
 
 	/**
 	 * Finds the profiles applied to a package that are, themselves, profiled by the <tt>Validation</tt> profile.
-	 * 
+	 *
 	 * @param context
 	 *            a package
-	 * 
+	 *
 	 * @return its validating profiles, if any
 	 */
 	public static Iterable<Profile> getValidatingProfiles(Package context) {
@@ -93,7 +93,7 @@ public class ValidationProfileUtil {
 
 	/**
 	 * Gets the most appropriate URI converter for the specified {@code context} object.
-	 * 
+	 *
 	 * @param context
 	 *            an object
 	 * @return the resource set's URI converter, if the {@code context} is in a resource set; the global converter, otherwise
@@ -115,10 +115,10 @@ public class ValidationProfileUtil {
 	/**
 	 * Finds the Eclipse bundle that registers the specified {@code profile}. It may be registered as a statically-generated profile, or as a dynamic
 	 * profile, but it must be registered.
-	 * 
+	 *
 	 * @param profile
 	 *            a profile
-	 * 
+	 *
 	 * @return the bundle ID that registers it, or {@code null} if none
 	 */
 	public static String getBundleName(Profile profile) {
@@ -176,10 +176,10 @@ public class ValidationProfileUtil {
 
 	/**
 	 * Gets all packages transitively imported into some package.
-	 * 
+	 *
 	 * @param package_
 	 *            a UML package
-	 * 
+	 *
 	 * @return all of the packages that it imports and that are imported (transitively) by its imports
 	 */
 	public static Iterable<Package> getAllImportedPackages(final Package package_) {

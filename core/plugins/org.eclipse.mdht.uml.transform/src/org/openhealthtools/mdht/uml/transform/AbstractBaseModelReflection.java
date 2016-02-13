@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.transform;
 
@@ -48,7 +48,8 @@ public abstract class AbstractBaseModelReflection implements IBaseModelReflectio
 		Package result = null;
 
 		// search package imports
-		for (Package local = context.getNearestPackage(); (result == null) && (local != null); local = local.getNestingPackage()) {
+		for (Package local = context.getNearestPackage(); (result == null) &&
+				(local != null); local = local.getNestingPackage()) {
 			for (Package imported : local.getImportedPackages()) {
 				if (isBaseModel(context, imported)) {
 					result = imported;
@@ -74,7 +75,8 @@ public abstract class AbstractBaseModelReflection implements IBaseModelReflectio
 		Package result = null;
 
 		// search package imports
-		for (Package local = context.getNearestPackage(); (result == null) && (local != null); local = local.getNestingPackage()) {
+		for (Package local = context.getNearestPackage(); (result == null) &&
+				(local != null); local = local.getNestingPackage()) {
 			for (Package imported : local.getImportedPackages()) {
 				if (isDatatypesModel(context, imported)) {
 					result = imported;
@@ -179,10 +181,10 @@ public abstract class AbstractBaseModelReflection implements IBaseModelReflectio
 	/**
 	 * Gets the chain of traceability, from least to most abstract, of a user-model classifier. This default implementation traces by generalization
 	 * relationships.
-	 * 
+	 *
 	 * @param userType
 	 *            a classifier in the user model
-	 * 
+	 *
 	 * @return a chain of progressively more abstract classifiers that it traces to
 	 */
 	protected <C extends Classifier> Iterable<C> getTraceabilityChain(final C userType) {
@@ -238,7 +240,8 @@ public abstract class AbstractBaseModelReflection implements IBaseModelReflectio
 		boolean result = false;
 
 		if (base != null) {
-			for (Package package_ = base.getNearestPackage(); !result && (package_ != null); package_ = package_.getNestingPackage()) {
+			for (Package package_ = base.getNearestPackage(); !result &&
+					(package_ != null); package_ = package_.getNestingPackage()) {
 				result = isBaseModel(context, package_);
 			}
 		}
@@ -250,7 +253,8 @@ public abstract class AbstractBaseModelReflection implements IBaseModelReflectio
 		boolean result = false;
 
 		if (base != null) {
-			for (Package package_ = base.getNearestPackage(); !result && (package_ != null); package_ = package_.getNestingPackage()) {
+			for (Package package_ = base.getNearestPackage(); !result &&
+					(package_ != null); package_ = package_.getNestingPackage()) {
 				result = isDatatypesModel(context, package_);
 			}
 		}
@@ -260,26 +264,26 @@ public abstract class AbstractBaseModelReflection implements IBaseModelReflectio
 
 	/**
 	 * Queries whether the specified package is the base model for the given {@code context} element in the user model.
-	 * 
+	 *
 	 * @param context
 	 *            an element in the user model
 	 * @param base
 	 *            a package that may or may not be the base package. This will always be a root package; it is expected that
 	 *            base models may have nested packages, but that nested packages do not stand alone as base models
-	 * 
+	 *
 	 * @return whether the package is the base for the user model
 	 */
 	protected abstract boolean isBaseModel(Element context, Package base);
 
 	/**
 	 * Queries whether the specified package is the datatypes model for the given {@code context} element in the user model.
-	 * 
+	 *
 	 * @param context
 	 *            an element in the user model
 	 * @param datatypes
 	 *            a package that may or may not be the datatypes package. This will always be a root package; it is expected that
 	 *            datatypes models may have nested packages, but that nested packages do not stand alone as datatypes models
-	 * 
+	 *
 	 * @return whether the package is the datatypes model for the user model
 	 */
 	protected abstract boolean isDatatypesModel(Element context, Package datatypes);

@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - flexible XML resource implementation (artf3367)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.emf.runtime.resource.impl;
 
@@ -120,8 +120,8 @@ public class FleXMLLoadImpl extends XMLLoadImpl {
 	}
 
 	@Override
-	protected void traverseElement(Element element, XMLLoadImpl.AttributesProxy attributesProxy,
-			DefaultHandler handler, LexicalHandler lexicalHandler) throws SAXException {
+	protected void traverseElement(Element element, XMLLoadImpl.AttributesProxy attributesProxy, DefaultHandler handler,
+			LexicalHandler lexicalHandler) throws SAXException {
 
 		processNode(element, handler);
 		super.traverseElement(element, attributesProxy, handler, lexicalHandler);

@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
@@ -125,7 +125,8 @@ public class AssignConformanceRuleIdsAction implements IObjectActionDelegate {
 	}
 
 	private void findLastId() {
-		final TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(UMLUtil.getTopPackage(selectedElement)));
+		final TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
+			Collections.singletonList(UMLUtil.getTopPackage(selectedElement)));
 		while (iterator != null && iterator.hasNext()) {
 			EObject child = iterator.next();
 
@@ -161,7 +162,7 @@ public class AssignConformanceRuleIdsAction implements IObjectActionDelegate {
 		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
 
 			Object element = elements.next();
-			View view = (View) ((IAdaptable) element).getAdapter(View.class);
+			View view = ((IAdaptable) element).getAdapter(View.class);
 
 			if (view != null) {
 				return view;

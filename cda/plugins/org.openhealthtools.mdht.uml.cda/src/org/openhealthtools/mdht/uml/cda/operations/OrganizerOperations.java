@@ -154,7 +154,8 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static void addSubstanceAdministration(Organizer organizer, SubstanceAdministration substanceAdministration) {
+	public static void addSubstanceAdministration(Organizer organizer,
+			SubstanceAdministration substanceAdministration) {
 		Component4 component4 = CDAFactory.eINSTANCE.createComponent4();
 		component4.setSubstanceAdministration(substanceAdministration);
 		organizer.getComponents().add(component4);
@@ -273,7 +274,8 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 				regionsOfInterest.add(component.getRegionOfInterest());
 			}
 		}
-		return new BasicEList.UnmodifiableEList<RegionOfInterest>(regionsOfInterest.size(), regionsOfInterest.toArray());
+		return new BasicEList.UnmodifiableEList<RegionOfInterest>(
+			regionsOfInterest.size(), regionsOfInterest.toArray());
 	}
 
 	/**

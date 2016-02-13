@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.dialogs;
@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.common.ui.internal.l10n.Messages;
 
 /**
  * Derived from Eclipse JDT UI Java type search dialog.
- * 
+ *
  * @version $Id: $
  */
 public class ElementLabelProvider extends LabelProvider {
@@ -77,7 +77,7 @@ public class ElementLabelProvider extends LabelProvider {
 
 	/*
 	 * non java-doc
-	 * 
+	 *
 	 * @see ILabelProvider#getText
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class ElementLabelProvider extends LabelProvider {
 
 	/*
 	 * non java-doc
-	 * 
+	 *
 	 * @see ILabelProvider#getImage
 	 */
 	@Override

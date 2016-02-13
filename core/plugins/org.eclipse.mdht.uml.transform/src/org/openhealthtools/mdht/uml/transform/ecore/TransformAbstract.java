@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added template parameter
@@ -13,7 +13,7 @@
  *                        - implement terminology constraint dependencies (artf3030)
  *                        - support nested datatype subclasses (artf3350)
  *     Rama Ramakrishnan  - Generated OCL for subclassed datatypes does not check nullFlavor(artf3450)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.transform.ecore;
@@ -191,8 +191,7 @@ public abstract class TransformAbstract extends AbstractTransform {
 					nullFlavorBody = "(not " + selfName + "->isEmpty()) implies (" + body + ")";
 				}
 			}
-		} else
-		if (hasNullFlavor && !getEcoreProfile().isMandatory(property)) {
+		} else if (hasNullFlavor && !getEcoreProfile().isMandatory(property)) {
 			if (baseProperty.upperBound() == 1) {
 				nullFlavorBody = "(" + selfName + ".oclIsUndefined() or " + selfName +
 						".isNullFlavorUndefined()) implies (" + body + ")";
@@ -238,7 +237,8 @@ public abstract class TransformAbstract extends AbstractTransform {
 	protected String createInheritedConstraintName(Property property, ValidationStereotypeKind stereotype) {
 		String constraintName = null;
 		if (getEcoreProfile().getValidationSeverity(property, stereotype) == ValidationSeverityKind.ERROR) {
-			Property inheritedProperty = org.openhealthtools.mdht.uml.common.util.UMLUtil.getInheritedProperty(property);
+			Property inheritedProperty = org.openhealthtools.mdht.uml.common.util.UMLUtil.getInheritedProperty(
+				property);
 			if (getEcoreProfile().inheritsConstraintName(property, inheritedProperty, stereotype)) {
 				constraintName = createInheritedConstraintName(inheritedProperty, stereotype);
 			}
@@ -358,7 +358,7 @@ public abstract class TransformAbstract extends AbstractTransform {
 
 	/**
 	 * Checks if the Class is a subtype of datatpes::ANY
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isSubTypeOfANY(Classifier clazz) {
@@ -370,14 +370,14 @@ public abstract class TransformAbstract extends AbstractTransform {
 		}
 		return retVal;
 	}
-	
+
 	/**
 	 * Enable change type 2.
-	 * 
+	 *
 	 * Even as the original type is not available in the Java runtime for the generated Java code, it is useful to know the original type for
 	 * Schematron purposes,
 	 * as the Schematron generator can generate special type checking xpath for the specialized type.
-	 * 
+	 *
 	 * @return whether to use the type system of the concrete UML model (<code>true</code>) or the CDA base model (<code>false</code>)
 	 */
 	public boolean enableVariation_UseOriginalType() {
@@ -386,11 +386,11 @@ public abstract class TransformAbstract extends AbstractTransform {
 
 	/**
 	 * Enable change type 3/4.
-	 * 
+	 *
 	 * In order to report that a conformance requirement is not met, we need a scenario that fails.
 	 * In order to accomplish this, we imply a lower bound of 1 for all constraints.
 	 * If not we would be checking for size >=0 and size <=1 which would not fail
-	 * 
+	 *
 	 * @return whether to use the original lower bound value (<code>true</code>) or the implied one (<code>false</code>)
 	 */
 	public boolean enableVariation_UseOriginalLowerbound() {

@@ -280,12 +280,12 @@ public class GuardianImpl extends RoleImpl implements Guardian {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.GUARDIAN__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.GUARDIAN__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.GUARDIAN__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.GUARDIAN__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
@@ -437,20 +437,20 @@ public class GuardianImpl extends RoleImpl implements Guardian {
 		if (newGuardianPerson != guardianPerson) {
 			NotificationChain msgs = null;
 			if (guardianPerson != null) {
-				msgs = ((InternalEObject) guardianPerson).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.GUARDIAN__GUARDIAN_PERSON, null, msgs);
+				msgs = ((InternalEObject) guardianPerson).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.GUARDIAN__GUARDIAN_PERSON, null, msgs);
 			}
 			if (newGuardianPerson != null) {
-				msgs = ((InternalEObject) newGuardianPerson).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.GUARDIAN__GUARDIAN_PERSON, null, msgs);
+				msgs = ((InternalEObject) newGuardianPerson).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.GUARDIAN__GUARDIAN_PERSON, null, msgs);
 			}
 			msgs = basicSetGuardianPerson(newGuardianPerson, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.GUARDIAN__GUARDIAN_PERSON, newGuardianPerson, newGuardianPerson));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.GUARDIAN__GUARDIAN_PERSON,
+				newGuardianPerson, newGuardianPerson));
 		}
 	}
 
@@ -468,7 +468,8 @@ public class GuardianImpl extends RoleImpl implements Guardian {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGuardianOrganization(Organization newGuardianOrganization, NotificationChain msgs) {
+	public NotificationChain basicSetGuardianOrganization(Organization newGuardianOrganization,
+			NotificationChain msgs) {
 		Organization oldGuardianOrganization = guardianOrganization;
 		guardianOrganization = newGuardianOrganization;
 		if (eNotificationRequired()) {
@@ -493,21 +494,20 @@ public class GuardianImpl extends RoleImpl implements Guardian {
 		if (newGuardianOrganization != guardianOrganization) {
 			NotificationChain msgs = null;
 			if (guardianOrganization != null) {
-				msgs = ((InternalEObject) guardianOrganization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.GUARDIAN__GUARDIAN_ORGANIZATION, null, msgs);
+				msgs = ((InternalEObject) guardianOrganization).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.GUARDIAN__GUARDIAN_ORGANIZATION, null, msgs);
 			}
 			if (newGuardianOrganization != null) {
-				msgs = ((InternalEObject) newGuardianOrganization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.GUARDIAN__GUARDIAN_ORGANIZATION, null, msgs);
+				msgs = ((InternalEObject) newGuardianOrganization).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.GUARDIAN__GUARDIAN_ORGANIZATION, null, msgs);
 			}
 			msgs = basicSetGuardianOrganization(newGuardianOrganization, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.GUARDIAN__GUARDIAN_ORGANIZATION, newGuardianOrganization,
-				newGuardianOrganization));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.GUARDIAN__GUARDIAN_ORGANIZATION,
+				newGuardianOrganization, newGuardianOrganization));
 		}
 	}
 
@@ -534,8 +534,8 @@ public class GuardianImpl extends RoleImpl implements Guardian {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.GUARDIAN__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.GUARDIAN__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -550,9 +550,8 @@ public class GuardianImpl extends RoleImpl implements Guardian {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.GUARDIAN__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.GUARDIAN__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -588,8 +587,8 @@ public class GuardianImpl extends RoleImpl implements Guardian {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.GUARDIAN__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.GUARDIAN__CLASS_CODE, oldClassCode,
+				classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -604,9 +603,8 @@ public class GuardianImpl extends RoleImpl implements Guardian {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.GUARDIAN__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.GUARDIAN__CLASS_CODE, oldClassCode,
+				CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 

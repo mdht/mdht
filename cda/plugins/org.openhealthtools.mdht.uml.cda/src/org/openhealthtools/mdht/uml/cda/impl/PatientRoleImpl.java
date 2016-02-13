@@ -268,20 +268,20 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PATIENT_ROLE__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PATIENT_ROLE__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PATIENT_ROLE__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PATIENT_ROLE__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PATIENT_ROLE__TYPE_ID, newTypeId, newTypeId));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT_ROLE__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -372,20 +372,20 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		if (newPatient != patient) {
 			NotificationChain msgs = null;
 			if (patient != null) {
-				msgs = ((InternalEObject) patient).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PATIENT_ROLE__PATIENT, null, msgs);
+				msgs = ((InternalEObject) patient).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PATIENT_ROLE__PATIENT, null, msgs);
 			}
 			if (newPatient != null) {
-				msgs = ((InternalEObject) newPatient).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PATIENT_ROLE__PATIENT, null, msgs);
+				msgs = ((InternalEObject) newPatient).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PATIENT_ROLE__PATIENT, null, msgs);
 			}
 			msgs = basicSetPatient(newPatient, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PATIENT_ROLE__PATIENT, newPatient, newPatient));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT_ROLE__PATIENT, newPatient,
+				newPatient));
 		}
 	}
 
@@ -403,7 +403,8 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetProviderOrganization(Organization newProviderOrganization, NotificationChain msgs) {
+	public NotificationChain basicSetProviderOrganization(Organization newProviderOrganization,
+			NotificationChain msgs) {
 		Organization oldProviderOrganization = providerOrganization;
 		providerOrganization = newProviderOrganization;
 		if (eNotificationRequired()) {
@@ -428,21 +429,20 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		if (newProviderOrganization != providerOrganization) {
 			NotificationChain msgs = null;
 			if (providerOrganization != null) {
-				msgs = ((InternalEObject) providerOrganization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PATIENT_ROLE__PROVIDER_ORGANIZATION, null, msgs);
+				msgs = ((InternalEObject) providerOrganization).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PATIENT_ROLE__PROVIDER_ORGANIZATION, null, msgs);
 			}
 			if (newProviderOrganization != null) {
-				msgs = ((InternalEObject) newProviderOrganization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PATIENT_ROLE__PROVIDER_ORGANIZATION, null, msgs);
+				msgs = ((InternalEObject) newProviderOrganization).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PATIENT_ROLE__PROVIDER_ORGANIZATION, null, msgs);
 			}
 			msgs = basicSetProviderOrganization(newProviderOrganization, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PATIENT_ROLE__PROVIDER_ORGANIZATION, newProviderOrganization,
-				newProviderOrganization));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT_ROLE__PROVIDER_ORGANIZATION,
+				newProviderOrganization, newProviderOrganization));
 		}
 	}
 
@@ -469,9 +469,8 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PATIENT_ROLE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT_ROLE__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -486,9 +485,8 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.PATIENT_ROLE__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PATIENT_ROLE__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -524,8 +522,8 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PATIENT_ROLE__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT_ROLE__CLASS_CODE, oldClassCode,
+				classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -540,9 +538,8 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.PATIENT_ROLE__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PATIENT_ROLE__CLASS_CODE, oldClassCode,
+				CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 

@@ -216,7 +216,8 @@ public enum x_DocumentEncounterMood implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<x_DocumentEncounterMood> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<x_DocumentEncounterMood> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>xDocument Encounter Mood</b></em>' literal with the specified literal value.

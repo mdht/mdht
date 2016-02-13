@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
@@ -35,7 +35,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
  * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetCodeImpl#getBase_EnumerationLiteral <em>Base Enumeration Literal</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
@@ -43,7 +43,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	 * The default value of the '{@link #getConceptName() <em>Concept Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConceptName()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	 * The cached value of the '{@link #getConceptName() <em>Concept Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConceptName()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	 * The default value of the '{@link #getUsageNote() <em>Usage Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUsageNote()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	 * The cached value of the '{@link #getUsageNote() <em>Usage Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUsageNote()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	 * The cached value of the '{@link #getCodeSystem() <em>Code System</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCodeSystem()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	 * The cached value of the '{@link #getBase_EnumerationLiteral() <em>Base Enumeration Literal</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_EnumerationLiteral()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ValueSetCodeImpl() {
@@ -118,7 +118,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EnumerationLiteral basicGetBase_EnumerationLiteral() {
@@ -128,7 +128,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CodeSystemVersion basicGetCodeSystem() {
@@ -138,7 +138,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EnumerationLiteral getBase_EnumerationLiteral() {
@@ -260,9 +260,9 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 			base_EnumerationLiteral = (EnumerationLiteral) eResolveProxy(oldBase_EnumerationLiteral);
 			if (base_EnumerationLiteral != oldBase_EnumerationLiteral) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CODE__BASE_ENUMERATION_LITERAL,
-						oldBase_EnumerationLiteral, base_EnumerationLiteral));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						TermPackage.VALUE_SET_CODE__BASE_ENUMERATION_LITERAL, oldBase_EnumerationLiteral,
+						base_EnumerationLiteral));
 				}
 			}
 		}
@@ -272,7 +272,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CodeSystemVersion getCodeSystem() {
@@ -281,8 +281,8 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 			codeSystem = (CodeSystemVersion) eResolveProxy(oldCodeSystem);
 			if (codeSystem != oldCodeSystem) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CODE__CODE_SYSTEM, oldCodeSystem, codeSystem));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TermPackage.VALUE_SET_CODE__CODE_SYSTEM,
+						oldCodeSystem, codeSystem));
 				}
 			}
 		}
@@ -292,7 +292,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getConceptName() {
@@ -302,7 +302,7 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getUsageNote() {
@@ -312,15 +312,14 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_EnumerationLiteral(EnumerationLiteral newBase_EnumerationLiteral) {
 		EnumerationLiteral oldBase_EnumerationLiteral = base_EnumerationLiteral;
 		base_EnumerationLiteral = newBase_EnumerationLiteral;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CODE__BASE_ENUMERATION_LITERAL,
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CODE__BASE_ENUMERATION_LITERAL,
 				oldBase_EnumerationLiteral, base_EnumerationLiteral));
 		}
 	}
@@ -328,52 +327,52 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCodeSystem(CodeSystemVersion newCodeSystem) {
 		CodeSystemVersion oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CODE__CODE_SYSTEM, oldCodeSystem, codeSystem));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CODE__CODE_SYSTEM,
+				oldCodeSystem, codeSystem));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setConceptName(String newConceptName) {
 		String oldConceptName = conceptName;
 		conceptName = newConceptName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CODE__CONCEPT_NAME, oldConceptName, conceptName));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CODE__CONCEPT_NAME,
+				oldConceptName, conceptName));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setUsageNote(String newUsageNote) {
 		String oldUsageNote = usageNote;
 		usageNote = newUsageNote;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CODE__USAGE_NOTE, oldUsageNote, usageNote));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CODE__USAGE_NOTE, oldUsageNote,
+				usageNote));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

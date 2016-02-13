@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added template parameter
@@ -12,7 +12,7 @@
  *                        - discriminate multiple property constraints (artf3185)
  *                        - implement terminology constraint dependencies (artf3030)
  *                        - support nested datatype subclasses (artf3350)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.transform;
@@ -85,13 +85,13 @@ public abstract class AbstractTransform extends UMLSwitch<Object> {
 	 * Gets the datatype from the base datatypes model that the specified {@code umlDatatype} specializes, if any, and only if the {@code umlDatatype}
 	 * is defined
 	 * locally to the given {@code context} element (in the same model as it).
-	 * 
+	 *
 	 * @param umlDatatype
 	 *            a class that may or may not be a specialization of a base datatype
 	 * @param context
 	 *            the context in which the datatype is used, or {code null} if the locality check is not required. This is often a {@link Property}
 	 *            that is typed by the {@code umlDatatype}
-	 * 
+	 *
 	 * @return the base datatype of which the {@code umlDatatype} is a local subclass, or {@code null} if the {@code umlDatatype} is not a local
 	 *         subclass of a base datatype
 	 */
@@ -100,9 +100,8 @@ public abstract class AbstractTransform extends UMLSwitch<Object> {
 
 		if (result != null) {
 			// check conditions for distinguishing the base datatype from the original
-			if ((result == umlDatatype) ||
-					((context != null) && !org.openhealthtools.mdht.uml.common.util.UMLUtil.isSameModel(
-						umlDatatype, context))) {
+			if ((result == umlDatatype) || ((context != null) &&
+					!org.openhealthtools.mdht.uml.common.util.UMLUtil.isSameModel(umlDatatype, context))) {
 
 				result = null;
 			}
@@ -153,7 +152,7 @@ public abstract class AbstractTransform extends UMLSwitch<Object> {
 
 	/**
 	 * Add an {@code element} to a {@code collection} if it's not {@code null}. Handy for a fluent style.
-	 * 
+	 *
 	 * @return the {@code collection}, for convenience of method chaining
 	 */
 	public static <E, C extends Collection<? super E>> C addIfNotNull(E element, C collection) {
@@ -165,7 +164,7 @@ public abstract class AbstractTransform extends UMLSwitch<Object> {
 
 	/**
 	 * Add an {@code element} to a {@code map} if it's not {@code null}. Handy for a fluent style.
-	 * 
+	 *
 	 * @return the {@code map}, for convenience of method chaining
 	 */
 	public static <K, V, M extends Map<? super K, ? super V>> M putIfNotNull(K key, V element, M map) {

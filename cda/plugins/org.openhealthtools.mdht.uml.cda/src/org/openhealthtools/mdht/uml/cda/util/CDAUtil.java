@@ -10,9 +10,9 @@
  *     Sean Muir (JKM Software) - package loading, snippet generation
  *     David A Carlson (XMLmodeling.com) - various helper methods
  *     Christian W. Damus - flexible, pluggable instance initializers (artf3272)
- *     Rama Ramakrishnan - Added loadAs() convenience method for forcing to load 
+ *     Rama Ramakrishnan - Added loadAs() convenience method for forcing to load
  *                          with a predefined document type
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.util;
 
@@ -150,7 +150,7 @@ public class CDAUtil {
 
 	/**
 	 * If not null, use this EClass as the document root in loader.
-	 * 
+	 *
 	 * @deprecated Use resource sets created by the {@link #createResourceSet(EClass)} or {@link #createResourceSet(String)} API to force a particular document class in resource loading
 	 */
 	@Deprecated
@@ -168,7 +168,7 @@ public class CDAUtil {
 	/**
 	 * EClass to use as the document root, or set to null for default behavior of
 	 * discovering EClass based on templateId.
-	 * 
+	 *
 	 * @deprecated Use the {@link #createResourceSet(EClass)} API, instead, to create a resource set configured to load documents of the given type
 	 */
 	@Deprecated
@@ -177,23 +177,23 @@ public class CDAUtil {
 	}
 
 	/**
-	 * Model qualified name (e.g. ccd::ContinuityOfCareDocument) of the EClass to use 
+	 * Model qualified name (e.g. ccd::ContinuityOfCareDocument) of the EClass to use
 	 * as the document root, or set to null for default behavior of
 	 * discovering EClass based on templateId.
-	 * 
+	 *
 	 * @deprecated Use the {@link #createResourceSet(String)} API, instead, to create a resource set configured to load documents of the given type
 	 */
 	@Deprecated
 	public static void setDocumentClassQName(String documentClassQName) {
-		XSITypeProvider.Registry.INSTANCE.registerXSITypeProvider(CDAPackage.eINSTANCE, new CDAXSITypeProvider(
-			documentClassQName));
+		XSITypeProvider.Registry.INSTANCE.registerXSITypeProvider(
+			CDAPackage.eINSTANCE, new CDAXSITypeProvider(documentClassQName));
 	}
 
 	/**
 	 * Creates a new resource set for loading CDA-based XML documents.
-	 * 
+	 *
 	 * @return the resource set
-	 * 
+	 *
 	 * @see #createResourceSet(EClass)
 	 * @see #createResourceSet(String)
 	 */
@@ -204,9 +204,9 @@ public class CDAUtil {
 
 	/**
 	 * Creates a new resource set for loading CDA-based XML documents of a specified {@link EClass} type.
-	 * 
+	 *
 	 * @param documentClass my forced document class, or {@code null} to discover the document class by template ID
-	 * 
+	 *
 	 * @return the resource set
 	 */
 	public static FleXMLResourceSet createResourceSet(EClass eClass) {
@@ -221,9 +221,9 @@ public class CDAUtil {
 
 	/**
 	 * Creates a new resource set for loading CDA-based XML documents of a specified document class type.
-	 * 
+	 *
 	 * @param documentClassQName my forced document class's qualified name, or {@code null} to discover the document class by template ID
-	 * 
+	 *
 	 * @return the resource set
 	 */
 	public static FleXMLResourceSet createResourceSet(String documentClassQName) {
@@ -350,7 +350,7 @@ public class CDAUtil {
 
 	/**
 	 * Convenience load method for loading a CDA document as a specific type
-	 * 
+	 *
 	 * @param in
 	 * @param docTypeEClass
 	 * @return
@@ -362,7 +362,7 @@ public class CDAUtil {
 
 	/**
 	 * Convenience load method for loading a CDA document as a specific type
-	 * 
+	 *
 	 * @param in
 	 * @param docTypeEClass
 	 * @param handler
@@ -567,7 +567,7 @@ public class CDAUtil {
 
 	/**
 	 * Creates a document root instance and adds the cda snippet to be streamed
-	 * 
+	 *
 	 * @param cdaSnippet
 	 * @param defaults
 	 * @return
@@ -736,7 +736,7 @@ public class CDAUtil {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.cda.util.CDAUtil.SchemaLoader#getSchema()
 		 */
 		@Override
@@ -912,7 +912,7 @@ public class CDAUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param source
 	 *            a Clinical Statement
 	 * @param typeCode
@@ -961,7 +961,7 @@ public class CDAUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param source
 	 *            a Section
 	 * @param typeCode
@@ -987,7 +987,8 @@ public class CDAUtil {
 					target = element;
 				}
 			}
-			if (typeCodeMatch && target != null && (targetClass == null || targetClass.isSuperTypeOf(target.eClass()))) {
+			if (typeCodeMatch && target != null &&
+					(targetClass == null || targetClass.isSuperTypeOf(target.eClass()))) {
 				targets.add(target);
 			}
 		}
@@ -1478,7 +1479,8 @@ public class CDAUtil {
 	}
 
 	// get first section that conforms to clazz and is accepted by filter
-	public static <T extends Section> T getSection(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+	public static <T extends Section> T getSection(ClinicalDocument clinicalDocument, Class<T> clazz,
+			Filter<T> filter) {
 		List<T> sections = getSections(clinicalDocument, clazz, filter);
 		return !sections.isEmpty()
 				? sections.get(0)
@@ -1567,7 +1569,8 @@ public class CDAUtil {
 	}
 
 	// get first clinical statement that conforms to clazz
-	public static <T extends ClinicalStatement> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz) {
+	public static <T extends ClinicalStatement> T getClinicalStatement(ClinicalDocument clinicalDocument,
+			Class<T> clazz) {
 		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz);
 		return !clinicalStatements.isEmpty()
 				? clinicalStatements.get(0)
@@ -1768,7 +1771,8 @@ public class CDAUtil {
 	}
 
 	// get first object that conforms to clazz and is accepted by filter
-	public static <T extends EObject> T getEObject(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+	public static <T extends EObject> T getEObject(ClinicalDocument clinicalDocument, Class<T> clazz,
+			Filter<T> filter) {
 		List<T> eObjects = getEObjects(clinicalDocument, clazz, filter);
 		return !eObjects.isEmpty()
 				? eObjects.get(0)

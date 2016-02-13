@@ -193,8 +193,8 @@ public class SCImpl extends STImpl implements SC {
 		String oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM, oldCodeSystem, codeSystem));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM, oldCodeSystem,
+				codeSystem));
 		}
 	}
 
@@ -216,8 +216,8 @@ public class SCImpl extends STImpl implements SC {
 		String oldCodeSystemName = codeSystemName;
 		codeSystemName = newCodeSystemName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM_NAME, oldCodeSystemName, codeSystemName));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM_NAME,
+				oldCodeSystemName, codeSystemName));
 		}
 	}
 
@@ -239,9 +239,8 @@ public class SCImpl extends STImpl implements SC {
 		String oldCodeSystemVersion = codeSystemVersion;
 		codeSystemVersion = newCodeSystemVersion;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM_VERSION, oldCodeSystemVersion,
-				codeSystemVersion));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM_VERSION,
+				oldCodeSystemVersion, codeSystemVersion));
 		}
 	}
 
@@ -263,8 +262,8 @@ public class SCImpl extends STImpl implements SC {
 		String oldDisplayName = displayName;
 		displayName = newDisplayName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.SC__DISPLAY_NAME, oldDisplayName, displayName));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SC__DISPLAY_NAME, oldDisplayName,
+				displayName));
 		}
 	}
 

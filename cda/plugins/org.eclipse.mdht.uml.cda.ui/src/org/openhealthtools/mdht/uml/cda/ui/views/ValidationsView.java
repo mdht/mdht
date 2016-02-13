@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.views;
 
@@ -167,7 +167,8 @@ public class ValidationsView extends ViewPart {
 						}
 					};
 
-					sb.append("<table width=\"100%\" border=\"1\"><thead><tr><th colspan=\"2\">ERRORS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
+					sb.append(
+						"<table width=\"100%\" border=\"1\"><thead><tr><th colspan=\"2\">ERRORS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
 
 					if (!errorsResultMap.isEmpty()) {
 
@@ -177,8 +178,9 @@ public class ValidationsView extends ViewPart {
 						Collections.sort(errorsMapValues, comparator);
 
 						for (CDADiagnosticCounter cdc : errorsMapValues) {
-							sb.append("<tr><td>" + cdc.getCount() + "</td><td><small>" +
-									cdc.getCdaDiagnosticq().getMessage() + "</small></td></tr>");
+							sb.append(
+								"<tr><td>" + cdc.getCount() + "</td><td><small>" +
+										cdc.getCdaDiagnosticq().getMessage() + "</small></td></tr>");
 						}
 					} else {
 						sb.append("<tr><td colspan='10'>NO ERRORS</td><tr>");
@@ -186,7 +188,8 @@ public class ValidationsView extends ViewPart {
 
 					sb.append("</table>");
 
-					sb.append("<table width=\"100%\" border=\"1\"><thead><tr><th colspan=\"2\">WARNINGS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
+					sb.append(
+						"<table width=\"100%\" border=\"1\"><thead><tr><th colspan=\"2\">WARNINGS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
 
 					if (!warningsResultMap.isEmpty()) {
 
@@ -196,8 +199,9 @@ public class ValidationsView extends ViewPart {
 						Collections.sort(mapValues, comparator);
 
 						for (CDADiagnosticCounter cdc : mapValues) {
-							sb.append("<tr><td>" + cdc.getCount() + "</td><td><small>" +
-									cdc.getCdaDiagnosticq().getMessage() + "</small></td><tr>");
+							sb.append(
+								"<tr><td>" + cdc.getCount() + "</td><td><small>" +
+										cdc.getCdaDiagnosticq().getMessage() + "</small></td><tr>");
 						}
 					} else {
 						sb.append("<tr><td colspan='10'>NO WARNINGS</td></tr>");
@@ -205,7 +209,8 @@ public class ValidationsView extends ViewPart {
 
 					sb.append("</table>");
 
-					sb.append("<table width=\"100%\" border=\"1\"><thead><tr><th colspan=\"2\">INFORMATIONAL</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
+					sb.append(
+						"<table width=\"100%\" border=\"1\"><thead><tr><th colspan=\"2\">INFORMATIONAL</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
 
 					if (!informationResultMap.isEmpty()) {
 
@@ -215,8 +220,9 @@ public class ValidationsView extends ViewPart {
 						Collections.sort(mapValues, comparator);
 
 						for (CDADiagnosticCounter cdc : mapValues) {
-							sb.append("<tr><td>" + cdc.getCount() + "</td><td><small>" +
-									cdc.getCdaDiagnosticq().getMessage() + "</small></td></tr>");
+							sb.append(
+								"<tr><td>" + cdc.getCount() + "</td><td><small>" +
+										cdc.getCdaDiagnosticq().getMessage() + "</small></td></tr>");
 						}
 					} else {
 						sb.append("<tr><td colspan='10'>NO INFORMATIONAL</td></tr>");

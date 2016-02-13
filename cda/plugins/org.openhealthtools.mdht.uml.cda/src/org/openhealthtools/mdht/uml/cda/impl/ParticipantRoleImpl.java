@@ -292,20 +292,20 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARTICIPANT_ROLE__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARTICIPANT_ROLE__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARTICIPANT_ROLE__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARTICIPANT_ROLE__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__TYPE_ID, newTypeId,
+				newTypeId));
 		}
 	}
 
@@ -372,12 +372,12 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARTICIPANT_ROLE__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARTICIPANT_ROLE__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARTICIPANT_ROLE__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARTICIPANT_ROLE__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
@@ -431,7 +431,8 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		playingDevice = newPlayingDevice;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE, oldPlayingDevice, newPlayingDevice);
+				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE, oldPlayingDevice,
+				newPlayingDevice);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -450,20 +451,20 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		if (newPlayingDevice != playingDevice) {
 			NotificationChain msgs = null;
 			if (playingDevice != null) {
-				msgs = ((InternalEObject) playingDevice).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE, null, msgs);
+				msgs = ((InternalEObject) playingDevice).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE, null, msgs);
 			}
 			if (newPlayingDevice != null) {
-				msgs = ((InternalEObject) newPlayingDevice).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE, null, msgs);
+				msgs = ((InternalEObject) newPlayingDevice).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE, null, msgs);
 			}
 			msgs = basicSetPlayingDevice(newPlayingDevice, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE, newPlayingDevice, newPlayingDevice));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE,
+				newPlayingDevice, newPlayingDevice));
 		}
 	}
 
@@ -486,7 +487,8 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		playingEntity = newPlayingEntity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY, oldPlayingEntity, newPlayingEntity);
+				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY, oldPlayingEntity,
+				newPlayingEntity);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -505,20 +507,20 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		if (newPlayingEntity != playingEntity) {
 			NotificationChain msgs = null;
 			if (playingEntity != null) {
-				msgs = ((InternalEObject) playingEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY, null, msgs);
+				msgs = ((InternalEObject) playingEntity).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY, null, msgs);
 			}
 			if (newPlayingEntity != null) {
-				msgs = ((InternalEObject) newPlayingEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY, null, msgs);
+				msgs = ((InternalEObject) newPlayingEntity).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY, null, msgs);
 			}
 			msgs = basicSetPlayingEntity(newPlayingEntity, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY, newPlayingEntity, newPlayingEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY,
+				newPlayingEntity, newPlayingEntity));
 		}
 	}
 
@@ -541,7 +543,8 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		scopingEntity = newScopingEntity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__SCOPING_ENTITY, oldScopingEntity, newScopingEntity);
+				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__SCOPING_ENTITY, oldScopingEntity,
+				newScopingEntity);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -560,20 +563,20 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		if (newScopingEntity != scopingEntity) {
 			NotificationChain msgs = null;
 			if (scopingEntity != null) {
-				msgs = ((InternalEObject) scopingEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARTICIPANT_ROLE__SCOPING_ENTITY, null, msgs);
+				msgs = ((InternalEObject) scopingEntity).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARTICIPANT_ROLE__SCOPING_ENTITY, null, msgs);
 			}
 			if (newScopingEntity != null) {
-				msgs = ((InternalEObject) newScopingEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARTICIPANT_ROLE__SCOPING_ENTITY, null, msgs);
+				msgs = ((InternalEObject) newScopingEntity).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARTICIPANT_ROLE__SCOPING_ENTITY, null, msgs);
 			}
 			msgs = basicSetScopingEntity(newScopingEntity, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__SCOPING_ENTITY, newScopingEntity, newScopingEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__SCOPING_ENTITY,
+				newScopingEntity, newScopingEntity));
 		}
 	}
 
@@ -600,9 +603,8 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -617,9 +619,8 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.PARTICIPANT_ROLE__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PARTICIPANT_ROLE__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -655,9 +656,8 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__CLASS_CODE, oldClassCode, classCode,
-				!oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPANT_ROLE__CLASS_CODE, oldClassCode,
+				classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -672,9 +672,8 @@ public class ParticipantRoleImpl extends RoleImpl implements ParticipantRole {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.PARTICIPANT_ROLE__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PARTICIPANT_ROLE__CLASS_CODE,
+				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 

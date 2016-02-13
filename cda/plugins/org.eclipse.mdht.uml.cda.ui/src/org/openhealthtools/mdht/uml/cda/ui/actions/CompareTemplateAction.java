@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
@@ -248,7 +248,7 @@ public class CompareTemplateAction implements IObjectActionDelegate {
 		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
 
 			Object element = elements.next();
-			View view = (View) ((IAdaptable) element).getAdapter(View.class);
+			View view = ((IAdaptable) element).getAdapter(View.class);
 
 			if (view != null) {
 				return view;
@@ -289,9 +289,10 @@ public class CompareTemplateAction implements IObjectActionDelegate {
 
 				// cc.setl
 
-				CompareUI.openCompareDialog(new CompareInput(
-					cc, selectedElement.getQualifiedName(), leftsb.toString(), compareTarget.getQualifiedName(),
-					rightsb.toString()));
+				CompareUI.openCompareDialog(
+					new CompareInput(
+						cc, selectedElement.getQualifiedName(), leftsb.toString(), compareTarget.getQualifiedName(),
+						rightsb.toString()));
 
 			}
 

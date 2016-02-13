@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     seanmuir - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.handlers;
 
@@ -57,7 +57,7 @@ import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewLabelPro
 
 /**
  * @author seanmuir
- * 
+ *
  */
 public class AnalyzeCDAHandler extends AbstractHandler {
 
@@ -101,7 +101,7 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 		 */
 		public Object getAdapter(Class adapter) {
@@ -111,7 +111,7 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.ui.IEditorInput#exists()
 		 */
 		public boolean exists() {
@@ -121,7 +121,7 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.ui.IEditorInput#getImageDescriptor()
 		 */
 		public ImageDescriptor getImageDescriptor() {
@@ -131,7 +131,7 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.ui.IEditorInput#getName()
 		 */
 		public String getName() {
@@ -141,7 +141,7 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.ui.IEditorInput#getPersistable()
 		 */
 		public IPersistableElement getPersistable() {
@@ -151,7 +151,7 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.ui.IEditorInput#getToolTipText()
 		 */
 		public String getToolTipText() {
@@ -188,8 +188,8 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 				try {
 					pd.run(true, true, new IRunnableWithProgress() {
 
-						public void run(IProgressMonitor monitor) throws InvocationTargetException,
-								InterruptedException {
+						public void run(IProgressMonitor monitor)
+								throws InvocationTargetException, InterruptedException {
 
 							try {
 								Iterator<Object> iter = iss.iterator();

@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.transform.ecore;
 
@@ -113,8 +113,9 @@ public class BaseEcoreTransformationBuilder extends TransformationBuilder {
 			super.initialize(ctx);
 
 			try {
-				umlSwitch = switchClass.getConstructor(TransformerOptions.class, IBaseModelReflection.class).newInstance(
-					ctx.get(TransformerOptions.class), ctx.get(IBaseModelReflection.class));
+				umlSwitch = switchClass.getConstructor(
+					TransformerOptions.class, IBaseModelReflection.class).newInstance(
+						ctx.get(TransformerOptions.class), ctx.get(IBaseModelReflection.class));
 			} catch (Exception e) {
 				throw new TransformationException(
 					String.format("Failed to initialize rule '%s'", switchClass.getName()), e);

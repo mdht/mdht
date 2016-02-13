@@ -9,14 +9,12 @@ public class BooleanValueConverter extends AbstractParameterValueConverter {
 	}
 
 	@Override
-	public Object convertToObject(String value)
-			throws ParameterValueConversionException {
+	public Object convertToObject(String value) throws ParameterValueConversionException {
 		return Boolean.parseBoolean(value);
 	}
 
 	@Override
-	public String convertToString(Object obj)
-			throws ParameterValueConversionException {
+	public String convertToString(Object obj) throws ParameterValueConversionException {
 		return obj.toString();
 	}
 

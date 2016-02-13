@@ -536,19 +536,20 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__TYPE_ID, newTypeId, newTypeId));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -615,12 +616,12 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
@@ -669,20 +670,20 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		if (newDerivationExpr != derivationExpr) {
 			NotificationChain msgs = null;
 			if (derivationExpr != null) {
-				msgs = ((InternalEObject) derivationExpr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__DERIVATION_EXPR, null, msgs);
+				msgs = ((InternalEObject) derivationExpr).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__DERIVATION_EXPR, null, msgs);
 			}
 			if (newDerivationExpr != null) {
-				msgs = ((InternalEObject) newDerivationExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__DERIVATION_EXPR, null, msgs);
+				msgs = ((InternalEObject) newDerivationExpr).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__DERIVATION_EXPR, null, msgs);
 			}
 			msgs = basicSetDerivationExpr(newDerivationExpr, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__DERIVATION_EXPR, newDerivationExpr, newDerivationExpr));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__DERIVATION_EXPR,
+				newDerivationExpr, newDerivationExpr));
 		}
 	}
 
@@ -724,12 +725,12 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		if (newText != text) {
 			NotificationChain msgs = null;
 			if (text != null) {
-				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__TEXT, null, msgs);
+				msgs = ((InternalEObject) text).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__TEXT, null, msgs);
 			}
 			if (newText != null) {
-				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__TEXT, null, msgs);
+				msgs = ((InternalEObject) newText).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__TEXT, null, msgs);
 			}
 			msgs = basicSetText(newText, msgs);
 			if (msgs != null) {
@@ -778,20 +779,20 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		if (newStatusCode != statusCode) {
 			NotificationChain msgs = null;
 			if (statusCode != null) {
-				msgs = ((InternalEObject) statusCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__STATUS_CODE, null, msgs);
+				msgs = ((InternalEObject) statusCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__STATUS_CODE, null, msgs);
 			}
 			if (newStatusCode != null) {
-				msgs = ((InternalEObject) newStatusCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__STATUS_CODE, null, msgs);
+				msgs = ((InternalEObject) newStatusCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__STATUS_CODE, null, msgs);
 			}
 			msgs = basicSetStatusCode(newStatusCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__STATUS_CODE, newStatusCode, newStatusCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__STATUS_CODE, newStatusCode,
+				newStatusCode));
 		}
 	}
 
@@ -833,20 +834,20 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		if (newEffectiveTime != effectiveTime) {
 			NotificationChain msgs = null;
 			if (effectiveTime != null) {
-				msgs = ((InternalEObject) effectiveTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__EFFECTIVE_TIME, null, msgs);
+				msgs = ((InternalEObject) effectiveTime).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__EFFECTIVE_TIME, null, msgs);
 			}
 			if (newEffectiveTime != null) {
-				msgs = ((InternalEObject) newEffectiveTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__EFFECTIVE_TIME, null, msgs);
+				msgs = ((InternalEObject) newEffectiveTime).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__EFFECTIVE_TIME, null, msgs);
 			}
 			msgs = basicSetEffectiveTime(newEffectiveTime, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__EFFECTIVE_TIME, newEffectiveTime, newEffectiveTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__EFFECTIVE_TIME,
+				newEffectiveTime, newEffectiveTime));
 		}
 	}
 
@@ -888,20 +889,20 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		if (newPriorityCode != priorityCode) {
 			NotificationChain msgs = null;
 			if (priorityCode != null) {
-				msgs = ((InternalEObject) priorityCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__PRIORITY_CODE, null, msgs);
+				msgs = ((InternalEObject) priorityCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__PRIORITY_CODE, null, msgs);
 			}
 			if (newPriorityCode != null) {
-				msgs = ((InternalEObject) newPriorityCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__PRIORITY_CODE, null, msgs);
+				msgs = ((InternalEObject) newPriorityCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__PRIORITY_CODE, null, msgs);
 			}
 			msgs = basicSetPriorityCode(newPriorityCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__PRIORITY_CODE, newPriorityCode, newPriorityCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__PRIORITY_CODE,
+				newPriorityCode, newPriorityCode));
 		}
 	}
 
@@ -943,20 +944,20 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		if (newRepeatNumber != repeatNumber) {
 			NotificationChain msgs = null;
 			if (repeatNumber != null) {
-				msgs = ((InternalEObject) repeatNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__REPEAT_NUMBER, null, msgs);
+				msgs = ((InternalEObject) repeatNumber).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__REPEAT_NUMBER, null, msgs);
 			}
 			if (newRepeatNumber != null) {
-				msgs = ((InternalEObject) newRepeatNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__REPEAT_NUMBER, null, msgs);
+				msgs = ((InternalEObject) newRepeatNumber).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__REPEAT_NUMBER, null, msgs);
 			}
 			msgs = basicSetRepeatNumber(newRepeatNumber, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__REPEAT_NUMBER, newRepeatNumber, newRepeatNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__REPEAT_NUMBER,
+				newRepeatNumber, newRepeatNumber));
 		}
 	}
 
@@ -998,20 +999,20 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		if (newLanguageCode != languageCode) {
 			NotificationChain msgs = null;
 			if (languageCode != null) {
-				msgs = ((InternalEObject) languageCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__LANGUAGE_CODE, null, msgs);
+				msgs = ((InternalEObject) languageCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__LANGUAGE_CODE, null, msgs);
 			}
 			if (newLanguageCode != null) {
-				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__LANGUAGE_CODE, null, msgs);
+				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__LANGUAGE_CODE, null, msgs);
 			}
 			msgs = basicSetLanguageCode(newLanguageCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__LANGUAGE_CODE, newLanguageCode, newLanguageCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__LANGUAGE_CODE,
+				newLanguageCode, newLanguageCode));
 		}
 	}
 
@@ -1102,20 +1103,20 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		if (newSubject != subject) {
 			NotificationChain msgs = null;
 			if (subject != null) {
-				msgs = ((InternalEObject) subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__SUBJECT, null, msgs);
+				msgs = ((InternalEObject) subject).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__SUBJECT, null, msgs);
 			}
 			if (newSubject != null) {
-				msgs = ((InternalEObject) newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION__SUBJECT, null, msgs);
+				msgs = ((InternalEObject) newSubject).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION__SUBJECT, null, msgs);
 			}
 			msgs = basicSetSubject(newSubject, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__SUBJECT, newSubject, newSubject));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__SUBJECT, newSubject, newSubject));
 		}
 	}
 
@@ -1257,9 +1258,8 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -1274,9 +1274,8 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.OBSERVATION__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -1312,8 +1311,8 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__CLASS_CODE, oldClassCode,
+				classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -1328,9 +1327,8 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.OBSERVATION__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION__CLASS_CODE, oldClassCode,
+				CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -1366,8 +1364,8 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__MOOD_CODE, oldMoodCode,
+				moodCode, !oldMoodCodeESet));
 		}
 	}
 
@@ -1382,9 +1380,8 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.OBSERVATION__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
-				oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION__MOOD_CODE, oldMoodCode,
+				MOOD_CODE_EDEFAULT, oldMoodCodeESet));
 		}
 	}
 
@@ -1418,9 +1415,8 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		boolean oldNegationIndESet = negationIndESet;
 		negationIndESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION__NEGATION_IND, oldNegationInd, negationInd,
-				!oldNegationIndESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION__NEGATION_IND, oldNegationInd,
+				negationInd, !oldNegationIndESet));
 		}
 	}
 
@@ -1435,9 +1431,8 @@ public class ObservationImpl extends ClinicalStatementImpl implements Observatio
 		negationInd = NEGATION_IND_EDEFAULT;
 		negationIndESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.OBSERVATION__NEGATION_IND, oldNegationInd, NEGATION_IND_EDEFAULT,
-				oldNegationIndESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION__NEGATION_IND,
+				oldNegationInd, NEGATION_IND_EDEFAULT, oldNegationIndESet));
 		}
 	}
 

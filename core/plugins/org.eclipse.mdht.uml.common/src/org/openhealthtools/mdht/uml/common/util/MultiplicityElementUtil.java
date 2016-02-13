@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Yann TANGUY (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.openhealthtools.mdht.uml.common.util;
 
@@ -22,7 +22,7 @@ public class MultiplicityElementUtil {
 
 	/**
 	 * Return the multiplicity of the element "[x..y]"
-	 * 
+	 *
 	 * @return the string representing the multiplicity
 	 */
 	public static String getMultiplicityAsString(MultiplicityElement element) {
@@ -36,7 +36,7 @@ public class MultiplicityElementUtil {
 	/**
 	 * Returns the String corresponding to the multiplicity without square
 	 * brackets
-	 * 
+	 *
 	 * @return the string representing the multiplicity, without square brackets
 	 */
 	private static String getMultiplicityAsStringWithoutSquareBrackets(MultiplicityElement element) {

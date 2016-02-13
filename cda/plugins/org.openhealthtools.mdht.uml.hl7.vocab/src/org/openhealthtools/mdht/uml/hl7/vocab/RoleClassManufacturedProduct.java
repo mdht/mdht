@@ -82,7 +82,8 @@ public enum RoleClassManufacturedProduct implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final RoleClassManufacturedProduct[] VALUES_ARRAY = new RoleClassManufacturedProduct[] { MANU, THER, };
+	private static final RoleClassManufacturedProduct[] VALUES_ARRAY = new RoleClassManufacturedProduct[] {
+			MANU, THER, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Role Class Manufactured Product</b></em>' enumerators.
@@ -90,7 +91,8 @@ public enum RoleClassManufacturedProduct implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<RoleClassManufacturedProduct> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<RoleClassManufacturedProduct> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Role Class Manufactured Product</b></em>' literal with the specified literal value.

@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
@@ -53,7 +53,7 @@ import org.openhealthtools.mdht.uml.edit.internal.Logger;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
- * 
+ *
  * @version $Id: $
  */
 public class ParameterExtItemProvider extends ParameterItemProvider implements ITableItemLabelProvider, ICellModifier {
@@ -67,7 +67,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.GeneralizationItemProvider#getImage(java.lang.Object)
 	 */
 	@Override
@@ -87,13 +87,13 @@ public class ParameterExtItemProvider extends ParameterItemProvider implements I
 		AdapterFactory adapterFactory = getAdapterFactory();
 		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
 				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
-				? NamedElementUtil.getBusinessName(namedElement)
-				: namedElement.getName();
+						? NamedElementUtil.getBusinessName(namedElement)
+						: namedElement.getName();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.GeneralizationItemProvider#getText(java.lang.Object)
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider implements I
 	/**
 	 * Diplay a multiplicity string of the format [lower..upper], unless
 	 * both lower and upper are == 1.
-	 * 
+	 *
 	 * @param multElement
 	 * @return
 	 */
@@ -148,7 +148,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.PropertyItemProvider#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider implements I
 
 	/**
 	 * Display a multiplicity string of the format "lower..upper".
-	 * 
+	 *
 	 * @param multElement
 	 * @return
 	 */
@@ -246,7 +246,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -264,7 +264,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
@@ -288,7 +288,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

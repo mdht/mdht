@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - flexible XML resource implementation (artf3367)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.emf.runtime.resource.impl;
 
@@ -25,7 +25,7 @@ public class FleXMLResourceFactoryImpl extends ResourceFactoryImpl implements Fl
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FleXMLResourceFactoryImpl() {
@@ -36,7 +36,7 @@ public class FleXMLResourceFactoryImpl extends ResourceFactoryImpl implements Fl
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override

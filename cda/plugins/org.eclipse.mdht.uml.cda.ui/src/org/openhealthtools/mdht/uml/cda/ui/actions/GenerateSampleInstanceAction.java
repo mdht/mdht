@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Rama Ramakrishnan - modifications to the URL handling for instance generation.
  *     Sean Muir (NEHTA) - modifications to add cda.core to manifest on the fly
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
@@ -122,8 +122,9 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 							if (!requiredBundles.contains("org.openhealthtools.mdht.uml.cda.core")) {
 								neededCore = true;
 
-								attributes.putValue("Require-Bundle", attributes.getValue("Require-Bundle") +
-										",org.openhealthtools.mdht.uml.cda.core");
+								attributes.putValue(
+									"Require-Bundle",
+									attributes.getValue("Require-Bundle") + ",org.openhealthtools.mdht.uml.cda.core");
 								ByteArrayOutputStream out = new ByteArrayOutputStream();
 								projectManifest.write(out);
 								InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
@@ -136,7 +137,8 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 
 							ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager();
 
-							ILaunchConfigurationType type = manager.getLaunchConfigurationType(IJavaLaunchConfigurationConstants.ID_JAVA_APPLICATION);
+							ILaunchConfigurationType type = manager.getLaunchConfigurationType(
+								IJavaLaunchConfigurationConstants.ID_JAVA_APPLICATION);
 
 							ILaunchConfigurationWorkingCopy workingCopy;
 							try {
@@ -150,11 +152,12 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 									selectedElement.getName(),
 									getFormattedResourceLocation("org.eclipse.uml2.uml.resources"),
 									getFormattedResourceLocation("org.openhealthtools.mdht.uml.cda.resources"));
-								workingCopy.setAttribute(
-									IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, cdaGenerateArguments);
+								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS,
+									cdaGenerateArguments);
 								workingCopy.setAttribute(
 									IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, generateProject.getName());
-								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, true);
+								workingCopy.setAttribute(
+									IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, true);
 								workingCopy.setAttribute(IDebugUIConstants.ATTR_CONSOLE_PROCESS, true);
 								workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, false);
 
@@ -179,7 +182,8 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 							String requiredBundles = attributes.getValue("Require-Bundle");
 
 							attributes.putValue(
-								"Require-Bundle", requiredBundles.replace(",org.openhealthtools.mdht.uml.cda.core", ""));
+								"Require-Bundle",
+								requiredBundles.replace(",org.openhealthtools.mdht.uml.cda.core", ""));
 							ByteArrayOutputStream out = new ByteArrayOutputStream();
 							projectManifest.write(out);
 							InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
@@ -213,7 +217,7 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 
 	/**
 	 * Returns URL of the file /jar resource based on the symbolic name
-	 * 
+	 *
 	 * @param symbolicName
 	 * @return URL
 	 */
@@ -236,7 +240,7 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 	 * Gets the formatted url with the type of resource.
 	 * e.g. URL's with jar protocol will be returned as jar:file:/<resource-path>
 	 * URL's with file protocol will be returned as file:/<resource-path>
-	 * 
+	 *
 	 * @param resource
 	 * @return
 	 */
@@ -251,7 +255,7 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
 
 			Object element = elements.next();
-			View view = (View) ((IAdaptable) element).getAdapter(View.class);
+			View view = ((IAdaptable) element).getAdapter(View.class);
 
 			if (view != null) {
 				return view;

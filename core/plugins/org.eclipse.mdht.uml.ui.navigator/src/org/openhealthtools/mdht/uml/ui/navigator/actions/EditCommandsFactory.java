@@ -4,14 +4,14 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - added a new action for (un)controlling elements
  *     Kenn Hussey - adjusted the (un)control action to handle properties files
  *     Christian W. Damus - adjust actions for object wrappers (artf3238)
  *                        - customize diagnostician to use ModelValidationService (artf3285)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.navigator.actions;
@@ -109,7 +109,7 @@ import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Logger;
 import org.openhealthtools.mdht.uml.validation.util.UMLDiagnostician;
 
 /**
- * 
+ *
  * @version $Id: $
  */
 public class EditCommandsFactory implements IPropertyListener {
@@ -366,8 +366,8 @@ public class EditCommandsFactory implements IPropertyListener {
 							Association association = ownedAttribute.getAssociation();
 
 							if (association != null) {
-								operation.add(new EMFCommandOperation(ted, new AddCommand(
-									ted, resourceContents, association)));
+								operation.add(
+									new EMFCommandOperation(ted, new AddCommand(ted, resourceContents, association)));
 
 								controlledElements.add(association);
 							}
@@ -375,7 +375,8 @@ public class EditCommandsFactory implements IPropertyListener {
 					}
 
 					// find all associations that refer to eObject and mark them dirty
-					List<Relationship> otherTargets = ((Element) eObject).getRelationships(UMLPackage.Literals.ASSOCIATION);
+					List<Relationship> otherTargets = ((Element) eObject).getRelationships(
+						UMLPackage.Literals.ASSOCIATION);
 					for (Relationship relationship : otherTargets) {
 						for (Element element : relationship.getRelatedElements()) {
 							// fix bug for broken association references
@@ -400,18 +401,21 @@ public class EditCommandsFactory implements IPropertyListener {
 						}
 
 						for (EObject stereotypeApplication : element.getStereotypeApplications()) {
-							operation.add(new EMFCommandOperation(ted, new AddCommand(
-								ted, resourceContents, stereotypeApplication)));
+							operation.add(
+								new EMFCommandOperation(
+									ted, new AddCommand(ted, resourceContents, stereotypeApplication)));
 						}
 
-						for (TreeIterator<EObject> allProperContents = EcoreUtil.getAllProperContents(element, true); allProperContents.hasNext();) {
+						for (TreeIterator<EObject> allProperContents = EcoreUtil.getAllProperContents(
+							element, true); allProperContents.hasNext();) {
 							EObject content = allProperContents.next();
 
 							if (content instanceof Element) {
 
 								for (EObject stereotypeApplication : ((Element) content).getStereotypeApplications()) {
-									operation.add(new EMFCommandOperation(ted, new AddCommand(
-										ted, resourceContents, stereotypeApplication)));
+									operation.add(
+										new EMFCommandOperation(
+											ted, new AddCommand(ted, resourceContents, stereotypeApplication)));
 								}
 							}
 						}
@@ -429,7 +433,8 @@ public class EditCommandsFactory implements IPropertyListener {
 							@Override
 							protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info)
 									throws ExecutionException {
-								Map<String, String> eResourceParsedProperties = UMLUtil.parseProperties(eResourceProperties);
+								Map<String, String> eResourceParsedProperties = UMLUtil.parseProperties(
+									eResourceProperties);
 								Map<String, String> resourceParsedProperties = resourceProperties != null
 										? UMLUtil.parseProperties(resourceProperties)
 										: new LinkedHashMap<String, String>();
@@ -517,8 +522,9 @@ public class EditCommandsFactory implements IPropertyListener {
 							Association association = ownedAttribute.getAssociation();
 
 							if (association != null) {
-								operation.add(new EMFCommandOperation(ted, new RemoveCommand(
-									ted, eResourceContents, association)));
+								operation.add(
+									new EMFCommandOperation(
+										ted, new RemoveCommand(ted, eResourceContents, association)));
 
 								uncontrolledElements.add(association);
 							}
@@ -526,7 +532,8 @@ public class EditCommandsFactory implements IPropertyListener {
 					}
 
 					// find all associations that refer to eObject and mark them dirty
-					List<Relationship> otherTargets = ((Element) eObject).getRelationships(UMLPackage.Literals.ASSOCIATION);
+					List<Relationship> otherTargets = ((Element) eObject).getRelationships(
+						UMLPackage.Literals.ASSOCIATION);
 					for (Relationship relationship : otherTargets) {
 						for (Element element : relationship.getRelatedElements()) {
 							// fix bug for broken association references
@@ -553,18 +560,22 @@ public class EditCommandsFactory implements IPropertyListener {
 						}
 
 						for (EObject stereotypeApplication : element.getStereotypeApplications()) {
-							operation.add(new EMFCommandOperation(ted, new AddCommand(
-								ted, eContainerResourceContents, stereotypeApplication)));
+							operation.add(
+								new EMFCommandOperation(
+									ted, new AddCommand(ted, eContainerResourceContents, stereotypeApplication)));
 						}
 
-						for (TreeIterator<EObject> allProperContents = EcoreUtil.getAllProperContents(element, true); allProperContents.hasNext();) {
+						for (TreeIterator<EObject> allProperContents = EcoreUtil.getAllProperContents(
+							element, true); allProperContents.hasNext();) {
 							EObject content = allProperContents.next();
 
 							if (content instanceof Element) {
 
 								for (EObject stereotypeApplication : ((Element) content).getStereotypeApplications()) {
-									operation.add(new EMFCommandOperation(ted, new AddCommand(
-										ted, eContainerResourceContents, stereotypeApplication)));
+									operation.add(
+										new EMFCommandOperation(
+											ted,
+											new AddCommand(ted, eContainerResourceContents, stereotypeApplication)));
 								}
 							}
 						}
@@ -575,14 +586,16 @@ public class EditCommandsFactory implements IPropertyListener {
 
 					if (eResourceProperties != null) {
 						final URI eContainerResourcePropertiesURI = UMLUtil.getPropertiesURI(eContainerResource);
-						final String eContainerResourceProperties = UMLUtil.readProperties(eContainerResourcePropertiesURI);
+						final String eContainerResourceProperties = UMLUtil.readProperties(
+							eContainerResourcePropertiesURI);
 
 						operation.add(new AbstractEMFOperation(ted, UML2Util.EMPTY_STRING) {
 
 							@Override
 							protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info)
 									throws ExecutionException {
-								Map<String, String> eResourceParsedProperties = UMLUtil.parseProperties(eResourceProperties);
+								Map<String, String> eResourceParsedProperties = UMLUtil.parseProperties(
+									eResourceProperties);
 								Map<String, String> eContainerResourceParsedProperties = eContainerResourceProperties != null
 										? UMLUtil.parseProperties(eContainerResourceProperties)
 										: new LinkedHashMap<String, String>();
@@ -727,7 +740,8 @@ public class EditCommandsFactory implements IPropertyListener {
 	}
 
 	protected void init() {
-		TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(IResourceConstants.EDITING_DOMAIN_ID);
+		TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
+			IResourceConstants.EDITING_DOMAIN_ID);
 
 		ISharedImages sharedImages = PlatformUI.getWorkbench().getSharedImages();
 
@@ -808,7 +822,7 @@ public class EditCommandsFactory implements IPropertyListener {
 	 * same beahviour, by default, as in EMF 2.1 and before. You should probably
 	 * override this method to return true, in order to get the new, more useful
 	 * beahviour.
-	 * 
+	 *
 	 * @since 2.2
 	 */
 	protected boolean removeAllReferencesOnDelete() {
@@ -985,7 +999,8 @@ public class EditCommandsFactory implements IPropertyListener {
 		// ((IEditingDomainProvider) activePart).getEditingDomain()
 		// : null;
 
-		TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(IResourceConstants.EDITING_DOMAIN_ID);
+		TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
+			IResourceConstants.EDITING_DOMAIN_ID);
 
 		if (selectionProvider != null && editingDomain != null) {
 			ISelection selection = selectionProvider.getSelection();

@@ -316,7 +316,8 @@ public enum EntityNamePartQualifier implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<EntityNamePartQualifier> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<EntityNamePartQualifier> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Entity Name Part Qualifier</b></em>' literal with the specified literal value.

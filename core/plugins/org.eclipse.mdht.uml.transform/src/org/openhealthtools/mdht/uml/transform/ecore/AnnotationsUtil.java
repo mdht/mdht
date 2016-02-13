@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Sean Muir (JKM Software) - added copy annotation method
@@ -12,7 +12,7 @@
  *                        - maintain consistent ordering of annotations (artf3306)
  *                        - factor out CDA dependencies from UML-to-Ecore transformation (artf3350)
  *                        - flexible, pluggable instance initializers (artf3272)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.transform.ecore;
@@ -38,9 +38,11 @@ import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
 
 public class AnnotationsUtil {
 
-	private static final Pattern ANNOTATION_PATTERN = Pattern.compile("\\G\\s*((?>\\\\.|\\S)+)((?:\\s+(?>\\\\.|\\S)+\\s*+=\\s*(['\"])((?>\\\\.|.)*?)\\3)*)");
+	private static final Pattern ANNOTATION_PATTERN = Pattern.compile(
+		"\\G\\s*((?>\\\\.|\\S)+)((?:\\s+(?>\\\\.|\\S)+\\s*+=\\s*(['\"])((?>\\\\.|.)*?)\\3)*)");
 
-	private static final Pattern ANNOTATION_DETAIL_PATTERN = Pattern.compile("\\s+((?>\\\\.|\\S)+)\\s*+=\\s*((['\"])((?>\\\\.|.)*?)\\3)");
+	private static final Pattern ANNOTATION_DETAIL_PATTERN = Pattern.compile(
+		"\\s+((?>\\\\.|\\S)+)\\s*+=\\s*((['\"])((?>\\\\.|.)*?)\\3)");
 
 	private final Element element;
 
@@ -67,7 +69,7 @@ public class AnnotationsUtil {
 
 	/**
 	 * Get an annotation value for the given key.
-	 * 
+	 *
 	 * @param key
 	 */
 	public String getAnnotation(String key) {
@@ -77,7 +79,7 @@ public class AnnotationsUtil {
 	/**
 	 * Set an annotation value for the given key, or replace the value if this key
 	 * already exists in annotations.
-	 * 
+	 *
 	 * @param key
 	 * @param value
 	 */
@@ -91,7 +93,7 @@ public class AnnotationsUtil {
 
 	/**
 	 * Remove an annotation key.
-	 * 
+	 *
 	 * @param key
 	 */
 	public void removeAnnotation(String key) {
@@ -101,7 +103,7 @@ public class AnnotationsUtil {
 	/**
 	 * Append to list of existing values for the given key.
 	 * Verify that given value is not already in list of values for this key.
-	 * 
+	 *
 	 * @param key
 	 * @param value
 	 */
@@ -176,7 +178,8 @@ public class AnnotationsUtil {
 						}
 
 						annotationIndex = annotations.indexOf(annotation);
-						for (Matcher detailMatcher = ANNOTATION_DETAIL_PATTERN.matcher(matcher.group(2)); detailMatcher.find();) {
+						for (Matcher detailMatcher = ANNOTATION_DETAIL_PATTERN.matcher(
+							matcher.group(2)); detailMatcher.find();) {
 							String name = detailMatcher.group(1);
 							String value = detailMatcher.group(4);
 

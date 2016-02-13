@@ -161,7 +161,8 @@ public class ParticipationOperations extends InfrastructureRootOperations {
 			helper.setOperationContext(
 				RIMPackage.Literals.PARTICIPATION, RIMPackage.Literals.PARTICIPATION.getEAllOperations().get(12));
 			try {
-				IS_CONTEXT_CONTROL_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_CONTEXT_CONTROL_CODE_DEFINED__EOCL_EXP);
+				IS_CONTEXT_CONTROL_CODE_DEFINED__EOCL_QRY = helper.createQuery(
+					IS_CONTEXT_CONTROL_CODE_DEFINED__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}

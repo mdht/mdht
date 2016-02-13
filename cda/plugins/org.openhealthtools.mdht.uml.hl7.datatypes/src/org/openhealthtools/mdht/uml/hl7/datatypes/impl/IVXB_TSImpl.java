@@ -87,8 +87,8 @@ public class IVXB_TSImpl extends TSImpl implements IVXB_TS {
 		Boolean oldInclusive = inclusive;
 		inclusive = newInclusive;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.IVXB_TS__INCLUSIVE, oldInclusive, inclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVXB_TS__INCLUSIVE, oldInclusive,
+				inclusive));
 		}
 	}
 

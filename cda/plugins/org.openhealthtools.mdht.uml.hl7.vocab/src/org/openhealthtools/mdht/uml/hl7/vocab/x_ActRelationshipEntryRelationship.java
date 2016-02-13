@@ -291,7 +291,8 @@ public enum x_ActRelationshipEntryRelationship implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<x_ActRelationshipEntryRelationship> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<x_ActRelationshipEntryRelationship> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>xAct Relationship Entry Relationship</b></em>' literal with the specified literal value.

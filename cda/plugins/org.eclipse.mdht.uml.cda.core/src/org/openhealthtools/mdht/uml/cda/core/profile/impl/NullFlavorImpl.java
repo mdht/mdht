@@ -38,7 +38,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNullFlavor()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	 * The cached value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNullFlavor()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NullFlavorImpl() {
@@ -69,7 +69,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NullFlavorKind getNullFlavor() {
@@ -156,7 +156,7 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setNullFlavor(NullFlavorKind newNullFlavor) {
@@ -165,15 +165,15 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 				? NULL_FLAVOR_EDEFAULT
 				: newNullFlavor;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.NULL_FLAVOR__NULL_FLAVOR, oldNullFlavor, nullFlavor));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.NULL_FLAVOR__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

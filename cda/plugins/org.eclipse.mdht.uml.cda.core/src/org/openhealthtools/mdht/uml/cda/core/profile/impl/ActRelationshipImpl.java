@@ -42,7 +42,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	 * The cached value of the '{@link #getBase_Association() <em>Base Association</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Association()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	 * The cached value of the '{@link #getAssociationType() <em>Association Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAssociationType()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	 * The cached value of the '{@link #getTypeCode() <em>Type Code</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeCode()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ActRelationshipImpl() {
@@ -84,7 +84,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetAssociationType() {
@@ -94,7 +94,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Association basicGetBase_Association() {
@@ -104,7 +104,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EnumerationLiteral basicGetTypeCode() {
@@ -114,7 +114,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class getAssociationType() {
@@ -225,9 +225,8 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 			associationType = (org.eclipse.uml2.uml.Class) eResolveProxy(oldAssociationType);
 			if (associationType != oldAssociationType) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.ACT_RELATIONSHIP__ASSOCIATION_TYPE, oldAssociationType,
-						associationType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						CDAPackage.ACT_RELATIONSHIP__ASSOCIATION_TYPE, oldAssociationType, associationType));
 				}
 			}
 		}
@@ -237,7 +236,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Association getBase_Association() {
@@ -246,9 +245,8 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 			base_Association = (Association) eResolveProxy(oldBase_Association);
 			if (base_Association != oldBase_Association) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.ACT_RELATIONSHIP__BASE_ASSOCIATION, oldBase_Association,
-						base_Association));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						CDAPackage.ACT_RELATIONSHIP__BASE_ASSOCIATION, oldBase_Association, base_Association));
 				}
 			}
 		}
@@ -258,7 +256,7 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EnumerationLiteral getTypeCode() {
@@ -267,8 +265,8 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 			typeCode = (EnumerationLiteral) eResolveProxy(oldTypeCode);
 			if (typeCode != oldTypeCode) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.ACT_RELATIONSHIP__TYPE_CODE, oldTypeCode, typeCode));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.ACT_RELATIONSHIP__TYPE_CODE,
+						oldTypeCode, typeCode));
 				}
 			}
 		}
@@ -278,47 +276,45 @@ public class ActRelationshipImpl extends EObjectImpl implements ActRelationship 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAssociationType(org.eclipse.uml2.uml.Class newAssociationType) {
 		org.eclipse.uml2.uml.Class oldAssociationType = associationType;
 		associationType = newAssociationType;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__ASSOCIATION_TYPE, oldAssociationType,
-				associationType));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__ASSOCIATION_TYPE,
+				oldAssociationType, associationType));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Association(Association newBase_Association) {
 		Association oldBase_Association = base_Association;
 		base_Association = newBase_Association;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__BASE_ASSOCIATION, oldBase_Association,
-				base_Association));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__BASE_ASSOCIATION,
+				oldBase_Association, base_Association));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTypeCode(EnumerationLiteral newTypeCode) {
 		EnumerationLiteral oldTypeCode = typeCode;
 		typeCode = newTypeCode;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__TYPE_CODE, oldTypeCode, typeCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT_RELATIONSHIP__TYPE_CODE, oldTypeCode,
+				typeCode));
 		}
 	}
 

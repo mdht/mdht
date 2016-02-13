@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.dialogs;
@@ -36,7 +36,7 @@ import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.common.ui.search.ModelSearch;
 
 /**
- * 
+ *
  * @version $Id: $
  */
 public class DialogLaunchUtil {
@@ -65,7 +65,7 @@ public class DialogLaunchUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static Type chooseType(ResourceSet resourceSet, Shell shell) {
 		Class<?>[] filter = { Type.class };
@@ -73,7 +73,7 @@ public class DialogLaunchUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static NamedElement chooseElement(Class<?>[] filter, ResourceSet resourceSet, Shell shell) {
 		return chooseElement(
@@ -81,7 +81,7 @@ public class DialogLaunchUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static NamedElement chooseElement(Class<?>[] filter, Package umlPackage, Shell shell) {
 		return chooseElement(
@@ -131,7 +131,7 @@ public class DialogLaunchUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static NamedElement chooseElement(Class<?>[] filter, ResourceSet resourceSet, Shell shell, String title,
 			String message) {
@@ -155,7 +155,7 @@ public class DialogLaunchUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static NamedElement chooseElement(IElementFilter filter, ResourceSet resourceSet, Shell shell) {
 		return chooseElement(
@@ -163,7 +163,7 @@ public class DialogLaunchUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static NamedElement chooseElement(IElementFilter filter, ResourceSet resourceSet, Shell shell, String title,
 			String message) {
@@ -186,7 +186,7 @@ public class DialogLaunchUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static NamedElement chooseElement(IElementFilter filter, Package umlPackage, Shell shell) {
 		return chooseElement(
@@ -194,7 +194,7 @@ public class DialogLaunchUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static NamedElement chooseElement(IElementFilter filter, Package umlPackage, Shell shell, String title,
 			String message) {
@@ -202,7 +202,7 @@ public class DialogLaunchUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static NamedElement chooseElement(IElementFilter filter, Package umlPackage, Shell shell, String title,
 			String message, boolean returnOne) {
@@ -229,7 +229,7 @@ public class DialogLaunchUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static Package choosePackage(ResourceSet resourceSet, Shell shell) {
 		List<Element> packagesList = ModelSearch.findAllOf(resourceSet, Package.class);

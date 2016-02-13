@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Kenn Hussey - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.navigator.internal.actions;
 
@@ -157,8 +157,8 @@ public class ExportToXMIAction extends ActionDelegate implements IObjectActionDe
 	}
 
 	protected Resource exportResource(ResourceSet resourceSet, Resource resource, URI destinationURI) {
-		URI xmiURI = destinationURI.appendSegment(resource.getURI().lastSegment()).trimFileExtension().appendFileExtension(
-			XMI2UMLResource.FILE_EXTENSION);
+		URI xmiURI = destinationURI.appendSegment(
+			resource.getURI().lastSegment()).trimFileExtension().appendFileExtension(XMI2UMLResource.FILE_EXTENSION);
 		Resource xmiResource = resourceSet.createResource(xmiURI, XMI2UMLResource.UML_CONTENT_TYPE_IDENTIFIER);
 		EList<EObject> xmiContents = xmiResource.getContents();
 

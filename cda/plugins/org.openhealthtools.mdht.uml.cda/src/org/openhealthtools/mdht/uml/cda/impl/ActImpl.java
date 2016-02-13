@@ -642,20 +642,20 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		if (newStatusCode != statusCode) {
 			NotificationChain msgs = null;
 			if (statusCode != null) {
-				msgs = ((InternalEObject) statusCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ACT__STATUS_CODE, null, msgs);
+				msgs = ((InternalEObject) statusCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ACT__STATUS_CODE, null, msgs);
 			}
 			if (newStatusCode != null) {
-				msgs = ((InternalEObject) newStatusCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ACT__STATUS_CODE, null, msgs);
+				msgs = ((InternalEObject) newStatusCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ACT__STATUS_CODE, null, msgs);
 			}
 			msgs = basicSetStatusCode(newStatusCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT__STATUS_CODE, newStatusCode, newStatusCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT__STATUS_CODE, newStatusCode,
+				newStatusCode));
 		}
 	}
 
@@ -697,20 +697,20 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		if (newEffectiveTime != effectiveTime) {
 			NotificationChain msgs = null;
 			if (effectiveTime != null) {
-				msgs = ((InternalEObject) effectiveTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ACT__EFFECTIVE_TIME, null, msgs);
+				msgs = ((InternalEObject) effectiveTime).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ACT__EFFECTIVE_TIME, null, msgs);
 			}
 			if (newEffectiveTime != null) {
-				msgs = ((InternalEObject) newEffectiveTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ACT__EFFECTIVE_TIME, null, msgs);
+				msgs = ((InternalEObject) newEffectiveTime).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ACT__EFFECTIVE_TIME, null, msgs);
 			}
 			msgs = basicSetEffectiveTime(newEffectiveTime, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT__EFFECTIVE_TIME, newEffectiveTime, newEffectiveTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT__EFFECTIVE_TIME, newEffectiveTime,
+				newEffectiveTime));
 		}
 	}
 
@@ -752,20 +752,20 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		if (newPriorityCode != priorityCode) {
 			NotificationChain msgs = null;
 			if (priorityCode != null) {
-				msgs = ((InternalEObject) priorityCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ACT__PRIORITY_CODE, null, msgs);
+				msgs = ((InternalEObject) priorityCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ACT__PRIORITY_CODE, null, msgs);
 			}
 			if (newPriorityCode != null) {
-				msgs = ((InternalEObject) newPriorityCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ACT__PRIORITY_CODE, null, msgs);
+				msgs = ((InternalEObject) newPriorityCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ACT__PRIORITY_CODE, null, msgs);
 			}
 			msgs = basicSetPriorityCode(newPriorityCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT__PRIORITY_CODE, newPriorityCode, newPriorityCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT__PRIORITY_CODE, newPriorityCode,
+				newPriorityCode));
 		}
 	}
 
@@ -807,20 +807,20 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		if (newLanguageCode != languageCode) {
 			NotificationChain msgs = null;
 			if (languageCode != null) {
-				msgs = ((InternalEObject) languageCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ACT__LANGUAGE_CODE, null, msgs);
+				msgs = ((InternalEObject) languageCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ACT__LANGUAGE_CODE, null, msgs);
 			}
 			if (newLanguageCode != null) {
-				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ACT__LANGUAGE_CODE, null, msgs);
+				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ACT__LANGUAGE_CODE, null, msgs);
 			}
 			msgs = basicSetLanguageCode(newLanguageCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT__LANGUAGE_CODE, newLanguageCode, newLanguageCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT__LANGUAGE_CODE, newLanguageCode,
+				newLanguageCode));
 		}
 	}
 
@@ -862,12 +862,12 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		if (newSubject != subject) {
 			NotificationChain msgs = null;
 			if (subject != null) {
-				msgs = ((InternalEObject) subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ACT__SUBJECT, null, msgs);
+				msgs = ((InternalEObject) subject).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ACT__SUBJECT, null, msgs);
 			}
 			if (newSubject != null) {
-				msgs = ((InternalEObject) newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ACT__SUBJECT, null, msgs);
+				msgs = ((InternalEObject) newSubject).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ACT__SUBJECT, null, msgs);
 			}
 			msgs = basicSetSubject(newSubject, msgs);
 			if (msgs != null) {
@@ -1000,8 +1000,8 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -1016,9 +1016,8 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ACT__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ACT__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -1054,8 +1053,8 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT__CLASS_CODE, oldClassCode, classCode,
+				!oldClassCodeESet));
 		}
 	}
 
@@ -1070,9 +1069,8 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ACT__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ACT__CLASS_CODE, oldClassCode,
+				CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -1108,8 +1106,8 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT__MOOD_CODE, oldMoodCode, moodCode,
+				!oldMoodCodeESet));
 		}
 	}
 
@@ -1124,8 +1122,8 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ACT__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ACT__MOOD_CODE, oldMoodCode,
+				MOOD_CODE_EDEFAULT, oldMoodCodeESet));
 		}
 	}
 
@@ -1159,8 +1157,8 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		boolean oldNegationIndESet = negationIndESet;
 		negationIndESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ACT__NEGATION_IND, oldNegationInd, negationInd, !oldNegationIndESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT__NEGATION_IND, oldNegationInd,
+				negationInd, !oldNegationIndESet));
 		}
 	}
 
@@ -1175,9 +1173,8 @@ public class ActImpl extends ClinicalStatementImpl implements Act {
 		negationInd = NEGATION_IND_EDEFAULT;
 		negationIndESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ACT__NEGATION_IND, oldNegationInd, NEGATION_IND_EDEFAULT,
-				oldNegationIndESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ACT__NEGATION_IND, oldNegationInd,
+				NEGATION_IND_EDEFAULT, oldNegationIndESet));
 		}
 	}
 

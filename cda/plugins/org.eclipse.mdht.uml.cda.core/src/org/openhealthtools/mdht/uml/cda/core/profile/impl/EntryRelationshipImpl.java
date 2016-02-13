@@ -38,7 +38,7 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	 * The default value of the '{@link #getTypeCode() <em>Type Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeCode()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	 * The cached value of the '{@link #getTypeCode() <em>Type Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeCode()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EntryRelationshipImpl() {
@@ -69,7 +69,7 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EntryRelationshipKind getTypeCode() {
@@ -156,7 +156,7 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTypeCode(EntryRelationshipKind newTypeCode) {
@@ -165,15 +165,15 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 				? TYPE_CODE_EDEFAULT
 				: newTypeCode;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__TYPE_CODE, oldTypeCode, typeCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__TYPE_CODE, oldTypeCode,
+				typeCode));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

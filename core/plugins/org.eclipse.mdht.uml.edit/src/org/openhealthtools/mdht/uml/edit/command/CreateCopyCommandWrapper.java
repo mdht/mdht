@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.command;
 
@@ -34,7 +34,8 @@ public class CreateCopyCommandWrapper implements UMLCommandWrapper {
 
 		if (parameter.getOwner() instanceof Element) {
 			final Element element = (Element) parameter.getOwner();
-			final Collection<? extends EObject> stereotypeApplications = AddCommandWrapper.StereotypesCache.getStereotypeApplications(element);
+			final Collection<? extends EObject> stereotypeApplications = AddCommandWrapper.StereotypesCache.getStereotypeApplications(
+				element);
 
 			if (!stereotypeApplications.isEmpty()) {
 				class Impl extends CommandWrapper implements ChildrenToCopyProvider {
@@ -43,8 +44,8 @@ public class CreateCopyCommandWrapper implements UMLCommandWrapper {
 					}
 
 					public Collection<?> getChildrenToCopy() {
-						Collection<Object> result = new java.util.ArrayList<Object>(element.eContents().size() +
-								stereotypeApplications.size());
+						Collection<Object> result = new java.util.ArrayList<Object>(
+							element.eContents().size() + stereotypeApplications.size());
 
 						if (getCommand() instanceof ChildrenToCopyProvider) {
 							result.addAll(((ChildrenToCopyProvider) getCommand()).getChildrenToCopy());

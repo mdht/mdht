@@ -37,7 +37,7 @@ import org.xml.sax.SAXException;
  * applications can use to properly initialize emf plugins which are normally
  * intialized within the eclipse environment through the
  * org.eclipse.emf.ecore.generated_package extension
- * 
+ *
  */
 public class CDAPackageLoader {
 
@@ -99,7 +99,7 @@ public class CDAPackageLoader {
 	/**
 	 * loadPackages takes a directory location and loads all jars in
 	 * the subdirectory which have defined generated_package extension
-	 * 
+	 *
 	 * @param dir
 	 */
 	protected static final void loadPackages(String dir) {
@@ -125,9 +125,9 @@ public class CDAPackageLoader {
 		return;
 	}
 
-	private static void processModelPlugin(ZipFile zipFile) throws SAXException, IOException,
-			ParserConfigurationException, XPathExpressionException, ClassNotFoundException, SecurityException,
-			NoSuchFieldException {
+	private static void processModelPlugin(ZipFile zipFile)
+			throws SAXException, IOException, ParserConfigurationException, XPathExpressionException,
+			ClassNotFoundException, SecurityException, NoSuchFieldException {
 
 		// Get the plugin.xml
 		ZipEntry pluginEntry = zipFile.getEntry("plugin.xml");
@@ -140,9 +140,9 @@ public class CDAPackageLoader {
 		}
 	}
 
-	private static void processPluginXML(InputStream pluginStream) throws SAXException, IOException,
-			ParserConfigurationException, XPathExpressionException, ClassNotFoundException, SecurityException,
-			NoSuchFieldException {
+	private static void processPluginXML(InputStream pluginStream)
+			throws SAXException, IOException, ParserConfigurationException, XPathExpressionException,
+			ClassNotFoundException, SecurityException, NoSuchFieldException {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
 		factory.setNamespaceAware(true);

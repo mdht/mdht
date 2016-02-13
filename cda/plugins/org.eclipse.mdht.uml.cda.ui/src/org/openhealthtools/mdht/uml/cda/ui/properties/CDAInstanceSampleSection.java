@@ -1,7 +1,7 @@
 /**
  * Copyright: NEHTA 2015
- * Author: Joerg Kiegeland, Distributed Models Pty Ltd 
- * 
+ * Author: Joerg Kiegeland, Distributed Models Pty Ltd
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -102,7 +102,8 @@ public class CDAInstanceSampleSection extends InstanceSampleSection {
 
 				MemoDialog dialog = new MemoDialog(Display.getCurrent().getActiveShell(), !statuses.isEmpty()
 						? "Sample XML (see Error Log for more information)"
-						: "Sample XML", xml);
+						: "Sample XML",
+					xml);
 
 				dialog.open();
 

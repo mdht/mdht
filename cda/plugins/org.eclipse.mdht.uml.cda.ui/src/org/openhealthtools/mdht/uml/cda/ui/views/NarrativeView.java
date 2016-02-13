@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.views;
 
@@ -52,7 +52,8 @@ public class NarrativeView extends ViewPart {
 
 					try {
 						CDAUtil.saveSnippet(EcoreUtil.copy(s), fa);
-						String a = String.format("<html><head></head><body>SECTION NARRATIVE<br/>%s</body></html>", fa).toString();
+						String a = String.format(
+							"<html><head></head><body>SECTION NARRATIVE<br/>%s</body></html>", fa).toString();
 						browser.setText(a);
 					} catch (Exception e) {
 						e.printStackTrace();

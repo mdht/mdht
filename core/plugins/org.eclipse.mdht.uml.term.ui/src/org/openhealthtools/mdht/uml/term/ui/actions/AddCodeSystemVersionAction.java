@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.actions;
@@ -68,7 +68,8 @@ public class AddCodeSystemVersionAction implements IObjectActionDelegate {
 
 					Enumeration enumeration = UMLFactory.eINSTANCE.createEnumeration();
 
-					String name = UMLUtil.getUniqueTypeName(selectedPackage, Messages.AddCodeSystemVersion_default_name);
+					String name = UMLUtil.getUniqueTypeName(
+						selectedPackage, Messages.AddCodeSystemVersion_default_name);
 					enumeration.setName(name);
 					selectedPackage.getOwnedTypes().add(enumeration);
 					TermProfileUtil.applyStereotype(enumeration, ITermProfileConstants.CODE_SYSTEM_VERSION);

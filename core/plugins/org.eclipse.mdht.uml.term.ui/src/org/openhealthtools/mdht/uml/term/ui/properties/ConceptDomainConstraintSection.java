@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for restoring defaults
  *     Christian W. Damus - implement handling of live validation roll-back (artf3318)
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
 
@@ -148,7 +148,8 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					ConceptDomainConstraint conceptDomainConstraint = TermProfileUtil.getConceptDomainConstraint(property);
+					ConceptDomainConstraint conceptDomainConstraint = TermProfileUtil.getConceptDomainConstraint(
+						property);
 
 					if (conceptDomainConstraint == null) {
 						return Status.CANCEL_STATUS;
@@ -270,7 +271,7 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification

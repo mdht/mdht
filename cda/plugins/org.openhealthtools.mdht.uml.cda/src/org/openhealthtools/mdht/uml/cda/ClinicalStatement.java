@@ -127,7 +127,8 @@ public interface ClinicalStatement extends Act {
 	 * @model ordered="false" typeCodeRequired="true" typeCodeOrdered="false" targetClassRequired="true" targetClassOrdered="false"
 	 * @generated
 	 */
-	EList<ClinicalStatement> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode, Object targetClass);
+	EList<ClinicalStatement> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode,
+			Object targetClass);
 
 	/**
 	 * <!-- begin-user-doc -->

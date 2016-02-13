@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.actions;
@@ -51,8 +51,9 @@ public class AddUMLAttributeAction extends UML2AbstractAction {
 	/**
 	 * Subclass may override to customize domain-specific processing.
 	 * Do nothing by default.
-	 * 
-	 * @param new property
+	 *
+	 * @param new
+	 *            property
 	 */
 	protected void postProcess(Property newProperty) {
 		// do nothing by default

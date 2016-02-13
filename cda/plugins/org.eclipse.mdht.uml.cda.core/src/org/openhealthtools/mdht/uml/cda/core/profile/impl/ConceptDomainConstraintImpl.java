@@ -43,7 +43,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConceptDomainConstraintImpl() {
@@ -118,7 +118,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConceptDomain getReference() {
@@ -138,9 +138,8 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 			reference = (ConceptDomain) eResolveProxy(oldReference);
 			if (reference != oldReference) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__REFERENCE, oldReference,
-						reference));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__REFERENCE, oldReference, reference));
 				}
 			}
 		}
@@ -150,7 +149,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConceptDomain basicGetReference() {
@@ -160,22 +159,22 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setReference(ConceptDomain newReference) {
 		ConceptDomain oldReference = reference;
 		reference = newReference;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__REFERENCE, oldReference, reference));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__REFERENCE,
+				oldReference, reference));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -185,22 +184,22 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__IDENTIFIER, oldIdentifier, identifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__IDENTIFIER,
+				oldIdentifier, identifier));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -210,22 +209,22 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__NAME, oldName,
+				name));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property getBase_Property() {
@@ -234,9 +233,8 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY,
-						oldBase_Property, base_Property));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY, oldBase_Property, base_Property));
 				}
 			}
 		}
@@ -246,7 +244,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -256,23 +254,22 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY, oldBase_Property,
-				base_Property));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__BASE_PROPERTY,
+				oldBase_Property, base_Property));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +296,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +321,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +346,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +371,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -399,7 +396,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -424,7 +421,7 @@ public class ConceptDomainConstraintImpl extends ValidationImpl implements Conce
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir - initial implementation
  *     David A Carlson (XMLmodeling.com) - generalize and move code into this util class
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.util;
 
@@ -125,14 +125,18 @@ public class CDAProjectUtil {
 
 							URI modelFile = null;
 							if (plugin.exists()) {
-								URI pathMap = org.openhealthtools.mdht.uml.common.UmlPlugin.getPathMap(plugin.getContents());
+								URI pathMap = org.openhealthtools.mdht.uml.common.UmlPlugin.getPathMap(
+									plugin.getContents());
 								if (pathMap != null) {
 									modelFile = pathMap.appendSegment(resource.getName());
 								} else {
-									modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+									modelFile = URI.createFileURI(
+										project.getFolder(model).getFile(
+											resource.getName()).getRawLocation().toOSString());
 								}
 							} else {
-								modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+								modelFile = URI.createFileURI(
+									project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
 							}
 
 							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(
@@ -156,8 +160,7 @@ public class CDAProjectUtil {
 											for (IResource genmodel : generatedProject.getFolder(model).members()) {
 												if (genmodel.getName().endsWith(".genmodel")) {
 													cdaDocumentsGenModels.put(
-														p.getQualifiedName(),
-														CDAUIUtil.getGenModel(
+														p.getQualifiedName(), CDAUIUtil.getGenModel(
 															generatedProject, genmodel.getProjectRelativePath()));
 												}
 											}

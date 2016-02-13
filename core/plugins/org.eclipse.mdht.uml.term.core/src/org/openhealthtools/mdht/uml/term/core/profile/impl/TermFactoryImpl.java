@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
@@ -39,14 +39,14 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -59,12 +59,13 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TermFactory init() {
 		try {
-			TermFactory theTermFactory = (TermFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/schemas/term/1");
+			TermFactory theTermFactory = (TermFactory) EPackage.Registry.INSTANCE.getEFactory(
+				"http://www.openhealthtools.org/mdht/schemas/term/1");
 			if (theTermFactory != null) {
 				return theTermFactory;
 			}
@@ -78,7 +79,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TermFactoryImpl() {
@@ -88,7 +89,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertBindingKindToString(EDataType eDataType, Object instanceValue) {
@@ -100,7 +101,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertStatusKindToString(EDataType eDataType, Object instanceValue) {
@@ -112,7 +113,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,15 +126,15 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 			case TermPackage.STATUS_KIND:
 				return convertStatusKindToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
-						"' is not a valid classifier");
+				throw new IllegalArgumentException(
+					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertValueSetTypeToString(EDataType eDataType, Object instanceValue) {
@@ -145,7 +146,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,14 +182,14 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BindingKind createBindingKindFromString(EDataType eDataType, String initialValue) {
 		BindingKind result = BindingKind.get(initialValue);
 		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
-					eDataType.getName() + "'");
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		}
 		return result;
 	}
@@ -196,7 +197,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CD createCD() {
@@ -207,7 +208,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CodeSystemConstraint createCodeSystemConstraint() {
@@ -218,7 +219,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CodeSystemVersion createCodeSystemVersion() {
@@ -229,7 +230,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConceptDomain createConceptDomain() {
@@ -240,7 +241,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConceptDomainConstraint createConceptDomainConstraint() {
@@ -251,7 +252,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CR createCR() {
@@ -262,7 +263,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,22 +276,22 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 			case TermPackage.STATUS_KIND:
 				return createStatusKindFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
-						"' is not a valid classifier");
+				throw new IllegalArgumentException(
+					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StatusKind createStatusKindFromString(EDataType eDataType, String initialValue) {
 		StatusKind result = StatusKind.get(initialValue);
 		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
-					eDataType.getName() + "'");
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		}
 		return result;
 	}
@@ -298,7 +299,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UsageContext createUsageContext() {
@@ -309,7 +310,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSetCode createValueSetCode() {
@@ -320,7 +321,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSetConstraint createValueSetConstraint() {
@@ -331,7 +332,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSetContextBinding createValueSetContextBinding() {
@@ -342,14 +343,14 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSetType createValueSetTypeFromString(EDataType eDataType, String initialValue) {
 		ValueSetType result = ValueSetType.get(initialValue);
 		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
-					eDataType.getName() + "'");
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		}
 		return result;
 	}
@@ -357,7 +358,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSetVersion createValueSetVersion() {
@@ -368,7 +369,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TermPackage getTermPackage() {

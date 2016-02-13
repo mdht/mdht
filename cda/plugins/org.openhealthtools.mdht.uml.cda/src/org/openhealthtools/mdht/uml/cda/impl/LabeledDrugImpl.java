@@ -264,20 +264,20 @@ public class LabeledDrugImpl extends EntityImpl implements LabeledDrug {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LABELED_DRUG__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LABELED_DRUG__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LABELED_DRUG__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LABELED_DRUG__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LABELED_DRUG__TYPE_ID, newTypeId, newTypeId));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.LABELED_DRUG__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -332,12 +332,12 @@ public class LabeledDrugImpl extends EntityImpl implements LabeledDrug {
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LABELED_DRUG__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LABELED_DRUG__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LABELED_DRUG__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LABELED_DRUG__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
@@ -386,12 +386,12 @@ public class LabeledDrugImpl extends EntityImpl implements LabeledDrug {
 		if (newName != name) {
 			NotificationChain msgs = null;
 			if (name != null) {
-				msgs = ((InternalEObject) name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LABELED_DRUG__NAME, null, msgs);
+				msgs = ((InternalEObject) name).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LABELED_DRUG__NAME, null, msgs);
 			}
 			if (newName != null) {
-				msgs = ((InternalEObject) newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LABELED_DRUG__NAME, null, msgs);
+				msgs = ((InternalEObject) newName).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LABELED_DRUG__NAME, null, msgs);
 			}
 			msgs = basicSetName(newName, msgs);
 			if (msgs != null) {
@@ -425,9 +425,8 @@ public class LabeledDrugImpl extends EntityImpl implements LabeledDrug {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LABELED_DRUG__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LABELED_DRUG__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -442,9 +441,8 @@ public class LabeledDrugImpl extends EntityImpl implements LabeledDrug {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.LABELED_DRUG__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.LABELED_DRUG__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -480,8 +478,8 @@ public class LabeledDrugImpl extends EntityImpl implements LabeledDrug {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LABELED_DRUG__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LABELED_DRUG__CLASS_CODE, oldClassCode,
+				classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -496,9 +494,8 @@ public class LabeledDrugImpl extends EntityImpl implements LabeledDrug {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.LABELED_DRUG__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.LABELED_DRUG__CLASS_CODE, oldClassCode,
+				CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -534,9 +531,8 @@ public class LabeledDrugImpl extends EntityImpl implements LabeledDrug {
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LABELED_DRUG__DETERMINER_CODE, oldDeterminerCode, determinerCode,
-				!oldDeterminerCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LABELED_DRUG__DETERMINER_CODE,
+				oldDeterminerCode, determinerCode, !oldDeterminerCodeESet));
 		}
 	}
 
@@ -551,9 +547,8 @@ public class LabeledDrugImpl extends EntityImpl implements LabeledDrug {
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.LABELED_DRUG__DETERMINER_CODE, oldDeterminerCode,
-				DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.LABELED_DRUG__DETERMINER_CODE,
+				oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
 		}
 	}
 

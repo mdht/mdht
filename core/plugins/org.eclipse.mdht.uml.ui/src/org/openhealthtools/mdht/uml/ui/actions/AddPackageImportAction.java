@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.actions;
@@ -42,8 +42,9 @@ public class AddPackageImportAction extends UML2AbstractAction {
 	/**
 	 * Subclass may override to customize domain-specific processing.
 	 * Do nothing by default.
-	 * 
-	 * @param new PackageImport
+	 *
+	 * @param new
+	 *            PackageImport
 	 */
 	protected void postProcess(PackageImport newPackageImport) {
 		// do nothing by default

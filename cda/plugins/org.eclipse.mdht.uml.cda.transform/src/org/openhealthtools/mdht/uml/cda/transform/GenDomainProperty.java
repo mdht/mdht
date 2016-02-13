@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - discriminate multiple property constraints (artf3185)
  *                        - factor out CDA base model dependencies (artf3350)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
@@ -160,7 +160,8 @@ public class GenDomainProperty extends TransformFacade {
 	private boolean isFixedValue(Property property) {
 		if (property.isReadOnly()) {
 			return true;
-		} else if (getEcoreProfile().getValidationSeverity(property, ValidationStereotypeKind.CODE_SYSTEM) == ValidationSeverityKind.ERROR) {
+		} else if (getEcoreProfile().getValidationSeverity(
+			property, ValidationStereotypeKind.CODE_SYSTEM) == ValidationSeverityKind.ERROR) {
 			// SHALL contain a specific code
 			CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 			if (codeSystemConstraint != null) {

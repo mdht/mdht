@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (National E-Health Transition Authority (NEHTA)) - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common;
 
@@ -40,7 +40,7 @@ import org.xml.sax.SAXException;
 
 /**
  * @author seanmuir
- * 
+ *
  */
 public class UmlPlugin extends EMFPlugin {
 
@@ -71,7 +71,7 @@ public class UmlPlugin extends EMFPlugin {
 
 	public static void computeModelPathMapExtensions() {
 
-		if (EcorePlugin.IS_ECLIPSE_RUNNING) {
+		if (EMFPlugin.IS_ECLIPSE_RUNNING) {
 			IWorkspaceRoot root = EcorePlugin.getWorkspaceRoot();
 			if (root != null) {
 				IProject[] projects = root.getProjects();
@@ -139,9 +139,9 @@ public class UmlPlugin extends EMFPlugin {
 		return;
 	}
 
-	private static void processPluginXML(String location, InputStream pluginStream) throws SAXException, IOException,
-			ParserConfigurationException, XPathExpressionException, ClassNotFoundException, SecurityException,
-			NoSuchFieldException {
+	private static void processPluginXML(String location, InputStream pluginStream)
+			throws SAXException, IOException, ParserConfigurationException, XPathExpressionException,
+			ClassNotFoundException, SecurityException, NoSuchFieldException {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
 		factory.setNamespaceAware(true);
@@ -172,7 +172,7 @@ public class UmlPlugin extends EMFPlugin {
 			URI key = URI.createURI(source);
 
 			URI value = null;
-			if (EcorePlugin.IS_ECLIPSE_RUNNING) {
+			if (EMFPlugin.IS_ECLIPSE_RUNNING) {
 				value = URI.createURI("platform:/plugin/" + location + "/" + target);
 			} else {
 
@@ -183,9 +183,9 @@ public class UmlPlugin extends EMFPlugin {
 		}
 	}
 
-	public static URI getPathMap(InputStream pluginStream) throws SAXException, IOException,
-			ParserConfigurationException, XPathExpressionException, ClassNotFoundException, SecurityException,
-			NoSuchFieldException {
+	public static URI getPathMap(InputStream pluginStream)
+			throws SAXException, IOException, ParserConfigurationException, XPathExpressionException,
+			ClassNotFoundException, SecurityException, NoSuchFieldException {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
 		factory.setNamespaceAware(true);
@@ -212,7 +212,7 @@ public class UmlPlugin extends EMFPlugin {
 		NodeList nodes = (NodeList) result;
 		for (int i = 0; i < nodes.getLength(); i++) {
 			String source = nodes.item(i).getAttributes().getNamedItem("source").getNodeValue();
-			String target = nodes.item(i).getAttributes().getNamedItem("target").getNodeValue();
+			nodes.item(i).getAttributes().getNamedItem("target").getNodeValue();
 			key = URI.createURI(source + "/");
 		}
 
@@ -223,7 +223,7 @@ public class UmlPlugin extends EMFPlugin {
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipsePlugin {
@@ -232,7 +232,7 @@ public class UmlPlugin extends EMFPlugin {
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public Implementation() {

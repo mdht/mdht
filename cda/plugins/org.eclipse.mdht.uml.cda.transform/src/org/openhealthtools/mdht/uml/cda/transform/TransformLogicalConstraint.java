@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     seanmuir - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
@@ -47,7 +47,7 @@ import org.openhealthtools.mdht.uml.transform.ecore.TransformConstraint;
 
 /**
  * @author seanmuir
- * 
+ *
  */
 public class TransformLogicalConstraint extends TransformConstraint {
 
@@ -101,13 +101,13 @@ public class TransformLogicalConstraint extends TransformConstraint {
 	 * can be nested multiple levels deep. In such cases, the OCL's should reference the
 	 * base class. This method would return the qualified name of the base class, if the
 	 * nesting is more than 2 levels deep.
-	 * 
+	 *
 	 * e.g : A class with a qualified name
 	 * consol::GeneralHeaderConstraints::RecordTarget::PatientRole should
 	 * be referenced as cda::PatientRole
-	 * 
+	 *
 	 * Also make sure the the class name is valid for Java - so no spaces, etc
-	 * 
+	 *
 	 * @param constraintTarget
 	 * @return
 	 */
@@ -140,8 +140,9 @@ public class TransformLogicalConstraint extends TransformConstraint {
 			constraintBody.append((sourceProperty.getUpper() == 1)
 					? "one("
 					: "exists(");
-			constraintBody.append("section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" +
-					constraintTargetQName + "))");
+			constraintBody.append(
+				"section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" +
+						constraintTargetQName + "))");
 
 			// start building "getter" operation body
 			operationBody.append(constraintBody.toString().replace("one", "select").replace("exists", "select"));
@@ -169,10 +170,12 @@ public class TransformLogicalConstraint extends TransformConstraint {
 		} else if (CDAModelUtil.isClinicalStatement(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
 			associationEndOut[0] = "entryRelationship";
 			variableDeclarationOut[0] = "entryRelationship : cda::EntryRelationship";
-		} else if (CDAModelUtil.isClinicalStatement(sourceClass) && "ParticipantRole".equals(baseTargetClass.getName())) {
+		} else if (CDAModelUtil.isClinicalStatement(sourceClass) &&
+				"ParticipantRole".equals(baseTargetClass.getName())) {
 			associationEndOut[0] = "participant";
 			variableDeclarationOut[0] = "participant : cda::Participant2";
-		} else if (CDAModelUtil.isClinicalStatement(sourceClass) && "AssignedEntity".equals(baseTargetClass.getName())) {
+		} else if (CDAModelUtil.isClinicalStatement(sourceClass) &&
+				"AssignedEntity".equals(baseTargetClass.getName())) {
 			associationEndOut[0] = "performer";
 			variableDeclarationOut[0] = "performer : cda::Performer2";
 		} else {
@@ -383,7 +386,8 @@ public class TransformLogicalConstraint extends TransformConstraint {
 			constraintBody.append(reference + ".oclIsKindOf(" + constraintTargetQName + ")");
 
 			// handle any stereotypes that may be applied to the association
-			appendAssociationStereotypeConditions(constraintBody, association, associationEnd, sourceClass, targetClass);
+			appendAssociationStereotypeConditions(
+				constraintBody, association, associationEnd, sourceClass, targetClass);
 
 			// close off the 'select' or 'exists' or 'one' iterator
 			constraintBody.append(")");
@@ -433,7 +437,8 @@ public class TransformLogicalConstraint extends TransformConstraint {
 			expression.getLanguages().add("OCL");
 			expression.getBodies().add(constraintBody.toString());
 
-			String validationMessage = getEcoreProfile().getValidationMessage(association, ValidationStereotypeKind.ANY);
+			String validationMessage = getEcoreProfile().getValidationMessage(
+				association, ValidationStereotypeKind.ANY);
 			if (severity == ValidationSeverityKind.INFO) {
 				addValidationInfo(sourceClass, constraintName, validationMessage);
 			} else if (severity == ValidationSeverityKind.WARNING) {
@@ -543,7 +548,7 @@ public class TransformLogicalConstraint extends TransformConstraint {
 	 * Method was lifted from
 	 * org.openhealthtools.mdht.uml.cda.transform.TransformCDAPropertyConstraint.PropertyValidationHandler.addConstraint(PropertyContext)
 	 * It was not a simple task to extract the ocl generation from the some of the other functionality
-	 * 
+	 *
 	 * @param property
 	 * @return
 	 */
@@ -784,7 +789,7 @@ public class TransformLogicalConstraint extends TransformConstraint {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.cda.core.profile.util.CDASwitch#caseLogicalConstraint(org.openhealthtools.mdht.uml.cda.core.profile.
 		 * LogicalConstraint)
 		 */
@@ -882,7 +887,7 @@ public class TransformLogicalConstraint extends TransformConstraint {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.transform.ecore.TransformConstraint#caseConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
 	@Override

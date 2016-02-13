@@ -59,10 +59,10 @@ public class UMLCommandAction extends CommandAction implements IObjectActionDele
 				EObject eObject = null;
 				if (element instanceof IAdaptable) {
 					// Try to adapt to View first, since Notation OK
-					eObject = (EObject) ((IAdaptable) element).getAdapter(View.class);
+					eObject = ((IAdaptable) element).getAdapter(View.class);
 
 					if (eObject == null) {
-						eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
+						eObject = ((IAdaptable) element).getAdapter(EObject.class);
 					}
 				} else if (element instanceof EObject) {
 					eObject = (EObject) element;

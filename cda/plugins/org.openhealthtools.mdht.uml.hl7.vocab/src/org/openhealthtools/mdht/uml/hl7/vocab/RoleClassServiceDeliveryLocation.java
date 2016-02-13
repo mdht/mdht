@@ -116,7 +116,8 @@ public enum RoleClassServiceDeliveryLocation implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<RoleClassServiceDeliveryLocation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<RoleClassServiceDeliveryLocation> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Role Class Service Delivery Location</b></em>' literal with the specified literal value.

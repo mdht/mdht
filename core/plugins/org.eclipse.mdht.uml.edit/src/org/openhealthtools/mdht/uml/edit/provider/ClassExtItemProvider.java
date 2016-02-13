@@ -4,13 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
  *     Christian W. Damus - fix re-ordering of properties and constraints
  *                        - ensure correct structure of pasted association copies (artf3287)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
@@ -49,7 +49,7 @@ import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
- * 
+ *
  * @version $Id: $
  */
 public class ClassExtItemProvider extends ClassItemProvider implements ITableItemLabelProvider, ICellModifier {
@@ -65,7 +65,7 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.ClassItemProvider#getImage(java.lang.Object)
 	 */
 	@Override
@@ -82,26 +82,27 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 		AdapterFactory adapterFactory = getAdapterFactory();
 		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
 				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
-				? NamedElementUtil.getBusinessName(namedElement)
-				: namedElement.getName();
+						? NamedElementUtil.getBusinessName(namedElement)
+						: namedElement.getName();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.ClassItemProvider#getText(java.lang.Object)
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = getName((org.eclipse.uml2.uml.Class) object);
 		return label == null || label.length() == 0
-				? getString("_UI_Class_type") : //$NON-NLS-1$
+				? getString("_UI_Class_type") //$NON-NLS-1$
+				:
 				label;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
@@ -306,7 +307,7 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -320,7 +321,7 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
@@ -336,7 +337,7 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {
@@ -372,9 +373,10 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 
 			// add the associations to the package, but sneak them in a Trojan horse because otherwise they would be blocked
 			// by the package's item provider
-			compound.append(AddCommand.create(
-				domain, nearestPackage, UMLPackage.Literals.PACKAGE__PACKAGED_ELEMENT,
-				TrojanHorse.wrap(associations, owner, feature, adapterFactory)));
+			compound.append(
+				AddCommand.create(
+					domain, nearestPackage, UMLPackage.Literals.PACKAGE__PACKAGED_ELEMENT,
+					TrojanHorse.wrap(associations, owner, feature, adapterFactory)));
 
 			if (owner.eResource() != nearestPackage.eResource()) {
 				// need to co-control the associations
@@ -394,8 +396,9 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 
 			if (!navigableEnds.isEmpty()) {
 				// add the navigable ends to the destination class
-				compound.append(AddCommand.create(
-					domain, owner, UMLPackage.Literals.STRUCTURED_CLASSIFIER__OWNED_ATTRIBUTE, navigableEnds));
+				compound.append(
+					AddCommand.create(
+						domain, owner, UMLPackage.Literals.STRUCTURED_CLASSIFIER__OWNED_ATTRIBUTE, navigableEnds));
 
 				// AND make sure that the opposites that we copied are typed by the destination class, otherwise it's
 				// not a valid association
@@ -403,7 +406,8 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 				for (Property next : navigableEnds) {
 					Property other = next.getOtherEnd();
 					if (other != null) {
-						compound.append(SetCommand.create(domain, other, UMLPackage.Literals.TYPED_ELEMENT__TYPE, type));
+						compound.append(
+							SetCommand.create(domain, other, UMLPackage.Literals.TYPED_ELEMENT__TYPE, type));
 					}
 				}
 			}

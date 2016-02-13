@@ -540,20 +540,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID,
+				newTypeId, newTypeId));
 		}
 	}
 
@@ -621,20 +621,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__CODE, newCode, newCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__CODE, newCode,
+				newCode));
 		}
 	}
 
@@ -676,20 +676,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newText != text) {
 			NotificationChain msgs = null;
 			if (text != null) {
-				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT, null, msgs);
+				msgs = ((InternalEObject) text).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT, null, msgs);
 			}
 			if (newText != null) {
-				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT, null, msgs);
+				msgs = ((InternalEObject) newText).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT, null, msgs);
 			}
 			msgs = basicSetText(newText, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT, newText, newText));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT, newText,
+				newText));
 		}
 	}
 
@@ -731,20 +731,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newStatusCode != statusCode) {
 			NotificationChain msgs = null;
 			if (statusCode != null) {
-				msgs = ((InternalEObject) statusCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE, null, msgs);
+				msgs = ((InternalEObject) statusCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE, null, msgs);
 			}
 			if (newStatusCode != null) {
-				msgs = ((InternalEObject) newStatusCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE, null, msgs);
+				msgs = ((InternalEObject) newStatusCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE, null, msgs);
 			}
 			msgs = basicSetStatusCode(newStatusCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE, newStatusCode, newStatusCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE,
+				newStatusCode, newStatusCode));
 		}
 	}
 
@@ -800,21 +800,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newPriorityCode != priorityCode) {
 			NotificationChain msgs = null;
 			if (priorityCode != null) {
-				msgs = ((InternalEObject) priorityCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE, null, msgs);
+				msgs = ((InternalEObject) priorityCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE, null, msgs);
 			}
 			if (newPriorityCode != null) {
-				msgs = ((InternalEObject) newPriorityCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE, null, msgs);
+				msgs = ((InternalEObject) newPriorityCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE, null, msgs);
 			}
 			msgs = basicSetPriorityCode(newPriorityCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE, newPriorityCode,
-				newPriorityCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE,
+				newPriorityCode, newPriorityCode));
 		}
 	}
 
@@ -857,21 +856,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newRepeatNumber != repeatNumber) {
 			NotificationChain msgs = null;
 			if (repeatNumber != null) {
-				msgs = ((InternalEObject) repeatNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER, null, msgs);
+				msgs = ((InternalEObject) repeatNumber).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER, null, msgs);
 			}
 			if (newRepeatNumber != null) {
-				msgs = ((InternalEObject) newRepeatNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER, null, msgs);
+				msgs = ((InternalEObject) newRepeatNumber).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER, null, msgs);
 			}
 			msgs = basicSetRepeatNumber(newRepeatNumber, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER, newRepeatNumber,
-				newRepeatNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER,
+				newRepeatNumber, newRepeatNumber));
 		}
 	}
 
@@ -913,20 +911,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newRouteCode != routeCode) {
 			NotificationChain msgs = null;
 			if (routeCode != null) {
-				msgs = ((InternalEObject) routeCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE, null, msgs);
+				msgs = ((InternalEObject) routeCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE, null, msgs);
 			}
 			if (newRouteCode != null) {
-				msgs = ((InternalEObject) newRouteCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE, null, msgs);
+				msgs = ((InternalEObject) newRouteCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE, null, msgs);
 			}
 			msgs = basicSetRouteCode(newRouteCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE, newRouteCode, newRouteCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE,
+				newRouteCode, newRouteCode));
 		}
 	}
 
@@ -982,21 +980,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newDoseQuantity != doseQuantity) {
 			NotificationChain msgs = null;
 			if (doseQuantity != null) {
-				msgs = ((InternalEObject) doseQuantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY, null, msgs);
+				msgs = ((InternalEObject) doseQuantity).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY, null, msgs);
 			}
 			if (newDoseQuantity != null) {
-				msgs = ((InternalEObject) newDoseQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY, null, msgs);
+				msgs = ((InternalEObject) newDoseQuantity).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY, null, msgs);
 			}
 			msgs = basicSetDoseQuantity(newDoseQuantity, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY, newDoseQuantity,
-				newDoseQuantity));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY,
+				newDoseQuantity, newDoseQuantity));
 		}
 	}
 
@@ -1039,21 +1036,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newRateQuantity != rateQuantity) {
 			NotificationChain msgs = null;
 			if (rateQuantity != null) {
-				msgs = ((InternalEObject) rateQuantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY, null, msgs);
+				msgs = ((InternalEObject) rateQuantity).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY, null, msgs);
 			}
 			if (newRateQuantity != null) {
-				msgs = ((InternalEObject) newRateQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY, null, msgs);
+				msgs = ((InternalEObject) newRateQuantity).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY, null, msgs);
 			}
 			msgs = basicSetRateQuantity(newRateQuantity, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY, newRateQuantity,
-				newRateQuantity));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY,
+				newRateQuantity, newRateQuantity));
 		}
 	}
 
@@ -1096,21 +1092,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newMaxDoseQuantity != maxDoseQuantity) {
 			NotificationChain msgs = null;
 			if (maxDoseQuantity != null) {
-				msgs = ((InternalEObject) maxDoseQuantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY, null, msgs);
+				msgs = ((InternalEObject) maxDoseQuantity).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY, null, msgs);
 			}
 			if (newMaxDoseQuantity != null) {
-				msgs = ((InternalEObject) newMaxDoseQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY, null, msgs);
+				msgs = ((InternalEObject) newMaxDoseQuantity).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY, null, msgs);
 			}
 			msgs = basicSetMaxDoseQuantity(newMaxDoseQuantity, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY, newMaxDoseQuantity,
-				newMaxDoseQuantity));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+				CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY, newMaxDoseQuantity, newMaxDoseQuantity));
 		}
 	}
 
@@ -1153,21 +1148,23 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newAdministrationUnitCode != administrationUnitCode) {
 			NotificationChain msgs = null;
 			if (administrationUnitCode != null) {
-				msgs = ((InternalEObject) administrationUnitCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE, null, msgs);
+				msgs = ((InternalEObject) administrationUnitCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE, null,
+					msgs);
 			}
 			if (newAdministrationUnitCode != null) {
-				msgs = ((InternalEObject) newAdministrationUnitCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE, null, msgs);
+				msgs = ((InternalEObject) newAdministrationUnitCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE, null,
+					msgs);
 			}
 			msgs = basicSetAdministrationUnitCode(newAdministrationUnitCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE,
-				newAdministrationUnitCode, newAdministrationUnitCode));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+				CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE, newAdministrationUnitCode,
+				newAdministrationUnitCode));
 		}
 	}
 
@@ -1209,20 +1206,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newSubject != subject) {
 			NotificationChain msgs = null;
 			if (subject != null) {
-				msgs = ((InternalEObject) subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT, null, msgs);
+				msgs = ((InternalEObject) subject).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT, null, msgs);
 			}
 			if (newSubject != null) {
-				msgs = ((InternalEObject) newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT, null, msgs);
+				msgs = ((InternalEObject) newSubject).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT, null, msgs);
 			}
 			msgs = basicSetSubject(newSubject, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT, newSubject, newSubject));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT,
+				newSubject, newSubject));
 		}
 	}
 
@@ -1277,20 +1274,20 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		if (newConsumable != consumable) {
 			NotificationChain msgs = null;
 			if (consumable != null) {
-				msgs = ((InternalEObject) consumable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE, null, msgs);
+				msgs = ((InternalEObject) consumable).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE, null, msgs);
 			}
 			if (newConsumable != null) {
-				msgs = ((InternalEObject) newConsumable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE, null, msgs);
+				msgs = ((InternalEObject) newConsumable).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE, null, msgs);
 			}
 			msgs = basicSetConsumable(newConsumable, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE, newConsumable, newConsumable));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE,
+				newConsumable, newConsumable));
 		}
 	}
 
@@ -1408,9 +1405,8 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -1425,9 +1421,8 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -1463,9 +1458,8 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__CLASS_CODE, oldClassCode, classCode,
-				!oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__CLASS_CODE,
+				oldClassCode, classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -1480,9 +1474,8 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.SUBSTANCE_ADMINISTRATION__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUBSTANCE_ADMINISTRATION__CLASS_CODE,
+				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -1518,9 +1511,8 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__MOOD_CODE, oldMoodCode, moodCode,
-				!oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__MOOD_CODE,
+				oldMoodCode, moodCode, !oldMoodCodeESet));
 		}
 	}
 
@@ -1535,9 +1527,8 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.SUBSTANCE_ADMINISTRATION__MOOD_CODE, oldMoodCode,
-				MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUBSTANCE_ADMINISTRATION__MOOD_CODE,
+				oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
 		}
 	}
 
@@ -1571,9 +1562,8 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		boolean oldNegationIndESet = negationIndESet;
 		negationIndESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__NEGATION_IND, oldNegationInd, negationInd,
-				!oldNegationIndESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__NEGATION_IND,
+				oldNegationInd, negationInd, !oldNegationIndESet));
 		}
 	}
 
@@ -1588,9 +1578,8 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 		negationInd = NEGATION_IND_EDEFAULT;
 		negationIndESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.SUBSTANCE_ADMINISTRATION__NEGATION_IND, oldNegationInd,
-				NEGATION_IND_EDEFAULT, oldNegationIndESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUBSTANCE_ADMINISTRATION__NEGATION_IND,
+				oldNegationInd, NEGATION_IND_EDEFAULT, oldNegationIndESet));
 		}
 	}
 

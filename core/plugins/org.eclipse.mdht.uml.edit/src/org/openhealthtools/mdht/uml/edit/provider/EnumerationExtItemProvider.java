@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
@@ -31,11 +31,11 @@ import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
- * 
+ *
  * @version $Id: $
  */
-public class EnumerationExtItemProvider extends EnumerationItemProvider implements ITableItemLabelProvider,
-		ICellModifier {
+public class EnumerationExtItemProvider extends EnumerationItemProvider
+		implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -46,7 +46,7 @@ public class EnumerationExtItemProvider extends EnumerationItemProvider implemen
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.EnumerationItemProvider#getImage(java.lang.Object)
 	 */
 	@Override
@@ -58,26 +58,27 @@ public class EnumerationExtItemProvider extends EnumerationItemProvider implemen
 		AdapterFactory adapterFactory = getAdapterFactory();
 		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
 				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
-				? NamedElementUtil.getBusinessName(namedElement)
-				: namedElement.getName();
+						? NamedElementUtil.getBusinessName(namedElement)
+						: namedElement.getName();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.EnumerationItemProvider#getText(java.lang.Object)
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = getName((Enumeration) object);
 		return label == null || label.length() == 0
-				? getString("_UI_Enumeration_type") : //$NON-NLS-1$
+				? getString("_UI_Enumeration_type") //$NON-NLS-1$
+				:
 				label;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
@@ -134,7 +135,7 @@ public class EnumerationExtItemProvider extends EnumerationItemProvider implemen
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -148,7 +149,7 @@ public class EnumerationExtItemProvider extends EnumerationItemProvider implemen
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
@@ -164,7 +165,7 @@ public class EnumerationExtItemProvider extends EnumerationItemProvider implemen
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

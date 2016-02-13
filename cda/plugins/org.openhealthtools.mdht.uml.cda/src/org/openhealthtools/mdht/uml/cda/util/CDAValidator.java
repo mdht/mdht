@@ -1067,7 +1067,8 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	@Override
-	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		switch (classifierID) {
 			case CDAPackage.CLINICAL_DOCUMENT:
 				return validateClinicalDocument((ClinicalDocument) value, diagnostics, context);
@@ -2382,7 +2383,8 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDataEnterer(DataEnterer dataEnterer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDataEnterer(DataEnterer dataEnterer, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(dataEnterer, diagnostics, context)) {
 			return false;
 		}
@@ -2792,7 +2794,8 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateExternalAct(ExternalAct externalAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateExternalAct(ExternalAct externalAct, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(externalAct, diagnostics, context)) {
 			return false;
 		}
@@ -3073,7 +3076,8 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateInformant12(Informant12 informant12, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateInformant12(Informant12 informant12, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(informant12, diagnostics, context)) {
 			return false;
 		}
@@ -3204,7 +3208,7 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateII constraint of '<em>Infrastructure Root Type Id</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public boolean validateInfrastructureRootTypeId_validateII(InfrastructureRootTypeId infrastructureRootTypeId,
@@ -3219,7 +3223,8 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateInfrastructureRootTypeId_validateRedefinedExtension(
-			InfrastructureRootTypeId infrastructureRootTypeId, DiagnosticChain diagnostics, Map<Object, Object> context) {
+			InfrastructureRootTypeId infrastructureRootTypeId, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return infrastructureRootTypeId.validateRedefinedExtension(diagnostics, context);
 	}
 
@@ -3230,7 +3235,8 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateInfrastructureRootTypeId_validateRedefinedRoot(
-			InfrastructureRootTypeId infrastructureRootTypeId, DiagnosticChain diagnostics, Map<Object, Object> context) {
+			InfrastructureRootTypeId infrastructureRootTypeId, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return infrastructureRootTypeId.validateRedefinedRoot(diagnostics, context);
 	}
 
@@ -3298,7 +3304,8 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLabeledDrug(LabeledDrug labeledDrug, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateLabeledDrug(LabeledDrug labeledDrug, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(labeledDrug, diagnostics, context)) {
 			return false;
 		}
@@ -3718,7 +3725,8 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateObservation(Observation observation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateObservation(Observation observation, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(observation, diagnostics, context);
 	}
 
@@ -3824,7 +3832,8 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateOrder_validateMoodCode(Order order, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateOrder_validateMoodCode(Order order, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return order.validateMoodCode(diagnostics, context);
 	}
 
@@ -4226,7 +4235,8 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePatientRole(PatientRole patientRole, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validatePatientRole(PatientRole patientRole, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(patientRole, diagnostics, context)) {
 			return false;
 		}
@@ -4434,7 +4444,8 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePlace_validateClassCode(Place place, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validatePlace_validateClassCode(Place place, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return place.validateClassCode(diagnostics, context);
 	}
 
@@ -4959,7 +4970,8 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSDTCPatient(SDTCPatient sdtcPatient, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateSDTCPatient(SDTCPatient sdtcPatient, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(sdtcPatient, diagnostics, context);
 	}
 

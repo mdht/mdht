@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
@@ -41,7 +41,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
  * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CodeSystemVersionImpl#getBase_Enumeration <em>Base Enumeration</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVersion {
@@ -49,7 +49,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The default value of the '{@link #getFullName() <em>Full Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFullName()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The cached value of the '{@link #getFullName() <em>Full Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFullName()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -126,7 +126,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -137,7 +137,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUrl()
 	 * @generated
 	 * @ordered
@@ -148,7 +148,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUrl()
 	 * @generated
 	 * @ordered
@@ -159,7 +159,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The default value of the '{@link #getEffectiveDate() <em>Effective Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffectiveDate()
 	 * @generated
 	 * @ordered
@@ -170,7 +170,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The cached value of the '{@link #getEffectiveDate() <em>Effective Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffectiveDate()
 	 * @generated
 	 * @ordered
@@ -181,7 +181,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The default value of the '{@link #getReleaseDate() <em>Release Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReleaseDate()
 	 * @generated
 	 * @ordered
@@ -192,7 +192,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The cached value of the '{@link #getReleaseDate() <em>Release Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReleaseDate()
 	 * @generated
 	 * @ordered
@@ -203,7 +203,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -214,7 +214,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -225,7 +225,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatusDate()
 	 * @generated
 	 * @ordered
@@ -236,7 +236,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The cached value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatusDate()
 	 * @generated
 	 * @ordered
@@ -247,7 +247,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	 * The cached value of the '{@link #getBase_Enumeration() <em>Base Enumeration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Enumeration()
 	 * @generated
 	 * @ordered
@@ -257,7 +257,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CodeSystemVersionImpl() {
@@ -267,7 +267,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Enumeration basicGetBase_Enumeration() {
@@ -277,7 +277,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +313,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,7 +362,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,7 +405,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +416,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -459,7 +459,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Enumeration getBase_Enumeration() {
@@ -468,9 +468,8 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 			base_Enumeration = (Enumeration) eResolveProxy(oldBase_Enumeration);
 			if (base_Enumeration != oldBase_Enumeration) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.CODE_SYSTEM_VERSION__BASE_ENUMERATION,
-						oldBase_Enumeration, base_Enumeration));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						TermPackage.CODE_SYSTEM_VERSION__BASE_ENUMERATION, oldBase_Enumeration, base_Enumeration));
 				}
 			}
 		}
@@ -480,7 +479,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getEffectiveDate() {
@@ -490,7 +489,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public String getEnumerationName() {
@@ -504,7 +503,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public String getEnumerationQualifiedName() {
@@ -518,7 +517,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getFullName() {
@@ -528,7 +527,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -538,7 +537,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getReleaseDate() {
@@ -548,7 +547,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getSource() {
@@ -558,7 +557,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StatusKind getStatus() {
@@ -568,7 +567,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getStatusDate() {
@@ -578,7 +577,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getUrl() {
@@ -588,7 +587,7 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getVersion() {
@@ -598,39 +597,37 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Enumeration(Enumeration newBase_Enumeration) {
 		Enumeration oldBase_Enumeration = base_Enumeration;
 		base_Enumeration = newBase_Enumeration;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__BASE_ENUMERATION, oldBase_Enumeration,
-				base_Enumeration));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__BASE_ENUMERATION,
+				oldBase_Enumeration, base_Enumeration));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setEffectiveDate(String newEffectiveDate) {
 		String oldEffectiveDate = effectiveDate;
 		effectiveDate = newEffectiveDate;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__EFFECTIVE_DATE, oldEffectiveDate,
-				effectiveDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__EFFECTIVE_DATE,
+				oldEffectiveDate, effectiveDate));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public void setEnumerationName(String name) {
@@ -642,67 +639,67 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setFullName(String newFullName) {
 		String oldFullName = fullName;
 		fullName = newFullName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__FULL_NAME, oldFullName, fullName));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__FULL_NAME,
+				oldFullName, fullName));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__IDENTIFIER, oldIdentifier, identifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__IDENTIFIER,
+				oldIdentifier, identifier));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setReleaseDate(String newReleaseDate) {
 		String oldReleaseDate = releaseDate;
 		releaseDate = newReleaseDate;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__RELEASE_DATE, oldReleaseDate, releaseDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__RELEASE_DATE,
+				oldReleaseDate, releaseDate));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSource(String newSource) {
 		String oldSource = source;
 		source = newSource;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__SOURCE, oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__SOURCE, oldSource,
+				source));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStatus(StatusKind newStatus) {
@@ -711,30 +708,30 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 				? STATUS_EDEFAULT
 				: newStatus;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__STATUS, oldStatus, status));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__STATUS, oldStatus,
+				status));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStatusDate(String newStatusDate) {
 		String oldStatusDate = statusDate;
 		statusDate = newStatusDate;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__STATUS_DATE, oldStatusDate, statusDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__STATUS_DATE,
+				oldStatusDate, statusDate));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setUrl(String newUrl) {
@@ -748,22 +745,22 @@ public class CodeSystemVersionImpl extends EObjectImpl implements CodeSystemVers
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__VERSION, oldVersion, version));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODE_SYSTEM_VERSION__VERSION, oldVersion,
+				version));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override

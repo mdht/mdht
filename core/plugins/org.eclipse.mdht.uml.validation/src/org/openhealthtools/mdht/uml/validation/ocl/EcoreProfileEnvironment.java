@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.validation.ocl;
 
@@ -65,14 +65,15 @@ public class EcoreProfileEnvironment extends UMLEnvironment {
 		super(parent);
 	}
 
-	public EcoreProfileEnvironment(EcoreProfileEnvironmentFactory factory, EPackage.Registry registry, ResourceSet rset) {
+	public EcoreProfileEnvironment(EcoreProfileEnvironmentFactory factory, EPackage.Registry registry,
+			ResourceSet rset) {
 		super(registry, rset);
 
 		setFactory(factory);
 	}
 
-	public EcoreProfileEnvironment(EcoreProfileEnvironmentFactory factory, EPackage.Registry registry,
-			ResourceSet rset, Resource resource) {
+	public EcoreProfileEnvironment(EcoreProfileEnvironmentFactory factory, EPackage.Registry registry, ResourceSet rset,
+			Resource resource) {
 		super(registry, rset, resource);
 
 		setFactory(factory);
@@ -80,10 +81,10 @@ public class EcoreProfileEnvironment extends UMLEnvironment {
 
 	/**
 	 * Tests whether a given {@code constraint} is an MDHT query-style constraint (rejecting violating objects).
-	 * 
+	 *
 	 * @param constraint
 	 *            a constraint
-	 * 
+	 *
 	 * @return {@code true} if it is a reject-query constraint; {@code false} if it's just an ordinary boolean condition
 	 */
 	public static boolean isQueryConstraint(Constraint constraint) {

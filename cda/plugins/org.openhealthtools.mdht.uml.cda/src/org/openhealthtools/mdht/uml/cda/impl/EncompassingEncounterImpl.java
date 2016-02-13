@@ -322,20 +322,20 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID, newTypeId,
+				newTypeId));
 		}
 	}
 
@@ -403,20 +403,20 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__CODE, newCode, newCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__CODE, newCode,
+				newCode));
 		}
 	}
 
@@ -459,21 +459,20 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		if (newEffectiveTime != effectiveTime) {
 			NotificationChain msgs = null;
 			if (effectiveTime != null) {
-				msgs = ((InternalEObject) effectiveTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME, null, msgs);
+				msgs = ((InternalEObject) effectiveTime).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME, null, msgs);
 			}
 			if (newEffectiveTime != null) {
-				msgs = ((InternalEObject) newEffectiveTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME, null, msgs);
+				msgs = ((InternalEObject) newEffectiveTime).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME, null, msgs);
 			}
 			msgs = basicSetEffectiveTime(newEffectiveTime, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME, newEffectiveTime,
-				newEffectiveTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME,
+				newEffectiveTime, newEffectiveTime));
 		}
 	}
 
@@ -516,21 +515,23 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		if (newDischargeDispositionCode != dischargeDispositionCode) {
 			NotificationChain msgs = null;
 			if (dischargeDispositionCode != null) {
-				msgs = ((InternalEObject) dischargeDispositionCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__DISCHARGE_DISPOSITION_CODE, null, msgs);
+				msgs = ((InternalEObject) dischargeDispositionCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__DISCHARGE_DISPOSITION_CODE, null,
+					msgs);
 			}
 			if (newDischargeDispositionCode != null) {
-				msgs = ((InternalEObject) newDischargeDispositionCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__DISCHARGE_DISPOSITION_CODE, null, msgs);
+				msgs = ((InternalEObject) newDischargeDispositionCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__DISCHARGE_DISPOSITION_CODE, null,
+					msgs);
 			}
 			msgs = basicSetDischargeDispositionCode(newDischargeDispositionCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__DISCHARGE_DISPOSITION_CODE,
-				newDischargeDispositionCode, newDischargeDispositionCode));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+				CDAPackage.ENCOMPASSING_ENCOUNTER__DISCHARGE_DISPOSITION_CODE, newDischargeDispositionCode,
+				newDischargeDispositionCode));
 		}
 	}
 
@@ -573,21 +574,20 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		if (newResponsibleParty != responsibleParty) {
 			NotificationChain msgs = null;
 			if (responsibleParty != null) {
-				msgs = ((InternalEObject) responsibleParty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY, null, msgs);
+				msgs = ((InternalEObject) responsibleParty).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY, null, msgs);
 			}
 			if (newResponsibleParty != null) {
-				msgs = ((InternalEObject) newResponsibleParty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY, null, msgs);
+				msgs = ((InternalEObject) newResponsibleParty).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY, null, msgs);
 			}
 			msgs = basicSetResponsibleParty(newResponsibleParty, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY, newResponsibleParty,
-				newResponsibleParty));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY,
+				newResponsibleParty, newResponsibleParty));
 		}
 	}
 
@@ -642,20 +642,20 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		if (newLocation != location) {
 			NotificationChain msgs = null;
 			if (location != null) {
-				msgs = ((InternalEObject) location).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION, null, msgs);
+				msgs = ((InternalEObject) location).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION, null, msgs);
 			}
 			if (newLocation != null) {
-				msgs = ((InternalEObject) newLocation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION, null, msgs);
+				msgs = ((InternalEObject) newLocation).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION, null, msgs);
 			}
 			msgs = basicSetLocation(newLocation, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION, newLocation, newLocation));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION,
+				newLocation, newLocation));
 		}
 	}
 
@@ -682,9 +682,8 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -699,9 +698,8 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ENCOMPASSING_ENCOUNTER__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENCOMPASSING_ENCOUNTER__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -737,9 +735,8 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__CLASS_CODE, oldClassCode, classCode,
-				!oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__CLASS_CODE,
+				oldClassCode, classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -754,9 +751,8 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ENCOMPASSING_ENCOUNTER__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENCOMPASSING_ENCOUNTER__CLASS_CODE,
+				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -792,9 +788,8 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__MOOD_CODE, oldMoodCode, moodCode,
-				!oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOMPASSING_ENCOUNTER__MOOD_CODE,
+				oldMoodCode, moodCode, !oldMoodCodeESet));
 		}
 	}
 
@@ -809,9 +804,8 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ENCOMPASSING_ENCOUNTER__MOOD_CODE, oldMoodCode,
-				MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENCOMPASSING_ENCOUNTER__MOOD_CODE,
+				oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
 		}
 	}
 

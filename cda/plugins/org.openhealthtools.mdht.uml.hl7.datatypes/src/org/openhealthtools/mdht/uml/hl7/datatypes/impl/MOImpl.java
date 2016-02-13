@@ -135,7 +135,8 @@ public class MOImpl extends QTYImpl implements MO {
 		String oldCurrency = currency;
 		currency = newCurrency;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.MO__CURRENCY, oldCurrency, currency));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, DatatypesPackage.MO__CURRENCY, oldCurrency, currency));
 		}
 	}
 

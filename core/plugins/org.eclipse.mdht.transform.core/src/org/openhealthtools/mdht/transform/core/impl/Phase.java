@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.transform.core.impl;
 
@@ -68,11 +68,15 @@ public class Phase extends AbstractTransformComponent<PhaseKind> implements IPha
 			try {
 				next.initialize(ctx);
 			} catch (AbortTransformationException e) {
-				throw new TransformationException(String.format(
-					"Transformation aborted in initialization of rule '%s' (%s).", next.getLabel(), next.getID()), e);
+				throw new TransformationException(
+					String.format(
+						"Transformation aborted in initialization of rule '%s' (%s).", next.getLabel(), next.getID()),
+					e);
 			} catch (RuntimeException e) {
-				throw new TransformationException(String.format(
-					"Uncaught exception in initialization of rule '%s' (%s).", next.getLabel(), next.getID()), e);
+				throw new TransformationException(
+					String.format(
+						"Uncaught exception in initialization of rule '%s' (%s).", next.getLabel(), next.getID()),
+					e);
 			}
 		}
 	}
@@ -135,14 +139,17 @@ public class Phase extends AbstractTransformComponent<PhaseKind> implements IPha
 		try {
 			return rule.apply(input, monitor);
 		} catch (AbortTransformationException e) {
-			throw new TransformationException(String.format(
-				"Transformation aborted in application of rule '%s' to '%s' (%s).", rule.getLabel(), input,
-				rule.getID()), e);
+			throw new TransformationException(
+				String.format(
+					"Transformation aborted in application of rule '%s' to '%s' (%s).", rule.getLabel(), input,
+					rule.getID()),
+				e);
 		} catch (RuntimeException e) {
 			throw new TransformationException(
 				String.format(
 					"Uncaught exception in application of rule '%s' to '%s' (%s).", rule.getLabel(), input,
-					rule.getID()), e);
+					rule.getID()),
+				e);
 		}
 	}
 
@@ -188,7 +195,8 @@ public class Phase extends AbstractTransformComponent<PhaseKind> implements IPha
 		switch (getKind()) {
 			case INITIALIZATION:
 				if (rule.getKind() != RuleKind.INITIALIZATION) {
-					throw new IllegalArgumentException("May only add initialization rules to the initialization phase.");
+					throw new IllegalArgumentException(
+						"May only add initialization rules to the initialization phase.");
 				}
 				break;
 			case FINALIZATION:

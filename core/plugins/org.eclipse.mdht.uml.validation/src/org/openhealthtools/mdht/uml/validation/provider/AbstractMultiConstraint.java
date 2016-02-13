@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.validation.provider;
 
@@ -54,9 +54,10 @@ public abstract class AbstractMultiConstraint extends AbstractModelConstraint {
 		} catch (Exception e) {
 			final String id = ctx.getCurrentConstraintId();
 
-			ValidationPlugin.INSTANCE.log(new Status(
-				IStatus.ERROR, ValidationPlugin.INSTANCE.getSymbolicName(),
-				"Invocation of validation method failed for constraint: " + id, e));
+			ValidationPlugin.INSTANCE.log(
+				new Status(
+					IStatus.ERROR, ValidationPlugin.INSTANCE.getSymbolicName(),
+					"Invocation of validation method failed for constraint: " + id, e));
 
 			// don't try it again
 			validationMethods.put(id, getFailOnMissingValidationMethod());

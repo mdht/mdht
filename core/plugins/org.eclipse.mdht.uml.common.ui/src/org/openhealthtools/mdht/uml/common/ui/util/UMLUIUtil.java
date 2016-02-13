@@ -73,7 +73,7 @@ public class UMLUIUtil {
 									project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
 							}
 
-							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(
+							EcoreUtil.getObjectByType(
 								resourceSet.getResource(modelFile, true).getContents(),
 								UMLPackage.eINSTANCE.getPackageableElement());
 

@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - factor out CDA base model dependencies (artf3350)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
  * @author dcarlson
- * 
+ *
  */
 public class DomainTransformer extends CDAAbstractTransformer {
 
@@ -63,7 +63,8 @@ public class DomainTransformer extends CDAAbstractTransformer {
 						consolidatedClass = (Class) child;
 					}
 
-					if (transformerOptions.isGenerateDomainInterface() || transformerOptions.isGenerateDomainClasses()) {
+					if (transformerOptions.isGenerateDomainInterface() ||
+							transformerOptions.isGenerateDomainClasses()) {
 						genDomainInterface.doSwitch(consolidatedClass);
 					}
 					if (transformerOptions.isGenerateBuilderClasses()) {

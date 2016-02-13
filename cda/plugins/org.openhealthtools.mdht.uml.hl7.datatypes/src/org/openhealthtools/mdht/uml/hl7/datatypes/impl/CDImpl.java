@@ -275,20 +275,20 @@ public class CDImpl extends ANYImpl implements CD {
 		if (newOriginalText != originalText) {
 			NotificationChain msgs = null;
 			if (originalText != null) {
-				msgs = ((InternalEObject) originalText).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.CD__ORIGINAL_TEXT, null, msgs);
+				msgs = ((InternalEObject) originalText).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CD__ORIGINAL_TEXT, null, msgs);
 			}
 			if (newOriginalText != null) {
-				msgs = ((InternalEObject) newOriginalText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.CD__ORIGINAL_TEXT, null, msgs);
+				msgs = ((InternalEObject) newOriginalText).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CD__ORIGINAL_TEXT, null, msgs);
 			}
 			msgs = basicSetOriginalText(newOriginalText, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.CD__ORIGINAL_TEXT, newOriginalText, newOriginalText));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__ORIGINAL_TEXT, newOriginalText,
+				newOriginalText));
 		}
 	}
 
@@ -356,8 +356,8 @@ public class CDImpl extends ANYImpl implements CD {
 		String oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM, oldCodeSystem, codeSystem));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM, oldCodeSystem,
+				codeSystem));
 		}
 	}
 
@@ -379,8 +379,8 @@ public class CDImpl extends ANYImpl implements CD {
 		String oldCodeSystemName = codeSystemName;
 		codeSystemName = newCodeSystemName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM_NAME, oldCodeSystemName, codeSystemName));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM_NAME,
+				oldCodeSystemName, codeSystemName));
 		}
 	}
 
@@ -402,9 +402,8 @@ public class CDImpl extends ANYImpl implements CD {
 		String oldCodeSystemVersion = codeSystemVersion;
 		codeSystemVersion = newCodeSystemVersion;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM_VERSION, oldCodeSystemVersion,
-				codeSystemVersion));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM_VERSION,
+				oldCodeSystemVersion, codeSystemVersion));
 		}
 	}
 
@@ -426,8 +425,8 @@ public class CDImpl extends ANYImpl implements CD {
 		String oldDisplayName = displayName;
 		displayName = newDisplayName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.CD__DISPLAY_NAME, oldDisplayName, displayName));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__DISPLAY_NAME, oldDisplayName,
+				displayName));
 		}
 	}
 
@@ -449,8 +448,8 @@ public class CDImpl extends ANYImpl implements CD {
 		String oldSDTCValueSet = sDTCValueSet;
 		sDTCValueSet = newSDTCValueSet;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.CD__SDTC_VALUE_SET, oldSDTCValueSet, sDTCValueSet));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__SDTC_VALUE_SET, oldSDTCValueSet,
+				sDTCValueSet));
 		}
 	}
 
@@ -472,9 +471,8 @@ public class CDImpl extends ANYImpl implements CD {
 		String oldSDTCValueSetVersion = sDTCValueSetVersion;
 		sDTCValueSetVersion = newSDTCValueSetVersion;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.CD__SDTC_VALUE_SET_VERSION, oldSDTCValueSetVersion,
-				sDTCValueSetVersion));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__SDTC_VALUE_SET_VERSION,
+				oldSDTCValueSetVersion, sDTCValueSetVersion));
 		}
 	}
 

@@ -254,20 +254,20 @@ public class RelatedSubjectImpl extends RoleImpl implements RelatedSubject {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.RELATED_SUBJECT__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_SUBJECT__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.RELATED_SUBJECT__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_SUBJECT__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.RELATED_SUBJECT__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_SUBJECT__TYPE_ID, newTypeId,
+				newTypeId));
 		}
 	}
 
@@ -322,12 +322,12 @@ public class RelatedSubjectImpl extends RoleImpl implements RelatedSubject {
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.RELATED_SUBJECT__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_SUBJECT__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.RELATED_SUBJECT__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_SUBJECT__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
@@ -400,20 +400,20 @@ public class RelatedSubjectImpl extends RoleImpl implements RelatedSubject {
 		if (newSubject != subject) {
 			NotificationChain msgs = null;
 			if (subject != null) {
-				msgs = ((InternalEObject) subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.RELATED_SUBJECT__SUBJECT, null, msgs);
+				msgs = ((InternalEObject) subject).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_SUBJECT__SUBJECT, null, msgs);
 			}
 			if (newSubject != null) {
-				msgs = ((InternalEObject) newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.RELATED_SUBJECT__SUBJECT, null, msgs);
+				msgs = ((InternalEObject) newSubject).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_SUBJECT__SUBJECT, null, msgs);
 			}
 			msgs = basicSetSubject(newSubject, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.RELATED_SUBJECT__SUBJECT, newSubject, newSubject));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_SUBJECT__SUBJECT, newSubject,
+				newSubject));
 		}
 	}
 
@@ -440,9 +440,8 @@ public class RelatedSubjectImpl extends RoleImpl implements RelatedSubject {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.RELATED_SUBJECT__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_SUBJECT__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -457,9 +456,8 @@ public class RelatedSubjectImpl extends RoleImpl implements RelatedSubject {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.RELATED_SUBJECT__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.RELATED_SUBJECT__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -495,9 +493,8 @@ public class RelatedSubjectImpl extends RoleImpl implements RelatedSubject {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.RELATED_SUBJECT__CLASS_CODE, oldClassCode, classCode,
-				!oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_SUBJECT__CLASS_CODE, oldClassCode,
+				classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -512,9 +509,8 @@ public class RelatedSubjectImpl extends RoleImpl implements RelatedSubject {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.RELATED_SUBJECT__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.RELATED_SUBJECT__CLASS_CODE,
+				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 

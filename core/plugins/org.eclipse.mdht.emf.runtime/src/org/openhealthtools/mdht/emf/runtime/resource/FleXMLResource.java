@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - flexible XML resource implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.emf.runtime.resource;
 
@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.emf.runtime.resource.impl.FleXMLResourceFactoryI
 
 /**
  * An XML resource that loads documents from DOM instances with flexible (pluggable) mapping of XML elements to Ecore.
- * 
+ *
  * @see DOMElementHandler
  * @see DOMElementHandler.Registry
  * @see XSITypeHandler

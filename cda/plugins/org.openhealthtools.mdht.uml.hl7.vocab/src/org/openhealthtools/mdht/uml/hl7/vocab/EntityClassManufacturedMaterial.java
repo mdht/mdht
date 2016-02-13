@@ -191,7 +191,8 @@ public enum EntityClassManufacturedMaterial implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<EntityClassManufacturedMaterial> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<EntityClassManufacturedMaterial> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Entity Class Manufactured Material</b></em>' literal with the specified literal value.

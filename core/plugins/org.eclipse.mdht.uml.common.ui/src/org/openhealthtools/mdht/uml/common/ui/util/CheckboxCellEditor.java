@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.util;
@@ -53,7 +53,7 @@ public class CheckboxCellEditor extends CellEditor {
 	 * Creates a new checkbox cell editor parented under the given control.
 	 * The cell editor value is a boolean value, which is initially <code>false</code>.
 	 * Initially, the cell editor has no cell validator.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent control
 	 */
@@ -65,7 +65,7 @@ public class CheckboxCellEditor extends CellEditor {
 	 * Creates a new checkbox cell editor parented under the given control.
 	 * The cell editor value is a boolean value, which is initially <code>false</code>.
 	 * Initially, the cell editor has no cell validator.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent control
 	 * @param style
@@ -126,7 +126,7 @@ public class CheckboxCellEditor extends CellEditor {
 	 * The <code>CheckboxCellEditor</code> implementation of
 	 * this <code>CellEditor</code> framework method returns
 	 * the current Boolean value.
-	 * 
+	 *
 	 * @return the current Boolean value of check box
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class CheckboxCellEditor extends CellEditor {
 	 * The <code>CheckboxCellEditor</code> implementation of
 	 * this <code>CellEditor</code> framework method
 	 * accepts a Boolean value.
-	 * 
+	 *
 	 * @param value
 	 *            the Boolean value of check box
 	 */
@@ -170,7 +170,7 @@ public class CheckboxCellEditor extends CellEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.CellEditor#focusLost()
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class CheckboxCellEditor extends CellEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.CellEditor#keyReleaseOccured(org.eclipse.swt.events.KeyEvent)
 	 */
 	@Override

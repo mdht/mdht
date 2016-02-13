@@ -216,7 +216,8 @@ public enum x_ActMoodDocumentObservation implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<x_ActMoodDocumentObservation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<x_ActMoodDocumentObservation> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>xAct Mood Document Observation</b></em>' literal with the specified literal value.

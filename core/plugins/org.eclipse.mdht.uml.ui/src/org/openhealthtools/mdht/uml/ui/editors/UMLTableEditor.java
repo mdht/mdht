@@ -4,14 +4,14 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Async runnable flood causes drag-and-drop issues (artf3182)
  *                        - Editors leaking via operation-history listeners (artf3225)
  *                        - Two menus appear when right-clicking the cursor (artf3276)
  *     Sean Muir (National E-Health Transition Authority (NEHTA)) - Added Path map support to Table Editor
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.editors;
@@ -173,12 +173,12 @@ import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
 import org.openhealthtools.mdht.uml.ui.navigator.actions.EditCommandsFactory;
 
 /**
- * 
+ *
  * @version $Id: $
  */
-public class UMLTableEditor extends EditorPart implements IEditingDomainProvider, IMenuListener,
-		ISelectionChangedListener, ISetSelectionTarget, IGotoMarker, ITabbedPropertySheetPageContributor,
-		ISaveablesSource {
+public class UMLTableEditor extends EditorPart
+		implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener, ISetSelectionTarget, IGotoMarker,
+		ITabbedPropertySheetPageContributor, ISaveablesSource {
 
 	public static final String EDITOR_ID = "org.openhealthtools.mdht.uml.ui.UMLTableEditorID";
 
@@ -223,7 +223,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 
 		/**
 		 * Creates a new selection provider.
-		 * 
+		 *
 		 * @param control
 		 *            the widget
 		 */
@@ -300,11 +300,11 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 					event.getEventType() == OperationHistoryEvent.REDONE) {
 
 				// TODO only if affectedResources includes at least one of this editor's saveables
-				ISaveablesLifecycleListener saveablesListener = (ISaveablesLifecycleListener) getEditorSite().getService(
+				ISaveablesLifecycleListener saveablesListener = getEditorSite().getService(
 					ISaveablesLifecycleListener.class);
 				if (saveablesListener != null) {
-					saveablesListener.handleLifecycleEvent(new SaveablesLifecycleEvent(
-						UMLTableEditor.this, PROP_DIRTY, getSaveables(), false));
+					saveablesListener.handleLifecycleEvent(
+						new SaveablesLifecycleEvent(UMLTableEditor.this, PROP_DIRTY, getSaveables(), false));
 				}
 
 				getSite().getShell().getDisplay().syncExec(new Runnable() {
@@ -436,7 +436,8 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 	public UMLTableEditor() {
 		super();
 
-		editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(IResourceConstants.EDITING_DOMAIN_ID);
+		editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
+			IResourceConstants.EDITING_DOMAIN_ID);
 
 		if ((editingDomain instanceof AdapterFactoryEditingDomain) &&
 				((AdapterFactoryEditingDomain) editingDomain).getResourceToReadOnlyMap() == null) {
@@ -517,16 +518,14 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		// ResourcesPlugin.getWorkspace().addResourceChangeListener(
 		// resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
 
-		editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(IResourceConstants.EDITING_DOMAIN_ID);
+		editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
+			IResourceConstants.EDITING_DOMAIN_ID);
 		ModelManager.getManager().manage(editingDomain);
 		ModelManager.getManager().setShell(getSite().getShell());
 
 		if (input instanceof IFileEditorInput) {
 			IFile file = ((IFileEditorInput) input).getFile();
 			URI resourceURI = URI.createPlatformResourceURI(file.getFullPath().toString(), false);
-
-			// assure that all static profiles are loaded (fixed issue in e4)
-			EPackage.Registry ePackageRegistry = EPackage.Registry.INSTANCE;
 
 			try {
 				resource = editingDomain.getResourceSet().getResource(resourceURI, true);
@@ -566,8 +565,10 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		// For example, loading a resource doesn't make the editor dirty, but it isn't a touch on the resource-set.
 		// Normally, saving a resource, though, is a read-compatible event, so allow that
 		dirtyResourceListener = new ResourceSetListenerImpl(
-			NotificationFilter.NOT_TOUCH.and(NotificationFilter.READ.negated().or(
-				NotificationFilter.createFeatureFilter(EcorePackage.Literals.ERESOURCE, Resource.RESOURCE__IS_MODIFIED)))) {
+			NotificationFilter.NOT_TOUCH.and(
+				NotificationFilter.READ.negated().or(
+					NotificationFilter.createFeatureFilter(
+						EcorePackage.Literals.ERESOURCE, Resource.RESOURCE__IS_MODIFIED)))) {
 
 			// don't post while a runnable is still pending. We don't need redundant updating of the dirty state
 			// because it cannot change while we're processing the event
@@ -598,7 +599,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
@@ -639,8 +640,8 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 			public Viewer createViewer(Composite composite) {
 				// using SWT.FULL_SELECTION is critical for finding tree
 				// selections in columns > 0
-				return new TreeViewer(composite, SWT.FULL_SELECTION | SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL |
-						SWT.BORDER) {
+				return new TreeViewer(
+					composite, SWT.FULL_SELECTION | SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER) {
 
 					@Override
 					protected void hookControl(Control control) {
@@ -720,11 +721,12 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		column.setResizable(true);
 		column.setWidth(200);
 
-		treeViewerWithColumns.setColumnProperties(new String[] {
-				IUMLTableProperties.NAME_PROPERTY, IUMLTableProperties.TYPE_PROPERTY,
-				IUMLTableProperties.MULTIPLICITY_PROPERTY, IUMLTableProperties.AGGREGATION_PROPERTY,
-				IUMLTableProperties.VISIBILITY_PROPERTY, IUMLTableProperties.ANNOTATION_PROPERTY,
-				IUMLTableProperties.DEFAULT_VALUE_PROPERTY });
+		treeViewerWithColumns.setColumnProperties(
+			new String[] {
+					IUMLTableProperties.NAME_PROPERTY, IUMLTableProperties.TYPE_PROPERTY,
+					IUMLTableProperties.MULTIPLICITY_PROPERTY, IUMLTableProperties.AGGREGATION_PROPERTY,
+					IUMLTableProperties.VISIBILITY_PROPERTY, IUMLTableProperties.ANNOTATION_PROPERTY,
+					IUMLTableProperties.DEFAULT_VALUE_PROPERTY });
 		treeViewerWithColumns.setContentProvider(adapterFactoryContentProvider);
 
 		treeViewerWithColumns.setLabelProvider(adapterFactoryLabelProvider);
@@ -754,8 +756,8 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 			}
 		};
 
-		ComboBoxTextCellEditor multiplicityEditor = new ComboBoxTextCellEditor(tree, new String[] {
-				"0..*", "0..1", "1..1", "1..*" }) {
+		ComboBoxTextCellEditor multiplicityEditor = new ComboBoxTextCellEditor(
+			tree, new String[] { "0..*", "0..1", "1..1", "1..*" }) {
 			@Override
 			public void deactivate() {
 				super.deactivate();
@@ -765,8 +767,11 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 			}
 		};
 
-		ComboBoxCellEditor aggregationEditor = new ComboBoxCellEditor(tree, new String[] {
-				AggregationKind.get(0).getName(), AggregationKind.get(1).getName(), AggregationKind.get(2).getName() }) {
+		ComboBoxCellEditor aggregationEditor = new ComboBoxCellEditor(
+			tree,
+			new String[] {
+					AggregationKind.get(0).getName(), AggregationKind.get(1).getName(),
+					AggregationKind.get(2).getName() }) {
 			@Override
 			public void deactivate() {
 				super.deactivate();
@@ -776,9 +781,11 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 			}
 		};
 
-		ComboBoxCellEditor visibilityEditor = new ComboBoxCellEditor(tree, new String[] {
-				VisibilityKind.get(0).getName(), VisibilityKind.get(1).getName(), VisibilityKind.get(2).getName(),
-				VisibilityKind.get(3).getName() }) {
+		ComboBoxCellEditor visibilityEditor = new ComboBoxCellEditor(
+			tree,
+			new String[] {
+					VisibilityKind.get(0).getName(), VisibilityKind.get(1).getName(), VisibilityKind.get(2).getName(),
+					VisibilityKind.get(3).getName() }) {
 			@Override
 			public void deactivate() {
 				super.deactivate();
@@ -788,8 +795,8 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 			}
 		};
 
-		ExtendedDialogCellEditor typeEditor = new ExtendedDialogCellEditor(tree, new AdapterFactoryLabelProvider(
-			adapterFactory)) {
+		ExtendedDialogCellEditor typeEditor = new ExtendedDialogCellEditor(
+			tree, new AdapterFactoryLabelProvider(adapterFactory)) {
 			@Override
 			public void deactivate() {
 				super.deactivate();
@@ -806,7 +813,8 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 
 				if (topPackage instanceof Profile) {
 					if (selectedElement instanceof Extension) {
-						type = DialogLaunchUtil.chooseUMLMetaclass(editingDomain.getResourceSet(), getSite().getShell());
+						type = DialogLaunchUtil.chooseUMLMetaclass(
+							editingDomain.getResourceSet(), getSite().getShell());
 					} else if (selectedElement instanceof Property &&
 							((Property) selectedElement).getClass_() instanceof Stereotype) {
 						type = DialogLaunchUtil.chooseElement(
@@ -911,7 +919,8 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		if (resource != null && !resource.getContents().isEmpty()) {
 			List<NamedElement> contents = new ArrayList<NamedElement>();
 			for (EObject eObject : resource.getContents()) {
-				if (eObject instanceof Package || (eObject instanceof Classifier && !(eObject instanceof Association))) {
+				if (eObject instanceof Package ||
+						(eObject instanceof Classifier && !(eObject instanceof Association))) {
 					contents.add((NamedElement) eObject);
 				}
 			}
@@ -1002,7 +1011,8 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		for (TreeIterator<EObject> allContents = resource.getAllContents(); allContents.hasNext();) {
 			EObject eObject = allContents.next();
 			if (eObject.eResource() == resourceFilter) {
-				if (eObject instanceof Package || (eObject instanceof Classifier && !(eObject instanceof Association))) {
+				if (eObject instanceof Package ||
+						(eObject instanceof Classifier && !(eObject instanceof Association))) {
 					contents.add(eObject);
 				}
 
@@ -1176,7 +1186,8 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 			setImageDescriptor(imageDescriptor);
 			setToolTipText(UML2UIMessages.ResourceFilter_tooltip);
 
-			if (imageDescriptor != null && UML2UIPlugin.getDefault().getImageRegistry().getDescriptor(imageKey) == null) {
+			if (imageDescriptor != null &&
+					UML2UIPlugin.getDefault().getImageRegistry().getDescriptor(imageKey) == null) {
 				UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
 			}
 		}
@@ -1340,7 +1351,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.EditorPart#doSave(org.eclipse.core.runtime.IProgressMonitor)
 	 */
 	@Override
@@ -1350,7 +1361,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.EditorPart#doSaveAs()
 	 */
 	@Override
@@ -1359,7 +1370,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.EditorPart#isSaveAsAllowed()
 	 */
 	@Override
@@ -1405,7 +1416,8 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 	/**
 	 * This creates a context menu for the viewer and adds a listener as well registering the menu for extension.
 	 */
-	protected void createContextMenuFor(Control control, ISelectionProvider selectionProvider, StructuredViewer viewer) {
+	protected void createContextMenuFor(Control control, ISelectionProvider selectionProvider,
+			StructuredViewer viewer) {
 		MenuManager contextMenu = new MenuManager("#PopUp"); //$NON-NLS-1$
 		contextMenu.setRemoveAllWhenShown(true);
 		contextMenu.addMenuListener(this);
@@ -1429,7 +1441,8 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 	/**
 	 * Copied from StructuredViewer and modified to work for other controls.
 	 */
-	protected void addDragSupport(Control control, int operations, Transfer[] transferTypes, DragSourceListener listener) {
+	protected void addDragSupport(Control control, int operations, Transfer[] transferTypes,
+			DragSourceListener listener) {
 		final DragSource dragSource = new DragSource(control, operations);
 		dragSource.setTransfer(transferTypes);
 		dragSource.addDragListener(listener);
@@ -1488,7 +1501,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
 	 */
 	public void selectionChanged(SelectionChangedEvent event) {
@@ -1497,7 +1510,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 
 	/**
 	 * Set the selection to the table tree viewer, and expand nodes if necessary.
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.ISetSelectionTarget#selectReveal(org.eclipse.jface.viewers.ISelection)
 	 */
 	public void selectReveal(ISelection selection) {

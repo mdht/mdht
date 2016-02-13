@@ -37,7 +37,7 @@ public interface NullFlavor extends PropertyValidation {
 	 * If the meaning of the '<em>Null Flavor</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind
 	 * @see #setNullFlavor(NullFlavorKind)
@@ -51,7 +51,7 @@ public interface NullFlavor extends PropertyValidation {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor#getNullFlavor <em>Null Flavor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind

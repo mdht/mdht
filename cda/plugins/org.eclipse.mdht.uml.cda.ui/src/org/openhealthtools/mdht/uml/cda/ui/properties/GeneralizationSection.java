@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for restoring defaults
  *     Christian W. Damus - implement handling of live validation roll-back (artf3318)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.properties;
@@ -45,7 +45,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
 /**
  * The properties section for Generalization.
- * 
+ *
  * $Id: $
  */
 public class GeneralizationSection extends ValidationSection {

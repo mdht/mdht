@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
 
@@ -55,7 +55,7 @@ import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPr
 
 /**
  * The general properties section for Property default value.
- * 
+ *
  */
 public class PropertyDefaultSection extends WrapperAwareModelerPropertySection {
 
@@ -202,9 +202,9 @@ public class PropertyDefaultSection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@Override
@@ -291,7 +291,7 @@ public class PropertyDefaultSection extends WrapperAwareModelerPropertySection {
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification

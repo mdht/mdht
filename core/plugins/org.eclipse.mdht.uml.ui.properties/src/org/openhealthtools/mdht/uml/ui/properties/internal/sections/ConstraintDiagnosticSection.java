@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - UI for editing constrained elements (artf3318)
- *                        
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
@@ -168,8 +168,9 @@ public class ConstraintDiagnosticSection extends WrapperAwareModelerPropertySect
 		evaluationModePicker.getControl().setLayoutData(data);
 
 		evaluationModePicker.setContentProvider(new ArrayContentProvider());
-		evaluationModePicker.setLabelProvider(EnumerationLabelProvider.of(EvaluationModeKind.class).label(
-			EvaluationModeKind.BATCH, "Batch").label(EvaluationModeKind.LIVE, "Live"));
+		evaluationModePicker.setLabelProvider(
+			EnumerationLabelProvider.of(EvaluationModeKind.class).label(EvaluationModeKind.BATCH, "Batch").label(
+				EvaluationModeKind.LIVE, "Live"));
 		evaluationModePicker.setInput(EvaluationModeKind.VALUES);
 
 		label = getWidgetFactory().createCLabel(composite, "Severity:"); //$NON-NLS-1$
@@ -186,8 +187,8 @@ public class ConstraintDiagnosticSection extends WrapperAwareModelerPropertySect
 		severityPicker.getControl().setLayoutData(data);
 
 		severityPicker.setContentProvider(new ArrayContentProvider());
-		severityPicker.setLabelProvider(EnumerationLabelProvider.of(SeverityKind.class).labels(
-			"Informational", "Warning", "Error"));
+		severityPicker.setLabelProvider(
+			EnumerationLabelProvider.of(SeverityKind.class).labels("Informational", "Warning", "Error"));
 		severityPicker.setInput(SeverityKind.VALUES);
 
 		label = getWidgetFactory().createCLabel(composite, "Status Code:"); //$NON-NLS-1$
@@ -274,9 +275,9 @@ public class ConstraintDiagnosticSection extends WrapperAwareModelerPropertySect
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")
@@ -329,7 +330,7 @@ public class ConstraintDiagnosticSection extends WrapperAwareModelerPropertySect
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification
@@ -354,57 +355,57 @@ public class ConstraintDiagnosticSection extends WrapperAwareModelerPropertySect
 
 	private void updateModel() {
 		if (dirty) {
-			execute(new AbstractEMFOperation(
-				TransactionUtil.getEditingDomain(constraint), "Change Diagnostic Properties") {
+			execute(
+				new AbstractEMFOperation(TransactionUtil.getEditingDomain(constraint), "Change Diagnostic Properties") {
 
-				@Override
-				protected IStatus doExecute(IProgressMonitor arg0, IAdaptable arg1) throws ExecutionException {
-					boolean changed = false;
+					@Override
+					protected IStatus doExecute(IProgressMonitor arg0, IAdaptable arg1) throws ExecutionException {
+						boolean changed = false;
 
-					EvaluationModeKind evalMode = getSelectedValue(evaluationModePicker, EvaluationModeKind.class);
-					if (diagnostic.getEvaluationMode() != evalMode) {
-						changed = true;
-						diagnostic.setEvaluationMode(evalMode);
-					}
-
-					SeverityKind sev = getSelectedValue(severityPicker, SeverityKind.class);
-					if (diagnostic.getSeverity() != sev) {
-						changed = true;
-						diagnostic.setSeverity(sev);
-					}
-
-					String codeStr = statusCodeText.getText().trim();
-					if (codeStr.length() == 0) {
-						if (diagnostic.isSetCode()) {
+						EvaluationModeKind evalMode = getSelectedValue(evaluationModePicker, EvaluationModeKind.class);
+						if (diagnostic.getEvaluationMode() != evalMode) {
 							changed = true;
-							diagnostic.unsetCode();
+							diagnostic.setEvaluationMode(evalMode);
 						}
-					} else {
-						int code = Integer.valueOf(codeStr);
-						if (diagnostic.getCode() != code) {
-							changed = true;
-							diagnostic.setCode(code);
-						}
-					}
 
-					String message = messageText.getText().trim();
-					if (message.length() == 0) {
-						if (diagnostic.getMessage() != null) {
+						SeverityKind sev = getSelectedValue(severityPicker, SeverityKind.class);
+						if (diagnostic.getSeverity() != sev) {
 							changed = true;
-							diagnostic.setMessage(null);
+							diagnostic.setSeverity(sev);
 						}
-					} else {
-						if (!UML2Util.safeEquals(diagnostic.getMessage(), message)) {
-							changed = true;
-							diagnostic.setMessage(message);
-						}
-					}
 
-					return changed
-							? Status.OK_STATUS
-							: Status.CANCEL_STATUS;
-				}
-			});
+						String codeStr = statusCodeText.getText().trim();
+						if (codeStr.length() == 0) {
+							if (diagnostic.isSetCode()) {
+								changed = true;
+								diagnostic.unsetCode();
+							}
+						} else {
+							int code = Integer.valueOf(codeStr);
+							if (diagnostic.getCode() != code) {
+								changed = true;
+								diagnostic.setCode(code);
+							}
+						}
+
+						String message = messageText.getText().trim();
+						if (message.length() == 0) {
+							if (diagnostic.getMessage() != null) {
+								changed = true;
+								diagnostic.setMessage(null);
+							}
+						} else {
+							if (!UML2Util.safeEquals(diagnostic.getMessage(), message)) {
+								changed = true;
+								diagnostic.setMessage(message);
+							}
+						}
+
+						return changed
+								? Status.OK_STATUS
+								: Status.CANCEL_STATUS;
+					}
+				});
 
 			dirty = false;
 		}

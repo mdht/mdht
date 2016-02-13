@@ -1,7 +1,7 @@
 /**
  * Copyright: NEHTA 2015
- * Author: Joerg Kiegeland, Distributed Models Pty Ltd 
- * 
+ * Author: Joerg Kiegeland, Distributed Models Pty Ltd
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -117,7 +117,7 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 
 	/**
 	 * Updates the given property path with the given value
-	 * 
+	 *
 	 * @param name
 	 *            the propety path
 	 * @param value
@@ -146,10 +146,11 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 					} else {
 						anno.getDetails().put(name, value);
 					}
-					if (anno.getDetails().isEmpty())
+					if (anno.getDetails().isEmpty()) {
 						umlElement.getEAnnotations().remove(anno);
-					else
+					} else {
 						umlElement.getEAnnotations().add(anno);
+					}
 					return Status.OK_STATUS;
 				}
 			};
@@ -189,7 +190,7 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 
 	/**
 	 * Generates the UI for the given class
-	 * 
+	 *
 	 * @param class1
 	 * @param path
 	 *            the property path
@@ -300,7 +301,8 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 						for (int parentIndex = context.size() - 1; parentIndex >= 1; parentIndex--) {
 
 							final int fparentIndex = parentIndex;
-							final String fpathParent = pathParent = pathParent.substring(0, pathParent.lastIndexOf("/"));
+							final String fpathParent = pathParent = pathParent.substring(
+								0, pathParent.lastIndexOf("/"));
 							final String fbasePathParent = basePathParent = basePathParent.substring(
 								0, basePathParent.lastIndexOf("/"));
 
@@ -327,7 +329,8 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 
 				});
 
-				if (property.getType() instanceof Enumeration || "EBooleanObject".equals(property.getType().getName())) {
+				if (property.getType() instanceof Enumeration ||
+						"EBooleanObject".equals(property.getType().getName())) {
 					List<String> lits = new ArrayList<String>();
 					if (getDefaultValue(property) != null) {
 						lits.add(getDefaultValue(property));
@@ -479,8 +482,9 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 
 					});
 
-					if (!containsPath(indexed(propPath, index)))
+					if (!containsPath(indexed(propPath, index))) {
 						addedNewItem = true;
+					}
 				}
 			}
 
@@ -492,8 +496,9 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 			menu.add(action);
 		}
 
-		if (menu != null)
+		if (menu != null) {
 			menu.add(new Separator());
+		}
 
 		if (!addclassactions.isEmpty() && addclassactions.size() <= 20) {
 			sortActionsByCaption(addclassactions);
@@ -552,9 +557,9 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 	}
 
 	/**
-	 * 
+	 *
 	 * Just calling <code>property.getDefault()</code> may return <code>null</code> for dynamic metamodels, so better use this helper function here
-	 * 
+	 *
 	 * @param property
 	 * @return
 	 */
@@ -570,8 +575,9 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 	 */
 	protected Property getBaseProperty(final Property property) {
 		Property result = UMLUtil.getInheritedProperty(property);
-		if (result != null)
+		if (result != null) {
 			return result;
+		}
 		return property;
 	}
 
@@ -595,14 +601,15 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 	}
 
 	private String abbreviate(String path) {
-		if (path.endsWith("/@mixed"))
+		if (path.endsWith("/@mixed")) {
 			return path.substring(0, path.length() - "/@mixed".length()) + "/@text";
+		}
 		return path;
 	}
 
 	/**
 	 * The list of properties that could be edited for the given class
-	 * 
+	 *
 	 * @param cls
 	 * @return
 	 */
@@ -627,8 +634,9 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 	 * @return
 	 */
 	private String indexed(String propPath, int index) {
-		if (index == 1)
+		if (index == 1) {
 			return propPath;
+		}
 		return propPath + "(" + index + ")";
 	}
 
@@ -681,8 +689,9 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 		for (Control c : body.getChildren()) {
 			c.dispose();
 		}
-		if (umlElement == null)
+		if (umlElement == null) {
 			return;
+		}
 		EAnnotation anno = umlElement.getEAnnotation(UMLSAMPLE_ANNOTATION_SOURCE);
 		if (anno != null) {
 			for (String key : anno.getDetails().keySet()) {
@@ -697,8 +706,9 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 
 			@Override
 			public void menuAboutToShow(IMenuManager manager) {
-				if (umlElement instanceof Class)
+				if (umlElement instanceof Class) {
 					addClass((Class) umlElement, "", "", manager, Collections.<Class> emptyList());
+				}
 			}
 		});
 
@@ -727,7 +737,7 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param property
 	 * @param umlClassPath
 	 * @return whether the given property should always be a UI edit control be generated for or not
@@ -763,7 +773,7 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 	/**
 	 * Tell whether the given property is either optional (and maybe fixed in value) or required but not fixed in value.
 	 * Rational: only such properties are allowed to be edited
-	 * 
+	 *
 	 * @param property
 	 * @return
 	 */
@@ -783,7 +793,7 @@ public class InstanceSampleSection extends WrapperAwareModelerPropertySection {
 
 	/**
 	 * Update if neccessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification

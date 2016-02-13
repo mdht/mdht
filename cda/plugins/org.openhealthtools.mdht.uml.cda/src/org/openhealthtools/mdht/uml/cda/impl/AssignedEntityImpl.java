@@ -292,20 +292,20 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ASSIGNED_ENTITY__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ASSIGNED_ENTITY__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__TYPE_ID, newTypeId,
+				newTypeId));
 		}
 	}
 
@@ -372,12 +372,12 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ASSIGNED_ENTITY__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ASSIGNED_ENTITY__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
@@ -450,20 +450,20 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		if (newSDTCPatient != sDTCPatient) {
 			NotificationChain msgs = null;
 			if (sDTCPatient != null) {
-				msgs = ((InternalEObject) sDTCPatient).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, null, msgs);
+				msgs = ((InternalEObject) sDTCPatient).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, null, msgs);
 			}
 			if (newSDTCPatient != null) {
-				msgs = ((InternalEObject) newSDTCPatient).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, null, msgs);
+				msgs = ((InternalEObject) newSDTCPatient).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, null, msgs);
 			}
 			msgs = basicSetSDTCPatient(newSDTCPatient, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, newSDTCPatient, newSDTCPatient));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT,
+				newSDTCPatient, newSDTCPatient));
 		}
 	}
 
@@ -506,21 +506,20 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		if (newAssignedPerson != assignedPerson) {
 			NotificationChain msgs = null;
 			if (assignedPerson != null) {
-				msgs = ((InternalEObject) assignedPerson).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, null, msgs);
+				msgs = ((InternalEObject) assignedPerson).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, null, msgs);
 			}
 			if (newAssignedPerson != null) {
-				msgs = ((InternalEObject) newAssignedPerson).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, null, msgs);
+				msgs = ((InternalEObject) newAssignedPerson).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, null, msgs);
 			}
 			msgs = basicSetAssignedPerson(newAssignedPerson, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, newAssignedPerson,
-				newAssignedPerson));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON,
+				newAssignedPerson, newAssignedPerson));
 		}
 	}
 
@@ -560,9 +559,8 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -577,9 +575,8 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -615,9 +612,8 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__CLASS_CODE, oldClassCode, classCode,
-				!oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__CLASS_CODE, oldClassCode,
+				classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -632,9 +628,8 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ASSIGNED_ENTITY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ASSIGNED_ENTITY__CLASS_CODE,
+				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 

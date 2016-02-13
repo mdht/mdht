@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.builder;
 
@@ -34,7 +34,7 @@ public class ToggleNatureAction implements IObjectActionDelegate {
 
 	/**
 	 * Toggles sample nature on a project
-	 * 
+	 *
 	 * @param project
 	 *            to have sample nature added or removed
 	 */
@@ -90,8 +90,8 @@ public class ToggleNatureAction implements IObjectActionDelegate {
 				if (!hasGenerateReference) {
 					IProject[] newReferencedProjects = new IProject[referencedProjects.length + 1];
 					System.arraycopy(referencedProjects, 0, newReferencedProjects, 0, referencedProjects.length);
-					newReferencedProjects[newReferencedProjects.length - 1] = ResourcesPlugin.getWorkspace().getRoot().getProject(
-						generateProject);
+					newReferencedProjects[newReferencedProjects.length -
+							1] = ResourcesPlugin.getWorkspace().getRoot().getProject(generateProject);
 					;
 					description.setReferencedProjects(newReferencedProjects);
 
@@ -109,7 +109,7 @@ public class ToggleNatureAction implements IObjectActionDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	@SuppressWarnings("rawtypes")
@@ -121,7 +121,7 @@ public class ToggleNatureAction implements IObjectActionDelegate {
 				if (element instanceof IProject) {
 					project = (IProject) element;
 				} else if (element instanceof IAdaptable) {
-					project = (IProject) ((IAdaptable) element).getAdapter(IProject.class);
+					project = ((IAdaptable) element).getAdapter(IProject.class);
 				}
 				if (project != null) {
 					toggleNature(project);
@@ -132,7 +132,7 @@ public class ToggleNatureAction implements IObjectActionDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action
 	 * .IAction, org.eclipse.jface.viewers.ISelection)
@@ -172,7 +172,7 @@ public class ToggleNatureAction implements IObjectActionDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.ui.IObjectActionDelegate#setActivePart(org.eclipse.jface.
 	 * action.IAction, org.eclipse.ui.IWorkbenchPart)

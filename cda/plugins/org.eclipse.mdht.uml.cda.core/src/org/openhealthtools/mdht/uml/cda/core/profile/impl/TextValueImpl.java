@@ -37,7 +37,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	 * The default value of the '{@link #isIgnoreCase() <em>Ignore Case</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIgnoreCase()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	 * The cached value of the '{@link #isIgnoreCase() <em>Ignore Case</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIgnoreCase()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TextValueImpl() {
@@ -90,7 +90,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +126,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getValue() {
@@ -185,7 +185,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isIgnoreCase() {
@@ -195,22 +195,22 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIgnoreCase(boolean newIgnoreCase) {
 		boolean oldIgnoreCase = ignoreCase;
 		ignoreCase = newIgnoreCase;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.TEXT_VALUE__IGNORE_CASE, oldIgnoreCase, ignoreCase));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.TEXT_VALUE__IGNORE_CASE, oldIgnoreCase,
+				ignoreCase));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValue(String newValue) {
@@ -224,7 +224,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

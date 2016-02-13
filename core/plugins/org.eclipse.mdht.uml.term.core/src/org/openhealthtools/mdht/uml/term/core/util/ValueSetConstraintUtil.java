@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Rama Ramakrishnan  - 1/27/2012 - Added check for CS data type
  *     Christian W. Damus - Generate OCL for enumeration properties (artf3099)
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.util;
 

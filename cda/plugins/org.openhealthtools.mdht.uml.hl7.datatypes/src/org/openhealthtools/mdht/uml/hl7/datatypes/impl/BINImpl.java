@@ -101,9 +101,8 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 		boolean oldRepresentationESet = representationESet;
 		representationESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.BIN__REPRESENTATION, oldRepresentation, representation,
-				!oldRepresentationESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.BIN__REPRESENTATION,
+				oldRepresentation, representation, !oldRepresentationESet));
 		}
 	}
 
@@ -118,9 +117,8 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 		representation = REPRESENTATION_EDEFAULT;
 		representationESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.BIN__REPRESENTATION, oldRepresentation,
-				REPRESENTATION_EDEFAULT, oldRepresentationESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.BIN__REPRESENTATION,
+				oldRepresentation, REPRESENTATION_EDEFAULT, oldRepresentationESet));
 		}
 	}
 

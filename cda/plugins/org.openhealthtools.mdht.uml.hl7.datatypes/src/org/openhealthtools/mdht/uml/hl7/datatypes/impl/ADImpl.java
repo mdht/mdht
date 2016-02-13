@@ -195,8 +195,8 @@ public class ADImpl extends ANYImpl implements AD {
 		Boolean oldIsNotOrdered = isNotOrdered;
 		isNotOrdered = newIsNotOrdered;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.AD__IS_NOT_ORDERED, oldIsNotOrdered, isNotOrdered));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.AD__IS_NOT_ORDERED, oldIsNotOrdered,
+				isNotOrdered));
 		}
 	}
 

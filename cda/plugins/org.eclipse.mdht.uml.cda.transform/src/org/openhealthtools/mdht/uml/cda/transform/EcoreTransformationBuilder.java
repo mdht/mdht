@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
@@ -34,19 +34,18 @@ public class EcoreTransformationBuilder extends TransformationBuilder {
 	}
 
 	public static TransformationBuilder create() {
-		TransformationBuilder result = new EcoreTransformationBuilder(
-			BaseEcoreTransformationBuilder.create(overrides()) //
+		TransformationBuilder result = new EcoreTransformationBuilder(BaseEcoreTransformationBuilder.create(overrides()) //
 
-			.initialization() //
-			.rule(new CDAInitializeContextRule()) //
-			.done() // initialization phase
+		.initialization() //
+		.rule(new CDAInitializeContextRule()) //
+		.done() // initialization phase
 
-			.getPhase(IEcoreTransformIDs.TRANSFORM_ELEMENTS_PHASE) //
-			.rule(adapt(TransformClinicalDocument.class)) //
-			.rule(adapt(TransformTemplateIdentifier.class)) //
-			.done() // customizing main transformation phase
+		.getPhase(IEcoreTransformIDs.TRANSFORM_ELEMENTS_PHASE) //
+		.rule(adapt(TransformClinicalDocument.class)) //
+		.rule(adapt(TransformTemplateIdentifier.class)) //
+		.done() // customizing main transformation phase
 
-			.build()); //
+		.build()); //
 
 		return result;
 	}

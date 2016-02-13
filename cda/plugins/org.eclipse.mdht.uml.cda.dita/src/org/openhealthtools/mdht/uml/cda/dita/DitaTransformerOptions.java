@@ -149,7 +149,7 @@ public class DitaTransformerOptions {
 
 	/**
 	 * The value of the appendConformanceRule attribute in the dita-transform ant task xml
-	 * 
+	 *
 	 * @return appendConformanceRules
 	 */
 	public boolean isAppendConformanceRules() {

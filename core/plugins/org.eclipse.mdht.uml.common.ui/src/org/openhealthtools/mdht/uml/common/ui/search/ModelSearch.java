@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Sean Muir (NEHTA) - modified model search to use path maps
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.search;
@@ -45,13 +45,13 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
- * 
+ *
  * @version $Id: $
  */
 public class ModelSearch {
 
 	/**
-	 * 
+	 *
 	 */
 	private ModelSearch() {
 	}
@@ -116,7 +116,8 @@ public class ModelSearch {
 				// iterator.prune();
 				if (UMLResource.UML_METAMODEL_URI.equals(((Package) element).eResource().getURI().toString())) {
 					iterator.prune();
-				} else if (UMLResource.ECORE_METAMODEL_URI.equals(((Package) element).eResource().getURI().toString())) {
+				} else if (UMLResource.ECORE_METAMODEL_URI.equals(
+					((Package) element).eResource().getURI().toString())) {
 					iterator.prune();
 					// else if (UMLResource.ECORE_PRIMITIVE_TYPES_LIBRARY_URI.equals(
 					// ((Package)element).eResource().getURI().toString()))
@@ -245,9 +246,9 @@ public class ModelSearch {
 
 	/**
 	 * findAllOf search the set of open models within the workspace and returns using corresponding path map uri
-	 * 
+	 *
 	 * TODO replace the loop with a resource visitor
-	 * 
+	 *
 	 * @param resourceSetold
 	 * @param type
 	 * @return
@@ -279,14 +280,18 @@ public class ModelSearch {
 
 							URI modelFile = null;
 							if (plugin.exists()) {
-								URI pathMap = org.openhealthtools.mdht.uml.common.UmlPlugin.getPathMap(plugin.getContents());
+								URI pathMap = org.openhealthtools.mdht.uml.common.UmlPlugin.getPathMap(
+									plugin.getContents());
 								if (pathMap != null) {
 									modelFile = pathMap.appendSegment(resource.getName());
 								} else {
-									modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+									modelFile = URI.createFileURI(
+										project.getFolder(model).getFile(
+											resource.getName()).getRawLocation().toOSString());
 								}
 							} else {
-								modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+								modelFile = URI.createFileURI(
+									project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
 							}
 
 							TreeIterator<Object> iterator = EcoreUtil.getAllProperContents(
@@ -312,10 +317,12 @@ public class ModelSearch {
 									iterator.prune();
 									continue;
 								} else if (Package.class.isInstance(element)) {
-									if (UMLResource.UML_METAMODEL_URI.equals(((Package) element).eResource().getURI().toString())) {
+									if (UMLResource.UML_METAMODEL_URI.equals(
+										((Package) element).eResource().getURI().toString())) {
 										iterator.prune();
 										continue;
-									} else if (UMLResource.ECORE_METAMODEL_URI.equals(((Package) element).eResource().getURI().toString())) {
+									} else if (UMLResource.ECORE_METAMODEL_URI.equals(
+										((Package) element).eResource().getURI().toString())) {
 										iterator.prune();
 										continue;
 									}

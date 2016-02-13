@@ -9,7 +9,7 @@
  *     Sean Muir (JKM Software) - initial API and implementation
  *     IBM Corporation - updated use of MDHT validation APIs
  *     Christian W. Damus - refactored CDAResource, CDAUtil, CDARegistry on the new flexible XML resource (artf3367)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.validate;
 
@@ -36,10 +36,10 @@ import org.xml.sax.helpers.XMLReaderFactory;
 /**
  * Simple main validate routine used by the workspace xml instance validation in
  * the cda xml ui plugin
- * 
+ *
  * Step 1 Index XML Instance Step 2 Validation Instance Step 3 write results to
  * temp file
- * 
+ *
  */
 public class Validate {
 
@@ -65,7 +65,7 @@ public class Validate {
 	 * arg0 = CDA input URI
 	 * arg1 = output file for validation results
 	 * arg3 = model qualified name for document type class, or null
-	 * 
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -115,15 +115,18 @@ public class Validate {
 							path = getPath((EObject) diagnostic.getData().get(0));
 						}
 
-						XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(path.toUpperCase());
+						XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(
+							path.toUpperCase());
 
 						try {
 							if (eld != null) {
-								out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
-										diagnostic.getMessage() + "\n");
+								out.write(
+									"error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
+											diagnostic.getMessage() + "\n");
 							} else {
-								out.write("error" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER +
-										diagnostic.getMessage() + "(" + path + ")" + "\n");
+								out.write(
+									"error" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER + diagnostic.getMessage() +
+											"(" + path + ")" + "\n");
 							}
 
 						} catch (IOException e) {
@@ -141,15 +144,18 @@ public class Validate {
 
 						}
 
-						XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(path.toUpperCase());
+						XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(
+							path.toUpperCase());
 
 						try {
 							if (eld != null) {
-								out.write("warning" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
-										diagnostic.getMessage() + "\n");
+								out.write(
+									"warning" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
+											diagnostic.getMessage() + "\n");
 							} else {
-								out.write("warning" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER +
-										diagnostic.getMessage() + "(" + path + ")" + "\n");
+								out.write(
+									"warning" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER + diagnostic.getMessage() +
+											"(" + path + ")" + "\n");
 							}
 						} catch (IOException e) {
 							e.printStackTrace();
@@ -183,11 +189,13 @@ public class Validate {
 					}
 
 					if (eld != null) {
-						out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
-								"CDA document load error : " + rootMessage + "\n");
+						out.write(
+							"error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
+									"CDA document load error : " + rootMessage + "\n");
 					} else {
-						out.write("error" + DELIMITER + 1 + DELIMITER + 1 + DELIMITER + "CDA document load error : " +
-								rootMessage + "\n");
+						out.write(
+							"error" + DELIMITER + 1 + DELIMITER + 1 + DELIMITER + "CDA document load error : " +
+									rootMessage + "\n");
 					}
 
 				}

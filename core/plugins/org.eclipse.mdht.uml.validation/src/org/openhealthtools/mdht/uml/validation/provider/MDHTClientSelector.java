@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.validation.provider;
 
@@ -76,7 +76,8 @@ public class MDHTClientSelector extends ProfileClientSelector implements IExecut
 		boolean result = true;
 
 		if (baseModelURIs != null) {
-			final URIConverter converter = getPlatformlyNormalizingURIConverter(ValidationProfileUtil.getURIConverter(root));
+			final URIConverter converter = getPlatformlyNormalizingURIConverter(
+				ValidationProfileUtil.getURIConverter(root));
 
 			for (URI uri : baseModelURIs) {
 				result = findPackage(
@@ -96,7 +97,8 @@ public class MDHTClientSelector extends ProfileClientSelector implements IExecut
 		boolean result = true;
 
 		if (appliedProfileURIs != null) {
-			final URIConverter converter = getPlatformlyNormalizingURIConverter(ValidationProfileUtil.getURIConverter(root));
+			final URIConverter converter = getPlatformlyNormalizingURIConverter(
+				ValidationProfileUtil.getURIConverter(root));
 
 			for (URI uri : appliedProfileURIs) {
 				result = findPackage(converter.normalize(uri), converter, root.getAllAppliedProfiles()) != null;
@@ -134,7 +136,8 @@ public class MDHTClientSelector extends ProfileClientSelector implements IExecut
 	private URIConverter getPlatformlyNormalizingURIConverter(URIConverter converter) {
 		final ExtensibleURIConverterImpl.URIMap delegate = (ExtensibleURIConverterImpl.URIMap) converter.getURIMap();
 
-		URIConverter result = new ExtensibleURIConverterImpl(converter.getURIHandlers(), converter.getContentHandlers()) {
+		URIConverter result = new ExtensibleURIConverterImpl(
+			converter.getURIHandlers(), converter.getContentHandlers()) {
 			@SuppressWarnings("serial")
 			@Override
 			protected URIMap getInternalURIMap() {

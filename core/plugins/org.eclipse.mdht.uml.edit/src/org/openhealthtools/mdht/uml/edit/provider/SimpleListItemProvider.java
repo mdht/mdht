@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
@@ -34,7 +34,7 @@ public class SimpleListItemProvider extends ItemProviderAdapter implements IEdit
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProvider#getImage(java.lang.Object)
 	 */
 	@Override
@@ -44,7 +44,7 @@ public class SimpleListItemProvider extends ItemProviderAdapter implements IEdit
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProvider#getText(java.lang.Object)
 	 */
 	@Override
@@ -54,7 +54,7 @@ public class SimpleListItemProvider extends ItemProviderAdapter implements IEdit
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getParent(java.lang.Object)
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class SimpleListItemProvider extends ItemProviderAdapter implements IEdit
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProvider#hasChildren(java.lang.Object)
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class SimpleListItemProvider extends ItemProviderAdapter implements IEdit
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProvider#getChildren(java.lang.Object)
 	 */
 	@Override

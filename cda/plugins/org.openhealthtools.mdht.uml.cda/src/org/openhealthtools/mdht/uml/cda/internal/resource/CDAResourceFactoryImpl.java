@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - refactored CDAResource, CDAUtil, CDARegistry on the new flexible XML resource (artf3367)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
@@ -37,9 +37,10 @@ public class CDAResourceFactoryImpl extends FleXMLResourceFactoryImpl implements
 
 	static {
 		// configure the FleXMLResource registries
-		DOMElementHandler.Registry.INSTANCE.registerHandler(CDAPackage.eINSTANCE, new PartElementHandler()).registerHandler(
-			CDAPackage.eINSTANCE, new DataTypeElementHandler()).registerHandler(
-			CDAPackage.eINSTANCE, new XSITypeHandler(CDAPackage.eINSTANCE));
+		DOMElementHandler.Registry.INSTANCE.registerHandler(
+			CDAPackage.eINSTANCE, new PartElementHandler()).registerHandler(
+				CDAPackage.eINSTANCE, new DataTypeElementHandler()).registerHandler(
+					CDAPackage.eINSTANCE, new XSITypeHandler(CDAPackage.eINSTANCE));
 
 		XSITypeProvider.Registry.INSTANCE.registerXSITypeProvider(CDAPackage.eINSTANCE, new CDAXSITypeProvider());
 	}

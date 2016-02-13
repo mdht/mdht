@@ -106,14 +106,14 @@ public class ClinicalStatementOperations extends ActOperations {
 
 	@SuppressWarnings("unchecked")
 	private static List<EntryRelationship> getEntryRelationships(ClinicalStatement clinicalStatement) {
-		return ((List<EntryRelationship>) clinicalStatement.eGet(clinicalStatement.eClass().getEStructuralFeature(
-			"entryRelationship")));
+		return ((List<EntryRelationship>) clinicalStatement.eGet(
+			clinicalStatement.eClass().getEStructuralFeature("entryRelationship")));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addAct(ClinicalStatement clinicalStatement, Act act) {
@@ -125,7 +125,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addEncounter(ClinicalStatement clinicalStatement, Encounter encounter) {
@@ -137,7 +137,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addObservation(ClinicalStatement clinicalStatement, Observation observation) {
@@ -149,7 +149,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addObservationMedia(ClinicalStatement clinicalStatement, ObservationMedia observationMedia) {
@@ -161,7 +161,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addOrganizer(ClinicalStatement clinicalStatement, Organizer organizer) {
@@ -173,7 +173,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addProcedure(ClinicalStatement clinicalStatement, Procedure procedure) {
@@ -185,7 +185,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addRegionOfInterest(ClinicalStatement clinicalStatement, RegionOfInterest regionOfInterest) {
@@ -197,7 +197,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addSubstanceAdministration(ClinicalStatement clinicalStatement,
@@ -210,7 +210,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static void addSupply(ClinicalStatement clinicalStatement, Supply supply) {
@@ -222,7 +222,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<Act> getActs(ClinicalStatement clinicalStatement) {
@@ -238,7 +238,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static ClinicalDocument getClinicalDocument(ClinicalStatement clinicalStatement) {
@@ -248,7 +248,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<Encounter> getEncounters(ClinicalStatement clinicalStatement) {
@@ -264,7 +264,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<ClinicalStatement> getEntryRelationshipTargets(ClinicalStatement clinicalStatement,
@@ -279,7 +279,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<ClinicalStatement> getEntryRelationshipTargets(ClinicalStatement clinicalStatement,
@@ -290,7 +290,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<Observation> getObservations(ClinicalStatement clinicalStatement) {
@@ -306,7 +306,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<ObservationMedia> getObservationMedia(ClinicalStatement clinicalStatement) {
@@ -322,7 +322,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<Organizer> getOrganizers(ClinicalStatement clinicalStatement) {
@@ -338,7 +338,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<Procedure> getProcedures(ClinicalStatement clinicalStatement) {
@@ -354,7 +354,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<RegionOfInterest> getRegionsOfInterest(ClinicalStatement clinicalStatement) {
@@ -364,13 +364,14 @@ public class ClinicalStatementOperations extends ActOperations {
 				regionsOfInterest.add(entryRelationship.getRegionOfInterest());
 			}
 		}
-		return new BasicEList.UnmodifiableEList<RegionOfInterest>(regionsOfInterest.size(), regionsOfInterest.toArray());
+		return new BasicEList.UnmodifiableEList<RegionOfInterest>(
+			regionsOfInterest.size(), regionsOfInterest.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static Section getSection(ClinicalStatement clinicalStatement) {
@@ -380,7 +381,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<SubstanceAdministration> getSubstanceAdministrations(ClinicalStatement clinicalStatement) {
@@ -397,7 +398,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static EList<Supply> getSupplies(ClinicalStatement clinicalStatement) {
@@ -456,7 +457,7 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public static boolean hasCode(ClinicalStatement clinicalStatement, String code, String codeSystem,
@@ -544,7 +545,8 @@ public class ClinicalStatementOperations extends ActOperations {
 				CDAPackage.Literals.CLINICAL_STATEMENT,
 				CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(41));
 			try {
-				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
+				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(
+					HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
@@ -587,7 +589,8 @@ public class ClinicalStatementOperations extends ActOperations {
 				CDAPackage.Literals.CLINICAL_STATEMENT,
 				CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(42));
 			try {
-				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
+				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(
+					HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
@@ -716,7 +719,8 @@ public class ClinicalStatementOperations extends ActOperations {
 				CDAPackage.Literals.CLINICAL_STATEMENT,
 				CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(45));
 			try {
-				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
+				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(
+					HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
@@ -759,7 +763,8 @@ public class ClinicalStatementOperations extends ActOperations {
 				CDAPackage.Literals.CLINICAL_STATEMENT,
 				CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(46));
 			try {
-				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
+				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(
+					HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
@@ -816,12 +821,13 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@SuppressWarnings("unchecked")
 	public static boolean hasTemplateId(ClinicalStatement clinicalStatement, String templateId) {
-		for (II ii : (List<II>) clinicalStatement.eGet(clinicalStatement.eClass().getEStructuralFeature("templateId"))) {
+		for (II ii : (List<II>) clinicalStatement.eGet(
+			clinicalStatement.eClass().getEStructuralFeature("templateId"))) {
 			if (templateId.equals(ii.getRoot())) {
 				return true;
 			}

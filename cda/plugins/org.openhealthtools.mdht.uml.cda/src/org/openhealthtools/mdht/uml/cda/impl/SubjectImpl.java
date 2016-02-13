@@ -264,12 +264,12 @@ public class SubjectImpl extends ParticipationImpl implements Subject {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBJECT__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBJECT__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBJECT__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBJECT__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
@@ -331,20 +331,20 @@ public class SubjectImpl extends ParticipationImpl implements Subject {
 		if (newAwarenessCode != awarenessCode) {
 			NotificationChain msgs = null;
 			if (awarenessCode != null) {
-				msgs = ((InternalEObject) awarenessCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBJECT__AWARENESS_CODE, null, msgs);
+				msgs = ((InternalEObject) awarenessCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBJECT__AWARENESS_CODE, null, msgs);
 			}
 			if (newAwarenessCode != null) {
-				msgs = ((InternalEObject) newAwarenessCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBJECT__AWARENESS_CODE, null, msgs);
+				msgs = ((InternalEObject) newAwarenessCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBJECT__AWARENESS_CODE, null, msgs);
 			}
 			msgs = basicSetAwarenessCode(newAwarenessCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBJECT__AWARENESS_CODE, newAwarenessCode, newAwarenessCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBJECT__AWARENESS_CODE, newAwarenessCode,
+				newAwarenessCode));
 		}
 	}
 
@@ -386,20 +386,20 @@ public class SubjectImpl extends ParticipationImpl implements Subject {
 		if (newRelatedSubject != relatedSubject) {
 			NotificationChain msgs = null;
 			if (relatedSubject != null) {
-				msgs = ((InternalEObject) relatedSubject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBJECT__RELATED_SUBJECT, null, msgs);
+				msgs = ((InternalEObject) relatedSubject).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBJECT__RELATED_SUBJECT, null, msgs);
 			}
 			if (newRelatedSubject != null) {
-				msgs = ((InternalEObject) newRelatedSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SUBJECT__RELATED_SUBJECT, null, msgs);
+				msgs = ((InternalEObject) newRelatedSubject).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBJECT__RELATED_SUBJECT, null, msgs);
 			}
 			msgs = basicSetRelatedSubject(newRelatedSubject, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBJECT__RELATED_SUBJECT, newRelatedSubject, newRelatedSubject));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBJECT__RELATED_SUBJECT,
+				newRelatedSubject, newRelatedSubject));
 		}
 	}
 
@@ -426,8 +426,8 @@ public class SubjectImpl extends ParticipationImpl implements Subject {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBJECT__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBJECT__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -442,9 +442,8 @@ public class SubjectImpl extends ParticipationImpl implements Subject {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.SUBJECT__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUBJECT__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -480,8 +479,8 @@ public class SubjectImpl extends ParticipationImpl implements Subject {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBJECT__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBJECT__TYPE_CODE, oldTypeCode, typeCode,
+				!oldTypeCodeESet));
 		}
 	}
 
@@ -496,9 +495,8 @@ public class SubjectImpl extends ParticipationImpl implements Subject {
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.SUBJECT__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
-				oldTypeCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUBJECT__TYPE_CODE, oldTypeCode,
+				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
 		}
 	}
 
@@ -533,9 +531,8 @@ public class SubjectImpl extends ParticipationImpl implements Subject {
 		boolean oldContextControlCodeESet = contextControlCodeESet;
 		contextControlCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SUBJECT__CONTEXT_CONTROL_CODE, oldContextControlCode,
-				contextControlCode, !oldContextControlCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBJECT__CONTEXT_CONTROL_CODE,
+				oldContextControlCode, contextControlCode, !oldContextControlCodeESet));
 		}
 	}
 
@@ -550,9 +547,8 @@ public class SubjectImpl extends ParticipationImpl implements Subject {
 		contextControlCode = CONTEXT_CONTROL_CODE_EDEFAULT;
 		contextControlCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.SUBJECT__CONTEXT_CONTROL_CODE, oldContextControlCode,
-				CONTEXT_CONTROL_CODE_EDEFAULT, oldContextControlCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUBJECT__CONTEXT_CONTROL_CODE,
+				oldContextControlCode, CONTEXT_CONTROL_CODE_EDEFAULT, oldContextControlCodeESet));
 		}
 	}
 

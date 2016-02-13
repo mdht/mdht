@@ -87,8 +87,8 @@ public class IVXB_INTImpl extends INTImpl implements IVXB_INT {
 		Boolean oldInclusive = inclusive;
 		inclusive = newInclusive;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.IVXB_INT__INCLUSIVE, oldInclusive, inclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVXB_INT__INCLUSIVE, oldInclusive,
+				inclusive));
 		}
 	}
 

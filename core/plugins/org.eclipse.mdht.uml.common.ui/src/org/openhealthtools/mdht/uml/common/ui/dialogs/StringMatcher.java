@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.dialogs;
@@ -61,17 +61,17 @@ public class StringMatcher {
 	 * StringMatcher constructor takes in a String object that is a simple
 	 * pattern which may contain * for 0 and many characters and
 	 * ? for exactly one character.
-	 * 
+	 *
 	 * Literal '*' and '?' characters must be escaped in the pattern
 	 * e.g., "\*" means literal "*", etc.
-	 * 
+	 *
 	 * Escaping any other character (including the escape character itself),
 	 * just results in that character in the pattern.
 	 * e.g., "\a" means "a" and "\\" means "\"
-	 * 
+	 *
 	 * If invoking the StringMatcher with string literals in Java, don't forget
 	 * escape characters are represented by "\\".
-	 * 
+	 *
 	 * @param pattern
 	 *            the pattern to match text against
 	 * @param ignoreCase
@@ -99,10 +99,13 @@ public class StringMatcher {
 	/**
 	 * Find the first occurrence of the pattern between <code>start</code)(inclusive)
 	 * and <code>end</code>(exclusive).
-	 * 
-	 * @param <code>text</code>, the String object to search in
-	 * @param <code>start</code>, the starting index of the search range, inclusive
-	 * @param <code>end</code>, the ending index of the search range, exclusive
+	 *
+	 * @param <code>text</code>,
+	 *            the String object to search in
+	 * @param <code>start</code>,
+	 *            the starting index of the search range, inclusive
+	 * @param <code>end</code>,
+	 *            the ending index of the search range, exclusive
 	 * @return an <code>StringMatcher.Position</code> object that keeps the starting
 	 *         (inclusive) and ending positions (exclusive) of the first occurrence of the
 	 *         pattern in the specified range of the text; return null if not found or subtext
@@ -163,9 +166,10 @@ public class StringMatcher {
 
 	/**
 	 * match the given <code>text</code> with the pattern
-	 * 
+	 *
 	 * @return true if matched eitherwise false
-	 * @param <code>text</code>, a String object
+	 * @param <code>text</code>,
+	 *            a String object
 	 */
 	public boolean match(String text) {
 		return match(text, 0, text.length());
@@ -174,12 +178,14 @@ public class StringMatcher {
 	/**
 	 * Given the starting (inclusive) and the ending (exclusive) positions in the <code>text</code>, determine if the given substring matches with
 	 * aPattern
-	 * 
+	 *
 	 * @return true if the specified portion of the text matches the pattern
 	 * @param String
 	 *            <code>text</code>, a String object that contains the substring to match
-	 * @param int <code>start<code> marks the starting position (inclusive) of the substring
-	 * @param int <code>end<code> marks the ending index (exclusive) of the substring
+	 * @param int
+	 *            <code>start<code> marks the starting position (inclusive) of the substring
+	 * @param int
+	 *            <code>end<code> marks the ending index (exclusive) of the substring
 	 */
 	public boolean match(String text, int start, int end) {
 		if (null == text) {
@@ -271,7 +277,7 @@ public class StringMatcher {
 
 	/**
 	 * Parses the given pattern into segments seperated by wildcard '*' characters.
-	 * 
+	 *
 	 * @param p
 	 *            , a String object that is a simple regular expression with �*� and/or �?�
 	 */
@@ -336,9 +342,12 @@ public class StringMatcher {
 	}
 
 	/**
-	 * @param <code>text</code>, a string which contains no wildcard
-	 * @param <code>start</code>, the starting index in the text for search, inclusive
-	 * @param <code>end</code>, the stopping point of search, exclusive
+	 * @param <code>text</code>,
+	 *            a string which contains no wildcard
+	 * @param <code>start</code>,
+	 *            the starting index in the text for search, inclusive
+	 * @param <code>end</code>,
+	 *            the stopping point of search, exclusive
 	 * @return the starting index in the text of the pattern , or -1 if not found
 	 */
 	protected int posIn(String text, int start, int end) {// no wild card in pattern
@@ -362,11 +371,16 @@ public class StringMatcher {
 	}
 
 	/**
-	 * @param <code>text</code>, a simple regular expression that may only contain '?'(s)
-	 * @param <code>start</code>, the starting index in the text for search, inclusive
-	 * @param <code>end</code>, the stopping point of search, exclusive
-	 * @param <code>p</code>, a simple regular expression that may contains '?'
-	 * @param <code>caseIgnored</code>, wether the pattern is not casesensitive
+	 * @param <code>text</code>,
+	 *            a simple regular expression that may only contain '?'(s)
+	 * @param <code>start</code>,
+	 *            the starting index in the text for search, inclusive
+	 * @param <code>end</code>,
+	 *            the stopping point of search, exclusive
+	 * @param <code>p</code>,
+	 *            a simple regular expression that may contains '?'
+	 * @param <code>caseIgnored</code>,
+	 *            wether the pattern is not casesensitive
 	 * @return the starting index in the text of the pattern , or -1 if not found
 	 */
 	protected int regExpPosIn(String text, int start, int end, String p) {
@@ -382,13 +396,18 @@ public class StringMatcher {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return boolean
-	 * @param <code>text</code>, a String to match
-	 * @param <code>start</code>, int that indicates the starting index of match, inclusive
-	 * @param <code>end</code> int that indicates the ending index of match, exclusive
-	 * @param <code>p</code>, String, String, a simple regular expression that may contain '?'
-	 * @param <code>ignoreCase</code>, boolean indicating wether code>p</code> is case sensitive
+	 * @param <code>text</code>,
+	 *            a String to match
+	 * @param <code>start</code>,
+	 *            int that indicates the starting index of match, inclusive
+	 * @param <code>end</code>
+	 *            int that indicates the ending index of match, exclusive
+	 * @param <code>p</code>,
+	 *            String, String, a simple regular expression that may contain '?'
+	 * @param <code>ignoreCase</code>,
+	 *            boolean indicating wether code>p</code> is case sensitive
 	 */
 	protected boolean regExpRegionMatches(String text, int tStart, String p, int pStart, int plen) {
 		while (plen-- > 0) {
@@ -421,12 +440,16 @@ public class StringMatcher {
 	}
 
 	/**
-	 * @param <code>text</code>, the string to match
-	 * @param <code>start</code>, the starting index in the text for search, inclusive
-	 * @param <code>end</code>, the stopping point of search, exclusive
+	 * @param <code>text</code>,
+	 *            the string to match
+	 * @param <code>start</code>,
+	 *            the starting index in the text for search, inclusive
+	 * @param <code>end</code>,
+	 *            the stopping point of search, exclusive
 	 * @param code
 	 *            >p</code>, a string that has no wildcard
-	 * @param <code>ignoreCase</code>, boolean indicating wether code>p</code> is case sensitive
+	 * @param <code>ignoreCase</code>,
+	 *            boolean indicating wether code>p</code> is case sensitive
 	 * @return the starting index in the text of the pattern , or -1 if not found
 	 */
 	protected int textPosIn(String text, int start, int end, String p) {

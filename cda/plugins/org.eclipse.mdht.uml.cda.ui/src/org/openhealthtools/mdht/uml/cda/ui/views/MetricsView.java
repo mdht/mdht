@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.views;
 
@@ -41,7 +41,7 @@ public class MetricsView extends ViewPart {
 				if (event.item.getData() instanceof org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler.CDAAnalaysisInput.CDAMetrics) {
 					org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler.CDAAnalaysisInput.CDAMetrics metrics = (org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler.CDAAnalaysisInput.CDAMetrics) event.item.getData();
 
-					ByteArrayOutputStream fa = new ByteArrayOutputStream();
+					new ByteArrayOutputStream();
 
 					try {
 						StringBuilder sb = new StringBuilder();
@@ -49,8 +49,8 @@ public class MetricsView extends ViewPart {
 						sb.append("<html><head></head><body>Code Metrics<br/><table border=\"1\" width=\"400\">");
 
 						for (String key : metrics.codedMetrics.keySet()) {
-							sb.append("<tr><td>").append(key).append("</td><td>").append(metrics.codedMetrics.get(key)).append(
-								"</td></tr>");
+							sb.append("<tr><td>").append(key).append("</td><td>").append(
+								metrics.codedMetrics.get(key)).append("</td></tr>");
 						}
 
 						sb.append("</table></body></html>");

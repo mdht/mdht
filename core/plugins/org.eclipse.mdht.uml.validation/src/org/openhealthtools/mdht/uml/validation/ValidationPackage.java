@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
  */
@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.openhealthtools.mdht.uml.validation.ValidationFactory
  * @model kind="package"
  * @generated
@@ -38,7 +38,7 @@ public interface ValidationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "validation"; //$NON-NLS-1$
@@ -47,7 +47,7 @@ public interface ValidationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0"; //$NON-NLS-1$
@@ -56,7 +56,7 @@ public interface ValidationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "validation"; //$NON-NLS-1$
@@ -65,7 +65,7 @@ public interface ValidationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	ValidationPackage eINSTANCE = org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl.init();
@@ -74,7 +74,7 @@ public interface ValidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.validation.internal.impl.DiagnosticImpl <em>Diagnostic</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.DiagnosticImpl
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getDiagnostic()
 	 * @generated
@@ -85,7 +85,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -95,7 +95,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Evaluation Mode</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -105,7 +105,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -115,7 +115,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -125,7 +125,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -135,7 +135,7 @@ public interface ValidationPackage extends EPackage {
 	 * The number of structural features of the '<em>Diagnostic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -146,7 +146,7 @@ public interface ValidationPackage extends EPackage {
 	 * class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ConstraintProviderImpl
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getConstraintProvider()
 	 * @generated
@@ -157,7 +157,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,7 +167,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Diagnostic Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -177,7 +177,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Category ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -187,7 +187,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Category Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -197,7 +197,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Category ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -207,7 +207,7 @@ public interface ValidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Bundle Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,7 +217,7 @@ public interface ValidationPackage extends EPackage {
 	 * The number of structural features of the '<em>Constraint Provider</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -227,7 +227,7 @@ public interface ValidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.validation.EvaluationModeKind <em>Evaluation Mode Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.validation.EvaluationModeKind
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getEvaluationModeKind()
 	 * @generated
@@ -238,7 +238,7 @@ public interface ValidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.validation.SeverityKind <em>Severity Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.validation.SeverityKind
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getSeverityKind()
 	 * @generated
@@ -249,7 +249,7 @@ public interface ValidationPackage extends EPackage {
 	 * The meta object id for the '<em>Status</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IStatus
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getStatus()
 	 * @generated
@@ -260,7 +260,7 @@ public interface ValidationPackage extends EPackage {
 	 * The meta object id for the '<em>Context</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.validation.IValidationContext
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getValidationContext()
 	 * @generated
@@ -271,7 +271,7 @@ public interface ValidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.validation.Diagnostic <em>Diagnostic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Diagnostic</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.Diagnostic
 	 * @generated
@@ -283,7 +283,7 @@ public interface ValidationPackage extends EPackage {
 	 * <em>Base Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Constraint</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.Diagnostic#getBase_Constraint()
 	 * @see #getDiagnostic()
@@ -296,7 +296,7 @@ public interface ValidationPackage extends EPackage {
 	 * <em>Evaluation Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Evaluation Mode</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.Diagnostic#getEvaluationMode()
 	 * @see #getDiagnostic()
@@ -308,7 +308,7 @@ public interface ValidationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getSeverity <em>Severity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Severity</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.Diagnostic#getSeverity()
 	 * @see #getDiagnostic()
@@ -320,7 +320,7 @@ public interface ValidationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getCode <em>Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Code</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.Diagnostic#getCode()
 	 * @see #getDiagnostic()
@@ -332,7 +332,7 @@ public interface ValidationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Message</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.Diagnostic#getMessage()
 	 * @see #getDiagnostic()
@@ -344,7 +344,7 @@ public interface ValidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.validation.ConstraintProvider <em>Constraint Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Constraint Provider</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.ConstraintProvider
 	 * @generated
@@ -356,7 +356,7 @@ public interface ValidationPackage extends EPackage {
 	 * <em>Base Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Namespace</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.ConstraintProvider#getBase_Namespace()
 	 * @see #getConstraintProvider()
@@ -369,7 +369,7 @@ public interface ValidationPackage extends EPackage {
 	 * <em>Diagnostic Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Diagnostic Source</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.ConstraintProvider#getDiagnosticSource()
 	 * @see #getConstraintProvider()
@@ -382,7 +382,7 @@ public interface ValidationPackage extends EPackage {
 	 * <em>Category ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Category ID</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.ConstraintProvider#getCategoryID()
 	 * @see #getConstraintProvider()
@@ -395,7 +395,7 @@ public interface ValidationPackage extends EPackage {
 	 * <em>Category Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Category Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.ConstraintProvider#getCategoryName()
 	 * @see #getConstraintProvider()
@@ -408,7 +408,7 @@ public interface ValidationPackage extends EPackage {
 	 * <em>Parent Category ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Parent Category ID</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.ConstraintProvider#getParentCategoryID()
 	 * @see #getConstraintProvider()
@@ -421,7 +421,7 @@ public interface ValidationPackage extends EPackage {
 	 * <em>Bundle Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Bundle Name</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.ConstraintProvider#getBundleName()
 	 * @see #getConstraintProvider()
@@ -433,7 +433,7 @@ public interface ValidationPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.validation.EvaluationModeKind <em>Evaluation Mode Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Evaluation Mode Kind</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.EvaluationModeKind
 	 * @generated
@@ -444,7 +444,7 @@ public interface ValidationPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.validation.SeverityKind <em>Severity Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Severity Kind</em>'.
 	 * @see org.openhealthtools.mdht.uml.validation.SeverityKind
 	 * @generated
@@ -455,7 +455,7 @@ public interface ValidationPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.core.runtime.IStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Status</em>'.
 	 * @see org.eclipse.core.runtime.IStatus
 	 * @model instanceClass="org.eclipse.core.runtime.IStatus"
@@ -467,7 +467,7 @@ public interface ValidationPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.emf.validation.IValidationContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Context</em>'.
 	 * @see org.eclipse.emf.validation.IValidationContext
 	 * @model instanceClass="org.eclipse.emf.validation.IValidationContext"
@@ -479,7 +479,7 @@ public interface ValidationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -495,7 +495,7 @@ public interface ValidationPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -503,7 +503,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.validation.internal.impl.DiagnosticImpl <em>Diagnostic</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.validation.internal.impl.DiagnosticImpl
 		 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getDiagnostic()
 		 * @generated
@@ -514,7 +514,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Constraint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DIAGNOSTIC__BASE_CONSTRAINT = eINSTANCE.getDiagnostic_Base_Constraint();
@@ -523,7 +523,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Evaluation Mode</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DIAGNOSTIC__EVALUATION_MODE = eINSTANCE.getDiagnostic_EvaluationMode();
@@ -532,7 +532,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Severity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DIAGNOSTIC__SEVERITY = eINSTANCE.getDiagnostic_Severity();
@@ -541,7 +541,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DIAGNOSTIC__CODE = eINSTANCE.getDiagnostic_Code();
@@ -550,7 +550,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DIAGNOSTIC__MESSAGE = eINSTANCE.getDiagnostic_Message();
@@ -560,7 +560,7 @@ public interface ValidationPackage extends EPackage {
 		 * <em>Constraint Provider</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ConstraintProviderImpl
 		 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getConstraintProvider()
 		 * @generated
@@ -571,7 +571,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Namespace</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONSTRAINT_PROVIDER__BASE_NAMESPACE = eINSTANCE.getConstraintProvider_Base_Namespace();
@@ -580,7 +580,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Diagnostic Source</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONSTRAINT_PROVIDER__DIAGNOSTIC_SOURCE = eINSTANCE.getConstraintProvider_DiagnosticSource();
@@ -589,7 +589,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Category ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONSTRAINT_PROVIDER__CATEGORY_ID = eINSTANCE.getConstraintProvider_CategoryID();
@@ -598,7 +598,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Category Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONSTRAINT_PROVIDER__CATEGORY_NAME = eINSTANCE.getConstraintProvider_CategoryName();
@@ -607,7 +607,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parent Category ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONSTRAINT_PROVIDER__PARENT_CATEGORY_ID = eINSTANCE.getConstraintProvider_ParentCategoryID();
@@ -616,7 +616,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Bundle Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONSTRAINT_PROVIDER__BUNDLE_NAME = eINSTANCE.getConstraintProvider_BundleName();
@@ -625,7 +625,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.validation.EvaluationModeKind <em>Evaluation Mode Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.validation.EvaluationModeKind
 		 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getEvaluationModeKind()
 		 * @generated
@@ -636,7 +636,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.validation.SeverityKind <em>Severity Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.openhealthtools.mdht.uml.validation.SeverityKind
 		 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getSeverityKind()
 		 * @generated
@@ -647,7 +647,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em>Status</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.core.runtime.IStatus
 		 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getStatus()
 		 * @generated
@@ -658,7 +658,7 @@ public interface ValidationPackage extends EPackage {
 		 * The meta object literal for the '<em>Context</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.emf.validation.IValidationContext
 		 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getValidationContext()
 		 * @generated

@@ -106,21 +106,23 @@ public class ENOperations extends ANYOperations {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
-				VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
+					VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__DELIMITER,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateDelimiter",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
-					new Object[] { en }));
+				diagnostics.add(
+					new BasicDiagnostic(
+						Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__DELIMITER,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+							"_UI_GenericInvariant_diagnostic",
+							new Object[] {
+									"validateDelimiter",
+									org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						new Object[] { en }));
 			}
 			return false;
 		}
@@ -162,21 +164,23 @@ public class ENOperations extends ANYOperations {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
-				VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
+					VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__FAMILY,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateFamily",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
-					new Object[] { en }));
+				diagnostics.add(
+					new BasicDiagnostic(
+						Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__FAMILY,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+							"_UI_GenericInvariant_diagnostic",
+							new Object[] {
+									"validateFamily",
+									org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						new Object[] { en }));
 			}
 			return false;
 		}
@@ -218,21 +222,23 @@ public class ENOperations extends ANYOperations {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
-				VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
+					VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__GIVEN,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateGiven",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
-					new Object[] { en }));
+				diagnostics.add(
+					new BasicDiagnostic(
+						Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__GIVEN,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+							"_UI_GenericInvariant_diagnostic",
+							new Object[] {
+									"validateGiven",
+									org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						new Object[] { en }));
 			}
 			return false;
 		}
@@ -274,21 +280,23 @@ public class ENOperations extends ANYOperations {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
-				VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
+					VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__PREFIX,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validatePrefix",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
-					new Object[] { en }));
+				diagnostics.add(
+					new BasicDiagnostic(
+						Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__PREFIX,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+							"_UI_GenericInvariant_diagnostic",
+							new Object[] {
+									"validatePrefix",
+									org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						new Object[] { en }));
 			}
 			return false;
 		}
@@ -330,21 +338,23 @@ public class ENOperations extends ANYOperations {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
-				VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
+					VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__SUFFIX,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateSuffix",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
-					new Object[] { en }));
+				diagnostics.add(
+					new BasicDiagnostic(
+						Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EN__SUFFIX,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+							"_UI_GenericInvariant_diagnostic",
+							new Object[] {
+									"validateSuffix",
+									org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						new Object[] { en }));
 			}
 			return false;
 		}

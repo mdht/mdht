@@ -39,7 +39,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	 * The cached value of the '{@link #getBase_Generalization() <em>Base Generalization</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Generalization()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	 * The default value of the '{@link #isRequiresParentId() <em>Requires Parent Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isRequiresParentId()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	 * The cached value of the '{@link #isRequiresParentId() <em>Requires Parent Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isRequiresParentId()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConformsToImpl() {
@@ -81,7 +81,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Generalization basicGetBase_Generalization() {
@@ -91,7 +91,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Generalization getBase_Generalization() {
@@ -186,9 +186,8 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 			base_Generalization = (Generalization) eResolveProxy(oldBase_Generalization);
 			if (base_Generalization != oldBase_Generalization) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.CONFORMS_TO__BASE_GENERALIZATION,
-						oldBase_Generalization, base_Generalization));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						CDAPackage.CONFORMS_TO__BASE_GENERALIZATION, oldBase_Generalization, base_Generalization));
 				}
 			}
 		}
@@ -198,7 +197,7 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isRequiresParentId() {
@@ -208,39 +207,37 @@ public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Generalization(Generalization newBase_Generalization) {
 		Generalization oldBase_Generalization = base_Generalization;
 		base_Generalization = newBase_Generalization;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CONFORMS_TO__BASE_GENERALIZATION, oldBase_Generalization,
-				base_Generalization));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONFORMS_TO__BASE_GENERALIZATION,
+				oldBase_Generalization, base_Generalization));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRequiresParentId(boolean newRequiresParentId) {
 		boolean oldRequiresParentId = requiresParentId;
 		requiresParentId = newRequiresParentId;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CONFORMS_TO__REQUIRES_PARENT_ID, oldRequiresParentId,
-				requiresParentId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONFORMS_TO__REQUIRES_PARENT_ID,
+				oldRequiresParentId, requiresParentId));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

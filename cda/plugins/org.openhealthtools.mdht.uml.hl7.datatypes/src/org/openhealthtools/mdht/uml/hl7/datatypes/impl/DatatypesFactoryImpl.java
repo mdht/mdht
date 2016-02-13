@@ -7,7 +7,7 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *     Dan Brown (Audacious Inquiry) - added/modified overloaded createCD methods						
+ *     Dan Brown (Audacious Inquiry) - added/modified overloaded createCD methods
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
@@ -82,7 +82,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 */
 	public static DatatypesFactory init() {
 		try {
-			DatatypesFactory theDatatypesFactory = (DatatypesFactory) EPackage.Registry.INSTANCE.getEFactory(DatatypesPackage.eNS_URI);
+			DatatypesFactory theDatatypesFactory = (DatatypesFactory) EPackage.Registry.INSTANCE.getEFactory(
+				DatatypesPackage.eNS_URI);
 			if (theDatatypesFactory != null) {
 				return theDatatypesFactory;
 			}
@@ -216,8 +217,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 			case DatatypesPackage.ST_TYPE:
 				return createstTypeFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
-						"' is not a valid classifier");
+				throw new IllegalArgumentException(
+					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -240,8 +241,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 			case DatatypesPackage.ST_TYPE:
 				return convertstTypeToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
-						"' is not a valid classifier");
+				throw new IllegalArgumentException(
+					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -793,8 +794,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	public BinaryDataEncoding createBinaryDataEncodingFromString(EDataType eDataType, String initialValue) {
 		BinaryDataEncoding result = BinaryDataEncoding.get(initialValue);
 		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
-					eDataType.getName() + "'");
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		}
 		return result;
 	}

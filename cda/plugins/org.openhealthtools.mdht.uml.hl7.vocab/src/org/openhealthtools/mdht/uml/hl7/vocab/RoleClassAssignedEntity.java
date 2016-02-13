@@ -191,7 +191,8 @@ public enum RoleClassAssignedEntity implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<RoleClassAssignedEntity> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<RoleClassAssignedEntity> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Role Class Assigned Entity</b></em>' literal with the specified literal value.

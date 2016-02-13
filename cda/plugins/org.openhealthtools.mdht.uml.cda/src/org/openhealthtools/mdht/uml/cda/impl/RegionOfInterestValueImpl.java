@@ -88,8 +88,8 @@ public class RegionOfInterestValueImpl extends INTImpl implements RegionOfIntere
 		boolean oldUnsorted = unsorted;
 		unsorted = newUnsorted;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.REGION_OF_INTEREST_VALUE__UNSORTED, oldUnsorted, unsorted));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REGION_OF_INTEREST_VALUE__UNSORTED,
+				oldUnsorted, unsorted));
 		}
 	}
 

@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
@@ -43,7 +43,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
  * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CDImpl#getDisplayName <em>Display Name</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class CDImpl extends EObjectImpl implements CD {
@@ -51,7 +51,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The cached value of the '{@link #getQualifier() <em>Qualifier</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQualifier()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The cached value of the '{@link #getTranslation() <em>Translation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTranslation()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCode()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCode()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The default value of the '{@link #getCodeSystem() <em>Code System</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCodeSystem()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The cached value of the '{@link #getCodeSystem() <em>Code System</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCodeSystem()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The default value of the '{@link #getCodeSystemName() <em>Code System Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCodeSystemName()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The cached value of the '{@link #getCodeSystemName() <em>Code System Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCodeSystemName()
 	 * @generated
 	 * @ordered
@@ -139,7 +139,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The default value of the '{@link #getCodeSystemVersion() <em>Code System Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCodeSystemVersion()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The cached value of the '{@link #getCodeSystemVersion() <em>Code System Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCodeSystemVersion()
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The default value of the '{@link #getDisplayName() <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDisplayName()
 	 * @generated
 	 * @ordered
@@ -172,7 +172,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * The cached value of the '{@link #getDisplayName() <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDisplayName()
 	 * @generated
 	 * @ordered
@@ -182,7 +182,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CDImpl() {
@@ -192,7 +192,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -310,7 +310,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +321,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +355,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getCode() {
@@ -365,7 +365,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getCodeSystem() {
@@ -375,7 +375,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getCodeSystemName() {
@@ -385,7 +385,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getCodeSystemVersion() {
@@ -395,7 +395,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDisplayName() {
@@ -405,7 +405,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<CR> getQualifier() {
@@ -418,7 +418,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<CD> getTranslation() {
@@ -431,7 +431,7 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCode(String newCode) {
@@ -445,67 +445,67 @@ public class CDImpl extends EObjectImpl implements CD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCodeSystem(String newCodeSystem) {
 		String oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CD__CODE_SYSTEM, oldCodeSystem, codeSystem));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, TermPackage.CD__CODE_SYSTEM, oldCodeSystem, codeSystem));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCodeSystemName(String newCodeSystemName) {
 		String oldCodeSystemName = codeSystemName;
 		codeSystemName = newCodeSystemName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CD__CODE_SYSTEM_NAME, oldCodeSystemName, codeSystemName));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CD__CODE_SYSTEM_NAME, oldCodeSystemName,
+				codeSystemName));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCodeSystemVersion(String newCodeSystemVersion) {
 		String oldCodeSystemVersion = codeSystemVersion;
 		codeSystemVersion = newCodeSystemVersion;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CD__CODE_SYSTEM_VERSION, oldCodeSystemVersion, codeSystemVersion));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CD__CODE_SYSTEM_VERSION,
+				oldCodeSystemVersion, codeSystemVersion));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDisplayName(String newDisplayName) {
 		String oldDisplayName = displayName;
 		displayName = newDisplayName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CD__DISPLAY_NAME, oldDisplayName, displayName));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CD__DISPLAY_NAME, oldDisplayName,
+				displayName));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

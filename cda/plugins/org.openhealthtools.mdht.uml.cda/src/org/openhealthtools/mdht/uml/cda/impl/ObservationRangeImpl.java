@@ -288,20 +288,20 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION_RANGE__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_RANGE__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION_RANGE__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_RANGE__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION_RANGE__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__TYPE_ID, newTypeId,
+				newTypeId));
 		}
 	}
 
@@ -356,19 +356,20 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION_RANGE__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_RANGE__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION_RANGE__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_RANGE__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__CODE, newCode, newCode));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__CODE, newCode, newCode));
 		}
 	}
 
@@ -410,19 +411,20 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		if (newText != text) {
 			NotificationChain msgs = null;
 			if (text != null) {
-				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION_RANGE__TEXT, null, msgs);
+				msgs = ((InternalEObject) text).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_RANGE__TEXT, null, msgs);
 			}
 			if (newText != null) {
-				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION_RANGE__TEXT, null, msgs);
+				msgs = ((InternalEObject) newText).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_RANGE__TEXT, null, msgs);
 			}
 			msgs = basicSetText(newText, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__TEXT, newText, newText));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__TEXT, newText, newText));
 		}
 	}
 
@@ -464,20 +466,20 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		if (newValue != value) {
 			NotificationChain msgs = null;
 			if (value != null) {
-				msgs = ((InternalEObject) value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION_RANGE__VALUE, null, msgs);
+				msgs = ((InternalEObject) value).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_RANGE__VALUE, null, msgs);
 			}
 			if (newValue != null) {
-				msgs = ((InternalEObject) newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION_RANGE__VALUE, null, msgs);
+				msgs = ((InternalEObject) newValue).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_RANGE__VALUE, null, msgs);
 			}
 			msgs = basicSetValue(newValue, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION_RANGE__VALUE, newValue, newValue));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__VALUE, newValue, newValue));
 		}
 	}
 
@@ -520,21 +522,20 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		if (newInterpretationCode != interpretationCode) {
 			NotificationChain msgs = null;
 			if (interpretationCode != null) {
-				msgs = ((InternalEObject) interpretationCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION_RANGE__INTERPRETATION_CODE, null, msgs);
+				msgs = ((InternalEObject) interpretationCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_RANGE__INTERPRETATION_CODE, null, msgs);
 			}
 			if (newInterpretationCode != null) {
-				msgs = ((InternalEObject) newInterpretationCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.OBSERVATION_RANGE__INTERPRETATION_CODE, null, msgs);
+				msgs = ((InternalEObject) newInterpretationCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_RANGE__INTERPRETATION_CODE, null, msgs);
 			}
 			msgs = basicSetInterpretationCode(newInterpretationCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION_RANGE__INTERPRETATION_CODE, newInterpretationCode,
-				newInterpretationCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__INTERPRETATION_CODE,
+				newInterpretationCode, newInterpretationCode));
 		}
 	}
 
@@ -561,9 +562,8 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION_RANGE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -578,9 +578,8 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -616,9 +615,8 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION_RANGE__CLASS_CODE, oldClassCode, classCode,
-				!oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__CLASS_CODE,
+				oldClassCode, classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -633,9 +631,8 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__CLASS_CODE,
+				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -671,9 +668,8 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.OBSERVATION_RANGE__MOOD_CODE, oldMoodCode, moodCode,
-				!oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__MOOD_CODE, oldMoodCode,
+				moodCode, !oldMoodCodeESet));
 		}
 	}
 
@@ -688,9 +684,8 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
-				oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__MOOD_CODE,
+				oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
 		}
 	}
 

@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.transform.core.impl;
 
@@ -53,10 +53,13 @@ public class Transformation implements ITransformation {
 					throw new TransformationException(
 						String.format(
 							"Transformation aborted in initialization of phase '%s' (%s).", next.getLabel(),
-							next.getID()), e);
+							next.getID()),
+						e);
 				} catch (RuntimeException e) {
-					throw new TransformationException(String.format(
-						"Uncaught exception in initialization of phase '%s' (%s).", next.getLabel(), next.getID()), e);
+					throw new TransformationException(
+						String.format(
+							"Uncaught exception in initialization of phase '%s' (%s).", next.getLabel(), next.getID()),
+						e);
 				}
 			}
 		}
@@ -120,11 +123,14 @@ public class Transformation implements ITransformation {
 			try {
 				next.execute(inputs, monitor);
 			} catch (AbortTransformationException e) {
-				throw new TransformationException(String.format(
-					"Transformation aborted in execution of phase '%s' (%s).", next.getLabel(), next.getID()), e);
+				throw new TransformationException(
+					String.format(
+						"Transformation aborted in execution of phase '%s' (%s).", next.getLabel(), next.getID()),
+					e);
 			} catch (RuntimeException e) {
-				throw new TransformationException(String.format(
-					"Uncaught exception in execution of phase '%s' (%s).", next.getLabel(), next.getID()), e);
+				throw new TransformationException(
+					String.format("Uncaught exception in execution of phase '%s' (%s).", next.getLabel(), next.getID()),
+					e);
 			}
 		}
 	}

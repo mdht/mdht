@@ -87,7 +87,8 @@ public class CDAProfileUtil {
 
 	public static ConformsTo getConformsTo(Generalization generalization) {
 		ConformsTo conformsTo = null;
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(generalization, ICDAProfileConstants.CONFORMS_TO);
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+			generalization, ICDAProfileConstants.CONFORMS_TO);
 		if (stereotype != null) {
 			conformsTo = (ConformsTo) generalization.getStereotypeApplication(stereotype);
 		}

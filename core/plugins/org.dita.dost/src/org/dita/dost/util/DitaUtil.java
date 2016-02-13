@@ -77,8 +77,8 @@ import org.xml.sax.SAXException;
 
 public class DitaUtil {
 
-	public static void validate(IPath tmpFileInWorkspaceDir) throws IOException, ParserConfigurationException,
-			SAXException, URISyntaxException {
+	public static void validate(IPath tmpFileInWorkspaceDir)
+			throws IOException, ParserConfigurationException, SAXException, URISyntaxException {
 
 		// TODO delete commented out code which was used for debugging (debug code needs to stay at least two releases after 2.5.9)
 		// Get the XSD file
@@ -121,13 +121,13 @@ public class DitaUtil {
 		validator.validate(dom);
 	}
 
-	public static ILaunch publish(IFile ditaMapFile, String antTargets) throws IOException, CoreException,
-			URISyntaxException {
+	public static ILaunch publish(IFile ditaMapFile, String antTargets)
+			throws IOException, CoreException, URISyntaxException {
 		return publish(ditaMapFile, antTargets, "ditaval.xml");
 	}
 
-	public static ILaunch publish(IFile ditaMapFile, String antTargets, String ditavalFileName) throws IOException,
-			CoreException, URISyntaxException {
+	public static ILaunch publish(IFile ditaMapFile, String antTargets, String ditavalFileName)
+			throws IOException, CoreException, URISyntaxException {
 
 		IProject ditaProject = ditaMapFile.getProject();
 
@@ -182,8 +182,8 @@ public class DitaUtil {
 			if (requiredBundle != null) {
 				File file = FileLocator.getBundleFile(requiredBundle);
 
-				IRuntimeClasspathEntry requiredBundleEntry = JavaRuntime.newArchiveRuntimeClasspathEntry(new Path(
-					file.getPath()));
+				IRuntimeClasspathEntry requiredBundleEntry = JavaRuntime.newArchiveRuntimeClasspathEntry(
+					new Path(file.getPath()));
 				requiredBundleEntry.setClasspathProperty(IRuntimeClasspathEntry.USER_CLASSES);
 				classpath.add(requiredBundleEntry.getMemento());
 			}
@@ -199,7 +199,8 @@ public class DitaUtil {
 			} else {
 				URL url = FileLocator.find(bundle, new Path(classPath), null);
 				url = FileLocator.toFileURL(url);
-				IRuntimeClasspathEntry toolsEntry = JavaRuntime.newArchiveRuntimeClasspathEntry(new Path(url.getPath()));
+				IRuntimeClasspathEntry toolsEntry = JavaRuntime.newArchiveRuntimeClasspathEntry(
+					new Path(url.getPath()));
 				toolsEntry.setClasspathProperty(IRuntimeClasspathEntry.USER_CLASSES);
 				classpath.add(toolsEntry.getMemento());
 			}
@@ -215,7 +216,8 @@ public class DitaUtil {
 
 		ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
 
-		ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(IAntLaunchConstants.ID_ANT_LAUNCH_CONFIGURATION_TYPE);
+		ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(
+			IAntLaunchConstants.ID_ANT_LAUNCH_CONFIGURATION_TYPE);
 
 		URL ditaPublishBuildFileURL = fileURL = FileLocator.find(bundle, new Path("dita-publish.xml"), null);
 
@@ -246,8 +248,8 @@ public class DitaUtil {
 		}
 
 		antProperties.put(
-			"ditaMapFileName",
-			ditaMapFile.getName().substring(0, ditaMapFile.getName().length() - ditaMapFile.getFileExtension().length()));
+			"ditaMapFileName", ditaMapFile.getName().substring(
+				0, ditaMapFile.getName().length() - ditaMapFile.getFileExtension().length()));
 
 		// antProperties.put("outputLocation", ditaProject.getLocation().toOSString());
 		antProperties.put("dita.output", ditaProject.getLocation().append(antTargets).toOSString());

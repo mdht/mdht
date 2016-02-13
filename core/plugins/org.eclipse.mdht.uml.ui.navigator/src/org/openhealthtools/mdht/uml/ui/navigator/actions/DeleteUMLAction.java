@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.navigator.actions;
 
@@ -101,8 +101,7 @@ public class DeleteUMLAction extends CommandActionHandler {
 	public void run() {
 
 		if (command != UnexecutableCommand.INSTANCE) {
-			String label = elements.get(0) instanceof NamedElement &&
-					((NamedElement) elements.get(0)).getName() != null
+			String label = elements.get(0) instanceof NamedElement && ((NamedElement) elements.get(0)).getName() != null
 					? "Delete " + ((NamedElement) elements.get(0)).getName()
 					: "Delete Element";
 			if (elements.size() > 1) {

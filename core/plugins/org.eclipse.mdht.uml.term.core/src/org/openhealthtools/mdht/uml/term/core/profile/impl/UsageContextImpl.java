@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
@@ -34,7 +34,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.UsageContext;
  * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.UsageContextImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class UsageContextImpl extends EObjectImpl implements UsageContext {
@@ -42,7 +42,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatusDate()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The cached value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatusDate()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UsageContextImpl() {
@@ -128,7 +128,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -138,7 +138,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class getBase_Class() {
@@ -257,8 +257,8 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class, base_Class));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TermPackage.USAGE_CONTEXT__BASE_CLASS,
+						oldBase_Class, base_Class));
 				}
 			}
 		}
@@ -268,7 +268,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -278,7 +278,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StatusKind getStatus() {
@@ -288,7 +288,7 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getStatusDate() {
@@ -298,37 +298,37 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class, base_Class));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class,
+				base_Class));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.USAGE_CONTEXT__IDENTIFIER, oldIdentifier, identifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__IDENTIFIER, oldIdentifier,
+				identifier));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStatus(StatusKind newStatus) {
@@ -337,29 +337,30 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 				? STATUS_EDEFAULT
 				: newStatus;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS, oldStatus, status));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS, oldStatus, status));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStatusDate(String newStatusDate) {
 		String oldStatusDate = statusDate;
 		statusDate = newStatusDate;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS_DATE, oldStatusDate, statusDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS_DATE, oldStatusDate,
+				statusDate));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override

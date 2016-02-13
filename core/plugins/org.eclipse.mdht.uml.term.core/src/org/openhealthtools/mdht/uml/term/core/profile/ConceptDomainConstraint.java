@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile;
@@ -19,7 +19,7 @@ import org.eclipse.uml2.uml.Property;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Concept Domain Constraint</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Property;
  * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getBase_Property <em>Base Property</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint()
  * @model
  * @generated
@@ -42,7 +42,7 @@ public interface ConceptDomainConstraint extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint_Base_Property()
@@ -58,7 +58,7 @@ public interface ConceptDomainConstraint extends EObject {
 	 * If the meaning of the '<em>Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint_Identifier()
@@ -74,7 +74,7 @@ public interface ConceptDomainConstraint extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint_Name()
@@ -90,7 +90,7 @@ public interface ConceptDomainConstraint extends EObject {
 	 * If the meaning of the '<em>Reference</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Reference</em>' reference.
 	 * @see #setReference(ConceptDomain)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint_Reference()
@@ -104,7 +104,7 @@ public interface ConceptDomainConstraint extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
@@ -117,7 +117,7 @@ public interface ConceptDomainConstraint extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
@@ -129,7 +129,7 @@ public interface ConceptDomainConstraint extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -142,7 +142,7 @@ public interface ConceptDomainConstraint extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Reference</em>' reference.
 	 * @see #getReference()

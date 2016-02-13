@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.actions;
@@ -49,7 +49,8 @@ public class AddUMLEnumerationLiteralAction extends UML2AbstractAction {
 					@Override
 					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
-						EnumerationLiteral literal = ((Enumeration) element).createOwnedLiteral(UML2UIMessages.AddUMLEnumerationLiteral_default_name);
+						EnumerationLiteral literal = ((Enumeration) element).createOwnedLiteral(
+							UML2UIMessages.AddUMLEnumerationLiteral_default_name);
 
 						if (activePart instanceof ISetSelectionTarget) {
 							((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(literal));

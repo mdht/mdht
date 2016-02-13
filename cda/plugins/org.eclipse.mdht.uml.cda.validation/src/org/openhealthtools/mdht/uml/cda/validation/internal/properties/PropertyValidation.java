@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     eclipse - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.validation.internal.properties;
 
@@ -21,7 +21,7 @@ import org.openhealthtools.mdht.uml.validation.provider.AbstractMultiConstraint;
 
 /**
  * @author eclipse
- * 
+ *
  */
 public class PropertyValidation extends AbstractMultiConstraint {
 

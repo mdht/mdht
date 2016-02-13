@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
@@ -34,7 +34,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
  * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.CRImpl#isInverted <em>Inverted</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class CRImpl extends EObjectImpl implements CR {
@@ -42,7 +42,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	 * The default value of the '{@link #isInverted() <em>Inverted</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isInverted()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	 * The cached value of the '{@link #isInverted() <em>Inverted</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isInverted()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CRImpl() {
@@ -95,7 +95,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetName(CD newName, NotificationChain msgs) {
@@ -116,7 +116,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetValue(CD newValue, NotificationChain msgs) {
@@ -137,7 +137,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +247,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CD getName() {
@@ -257,7 +257,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CD getValue() {
@@ -267,7 +267,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isInverted() {
@@ -277,7 +277,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setInverted(boolean newInverted) {
@@ -291,7 +291,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(CD newName) {
@@ -317,7 +317,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValue(CD newValue) {
@@ -343,7 +343,7 @@ public class CRImpl extends EObjectImpl implements CR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

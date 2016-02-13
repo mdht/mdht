@@ -274,12 +274,12 @@ public class OrderImpl extends ActImpl implements Order {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ORDER__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORDER__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ORDER__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORDER__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
@@ -407,20 +407,20 @@ public class OrderImpl extends ActImpl implements Order {
 		if (newPriorityCode != priorityCode) {
 			NotificationChain msgs = null;
 			if (priorityCode != null) {
-				msgs = ((InternalEObject) priorityCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ORDER__PRIORITY_CODE, null, msgs);
+				msgs = ((InternalEObject) priorityCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORDER__PRIORITY_CODE, null, msgs);
 			}
 			if (newPriorityCode != null) {
-				msgs = ((InternalEObject) newPriorityCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ORDER__PRIORITY_CODE, null, msgs);
+				msgs = ((InternalEObject) newPriorityCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORDER__PRIORITY_CODE, null, msgs);
 			}
 			msgs = basicSetPriorityCode(newPriorityCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ORDER__PRIORITY_CODE, newPriorityCode, newPriorityCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORDER__PRIORITY_CODE, newPriorityCode,
+				newPriorityCode));
 		}
 	}
 
@@ -447,8 +447,8 @@ public class OrderImpl extends ActImpl implements Order {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ORDER__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORDER__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -463,9 +463,8 @@ public class OrderImpl extends ActImpl implements Order {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ORDER__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ORDER__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -501,8 +500,8 @@ public class OrderImpl extends ActImpl implements Order {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ORDER__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORDER__CLASS_CODE, oldClassCode, classCode,
+				!oldClassCodeESet));
 		}
 	}
 
@@ -517,9 +516,8 @@ public class OrderImpl extends ActImpl implements Order {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ORDER__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ORDER__CLASS_CODE, oldClassCode,
+				CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -555,8 +553,8 @@ public class OrderImpl extends ActImpl implements Order {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ORDER__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORDER__MOOD_CODE, oldMoodCode, moodCode,
+				!oldMoodCodeESet));
 		}
 	}
 
@@ -571,8 +569,8 @@ public class OrderImpl extends ActImpl implements Order {
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ORDER__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ORDER__MOOD_CODE, oldMoodCode,
+				MOOD_CODE_EDEFAULT, oldMoodCodeESet));
 		}
 	}
 

@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - support nested datatype subclasses (artf3350)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.filters;
@@ -29,8 +29,8 @@ public class PropertyFilter extends CDAFilter {
 
 		if (element instanceof Property) {
 			Class ownerClass = ((Property) element).getClass_();
-			return (ownerClass != null) &&
-					((CDAModelUtil.getCDAClass(ownerClass) != null) || (CDAModelUtil.getCDADatatype(ownerClass) != null));
+			return (ownerClass != null) && ((CDAModelUtil.getCDAClass(ownerClass) != null) ||
+					(CDAModelUtil.getCDADatatype(ownerClass) != null));
 		}
 
 		return false;

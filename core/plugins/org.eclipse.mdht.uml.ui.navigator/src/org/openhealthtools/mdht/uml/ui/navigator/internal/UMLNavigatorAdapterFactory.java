@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.navigator.internal;
@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.common.ui.util.IResourceConstants;
 
 /**
  * An adapter factory for returning UML Element from UMLDomainNavigatorItem.
- * 
+ *
  */
 public class UMLNavigatorAdapterFactory implements IAdapterFactory {
 
@@ -42,7 +42,7 @@ public class UMLNavigatorAdapterFactory implements IAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IAdapterFactory#getAdapter(java.lang.Object, java.lang.Class)
 	 */
 	public Object getAdapter(Object adaptableObject, java.lang.Class adapterType) {
@@ -50,14 +50,15 @@ public class UMLNavigatorAdapterFactory implements IAdapterFactory {
 			return umlActionFilter;
 		}
 		if (adapterType == IUndoContext.class) {
-			TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(IResourceConstants.EDITING_DOMAIN_ID);
+			TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
+				IResourceConstants.EDITING_DOMAIN_ID);
 
 			return ((IWorkspaceCommandStack) editingDomain.getCommandStack()).getDefaultUndoContext();
 		}
 
 		EObject eObject = null;
 		if (adaptableObject instanceof IAdaptable) {
-			eObject = (EObject) ((IAdaptable) adaptableObject).getAdapter(EObject.class);
+			eObject = ((IAdaptable) adaptableObject).getAdapter(EObject.class);
 
 			if (adapterType == EObject.class) {
 				return eObject;
@@ -85,12 +86,11 @@ public class UMLNavigatorAdapterFactory implements IAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IAdapterFactory#getAdapterList()
 	 */
 	public java.lang.Class[] getAdapterList() {
-		return new java.lang.Class[] {
-				IActionFilter.class, IUndoContext.class,
+		return new java.lang.Class[] { IActionFilter.class, IUndoContext.class,
 
 				EObject.class, Element.class, NamedElement.class, Package.class, Classifier.class, Class.class,
 				DataType.class, Interface.class, Enumeration.class, PrimitiveType.class, Property.class,

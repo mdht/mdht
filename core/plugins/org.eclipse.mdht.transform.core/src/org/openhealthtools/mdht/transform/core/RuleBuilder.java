@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.transform.core;
 
@@ -20,7 +20,7 @@ import org.openhealthtools.mdht.transform.core.impl.Phase;
  * <p>
  * A <i>Builder</i> of {@link IRule}s. It is supplied by a {@link PhaseBuilder}. Rules initially have no fragments attached.
  * </p>
- * 
+ *
  * @see TransformationBuilder
  * @see PhaseBuilder
  */
@@ -121,7 +121,7 @@ public class RuleBuilder {
 
 	/**
 	 * Finishes building rules and returns to the transformation builder.
-	 * 
+	 *
 	 * @return the transformation builder
 	 */
 	public TransformationBuilder done() {

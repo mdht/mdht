@@ -42,7 +42,7 @@ public interface ActRelationship extends EObject {
 	 * If the meaning of the '<em>Association Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Association Type</em>' reference.
 	 * @see #setAssociationType(org.eclipse.uml2.uml.Class)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getActRelationship_AssociationType()
@@ -58,7 +58,7 @@ public interface ActRelationship extends EObject {
 	 * If the meaning of the '<em>Base Association</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Association</em>' reference.
 	 * @see #setBase_Association(Association)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getActRelationship_Base_Association()
@@ -74,7 +74,7 @@ public interface ActRelationship extends EObject {
 	 * If the meaning of the '<em>Type Code</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type Code</em>' reference.
 	 * @see #setTypeCode(EnumerationLiteral)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getActRelationship_TypeCode()
@@ -88,7 +88,7 @@ public interface ActRelationship extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Association Type</em>' reference.
 	 * @see #getAssociationType()
@@ -101,7 +101,7 @@ public interface ActRelationship extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Association</em>' reference.
 	 * @see #getBase_Association()
@@ -113,7 +113,7 @@ public interface ActRelationship extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getTypeCode <em>Type Code</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type Code</em>' reference.
 	 * @see #getTypeCode()

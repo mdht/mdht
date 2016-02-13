@@ -39,7 +39,7 @@ public interface ConformsTo extends Validation {
 	 * If the meaning of the '<em>Base Generalization</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Generalization</em>' reference.
 	 * @see #setBase_Generalization(Generalization)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getConformsTo_Base_Generalization()
@@ -56,7 +56,7 @@ public interface ConformsTo extends Validation {
 	 * If the meaning of the '<em>Requires Parent Id</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Requires Parent Id</em>' attribute.
 	 * @see #setRequiresParentId(boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getConformsTo_RequiresParentId()
@@ -70,7 +70,7 @@ public interface ConformsTo extends Validation {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Generalization</em>' reference.
 	 * @see #getBase_Generalization()
@@ -83,7 +83,7 @@ public interface ConformsTo extends Validation {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Requires Parent Id</em>' attribute.
 	 * @see #isRequiresParentId()

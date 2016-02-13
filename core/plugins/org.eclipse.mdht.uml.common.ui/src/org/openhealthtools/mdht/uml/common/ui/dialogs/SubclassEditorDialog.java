@@ -49,7 +49,7 @@ import org.openhealthtools.mdht.uml.common.ui.internal.Activator;
 
 /**
  * A class to select elements out of a tree structure.
- * 
+ *
  */
 public class SubclassEditorDialog extends SelectionStatusDialog {
 
@@ -155,7 +155,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Constructs an instance of <code>ElementTreeSelectionDialog</code>.
-	 * 
+	 *
 	 * @param parent
 	 *            The shell to parent from.
 	 * @param labelProvider
@@ -184,7 +184,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 	/**
 	 * If set, the checked /gray state of containers (inner nodes) is derived from the checked state
 	 * of its leaf nodes.
-	 * 
+	 *
 	 * @param containerMode
 	 *            The containerMode to set
 	 */
@@ -202,7 +202,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Sets the initial selection. Convenience method.
-	 * 
+	 *
 	 * @param selection
 	 *            the initial selection.
 	 */
@@ -212,7 +212,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Sets the comparator used by the tree viewer.
-	 * 
+	 *
 	 * @param comparator
 	 */
 	public void setComparator(ViewerComparator comparator) {
@@ -221,7 +221,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Adds a filter to the tree viewer.
-	 * 
+	 *
 	 * @param filter
 	 *            a filter.
 	 */
@@ -235,7 +235,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 	/**
 	 * Sets an optional validator to check if the selection is valid. The validator is invoked
 	 * whenever the selection changes.
-	 * 
+	 *
 	 * @param validator
 	 *            the validator to validate the selection.
 	 */
@@ -245,7 +245,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Sets the tree input.
-	 * 
+	 *
 	 * @param input
 	 *            the tree input.
 	 */
@@ -264,7 +264,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Expands elements in the tree.
-	 * 
+	 *
 	 * @param elements
 	 *            The elements that will be expanded.
 	 */
@@ -274,7 +274,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Sets the size of the tree in unit of characters.
-	 * 
+	 *
 	 * @param width
 	 *            the width of the tree.
 	 * @param height
@@ -287,7 +287,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Validate the receiver and update the status with the result.
-	 * 
+	 *
 	 */
 	protected void updateOKStatus() {
 		if (!fIsEmpty) {
@@ -296,7 +296,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 				updateStatus(fCurrStatus);
 			} else if (!fCurrStatus.isOK()) {
 				fCurrStatus = new Status(IStatus.OK, PlatformUI.PLUGIN_ID, IStatus.OK, "", //$NON-NLS-1$
-				null);
+					null);
 			}
 		} else {
 			// fCurrStatus = new Status(IStatus.ERROR, PlatformUI.PLUGIN_ID,
@@ -396,7 +396,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Creates the tree viewer.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent composite
 	 * @return the tree viewer
@@ -460,7 +460,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Returns the tree viewer.
-	 * 
+	 *
 	 * @return the tree viewer
 	 */
 	protected CheckboxTreeViewer getTreeViewer() {
@@ -469,7 +469,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	/**
 	 * Adds the selection and deselection buttons to the dialog.
-	 * 
+	 *
 	 * @param composite
 	 *            the parent composite
 	 * @return Composite the composite the buttons were created in.

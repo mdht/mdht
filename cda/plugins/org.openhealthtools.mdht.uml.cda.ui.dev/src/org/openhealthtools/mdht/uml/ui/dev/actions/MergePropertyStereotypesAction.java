@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.dev.actions;
 
@@ -81,24 +81,27 @@ public class MergePropertyStereotypesAction implements IObjectActionDelegate {
 									property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 
 								if (codeSystemStereotype != null && valueSetStereotype != null) {
-									System.err.println(property.getQualifiedName() +
-											" -- cannot merge, has 3 stereotypes");
+									System.err.println(
+										property.getQualifiedName() + " -- cannot merge, has 3 stereotypes");
 									continue;
 								}
 
-								Validation propertyValidation = (Validation) property.getStereotypeApplication(propertyStereotype);
+								Validation propertyValidation = (Validation) property.getStereotypeApplication(
+									propertyStereotype);
 								SeverityKind propertySeverity = propertyValidation.getSeverity();
 
 								if (codeSystemStereotype != null) {
-									Validation termValidation = (Validation) property.getStereotypeApplication(codeSystemStereotype);
+									Validation termValidation = (Validation) property.getStereotypeApplication(
+										codeSystemStereotype);
 									if (!propertySeverity.equals(termValidation.getSeverity())) {
-										System.err.println(property.getQualifiedName() +
-												" -- cannot merge, different severity");
+										System.err.println(
+											property.getQualifiedName() + " -- cannot merge, different severity");
 										continue;
 									}
 									if (propertyValidation.isMandatory() != termValidation.isMandatory()) {
-										System.err.println(property.getQualifiedName() +
-												" -- cannot merge, different isMandatory flag");
+										System.err.println(
+											property.getQualifiedName() +
+													" -- cannot merge, different isMandatory flag");
 										continue;
 									}
 
@@ -112,15 +115,17 @@ public class MergePropertyStereotypesAction implements IObjectActionDelegate {
 								}
 
 								if (valueSetStereotype != null) {
-									Validation termValidation = (Validation) property.getStereotypeApplication(valueSetStereotype);
+									Validation termValidation = (Validation) property.getStereotypeApplication(
+										valueSetStereotype);
 									if (!propertySeverity.equals(termValidation.getSeverity())) {
-										System.err.println(property.getQualifiedName() +
-												" -- cannot merge, different severity");
+										System.err.println(
+											property.getQualifiedName() + " -- cannot merge, different severity");
 										continue;
 									}
 									if (propertyValidation.isMandatory() != termValidation.isMandatory()) {
-										System.err.println(property.getQualifiedName() +
-												" -- cannot merge, different isMandatory flag");
+										System.err.println(
+											property.getQualifiedName() +
+													" -- cannot merge, different isMandatory flag");
 										continue;
 									}
 

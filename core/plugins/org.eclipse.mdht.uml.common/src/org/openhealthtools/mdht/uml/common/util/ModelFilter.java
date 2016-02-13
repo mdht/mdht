@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.util;
@@ -83,14 +83,15 @@ public class ModelFilter {
 	}
 
 	public boolean isHidden(NamedElement element) {
-		if (ModelFilterUtil.isHidden(element))
+		if (ModelFilterUtil.isHidden(element)) {
 			return true;
-		else if (ModelFilterUtil.isShown(element))
+		} else if (ModelFilterUtil.isShown(element)) {
 			return false;
-		else if (ModelFilterUtil.isCollapsed(element))
+		} else if (ModelFilterUtil.isCollapsed(element)) {
 			return false;
-		else
+		} else {
 			return isDefaultHidden(element);
+		}
 	}
 
 	public boolean isCollapsed(NamedElement element) {
@@ -305,8 +306,9 @@ public class ModelFilter {
 			Collection<NamedElement> elements = org.eclipse.uml2.uml.util.UMLUtil.findNamedElements(
 				resourceSet, qualifiedName);
 			for (NamedElement namedElement : elements) {
-				if (namedElement instanceof Classifier)
+				if (namedElement instanceof Classifier) {
 					return (Classifier) namedElement;
+				}
 			}
 		}
 

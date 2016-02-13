@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 
@@ -43,7 +43,7 @@ public class CloseModelAction extends Action {
 
 	/**
 	 * Construct this Action with the given page.
-	 * 
+	 *
 	 * @param p
 	 *            The page to use as context to open the editor.
 	 * @param selectionProvider
@@ -56,7 +56,7 @@ public class CloseModelAction extends Action {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.action.Action#isEnabled()
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class CloseModelAction extends Action {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.action.Action#run()
 	 */
 	@Override
@@ -99,9 +99,9 @@ public class CloseModelAction extends Action {
 					String message = NLS.bind(Messages.CloseModelAction_dialogMessage, fileName);
 					// Yes, No, Cancel
 					MessageDialog dialog = new MessageDialog(
-						Display.getDefault().getActiveShell(), Messages.CloseModelAction_dialogTitle,
-						null, // accept
-						message, MessageDialog.QUESTION, new String[] {
+						Display.getDefault().getActiveShell(), Messages.CloseModelAction_dialogTitle, null, // accept
+						message, MessageDialog.QUESTION,
+						new String[] {
 								IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL, IDialogConstants.CANCEL_LABEL },
 						0); // yes is the default
 

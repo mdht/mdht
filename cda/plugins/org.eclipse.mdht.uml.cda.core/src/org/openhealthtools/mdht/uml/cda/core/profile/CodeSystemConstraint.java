@@ -22,6 +22,6 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  * @model
  * @generated
  */
-public interface CodeSystemConstraint extends org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint,
-		Validation {
+public interface CodeSystemConstraint
+		extends org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint, Validation {
 } // CodeSystemConstraint

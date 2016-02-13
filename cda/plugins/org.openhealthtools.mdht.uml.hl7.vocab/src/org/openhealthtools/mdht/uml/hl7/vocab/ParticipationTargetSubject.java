@@ -90,7 +90,8 @@ public enum ParticipationTargetSubject implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ParticipationTargetSubject> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ParticipationTargetSubject> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Participation Target Subject</b></em>' literal with the specified literal value.

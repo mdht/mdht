@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.navigator;
@@ -24,8 +24,8 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IDecoratorManager;
 import org.eclipse.ui.PlatformUI;
 
-public class DecoratorAdapterFactoryLabelProvider extends AdapterFactoryLabelProvider implements IColorDecorator,
-		IFontDecorator {
+public class DecoratorAdapterFactoryLabelProvider extends AdapterFactoryLabelProvider
+		implements IColorDecorator, IFontDecorator {
 
 	private IDecoratorManager decorator = PlatformUI.getWorkbench().getDecoratorManager();
 

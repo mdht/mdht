@@ -101,8 +101,8 @@ public class ADXPImpl extends STImpl implements ADXP {
 		boolean oldPartTypeESet = partTypeESet;
 		partTypeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.ADXP__PART_TYPE, oldPartType, partType, !oldPartTypeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ADXP__PART_TYPE, oldPartType,
+				partType, !oldPartTypeESet));
 		}
 	}
 
@@ -117,9 +117,8 @@ public class ADXPImpl extends STImpl implements ADXP {
 		partType = PART_TYPE_EDEFAULT;
 		partTypeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.ADXP__PART_TYPE, oldPartType, PART_TYPE_EDEFAULT,
-				oldPartTypeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ADXP__PART_TYPE, oldPartType,
+				PART_TYPE_EDEFAULT, oldPartTypeESet));
 		}
 	}
 

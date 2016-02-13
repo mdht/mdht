@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	   Dan Brown (Audacious Inquiry) - initial API and implementation
  * 	   David A Carlson (XMLmodeling.com) - wrote AssignConformanceRuleIdsAction.java which provided a basis for some of the UI-specific methods in this class
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.dev.util;
 
@@ -46,7 +46,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 
-//How to update functionality for future versions: 
+//How to update functionality for future versions:
 //If adding new prefixes or versions for new C-CDA versions we will need to:
 //-add a new Action class using the existing simple outlines provided (e.g. UpdateIGRulePrefixesAction)
 //-link it to the appropriate non-default init method and pass in the custom requirements
@@ -55,7 +55,7 @@ import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 //Note:
 //-we may want to update the 4 DEFAULT_ strings as well to stay in sync with what the current 'default' might be
 //either way though, the specific sub-menu selections will get the user what they need, so it isn't necessary
-//-Or, for a very quick update, we could simply update the DEFAULT_ strings to whatever is needed, and if seeking clarity, 
+//-Or, for a very quick update, we could simply update the DEFAULT_ strings to whatever is needed, and if seeking clarity,
 //the menus could textually reflect that they are updating to the latest spec (edit plugin.properties)
 public final class ConfRulesUtil {
 
@@ -148,7 +148,7 @@ public final class ConfRulesUtil {
 
 	/**
 	 * sets a custom prefix and initializes the class to run this option
-	 * 
+	 *
 	 * @param prefixToAdd
 	 *            provide a rule prefix to add (without the hyphen) <br />
 	 *            e.g. {@value #DEFAULT_NEW_IG_RULE_PREFIX}
@@ -253,11 +253,11 @@ public final class ConfRulesUtil {
 
 	/**
 	 * e.g. CONF:oldIgRulePrefix-1234 to CONF:newIgRulePrefix-1234
-	 * 
+	 *
 	 * @param rules
 	 *            conformance rules
 	 * @return
-	 *         updated conformance rules
+	 * 		updated conformance rules
 	 */
 	private static String replaceIGRulePrefix(String rules) {
 		System.out.println("Performing replaceIGRulePrefix operation");
@@ -269,16 +269,17 @@ public final class ConfRulesUtil {
 
 	/**
 	 * e.g. 2.0= to 2.1=
-	 * 
+	 *
 	 * @param rules
 	 *            conformance rules
 	 * @return
-	 *         updated conformance rules
+	 * 		updated conformance rules
 	 */
 	private static String replaceCcdaVersionPrefix(String rules) {
 		System.out.println("Performing replaceCcdaVersionPrefix operation");
-		return updateCurrentRules(rules, oldCcdaVersionPrefix, newCcdaVersionPrefix, "No CcdaVersionPrefix of '" +
-				oldCcdaVersionPrefix + "' was found or updated in the following String: " + rules);
+		return updateCurrentRules(
+			rules, oldCcdaVersionPrefix, newCcdaVersionPrefix, "No CcdaVersionPrefix of '" + oldCcdaVersionPrefix +
+					"' was found or updated in the following String: " + rules);
 	}
 
 	/**
@@ -286,20 +287,18 @@ public final class ConfRulesUtil {
 	 * this 'CONF:' is replaced with this 'CONF:newIgRulePrefix-' <br />
 	 * Note: oldIgRulePrefix is ignored in this case since there is none <br />
 	 * if there isn't a hyphen then we insert the specified prefix
-	 * 
+	 *
 	 * @param rules
 	 *            conformance rules
 	 * @return
-	 *         updated conformance rules
+	 * 		updated conformance rules
 	 */
 	private static String addIgRulePrefix(String rules) {
 		System.out.println("Performing addIgRulePrefix operation");
 		if (!rules.contains("-")) {
 			final String NEW_RULE = RULE_HEADER + newIgRulePrefix + IG_RULE_AND_UNIQUE_RULE_SEPARATOR;
 			return updateCurrentRules(
-				rules,
-				RULE_HEADER,
-				NEW_RULE,
+				rules, RULE_HEADER, NEW_RULE,
 				"An old prefixless rule similar to the format CONF:1234 was not found or updated in the following String: " +
 						rules);
 		} else {
@@ -332,8 +331,8 @@ public final class ConfRulesUtil {
 	 * Recursively updates all of the classes (templates) the selected class (template) inherits from as well
 	 */
 	public static void updateParent(Element selectedElement) {
-		throw new UnsupportedOperationException("Error: The method updateParent is not yet implemented in " +
-				ConfRulesUtil.class.getSimpleName());
+		throw new UnsupportedOperationException(
+			"Error: The method updateParent is not yet implemented in " + ConfRulesUtil.class.getSimpleName());
 	}
 
 	public static Element selectionChanged(IAction action, ISelection selection) {
@@ -414,7 +413,7 @@ public final class ConfRulesUtil {
 
 	/**
 	 * For testing purposes...
-	 * 
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {

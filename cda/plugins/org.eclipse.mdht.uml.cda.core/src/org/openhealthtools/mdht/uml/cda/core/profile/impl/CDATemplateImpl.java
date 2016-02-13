@@ -40,7 +40,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The default value of the '{@link #getTemplateId() <em>Template Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTemplateId()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTemplateId()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The default value of the '{@link #getAssigningAuthorityName() <em>Assigning Authority Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAssigningAuthorityName()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The cached value of the '{@link #getAssigningAuthorityName() <em>Assigning Authority Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAssigningAuthorityName()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The default value of the '{@link #isContextDependent() <em>Context Dependent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isContextDependent()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The cached value of the '{@link #isContextDependent() <em>Context Dependent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isContextDependent()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The default value of the '{@link #getTemplateVersion() <em>Template Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTemplateVersion()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The cached value of the '{@link #getTemplateVersion() <em>Template Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTemplateVersion()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The default value of the '{@link #getTemplateMultiplicity() <em>Template Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTemplateMultiplicity()
 	 * @generated
 	 * @ordered
@@ -139,7 +139,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The cached value of the '{@link #getTemplateMultiplicity() <em>Template Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTemplateMultiplicity()
 	 * @generated
 	 * @ordered
@@ -149,7 +149,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CDATemplateImpl() {
@@ -159,7 +159,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getAssigningAuthorityName() {
@@ -290,7 +290,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getTemplateId() {
@@ -300,7 +300,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isContextDependent() {
@@ -310,39 +310,37 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAssigningAuthorityName(String newAssigningAuthorityName) {
 		String oldAssigningAuthorityName = assigningAuthorityName;
 		assigningAuthorityName = newAssigningAuthorityName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME, oldAssigningAuthorityName,
-				assigningAuthorityName));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME,
+				oldAssigningAuthorityName, assigningAuthorityName));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setContextDependent(boolean newContextDependent) {
 		boolean oldContextDependent = contextDependent;
 		contextDependent = newContextDependent;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT, oldContextDependent,
-				contextDependent));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT,
+				oldContextDependent, contextDependent));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getTemplateVersion() {
@@ -352,22 +350,22 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTemplateVersion(String newTemplateVersion) {
 		String oldTemplateVersion = templateVersion;
 		templateVersion = newTemplateVersion;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_VERSION, oldTemplateVersion, templateVersion));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_VERSION,
+				oldTemplateVersion, templateVersion));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getTemplateMultiplicity() {
@@ -377,38 +375,37 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTemplateMultiplicity(String newTemplateMultiplicity) {
 		String oldTemplateMultiplicity = templateMultiplicity;
 		templateMultiplicity = newTemplateMultiplicity;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_MULTIPLICITY, oldTemplateMultiplicity,
-				templateMultiplicity));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_MULTIPLICITY,
+				oldTemplateMultiplicity, templateMultiplicity));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTemplateId(String newTemplateId) {
 		String oldTemplateId = templateId;
 		templateId = newTemplateId;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_ID, oldTemplateId, templateId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_ID, oldTemplateId,
+				templateId));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

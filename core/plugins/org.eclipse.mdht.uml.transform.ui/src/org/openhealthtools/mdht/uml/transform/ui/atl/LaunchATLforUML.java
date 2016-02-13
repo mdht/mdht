@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.transform.ui.atl;
 
@@ -19,6 +19,7 @@ import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
@@ -85,7 +86,7 @@ public abstract class LaunchATLforUML implements IObjectActionDelegate {
 		asmURL = bundle.getEntry(getATLSourceFilePath());
 		try {
 			injector = CoreService.getInjector("EMF"); //$NON-NLS-1$
-			extractor = CoreService.getExtractor("EMF"); //$NON-NLS-1$			
+			extractor = CoreService.getExtractor("EMF"); //$NON-NLS-1$
 
 			// Metamodels
 			ModelFactory modelFactory = CoreService.getModelFactory("EMF"); //$NON-NLS-1$
@@ -136,7 +137,7 @@ public abstract class LaunchATLforUML implements IObjectActionDelegate {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ui.IObjectActionDelegate#setActivePart(org.eclipse.jface.action.IAction, org.eclipse.ui.IWorkbenchPart)
 	 */
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
@@ -144,7 +145,7 @@ public abstract class LaunchATLforUML implements IObjectActionDelegate {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	public void run(IAction action) {
@@ -186,13 +187,13 @@ public abstract class LaunchATLforUML implements IObjectActionDelegate {
 		extractor.extract(launcher.getModel("OUT"), outputFilePath);
 
 		// Refresh workspace
-		file.getParent().refreshLocal(IProject.DEPTH_INFINITE, null);
+		file.getParent().refreshLocal(IResource.DEPTH_INFINITE, null);
 
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {

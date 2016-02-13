@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.util;
 
@@ -64,8 +64,8 @@ public class UMLEditingDomainFactory extends WorkspaceEditingDomainFactory {
 		AdapterFactory factory = editingDomain.getAdapterFactory();
 		if (factory instanceof ComposedAdapterFactory) {
 			// nice, happy case: can intercept only UML requests
-			((ComposedAdapterFactory) factory).insertAdapterFactory(new UMLEditingDomainAdapterFactory(
-				new UML2ExtendedAdapterFactory()));
+			((ComposedAdapterFactory) factory).insertAdapterFactory(
+				new UMLEditingDomainAdapterFactory(new UML2ExtendedAdapterFactory()));
 		} else {
 			// not so nice and happy: have to intercept all requests
 			editingDomain.setAdapterFactory(new UMLEditingDomainAdapterFactory(factory));

@@ -141,7 +141,8 @@ public enum ActRelationshipHasComponent implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ActRelationshipHasComponent> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ActRelationshipHasComponent> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Act Relationship Has Component</b></em>' literal with the specified literal value.

@@ -138,7 +138,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @generated
 	 */
 	public NotificationChain basicSetValidTime(IVL_TS newValidTime, NotificationChain msgs) {
-		return ((FeatureMap.Internal) getMixed()).basicAdd(DatatypesPackage.Literals.EN__VALID_TIME, newValidTime, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			DatatypesPackage.Literals.EN__VALID_TIME, newValidTime, msgs);
 	}
 
 	/**

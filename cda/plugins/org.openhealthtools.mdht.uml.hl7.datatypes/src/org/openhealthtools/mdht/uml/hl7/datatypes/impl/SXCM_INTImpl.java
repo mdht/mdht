@@ -101,8 +101,8 @@ public class SXCM_INTImpl extends INTImpl implements SXCM_INT {
 		boolean oldOperatorESet = operatorESet;
 		operatorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.SXCM_INT__OPERATOR, oldOperator, operator, !oldOperatorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SXCM_INT__OPERATOR, oldOperator,
+				operator, !oldOperatorESet));
 		}
 	}
 
@@ -117,9 +117,8 @@ public class SXCM_INTImpl extends INTImpl implements SXCM_INT {
 		operator = OPERATOR_EDEFAULT;
 		operatorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.SXCM_INT__OPERATOR, oldOperator, OPERATOR_EDEFAULT,
-				oldOperatorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.SXCM_INT__OPERATOR, oldOperator,
+				OPERATOR_EDEFAULT, oldOperatorESet));
 		}
 	}
 

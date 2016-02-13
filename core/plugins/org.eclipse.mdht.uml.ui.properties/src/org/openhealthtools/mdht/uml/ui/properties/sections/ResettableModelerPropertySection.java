@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Kenn Hussey - initial API and implementation
  *     Christian W. Damus - Handle element wrappers (artf3238)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.sections;
@@ -34,8 +34,9 @@ public abstract class ResettableModelerPropertySection extends WrapperAwareModel
 		restoreDefaultsButton = getWidgetFactory().createButton(parent, null, SWT.PUSH);
 
 		restoreDefaultsButton.setToolTipText("Restore Default Values");
-		restoreDefaultsButton.setImage(AbstractUIPlugin.imageDescriptorFromPlugin(
-			"org.openhealthtools.mdht.uml.ui.properties", "icons/full/elcl16/restore_defaults.gif").createImage());
+		restoreDefaultsButton.setImage(
+			AbstractUIPlugin.imageDescriptorFromPlugin(
+				"org.openhealthtools.mdht.uml.ui.properties", "icons/full/elcl16/restore_defaults.gif").createImage());
 
 		restoreDefaultsButton.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent se) {

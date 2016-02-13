@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Handle element wrappers (artf3238)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.filters;
@@ -30,7 +30,7 @@ public class FilterUtil {
 		Element element = null;
 
 		if (object instanceof IAdaptable) {
-			element = (Element) ((IAdaptable) object).getAdapter(Element.class);
+			element = ((IAdaptable) object).getAdapter(Element.class);
 		} else {
 			EObject eobject = Selections.unwrap(object, EObject.class);
 			if (eobject instanceof Element) {

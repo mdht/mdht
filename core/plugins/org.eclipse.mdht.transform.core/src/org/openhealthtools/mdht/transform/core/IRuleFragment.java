@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.transform.core;
 
@@ -28,15 +28,15 @@ public interface IRuleFragment extends ITransformationComponent {
 
 	/**
 	 * Filters the application of a rule on an {@code input} element.
-	 * 
+	 *
 	 * @param input
 	 *            the input element
 	 * @param output
 	 *            the output element either of a previous fragment or of the rule that I decorate
 	 * @param monitor
-	 * 
+	 *
 	 * @return my filtered output, to pass along to the next fragment or the rule that I decorate
-	 * 
+	 *
 	 * @throws TransformationException
 	 *             if I utterly fail to complete my work
 	 */

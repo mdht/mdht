@@ -134,14 +134,15 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CASESBJ(10, "CASESBJ", "CASESBJ"), /**
-										* The '<em><b>CIT</b></em>' literal object.
-										* <!-- begin-user-doc -->
-										* <!-- end-user-doc -->
-										* @see #CIT_VALUE
-										* @generated
-										* @ordered
-										*/
+	CASESBJ(10, "CASESBJ", "CASESBJ"),
+	/**
+	* The '<em><b>CIT</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #CIT_VALUE
+	* @generated
+	* @ordered
+	*/
 	CIT(11, "CIT", "CIT"),
 
 	/**

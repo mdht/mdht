@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.util;
@@ -31,7 +31,8 @@ public class EditingDomainUtil {
 			Object element = unwrap(it.next());
 			editingDomain = TransactionUtil.getEditingDomain(element);
 			if (editingDomain == null && element instanceof EObject && ((EObject) element).eResource() != null) {
-				editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain(((EObject) element).eResource().getResourceSet());
+				editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain(
+					((EObject) element).eResource().getResourceSet());
 			}
 		}
 		return editingDomain;
@@ -42,7 +43,7 @@ public class EditingDomainUtil {
 			return unwrap(((IStructuredSelection) element).getFirstElement());
 		}
 		if (element instanceof IAdaptable) {
-			EObject eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
+			EObject eObject = ((IAdaptable) element).getAdapter(EObject.class);
 			if (eObject != null) {
 				return eObject;
 			}

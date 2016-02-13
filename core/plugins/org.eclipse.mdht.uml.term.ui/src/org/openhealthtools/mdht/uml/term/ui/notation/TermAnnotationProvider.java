@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.notation;
@@ -62,8 +62,8 @@ public class TermAnnotationProvider implements INotationProvider, IExecutableExt
 		String printString = null;
 
 		if (element instanceof Property) {
-			printString = TermPropertyNotation.getCustomLabel((Property) element, ITermAppearance.DEFAULT_UML_PROPERTY |
-					ITermAppearance.DISP_VOCABULARY);
+			printString = TermPropertyNotation.getCustomLabel(
+				(Property) element, ITermAppearance.DEFAULT_UML_PROPERTY | ITermAppearance.DISP_VOCABULARY);
 		}
 
 		return printString;

@@ -7,7 +7,7 @@
  *
  * Contributors:
  *   David A Carlson (XMLmodeling.com) - initial API and implementation
- *   
+ *
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.ui.dialogs;

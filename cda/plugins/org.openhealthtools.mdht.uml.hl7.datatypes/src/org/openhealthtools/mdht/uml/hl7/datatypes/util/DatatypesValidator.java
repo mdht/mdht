@@ -770,7 +770,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	@Override
-	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		switch (classifierID) {
 			case DatatypesPackage.ANY:
 				return validateANY((ANY) value, diagnostics, context);
@@ -938,7 +939,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateED_validateThumbnailThumbnail(ED ed, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateED_validateThumbnailThumbnail(ED ed, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return ed.validateThumbnailThumbnail(diagnostics, context);
 	}
 
@@ -1660,7 +1662,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_validateStreetAddressLine(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAD_validateStreetAddressLine(AD ad, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return ad.validateStreetAddressLine(diagnostics, context);
 	}
 
@@ -1680,7 +1683,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_validateHouseNumberNumeric(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAD_validateHouseNumberNumeric(AD ad, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return ad.validateHouseNumberNumeric(diagnostics, context);
 	}
 
@@ -1730,7 +1734,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_validateAdditionalLocator(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAD_validateAdditionalLocator(AD ad, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return ad.validateAdditionalLocator(diagnostics, context);
 	}
 
@@ -2604,7 +2609,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCS_validateCodeSystemVersion(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCS_validateCodeSystemVersion(CS cs, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return cs.validateCodeSystemVersion(diagnostics, context);
 	}
 
@@ -2721,7 +2727,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRTO_QTY_QTY(RTO_QTY_QTY rtO_QTY_QTY, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateRTO_QTY_QTY(RTO_QTY_QTY rtO_QTY_QTY, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(rtO_QTY_QTY, diagnostics, context)) {
 			return false;
 		}
@@ -3021,7 +3028,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean validateIVL_INT_validateINT(IVL_INT ivL_INT, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateIVL_INT_validateINT(IVL_INT ivL_INT, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return validateINT_validateINT(ivL_INT, diagnostics, context);
 	}
 
@@ -3332,7 +3340,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validatecsType_Pattern
 	 */
-	public static final PatternMatcher[][] CS_TYPE__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher("[^\\s]+") } };
+	public static final PatternMatcher[][] CS_TYPE__PATTERN__VALUES = new PatternMatcher[][] {
+			new PatternMatcher[] { XMLTypeUtil.createPatternMatcher("[^\\s]+") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>cs Type</em>'.
@@ -3361,10 +3370,12 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validateuid_Pattern
 	 */
-	public static final PatternMatcher[][] UID__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] {
-			XMLTypeUtil.createPatternMatcher("[0-2](\\.(0|[1-9][0-9]*))*"),
-			XMLTypeUtil.createPatternMatcher("[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}"),
-			XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9\\-]*") } };
+	public static final PatternMatcher[][] UID__PATTERN__VALUES = new PatternMatcher[][] {
+			new PatternMatcher[] {
+					XMLTypeUtil.createPatternMatcher("[0-2](\\.(0|[1-9][0-9]*))*"),
+					XMLTypeUtil.createPatternMatcher(
+						"[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}"),
+					XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9\\-]*") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>uid</em>'.
@@ -3392,7 +3403,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validatestType_Pattern
 	 */
-	public static final PatternMatcher[][] ST_TYPE__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher(".+") } };
+	public static final PatternMatcher[][] ST_TYPE__PATTERN__VALUES = new PatternMatcher[][] {
+			new PatternMatcher[] { XMLTypeUtil.createPatternMatcher(".+") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>st Type</em>'.
@@ -3421,7 +3433,10 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validatetsType_Pattern
 	 */
-	public static final PatternMatcher[][] TS_TYPE__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher("[0-9]{1,8}|([0-9]{9,14}|[0-9]{14,14}\\.[0-9]+)([+\\-][0-9]{1,4})?") } };
+	public static final PatternMatcher[][] TS_TYPE__PATTERN__VALUES = new PatternMatcher[][] {
+			new PatternMatcher[] {
+					XMLTypeUtil.createPatternMatcher(
+						"[0-9]{1,8}|([0-9]{9,14}|[0-9]{14,14}\\.[0-9]+)([+\\-][0-9]{1,4})?") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>ts Type</em>'.

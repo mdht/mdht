@@ -219,20 +219,20 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, newTypeId,
+				newTypeId));
 		}
 	}
 
@@ -288,21 +288,20 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		if (newLanguageCode != languageCode) {
 			NotificationChain msgs = null;
 			if (languageCode != null) {
-				msgs = ((InternalEObject) languageCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, null, msgs);
+				msgs = ((InternalEObject) languageCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, null, msgs);
 			}
 			if (newLanguageCode != null) {
-				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, null, msgs);
+				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, null, msgs);
 			}
 			msgs = basicSetLanguageCode(newLanguageCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, newLanguageCode,
-				newLanguageCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE,
+				newLanguageCode, newLanguageCode));
 		}
 	}
 
@@ -344,20 +343,20 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		if (newModeCode != modeCode) {
 			NotificationChain msgs = null;
 			if (modeCode != null) {
-				msgs = ((InternalEObject) modeCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, null, msgs);
+				msgs = ((InternalEObject) modeCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, null, msgs);
 			}
 			if (newModeCode != null) {
-				msgs = ((InternalEObject) newModeCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, null, msgs);
+				msgs = ((InternalEObject) newModeCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, null, msgs);
 			}
 			msgs = basicSetModeCode(newModeCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, newModeCode, newModeCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE,
+				newModeCode, newModeCode));
 		}
 	}
 
@@ -400,21 +399,23 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		if (newProficiencyLevelCode != proficiencyLevelCode) {
 			NotificationChain msgs = null;
 			if (proficiencyLevelCode != null) {
-				msgs = ((InternalEObject) proficiencyLevelCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE, null, msgs);
+				msgs = ((InternalEObject) proficiencyLevelCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE, null,
+					msgs);
 			}
 			if (newProficiencyLevelCode != null) {
-				msgs = ((InternalEObject) newProficiencyLevelCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE, null, msgs);
+				msgs = ((InternalEObject) newProficiencyLevelCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE, null,
+					msgs);
 			}
 			msgs = basicSetProficiencyLevelCode(newProficiencyLevelCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE,
-				newProficiencyLevelCode, newProficiencyLevelCode));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE,
+					newProficiencyLevelCode, newProficiencyLevelCode));
 		}
 	}
 
@@ -457,21 +458,20 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		if (newPreferenceInd != preferenceInd) {
 			NotificationChain msgs = null;
 			if (preferenceInd != null) {
-				msgs = ((InternalEObject) preferenceInd).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, null, msgs);
+				msgs = ((InternalEObject) preferenceInd).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, null, msgs);
 			}
 			if (newPreferenceInd != null) {
-				msgs = ((InternalEObject) newPreferenceInd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, null, msgs);
+				msgs = ((InternalEObject) newPreferenceInd).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, null, msgs);
 			}
 			msgs = basicSetPreferenceInd(newPreferenceInd, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, newPreferenceInd,
-				newPreferenceInd));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND,
+				newPreferenceInd, newPreferenceInd));
 		}
 	}
 
@@ -497,9 +497,8 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -514,9 +513,8 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 

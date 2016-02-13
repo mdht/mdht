@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.wizards;
 
@@ -128,7 +128,7 @@ public class NewCDAModelPage extends WizardPage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
 	 */
 
@@ -226,7 +226,7 @@ public class NewCDAModelPage extends WizardPage {
 		// basePackage.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
 		new Label(composite, SWT.NONE).setText("Namespace URI");
-		
+
 		nsURI = new Text(composite, SWT.NONE);
 		nsURI.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 

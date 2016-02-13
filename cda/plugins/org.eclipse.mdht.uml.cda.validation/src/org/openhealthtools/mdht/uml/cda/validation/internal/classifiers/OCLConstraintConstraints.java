@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
  *     Christian W. Damus - refactor on prototype of profile-based constraint provider (artf3285)
  *                        - use the UML binding for OCL to avoid dependence on generated Ecore (artf3317)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.validation.internal.classifiers;
 
@@ -62,7 +62,7 @@ public class OCLConstraintConstraints extends AbstractMultiConstraint {
 		Constraint constraint = null;
 		OpaqueExpression specification = null;
 		if (context.getTarget() instanceof OpaqueExpression &&
-				((context.getFeature() == null) /* batch mode */|| isOCLBodyChange(context))) {
+				((context.getFeature() == null) /* batch mode */ || isOCLBodyChange(context))) {
 
 			// triggered by validation of the specification when the body is changed (or in batch mode)
 			specification = (OpaqueExpression) context.getTarget();

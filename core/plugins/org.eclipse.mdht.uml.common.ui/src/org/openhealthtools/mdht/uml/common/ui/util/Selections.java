@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.util;
 
@@ -34,11 +34,11 @@ public class Selections {
 	/**
 	 * Queries whether a given {@code selection} includes an object wrapper, such as is used for including cross-referenced content or attribute
 	 * values in in the tree under referencing objects.
-	 * 
+	 *
 	 * @param selection
 	 *            a selection
 	 * @return whether it contains any wrapper item-providers
-	 * 
+	 *
 	 * @see #includesWrappers(ISelection, Class)
 	 */
 	public static boolean includesWrappers(ISelection selection) {
@@ -48,11 +48,11 @@ public class Selections {
 	/**
 	 * Queries whether a given {@code selection} includes an object wrapper, such as is used for including cross-referenced content or attribute
 	 * values in in the tree under referencing objects.
-	 * 
+	 *
 	 * @param selection
 	 *            a selection
 	 * @return whether it contains any wrapper item-providers
-	 * 
+	 *
 	 * @see #includesWrappers(IStructuredSelection, Class)
 	 */
 	public static boolean includesWrappers(IStructuredSelection selection) {
@@ -70,7 +70,7 @@ public class Selections {
 
 	/**
 	 * Queries whether a given {@code selection} includes a wrapper for an object of the specified {@code type}.
-	 * 
+	 *
 	 * @param selection
 	 *            a selection
 	 * @param type
@@ -83,7 +83,7 @@ public class Selections {
 
 	/**
 	 * Queries whether a given {@code selection} includes a wrapper for an object of the specified {@code type}.
-	 * 
+	 *
 	 * @param selection
 	 *            a selection
 	 * @param type
@@ -106,10 +106,10 @@ public class Selections {
 
 	/**
 	 * Unwraps the given object, if it is a wrapper.
-	 * 
+	 *
 	 * @param possibleWrapper
 	 *            an object that may or may not be a wrapper
-	 * 
+	 *
 	 * @return the unwrapped object
 	 */
 	public static Object unwrap(Object possibleWrapper) {
@@ -126,12 +126,12 @@ public class Selections {
 
 	/**
 	 * Unwraps the given object, if it is a wrapper, to yield a wrapped object of the specified {@code type}.
-	 * 
+	 *
 	 * @param possibleWrapper
 	 *            an object that may or may not be a wrapper
 	 * @param type
 	 *            the type of the object that is expected to be wrapped
-	 * 
+	 *
 	 * @return the unwrapped object, or <code>null</code> if it is not of the required {@code type}
 	 */
 	@SuppressWarnings("unchecked")
@@ -151,12 +151,12 @@ public class Selections {
 
 	/**
 	 * Unwraps the elements in a selection.
-	 * 
+	 *
 	 * @param selection
 	 *            a selection that may or may not include wrappers
-	 * 
+	 *
 	 * @return the unwrapped selection, or the original {@code selection} if it doesn't have any wrappers anyways
-	 * 
+	 *
 	 * @see #includesWrappers(ISelection)
 	 */
 	public static ISelection unwrap(final ISelection selection) {
@@ -167,12 +167,12 @@ public class Selections {
 
 	/**
 	 * Unwraps the elements in a selection.
-	 * 
+	 *
 	 * @param selection
 	 *            a selection that may or may not include wrappers
-	 * 
+	 *
 	 * @return the unwrapped selection, or the original {@code selection} if it doesn't have any wrappers anyways
-	 * 
+	 *
 	 * @see #includesWrappers(IStructuredSelection)
 	 */
 	public static IStructuredSelection unwrap(final IStructuredSelection selection) {

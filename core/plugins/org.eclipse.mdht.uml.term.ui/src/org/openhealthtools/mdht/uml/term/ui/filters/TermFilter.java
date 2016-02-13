@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Handle element wrappers (artf3238)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.filters;
@@ -27,7 +27,7 @@ public abstract class TermFilter extends WrapperAwareFilter {
 		Element element = null;
 
 		if (object instanceof IAdaptable) {
-			element = (Element) ((IAdaptable) object).getAdapter(Element.class);
+			element = ((IAdaptable) object).getAdapter(Element.class);
 		} else {
 			EObject eobject = getEObject(object);
 			if (eobject instanceof Element) {

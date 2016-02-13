@@ -25,15 +25,15 @@ import org.xml.sax.SAXException;
  * 100% accurate regarding values but this is currently only used to approximate
  * mark locations as part of the CDA validation within the eclipse Validator2
  * framework.
- * 
+ *
  * @author Sean Muir (JKM Software)
- * 
+ *
  */
 public class XPathIndexer implements ContentHandler {
 
 	/**
 	 * ElementEntry is used to maintain a bottom up stack of elements found within the CDA document.
-	 * 
+	 *
 	 */
 	static private class ElementEntry {
 
@@ -55,7 +55,7 @@ public class XPathIndexer implements ContentHandler {
 
 	/**
 	 * ElementLocationData is used to cache the location of each element
-	 * 
+	 *
 	 */
 	public static class ElementLocationData {
 		public int line;
@@ -77,7 +77,7 @@ public class XPathIndexer implements ContentHandler {
 	 * Parent is the xpath to elements location
 	 * Element is the element name
 	 * Location* is sequential array for location for the named element
-	 * 
+	 *
 	 * It is designed to support an incremental count approach of elements so
 	 * <Root>
 	 * <Parent>
@@ -86,12 +86,12 @@ public class XPathIndexer implements ContentHandler {
 	 * <Element />
 	 * </Parent>
 	 * </Root>
-	 * 
+	 *
 	 * would have one Parent index pointing to a hashmap
 	 * in that hash map you have Element index pointing to an array
 	 * in the array you would have 3 sequential locations, one for each element found
-	 * 
-	 * 
+	 *
+	 *
 	 * The structure and indexElement track element instances to supply running total of element document indexes
 	 */
 	public HashMap<String, HashMap<String, ArrayList<Locator>>> elementIndexes = new HashMap<String, HashMap<String, ArrayList<Locator>>>();
@@ -136,7 +136,7 @@ public class XPathIndexer implements ContentHandler {
 	 * getElementLocationByPath
 	 * Returns ElementLocationData -
 	 * Convert xpath to all upper case to avoid some subtle differences in EMF validation and actual xml content
-	 * 
+	 *
 	 */
 	public ElementLocationData getElementLocationByPath(String xpath) {
 

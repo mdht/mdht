@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.actions;
@@ -53,8 +53,9 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 	/**
 	 * Subclass may override to customize domain-specific processing.
 	 * Default is to open dialog containing all available classes.
-	 * 
-	 * @param new class
+	 *
+	 * @param new
+	 *            class
 	 */
 	protected Type selectTargetType(Class source) {
 		Package topPackage = UMLUtil.getTopPackage(source);
@@ -85,8 +86,9 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 	/**
 	 * Subclass may override to customize domain-specific processing.
 	 * Do nothing by default.
-	 * 
-	 * @param new property
+	 *
+	 * @param new
+	 *            property
 	 */
 	protected void postProcess(Property newProperty) {
 		// do nothing by default
@@ -95,8 +97,9 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 	/**
 	 * Subclass may override to customize domain-specific processing.
 	 * Do nothing by default.
-	 * 
-	 * @param new property
+	 *
+	 * @param new
+	 *            property
 	 */
 	protected void postProcess(Association newAssociation) {
 		// do nothing by default

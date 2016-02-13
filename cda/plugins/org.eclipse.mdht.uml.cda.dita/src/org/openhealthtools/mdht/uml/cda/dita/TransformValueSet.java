@@ -84,7 +84,8 @@ public class TransformValueSet extends TransformAbstract {
 				writer.println("<colspec colname=\"col3\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col4\" colwidth=\"2*\"/>");
 				writer.println("<thead><row>");
-				writer.println("<entry>Code</entry><entry>Code System</entry><entry>Print Name</entry><entry>Usage Note</entry>");
+				writer.println(
+					"<entry>Code</entry><entry>Code System</entry><entry>Print Name</entry><entry>Usage Note</entry>");
 				writer.println("</row></thead><tbody>");
 			} else {
 				writer.println("<tgroup cols=\"3\">");
@@ -173,7 +174,9 @@ public class TransformValueSet extends TransformAbstract {
 							? valueSetVersion.getCodeSystem().getIdentifier()
 							: "(OID not specified)";
 					writer.print("<row><entry>Code System</entry><entry>");
-					writer.print(CDAModelUtil.fixNonXMLCharacters(valueSetVersion.getCodeSystem().getBase_Enumeration().getName()));
+					writer.print(
+						CDAModelUtil.fixNonXMLCharacters(
+							valueSetVersion.getCodeSystem().getBase_Enumeration().getName()));
 					writer.print(" - " + codeSystemId);
 					writer.println("</entry></row>");
 				}

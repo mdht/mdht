@@ -311,20 +311,20 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ORGANIZATION__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ORGANIZATION__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ORGANIZATION__TYPE_ID, newTypeId, newTypeId));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -403,7 +403,8 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStandardIndustryClassCode(CE newStandardIndustryClassCode, NotificationChain msgs) {
+	public NotificationChain basicSetStandardIndustryClassCode(CE newStandardIndustryClassCode,
+			NotificationChain msgs) {
 		CE oldStandardIndustryClassCode = standardIndustryClassCode;
 		standardIndustryClassCode = newStandardIndustryClassCode;
 		if (eNotificationRequired()) {
@@ -428,20 +429,19 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		if (newStandardIndustryClassCode != standardIndustryClassCode) {
 			NotificationChain msgs = null;
 			if (standardIndustryClassCode != null) {
-				msgs = ((InternalEObject) standardIndustryClassCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE, null, msgs);
+				msgs = ((InternalEObject) standardIndustryClassCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE, null, msgs);
 			}
 			if (newStandardIndustryClassCode != null) {
-				msgs = ((InternalEObject) newStandardIndustryClassCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE, null, msgs);
+				msgs = ((InternalEObject) newStandardIndustryClassCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE, null, msgs);
 			}
 			msgs = basicSetStandardIndustryClassCode(newStandardIndustryClassCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE,
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE,
 				newStandardIndustryClassCode, newStandardIndustryClassCode));
 		}
 	}
@@ -486,21 +486,20 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		if (newAsOrganizationPartOf != asOrganizationPartOf) {
 			NotificationChain msgs = null;
 			if (asOrganizationPartOf != null) {
-				msgs = ((InternalEObject) asOrganizationPartOf).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, null, msgs);
+				msgs = ((InternalEObject) asOrganizationPartOf).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, null, msgs);
 			}
 			if (newAsOrganizationPartOf != null) {
-				msgs = ((InternalEObject) newAsOrganizationPartOf).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, null, msgs);
+				msgs = ((InternalEObject) newAsOrganizationPartOf).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, null, msgs);
 			}
 			msgs = basicSetAsOrganizationPartOf(newAsOrganizationPartOf, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, newAsOrganizationPartOf,
-				newAsOrganizationPartOf));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF,
+				newAsOrganizationPartOf, newAsOrganizationPartOf));
 		}
 	}
 
@@ -527,9 +526,8 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ORGANIZATION__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -544,9 +542,8 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ORGANIZATION__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ORGANIZATION__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -582,8 +579,8 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ORGANIZATION__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__CLASS_CODE, oldClassCode,
+				classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -598,9 +595,8 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ORGANIZATION__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ORGANIZATION__CLASS_CODE, oldClassCode,
+				CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -636,9 +632,8 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ORGANIZATION__DETERMINER_CODE, oldDeterminerCode, determinerCode,
-				!oldDeterminerCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__DETERMINER_CODE,
+				oldDeterminerCode, determinerCode, !oldDeterminerCodeESet));
 		}
 	}
 
@@ -653,9 +648,8 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ORGANIZATION__DETERMINER_CODE, oldDeterminerCode,
-				DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ORGANIZATION__DETERMINER_CODE,
+				oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
 		}
 	}
 

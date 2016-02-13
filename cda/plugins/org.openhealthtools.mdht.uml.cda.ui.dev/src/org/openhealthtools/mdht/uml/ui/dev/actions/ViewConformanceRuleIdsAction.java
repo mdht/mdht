@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.dev.actions;
 
@@ -105,7 +105,7 @@ public class ViewConformanceRuleIdsAction implements IObjectActionDelegate {
 		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
 
 			Object element = elements.next();
-			View view = (View) ((IAdaptable) element).getAdapter(View.class);
+			View view = ((IAdaptable) element).getAdapter(View.class);
 
 			if (view != null) {
 				return view;
@@ -142,7 +142,7 @@ public class ViewConformanceRuleIdsAction implements IObjectActionDelegate {
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see org.eclipse.ui.forms.FormDialog#createFormContent(org.eclipse.ui.forms.IManagedForm)
 			 */
 			@Override
@@ -176,16 +176,16 @@ public class ViewConformanceRuleIdsAction implements IObjectActionDelegate {
 				// String statusMessage = getStatusMessage(status);
 				// try {
 				// text.setWhitespaceNormalized(true);
-				//						text.setColor("header", toolkit.getColors().getColor(IFormColors.TITLE)); //$NON-NLS-1$
-				//						text.setFont("header", JFaceResources.getHeaderFont()); //$NON-NLS-1$
-				//						text.setFont("code", JFaceResources.getTextFont()); //$NON-NLS-1$
+				// text.setColor("header", toolkit.getColors().getColor(IFormColors.TITLE)); //$NON-NLS-1$
+				// text.setFont("header", JFaceResources.getHeaderFont()); //$NON-NLS-1$
+				// text.setFont("code", JFaceResources.getTextFont()); //$NON-NLS-1$
 				// text.setText(statusMessage, true, false);
 				// } catch (Exception e) {// show plain unformatted text
 				// text.setText(statusMessage, false, false);
 				// }
 				// text.addHyperlinkListener(new HyperlinkAdapter() {
 				// public void linkActivated(final HyperlinkEvent e) {
-				//							new OpenURLAction("Documentation") { //$NON-NLS-1$
+				// new OpenURLAction("Documentation") { //$NON-NLS-1$
 				// @Override
 				// protected String getURL() {
 				// if (e.getHref() != null) {

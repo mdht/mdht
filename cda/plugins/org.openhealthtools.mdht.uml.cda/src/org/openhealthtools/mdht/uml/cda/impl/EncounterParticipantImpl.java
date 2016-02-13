@@ -230,20 +230,20 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, newTypeId,
+				newTypeId));
 		}
 	}
 
@@ -255,7 +255,8 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
-			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ENCOUNTER_PARTICIPANT__TEMPLATE_ID);
+			templateIds = new EObjectContainmentEList<II>(
+				II.class, this, CDAPackage.ENCOUNTER_PARTICIPANT__TEMPLATE_ID);
 		}
 		return templateIds;
 	}
@@ -298,20 +299,20 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		if (newTime != time) {
 			NotificationChain msgs = null;
 			if (time != null) {
-				msgs = ((InternalEObject) time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOUNTER_PARTICIPANT__TIME, null, msgs);
+				msgs = ((InternalEObject) time).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__TIME, null, msgs);
 			}
 			if (newTime != null) {
-				msgs = ((InternalEObject) newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOUNTER_PARTICIPANT__TIME, null, msgs);
+				msgs = ((InternalEObject) newTime).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__TIME, null, msgs);
 			}
 			msgs = basicSetTime(newTime, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TIME, newTime, newTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TIME, newTime,
+				newTime));
 		}
 	}
 
@@ -354,21 +355,20 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		if (newAssignedEntity != assignedEntity) {
 			NotificationChain msgs = null;
 			if (assignedEntity != null) {
-				msgs = ((InternalEObject) assignedEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, null, msgs);
+				msgs = ((InternalEObject) assignedEntity).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, null, msgs);
 			}
 			if (newAssignedEntity != null) {
-				msgs = ((InternalEObject) newAssignedEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, null, msgs);
+				msgs = ((InternalEObject) newAssignedEntity).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, null, msgs);
 			}
 			msgs = basicSetAssignedEntity(newAssignedEntity, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, newAssignedEntity,
-				newAssignedEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY,
+				newAssignedEntity, newAssignedEntity));
 		}
 	}
 
@@ -395,9 +395,8 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -412,9 +411,8 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ENCOUNTER_PARTICIPANT__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENCOUNTER_PARTICIPANT__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -450,9 +448,8 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_CODE, oldTypeCode, typeCode,
-				!oldTypeCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_CODE,
+				oldTypeCode, typeCode, !oldTypeCodeESet));
 		}
 	}
 
@@ -467,9 +464,8 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
-				oldTypeCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_CODE,
+				oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
 		}
 	}
 

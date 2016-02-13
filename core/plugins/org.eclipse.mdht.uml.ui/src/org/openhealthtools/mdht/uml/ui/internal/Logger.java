@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.internal;
@@ -47,7 +47,7 @@ public class Logger {
 
 	/**
 	 * Adds message to log.
-	 * 
+	 *
 	 * @param level
 	 *            severity level of the message (OK, INFO, WARNING, ERROR,
 	 *            OK_DEBUG, INFO_DEBUG, WARNING_DEBUG, ERROR_DEBUG)
@@ -89,7 +89,7 @@ public class Logger {
 
 	/**
 	 * Prints message to log if category matches /debug/tracefilter option.
-	 * 
+	 *
 	 * @param message
 	 *            text to print
 	 * @param category
@@ -118,7 +118,7 @@ public class Logger {
 
 	/**
 	 * Determines if currently tracing a category
-	 * 
+	 *
 	 * @param category
 	 * @return true if tracing category, false otherwise
 	 */

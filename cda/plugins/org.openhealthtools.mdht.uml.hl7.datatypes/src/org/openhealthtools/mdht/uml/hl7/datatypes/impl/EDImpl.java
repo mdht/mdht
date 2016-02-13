@@ -291,8 +291,8 @@ public class EDImpl extends BINImpl implements ED {
 		boolean oldMediaTypeESet = mediaTypeESet;
 		mediaTypeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType, mediaType, !oldMediaTypeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType,
+				mediaType, !oldMediaTypeESet));
 		}
 	}
 
@@ -307,9 +307,8 @@ public class EDImpl extends BINImpl implements ED {
 		mediaType = MEDIA_TYPE_EDEFAULT;
 		mediaTypeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType, MEDIA_TYPE_EDEFAULT,
-				oldMediaTypeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType,
+				MEDIA_TYPE_EDEFAULT, oldMediaTypeESet));
 		}
 	}
 
@@ -340,7 +339,8 @@ public class EDImpl extends BINImpl implements ED {
 		String oldLanguage = language;
 		language = newLanguage;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__LANGUAGE, oldLanguage, language));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__LANGUAGE, oldLanguage, language));
 		}
 	}
 
@@ -366,9 +366,8 @@ public class EDImpl extends BINImpl implements ED {
 		boolean oldCompressionESet = compressionESet;
 		compressionESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.ED__COMPRESSION, oldCompression, compression,
-				!oldCompressionESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__COMPRESSION, oldCompression,
+				compression, !oldCompressionESet));
 		}
 	}
 
@@ -383,9 +382,8 @@ public class EDImpl extends BINImpl implements ED {
 		compression = COMPRESSION_EDEFAULT;
 		compressionESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.ED__COMPRESSION, oldCompression, COMPRESSION_EDEFAULT,
-				oldCompressionESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ED__COMPRESSION, oldCompression,
+				COMPRESSION_EDEFAULT, oldCompressionESet));
 		}
 	}
 
@@ -416,8 +414,8 @@ public class EDImpl extends BINImpl implements ED {
 		byte[] oldIntegrityCheck = integrityCheck;
 		integrityCheck = newIntegrityCheck;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.ED__INTEGRITY_CHECK, oldIntegrityCheck, integrityCheck));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__INTEGRITY_CHECK,
+				oldIntegrityCheck, integrityCheck));
 		}
 	}
 
@@ -443,9 +441,8 @@ public class EDImpl extends BINImpl implements ED {
 		boolean oldIntegrityCheckAlgorithmESet = integrityCheckAlgorithmESet;
 		integrityCheckAlgorithmESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM, oldIntegrityCheckAlgorithm,
-				integrityCheckAlgorithm, !oldIntegrityCheckAlgorithmESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM,
+				oldIntegrityCheckAlgorithm, integrityCheckAlgorithm, !oldIntegrityCheckAlgorithmESet));
 		}
 	}
 
@@ -460,9 +457,8 @@ public class EDImpl extends BINImpl implements ED {
 		integrityCheckAlgorithm = INTEGRITY_CHECK_ALGORITHM_EDEFAULT;
 		integrityCheckAlgorithmESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM, oldIntegrityCheckAlgorithm,
-				INTEGRITY_CHECK_ALGORITHM_EDEFAULT, oldIntegrityCheckAlgorithmESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM,
+				oldIntegrityCheckAlgorithm, INTEGRITY_CHECK_ALGORITHM_EDEFAULT, oldIntegrityCheckAlgorithmESet));
 		}
 	}
 

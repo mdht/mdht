@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
@@ -449,7 +449,8 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		Set<Class> substitutions = new HashSet<Class>();
 		for (int i = allSourceParents.size() - 1; i >= 0; i--) {
 			Class parent = (Class) allSourceParents.get(i);
-			if (!RIMModelUtil.isRIMModel(parent) && !CDAModelUtil.isCDAModel(parent) && !substitutions.contains(parent)) {
+			if (!RIMModelUtil.isRIMModel(parent) && !CDAModelUtil.isCDAModel(parent) &&
+					!substitutions.contains(parent)) {
 				// add Substitution
 				umlClass.createSubstitution(null, parent);
 				substitutions.add(parent);
@@ -551,8 +552,8 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			if (special != null) {
 				special = getConsolSource(special);
 			}
-			if (consolidationStop == null ||
-					(!parents.contains(parent) && !consolidationStop.equals(parent) && !consolidationStop.equals(special))) {
+			if (consolidationStop == null || (!parents.contains(parent) && !consolidationStop.equals(parent) &&
+					!consolidationStop.equals(special))) {
 
 				parents.addAll(getConsolidatedGeneralizations((Class) parent, consolidationStop));
 			}

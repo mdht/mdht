@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
@@ -148,8 +148,10 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 		if (ctsProfile == null) {
 			return;
 		}
-		final Stereotype codeSystemVersionStereotype = (Stereotype) ctsProfile.getOwnedType(ITermProfileConstants.CODE_SYSTEM_VERSION);
-		final Stereotype valueSetVersionStereotype = (Stereotype) ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_VERSION);
+		final Stereotype codeSystemVersionStereotype = (Stereotype) ctsProfile.getOwnedType(
+			ITermProfileConstants.CODE_SYSTEM_VERSION);
+		final Stereotype valueSetVersionStereotype = (Stereotype) ctsProfile.getOwnedType(
+			ITermProfileConstants.VALUE_SET_VERSION);
 		IElementFilter codeSystemFilter = new IElementFilter() {
 			public boolean accept(Element element) {
 				return (element instanceof Enumeration) && element.isStereotypeApplied(codeSystemVersionStereotype);
@@ -166,13 +168,15 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 		List<Element> valueSetEnums = ModelSearch.findAllOf(namedElement.eResource().getResourceSet(), valueSetFilter);
 
 		for (Element element : codeSystemEnums) {
-			CodeSystemVersion codeSystemVersion = (CodeSystemVersion) element.getStereotypeApplication(codeSystemVersionStereotype);
+			CodeSystemVersion codeSystemVersion = (CodeSystemVersion) element.getStereotypeApplication(
+				codeSystemVersionStereotype);
 			if (codeSystemVersion != null) {
 				codeSystems.add(codeSystemVersion);
 			}
 		}
 		for (Element element : valueSetEnums) {
-			ValueSetVersion valueSetVersion = (ValueSetVersion) element.getStereotypeApplication(valueSetVersionStereotype);
+			ValueSetVersion valueSetVersion = (ValueSetVersion) element.getStereotypeApplication(
+				valueSetVersionStereotype);
 			if (valueSetVersion != null) {
 				valueSets.add(valueSetVersion);
 			}

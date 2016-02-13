@@ -371,19 +371,20 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__TYPE_ID, newTypeId, newTypeId));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -438,20 +439,20 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newSequenceNumber != sequenceNumber) {
 			NotificationChain msgs = null;
 			if (sequenceNumber != null) {
-				msgs = ((InternalEObject) sequenceNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__SEQUENCE_NUMBER, null, msgs);
+				msgs = ((InternalEObject) sequenceNumber).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__SEQUENCE_NUMBER, null, msgs);
 			}
 			if (newSequenceNumber != null) {
-				msgs = ((InternalEObject) newSequenceNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__SEQUENCE_NUMBER, null, msgs);
+				msgs = ((InternalEObject) newSequenceNumber).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__SEQUENCE_NUMBER, null, msgs);
 			}
 			msgs = basicSetSequenceNumber(newSequenceNumber, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__SEQUENCE_NUMBER, newSequenceNumber, newSequenceNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__SEQUENCE_NUMBER,
+				newSequenceNumber, newSequenceNumber));
 		}
 	}
 
@@ -493,20 +494,20 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newSeperatableInd != seperatableInd) {
 			NotificationChain msgs = null;
 			if (seperatableInd != null) {
-				msgs = ((InternalEObject) seperatableInd).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__SEPERATABLE_IND, null, msgs);
+				msgs = ((InternalEObject) seperatableInd).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__SEPERATABLE_IND, null, msgs);
 			}
 			if (newSeperatableInd != null) {
-				msgs = ((InternalEObject) newSeperatableInd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__SEPERATABLE_IND, null, msgs);
+				msgs = ((InternalEObject) newSeperatableInd).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__SEPERATABLE_IND, null, msgs);
 			}
 			msgs = basicSetSeperatableInd(newSeperatableInd, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__SEPERATABLE_IND, newSeperatableInd, newSeperatableInd));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__SEPERATABLE_IND,
+				newSeperatableInd, newSeperatableInd));
 		}
 	}
 
@@ -602,20 +603,20 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newEncounter != encounter) {
 			NotificationChain msgs = null;
 			if (encounter != null) {
-				msgs = ((InternalEObject) encounter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__ENCOUNTER, null, msgs);
+				msgs = ((InternalEObject) encounter).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__ENCOUNTER, null, msgs);
 			}
 			if (newEncounter != null) {
-				msgs = ((InternalEObject) newEncounter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__ENCOUNTER, null, msgs);
+				msgs = ((InternalEObject) newEncounter).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__ENCOUNTER, null, msgs);
 			}
 			msgs = basicSetEncounter(newEncounter, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__ENCOUNTER, newEncounter, newEncounter));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__ENCOUNTER, newEncounter,
+				newEncounter));
 		}
 	}
 
@@ -657,20 +658,20 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newObservation != observation) {
 			NotificationChain msgs = null;
 			if (observation != null) {
-				msgs = ((InternalEObject) observation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__OBSERVATION, null, msgs);
+				msgs = ((InternalEObject) observation).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__OBSERVATION, null, msgs);
 			}
 			if (newObservation != null) {
-				msgs = ((InternalEObject) newObservation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__OBSERVATION, null, msgs);
+				msgs = ((InternalEObject) newObservation).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__OBSERVATION, null, msgs);
 			}
 			msgs = basicSetObservation(newObservation, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__OBSERVATION, newObservation, newObservation));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__OBSERVATION, newObservation,
+				newObservation));
 		}
 	}
 
@@ -713,21 +714,20 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newObservationMedia != observationMedia) {
 			NotificationChain msgs = null;
 			if (observationMedia != null) {
-				msgs = ((InternalEObject) observationMedia).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__OBSERVATION_MEDIA, null, msgs);
+				msgs = ((InternalEObject) observationMedia).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__OBSERVATION_MEDIA, null, msgs);
 			}
 			if (newObservationMedia != null) {
-				msgs = ((InternalEObject) newObservationMedia).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__OBSERVATION_MEDIA, null, msgs);
+				msgs = ((InternalEObject) newObservationMedia).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__OBSERVATION_MEDIA, null, msgs);
 			}
 			msgs = basicSetObservationMedia(newObservationMedia, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__OBSERVATION_MEDIA, newObservationMedia,
-				newObservationMedia));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__OBSERVATION_MEDIA,
+				newObservationMedia, newObservationMedia));
 		}
 	}
 
@@ -769,20 +769,20 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newOrganizer != organizer) {
 			NotificationChain msgs = null;
 			if (organizer != null) {
-				msgs = ((InternalEObject) organizer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__ORGANIZER, null, msgs);
+				msgs = ((InternalEObject) organizer).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__ORGANIZER, null, msgs);
 			}
 			if (newOrganizer != null) {
-				msgs = ((InternalEObject) newOrganizer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__ORGANIZER, null, msgs);
+				msgs = ((InternalEObject) newOrganizer).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__ORGANIZER, null, msgs);
 			}
 			msgs = basicSetOrganizer(newOrganizer, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__ORGANIZER, newOrganizer, newOrganizer));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__ORGANIZER, newOrganizer,
+				newOrganizer));
 		}
 	}
 
@@ -824,20 +824,20 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newProcedure != procedure) {
 			NotificationChain msgs = null;
 			if (procedure != null) {
-				msgs = ((InternalEObject) procedure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__PROCEDURE, null, msgs);
+				msgs = ((InternalEObject) procedure).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__PROCEDURE, null, msgs);
 			}
 			if (newProcedure != null) {
-				msgs = ((InternalEObject) newProcedure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__PROCEDURE, null, msgs);
+				msgs = ((InternalEObject) newProcedure).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__PROCEDURE, null, msgs);
 			}
 			msgs = basicSetProcedure(newProcedure, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__PROCEDURE, newProcedure, newProcedure));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__PROCEDURE, newProcedure,
+				newProcedure));
 		}
 	}
 
@@ -880,21 +880,20 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newRegionOfInterest != regionOfInterest) {
 			NotificationChain msgs = null;
 			if (regionOfInterest != null) {
-				msgs = ((InternalEObject) regionOfInterest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__REGION_OF_INTEREST, null, msgs);
+				msgs = ((InternalEObject) regionOfInterest).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__REGION_OF_INTEREST, null, msgs);
 			}
 			if (newRegionOfInterest != null) {
-				msgs = ((InternalEObject) newRegionOfInterest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__REGION_OF_INTEREST, null, msgs);
+				msgs = ((InternalEObject) newRegionOfInterest).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__REGION_OF_INTEREST, null, msgs);
 			}
 			msgs = basicSetRegionOfInterest(newRegionOfInterest, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__REGION_OF_INTEREST, newRegionOfInterest,
-				newRegionOfInterest));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__REGION_OF_INTEREST,
+				newRegionOfInterest, newRegionOfInterest));
 		}
 	}
 
@@ -938,21 +937,20 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newSubstanceAdministration != substanceAdministration) {
 			NotificationChain msgs = null;
 			if (substanceAdministration != null) {
-				msgs = ((InternalEObject) substanceAdministration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__SUBSTANCE_ADMINISTRATION, null, msgs);
+				msgs = ((InternalEObject) substanceAdministration).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__SUBSTANCE_ADMINISTRATION, null, msgs);
 			}
 			if (newSubstanceAdministration != null) {
-				msgs = ((InternalEObject) newSubstanceAdministration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__SUBSTANCE_ADMINISTRATION, null, msgs);
+				msgs = ((InternalEObject) newSubstanceAdministration).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__SUBSTANCE_ADMINISTRATION, null, msgs);
 			}
 			msgs = basicSetSubstanceAdministration(newSubstanceAdministration, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__SUBSTANCE_ADMINISTRATION, newSubstanceAdministration,
-				newSubstanceAdministration));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__SUBSTANCE_ADMINISTRATION,
+				newSubstanceAdministration, newSubstanceAdministration));
 		}
 	}
 
@@ -994,12 +992,12 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		if (newSupply != supply) {
 			NotificationChain msgs = null;
 			if (supply != null) {
-				msgs = ((InternalEObject) supply).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__SUPPLY, null, msgs);
+				msgs = ((InternalEObject) supply).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__SUPPLY, null, msgs);
 			}
 			if (newSupply != null) {
-				msgs = ((InternalEObject) newSupply).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.COMPONENT4__SUPPLY, null, msgs);
+				msgs = ((InternalEObject) newSupply).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT4__SUPPLY, null, msgs);
 			}
 			msgs = basicSetSupply(newSupply, msgs);
 			if (msgs != null) {
@@ -1033,9 +1031,8 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -1050,9 +1047,8 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.COMPONENT4__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.COMPONENT4__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -1088,8 +1084,8 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__TYPE_CODE, oldTypeCode,
+				typeCode, !oldTypeCodeESet));
 		}
 	}
 
@@ -1104,9 +1100,8 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.COMPONENT4__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
-				oldTypeCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.COMPONENT4__TYPE_CODE, oldTypeCode,
+				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
 		}
 	}
 
@@ -1139,9 +1134,8 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		boolean oldContextConductionIndESet = contextConductionIndESet;
 		contextConductionIndESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.COMPONENT4__CONTEXT_CONDUCTION_IND, oldContextConductionInd,
-				contextConductionInd, !oldContextConductionIndESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__CONTEXT_CONDUCTION_IND,
+				oldContextConductionInd, contextConductionInd, !oldContextConductionIndESet));
 		}
 	}
 
@@ -1156,9 +1150,8 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 		contextConductionInd = CONTEXT_CONDUCTION_IND_EDEFAULT;
 		contextConductionIndESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.COMPONENT4__CONTEXT_CONDUCTION_IND, oldContextConductionInd,
-				CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.COMPONENT4__CONTEXT_CONDUCTION_IND,
+				oldContextConductionInd, CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
 		}
 	}
 

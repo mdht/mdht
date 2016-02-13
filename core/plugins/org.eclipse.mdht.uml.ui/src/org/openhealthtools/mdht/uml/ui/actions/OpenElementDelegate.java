@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.actions;
@@ -81,7 +81,7 @@ public class OpenElementDelegate implements IActionDelegate, IEditorActionDelega
 		for (Iterator iter = adaptables.iterator(); iter.hasNext();) {
 			Object item = iter.next();
 			if (item instanceof IAdaptable) {
-				EObject eObject = (EObject) ((IAdaptable) item).getAdapter(EObject.class);
+				EObject eObject = ((IAdaptable) item).getAdapter(EObject.class);
 				if (eObject != null) {
 					unwrapped.add(eObject);
 				} else {
@@ -101,7 +101,7 @@ public class OpenElementDelegate implements IActionDelegate, IEditorActionDelega
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IWorkbenchWindowActionDelegate#init(org.eclipse.ui.IWorkbenchWindow)
 	 */
 	public void init(IWorkbenchWindow window) {

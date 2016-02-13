@@ -527,20 +527,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__TYPE_ID, newTypeId,
+				newTypeId));
 		}
 	}
 
@@ -595,12 +595,12 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newId != id) {
 			NotificationChain msgs = null;
 			if (id != null) {
-				msgs = ((InternalEObject) id).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__ID, null, msgs);
+				msgs = ((InternalEObject) id).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__ID, null, msgs);
 			}
 			if (newId != null) {
-				msgs = ((InternalEObject) newId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__ID, null, msgs);
+				msgs = ((InternalEObject) newId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__ID, null, msgs);
 			}
 			msgs = basicSetId(newId, msgs);
 			if (msgs != null) {
@@ -649,19 +649,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__CODE, newCode, newCode));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__CODE, newCode, newCode));
 		}
 	}
 
@@ -703,20 +704,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newTitle != title) {
 			NotificationChain msgs = null;
 			if (title != null) {
-				msgs = ((InternalEObject) title).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__TITLE, null, msgs);
+				msgs = ((InternalEObject) title).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__TITLE, null, msgs);
 			}
 			if (newTitle != null) {
-				msgs = ((InternalEObject) newTitle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__TITLE, null, msgs);
+				msgs = ((InternalEObject) newTitle).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__TITLE, null, msgs);
 			}
 			msgs = basicSetTitle(newTitle, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__TITLE, newTitle, newTitle));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__TITLE, newTitle, newTitle));
 		}
 	}
 
@@ -759,21 +760,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newEffectiveTime != effectiveTime) {
 			NotificationChain msgs = null;
 			if (effectiveTime != null) {
-				msgs = ((InternalEObject) effectiveTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME, null, msgs);
+				msgs = ((InternalEObject) effectiveTime).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME, null, msgs);
 			}
 			if (newEffectiveTime != null) {
-				msgs = ((InternalEObject) newEffectiveTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME, null, msgs);
+				msgs = ((InternalEObject) newEffectiveTime).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME, null, msgs);
 			}
 			msgs = basicSetEffectiveTime(newEffectiveTime, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME, newEffectiveTime,
-				newEffectiveTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME,
+				newEffectiveTime, newEffectiveTime));
 		}
 	}
 
@@ -816,21 +816,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newConfidentialityCode != confidentialityCode) {
 			NotificationChain msgs = null;
 			if (confidentialityCode != null) {
-				msgs = ((InternalEObject) confidentialityCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE, null, msgs);
+				msgs = ((InternalEObject) confidentialityCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE, null, msgs);
 			}
 			if (newConfidentialityCode != null) {
-				msgs = ((InternalEObject) newConfidentialityCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE, null, msgs);
+				msgs = ((InternalEObject) newConfidentialityCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE, null, msgs);
 			}
 			msgs = basicSetConfidentialityCode(newConfidentialityCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE, newConfidentialityCode,
-				newConfidentialityCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE,
+				newConfidentialityCode, newConfidentialityCode));
 		}
 	}
 
@@ -872,20 +871,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newLanguageCode != languageCode) {
 			NotificationChain msgs = null;
 			if (languageCode != null) {
-				msgs = ((InternalEObject) languageCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE, null, msgs);
+				msgs = ((InternalEObject) languageCode).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE, null, msgs);
 			}
 			if (newLanguageCode != null) {
-				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE, null, msgs);
+				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE, null, msgs);
 			}
 			msgs = basicSetLanguageCode(newLanguageCode, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE, newLanguageCode, newLanguageCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE,
+				newLanguageCode, newLanguageCode));
 		}
 	}
 
@@ -927,20 +926,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newSetId != setId) {
 			NotificationChain msgs = null;
 			if (setId != null) {
-				msgs = ((InternalEObject) setId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__SET_ID, null, msgs);
+				msgs = ((InternalEObject) setId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__SET_ID, null, msgs);
 			}
 			if (newSetId != null) {
-				msgs = ((InternalEObject) newSetId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__SET_ID, null, msgs);
+				msgs = ((InternalEObject) newSetId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__SET_ID, null, msgs);
 			}
 			msgs = basicSetSetId(newSetId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__SET_ID, newSetId, newSetId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__SET_ID, newSetId,
+				newSetId));
 		}
 	}
 
@@ -983,21 +982,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newVersionNumber != versionNumber) {
 			NotificationChain msgs = null;
 			if (versionNumber != null) {
-				msgs = ((InternalEObject) versionNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER, null, msgs);
+				msgs = ((InternalEObject) versionNumber).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER, null, msgs);
 			}
 			if (newVersionNumber != null) {
-				msgs = ((InternalEObject) newVersionNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER, null, msgs);
+				msgs = ((InternalEObject) newVersionNumber).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER, null, msgs);
 			}
 			msgs = basicSetVersionNumber(newVersionNumber, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER, newVersionNumber,
-				newVersionNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER,
+				newVersionNumber, newVersionNumber));
 		}
 	}
 
@@ -1039,20 +1037,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newCopyTime != copyTime) {
 			NotificationChain msgs = null;
 			if (copyTime != null) {
-				msgs = ((InternalEObject) copyTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__COPY_TIME, null, msgs);
+				msgs = ((InternalEObject) copyTime).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__COPY_TIME, null, msgs);
 			}
 			if (newCopyTime != null) {
-				msgs = ((InternalEObject) newCopyTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__COPY_TIME, null, msgs);
+				msgs = ((InternalEObject) newCopyTime).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__COPY_TIME, null, msgs);
 			}
 			msgs = basicSetCopyTime(newCopyTime, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__COPY_TIME, newCopyTime, newCopyTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__COPY_TIME, newCopyTime,
+				newCopyTime));
 		}
 	}
 
@@ -1119,20 +1117,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newDataEnterer != dataEnterer) {
 			NotificationChain msgs = null;
 			if (dataEnterer != null) {
-				msgs = ((InternalEObject) dataEnterer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER, null, msgs);
+				msgs = ((InternalEObject) dataEnterer).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER, null, msgs);
 			}
 			if (newDataEnterer != null) {
-				msgs = ((InternalEObject) newDataEnterer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER, null, msgs);
+				msgs = ((InternalEObject) newDataEnterer).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER, null, msgs);
 			}
 			msgs = basicSetDataEnterer(newDataEnterer, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER, newDataEnterer, newDataEnterer));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER,
+				newDataEnterer, newDataEnterer));
 		}
 	}
 
@@ -1187,20 +1185,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newCustodian != custodian) {
 			NotificationChain msgs = null;
 			if (custodian != null) {
-				msgs = ((InternalEObject) custodian).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN, null, msgs);
+				msgs = ((InternalEObject) custodian).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN, null, msgs);
 			}
 			if (newCustodian != null) {
-				msgs = ((InternalEObject) newCustodian).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN, null, msgs);
+				msgs = ((InternalEObject) newCustodian).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN, null, msgs);
 			}
 			msgs = basicSetCustodian(newCustodian, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN, newCustodian, newCustodian));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN, newCustodian,
+				newCustodian));
 		}
 	}
 
@@ -1231,7 +1229,8 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLegalAuthenticator(LegalAuthenticator newLegalAuthenticator, NotificationChain msgs) {
+	public NotificationChain basicSetLegalAuthenticator(LegalAuthenticator newLegalAuthenticator,
+			NotificationChain msgs) {
 		LegalAuthenticator oldLegalAuthenticator = legalAuthenticator;
 		legalAuthenticator = newLegalAuthenticator;
 		if (eNotificationRequired()) {
@@ -1256,21 +1255,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newLegalAuthenticator != legalAuthenticator) {
 			NotificationChain msgs = null;
 			if (legalAuthenticator != null) {
-				msgs = ((InternalEObject) legalAuthenticator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR, null, msgs);
+				msgs = ((InternalEObject) legalAuthenticator).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR, null, msgs);
 			}
 			if (newLegalAuthenticator != null) {
-				msgs = ((InternalEObject) newLegalAuthenticator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR, null, msgs);
+				msgs = ((InternalEObject) newLegalAuthenticator).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR, null, msgs);
 			}
 			msgs = basicSetLegalAuthenticator(newLegalAuthenticator, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR, newLegalAuthenticator,
-				newLegalAuthenticator));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR,
+				newLegalAuthenticator, newLegalAuthenticator));
 		}
 	}
 
@@ -1390,20 +1388,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newComponentOf != componentOf) {
 			NotificationChain msgs = null;
 			if (componentOf != null) {
-				msgs = ((InternalEObject) componentOf).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF, null, msgs);
+				msgs = ((InternalEObject) componentOf).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF, null, msgs);
 			}
 			if (newComponentOf != null) {
-				msgs = ((InternalEObject) newComponentOf).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF, null, msgs);
+				msgs = ((InternalEObject) newComponentOf).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF, null, msgs);
 			}
 			msgs = basicSetComponentOf(newComponentOf, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF, newComponentOf, newComponentOf));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF,
+				newComponentOf, newComponentOf));
 		}
 	}
 
@@ -1445,20 +1443,20 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		if (newComponent != component) {
 			NotificationChain msgs = null;
 			if (component != null) {
-				msgs = ((InternalEObject) component).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__COMPONENT, null, msgs);
+				msgs = ((InternalEObject) component).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__COMPONENT, null, msgs);
 			}
 			if (newComponent != null) {
-				msgs = ((InternalEObject) newComponent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.CLINICAL_DOCUMENT__COMPONENT, null, msgs);
+				msgs = ((InternalEObject) newComponent).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.CLINICAL_DOCUMENT__COMPONENT, null, msgs);
 			}
 			msgs = basicSetComponent(newComponent, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__COMPONENT, newComponent, newComponent));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__COMPONENT, newComponent,
+				newComponent));
 		}
 	}
 
@@ -1485,9 +1483,8 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -1502,9 +1499,8 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.CLINICAL_DOCUMENT__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.CLINICAL_DOCUMENT__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -1540,9 +1536,8 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__CLASS_CODE, oldClassCode, classCode,
-				!oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__CLASS_CODE,
+				oldClassCode, classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -1557,9 +1552,8 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.CLINICAL_DOCUMENT__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.CLINICAL_DOCUMENT__CLASS_CODE,
+				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -1595,9 +1589,8 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__MOOD_CODE, oldMoodCode, moodCode,
-				!oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__MOOD_CODE, oldMoodCode,
+				moodCode, !oldMoodCodeESet));
 		}
 	}
 
@@ -1612,9 +1605,8 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.CLINICAL_DOCUMENT__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
-				oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.CLINICAL_DOCUMENT__MOOD_CODE,
+				oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
 		}
 	}
 

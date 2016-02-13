@@ -7,6 +7,7 @@ import org.eclipse.core.commands.IParameterValues;
 
 public class BooleanValues implements IParameterValues {
 	private static HashMap<String, Boolean> values = new HashMap<String, Boolean>();
+
 	static {
 		values.put("true", new Boolean(true));
 		values.put("false", new Boolean(false));

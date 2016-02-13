@@ -1,7 +1,7 @@
 /**
  * Copyright: NEHTA 2015
- * Author: Joerg Kiegeland, Distributed Models Pty Ltd 
- * 
+ * Author: Joerg Kiegeland, Distributed Models Pty Ltd
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,7 +45,7 @@ public class MemoDialog extends Dialog {
 	/**
 	 * Creates an input dialog with OK and Cancel buttons. Note that the dialog will have no visual representation (no widgets) until it is told to
 	 * open.
-	 * 
+	 *
 	 * @param parentShell
 	 *            the parent shell, or <code>null</code> to create a top-level shell
 	 * @param dialogTitle
@@ -65,7 +65,7 @@ public class MemoDialog extends Dialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.window.Window#configureShell(org.eclipse.swt.widgets.Shell)
 	 */
 	@Override
@@ -78,15 +78,16 @@ public class MemoDialog extends Dialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createButtonsForButtonBar(org.eclipse.swt.widgets.Composite)
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
 		// create OK and Cancel buttons by default
 		createButton(parent, IDialogConstants.OK_ID, "OK", true);
-		if (editable)
+		if (editable) {
 			createButton(parent, IDialogConstants.CANCEL_ID, "Cancel", false);
+		}
 		// do this here because setting the text will set enablement on the ok
 		// button
 		text.setFocus();
@@ -115,14 +116,15 @@ public class MemoDialog extends Dialog {
 
 	/**
 	 * Returns the style bits that should be used for the input text field. Defaults to a single line entry. Subclasses may override.
-	 * 
+	 *
 	 * @return the integer style bits that should be used when creating the input text
-	 * 
+	 *
 	 * @since 1.1
 	 */
 	protected int getInputTextStyle() {
-		if (editable)
+		if (editable) {
 			return SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL;
+		}
 		return SWT.BORDER | SWT.READ_ONLY | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL;
 	}
 
@@ -147,7 +149,7 @@ public class MemoDialog extends Dialog {
 
 	/**
 	 * Returns the string typed into this input dialog.
-	 * 
+	 *
 	 * @return the input string
 	 */
 	public String getValue() {

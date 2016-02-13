@@ -142,8 +142,8 @@ public class DitaTransformer {
 	private void writeMapFile(String folder, String name, String title, List<String> fileNames) {
 		Collections.sort(fileNames);
 
-		IPath filePath = transformerOptions.getOutputPath().append(folder).addTrailingSeparator().append(name).addFileExtension(
-			"ditamap");
+		IPath filePath = transformerOptions.getOutputPath().append(folder).addTrailingSeparator().append(
+			name).addFileExtension("ditamap");
 		File file = filePath.toFile();
 		PrintWriter writer = null;
 

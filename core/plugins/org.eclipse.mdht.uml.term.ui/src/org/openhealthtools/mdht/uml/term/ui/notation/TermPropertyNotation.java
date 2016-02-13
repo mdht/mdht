@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *******************************************************************************/
@@ -30,10 +30,10 @@ public class TermPropertyNotation extends PropertyNotationUtil {
 	/**
 	 * return the custom label of the property, given UML2 specification and a
 	 * custom style.
-	 * 
+	 *
 	 * @param style
 	 *            the integer representing the style of the label
-	 * 
+	 *
 	 * @return the string corresponding to the label of the property
 	 */
 	public static String getCustomLabel(Property property, int style) {

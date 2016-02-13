@@ -3,7 +3,7 @@
  * program and the accompanying materials are made available under the terms
  * of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: IBM Corporation - initial API and implementation
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.util;
@@ -28,7 +28,7 @@ public class CDAUIUtil {
 	/**
 	 * Utility class to resolve plug-in and bundle files relative to a project
 	 * specific bundle root location.
-	 * 
+	 *
 	 * @since 3.6
 	 */
 
@@ -48,7 +48,7 @@ public class CDAUIUtil {
 
 	/**
 	 * Returns a file relative to the bundle root of the specified project.
-	 * 
+	 *
 	 * @param project
 	 *            project
 	 * @param path
@@ -61,7 +61,7 @@ public class CDAUIUtil {
 
 	/**
 	 * Returns a folder relative to the bundle root of the specified project.
-	 * 
+	 *
 	 * @param project
 	 *            project
 	 * @param path
@@ -76,7 +76,7 @@ public class CDAUIUtil {
 	 * Returns the container in the specified project that corresponds to the
 	 * root of bundle related artifacts. May return the project itself or a
 	 * folder within the project.
-	 * 
+	 *
 	 * @param project
 	 *            project
 	 * @return container corresponding to the bundle root
@@ -124,7 +124,7 @@ public class CDAUIUtil {
 
 	/**
 	 * Returns the resource in the specified project corresponding to its <code>MANIFEST.MF</code> file.
-	 * 
+	 *
 	 * @param project
 	 *            project
 	 * @return <code>MANIFEST.MF</code> file that may or may not exist
@@ -135,7 +135,7 @@ public class CDAUIUtil {
 
 	/**
 	 * Returns the resource in the specified project corresponding to its <code>plugin.xml</code>file.
-	 * 
+	 *
 	 * @param project
 	 *            project
 	 * @return <code>plugin.xml</code> file that may or may not exist

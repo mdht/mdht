@@ -134,14 +134,15 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNK(10, "UNK", "UNK"), /**
-							* The '<em><b>NP</b></em>' literal object.
-							* <!-- begin-user-doc -->
-							* <!-- end-user-doc -->
-							* @see #NP_VALUE
-							* @generated
-							* @ordered
-							*/
+	UNK(10, "UNK", "UNK"),
+	/**
+	* The '<em><b>NP</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #NP_VALUE
+	* @generated
+	* @ordered
+	*/
 	NP(11, "NP", "NP");
 
 	/**

@@ -298,20 +298,20 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARENT_DOCUMENT__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARENT_DOCUMENT__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARENT_DOCUMENT__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARENT_DOCUMENT__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARENT_DOCUMENT__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__TYPE_ID, newTypeId,
+				newTypeId));
 		}
 	}
 
@@ -378,12 +378,12 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARENT_DOCUMENT__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARENT_DOCUMENT__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARENT_DOCUMENT__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARENT_DOCUMENT__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
@@ -432,12 +432,12 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		if (newText != text) {
 			NotificationChain msgs = null;
 			if (text != null) {
-				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARENT_DOCUMENT__TEXT, null, msgs);
+				msgs = ((InternalEObject) text).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARENT_DOCUMENT__TEXT, null, msgs);
 			}
 			if (newText != null) {
-				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARENT_DOCUMENT__TEXT, null, msgs);
+				msgs = ((InternalEObject) newText).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARENT_DOCUMENT__TEXT, null, msgs);
 			}
 			msgs = basicSetText(newText, msgs);
 			if (msgs != null) {
@@ -486,20 +486,20 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		if (newSetId != setId) {
 			NotificationChain msgs = null;
 			if (setId != null) {
-				msgs = ((InternalEObject) setId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARENT_DOCUMENT__SET_ID, null, msgs);
+				msgs = ((InternalEObject) setId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARENT_DOCUMENT__SET_ID, null, msgs);
 			}
 			if (newSetId != null) {
-				msgs = ((InternalEObject) newSetId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARENT_DOCUMENT__SET_ID, null, msgs);
+				msgs = ((InternalEObject) newSetId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARENT_DOCUMENT__SET_ID, null, msgs);
 			}
 			msgs = basicSetSetId(newSetId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARENT_DOCUMENT__SET_ID, newSetId, newSetId));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__SET_ID, newSetId, newSetId));
 		}
 	}
 
@@ -541,20 +541,20 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		if (newVersionNumber != versionNumber) {
 			NotificationChain msgs = null;
 			if (versionNumber != null) {
-				msgs = ((InternalEObject) versionNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARENT_DOCUMENT__VERSION_NUMBER, null, msgs);
+				msgs = ((InternalEObject) versionNumber).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARENT_DOCUMENT__VERSION_NUMBER, null, msgs);
 			}
 			if (newVersionNumber != null) {
-				msgs = ((InternalEObject) newVersionNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.PARENT_DOCUMENT__VERSION_NUMBER, null, msgs);
+				msgs = ((InternalEObject) newVersionNumber).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.PARENT_DOCUMENT__VERSION_NUMBER, null, msgs);
 			}
 			msgs = basicSetVersionNumber(newVersionNumber, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARENT_DOCUMENT__VERSION_NUMBER, newVersionNumber, newVersionNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__VERSION_NUMBER,
+				newVersionNumber, newVersionNumber));
 		}
 	}
 
@@ -581,9 +581,8 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARENT_DOCUMENT__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -598,9 +597,8 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -636,9 +634,8 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARENT_DOCUMENT__CLASS_CODE, oldClassCode, classCode,
-				!oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__CLASS_CODE, oldClassCode,
+				classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -653,9 +650,8 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__CLASS_CODE,
+				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -691,8 +687,8 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.PARENT_DOCUMENT__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__MOOD_CODE, oldMoodCode,
+				moodCode, !oldMoodCodeESet));
 		}
 	}
 
@@ -707,9 +703,8 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
-				oldMoodCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__MOOD_CODE, oldMoodCode,
+				MOOD_CODE_EDEFAULT, oldMoodCodeESet));
 		}
 	}
 

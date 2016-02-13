@@ -97,21 +97,24 @@ public class EDOperations extends ANYOperations {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.ED);
 			try {
-				VALIDATE_THUMBNAIL_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_THUMBNAIL_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_THUMBNAIL_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
+					VALIDATE_THUMBNAIL_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_THUMBNAIL_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ed)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.ED__THUMBNAIL_THUMBNAIL,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateThumbnailThumbnail",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ed, context) }),
-					new Object[] { ed }));
+				diagnostics.add(
+					new BasicDiagnostic(
+						Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE,
+						DatatypesValidator.ED__THUMBNAIL_THUMBNAIL,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+							"_UI_GenericInvariant_diagnostic",
+							new Object[] {
+									"validateThumbnailThumbnail",
+									org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ed, context) }),
+						new Object[] { ed }));
 			}
 			return false;
 		}

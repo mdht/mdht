@@ -287,20 +287,20 @@ public class AuthoringDeviceImpl extends EntityImpl implements AuthoringDevice {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.AUTHORING_DEVICE__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.AUTHORING_DEVICE__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.AUTHORING_DEVICE__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.AUTHORING_DEVICE__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.AUTHORING_DEVICE__TYPE_ID, newTypeId, newTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHORING_DEVICE__TYPE_ID, newTypeId,
+				newTypeId));
 		}
 	}
 
@@ -355,12 +355,12 @@ public class AuthoringDeviceImpl extends EntityImpl implements AuthoringDevice {
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null) {
-				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.AUTHORING_DEVICE__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.AUTHORING_DEVICE__CODE, null, msgs);
 			}
 			if (newCode != null) {
-				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.AUTHORING_DEVICE__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.AUTHORING_DEVICE__CODE, null, msgs);
 			}
 			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) {
@@ -410,21 +410,20 @@ public class AuthoringDeviceImpl extends EntityImpl implements AuthoringDevice {
 		if (newManufacturerModelName != manufacturerModelName) {
 			NotificationChain msgs = null;
 			if (manufacturerModelName != null) {
-				msgs = ((InternalEObject) manufacturerModelName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME, null, msgs);
+				msgs = ((InternalEObject) manufacturerModelName).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME, null, msgs);
 			}
 			if (newManufacturerModelName != null) {
-				msgs = ((InternalEObject) newManufacturerModelName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME, null, msgs);
+				msgs = ((InternalEObject) newManufacturerModelName).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME, null, msgs);
 			}
 			msgs = basicSetManufacturerModelName(newManufacturerModelName, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME, newManufacturerModelName,
-				newManufacturerModelName));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME,
+				newManufacturerModelName, newManufacturerModelName));
 		}
 	}
 
@@ -466,20 +465,20 @@ public class AuthoringDeviceImpl extends EntityImpl implements AuthoringDevice {
 		if (newSoftwareName != softwareName) {
 			NotificationChain msgs = null;
 			if (softwareName != null) {
-				msgs = ((InternalEObject) softwareName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.AUTHORING_DEVICE__SOFTWARE_NAME, null, msgs);
+				msgs = ((InternalEObject) softwareName).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.AUTHORING_DEVICE__SOFTWARE_NAME, null, msgs);
 			}
 			if (newSoftwareName != null) {
-				msgs = ((InternalEObject) newSoftwareName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.AUTHORING_DEVICE__SOFTWARE_NAME, null, msgs);
+				msgs = ((InternalEObject) newSoftwareName).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.AUTHORING_DEVICE__SOFTWARE_NAME, null, msgs);
 			}
 			msgs = basicSetSoftwareName(newSoftwareName, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.AUTHORING_DEVICE__SOFTWARE_NAME, newSoftwareName, newSoftwareName));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHORING_DEVICE__SOFTWARE_NAME,
+				newSoftwareName, newSoftwareName));
 		}
 	}
 
@@ -519,9 +518,8 @@ public class AuthoringDeviceImpl extends EntityImpl implements AuthoringDevice {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.AUTHORING_DEVICE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
-				!oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHORING_DEVICE__NULL_FLAVOR,
+				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -536,9 +534,8 @@ public class AuthoringDeviceImpl extends EntityImpl implements AuthoringDevice {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.AUTHORING_DEVICE__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.AUTHORING_DEVICE__NULL_FLAVOR,
+				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -574,9 +571,8 @@ public class AuthoringDeviceImpl extends EntityImpl implements AuthoringDevice {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.AUTHORING_DEVICE__CLASS_CODE, oldClassCode, classCode,
-				!oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHORING_DEVICE__CLASS_CODE, oldClassCode,
+				classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -591,9 +587,8 @@ public class AuthoringDeviceImpl extends EntityImpl implements AuthoringDevice {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.AUTHORING_DEVICE__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
-				oldClassCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.AUTHORING_DEVICE__CLASS_CODE,
+				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -629,9 +624,8 @@ public class AuthoringDeviceImpl extends EntityImpl implements AuthoringDevice {
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.AUTHORING_DEVICE__DETERMINER_CODE, oldDeterminerCode,
-				determinerCode, !oldDeterminerCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHORING_DEVICE__DETERMINER_CODE,
+				oldDeterminerCode, determinerCode, !oldDeterminerCodeESet));
 		}
 	}
 
@@ -646,9 +640,8 @@ public class AuthoringDeviceImpl extends EntityImpl implements AuthoringDevice {
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.AUTHORING_DEVICE__DETERMINER_CODE, oldDeterminerCode,
-				DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.AUTHORING_DEVICE__DETERMINER_CODE,
+				oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
 		}
 	}
 

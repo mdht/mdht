@@ -26,18 +26,18 @@ import org.openhealthtools.mdht.uml.cda.ui.internal.Activator;
 
 public class MDHTPreferences extends PreferencePage implements IWorkbenchPreferencePage {
 
-	private static String CARDINALITY_CHECK_BOX_LABEL = "Show multiplicity after the element name"
-			+ " in the Properties view";
+	private static String CARDINALITY_CHECK_BOX_LABEL = "Show multiplicity after the element name" +
+			" in the Properties view";
 
-	private static String CARDINALITY_CHECK_BOX_TOOLTIP = "Show multiplicity after the element name in the"
-			+ " Properties view. This does not affect the DITA publication (PDF, Online) - "
-			+ "for that, dita-transform.xml needs to be adjusted to say "
-			+ "cardinalityAfterElement=\"true\" in <transformToDita>";
+	private static String CARDINALITY_CHECK_BOX_TOOLTIP = "Show multiplicity after the element name in the" +
+			" Properties view. This does not affect the DITA publication (PDF, Online) - " +
+			"for that, dita-transform.xml needs to be adjusted to say " +
+			"cardinalityAfterElement=\"true\" in <transformToDita>";
 
 	private static String PDF_GEN_DISABLE_CHECK_BOX_LABEL = "Disable built-in PDF generation";
 
-	private static String PDF_GEN_DISABLE_CHECK_BOX_TOOLTIP = "Prevent the automatic generation of PDF "
-			+ " files in the workspace. This also removes the PDF Generation context menu option";
+	private static String PDF_GEN_DISABLE_CHECK_BOX_TOOLTIP = "Prevent the automatic generation of PDF " +
+			" files in the workspace. This also removes the PDF Generation context menu option";
 
 	public static String CARDINALITY_STORE_VALUE = "CardinalityCheckValue";
 

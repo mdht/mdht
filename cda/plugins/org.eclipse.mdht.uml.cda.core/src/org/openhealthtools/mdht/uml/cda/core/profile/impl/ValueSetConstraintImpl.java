@@ -46,7 +46,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	 * The default value of the '{@link #getBinding() <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
@@ -134,7 +134,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	 * The cached value of the '{@link #getBinding() <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
@@ -145,7 +145,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -155,7 +155,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ValueSetConstraintImpl() {
@@ -165,7 +165,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSetVersion getReference() {
@@ -185,8 +185,8 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 			reference = (ValueSetVersion) eResolveProxy(oldReference);
 			if (reference != oldReference) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.VALUE_SET_CONSTRAINT__REFERENCE, oldReference, reference));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						CDAPackage.VALUE_SET_CONSTRAINT__REFERENCE, oldReference, reference));
 				}
 			}
 		}
@@ -196,7 +196,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSetVersion basicGetReference() {
@@ -206,22 +206,22 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setReference(ValueSetVersion newReference) {
 		ValueSetVersion oldReference = reference;
 		reference = newReference;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__REFERENCE, oldReference, reference));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__REFERENCE,
+				oldReference, reference));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -231,22 +231,22 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__IDENTIFIER, oldIdentifier, identifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__IDENTIFIER,
+				oldIdentifier, identifier));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -256,21 +256,22 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__NAME, oldName, name));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__NAME, oldName, name));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getVersion() {
@@ -280,22 +281,22 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__VERSION, oldVersion, version));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__VERSION, oldVersion,
+				version));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BindingKind getBinding() {
@@ -305,7 +306,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBinding(BindingKind newBinding) {
@@ -314,15 +315,15 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 				? BINDING_EDEFAULT
 				: newBinding;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__BINDING, oldBinding, binding));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__BINDING, oldBinding,
+				binding));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property getBase_Property() {
@@ -331,9 +332,8 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY, oldBase_Property,
-						base_Property));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						CDAPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY, oldBase_Property, base_Property));
 				}
 			}
 		}
@@ -343,7 +343,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -353,22 +353,22 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY, oldBase_Property, base_Property));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY,
+				oldBase_Property, base_Property));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -399,7 +399,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -430,7 +430,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -461,7 +461,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -492,7 +492,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -521,7 +521,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -550,7 +550,7 @@ public class ValueSetConstraintImpl extends ValidationImpl implements ValueSetCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

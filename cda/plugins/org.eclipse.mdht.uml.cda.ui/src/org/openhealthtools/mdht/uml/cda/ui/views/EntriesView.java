@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
- *    
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.views;
 
@@ -60,8 +60,9 @@ public class EntriesView extends ViewPart {
 					cd.eContainer() instanceof ClinicalStatement) {
 				ClinicalStatement clinicalStatement = (ClinicalStatement) cd.eContainer();
 				if (clinicalStatement.getSection() != null && clinicalStatement.getSection().getText() != null) {
-					result.append(clinicalStatement.getSection().getText().getText(
-						cd.getOriginalText().getReference().getValue().substring(1)));
+					result.append(
+						clinicalStatement.getSection().getText().getText(
+							cd.getOriginalText().getReference().getValue().substring(1)));
 				}
 
 			}
@@ -97,7 +98,8 @@ public class EntriesView extends ViewPart {
 			result.append("<tr><td><small>").append(ii.getRoot()).append("</small></td></tr>");
 		}
 
-		result.append("<tr><td><table  width=\"100%\" ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
+		result.append(
+			"<tr><td><table  width=\"100%\" ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
 		if (procedure.getStatusCode() != null) {
 			result.append(getCDRow(procedure.getStatusCode(), ""));
 		}
@@ -129,7 +131,8 @@ public class EntriesView extends ViewPart {
 			result.append("<tr><td><small>").append(ii.getRoot()).append("</small></td></tr>");
 		}
 
-		result.append("<tr><td><table  width=\"100%\" ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
+		result.append(
+			"<tr><td><table  width=\"100%\" ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
 		if (organizer.getStatusCode() != null) {
 			result.append(getCDRow(organizer.getStatusCode(), ""));
 		}
@@ -162,7 +165,8 @@ public class EntriesView extends ViewPart {
 			result.append("<tr><td><small>").append(ii.getRoot()).append("</small></td></tr>");
 		}
 
-		result.append("<tr><td><table  width=\"100%\" ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
+		result.append(
+			"<tr><td><table  width=\"100%\" ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
 		if (observation.getStatusCode() != null) {
 			result.append(getCDRow(observation.getStatusCode(), ""));
 		}
@@ -196,7 +200,8 @@ public class EntriesView extends ViewPart {
 			result.append("<tr><td><small>").append(ii.getRoot()).append("</small></td></tr>");
 		}
 
-		result.append("<tr><td><table  width=\"100%\" ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
+		result.append(
+			"<tr><td><table  width=\"100%\" ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
 		if (encounter.getStatusCode() != null) {
 			result.append(getCDRow(encounter.getStatusCode(), ""));
 		}
@@ -220,7 +225,8 @@ public class EntriesView extends ViewPart {
 
 		StringBuffer result = new StringBuffer();
 
-		result.append("<table style=\"background-color:#F0F0F0\" width=\"100%\"  ><thead><tr><th><small>Clinical Statement</small></th><th><small>Template ID(s)</small></th></tr></thead><tbody>");
+		result.append(
+			"<table style=\"background-color:#F0F0F0\" width=\"100%\"  ><thead><tr><th><small>Clinical Statement</small></th><th><small>Template ID(s)</small></th></tr></thead><tbody>");
 
 		StringBuffer templateIds = new StringBuffer();
 		for (II ii : cs.getTemplateIds()) {
@@ -234,8 +240,8 @@ public class EntriesView extends ViewPart {
 			prefix = cs.eContainer().eContainer().eClass().getName() + "->";
 		}
 
-		result.append("<tr><td><small>").append(prefix).append(cs.eClass().getName()).append("</small></td><td><small>").append(
-			templateIds).append("</small></td></tr></tbody></table>");
+		result.append("<tr><td><small>").append(prefix).append(cs.eClass().getName()).append(
+			"</small></td><td><small>").append(templateIds).append("</small></td></tr></tbody></table>");
 
 		return result;
 
@@ -274,7 +280,8 @@ public class EntriesView extends ViewPart {
 			result.append("<tr><td colspan=\"30\" >").append(ii.getRoot()).append("</td></tr>");
 		}
 
-		result.append("<tr><td colspan=\"30\" ><table  width=\"100%\"  ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
+		result.append(
+			"<tr><td colspan=\"30\" ><table  width=\"100%\"  ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
 		if (act.getStatusCode() != null) {
 			result.append(getCDRow(act.getStatusCode(), ""));
 		}
@@ -305,7 +312,8 @@ public class EntriesView extends ViewPart {
 			result.append("<tr><td colspan=\"30\" >").append(ii.getRoot()).append("</td></tr>");
 		}
 
-		result.append("<tr><td colspan=\"30\" ><table  width=\"100%\"  ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
+		result.append(
+			"<tr><td colspan=\"30\" ><table  width=\"100%\"  ><thead><tr><th><small>Attribute</small></th><th><small>Code</small></th><th><small>DisplayName</small></th><th><small>OriginalText</small></th><th><small>CodeSystemName</small></th><th><small>CodeSystem</small></th><th><small>CodeSystemVersion</small></th></tr></thead> <tbody>");
 		if (substanceAdministration.getStatusCode() != null) {
 			result.append(getCDRow(substanceAdministration.getStatusCode(), ""));
 		}
@@ -348,54 +356,55 @@ public class EntriesView extends ViewPart {
 				if (event.item.getData() instanceof Section) {
 					Section section = (Section) event.item.getData();
 					StringBuffer sbe = new StringBuffer();
-					sbe.append("<html><head><style type=\"text/css\">table{border-collapse:collapse;}table, td, th{border:1px solid black;}</style></head><body><table  width=\"100%\" border=\"1\" ><tbody>");
+					sbe.append(
+						"<html><head><style type=\"text/css\">table{border-collapse:collapse;}table, td, th{border:1px solid black;}</style></head><body><table  width=\"100%\" border=\"1\" ><tbody>");
 					int entryCtr = 1;
 					for (Entry entry : section.getEntries()) {
 						if (entry.getAct() != null) {
-							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(entryCtr++).append(
-								"</h3></td></tr>");
+							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(
+								entryCtr++).append("</h3></td></tr>");
 							sbe.append("<tr><td>").append(getActDetails(entry.getAct())).append("</td></tr>");
 							sbe.append("<tr><td>&nbsp;</td></tr>");
 						}
 
 						if (entry.getObservation() != null) {
-							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(entryCtr++).append(
-								"</h3></td></tr>");
+							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(
+								entryCtr++).append("</h3></td></tr>");
 							sbe.append("<tr><td>").append(getObservationDetails(entry.getObservation())).append(
 								"</td></tr>");
 							sbe.append("<tr><td>&nbsp;</td></tr>");
 						}
 
 						if (entry.getOrganizer() != null) {
-							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(entryCtr++).append(
-								"</h3></td></tr>");
+							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(
+								entryCtr++).append("</h3></td></tr>");
 							sbe.append("<tr><td>").append(getOrganizerDetails(entry.getOrganizer())).append(
 								"</td></tr>");
 							sbe.append("<tr><td>&nbsp;</td></tr>");
 						}
 
 						if (entry.getProcedure() != null) {
-							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(entryCtr++).append(
-								"</h3></td></tr>");
+							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(
+								entryCtr++).append("</h3></td></tr>");
 							sbe.append("<tr><td>").append(getProcedureDetails(entry.getProcedure())).append(
 								"</td></tr>");
 							sbe.append("<tr><td>&nbsp;</td></tr>");
 						}
 
 						if (entry.getEncounter() != null) {
-							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(entryCtr++).append(
-								"</h3></td></tr>");
+							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(
+								entryCtr++).append("</h3></td></tr>");
 							sbe.append("<tr><td>").append(getEncountersDetails(entry.getEncounter())).append(
 								"</td></tr>");
 							sbe.append("<tr><td>&nbsp;</td></tr>");
 						}
 
 						if (entry.getSubstanceAdministration() != null) {
-							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(entryCtr++).append(
-								"</h3></td></tr>");
+							sbe.append("<tr><td><h3 style=\"background-color:#B9D3EE\" > Entry ").append(
+								entryCtr++).append("</h3></td></tr>");
 							sbe.append("<tr><td>").append(
 								getSubstanceAdministrationDetails(entry.getSubstanceAdministration())).append(
-								"</td></tr>");
+									"</td></tr>");
 							sbe.append("<tr><td>&nbsp;</td></tr>");
 						}
 

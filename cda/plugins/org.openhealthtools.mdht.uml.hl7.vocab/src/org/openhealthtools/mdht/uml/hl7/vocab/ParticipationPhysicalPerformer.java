@@ -141,7 +141,8 @@ public enum ParticipationPhysicalPerformer implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ParticipationPhysicalPerformer> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ParticipationPhysicalPerformer> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Participation Physical Performer</b></em>' literal with the specified literal value.

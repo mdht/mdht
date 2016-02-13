@@ -33,7 +33,7 @@ public class ValidationFilter extends CDAFilter {
 		if (object instanceof Element) {
 			element = (Element) object;
 		} else if (object instanceof IAdaptable) {
-			element = (Element)((IAdaptable) object).getAdapter(Element.class);
+			element = ((IAdaptable) object).getAdapter(Element.class);
 		}
 
 		Class templateClass = null;

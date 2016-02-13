@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     seanmuir - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.handlers;
 
@@ -33,7 +33,7 @@ import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassHandler;
 
 /**
  * @author seanmuir
- * 
+ *
  */
 public class LogicalSubclassHandler extends SubclassHandler {
 
@@ -41,7 +41,7 @@ public class LogicalSubclassHandler extends SubclassHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassHandler#createSubclassDialog()
 	 */
 	@Override
@@ -68,7 +68,7 @@ public class LogicalSubclassHandler extends SubclassHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassHandler#openSubclassDialog()
 	 */
 	@Override

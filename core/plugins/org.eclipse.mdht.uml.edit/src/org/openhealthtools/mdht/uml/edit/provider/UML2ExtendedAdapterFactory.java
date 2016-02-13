@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
@@ -20,13 +20,13 @@ import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 
 /**
- * 
+ *
  * $Id: $
  */
 public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/**
-	 * 
+	 *
 	 */
 	public UML2ExtendedAdapterFactory() {
 		super();
@@ -72,7 +72,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.impl.AdapterFactoryImpl#resolve(java.lang.Object, java.lang.Object)
 	 */
 	// protected Object resolve(Object object, Object type) {
@@ -101,7 +101,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createAssociationClassAdapter()
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createClassAdapter()
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createDataTypeAdapter()
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createCommentAdapter()
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory#createConstraintAdapter()
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createDependencyAdapter()
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createEnumerationAdapter()
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createEnumerationLiteralAdapter()
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createGeneralizationAdapter()
 	 */
 	@Override
@@ -245,7 +245,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createInterfaceAdapter()
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createModelAdapter()
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createOperationAdapter()
 	 */
 	@Override
@@ -283,7 +283,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createPackageAdapter()
 	 */
 	@Override
@@ -297,7 +297,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createPackageImportAdapter()
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createParameterAdapter()
 	 */
 	@Override
@@ -325,7 +325,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createPrimitiveTypeAdapter()
 	 */
 	@Override
@@ -339,7 +339,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createProfileAdapter()
 	 */
 	@Override
@@ -353,7 +353,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createProfileApplicationAdapter()
 	 */
 	@Override
@@ -363,7 +363,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createPropertyAdapter()
 	 */
 	@Override
@@ -377,7 +377,7 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createStereotypeAdapter()
 	 */
 	@Override

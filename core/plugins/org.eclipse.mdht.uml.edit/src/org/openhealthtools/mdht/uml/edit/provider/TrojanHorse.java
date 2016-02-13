@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
 
@@ -31,7 +31,8 @@ import org.eclipse.emf.edit.provider.WrapperItemProvider;
  */
 public class TrojanHorse extends WrapperItemProvider {
 
-	public TrojanHorse(Object value, Object owner, EStructuralFeature feature, int index, AdapterFactory adapterFactory) {
+	public TrojanHorse(Object value, Object owner, EStructuralFeature feature, int index,
+			AdapterFactory adapterFactory) {
 		super(value, owner, feature, index, adapterFactory);
 	}
 
@@ -64,10 +65,10 @@ public class TrojanHorse extends WrapperItemProvider {
 
 	/**
 	 * Queries whether an {@code object} is a Trojan horse carrying some object.
-	 * 
+	 *
 	 * @param object
 	 *            an object
-	 * 
+	 *
 	 * @return whether it is a Trojan horse
 	 */
 	public static boolean isTrojanHorse(Object object) {
@@ -77,12 +78,12 @@ public class TrojanHorse extends WrapperItemProvider {
 	/**
 	 * Queries whether none of the given {@code objects} are of a forbidden type. Any that are wrapped in Trojan horses pass unseen by the filter, and
 	 * are thus accepted.
-	 * 
+	 *
 	 * @param objects
 	 *            a set of objects to scan
 	 * @param rejectedType
 	 *            a type of which no instances must be in the {@code objects} collection, unless hidden in a Trojan horse
-	 * 
+	 *
 	 * @return {@code true} if all of the {@code objects} look acceptable; {@code false} if any of them is a bare-faced {@code rejectedType}
 	 */
 	public static boolean filter(Collection<?> objects, Class<?> rejectedType) {

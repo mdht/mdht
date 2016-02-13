@@ -274,7 +274,8 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		GenAnnotation ga = org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory.eINSTANCE.createGenAnnotation();
 		ga.setSource(ANNOTATIONSOURCE);
-		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__ECORE_TAGGED_VALUES, "PROCESS");
+		ga.getDetails().put(
+			org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__ECORE_TAGGED_VALUES, "PROCESS");
 		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__UNION_PROPERTIES, "PROCESS");
 		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__DUPLICATE_FEATURES, "PROCESS");
 		ga.getDetails().put(
@@ -414,13 +415,14 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 	}
 
-	private static void runPublishDita(IProject project, IProgressMonitor monitor) throws IOException, CoreException,
-			URISyntaxException {
+	private static void runPublishDita(IProject project, IProgressMonitor monitor)
+			throws IOException, CoreException, URISyntaxException {
 
 		IFile ditaMapFile = CDAUIUtil.getProjectFile(project, CDAUIUtil.DITA_PATH, "book.ditamap");
 
 		// should PDF and DITA-OT be skipped for this build
-		boolean disablePdf = Activator.getDefault().getPreferenceStore().getBoolean(MDHTPreferences.PDF_GEN_STORE_VALUE);
+		boolean disablePdf = Activator.getDefault().getPreferenceStore().getBoolean(
+			MDHTPreferences.PDF_GEN_STORE_VALUE);
 
 		if (ditaMapFile != null && !disablePdf) {
 			DitaUtil.publish(ditaMapFile, "pdf,eclipsehelp");
@@ -433,7 +435,8 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		runTransformation(project, monitor, EMPTYLIST);
 	}
 
-	private static void runTransformation(IProject project, IProgressMonitor monitor, ArrayList<String> deleteDitaFolder) {
+	private static void runTransformation(IProject project, IProgressMonitor monitor,
+			ArrayList<String> deleteDitaFolder) {
 
 		try {
 			String antFileName = null;
@@ -483,7 +486,8 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			AntCorePlugin.getPlugin().getPreferences().setAdditionalClasspathEntries(
 				classpathEntries.toArray(new IAntClasspathEntry[classpathEntries.size()]));
 
-			ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(IAntLaunchConstants.ID_ANT_LAUNCH_CONFIGURATION_TYPE);
+			ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(
+				IAntLaunchConstants.ID_ANT_LAUNCH_CONFIGURATION_TYPE);
 
 			IFile transformxml = project.getFile(antFileName);
 			String name = launchMemento; // launchManager.generateLaunchConfigurationName(launchMemento);

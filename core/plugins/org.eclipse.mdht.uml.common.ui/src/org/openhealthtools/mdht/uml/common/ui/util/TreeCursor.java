@@ -39,20 +39,20 @@ import org.eclipse.swt.widgets.Widget;
 
 /**
  * Modified from org.eclipse.swt.custom.TableCursor for use in a tree.
- * 
+ *
  * A TreeCursor provides a way for the user to navigate around Tree columns
  * using the keyboard. It also provides a mechanism for selecting an
  * individual cell in a tree table.
- * 
+ *
  * <p>
  * Here is an example of using a TreeCursor to navigate to a cell and then edit it.
- * 
+ *
  * <code><pre>
  *  public static void main(String[] args) {
  * 		Display display = new Display();
  * 		Shell shell = new Shell(display);
  * 		shell.setLayout(new GridLayout());
- * 	
+ *
  * 		// create a a table with 3 columns and fill with data
  * 		final Tree table = new Tree(shell, SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION);
  * 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
@@ -66,22 +66,22 @@ import org.eclipse.swt.widgets.Widget;
  * 		column1.pack();
  * 		column2.pack();
  * 		column3.pack();
- * 	
+ *
  * 		// create a TreeCursor to navigate around the table
  * 		final TreeCursor cursor = new TreeCursor(table, SWT.NONE);
- * 		// create an editor to edit the cell when the user hits "ENTER" 
+ * 		// create an editor to edit the cell when the user hits "ENTER"
  * 		// while over a cell in the table
  * 		final ControlEditor editor = new ControlEditor(cursor);
  * 		editor.grabHorizontal = true;
  * 		editor.grabVertical = true;
- * 	
+ *
  * 		cursor.addSelectionListener(new SelectionAdapter() {
- * 			// when the TreeEditor is over a cell, select the corresponding row in 
+ * 			// when the TreeEditor is over a cell, select the corresponding row in
  * 			// the table
  * 			public void widgetSelected(SelectionEvent e) {
  * 				table.setSelection(new TreeItem[] {cursor.getRow()});
  * 			}
- * 			// when the user hits "ENTER" in the TreeCursor, pop up a text editor so that 
+ * 			// when the user hits "ENTER" in the TreeCursor, pop up a text editor so that
  * 			// they can change the text of the cell
  * 			public void widgetDefaultSelected(SelectionEvent e){
  * 				final Text text = new Text(cursor, SWT.NONE);
@@ -90,7 +90,7 @@ import org.eclipse.swt.widgets.Widget;
  * 				text.setText(row.getText(column));
  * 				text.addKeyListener(new KeyAdapter() {
  * 					public void keyPressed(KeyEvent e) {
- * 						// close the text editor and copy the data over 
+ * 						// close the text editor and copy the data over
  * 						// when the user hits "ENTER"
  * 						if (e.character == SWT.CR) {
  * 							TreeItem row = cursor.getRow();
@@ -112,9 +112,9 @@ import org.eclipse.swt.widgets.Widget;
  * 		// This alows the user to select multiple items in the table.
  * 		cursor.addKeyListener(new KeyAdapter() {
  * 			public void keyPressed(KeyEvent e) {
- * 				if (e.keyCode == SWT.MOD1 || 
- * 				    e.keyCode == SWT.MOD2 || 
- * 				    (e.stateMask & SWT.MOD1) != 0 || 
+ * 				if (e.keyCode == SWT.MOD1 ||
+ * 				    e.keyCode == SWT.MOD2 ||
+ * 				    (e.stateMask & SWT.MOD1) != 0 ||
  * 				    (e.stateMask & SWT.MOD2) != 0) {
  * 					cursor.setVisible(false);
  * 				}
@@ -128,7 +128,7 @@ import org.eclipse.swt.widgets.Widget;
  * 				if (e.keyCode == SWT.MOD2 && (e.stateMask & SWT.MOD1) != 0) return;
  * 				if (e.keyCode != SWT.MOD1 && (e.stateMask & SWT.MOD1) != 0) return;
  * 				if (e.keyCode != SWT.MOD2 && (e.stateMask & SWT.MOD2) != 0) return;
- * 			
+ *
  * 				TreeItem[] selection = table.getSelection();
  * 				TreeItem row = (selection.length == 0) ? table.getItem(table.getTopIndex()) : selection[0];
  * 				table.showItem(row);
@@ -137,7 +137,7 @@ import org.eclipse.swt.widgets.Widget;
  * 				cursor.setFocus();
  * 			}
  * 		});
- * 	
+ *
  * 		shell.open();
  * 		while (!shell.isDisposed()) {
  * 			if (!display.readAndDispatch())
@@ -146,16 +146,16 @@ import org.eclipse.swt.widgets.Widget;
  * 		display.dispose();
  * 	}
  * </pre></code>
- * 
+ *
  * <dl>
  * <dt><b>Styles:</b></dt>
  * <dd>BORDER</dd>
  * <dt><b>Events:</b></dt>
  * <dd>Selection, DefaultSelection</dd>
  * </dl>
- * 
+ *
  * @since 2.0
- * 
+ *
  */
 public class TreeCursor extends Canvas {
 	Tree tree;
@@ -186,12 +186,12 @@ public class TreeCursor extends Canvas {
 	 * be built by <em>bitwise OR</em>'ing together (that is, using the <code>int</code> "|" operator) two or more of those <code>SWT</code> style
 	 * constants. The class description lists the style constants that are applicable to the class. Style bits are also inherited from superclasses.
 	 * </p>
-	 * 
+	 *
 	 * @param parent
 	 *            a Tree control which will be the parent of the new instance (cannot be null)
 	 * @param style
 	 *            the style of control to construct
-	 * 
+	 *
 	 * @exception IllegalArgumentException
 	 *                <ul>
 	 *                <li>ERROR_NULL_ARGUMENT - if the parent is null</li>
@@ -201,7 +201,7 @@ public class TreeCursor extends Canvas {
 	 *                <li>ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the parent</li>
 	 *                <li>ERROR_INVALID_SUBCLASS - if this class is not an allowed subclass</li>
 	 *                </ul>
-	 * 
+	 *
 	 * @see SWT#BORDER
 	 * @see Widget#checkSubclass()
 	 * @see Widget#getStyle()
@@ -351,10 +351,10 @@ public class TreeCursor extends Canvas {
 	 * and the check selection changes, the event object detail field contains the value <code>SWT.CHECK</code>. <code>widgetDefaultSelected</code> is
 	 * typically called when an item is double-clicked.
 	 * </p>
-	 * 
+	 *
 	 * @param listener
 	 *            the listener which should be notified
-	 * 
+	 *
 	 * @exception IllegalArgumentException
 	 *                <ul>
 	 *                <li>ERROR_NULL_ARGUMENT - if the listener is null</li>
@@ -364,11 +364,11 @@ public class TreeCursor extends Canvas {
 	 *                <li>ERROR_WIDGET_DISPOSED - if the receiver has been disposed</li>
 	 *                <li>ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver</li>
 	 *                </ul>
-	 * 
+	 *
 	 * @see SelectionListener
 	 * @see SelectionEvent
 	 * @see #removeSelectionListener(SelectionListener)
-	 * 
+	 *
 	 */
 	public void addSelectionListener(SelectionListener listener) {
 		checkWidget();
@@ -405,9 +405,9 @@ public class TreeCursor extends Canvas {
 
 	/**
 	 * Returns the column over which the TreeCursor is positioned.
-	 * 
+	 *
 	 * @return the column for the current position
-	 * 
+	 *
 	 * @exception SWTException
 	 *                <ul>
 	 *                <li>ERROR_WIDGET_DISPOSED - if the receiver has been disposed</li>
@@ -464,9 +464,9 @@ public class TreeCursor extends Canvas {
 
 	/**
 	 * Returns the row over which the TreeCursor is positioned.
-	 * 
+	 *
 	 * @return the item for the current position
-	 * 
+	 *
 	 * @exception SWTException
 	 *                <ul>
 	 *                <li>ERROR_WIDGET_DISPOSED - if the receiver has been disposed</li>
@@ -705,10 +705,10 @@ public class TreeCursor extends Canvas {
 	/**
 	 * Removes the listener from the collection of listeners who will
 	 * be notified when the receiver's selection changes.
-	 * 
+	 *
 	 * @param listener
 	 *            the listener which should no longer be notified
-	 * 
+	 *
 	 * @exception IllegalArgumentException
 	 *                <ul>
 	 *                <li>ERROR_NULL_ARGUMENT - if the listener is null</li>
@@ -718,10 +718,10 @@ public class TreeCursor extends Canvas {
 	 *                <li>ERROR_WIDGET_DISPOSED - if the receiver has been disposed</li>
 	 *                <li>ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver</li>
 	 *                </ul>
-	 * 
+	 *
 	 * @see SelectionListener
 	 * @see #addSelectionListener(SelectionListener)
-	 * 
+	 *
 	 * @since 3.0
 	 */
 	public void removeSelectionListener(SelectionListener listener) {
@@ -793,18 +793,18 @@ public class TreeCursor extends Canvas {
 
 	/**
 	 * Positions the TreeCursor over the cell at the given row and column in the parent table.
-	 * 
+	 *
 	 * @param row
 	 *            the TreeItem of the row for the cell to select
 	 * @param column
 	 *            the index of column for the cell to select
-	 * 
+	 *
 	 * @exception SWTException
 	 *                <ul>
 	 *                <li>ERROR_WIDGET_DISPOSED - if the receiver has been disposed</li>
 	 *                <li>ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver</li>
 	 *                </ul>
-	 * 
+	 *
 	 */
 	public void setSelection(TreeItem row, int column) {
 		checkWidget();
@@ -895,7 +895,7 @@ public class TreeCursor extends Canvas {
 		/*
 		 * setFocus() causes flash; but without this, goes immediately into edit mode.
 		 * Using setFocus() alos causes a false "Set Name" undo command in stack.
-		 * 
+		 *
 		 * see TreeEditorImpl.handleMouseDown() for cause of immediate edit mode
 		 */
 		// setFocus();

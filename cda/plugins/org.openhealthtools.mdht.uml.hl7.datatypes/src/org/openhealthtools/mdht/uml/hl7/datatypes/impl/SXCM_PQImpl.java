@@ -101,8 +101,8 @@ public class SXCM_PQImpl extends PQImpl implements SXCM_PQ {
 		boolean oldOperatorESet = operatorESet;
 		operatorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.SXCM_PQ__OPERATOR, oldOperator, operator, !oldOperatorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SXCM_PQ__OPERATOR, oldOperator,
+				operator, !oldOperatorESet));
 		}
 	}
 
@@ -117,9 +117,8 @@ public class SXCM_PQImpl extends PQImpl implements SXCM_PQ {
 		operator = OPERATOR_EDEFAULT;
 		operatorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, DatatypesPackage.SXCM_PQ__OPERATOR, oldOperator, OPERATOR_EDEFAULT,
-				oldOperatorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.SXCM_PQ__OPERATOR, oldOperator,
+				OPERATOR_EDEFAULT, oldOperatorESet));
 		}
 	}
 

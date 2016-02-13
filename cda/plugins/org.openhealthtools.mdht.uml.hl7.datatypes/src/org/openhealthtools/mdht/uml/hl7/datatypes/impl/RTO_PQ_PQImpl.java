@@ -115,20 +115,20 @@ public class RTO_PQ_PQImpl extends QTYImpl implements RTO_PQ_PQ {
 		if (newNumerator != numerator) {
 			NotificationChain msgs = null;
 			if (numerator != null) {
-				msgs = ((InternalEObject) numerator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.RTO_PQ_PQ__NUMERATOR, null, msgs);
+				msgs = ((InternalEObject) numerator).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.RTO_PQ_PQ__NUMERATOR, null, msgs);
 			}
 			if (newNumerator != null) {
-				msgs = ((InternalEObject) newNumerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.RTO_PQ_PQ__NUMERATOR, null, msgs);
+				msgs = ((InternalEObject) newNumerator).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.RTO_PQ_PQ__NUMERATOR, null, msgs);
 			}
 			msgs = basicSetNumerator(newNumerator, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__NUMERATOR, newNumerator, newNumerator));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__NUMERATOR, newNumerator,
+				newNumerator));
 		}
 	}
 
@@ -170,20 +170,20 @@ public class RTO_PQ_PQImpl extends QTYImpl implements RTO_PQ_PQ {
 		if (newDenominator != denominator) {
 			NotificationChain msgs = null;
 			if (denominator != null) {
-				msgs = ((InternalEObject) denominator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, null, msgs);
+				msgs = ((InternalEObject) denominator).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, null, msgs);
 			}
 			if (newDenominator != null) {
-				msgs = ((InternalEObject) newDenominator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, null, msgs);
+				msgs = ((InternalEObject) newDenominator).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, null, msgs);
 			}
 			msgs = basicSetDenominator(newDenominator, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, newDenominator, newDenominator));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__DENOMINATOR,
+				newDenominator, newDenominator));
 		}
 	}
 

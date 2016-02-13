@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile;
@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.Property;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Code System Constraint</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -35,7 +35,7 @@ import org.eclipse.uml2.uml.Property;
  * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getBase_Property <em>Base Property</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint()
  * @model
  * @generated
@@ -48,7 +48,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Base_Property()
@@ -65,7 +65,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Binding</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Binding</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.BindingKind
 	 * @see #setBinding(BindingKind)
@@ -82,7 +82,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Code</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Code()
@@ -98,7 +98,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Display Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Display Name</em>' attribute.
 	 * @see #setDisplayName(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_DisplayName()
@@ -114,7 +114,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Identifier()
@@ -130,7 +130,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Name()
@@ -147,7 +147,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Qualifier</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Qualifier</em>' reference list.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Qualifier()
 	 * @model ordered="false"
@@ -162,7 +162,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Reference</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Reference</em>' reference.
 	 * @see #setReference(CodeSystemVersion)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Reference()
@@ -178,7 +178,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Version</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Version()
@@ -192,7 +192,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
@@ -204,7 +204,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getBinding <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Binding</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.BindingKind
@@ -217,7 +217,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getCode <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Code</em>' attribute.
 	 * @see #getCode()
@@ -230,7 +230,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Display Name</em>' attribute.
 	 * @see #getDisplayName()
@@ -243,7 +243,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
@@ -255,7 +255,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -267,7 +267,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getReference <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Reference</em>' reference.
 	 * @see #getReference()
@@ -279,7 +279,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint#getVersion <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Version</em>' attribute.
 	 * @see #getVersion()

@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Null Flavor Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getNullFlavorKind()
  * @model
  * @generated
@@ -33,7 +33,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>ASKU</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASKU_VALUE
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>MSK</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MSK_VALUE
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>NA</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NA_VALUE
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>NASK</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NASK_VALUE
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>NAV</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NAV_VALUE
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>NI</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NI_VALUE
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>NINF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NINF_VALUE
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>OTH</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTH_VALUE
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>PINF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #PINF_VALUE
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>QS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #QS_VALUE
 	 * @generated
 	 * @ordered
@@ -143,7 +143,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>TRC</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TRC_VALUE
 	 * @generated
 	 * @ordered
@@ -154,7 +154,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>UNC</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNC_VALUE
 	 * @generated
 	 * @ordered
@@ -165,7 +165,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * The '<em><b>UNK</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNK_VALUE
 	 * @generated
 	 * @ordered
@@ -179,7 +179,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>ASKU</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASKU
 	 * @model
 	 * @generated
@@ -194,7 +194,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>MSK</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MSK
 	 * @model
 	 * @generated
@@ -209,7 +209,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>NA</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NA
 	 * @model
 	 * @generated
@@ -224,7 +224,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>NASK</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NASK
 	 * @model
 	 * @generated
@@ -239,7 +239,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>NAV</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NAV
 	 * @model
 	 * @generated
@@ -254,7 +254,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>NI</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NI
 	 * @model
 	 * @generated
@@ -269,7 +269,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>NINF</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NINF
 	 * @model
 	 * @generated
@@ -284,7 +284,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>OTH</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTH
 	 * @model
 	 * @generated
@@ -299,7 +299,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>PINF</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #PINF
 	 * @model
 	 * @generated
@@ -314,7 +314,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>QS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #QS
 	 * @model
 	 * @generated
@@ -329,7 +329,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>TRC</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TRC
 	 * @model
 	 * @generated
@@ -344,7 +344,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>UNC</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNC
 	 * @model
 	 * @generated
@@ -359,7 +359,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * If the meaning of '<em><b>UNK</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNK
 	 * @model
 	 * @generated
@@ -371,7 +371,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * An array of all the '<em><b>Null Flavor Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final NullFlavorKind[] VALUES_ARRAY = new NullFlavorKind[] {
@@ -381,7 +381,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Null Flavor Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<NullFlavorKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -390,7 +390,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * Returns the '<em><b>Null Flavor Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NullFlavorKind get(int value) {
@@ -429,7 +429,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * Returns the '<em><b>Null Flavor Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NullFlavorKind get(String literal) {
@@ -446,7 +446,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * Returns the '<em><b>Null Flavor Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NullFlavorKind getByName(String name) {
@@ -462,7 +462,7 @@ public enum NullFlavorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -470,7 +470,7 @@ public enum NullFlavorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -478,7 +478,7 @@ public enum NullFlavorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -487,7 +487,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private NullFlavorKind(int value, String name, String literal) {
@@ -499,7 +499,7 @@ public enum NullFlavorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLiteral() {
@@ -509,7 +509,7 @@ public enum NullFlavorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -519,7 +519,7 @@ public enum NullFlavorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getValue() {
@@ -530,7 +530,7 @@ public enum NullFlavorKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

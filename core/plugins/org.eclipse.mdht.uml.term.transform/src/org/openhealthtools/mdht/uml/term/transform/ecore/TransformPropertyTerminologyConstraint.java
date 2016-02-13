@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added CS type check
@@ -41,7 +41,8 @@ import org.openhealthtools.mdht.uml.transform.ecore.TransformPropertyConstraint;
  * Transform UML property constraints for: multiplicity, type restriction, vocabulary.
  */
 public class TransformPropertyTerminologyConstraint extends TransformPropertyConstraint {
-	public TransformPropertyTerminologyConstraint(TransformerOptions options, IBaseModelReflection baseModelReflection) {
+	public TransformPropertyTerminologyConstraint(TransformerOptions options,
+			IBaseModelReflection baseModelReflection) {
 		super(options, baseModelReflection);
 	}
 
@@ -56,9 +57,9 @@ public class TransformPropertyTerminologyConstraint extends TransformPropertyCon
 			case VALUE_SET:
 				result = new ValueSetConstraintHandler("VS");
 				break;
-		// case CONCEPT_DOMAIN:
-		// result = new ConceptDomainConstranintHandler("CD");
-		// break;
+			// case CONCEPT_DOMAIN:
+			// result = new ConceptDomainConstranintHandler("CD");
+			// break;
 		}
 
 		return result;
@@ -162,7 +163,8 @@ public class TransformPropertyTerminologyConstraint extends TransformPropertyCon
 			} else {
 				if (isPropAndTermNull(property)) {
 					for (Property override : property.getRedefinedProperties()) {
-						CodeSystemConstraint redfineCodeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(override);
+						CodeSystemConstraint redfineCodeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(
+							override);
 						if (redfineCodeSystemConstraint != null) {
 							result = addVocabConstraint(context, ValidationStereotypeKind.CODE_SYSTEM, "true");
 							break;

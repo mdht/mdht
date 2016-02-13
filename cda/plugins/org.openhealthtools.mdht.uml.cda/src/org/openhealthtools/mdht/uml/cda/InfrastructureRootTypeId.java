@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getInfrastructureRootTypeId()
- * @model features="redefinedRoot redefinedExtension" 
+ * @model features="redefinedRoot redefinedExtension"
  *        redefinedRootDefault="2.16.840.1.113883.1.3" redefinedRootUnsettable="true" redefinedRootDataType="org.openhealthtools.mdht.uml.hl7.datatypes.uid" redefinedRootRequired="true" redefinedRootOrdered="false" redefinedRootSuppressedGetVisibility="true" redefinedRootSuppressedSetVisibility="true" redefinedRootSuppressedIsSetVisibility="true" redefinedRootSuppressedUnsetVisibility="true"
  *        redefinedRootExtendedMetaData="name='root' kind='attribute'"
  *        redefinedExtensionDataType="org.openhealthtools.mdht.uml.hl7.datatypes.stType" redefinedExtensionRequired="true" redefinedExtensionOrdered="false" redefinedExtensionSuppressedGetVisibility="true" redefinedExtensionSuppressedSetVisibility="true"

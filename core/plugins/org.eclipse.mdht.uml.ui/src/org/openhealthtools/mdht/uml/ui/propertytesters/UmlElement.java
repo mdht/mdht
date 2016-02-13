@@ -98,14 +98,16 @@ public class UmlElement extends PropertyTester {
 
 	private static EObject unwrap(Object wrapper) {
 		Object obj = null;
-		if (wrapper instanceof EObject)
+		if (wrapper instanceof EObject) {
 			return (EObject) wrapper;
+		}
 		if (wrapper instanceof DelegatingWrapperItemProvider) {
 			obj = ((DelegatingWrapperItemProvider) wrapper).getValue();
 		} else if (wrapper instanceof UMLDomainNavigatorItem) {
 			obj = ((UMLDomainNavigatorItem) wrapper).getEObject();
-		} else
+		} else {
 			return null;
+		}
 		return unwrap(obj);
 	}
 
@@ -114,8 +116,9 @@ public class UmlElement extends PropertyTester {
 		TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
 			IResourceConstants.EDITING_DOMAIN_ID);
 
-		if (editingDomain == null)
+		if (editingDomain == null) {
 			return null;
+		}
 
 		IWorkbenchPart part = null;
 		try {
@@ -124,17 +127,22 @@ public class UmlElement extends PropertyTester {
 
 		}
 
-		if (!(part instanceof IEditorPart) || !(((IEditorPart) part).getEditorInput() instanceof IFileEditorInput))
+		if (!(part instanceof IEditorPart) || !(((IEditorPart) part).getEditorInput() instanceof IFileEditorInput)) {
 			return null;
+		}
 
 		String modelFilePath = ((IFileEditorInput) ((IEditorPart) part).getEditorInput()).getFile().getFullPath().toString();
 		URI resourceURI = URI.createPlatformResourceURI(modelFilePath, false);
 
-		for (Resource resource : editingDomain.getResourceSet().getResources())
-			if (resource.getURI().equals(resourceURI))
-				for (EObject e : resource.getContents())
-					if (e instanceof Package)
+		for (Resource resource : editingDomain.getResourceSet().getResources()) {
+			if (resource.getURI().equals(resourceURI)) {
+				for (EObject e : resource.getContents()) {
+					if (e instanceof Package) {
 						return (Package) e;
+					}
+				}
+			}
+		}
 
 		return null;
 	}
@@ -160,14 +168,16 @@ public class UmlElement extends PropertyTester {
 
 		EObject currentObj = unwrap(selectedItem);
 		Object child = selectedItem;
-		if (selectedItem instanceof UMLDomainNavigatorItem)
+		if (selectedItem instanceof UMLDomainNavigatorItem) {
 			child = currentObj;
+		}
 
 		if (!(currentObj instanceof Association) && !(currentObj instanceof org.eclipse.uml2.uml.Class) &&
 				!(currentObj instanceof org.eclipse.uml2.uml.Generalization)) {
 
-			if (currentObj instanceof Package)
+			if (currentObj instanceof Package) {
 				return currentObj == localModel;
+			}
 			return false;
 		}
 		rs = fromCurrentModel(provider, localModel, provider.getParent(child));
@@ -195,8 +205,9 @@ public class UmlElement extends PropertyTester {
 
 		EObject currentObj = unwrap(selectedItem);
 		Object child = selectedItem;
-		if (selectedItem instanceof UMLDomainNavigatorItem)
+		if (selectedItem instanceof UMLDomainNavigatorItem) {
 			child = currentObj;
+		}
 
 		if (!(currentObj instanceof Association) && !(currentObj instanceof org.eclipse.uml2.uml.Class) &&
 				!(currentObj instanceof org.eclipse.uml2.uml.Generalization)) {
@@ -241,10 +252,11 @@ public class UmlElement extends PropertyTester {
 	}
 
 	private static Package getOwnerModel(EObject t) {
-		if (t.eContainer() instanceof Package)
+		if (t.eContainer() instanceof Package) {
 			return (Package) t.eContainer();
-		else
+		} else {
 			return getOwnerModel(t.eContainer());
+		}
 	}
 
 }

@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.actions;
@@ -71,8 +71,9 @@ public class AddUMLClassAction extends UML2AbstractAction {
 	/**
 	 * Subclass may override to customize domain-specific processing.
 	 * Default is to open dialog containing all available classes.
-	 * 
-	 * @param new class
+	 *
+	 * @param new
+	 *            class
 	 */
 	protected Class selectSuperClass(Class newClass) {
 		Class superClass = (Class) DialogLaunchUtil.chooseElement(
@@ -85,8 +86,9 @@ public class AddUMLClassAction extends UML2AbstractAction {
 	/**
 	 * Subclass may override to customize domain-specific processing.
 	 * Default is to open subclass redefinition dialog.
-	 * 
-	 * @param new class
+	 *
+	 * @param new
+	 *            class
 	 */
 	protected void addProperties(Class newClass, Class superClass) {
 		if (superClass != null) {
@@ -100,8 +102,9 @@ public class AddUMLClassAction extends UML2AbstractAction {
 	/**
 	 * Subclass may override to customize domain-specific processing.
 	 * Do nothing by default.
-	 * 
-	 * @param new class
+	 *
+	 * @param new
+	 *            class
 	 */
 	protected void postProcess(Class newClass) {
 		// do nothing by default

@@ -38,7 +38,7 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	 * The default value of the '{@link #getTypeCode() <em>Type Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeCode()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	 * The cached value of the '{@link #getTypeCode() <em>Type Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeCode()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EntryImpl() {
@@ -69,7 +69,7 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EntryKind getTypeCode() {
@@ -156,7 +156,7 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTypeCode(EntryKind newTypeCode) {
@@ -172,7 +172,7 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

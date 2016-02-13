@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - removing operation history listener upon disposal
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.navigator.internal;
@@ -193,7 +193,8 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 	};
 
 	public UMLNavigatorContentProvider() {
-		editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(IResourceConstants.EDITING_DOMAIN_ID);
+		editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
+			IResourceConstants.EDITING_DOMAIN_ID);
 
 		if ((editingDomain instanceof AdapterFactoryEditingDomain) &&
 				((AdapterFactoryEditingDomain) editingDomain).getResourceToReadOnlyMap() == null) {
@@ -233,7 +234,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 
 	/**
 	 * This is a both helper and hack.
-	 * 
+	 *
 	 * Preload datatypes so that they are available.
 	 */
 	protected void loadUMLProfiles() {
@@ -348,7 +349,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.navigator.SaveablesProvider#doInit()
 	 */
 	@Override
@@ -373,7 +374,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.navigator.SaveablesProvider#getElements(org.eclipse.ui.Saveable)
 	 */
 	@Override
@@ -391,7 +392,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.navigator.SaveablesProvider#getSaveable(java.lang.Object)
 	 */
 	@Override
@@ -400,7 +401,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 		if (element instanceof EObject) {
 			eObject = (EObject) element;
 		} else if (element instanceof IAdaptable) {
-			eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
+			eObject = ((IAdaptable) element).getAdapter(EObject.class);
 		}
 
 		ModelDocument saveable = null;
@@ -415,7 +416,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.navigator.SaveablesProvider#getSaveables()
 	 */
 	@Override
@@ -483,7 +484,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 	 * Subclasses overriding this method should remember to override {@link #update(TransactionalEditingDomain, Notification)} as required.
 	 * The default implementation of {@link #update(TransactionalEditingDomain, Notification)} will only
 	 * update if the notifier is an <code>EObject</code>.
-	 * 
+	 *
 	 * @return the filter for events used by my <code>eventListener</code>.
 	 */
 	public NotificationFilter getFilter() {
@@ -506,10 +507,10 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 	 * synchronizes on the GUI thread. The subclasses that overwrite it should
 	 * do the same if they perform any GUI work (because events may be sent from
 	 * a non-GUI thread).
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * 
+	 *
 	 * @param notification
 	 *            notification object
 	 * @param element
@@ -542,7 +543,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 	 * Updates me if the notifier is an <code>EObject</code> by calling {@link #update(Notification, EObject)}. Does nothing otherwise.
 	 * Subclasses should override this method if they need to update based on
 	 * non-EObject notifiers.
-	 * 
+	 *
 	 * @param domain
 	 *            the editing domain
 	 * @param notification
@@ -577,7 +578,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 	/**
 	 * Returns whether or not the notifier for a particular notification has been
 	 * deleted from its parent.
-	 * 
+	 *
 	 * This is a fix for RATLC00535181. What happens is that during deletion of
 	 * an element from the diagram, the element first deletes related elements
 	 * which causes a modification of the element itself. When the modification occurs
@@ -586,7 +587,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 	 * in question may or may not have already been deleted from its container. If
 	 * the element has been deleted from its container, we should not refresh the
 	 * property section.
-	 * 
+	 *
 	 * @param notification
 	 * @return <code>true</code> if notification has been deleted from its parent, <code>false</code> otherwise
 	 */
@@ -600,7 +601,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 
 	/**
 	 * Execute request in the UI thread.
-	 * 
+	 *
 	 * @param updateRequest
 	 *            -
 	 *            runnable update code
@@ -611,7 +612,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.core.edit.IDemuxedMListener#handleElementModifiedEvent(org.eclipse.emf.common.notify.Notification,
 	 * org.eclipse.emf.ecore.EObject)
 	 */

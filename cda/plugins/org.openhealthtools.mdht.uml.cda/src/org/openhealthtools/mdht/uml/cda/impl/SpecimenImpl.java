@@ -221,12 +221,12 @@ public class SpecimenImpl extends ParticipationImpl implements Specimen {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
 			if (typeId != null) {
-				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SPECIMEN__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) typeId).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SPECIMEN__TYPE_ID, null, msgs);
 			}
 			if (newTypeId != null) {
-				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SPECIMEN__TYPE_ID, null, msgs);
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SPECIMEN__TYPE_ID, null, msgs);
 			}
 			msgs = basicSetTypeId(newTypeId, msgs);
 			if (msgs != null) {
@@ -288,20 +288,20 @@ public class SpecimenImpl extends ParticipationImpl implements Specimen {
 		if (newSpecimenRole != specimenRole) {
 			NotificationChain msgs = null;
 			if (specimenRole != null) {
-				msgs = ((InternalEObject) specimenRole).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SPECIMEN__SPECIMEN_ROLE, null, msgs);
+				msgs = ((InternalEObject) specimenRole).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SPECIMEN__SPECIMEN_ROLE, null, msgs);
 			}
 			if (newSpecimenRole != null) {
-				msgs = ((InternalEObject) newSpecimenRole).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						CDAPackage.SPECIMEN__SPECIMEN_ROLE, null, msgs);
+				msgs = ((InternalEObject) newSpecimenRole).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SPECIMEN__SPECIMEN_ROLE, null, msgs);
 			}
 			msgs = basicSetSpecimenRole(newSpecimenRole, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SPECIMEN__SPECIMEN_ROLE, newSpecimenRole, newSpecimenRole));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SPECIMEN__SPECIMEN_ROLE, newSpecimenRole,
+				newSpecimenRole));
 		}
 	}
 
@@ -328,8 +328,8 @@ public class SpecimenImpl extends ParticipationImpl implements Specimen {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SPECIMEN__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SPECIMEN__NULL_FLAVOR, oldNullFlavor,
+				nullFlavor, !oldNullFlavorESet));
 		}
 	}
 
@@ -344,9 +344,8 @@ public class SpecimenImpl extends ParticipationImpl implements Specimen {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.SPECIMEN__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
-				oldNullFlavorESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SPECIMEN__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -382,8 +381,8 @@ public class SpecimenImpl extends ParticipationImpl implements Specimen {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.SPECIMEN__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SPECIMEN__TYPE_CODE, oldTypeCode, typeCode,
+				!oldTypeCodeESet));
 		}
 	}
 
@@ -398,9 +397,8 @@ public class SpecimenImpl extends ParticipationImpl implements Specimen {
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.UNSET, CDAPackage.SPECIMEN__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
-				oldTypeCodeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SPECIMEN__TYPE_CODE, oldTypeCode,
+				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
 		}
 	}
 

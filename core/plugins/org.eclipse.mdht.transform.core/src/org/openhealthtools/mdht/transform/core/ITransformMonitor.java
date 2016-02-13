@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.transform.core;
 
@@ -17,7 +17,7 @@ package org.openhealthtools.mdht.transform.core;
 public interface ITransformMonitor {
 	/**
 	 * Reports a fatal error. The transformation is immediately stopped.
-	 * 
+	 *
 	 * @param message
 	 *            the message to report
 	 * @param exception
@@ -27,7 +27,7 @@ public interface ITransformMonitor {
 
 	/**
 	 * Reports a fatal error. The transformation is immediately stopped.
-	 * 
+	 *
 	 * @param message
 	 *            the message to report
 	 */

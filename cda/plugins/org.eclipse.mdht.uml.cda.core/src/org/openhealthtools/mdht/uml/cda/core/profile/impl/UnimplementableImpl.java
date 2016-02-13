@@ -33,7 +33,7 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 	 * The cached value of the '{@link #getBase_Constraint() <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Constraint()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UnimplementableImpl() {
@@ -53,7 +53,7 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Constraint getBase_Constraint() {
@@ -73,9 +73,8 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 			base_Constraint = (Constraint) eResolveProxy(oldBase_Constraint);
 			if (base_Constraint != oldBase_Constraint) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.UNIMPLEMENTABLE__BASE_CONSTRAINT, oldBase_Constraint,
-						base_Constraint));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						CDAPackage.UNIMPLEMENTABLE__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
 				}
 			}
 		}
@@ -85,7 +84,7 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Constraint basicGetBase_Constraint() {
@@ -95,23 +94,22 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Constraint(Constraint newBase_Constraint) {
 		Constraint oldBase_Constraint = base_Constraint;
 		base_Constraint = newBase_Constraint;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.UNIMPLEMENTABLE__BASE_CONSTRAINT, oldBase_Constraint,
-				base_Constraint));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.UNIMPLEMENTABLE__BASE_CONSTRAINT,
+				oldBase_Constraint, base_Constraint));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +127,7 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +143,7 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +159,7 @@ public class UnimplementableImpl extends EObjectImpl implements Unimplementable 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

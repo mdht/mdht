@@ -4,13 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - added utility to retrieve controlled (sub-)resources
  *     Kenn Hussey - added utilities for working with (model) properties files
  *     Christian W. Damus - factor out CDA base model dependencies (artf3350)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.util;
@@ -80,7 +80,7 @@ import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.common.internal.Logger;
 
 /**
- * 
+ *
  * @version $Id: $
  */
 public class UMLUtil {
@@ -122,10 +122,11 @@ public class UMLUtil {
 		for (Classifier nested1 : first.getNestedClassifiers()) {
 			Classifier nested2 = second.getNestedClassifier(nested1.getName());
 			if (nested2 != null) {
-				if (nested1 instanceof Class && nested2 instanceof Class)
+				if (nested1 instanceof Class && nested2 instanceof Class) {
 					cloneStereotypes((Class) nested1, (Class) nested2);
-				else
+				} else {
 					cloneStereotypes(nested1, nested2);
+				}
 			}
 		}
 	}
@@ -176,7 +177,7 @@ public class UMLUtil {
 	/**
 	 * Accumulate a list containing general classifiers of all generalizations
 	 * for the given classifier, including the given classfier.
-	 * 
+	 *
 	 * @param classifier
 	 * @return a List with zero or more classifiers
 	 */
@@ -193,7 +194,7 @@ public class UMLUtil {
 	/**
 	 * Accumulate a list containing the unqualified names of all generalizations
 	 * for the given classifier, including this classfier name.
-	 * 
+	 *
 	 * @param classifier
 	 * @return a List with zero or more classifiers
 	 */
@@ -213,14 +214,15 @@ public class UMLUtil {
 	 * Accumulate a list containing specific classifiers of direct subclass generalizations
 	 * for the given classifier, including the given classfier. This list will include
 	 * only classifier from models loaded into the current ResourceSet.
-	 * 
+	 *
 	 * @param classifier
 	 * @return a List with zero or more classifiers
 	 */
 	public static List<Classifier> getSpecializations(Classifier classifier) {
 		List<Classifier> subclasses = new ArrayList<Classifier>();
 
-		List<DirectedRelationship> specializations = classifier.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
+		List<DirectedRelationship> specializations = classifier.getTargetDirectedRelationships(
+			UMLPackage.Literals.GENERALIZATION);
 		for (DirectedRelationship relationship : specializations) {
 			Classifier specific = ((Generalization) relationship).getSpecific();
 			if (specific != null) {
@@ -235,14 +237,15 @@ public class UMLUtil {
 	 * Accumulate a list containing specific classifiers of all subclass generalizations
 	 * for the given classifier, including the given classfier. This list will include
 	 * only classifier from models loaded into the current ResourceSet.
-	 * 
+	 *
 	 * @param classifier
 	 * @return a List with zero or more classifiers
 	 */
 	public static List<Classifier> getAllSpecializations(Classifier classifier) {
 		List<Classifier> allSpecializations = new ArrayList<Classifier>();
 
-		List<DirectedRelationship> specializations = classifier.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
+		List<DirectedRelationship> specializations = classifier.getTargetDirectedRelationships(
+			UMLPackage.Literals.GENERALIZATION);
 		for (DirectedRelationship relationship : specializations) {
 			Classifier specific = ((Generalization) relationship).getSpecific();
 			if (specific != null) {
@@ -257,7 +260,7 @@ public class UMLUtil {
 	/**
 	 * Find applied profile to a Package container of element, or return null if
 	 * profile is not applied.
-	 * 
+	 *
 	 * @param profileURI
 	 * @param element
 	 * @return
@@ -303,7 +306,7 @@ public class UMLUtil {
 	/**
 	 * Search all nested packages for the given class name. This search does not
 	 * consider qualified names, but only looks for a matching local name.
-	 * 
+	 *
 	 * @param basePackage
 	 *            base package for the library
 	 * @param localName
@@ -317,7 +320,7 @@ public class UMLUtil {
 	 * Search all nested packages for the given classifier name. This search
 	 * does not consider qualified names, but only looks for a matching local
 	 * name.
-	 * 
+	 *
 	 * @param basePackage
 	 *            base package for the library
 	 * @param localName
@@ -331,7 +334,7 @@ public class UMLUtil {
 	 * Search all nested packages for the given classifier name. This search
 	 * does not consider qualified names, but only looks for a matching local
 	 * classifer name.
-	 * 
+	 *
 	 * @param basePackage
 	 *            base package for the library
 	 * @param localName
@@ -385,10 +388,10 @@ public class UMLUtil {
 	 * UML 2.3 Migration in the code base. The goal is to use the same code and
 	 * avoid multiple builds, features, sites to support both UML 2.2 and 2.3
 	 * api with the same code base.
-	 * 
+	 *
 	 * The difference in this case is that ConstrainingClassifier is scalar in
 	 * 2.2 (0..1) and list (0..*) in 2.3
-	 * 
+	 *
 	 * Implementation/Exception Handling Note - The reflection API currently
 	 * does not have an "hasMethod" so the approach is to call getMethod on the
 	 * target class starting with UML 2.2 method. If the method is not found or
@@ -398,15 +401,15 @@ public class UMLUtil {
 	 * reflection errors into the base code because the project will eventually
 	 * migrate completely to 2.3 so the current logic captures and ignores all
 	 * exceptions.
-	 * 
+	 *
 	 * http://www.eclipse.org/modeling/mdt/uml2/docs/guides/UML2_3.0
 	 * _Migration_Guide/guide.html
-	 * 
+	 *
 	 * @param classifierTemplateParameter
 	 * @return
 	 * @throws NoSuchMethodException
-	 * 
-	 * 
+	 *
+	 *
 	 */
 	public static Classifier getConstrainingClassifier(ClassifierTemplateParameter classifierTemplateParameter) {
 
@@ -492,7 +495,7 @@ public class UMLUtil {
 	/**
 	 * Search all nested packages for the given data type name. This search does
 	 * not consider qualified names, but only looks for a matching local name.
-	 * 
+	 *
 	 * @param basePackage
 	 *            base package for the library
 	 * @param localName
@@ -506,7 +509,7 @@ public class UMLUtil {
 	 * Search all nested packages for the given enumeration name. This search
 	 * does not consider qualified names, but only looks for a matching local
 	 * name.
-	 * 
+	 *
 	 * @param basePackage
 	 *            base package for the library
 	 * @param localName
@@ -536,7 +539,7 @@ public class UMLUtil {
 
 	/**
 	 * Delegates to the subclass specific getOwnedAttributes() method for type.
-	 * 
+	 *
 	 * @param type
 	 * @return list of Property
 	 */
@@ -580,7 +583,7 @@ public class UMLUtil {
 
 	/**
 	 * Delegates to the subclass specific getOwnedOperations() method for type.
-	 * 
+	 *
 	 * @param type
 	 * @return list of Operation
 	 */
@@ -653,10 +656,10 @@ public class UMLUtil {
 	 * UML 2.3 Migration in the code base. The goal is to use the same code and
 	 * avoid multiple builds, features, sites to support both UML 2.2 and 2.3
 	 * api with the same code base.
-	 * 
+	 *
 	 * The difference in this case is that TemplateParameterSubstitution Actual
 	 * Parameters a list (0..*) in 2.2 and scalar (0..1) in 2.3
-	 * 
+	 *
 	 * Implementation/Exception Handling Note - The reflection API currently
 	 * does not have an "hasMethod" so the approach is to call getMethod on the
 	 * target class starting with UML 2.2 method. If the method is not found or
@@ -666,10 +669,10 @@ public class UMLUtil {
 	 * reflection errors into the base code because the project will eventually
 	 * migrate completely to 2.3 so the current logic captures and ignores all
 	 * exceptions.
-	 * 
+	 *
 	 * http://www.eclipse.org/modeling/mdt/uml2/docs/guides/UML2_3.0
 	 * _Migration_Guide/guide.html
-	 * 
+	 *
 	 * @param substitution
 	 * @return
 	 */
@@ -739,7 +742,7 @@ public class UMLUtil {
 	 * Returns a URI for the properties file corresponding to the specified
 	 * resource; this will be essentially the same URI except with a properties
 	 * file extension.
-	 * 
+	 *
 	 * @param resource
 	 *            The model resource.
 	 * @return A properties file URI.
@@ -756,7 +759,7 @@ public class UMLUtil {
 	/**
 	 * Returns the navigable end of an assoiciation's member properties,
 	 * or null if none or more than one navigable end.
-	 * 
+	 *
 	 * @param association
 	 * @return Property, or null if none or more than one navigable end
 	 */
@@ -793,7 +796,7 @@ public class UMLUtil {
 	/**
 	 * If classifier is a template binding and template is a Classifier, return
 	 * the template, else return null.
-	 * 
+	 *
 	 * @param classifier
 	 * @return template classifier, or null if not a template binding
 	 */
@@ -811,7 +814,7 @@ public class UMLUtil {
 	 * If classifier is a template binding and template is a Classifier, return
 	 * a list of template parameter substitutions. Only include
 	 * ParameterableElement if it is a Classifier.
-	 * 
+	 *
 	 * @param classifier
 	 * @return list of template binding parameter substitutions
 	 */
@@ -835,7 +838,7 @@ public class UMLUtil {
 
 	/**
 	 * Returns the outermost top package containing the given element.
-	 * 
+	 *
 	 * @param element
 	 * @return a Package
 	 */
@@ -847,7 +850,7 @@ public class UMLUtil {
 
 	/**
 	 * Returns the outermost top package containing the given package.
-	 * 
+	 *
 	 * @param pkg
 	 * @return a Package
 	 */
@@ -894,7 +897,7 @@ public class UMLUtil {
 
 	/**
 	 * Import library into a model containing the given package.
-	 * 
+	 *
 	 * @param basePackage
 	 *            a package for the model into which library is imported
 	 * @return root package of the imported library
@@ -954,9 +957,9 @@ public class UMLUtil {
 	/**
 	 * FindResourcesByNameVisitor searches the resource for resources of a particular name
 	 * You would think there was a method for this already but i could not find it
-	 * 
+	 *
 	 * @author seanmuir
-	 * 
+	 *
 	 */
 	public static class FindResourcesByNameVisitor implements IResourceVisitor {
 
@@ -981,7 +984,7 @@ public class UMLUtil {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
@@ -1046,7 +1049,7 @@ public class UMLUtil {
 	 * Parses the specified properties file contents into a map of key/value
 	 * pairs, where the key is the key for a named element and the value is the
 	 * corresponding line from the properties file.
-	 * 
+	 *
 	 * @param properties
 	 *            The string contents of a properties file as a string.
 	 * @return A map containing key/value pairs for the specified properties
@@ -1115,7 +1118,7 @@ public class UMLUtil {
 
 	/**
 	 * Reads the properties file at the specified URI.
-	 * 
+	 *
 	 * @param uri
 	 *            The URI of the properties file.
 	 * @return The contents of the properties file as a string, or <code>null</code> if an exception occurs.
@@ -1142,10 +1145,10 @@ public class UMLUtil {
 	 * UML 2.3 Migration in the code base. The goal is to use the same code and
 	 * avoid multiple builds, features, sites to support both UML 2.2 and 2.3
 	 * api with the same code base.
-	 * 
+	 *
 	 * The difference in this case is that ConstrainingClassifier is scalar in
 	 * 2.2 (0..1) and list (0..*) in 2.3
-	 * 
+	 *
 	 * Implementation/Exception Handling Note - The reflection API currently
 	 * does not have an "hasMethod" so the approach is to call getMethod on the
 	 * target class starting with UML 2.2 method. If the method is not found or
@@ -1155,10 +1158,10 @@ public class UMLUtil {
 	 * reflection errors into the base code because the project will eventually
 	 * migrate completely to 2.3 so the current logic captures and ignores all
 	 * exceptions.
-	 * 
+	 *
 	 * http://www.eclipse.org/modeling/mdt/uml2/docs/guides/UML2_3.0
 	 * _Migration_Guide/guide.html
-	 * 
+	 *
 	 * @param classifierTemplateParameter
 	 * @param constraint
 	 */
@@ -1290,10 +1293,10 @@ public class UMLUtil {
 	 * UML 2.3 Migration in the code base. The goal is to use the same code and
 	 * avoid multiple builds, features, sites to support both UML 2.2 and 2.3
 	 * api with the same code base.
-	 * 
+	 *
 	 * The difference in this case is that TemplateParameterSubstitution Actual
 	 * Parameters a list (0..*) in 2.2 and scalar (0..1) in 2.3
-	 * 
+	 *
 	 * Implementation/Exception Handling Note - The reflection API currently
 	 * does not have an "hasMethod" so the approach is to call getMethod on the
 	 * target class starting with UML 2.2 method. If the method is not found or
@@ -1303,10 +1306,10 @@ public class UMLUtil {
 	 * reflection errors into the base code because the project will eventually
 	 * migrate completely to 2.3 so the current logic captures and ignores all
 	 * exceptions.
-	 * 
+	 *
 	 * http://www.eclipse.org/modeling/mdt/uml2/docs/guides/UML2_3.0
 	 * _Migration_Guide/guide.html
-	 * 
+	 *
 	 * @param substitution
 	 * @param parameterableElement
 	 */
@@ -1441,7 +1444,7 @@ public class UMLUtil {
 
 	/**
 	 * Writes the specified properties to a file with the specified URI.
-	 * 
+	 *
 	 * @param uri
 	 *            The URI of the properties file.
 	 * @param properties
@@ -1468,7 +1471,7 @@ public class UMLUtil {
 
 	/**
 	 * isTypeString returns true if primitive type and is a String
-	 * 
+	 *
 	 * @param type
 	 * @return
 	 */

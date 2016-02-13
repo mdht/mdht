@@ -111,7 +111,7 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link RIMPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -127,9 +127,10 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 		}
 
 		// Obtain or create and register package
-		RIMPackageImpl theRIMPackage = (RIMPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RIMPackageImpl
-				? EPackage.Registry.INSTANCE.get(eNS_URI)
-				: new RIMPackageImpl());
+		RIMPackageImpl theRIMPackage = (RIMPackageImpl) (EPackage.Registry.INSTANCE.get(
+			eNS_URI) instanceof RIMPackageImpl
+					? EPackage.Registry.INSTANCE.get(eNS_URI)
+					: new RIMPackageImpl());
 
 		isInited = true;
 
@@ -285,7 +286,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 		// Obtain other dependent packages
 		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
-		DatatypesPackage theDatatypesPackage = (DatatypesPackage) EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
+		DatatypesPackage theDatatypesPackage = (DatatypesPackage) EPackage.Registry.INSTANCE.getEPackage(
+			DatatypesPackage.eNS_URI);
 		VocabPackage theVocabPackage = (VocabPackage) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI);
 
 		// Create type parameters
@@ -323,8 +325,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 			infrastructureRootEClass, InfrastructureRoot.class, "InfrastructureRoot", IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(
-			infrastructureRootEClass, theDatatypesPackage.getCS(), "getRealmCodes", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(infrastructureRootEClass, theDatatypesPackage.getCS(), "getRealmCodes", 0, -1, IS_UNIQUE,
+			!IS_ORDERED);
 
 		addEOperation(infrastructureRootEClass, theDatatypesPackage.getII(), "getTypeId", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -335,7 +337,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 			infrastructureRootEClass, theVocabPackage.getNullFlavor(), "getNullFlavor", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(
-			infrastructureRootEClass, theTypesPackage.getBoolean(), "isNullFlavorDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+			infrastructureRootEClass, theTypesPackage.getBoolean(), "isNullFlavorDefined", 1, 1, IS_UNIQUE,
+			!IS_ORDERED);
 
 		addEOperation(
 			infrastructureRootEClass, theTypesPackage.getBoolean(), "isNullFlavorUndefined", 1, 1, IS_UNIQUE,
@@ -410,7 +413,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 			actRelationshipEClass, ActRelationship.class, "ActRelationship", IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(actRelationshipEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actRelationshipEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE,
+			!IS_ORDERED);
 
 		addEOperation(actRelationshipEClass, this.getAct(), "getTarget", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

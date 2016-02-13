@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *******************************************************************************/
@@ -63,11 +63,11 @@ public class CDAPropertyNotation extends TermPropertyNotation {
 
 	/**
 	 * Returns the modifier of the property, separated by a comma.
-	 * 
+	 *
 	 * @param multiLine
 	 *            boolean that indicates if the string should have several lines
 	 *            when set to <code>true</code> or only one line when set to <code>false</code>.
-	 * 
+	 *
 	 * @return a string giving all modifiers for the property
 	 */
 	protected static String getModifiersAsString(Property property, boolean multiLine) {

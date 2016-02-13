@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir - Initial implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 
@@ -30,12 +30,12 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Generalization;
 
 /**
- * 
+ *
  * UMLOutlinePage provides an outline view of the template hierarchy as part of
  * the MDHT UML Table editor
- * 
+ *
  * @author Sean Muir.
- * 
+ *
  */
 public class UMLOutlinePage extends ContentOutlinePage {
 
@@ -73,7 +73,7 @@ public class UMLOutlinePage extends ContentOutlinePage {
 	/**
 	 * UMLContentLabelProvider provides simple label support for tree view using
 	 * qualified name of generalization classifier.
-	 * 
+	 *
 	 */
 	private class UMLContentLabelProvider implements ILabelProvider {
 
@@ -116,7 +116,7 @@ public class UMLOutlinePage extends ContentOutlinePage {
 
 	/**
 	 * UMLContentProvider populates tree view with class hierarchy
-	 * 
+	 *
 	 */
 	private class UMLContentProvider implements ITreeContentProvider {
 

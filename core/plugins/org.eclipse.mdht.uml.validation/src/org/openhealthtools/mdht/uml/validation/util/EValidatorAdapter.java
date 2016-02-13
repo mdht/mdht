@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - refactor and delegate to the original validator (artf3285)
- *     
+ *
  * $Id$
  *******************************************************************************/
 
@@ -60,10 +60,10 @@ public class EValidatorAdapter extends EObjectValidator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.util.EObjectValidator#validate(org.eclipse.emf.ecore.EObject, org.eclipse.emf.common.util.DiagnosticChain,
 	 * java.util.Map)
-	 * 
+	 *
 	 * Map context is defined in EObjectValidator; suppress type safety
 	 */
 	@Override
@@ -73,7 +73,7 @@ public class EValidatorAdapter extends EObjectValidator {
 
 	/**
 	 * Implements validation by delegation to the EMF validation framework.
-	 * 
+	 *
 	 * Map context is defined in EObjectValidator; suppress type safety
 	 */
 	@Override
@@ -105,25 +105,26 @@ public class EValidatorAdapter extends EObjectValidator {
 	/**
 	 * Direct validation of {@link EDataType}s is not supported by the EMF
 	 * validation framework; they are validated indirectly via the {@link EObject}s that hold their values.
-	 * 
+	 *
 	 * Map context is defined in EObjectValidator; suppress type safety
 	 */
 	@Override
-	public boolean validate(EDataType eDataType, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validate(EDataType eDataType, Object value, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return super.validate(eDataType, value, diagnostics, context);
 	}
 
 	/**
 	 * If we have a context map, record this object's <code>status</code> in it
 	 * so that we will know later that we have processed it and its sub-tree.
-	 * 
+	 *
 	 * @param eObject
 	 *            an element that we have validated
 	 * @param context
 	 *            the context (may be <code>null</code>)
 	 * @param status
 	 *            the element's validation status
-	 * 
+	 *
 	 *            Map context is defined in EObjectValidator; suppress type safety
 	 */
 	private void processed(EObject eObject, Map<Object, Object> context, IStatus status) {
@@ -136,7 +137,7 @@ public class EValidatorAdapter extends EObjectValidator {
 	 * Determines whether we have processed this <code>eObject</code> before,
 	 * by automatic recursion of the EMF Model Validation Service. This is
 	 * only possible if we do, indeed, have a context.
-	 * 
+	 *
 	 * @param eObject
 	 *            an element to be validated (we hope not)
 	 * @param context
@@ -144,7 +145,7 @@ public class EValidatorAdapter extends EObjectValidator {
 	 * @return <code>true</code> if the context is not <code>null</code> and
 	 *         the <code>eObject</code> or one of its containers has already been
 	 *         validated; <code>false</code>, otherwise
-	 * 
+	 *
 	 *         Map context is defined in EObjectValidator; suppress type safety
 	 */
 	private boolean hasProcessed(EObject eObject, Map<Object, Object> context) {
@@ -167,7 +168,7 @@ public class EValidatorAdapter extends EObjectValidator {
 
 	/**
 	 * Converts a status result from the EMF validation service to diagnostics.
-	 * 
+	 *
 	 * @param status
 	 *            the EMF validation service's status result
 	 * @param diagnostics

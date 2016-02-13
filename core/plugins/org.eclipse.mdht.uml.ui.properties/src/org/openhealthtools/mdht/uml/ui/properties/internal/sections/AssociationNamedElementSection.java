@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - implement handling of live validation roll-back (artf3318)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
@@ -22,7 +22,7 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /**
  * @author dcarlson
- * 
+ *
  */
 public class AssociationNamedElementSection extends NamedElementSection {
 

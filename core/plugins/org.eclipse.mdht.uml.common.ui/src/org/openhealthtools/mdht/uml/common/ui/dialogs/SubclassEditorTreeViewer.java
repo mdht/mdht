@@ -41,7 +41,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 
 	/**
 	 * Constructor for ContainerCheckedTreeViewer.
-	 * 
+	 *
 	 * @see CheckboxTreeViewer#CheckboxTreeViewer(Composite)
 	 */
 	public SubclassEditorTreeViewer(Composite parent) {
@@ -51,7 +51,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 
 	/**
 	 * Constructor for ContainerCheckedTreeViewer.
-	 * 
+	 *
 	 * @see CheckboxTreeViewer#CheckboxTreeViewer(Composite,int)
 	 */
 	public SubclassEditorTreeViewer(Composite parent, int style) {
@@ -61,7 +61,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 
 	/**
 	 * Constructor for ContainerCheckedTreeViewer.
-	 * 
+	 *
 	 * @see CheckboxTreeViewer#CheckboxTreeViewer(Tree)
 	 */
 	public SubclassEditorTreeViewer(Tree tree) {
@@ -91,7 +91,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 
 	/**
 	 * Update element after a checkstate change.
-	 * 
+	 *
 	 * @param element
 	 */
 	protected void doCheckStateChanged(Object element) {
@@ -124,7 +124,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 	/**
 	 * This method traverse the input tree to look for the initElement property, and pre-select the
 	 * element and update its tree accordingly.
-	 * 
+	 *
 	 * @param treeItems
 	 */
 	private void doInitSelection(Item[] treeItems) {
@@ -277,7 +277,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 
 	/**
 	 * Recursively add the filtered children of element to the result.
-	 * 
+	 *
 	 * @param element
 	 * @param result
 	 */
@@ -292,7 +292,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 
 	/**
 	 * Handles a tree expand event from the SWT widget.
-	 * 
+	 *
 	 * @param event
 	 *            the SWT tree event
 	 */

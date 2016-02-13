@@ -266,7 +266,8 @@ public enum x_ActClassDocumentEntryAct implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<x_ActClassDocumentEntryAct> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<x_ActClassDocumentEntryAct> VALUES = Collections.unmodifiableList(
+		Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>xAct Class Document Entry Act</b></em>' literal with the specified literal value.

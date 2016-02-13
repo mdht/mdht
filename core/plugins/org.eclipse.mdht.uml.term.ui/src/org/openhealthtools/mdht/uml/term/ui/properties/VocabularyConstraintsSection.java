@@ -4,13 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - making section groups consistent
  *     Christian W. Damus - Handle element wrappers (artf3238)
  *                        - implement handling of live validation roll-back (artf3318)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
 
@@ -251,9 +251,9 @@ public class VocabularyConstraintsSection extends WrapperAwareModelerPropertySec
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@Override
@@ -289,7 +289,8 @@ public class VocabularyConstraintsSection extends WrapperAwareModelerPropertySec
 			property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT) != null;
 		isConceptDomainConstraint.setSelection(isChecked);
 
-		isChecked = TermProfileUtil.getAppliedStereotype(property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT) != null;
+		isChecked = TermProfileUtil.getAppliedStereotype(
+			property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT) != null;
 		isCodeSystemConstraint.setSelection(isChecked);
 
 		isChecked = TermProfileUtil.getAppliedStereotype(property, ITermProfileConstants.VALUE_SET_CONSTRAINT) != null;
@@ -308,7 +309,7 @@ public class VocabularyConstraintsSection extends WrapperAwareModelerPropertySec
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification

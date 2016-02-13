@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Christian W. Damus - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.transform.core.impl;
 
@@ -89,8 +89,8 @@ public class TransformContext implements ITransformContext {
 		Object localValue = data.get(key);
 
 		if ((localValue != null) && !key.isInstance(localValue)) {
-			throw new IllegalStateException(String.format(
-				"Invalid data for key of type %s: %s", key.getName(), localValue));
+			throw new IllegalStateException(
+				String.format("Invalid data for key of type %s: %s", key.getName(), localValue));
 		}
 
 		return (localValue != null)

@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.modelfilter;
 
@@ -16,7 +16,7 @@ import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 
 /**
  * @author dcarlson
- * 
+ *
  */
 public class ModelFilterUtil {
 
@@ -28,21 +28,23 @@ public class ModelFilterUtil {
 
 	/**
 	 * Returns whether the named element is hidden, false if not defined.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @return true if filtered property is "hide", otherwise false.
 	 */
 	public static boolean isHidden(NamedElement namedElement) {
-		if (isHiddenByUser(namedElement))
+		if (isHiddenByUser(namedElement)) {
 			return true;
-		else if (isShownByUser(namedElement))
+		} else if (isShownByUser(namedElement)) {
 			return false;
-		else if (isCollapsedByUser(namedElement))
+		} else if (isCollapsedByUser(namedElement)) {
 			return false;
-		else
+		}
+		else {
 			return false;
 		// return isHiddenByFilterProvider(namedElement);
+		}
 	}
 
 	protected static boolean isHiddenByUser(NamedElement namedElement) {
@@ -74,7 +76,7 @@ public class ModelFilterUtil {
 
 	/**
 	 * Returns whether the named element is collapsed, false if not defined.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @return true if filtered property is "collapse", otherwise false.
@@ -103,7 +105,7 @@ public class ModelFilterUtil {
 
 	/**
 	 * Returns whether the named element has filter state defined.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @return true if filtered property is defined.
@@ -116,7 +118,7 @@ public class ModelFilterUtil {
 	/**
 	 * Removes the "filter" property that is currently set for the specified named
 	 * element, if any.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @return The "filter" value that was set for the element (if one
@@ -148,7 +150,7 @@ public class ModelFilterUtil {
 
 	/**
 	 * Sets filter state for the specified named element.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @param filterState
@@ -160,7 +162,7 @@ public class ModelFilterUtil {
 
 	/**
 	 * Sets the 'type' property for the specified named element.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @param typeQName

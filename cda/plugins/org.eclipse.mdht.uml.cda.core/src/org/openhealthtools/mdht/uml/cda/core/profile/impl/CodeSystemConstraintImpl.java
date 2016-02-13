@@ -49,7 +49,7 @@ public class CodeSystemConstraintImpl extends
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class CodeSystemConstraintImpl extends
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #getRuleId() <em>Rule Id</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRuleId()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class CodeSystemConstraintImpl extends
 	 * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -126,7 +126,7 @@ public class CodeSystemConstraintImpl extends
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -137,7 +137,7 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -148,7 +148,7 @@ public class CodeSystemConstraintImpl extends
 	 * The default value of the '{@link #isStrict() <em>Strict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStrict()
 	 * @generated
 	 * @ordered
@@ -159,7 +159,7 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #isStrict() <em>Strict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStrict()
 	 * @generated
 	 * @ordered
@@ -170,7 +170,7 @@ public class CodeSystemConstraintImpl extends
 	 * The default value of the '{@link #isNegationIndicator() <em>Negation Indicator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isNegationIndicator()
 	 * @generated
 	 * @ordered
@@ -181,7 +181,7 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #isNegationIndicator() <em>Negation Indicator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isNegationIndicator()
 	 * @generated
 	 * @ordered
@@ -191,7 +191,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CodeSystemConstraintImpl() {
@@ -201,7 +201,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getMessage() {
@@ -222,22 +222,22 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMessage(String newMessage) {
 		String oldMessage = message;
 		message = newMessage;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__MESSAGE, oldMessage, message));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__MESSAGE,
+				oldMessage, message));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SeverityKind getSeverity() {
@@ -247,7 +247,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSeverity(SeverityKind newSeverity) {
@@ -256,15 +256,15 @@ public class CodeSystemConstraintImpl extends
 				? SEVERITY_EDEFAULT
 				: newSeverity;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY, oldSeverity, severity));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY,
+				oldSeverity, severity));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getRuleId() {
@@ -277,7 +277,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isMandatory() {
@@ -287,22 +287,22 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMandatory(boolean newMandatory) {
 		boolean oldMandatory = mandatory;
 		mandatory = newMandatory;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY, oldMandatory, mandatory));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY,
+				oldMandatory, mandatory));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValidationKind getKind() {
@@ -312,7 +312,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setKind(ValidationKind newKind) {
@@ -321,15 +321,15 @@ public class CodeSystemConstraintImpl extends
 				? KIND_EDEFAULT
 				: newKind;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__KIND, oldKind, kind));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__KIND, oldKind, kind));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isStrict() {
@@ -339,22 +339,22 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStrict(boolean newStrict) {
 		boolean oldStrict = strict;
 		strict = newStrict;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__STRICT, oldStrict, strict));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__STRICT, oldStrict,
+				strict));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isNegationIndicator() {
@@ -364,23 +364,22 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setNegationIndicator(boolean newNegationIndicator) {
 		boolean oldNegationIndicator = negationIndicator;
 		negationIndicator = newNegationIndicator;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__NEGATION_INDICATOR, oldNegationIndicator,
-				negationIndicator));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__NEGATION_INDICATOR,
+				oldNegationIndicator, negationIndicator));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -407,7 +406,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -443,7 +442,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -477,7 +476,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -506,7 +505,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -537,7 +536,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -568,7 +567,7 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

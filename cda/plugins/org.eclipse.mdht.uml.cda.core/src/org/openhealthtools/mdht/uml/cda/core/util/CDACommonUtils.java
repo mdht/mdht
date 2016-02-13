@@ -1,7 +1,7 @@
 /**
  * Copyright: NEHTA 2015
- * Author: Joerg Kiegeland, Distributed Models Pty Ltd 
- * 
+ * Author: Joerg Kiegeland, Distributed Models Pty Ltd
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -156,19 +156,20 @@ public class CDACommonUtils {
 
 	/**
 	 * Writes a file only if the not-generated comment is not included
-	 * 
+	 *
 	 * @param content
 	 * @param file
 	 * @throws IOException
 	 */
 	public static void stringToFileIfGenerated(String content, File file) throws IOException {
-		if (!(file.exists() && stringFromFile(file).contains("<!--NOT GENERATED-->")))
+		if (!(file.exists() && stringFromFile(file).contains("<!--NOT GENERATED-->"))) {
 			stringToFile(content, file);
+		}
 	}
 
 	/**
 	 * Removes all XML tags
-	 * 
+	 *
 	 * @param text
 	 * @return
 	 */
@@ -212,20 +213,23 @@ public class CDACommonUtils {
 			Property property = getOverallPropertyReference(class1);
 			if (property != null) {
 				result = CDAModelUtil.computeConformanceMessage(property, markup, null, appendNestedConformanceRules);
-			} else
+			} else {
 				result = "";
+			}
 		}
 		if (element instanceof EnumerationLiteral) {
 			EnumerationLiteral enumerationLiteral = (EnumerationLiteral) element;
 			ValueSetCode code = TermProfileUtil.getValueSetCode(enumerationLiteral);
-			if (code != null)
+			if (code != null) {
 				result = code.getConceptName();
+			}
 		}
 		if (element instanceof Enumeration) {
 			Enumeration enumeration = (Enumeration) element;
 			ValueSetVersion version = TermProfileUtil.getValueSetVersion(enumeration);
-			if (version != null)
+			if (version != null) {
 				result = version.getIdentifier();
+			}
 		}
 		return result;
 	}
@@ -301,8 +305,9 @@ public class CDACommonUtils {
 				return step + ".";
 			}
 			result = step + "." + result;
-			if (!fullSection)
+			if (!fullSection) {
 				return step;
+			}
 			eObject = getContainerReference(eObject);
 		}
 		return result.endsWith(".")
@@ -344,8 +349,9 @@ public class CDACommonUtils {
 	 *         class
 	 */
 	public static Class getClassReference(EObject property) {
-		if (cacheClassForProperty.get(property) != null)
+		if (cacheClassForProperty.get(property) != null) {
 			return cacheClassForProperty.get(property);
+		}
 		return (Class) property.eContainer();
 	}
 
@@ -354,10 +360,12 @@ public class CDACommonUtils {
 	 * @return in case the element is associated with a section, returns the associated element of the parent section, otherwise returns the container
 	 */
 	private static EObject getContainerReference(EObject child) {
-		if (cacheClassForProperty.get(child) != null)
+		if (cacheClassForProperty.get(child) != null) {
 			return cacheClassForProperty.get(child);
-		if (cachePropertyForClass.get(child) != null)
+		}
+		if (cachePropertyForClass.get(child) != null) {
 			return getContainerReference(cachePropertyForClass.get(child));
+		}
 		return child.eContainer();
 	}
 
@@ -367,15 +375,16 @@ public class CDACommonUtils {
 
 	/**
 	 * As only the property of an association is processed, redirect association to the corresponding MDHT property
-	 * 
+	 *
 	 * @param dataComponent
 	 * @return
 	 */
 	public static NamedElement getMDHTRepresentative(NamedElement dataComponent) {
 		if (dataComponent instanceof Association) {
 			Association association = (Association) dataComponent;
-			if (association.getMemberEnds().size() != 0)
+			if (association.getMemberEnds().size() != 0) {
 				return association.getMemberEnds().get(0);
+			}
 		}
 		return dataComponent;
 	}
@@ -422,8 +431,9 @@ public class CDACommonUtils {
 	 */
 	public static String getPropertyStep(Class umlClass, NamedElement focusedProperty) {
 		String result = propertyStepCache.get(focusedProperty);
-		if (result != null)
+		if (result != null) {
 			return result;
+		}
 		List<Property> allProperties = new ArrayList<Property>();
 		int offset = 0;
 		if (umlClass.eContainer() instanceof Package) {
@@ -490,8 +500,9 @@ public class CDACommonUtils {
 				}
 			}
 		}
-		for (Property prop : allProperties)
+		for (Property prop : allProperties) {
 			propertyStepCache.put(prop, getCustomizedBulletItem(umlClass, offset + allProperties.indexOf(prop)));
+		}
 		int constraintIndex = 0;
 		for (Constraint constraint : umlClass.getOwnedRules()) {
 			if (constraint.getConstrainedElements().size() == 1 &&
@@ -535,7 +546,7 @@ public class CDACommonUtils {
 
 	/**
 	 * Patch resource set to recognize pathmaps for even workspace projects.
-	 * 
+	 *
 	 * @param rset
 	 */
 	public static void patchResourceSet(ResourceSet rset) {
@@ -545,7 +556,7 @@ public class CDACommonUtils {
 
 	/**
 	 * Returns a property of the passed clazz that has a class type defining a predicate to qualify instances of the passed clazz
-	 * 
+	 *
 	 * @param clazz
 	 * @return
 	 */
@@ -596,12 +607,13 @@ public class CDACommonUtils {
 
 	public static Property getLeafPropertyForTypeCheck(Class clazz) {
 		EObject predicate = getPredicateForTypeCheck(clazz);
-		if (predicate instanceof Property)
+		if (predicate instanceof Property) {
 			return (Property) predicate;
-		else if (predicate instanceof CodeSystemConstraint)
+		} else if (predicate instanceof CodeSystemConstraint) {
 			return ((CodeSystemConstraint) predicate).getBase_Property();
-		else
+		} else {
 			return null;
+		}
 	}
 
 	public static EObject getPredicateForTypeCheck(Class clazz) {
@@ -628,7 +640,7 @@ public class CDACommonUtils {
 
 	/**
 	 * Returns the "predicate" suitable to qualify instances for the given class
-	 * 
+	 *
 	 * @param predicate
 	 *            a previous calculated predicate that may be returned if it remains higher priority; "code" has higher priority than "classCode"
 	 * @param clazz
@@ -657,15 +669,16 @@ public class CDACommonUtils {
 	}
 
 	public static CodeSystemConstraint getCodeSystemConstraint(Property property) {
-		if (!cachedCodeSystemConstraint.containsKey(property))
+		if (!cachedCodeSystemConstraint.containsKey(property)) {
 			cachedCodeSystemConstraint.put(property, TermProfileUtil.getCodeSystemConstraint(property));
+		}
 		return cachedCodeSystemConstraint.get(property);
 	}
 
 	/**
-	 * 
+	 *
 	 * Just calling <code>property.getDefault()</code> may return <code>null</code> for dynamic metamodels, so better use this helper function here
-	 * 
+	 *
 	 * @param property
 	 * @return
 	 */
@@ -686,8 +699,9 @@ public class CDACommonUtils {
 			return multiplicityElement.getLower() + ".." + (-1 == multiplicityElement.getUpper()
 					? "*"
 					: multiplicityElement.getUpper());
-		} else
+		} else {
 			return null;
+		}
 	}
 
 	// copied from CDAModelUtil
@@ -728,12 +742,13 @@ public class CDACommonUtils {
 						if (property.getType() != null && property.getType().conformsTo(inherited.getType()) &&
 								(CDACommonUtils.isCDAModel(inherited) || CDACommonUtils.isDatatypeModel(inherited))) {
 							if (cdaProperty != null) {
-								if (statuses != null)
+								if (statuses != null) {
 									addStatus(
 										statuses, IStatus.WARNING, PLUGIN, 12,
 										"Found ambiguous CDA base properties for " + getUmlContext(property) + ": " +
 												getUmlContext(cdaProperty) + " and " + getUmlContext(inherited),
 										property);
+								}
 							} else {
 								cdaProperty = inherited;
 							}
@@ -742,8 +757,9 @@ public class CDACommonUtils {
 				}
 			}
 			if (cdaProperty == null && statuses != null) {
-				addStatus(statuses, IStatus.WARNING, PLUGIN, 13, "Found no CDA base property for " +
-						getUmlContext(property), property);
+				addStatus(
+					statuses, IStatus.WARNING, PLUGIN, 13, "Found no CDA base property for " + getUmlContext(property),
+					property);
 			}
 			cacheCDAProperty.put(property, cdaProperty);
 		}
@@ -762,8 +778,9 @@ public class CDACommonUtils {
 		NamedElement dataItem = getMDHTRepresentative(namedElement);
 		if (dataItem instanceof TypedElement) {
 			TypedElement typedElement = (TypedElement) dataItem;
-			if (typedElement.getType() != null)
+			if (typedElement.getType() != null) {
 				return typedElement.getType();
+			}
 		} else if (dataItem instanceof org.eclipse.uml2.uml.Class) {
 			org.eclipse.uml2.uml.Class clazz = (org.eclipse.uml2.uml.Class) dataItem;
 			for (org.eclipse.uml2.uml.Class superclazz : clazz.getSuperClasses()) {
@@ -791,12 +808,13 @@ public class CDACommonUtils {
 	 */
 	public static Property getPropertyForCodeOrClasscodeCheck(Class clazz) {
 		EObject predicate = getPredicateForCodeOrClasscodeCheck(null, clazz);
-		if (predicate instanceof Property)
+		if (predicate instanceof Property) {
 			return (Property) predicate;
-		else if (predicate instanceof CodeSystemConstraint)
+		} else if (predicate instanceof CodeSystemConstraint) {
 			return ((CodeSystemConstraint) predicate).getBase_Property();
-		else
+		} else {
 			return null;
+		}
 	}
 
 	public static TextValue getTextValue(Property property) {
@@ -857,8 +875,9 @@ public class CDACommonUtils {
 			String message, Exception e, EObject... participants) {
 		ModelStatus status = new ModelStatus(severity, plugin, errorCode, message, e, participants);
 		for (IStatus existingStatus : statuses) {
-			if (existingStatus.getMessage().equals(status.getMessage()))
+			if (existingStatus.getMessage().equals(status.getMessage())) {
 				return false;
+			}
 		}
 		statuses.add(status);
 		return true;
@@ -895,15 +914,17 @@ public class CDACommonUtils {
 			if (property.eContainer() instanceof Class && inSameModel((Class) property.eContainer(), parentClass)) {
 				Class oldClass = CDACommonUtils.cacheClassForProperty.put(property, parentClass);
 				if (oldClass != null) {
-					System.err.println(oldClass.getQualifiedName() + " and " + parentClass.getQualifiedName() +
-							" both have the property " + property.getQualifiedName());
+					System.err.println(
+						oldClass.getQualifiedName() + " and " + parentClass.getQualifiedName() +
+								" both have the property " + property.getQualifiedName());
 				}
 			}
 			if (property.getType() instanceof Class && inSameModel((Class) property.getType(), parentClass)) {
 				Class nestedClass = (Class) property.getType();
 				if (CDACommonUtils.cachePropertyForClass.containsKey(nestedClass)) {
-					System.err.println(CDACommonUtils.cachePropertyForClass.get(nestedClass).getQualifiedName() +
-							" and " + property.getQualifiedName() + " both reference " + nestedClass.getQualifiedName());
+					System.err.println(
+						CDACommonUtils.cachePropertyForClass.get(nestedClass).getQualifiedName() + " and " +
+								property.getQualifiedName() + " both reference " + nestedClass.getQualifiedName());
 					continue;
 				}
 				CDACommonUtils.cachePropertyForClass.put(nestedClass, property);
@@ -940,8 +961,9 @@ public class CDACommonUtils {
 	public static String getUmlContextDoubled(Property property) {
 		String result = getUmlContext(property);
 		Property cdaProperty = CDACommonUtils.getCDAProperty(property);
-		if (cdaProperty != null)
+		if (cdaProperty != null) {
 			return result + " (" + getUmlContext(cdaProperty) + ")";
+		}
 		return result;
 	}
 
@@ -975,24 +997,27 @@ public class CDACommonUtils {
 	/**
 	 * Finds a attribute with the given name in the given class; note that Classifier.getAttribute(name,null) cannot find inherited "private"
 	 * attributes where this methods proves useful
-	 * 
+	 *
 	 * @param cls
 	 * @param name
 	 * @return
 	 */
 	public static Property findAttribute(Class cls, String name) {
 		for (Property property : allAttributes(cls)) {
-			if (name.equals(property.getName()))
+			if (name.equals(property.getName())) {
 				return property;
+			}
 		}
 		return null;
 	}
 
-	private static void addInheritedPrivateAttributes(Class cls, Collection<Property> result, Set<String> propertyNames) {
+	private static void addInheritedPrivateAttributes(Class cls, Collection<Property> result,
+			Set<String> propertyNames) {
 		for (Generalization gen : cls.getGeneralizations()) {
 			Class general = (Class) gen.getGeneral();
-			if (general == null)
+			if (general == null) {
 				continue;
+			}
 			for (Property prop : general.getOwnedAttributes()) {
 				if (prop.getVisibility() == VisibilityKind.PRIVATE_LITERAL && propertyNames.add(prop.getName())) {
 					result.add(prop);
@@ -1010,8 +1035,9 @@ public class CDACommonUtils {
 		List<Property> result = new ArrayList<Property>();
 		Set<String> propertyNames = new HashSet<String>();
 		for (Property prop : cls.getAllAttributes()) {
-			if (propertyNames.add(prop.getName()))
+			if (propertyNames.add(prop.getName())) {
 				result.add(prop);
+			}
 		}
 		addInheritedPrivateAttributes(cls, result, propertyNames);
 		Set<Property> redefinedProperties = new HashSet<Property>();
@@ -1030,8 +1056,9 @@ public class CDACommonUtils {
 		Collection<Property> allProperties = CDACommonUtils.allAttributes(clazz);
 		Set<String> ruleNames = new HashSet<String>();
 		List<Constraint> rules = new ArrayList<Constraint>(clazz.getOwnedRules());
-		for (Constraint constraint : rules)
+		for (Constraint constraint : rules) {
 			ruleNames.add(constraint.getName());
+		}
 		for (Classifier generalClass : clazz.allParents()) {
 			if (CDACommonUtils.getCDAType(generalClass) != generalClass) {
 				for (final Constraint constraint : generalClass.getOwnedRules()) {
@@ -1066,8 +1093,9 @@ public class CDACommonUtils {
 	}
 
 	public static String getCodeSystem(CodeSystemConstraint codeSystemConstraint) {
-		if (codeSystemConstraint.getReference() != null)
+		if (codeSystemConstraint.getReference() != null) {
 			return codeSystemConstraint.getReference().getIdentifier();
+		}
 		return codeSystemConstraint.getIdentifier();
 	}
 

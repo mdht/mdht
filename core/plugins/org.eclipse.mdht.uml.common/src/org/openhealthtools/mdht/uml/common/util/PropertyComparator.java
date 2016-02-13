@@ -27,7 +27,7 @@ public class PropertyComparator implements Comparator<Property> {
 	/*
 	 * (non-Javadoc)
 	 * Compares the associations
-	 * 
+	 *
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	public int compare(Property o1, Property o2) {

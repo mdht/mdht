@@ -4,13 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Rama Ramakrishnan - initial API and implementation
  *     					 - Generated OCL for subclassed datatypes does not check nullFlavor(artf3450)
  *     Sean Muir (JKMSOFWARE)		 - Refactored to extend the underlying inline transformation
  *     Sean Muir (NEHTA)		 - Added use of Inline stereotype
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties;
 
 /**
  * @author ramakrishnanr
- * 
+ *
  */
 public class TransformCDAInlineProperties extends TransformInlinedProperties {
 
@@ -41,12 +41,12 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 	}
 
 	/*
-	 * 
+	 *
 	 * Within MDHT we support a level of simplification of associations between clinical documents and sections as well as sections and clinical
 	 * statements
 	 * As such we need to replace the path with a corresponding operation to use in the ocl
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties#getPath(org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Class,
 	 * org.eclipse.uml2.uml.Property)
 	 */
@@ -98,7 +98,7 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 	/*
 	 * If the property type is a datatype and not mandatory, add a check for null flavor
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties#getNullSafePath(org.eclipse.uml2.uml.Class,
 	 * org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Property)
 	 */
@@ -132,7 +132,7 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties#isInlineClass(org.eclipse.uml2.uml.Class)
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 	/**
 	 * TODO Move the Inline Stereotype to general purpose UML constraint profile
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties#getInlineFilter(org.eclipse.uml2.uml.Class)
 	 */
 	@Override
