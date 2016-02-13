@@ -88,8 +88,7 @@ public class ModelExtItemProvider extends ModelItemProvider implements ITableIte
 		String label = getName((Model) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Model_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

@@ -18,6 +18,9 @@ package org.openhealthtools.mdht.uml.cda.transform;
 import org.eclipse.emf.common.util.BasicEList.UnmodifiableEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
+import org.eclipse.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.eclipse.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
@@ -29,12 +32,8 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.transform.AbstractTransform;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
-import org.openhealthtools.mdht.uml.transform.ecore.TransformAbstract;
 
 public class GenMethodHelper {
 	public static final String LF = System.getProperty("line.separator");

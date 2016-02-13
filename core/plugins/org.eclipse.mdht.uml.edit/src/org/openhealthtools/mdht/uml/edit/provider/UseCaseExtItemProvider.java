@@ -60,8 +60,7 @@ public class UseCaseExtItemProvider extends UseCaseItemProvider implements ITabl
 		String label = ((UseCase) object).getName();
 		return label == null || label.length() == 0
 				? getString("_UI_UseCase_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

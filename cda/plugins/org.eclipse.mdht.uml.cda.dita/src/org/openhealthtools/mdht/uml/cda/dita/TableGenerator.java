@@ -30,6 +30,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.mdht.uml.cda.core.profile.SeverityKind;
+import org.eclipse.mdht.uml.cda.core.profile.Validation;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
+import org.eclipse.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
@@ -54,18 +60,12 @@ import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
-import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
-import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
-import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class TableGenerator {
 
@@ -124,7 +124,7 @@ public class TableGenerator {
 			for (Stereotype stereotype : umlProperty.getAppliedStereotypes()) {
 
 				EObject appliedStereotype = umlProperty.getStereotypeApplication(stereotype);
-				if (appliedStereotype instanceof org.openhealthtools.mdht.uml.cda.core.profile.Validation) {
+				if (appliedStereotype instanceof org.eclipse.mdht.uml.cda.core.profile.Validation) {
 					return (Validation) appliedStereotype;
 				}
 			}
@@ -133,7 +133,7 @@ public class TableGenerator {
 				for (Stereotype stereotype : umlProperty.getAssociation().getAppliedStereotypes()) {
 
 					EObject appliedStereotype = umlProperty.getAssociation().getStereotypeApplication(stereotype);
-					if (appliedStereotype instanceof org.openhealthtools.mdht.uml.cda.core.profile.Validation) {
+					if (appliedStereotype instanceof org.eclipse.mdht.uml.cda.core.profile.Validation) {
 						return (Validation) appliedStereotype;
 					}
 				}

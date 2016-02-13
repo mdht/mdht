@@ -24,7 +24,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package 
          uri="http://www.openhealthtools.org/mdht/schemas/term/1" 
-         class="org.openhealthtools.mdht.uml.term.core.profile.TermPackage"
+         class="org.eclipse.mdht.uml.term.core.profile.TermPackage"
          genModel="profiles/Terminology.profile.genmodel" /> 
    </extension>
 
@@ -45,4 +45,12 @@
       </mapping>
    </extension>
   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Terminology.profile -->
+      <package
+            uri="http://www.openhealthtools.org/mdht/schemas/term/1"
+            class="org.eclipse.mdht.uml.term.core.profile.TermPackage"
+            genModel="model/Terminology.profile.genmodel"/>
+   </extension>
+
 </plugin>

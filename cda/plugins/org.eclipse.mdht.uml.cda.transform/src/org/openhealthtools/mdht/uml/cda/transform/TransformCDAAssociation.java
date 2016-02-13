@@ -16,6 +16,11 @@
 package org.openhealthtools.mdht.uml.cda.transform;
 
 import org.eclipse.emf.common.util.Enumerator;
+import org.eclipse.mdht.uml.cda.core.profile.Validation;
+import org.eclipse.mdht.uml.cda.core.profile.ValidationKind;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
+import org.eclipse.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.eclipse.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -23,11 +28,6 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformAssociation;

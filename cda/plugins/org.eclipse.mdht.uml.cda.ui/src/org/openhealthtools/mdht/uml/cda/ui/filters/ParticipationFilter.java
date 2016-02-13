@@ -12,9 +12,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.filters;
 
+import org.eclipse.mdht.uml.cda.core.util.RIMModelUtil;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Element;
-import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 
 /**
  * Selects an object if it is an association applicable to <<Participation>> stereotype.

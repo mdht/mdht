@@ -43,6 +43,13 @@ import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
+import org.eclipse.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.eclipse.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.eclipse.mdht.uml.cda.core.util.RIMModelUtil;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
@@ -59,15 +66,8 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
-import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 	// command invoked on this model element

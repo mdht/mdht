@@ -11,11 +11,11 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import org.eclipse.mdht.uml.cda.core.util.CDAModelConsolidator;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.common.util.ModelConsolidator;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.transform.FlattenTransformer;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 

@@ -23,7 +23,7 @@
       <pathmap
             name="CDA_PROFILES"
             path="profiles"
-            plugin="org.openhealthtools.mdht.uml.cda.resources"/>
+            plugin="org.eclipse.mdht.uml.cda.resources"/>
    </extension>
    <extension
          point="org.eclipse.emf.ecore.uri_mapping">

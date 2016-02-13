@@ -33,6 +33,10 @@ import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.mdht.uml.validation.Diagnostic;
+import org.eclipse.mdht.uml.validation.EvaluationModeKind;
+import org.eclipse.mdht.uml.validation.SeverityKind;
+import org.eclipse.mdht.uml.validation.ValidationPackage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.FocusAdapter;
@@ -59,10 +63,6 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.common.ui.util.EnumerationLabelProvider;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
-import org.openhealthtools.mdht.uml.validation.Diagnostic;
-import org.openhealthtools.mdht.uml.validation.EvaluationModeKind;
-import org.openhealthtools.mdht.uml.validation.SeverityKind;
-import org.openhealthtools.mdht.uml.validation.ValidationPackage;
 
 /**
  * The <tt>«diagnostic»</tt> stereotype property section for UML constraints.

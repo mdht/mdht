@@ -96,8 +96,7 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 		String label = getName((org.eclipse.uml2.uml.Class) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Class_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

@@ -40,10 +40,9 @@ public class ModelFilterUtil {
 			return false;
 		} else if (isCollapsedByUser(namedElement)) {
 			return false;
-		}
-		else {
+		} else {
 			return false;
-		// return isHiddenByFilterProvider(namedElement);
+			// return isHiddenByFilterProvider(namedElement);
 		}
 	}
 

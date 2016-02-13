@@ -146,7 +146,7 @@
    
    <extension point="org.eclipse.emf.validation.validationListeners">
        <listener class="org.openhealthtools.mdht.uml.ui.navigator.internal.validation.ProblemReporter">
-           <clientContext id="org.openhealthtools.mdht.uml.validation.clientContext"/>
+           <clientContext id="org.eclipse.mdht.uml.validation.clientContext"/>
        </listener>
    </extension>
    

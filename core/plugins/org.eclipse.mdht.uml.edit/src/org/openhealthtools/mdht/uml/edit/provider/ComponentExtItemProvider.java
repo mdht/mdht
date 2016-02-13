@@ -73,8 +73,7 @@ public class ComponentExtItemProvider extends ComponentItemProvider implements I
 		String label = getName((org.eclipse.uml2.uml.Class) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Component_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

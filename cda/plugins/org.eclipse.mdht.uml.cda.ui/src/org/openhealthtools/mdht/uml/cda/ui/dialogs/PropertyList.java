@@ -16,10 +16,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 

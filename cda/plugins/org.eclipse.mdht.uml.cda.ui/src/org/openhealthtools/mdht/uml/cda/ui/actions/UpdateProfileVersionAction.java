@@ -32,6 +32,12 @@ import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.eclipse.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
+import org.eclipse.mdht.uml.term.core.util.ITermProfileConstants;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
@@ -42,14 +48,8 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.common.ui.search.ModelSearch;
-import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class UpdateProfileVersionAction implements IObjectActionDelegate {
 	private NamedElement namedElement;

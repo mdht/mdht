@@ -16,6 +16,10 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.mdht.uml.cda.core.profile.LogicalConstraint;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
+import org.eclipse.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.eclipse.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -32,10 +36,6 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
@@ -775,7 +775,7 @@ public class TransformLogicalConstraint extends TransformConstraint {
 
 	TransformSwitch transformSwitch = null;
 
-	private class TransformSwitch extends org.openhealthtools.mdht.uml.cda.core.profile.util.CDASwitch<String> {
+	private class TransformSwitch extends org.eclipse.mdht.uml.cda.core.profile.util.CDASwitch<String> {
 
 		Constraint constraint;
 
@@ -790,7 +790,7 @@ public class TransformLogicalConstraint extends TransformConstraint {
 		/*
 		 * (non-Javadoc)
 		 *
-		 * @see org.openhealthtools.mdht.uml.cda.core.profile.util.CDASwitch#caseLogicalConstraint(org.openhealthtools.mdht.uml.cda.core.profile.
+		 * @see org.eclipse.mdht.uml.cda.core.profile.util.CDASwitch#caseLogicalConstraint(org.eclipse.mdht.uml.cda.core.profile.
 		 * LogicalConstraint)
 		 */
 		@Override

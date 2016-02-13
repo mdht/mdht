@@ -421,5 +421,5 @@
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
     </profileApplication>
   </uml:Profile>
-  <Ecore:EPackage xmi:id="_-iDGwCCsEd-RxoWH9gAx2A" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="profile" nsPrefix="term" nsURI="http://www.openhealthtools.org/mdht/schemas/term/1" basePackage="org.openhealthtools.mdht.uml.term.core" prefix="Term"/>
+  <Ecore:EPackage xmi:id="_-iDGwCCsEd-RxoWH9gAx2A" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="profile" nsPrefix="term" nsURI="http://www.openhealthtools.org/mdht/schemas/term/1" basePackage="org.eclipse.mdht.uml.term.core" prefix="Term"/>
 </xmi:XMI>

@@ -29,6 +29,8 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.mdht.uml.term.core.util.ITermProfileConstants;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
@@ -37,8 +39,6 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
-import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.term.ui.internal.l10n.Messages;
 

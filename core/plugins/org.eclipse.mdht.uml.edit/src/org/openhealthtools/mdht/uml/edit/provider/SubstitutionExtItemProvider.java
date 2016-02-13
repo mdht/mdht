@@ -118,8 +118,7 @@ public class SubstitutionExtItemProvider extends SubstitutionItemProvider
 		}
 		return label.length() == 0
 				? getString("_UI_Substitution_type") //$NON-NLS-1$
-				:
-				label.toString();
+				: label.toString();
 	}
 
 	/*

@@ -71,8 +71,7 @@ public class DataTypeExtItemProvider extends DataTypeItemProvider implements ITa
 		String label = getName((DataType) object);
 		return label == null || label.length() == 0
 				? getString("_UI_DataType_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

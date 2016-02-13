@@ -67,8 +67,7 @@ public class ExtendExtItemProvider extends ExtendItemProvider implements ITableI
 
 		return label.length() == 0
 				? getString("_UI_Extend_type") //$NON-NLS-1$
-				:
-				label.toString();
+				: label.toString();
 	}
 
 	/*

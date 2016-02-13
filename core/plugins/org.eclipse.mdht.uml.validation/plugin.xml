@@ -17,7 +17,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0"
-            class="org.openhealthtools.mdht.uml.validation.ValidationPackage"
+            class="org.eclipse.mdht.uml.validation.ValidationPackage"
             genModel="model/Validation.genmodel"/>
    </extension>
 
@@ -55,7 +55,7 @@
             
       <constraintProvider
             cache="false"
-            class="org.openhealthtools.mdht.uml.validation.internal.provider.ProfileConstraintProvider">
+            class="org.eclipse.mdht.uml.validation.internal.provider.ProfileConstraintProvider">
          <package
                namespaceUri="http://www.eclipse.org/uml2/2.0.0/UML"/>
          <package
@@ -70,7 +70,7 @@
       <clientContext
             id="org.openhealthtools.mdht.uml.validation.context">
          <selector
-               class="org.openhealthtools.mdht.uml.validation.internal.provider.ProfileClientSelector" />
+               class="org.eclipse.mdht.uml.validation.internal.provider.ProfileClientSelector" />
       </clientContext>
       <binding
             context="org.openhealthtools.mdht.uml.validation.context">
@@ -78,4 +78,5 @@
                ref="org.openhealthtools.mdht.uml.validation.profile" />
       </binding>
    </extension>
+null
 </plugin>

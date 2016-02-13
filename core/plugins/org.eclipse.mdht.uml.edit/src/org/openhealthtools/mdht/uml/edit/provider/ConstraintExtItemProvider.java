@@ -75,8 +75,7 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider
 		String label = getName((Constraint) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Constraint_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

@@ -67,8 +67,7 @@ public class IncludeExtItemProvider extends IncludeItemProvider implements ITabl
 
 		return label.length() == 0
 				? getString("_UI_Include_type") //$NON-NLS-1$
-				:
-				label.toString();
+				: label.toString();
 	}
 
 	/*

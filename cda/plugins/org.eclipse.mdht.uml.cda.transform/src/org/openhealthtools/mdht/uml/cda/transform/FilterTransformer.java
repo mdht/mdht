@@ -16,10 +16,10 @@ import java.util.Collections;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelFilter;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelFilter;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 

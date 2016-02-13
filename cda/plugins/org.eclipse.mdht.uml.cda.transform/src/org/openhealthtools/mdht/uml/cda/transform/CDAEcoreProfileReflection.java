@@ -11,16 +11,16 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
+import org.eclipse.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.eclipse.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.eclipse.mdht.uml.term.core.util.ITermProfileConstants;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
-import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.transform.ecore.AbstractEcoreProfileReflection;
 import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection;
 

@@ -43,6 +43,8 @@ import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
+import org.eclipse.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
@@ -51,8 +53,6 @@ import org.eclipse.ui.console.IConsole;
 import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.uml2.uml.Class;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
 import org.osgi.framework.Bundle;
 
@@ -116,15 +116,15 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 							String requiredBundles = attributes.getValue("Require-Bundle");
 
 							/*
-							 * The org.openhealthtools.mdht.uml.cda.core bundle is required for the generate class
-							 * If the org.openhealthtools.mdht.uml.cda.core bundle is not present add to the manifest on the fly
+							 * The org.eclipse.mdht.uml.cda.core bundle is required for the generate class
+							 * If the org.eclipse.mdht.uml.cda.core bundle is not present add to the manifest on the fly
 							 */
-							if (!requiredBundles.contains("org.openhealthtools.mdht.uml.cda.core")) {
+							if (!requiredBundles.contains("org.eclipse.mdht.uml.cda.core")) {
 								neededCore = true;
 
 								attributes.putValue(
 									"Require-Bundle",
-									attributes.getValue("Require-Bundle") + ",org.openhealthtools.mdht.uml.cda.core");
+									attributes.getValue("Require-Bundle") + ",org.eclipse.mdht.uml.cda.core");
 								ByteArrayOutputStream out = new ByteArrayOutputStream();
 								projectManifest.write(out);
 								InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
@@ -146,12 +146,12 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 
 								workingCopy.setAttribute(
 									IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME,
-									"org.openhealthtools.mdht.uml.cda.core.internal.generate.Generate");
+									"org.eclipse.mdht.uml.cda.core.internal.generate.Generate");
 								String cdaGenerateArguments = String.format(
 									" \"%s\" \"%s\" \"%s\" \"%s\" ", file.getRawLocation().toOSString(),
 									selectedElement.getName(),
 									getFormattedResourceLocation("org.eclipse.uml2.uml.resources"),
-									getFormattedResourceLocation("org.openhealthtools.mdht.uml.cda.resources"));
+									getFormattedResourceLocation("org.eclipse.mdht.uml.cda.resources"));
 								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS,
 									cdaGenerateArguments);
 								workingCopy.setAttribute(
@@ -182,8 +182,7 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 							String requiredBundles = attributes.getValue("Require-Bundle");
 
 							attributes.putValue(
-								"Require-Bundle",
-								requiredBundles.replace(",org.openhealthtools.mdht.uml.cda.core", ""));
+								"Require-Bundle", requiredBundles.replace(",org.eclipse.mdht.uml.cda.core", ""));
 							ByteArrayOutputStream out = new ByteArrayOutputStream();
 							projectManifest.write(out);
 							InputStream inputStream = new ByteArrayInputStream(out.toByteArray());

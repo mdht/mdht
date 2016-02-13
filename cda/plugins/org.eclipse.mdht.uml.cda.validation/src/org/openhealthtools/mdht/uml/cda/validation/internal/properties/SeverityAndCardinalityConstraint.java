@@ -13,12 +13,12 @@ package org.openhealthtools.mdht.uml.cda.validation.internal.properties;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.validation.IValidationContext;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
+import org.eclipse.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.eclipse.mdht.uml.validation.provider.AbstractMultiConstraint;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
-import org.openhealthtools.mdht.uml.validation.provider.AbstractMultiConstraint;
 
 /**
  * @author eclipse

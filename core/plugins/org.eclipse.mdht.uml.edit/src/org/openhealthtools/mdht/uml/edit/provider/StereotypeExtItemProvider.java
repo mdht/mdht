@@ -75,8 +75,7 @@ public class StereotypeExtItemProvider extends StereotypeItemProvider
 		String label = getName((Stereotype) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Stereotype_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

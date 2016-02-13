@@ -11,9 +11,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import org.eclipse.mdht.uml.cda.core.util.TransformProvider;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.cda.core.util.TransformProvider;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 
 /**
@@ -24,7 +24,7 @@ public class TransformSupplier implements TransformProvider {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.openhealthtools.mdht.uml.cda.core.util.TransformProvider#GetTransform()
+	 * @see org.eclipse.mdht.uml.cda.core.util.TransformProvider#GetTransform()
 	 */
 	public Property GetTransform(Property property) {
 

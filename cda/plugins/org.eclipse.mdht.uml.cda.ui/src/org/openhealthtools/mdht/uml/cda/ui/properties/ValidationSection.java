@@ -30,6 +30,9 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.mdht.uml.cda.core.profile.SeverityKind;
+import org.eclipse.mdht.uml.cda.core.profile.Validation;
+import org.eclipse.mdht.uml.cda.core.profile.ValidationKind;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
@@ -52,9 +55,6 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
-import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.cda.core.profile.ValidationKind;
 import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**

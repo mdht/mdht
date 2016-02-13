@@ -71,8 +71,7 @@ public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemPro
 		String label = getName((EnumerationLiteral) object);
 		return label == null || label.length() == 0
 				? getString("_UI_EnumerationLiteral_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

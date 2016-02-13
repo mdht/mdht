@@ -85,8 +85,7 @@ public class PackageExtItemProvider extends PackageItemProvider implements ITabl
 		String label = getName((org.eclipse.uml2.uml.Package) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Package_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

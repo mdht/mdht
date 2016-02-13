@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" copyrightText="Copyright (c) 2012 Christian W. Damus and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;    Christian W. Damus - initial API and implementation"
-    modelDirectory="/org.openhealthtools.mdht.uml.validation/src" modelPluginID="org.openhealthtools.mdht.uml.validation"
-    modelName="Validation" modelPluginClass="org.openhealthtools.mdht.uml.validation.internal.ValidationPlugin"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
+    copyrightText="Copyright (c) 2012 Christian W. Damus and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;    Christian W. Damus - initial API and implementation"
+    modelDirectory="/org.eclipse.mdht.uml.validation/src" modelPluginID="org.eclipse.mdht.uml.validation"
+    modelName="Validation" modelPluginClass="org.eclipse.mdht.uml.validation.internal.ValidationPlugin"
     nonNLSMarkers="true" codeFormatting="true" booleanFlagsField="eFlags" booleanFlagsReservedBits="0"
-    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
-    runtimeVersion="2.5" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0" copyrightFields="false"
+    runtimeVersion="2.11" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel#//types"
     pluralizedGetters="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
@@ -25,12 +25,18 @@
     <details key="OPERATION_BODIES" value="IGNORE"/>
     <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
+    <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
+    <details key="NON_API_INVARIANTS" value="IGNORE"/>
+    <details key="UNTYPED_PROPERTIES" value="REPORT"/>
+    <details key="INVOCATION_DELEGATES" value="IGNORE"/>
+    <details key="VALIDATION_DELEGATES" value="IGNORE"/>
   </genAnnotations>
   <foreignModel>Validation.profile.uml</foreignModel>
   <modelPluginVariables>EMF_VALIDATION=org.eclipse.emf.validation</modelPluginVariables>
-  <genPackages xsi:type="genmodel:GenPackage" prefix="Validation" basePackage="org.openhealthtools.mdht.uml"
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Validation" basePackage="org.eclipse.mdht.uml"
       disposableProviderFactory="true" classPackageSuffix="internal.impl" ecorePackage="validation.ecore#/"
-      operationsPackage="org.openhealthtools.mdht.uml.validation.internal.operations">
+      operationsPackage="org.eclipse.mdht.uml.validation.internal.operations">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="validation.ecore#//EvaluationModeKind">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="validation.ecore#//EvaluationModeKind/batch"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="validation.ecore#//EvaluationModeKind/live"/>

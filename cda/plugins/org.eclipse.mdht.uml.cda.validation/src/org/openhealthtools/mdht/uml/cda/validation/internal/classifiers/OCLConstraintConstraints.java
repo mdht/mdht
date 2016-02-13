@@ -13,7 +13,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.validation.internal.classifiers;
 
-import static org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironment.isQueryConstraint;
+import static org.eclipse.mdht.uml.validation.ocl.EcoreProfileEnvironment.isQueryConstraint;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.Reference;
@@ -28,6 +28,8 @@ import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.service.IValidationListener;
 import org.eclipse.emf.validation.service.ModelValidationService;
 import org.eclipse.emf.validation.service.ValidationEvent;
+import org.eclipse.mdht.uml.validation.ocl.EcoreProfileEnvironmentFactory;
+import org.eclipse.mdht.uml.validation.provider.AbstractMultiConstraint;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.uml.OCL;
 import org.eclipse.uml2.uml.Classifier;
@@ -37,8 +39,6 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
-import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironmentFactory;
-import org.openhealthtools.mdht.uml.validation.provider.AbstractMultiConstraint;
 
 /**
  * Constraints on OCL constraints in CDA models

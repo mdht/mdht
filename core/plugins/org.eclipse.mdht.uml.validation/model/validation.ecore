@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="validation"
-    nsURI="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0" nsPrefix="validation">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="validation" nsURI="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0"
+    nsPrefix="validation">
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="Validation"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Diagnostic">
     <eOperations name="fail" ordered="false" lowerBound="1" eType="#//Status">
       <eParameters name="context" ordered="false" lowerBound="1" eType="#//ValidationContext"/>
@@ -15,7 +17,7 @@
     </eOperations>
     <eOperations name="getTargets" ordered="false" lowerBound="1" upperBound="-1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-    <eOperations name="targets" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="targets" ordered="false" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Boolean">
       <eParameters name="object" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>
     <eOperations name="getConstraintProvider" ordered="false" lowerBound="1" eType="#//ConstraintProvider"/>
@@ -25,10 +27,10 @@
         lowerBound="1" eType="#//EvaluationModeKind" defaultValueLiteral="batch"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" ordered="false"
         lowerBound="1" eType="#//SeverityKind" defaultValueLiteral="error"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Integer"
         defaultValueLiteral="-1" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EvaluationModeKind">
     <eLiterals name="batch"/>
@@ -46,14 +48,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Namespace" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Namespace"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="diagnosticSource" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="categoryID" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="categoryName" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentCategoryID" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bundleName" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
   </eClassifiers>
 </ecore:EPackage>

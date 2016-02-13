@@ -12,9 +12,9 @@
 package org.openhealthtools.mdht.uml.ui.properties.filters;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.mdht.uml.validation.ValidationPackage;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
-import org.openhealthtools.mdht.uml.validation.ValidationPackage;
 
 /**
  * A filter that selects <tt>«diagnostic» {@link Constraint}</tt>s.

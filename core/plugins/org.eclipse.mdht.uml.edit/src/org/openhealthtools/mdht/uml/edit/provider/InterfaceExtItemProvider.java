@@ -72,8 +72,7 @@ public class InterfaceExtItemProvider extends InterfaceItemProvider implements I
 		String label = getName((Interface) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Interface_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

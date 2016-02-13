@@ -73,8 +73,7 @@ public class PrimitiveTypeExtItemProvider extends PrimitiveTypeItemProvider
 		String label = getName((PrimitiveType) object);
 		return label == null || label.length() == 0
 				? getString("_UI_PrimitiveType_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

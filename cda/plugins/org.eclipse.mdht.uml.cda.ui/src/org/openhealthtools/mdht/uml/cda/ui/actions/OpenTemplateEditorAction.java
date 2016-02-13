@@ -13,8 +13,8 @@ package org.openhealthtools.mdht.uml.cda.ui.actions;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
 import org.eclipse.uml2.uml.Class;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.ui.dialogs.TemplateEditorViewContentProvider;
 import org.openhealthtools.mdht.uml.cda.ui.dialogs.TemplateEditorViewLabelProvider;
 import org.openhealthtools.mdht.uml.common.ui.actions.OpenSubclassEditorAction;

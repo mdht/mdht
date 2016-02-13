@@ -72,8 +72,7 @@ public class EnumerationExtItemProvider extends EnumerationItemProvider
 		String label = getName((Enumeration) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Enumeration_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

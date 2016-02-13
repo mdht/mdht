@@ -11,9 +11,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.transform.AbstractBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection;

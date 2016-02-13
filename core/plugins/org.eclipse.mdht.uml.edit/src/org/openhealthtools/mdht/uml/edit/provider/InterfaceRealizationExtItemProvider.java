@@ -69,8 +69,7 @@ public class InterfaceRealizationExtItemProvider extends InterfaceRealizationIte
 		}
 		return label.length() == 0
 				? getString("_UI_InterfaceRealization_type") //$NON-NLS-1$
-				:
-				label.toString();
+				: label.toString();
 	}
 
 	/*

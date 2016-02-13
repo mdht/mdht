@@ -13,6 +13,8 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.properties;
 
+import org.eclipse.mdht.uml.term.core.util.ITermProfileConstants;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
@@ -20,8 +22,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 /**
  * The profile properties section for CDA Validation.

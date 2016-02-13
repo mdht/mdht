@@ -70,8 +70,7 @@ public class DependencyExtItemProvider extends DependencyItemProvider
 		}
 		return label.length() == 0
 				? getString("_UI_Dependency_type") //$NON-NLS-1$
-				:
-				label.toString();
+				: label.toString();
 	}
 
 	/*

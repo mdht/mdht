@@ -818,7 +818,7 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
       <appliedProfile href="pathmap://MDHT_VALIDATION/Validation.profile.uml#profile"/>
     </profileApplication>
   </uml:Profile>
-  <Ecore:EPackage xmi:id="_Z4pFkCGLEd-qCq9YyNgB9Q" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="profile" nsPrefix="CDA" nsURI="http://www.openhealthtools.org/mdht/schemas/cda/4" basePackage="org.openhealthtools.mdht.uml.cda.core" prefix="CDA"/>
+  <Ecore:EPackage xmi:id="_Z4pFkCGLEd-qCq9YyNgB9Q" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="profile" nsPrefix="CDA" nsURI="http://www.openhealthtools.org/mdht/schemas/cda/4" basePackage="org.eclipse.mdht.uml.cda.core" prefix="CDA"/>
   <validation:ConstraintProvider xmi:id="_shHOIK56EeGx65LZSgZT-A" base_Namespace="_cxOJEIEVEd6H8o-hO3-B4Q" diagnosticSource="org.openhealthtools.mdht.cda" categoryID="org.openhealthtools.mdht.cda" categoryName="CDA Profile" parentCategoryID="" bundleName="org.openhealthtools.mdht.uml.cda.validation"/>
   <validation:Diagnostic xmi:id="_D6YlMK58EeGx65LZSgZT-A" base_Constraint="_mj6acK57EeGx65LZSgZT-A" code="1" message="OCL Constraint &quot;{0}&quot; has the following parse issue: &quot;{1}&quot;"/>
   <validation:Diagnostic xmi:id="_FEDjAK58EeGx65LZSgZT-A" base_Constraint="_9VCB0K57EeGx65LZSgZT-A" severity="warn" code="2" message="Analysis Constraint &quot;{0}&quot; is missing corresponding OCL Constraint"/>

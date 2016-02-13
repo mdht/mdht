@@ -13,13 +13,13 @@ package org.openhealthtools.mdht.uml.cda.validation.internal.classifiers;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.validation.IValidationContext;
+import org.eclipse.mdht.uml.validation.provider.AbstractMultiConstraint;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.InstanceValue;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.ValueSpecification;
-import org.openhealthtools.mdht.uml.validation.provider.AbstractMultiConstraint;
 
 /**
  * Constraints on properties of CDA templates and other classes.

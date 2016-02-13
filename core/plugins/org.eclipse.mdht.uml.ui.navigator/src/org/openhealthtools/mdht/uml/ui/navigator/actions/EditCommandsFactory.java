@@ -77,6 +77,7 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.window.Window;
+import org.eclipse.mdht.uml.validation.util.UMLDiagnostician;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IPropertyListener;
@@ -106,7 +107,6 @@ import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.l10n.Messages;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Activator;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Logger;
-import org.openhealthtools.mdht.uml.validation.util.UMLDiagnostician;
 
 /**
  *

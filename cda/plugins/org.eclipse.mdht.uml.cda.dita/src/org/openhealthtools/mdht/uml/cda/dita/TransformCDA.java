@@ -20,10 +20,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Generalization;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 
 public class TransformCDA extends TransformAbstract {

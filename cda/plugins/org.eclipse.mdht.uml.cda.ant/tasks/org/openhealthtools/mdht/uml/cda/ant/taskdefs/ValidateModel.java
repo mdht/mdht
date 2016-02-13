@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Package;
-import org.openhealthtools.mdht.uml.validation.util.UMLDiagnostician;
+import org.eclipse.mdht.uml.validation.util.UMLDiagnostician;
 
 /**
  * Validate a UML model, reporting issues to the Ant console.

@@ -12,11 +12,11 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.filters;
 
+import org.eclipse.mdht.uml.term.core.util.ITermProfileConstants;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 /**
  * Selects an object if it is a UML Property with

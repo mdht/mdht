@@ -75,8 +75,7 @@ public class GeneralizationExtItemProvider extends GeneralizationItemProvider
 		}
 		return label == null || label.length() == 0
 				? getString("_UI_Generalization_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

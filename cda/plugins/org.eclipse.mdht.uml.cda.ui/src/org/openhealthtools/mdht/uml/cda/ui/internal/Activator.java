@@ -13,9 +13,9 @@
 package org.openhealthtools.mdht.uml.cda.ui.internal;
 
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.ui.editors.MDHTPreferences;
 import org.osgi.framework.BundleContext;
 

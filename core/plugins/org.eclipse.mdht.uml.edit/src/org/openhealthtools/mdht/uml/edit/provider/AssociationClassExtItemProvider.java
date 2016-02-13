@@ -73,8 +73,7 @@ public class AssociationClassExtItemProvider extends AssociationClassItemProvide
 		String label = getName((AssociationClass) object);
 		return label == null || label.length() == 0
 				? getString("_UI_AssociationClass_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

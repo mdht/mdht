@@ -65,8 +65,7 @@ public class OperationExtItemProvider extends OperationItemProvider implements I
 		String label = getName((Operation) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Operation_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

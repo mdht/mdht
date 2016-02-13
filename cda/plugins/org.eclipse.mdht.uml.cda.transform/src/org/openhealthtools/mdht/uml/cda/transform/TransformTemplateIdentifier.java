@@ -15,6 +15,10 @@
 package org.openhealthtools.mdht.uml.cda.transform;
 
 import org.apache.commons.lang.StringUtils;
+import org.eclipse.mdht.uml.cda.core.profile.ConformsTo;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
+import org.eclipse.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.eclipse.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Generalization;
@@ -23,10 +27,6 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
-import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;

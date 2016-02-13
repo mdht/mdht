@@ -14,10 +14,10 @@ package org.openhealthtools.mdht.uml.cda.ui.filters;
 
 import java.util.List;
 
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /**

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="org.openhealthtools.mdht.uml.cda.core" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.eclipse.mdht.uml.cda.core" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appInfo>
-         <meta.schema plugin="org.openhealthtools.mdht.uml.cda.core" id="TransformProvider" name="org.openhealthtools.uml.cda.core"/>
+         <meta.schema plugin="org.eclipse.mdht.uml.cda.core" id="TransformProvider" name="org.openhealthtools.uml.cda.core"/>
       </appInfo>
       <documentation>
          An abstraction of access to the org.openhealthtools.mdht.uml.cda.transform package that provides access to transform properties.
@@ -55,7 +55,7 @@
                   
                </documentation>
                <appInfo>
-                  <meta.attribute kind="java" basedOn=":org.openhealthtools.mdht.uml.cda.core.util.TransformProvider"/>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.mdht.uml.cda.core.util.TransformProvider"/>
                </appInfo>
             </annotation>
          </attribute>
@@ -77,7 +77,7 @@
       </appInfo>
       <documentation>
          		IExtensionRegistry reg = Platform.getExtensionRegistry();
-		IExtensionPoint ep = reg.getExtensionPoint(&quot;org.openhealthtools.mdht.uml.cda.core.TransformProvider&quot;);
+		IExtensionPoint ep = reg.getExtensionPoint(&quot;org.eclipse.mdht.uml.cda.core.TransformProvider&quot;);
 		IExtension[] extensions = ep.getExtensions();
 		TransformProvider newContributor = null;
 		try {

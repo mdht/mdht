@@ -10,17 +10,17 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.notation;
 
+import org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint;
+import org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.eclipse.mdht.uml.term.core.profile.ConceptDomainConstraint;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
 import org.openhealthtools.mdht.uml.common.notation.PropertyNotationUtil;
 import org.openhealthtools.mdht.uml.common.util.MultiplicityElementUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
-import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
-import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
-import org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 /**
  * Utility class to display terminology in property notation.

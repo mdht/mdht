@@ -41,6 +41,12 @@ import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TreeSelection;
+import org.eclipse.mdht.uml.term.core.profile.BindingKind;
+import org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetCode;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
+import org.eclipse.mdht.uml.term.core.util.ITermProfileConstants;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -67,12 +73,6 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.common.ui.search.ModelSearch;
-import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
-import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 @SuppressWarnings("restriction")
 public class ImportTerminologyAction implements IObjectActionDelegate {

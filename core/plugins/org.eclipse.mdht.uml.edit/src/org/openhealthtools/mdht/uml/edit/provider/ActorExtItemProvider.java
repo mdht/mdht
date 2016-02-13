@@ -70,8 +70,7 @@ public class ActorExtItemProvider extends ActorItemProvider implements ITableIte
 		String label = getName((Actor) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Actor_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	/*

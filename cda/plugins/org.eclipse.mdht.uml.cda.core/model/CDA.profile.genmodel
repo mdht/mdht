@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
-    modelDirectory="/org.openhealthtools.mdht.uml.cda.core/src" modelPluginID="org.openhealthtools.mdht.uml.cda.core"
-    modelName="CDA" importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0"
-    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.openhealthtools.mdht.uml.term.core/model/Terminology.profile.genmodel#//profile platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel#//types platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml">
+    modelDirectory="/org.eclipse.mdht.uml.cda.core/src" modelPluginID="org.eclipse.mdht.uml.cda.core"
+    modelName="CDA" importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel#//types">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
     <details key="REDEFINING_OPERATIONS" value="REPORT"/>
@@ -28,8 +28,8 @@
     <details key="NON_API_INVARIANTS" value="IGNORE"/>
     <details key="UNTYPED_PROPERTIES" value="REPORT"/>
   </genAnnotations>
-  <foreignModel>../../org.openhealthtools.mdht.uml.cda.resources/profiles/CDA.profile.uml</foreignModel>
-  <genPackages xsi:type="genmodel:GenPackage" prefix="CDA" basePackage="org.openhealthtools.mdht.uml.cda.core"
+  <foreignModel>../../org.eclipse.mdht.uml.cda.resources/profiles/CDA.profile.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="CDA" basePackage="org.eclipse.mdht.uml.cda.core"
       resource="XML" disposableProviderFactory="true" ecorePackage="profile.ecore#/">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="profile.ecore#//SeverityKind">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//SeverityKind/ERROR"/>

@@ -126,7 +126,7 @@
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
     </profileApplication>
   </uml:Profile>
-  <Ecore:EPackage xmi:id="_LoQi4KznEeGyE7kgpqyEQQ" base_Package="profile" packageName="validation" nsPrefix="validation" nsURI="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0" basePackage="org.openhealthtools.mdht.uml"/>
+  <Ecore:EPackage xmi:id="_LoQi4KznEeGyE7kgpqyEQQ" base_Package="profile" packageName="validation" nsPrefix="validation" nsURI="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0" basePackage="org.eclipse.mdht.uml"/>
   <Ecore:EEnumLiteral xmi:id="_5RJzQKznEeGyE7kgpqyEQQ" base_EnumerationLiteral="_dFK7IKzmEeGyE7kgpqyEQQ" literal="warn"/>
   <Ecore:EEnumLiteral xmi:id="_6TgoIKznEeGyE7kgpqyEQQ" base_EnumerationLiteral="_dmpQgKzmEeGyE7kgpqyEQQ" literal="info"/>
   <Ecore:EAttribute xmi:id="_wxZGwKzpEeGyE7kgpqyEQQ" isUnsettable="true" base_Property="_xiabYKzmEeGyE7kgpqyEQQ"/>

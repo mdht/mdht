@@ -40,6 +40,8 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.mdht.uml.validation.ocl.EcoreProfileEnvironment;
+import org.eclipse.mdht.uml.validation.ocl.EcoreProfileEnvironmentFactory;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.uml.OCL;
 import org.eclipse.swt.SWT;
@@ -74,8 +76,6 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.ui.properties.internal.UmlUiEditor;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
-import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironment;
-import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironmentFactory;
 
 /**
  * The profile properties section for UML constraints.

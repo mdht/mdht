@@ -23,14 +23,14 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetCode;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class TransformValueSet extends TransformAbstract {
 

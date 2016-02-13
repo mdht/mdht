@@ -76,8 +76,7 @@ public class ProfileExtItemProvider extends ProfileItemProvider implements ITabl
 		String label = getName((Profile) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Profile_type") //$NON-NLS-1$
-				:
-				label;
+				: label;
 	}
 
 	@Override

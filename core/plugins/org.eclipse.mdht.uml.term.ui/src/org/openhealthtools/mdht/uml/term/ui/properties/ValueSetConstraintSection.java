@@ -27,6 +27,12 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.mdht.uml.term.core.profile.BindingKind;
+import org.eclipse.mdht.uml.term.core.profile.TermPackage;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
+import org.eclipse.mdht.uml.term.core.util.ITermProfileConstants;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
@@ -62,12 +68,6 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.common.ui.util.UMLUIUtil;
-import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
-import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**

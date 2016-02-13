@@ -12,9 +12,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.filters;
 
+import org.eclipse.mdht.uml.cda.core.util.CDAModelUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 
 /**
  * Selects an object if it is a UML Property that is a CDA Attribute.

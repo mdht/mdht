@@ -15,6 +15,10 @@ package org.openhealthtools.mdht.uml.term.ui.notation;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExecutableExtension;
+import org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetCode;
+import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
+import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
@@ -22,10 +26,6 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
-import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
-import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class TermAnnotationProvider implements INotationProvider, IExecutableExtension {
 
