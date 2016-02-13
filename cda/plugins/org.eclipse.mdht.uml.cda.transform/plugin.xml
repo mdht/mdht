@@ -18,7 +18,7 @@
    <extension
          point="org.eclipse.mdht.uml.cda.core.TransformProvider">
       <editor
-            transform-class="org.openhealthtools.mdht.uml.cda.transform.TransformSupplier">
+            transform-class="org.eclipse.mdht.uml.cda.transform.TransformSupplier">
       </editor>
    </extension>
 

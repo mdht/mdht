@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.mdht.uml.common.ui;singleton:=true
 Bundle-Version: 3.0.0.qualifier
-Bundle-Activator: org.openhealthtools.mdht.uml.common.ui.internal.Activator
+Bundle-Activator: org.eclipse.mdht.uml.common.ui.internal.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
@@ -19,8 +19,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.expressions
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.common.ui.actions,org.ope
- nhealthtools.mdht.uml.common.ui.dialogs,org.openhealthtools.mdht.uml.
- common.ui.filters,org.openhealthtools.mdht.uml.common.ui.handlers,org
- .openhealthtools.mdht.uml.common.ui.saveable,org.openhealthtools.mdht
- .uml.common.ui.search,org.openhealthtools.mdht.uml.common.ui.util
+Export-Package: org.eclipse.mdht.uml.common.ui.actions,
+ org.eclipse.mdht.uml.common.ui.dialogs,
+ org.eclipse.mdht.uml.common.ui.filters,
+ org.eclipse.mdht.uml.common.ui.handlers,
+ org.eclipse.mdht.uml.common.ui.saveable,
+ org.eclipse.mdht.uml.common.ui.search,
+ org.eclipse.mdht.uml.common.ui.util

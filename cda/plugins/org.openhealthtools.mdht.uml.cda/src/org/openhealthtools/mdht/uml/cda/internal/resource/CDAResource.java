@@ -12,7 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
-import org.openhealthtools.mdht.emf.runtime.resource.FleXMLResource;
+import org.eclipse.mdht.emf.runtime.resource.FleXMLResource;
 
 /**
  * <!-- begin-user-doc -->

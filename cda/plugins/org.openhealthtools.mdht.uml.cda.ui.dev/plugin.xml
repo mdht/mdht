@@ -20,7 +20,7 @@
       <objectContribution
       		adaptable="true"
             objectClass="org.eclipse.core.runtime.IAdaptable"
-            id="org.openhealthtools.mdht.uml.ui.dev.popup">
+            id="org.eclipse.mdht.uml.ui.dev.popup">
          <menu
                label="%menu_CDATools"
                path="additions"
@@ -41,28 +41,28 @@
 			
          <action
                label="%menu_RemoveConstraintAnnotations"
-               class="org.openhealthtools.mdht.uml.ui.dev.actions.RemoveConstraintAnnotationsAction"
+               class="org.eclipse.mdht.uml.ui.dev.actions.RemoveConstraintAnnotationsAction"
                menubarPath="cdatools/transform"
                enablesFor="1"
-               id="org.openhealthtools.mdht.uml.ui.dev.actions.RemoveConstraintAnnotationsAction">
+               id="org.eclipse.mdht.uml.ui.dev.actions.RemoveConstraintAnnotationsAction">
          </action>
          <action
                label="%menu_MergePropertyStereotypes"
-               class="org.openhealthtools.mdht.uml.ui.dev.actions.MergePropertyStereotypesAction"
+               class="org.eclipse.mdht.uml.ui.dev.actions.MergePropertyStereotypesAction"
                menubarPath="cdatools/transform"
                enablesFor="1"
-               id="org.openhealthtools.mdht.uml.ui.dev.actions.MergePropertyStereotypesAction">
+               id="org.eclipse.mdht.uml.ui.dev.actions.MergePropertyStereotypesAction">
          </action>
          
          	<action label="View Conformance Ids"
-				class="org.openhealthtools.mdht.uml.ui.dev.actions.ViewConformanceRuleIdsAction"
+				class="org.eclipse.mdht.uml.ui.dev.actions.ViewConformanceRuleIdsAction"
 				menubarPath="cdatools/rules" enablesFor="1"
-				id="org.openhealthtools.mdht.uml.cda.ui.actions.viewConformanceRuleIdsAction">
+				id="org.eclipse.mdht.uml.cda.ui.actions.viewConformanceRuleIdsAction">
 			</action>
           <action
-                class="org.openhealthtools.mdht.uml.ui.dev.actions.UpdateIGRulePrefixesAndVersionAction"
+                class="org.eclipse.mdht.uml.ui.dev.actions.UpdateIGRulePrefixesAndVersionAction"
                 enablesFor="1"
-                id="org.openhealthtools.mdht.uml.cda.ui.dev.actions.updateConformanceRulesAction"
+                id="org.eclipse.mdht.uml.cda.ui.dev.actions.updateConformanceRulesAction"
                 label="%updateConformanceRules.action.label"
                 menubarPath="cdatools/rules">
           </action>
@@ -77,7 +77,7 @@
                 path="cdatools/updateRulesMenu/rulesSubMenuGroup2">
           </menu>
           <action
-                class="org.openhealthtools.mdht.uml.ui.dev.actions.UpdateIGRulePrefixesAction"
+                class="org.eclipse.mdht.uml.ui.dev.actions.UpdateIGRulePrefixesAction"
                 enablesFor="1"
                 id="prefix1"
                 label="%updateIGRulePrefixesOption1.label"
@@ -89,7 +89,7 @@
                 path="cdatools/updateRulesMenu/rulesSubMenuGroup2">
           </menu>
           <action
-                class="org.openhealthtools.mdht.uml.ui.dev.actions.UpdateIGRulePrefixesAndVersionAction"
+                class="org.eclipse.mdht.uml.ui.dev.actions.UpdateIGRulePrefixesAndVersionAction"
                 enablesFor="1"
                 id="prefixAndVersion1"
                 label="%updateIGRuleAndVersionOption1.label"
@@ -101,16 +101,16 @@
                 path="cdatools/updateRulesMenu/rulesSubMenuGroup2">
           </menu>
           <action
-                class="org.openhealthtools.mdht.uml.ui.dev.actions.AddIGRulePrefixToRulesAction"
+                class="org.eclipse.mdht.uml.ui.dev.actions.AddIGRulePrefixToRulesAction"
                 enablesFor="1"
                 id="addPrefix1"
                 label="%addIGRulePrefixOption1.label"
                 menubarPath="cdatools/updateRulesMenu/addPrefixMenu/rulesSubMenuGroup2">
           </action>
           <action
-                class="org.openhealthtools.mdht.uml.ui.dev.actions.ResolveModelingShortcuts"
+                class="org.eclipse.mdht.uml.ui.dev.actions.ResolveModelingShortcuts"
                 enablesFor="1"
-                id="org.openhealthtools.mdht.uml.cda.ui.dev.action1"
+                id="org.eclipse.mdht.uml.cda.ui.dev.action1"
                 label="Resolve Modeling Shortcuts"
                 menubarPath="cdatools/transform">
           </action>

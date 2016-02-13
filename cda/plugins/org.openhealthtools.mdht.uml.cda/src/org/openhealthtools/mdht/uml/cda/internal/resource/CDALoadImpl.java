@@ -13,7 +13,7 @@ package org.openhealthtools.mdht.uml.cda.internal.resource;
 
 import org.eclipse.emf.ecore.xmi.IllegalValueException;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
-import org.openhealthtools.mdht.emf.runtime.resource.impl.FleXMLLoadImpl;
+import org.eclipse.mdht.emf.runtime.resource.impl.FleXMLLoadImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 public class CDALoadImpl extends FleXMLLoadImpl {

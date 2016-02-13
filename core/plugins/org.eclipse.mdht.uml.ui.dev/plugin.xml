@@ -31,17 +31,17 @@
          </menu>
          <action
                label="%menu_FixComments"
-               class="org.openhealthtools.mdht.uml.ui.dev.actions.FixCommentAction"
+               class="org.eclipse.mdht.uml.ui.dev.actions.FixCommentAction"
                menubarPath="hl7tools/transform"
                enablesFor="1"
-               id="org.openhealthtools.mdht.uml.ui.dev.actions.FixCommentAction">
+               id="org.eclipse.mdht.uml.ui.dev.actions.FixCommentAction">
          </action>
          <action
                label="%menu_AssignIds"
-               class="org.openhealthtools.mdht.uml.ui.dev.actions.AssignIdAction"
+               class="org.eclipse.mdht.uml.ui.dev.actions.AssignIdAction"
                menubarPath="hl7tools/transform"
                enablesFor="1"
-               id="org.openhealthtools.mdht.uml.ui.dev.actions.AssignIdAction">
+               id="org.eclipse.mdht.uml.ui.dev.actions.AssignIdAction">
          </action>
       </objectContribution>
    </extension>

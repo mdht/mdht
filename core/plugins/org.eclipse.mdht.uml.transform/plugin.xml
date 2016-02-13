@@ -17,7 +17,7 @@
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="org.openhealthtools.mdht.uml.transform.internal.preferences.PreferenceInitializer">
+            class="org.eclipse.mdht.uml.transform.internal.preferences.PreferenceInitializer">
       </initializer>
    </extension>
 </plugin>

@@ -7,5 +7,5 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport
-Export-Package: org.openhealthtools.mdht.transform.core,org.openhealth
- tools.mdht.transform.core.impl
+Export-Package: org.eclipse.mdht.transform.core,
+ org.eclipse.mdht.transform.core.impl

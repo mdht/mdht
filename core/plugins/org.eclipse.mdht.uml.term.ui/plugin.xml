@@ -15,7 +15,7 @@
 
    <extension point="org.eclipse.mdht.uml.common.notation">
       <provider profileURI="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml"
-      		 class="org.openhealthtools.mdht.uml.term.ui.notation.TermAnnotationProvider"/>
+      		 class="org.eclipse.mdht.uml.term.ui.notation.TermAnnotationProvider"/>
    </extension>
    
    <extension point="org.eclipse.ui.popupMenus">
@@ -29,7 +29,7 @@
 		 </menu>
          <action
                label="%menu.importPhinVads.label"
-               class="org.openhealthtools.mdht.uml.term.ui.actions.ImportTerminologyAction"
+               class="org.eclipse.mdht.uml.term.ui.actions.ImportTerminologyAction"
                menubarPath="org.openhealthtools.mdht.uml.term.ui.popupMenus.import/additions"
                enablesFor="1"
                id="org.openhealthtools.mdht.uml.term.ui.actions.ImportTerminologyAction">
@@ -72,7 +72,7 @@
          <action
                label="%menu.addValueSetVersion.label"
                icon="icons/full/obj16/Enumeration.gif"
-               class="org.openhealthtools.mdht.uml.term.ui.actions.AddValueSetVersionAction"
+               class="org.eclipse.mdht.uml.term.ui.actions.AddValueSetVersionAction"
                menubarPath="mdht.addTerm/classifierGroup"
                enablesFor="1"
                id="mdht.actions.addTerm.valueSetVersion">
@@ -80,7 +80,7 @@
          <action
                label="%menu.addCodeSystemVersion.label"
                icon="icons/full/obj16/Enumeration.gif"
-               class="org.openhealthtools.mdht.uml.term.ui.actions.AddCodeSystemVersionAction"
+               class="org.eclipse.mdht.uml.term.ui.actions.AddCodeSystemVersionAction"
                menubarPath="mdht.addTerm/classifierGroup"
                enablesFor="1"
                id="mdht.actions.addTerm.codeSystemVersion">
@@ -100,7 +100,7 @@
          <action
                label="%menu.addValueSetCode.label"
                icon="icons/full/obj16/EnumerationLiteral.gif"
-               class="org.openhealthtools.mdht.uml.term.ui.actions.AddValueSetCodeAction"
+               class="org.eclipse.mdht.uml.term.ui.actions.AddValueSetCodeAction"
                menubarPath="mdht.addTerm/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addTerm.valueSetCode">
@@ -110,7 +110,7 @@
    
    <!-- Properties view tab contribution -->
 	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-		<propertyTabs contributorId="org.openhealthtools.mdht.uml.ui.properties">   
+		<propertyTabs contributorId="org.eclipse.mdht.uml.ui.properties">   
 			<propertyTab
                category="domain"
                label="%terminology.propertyTabs.label"
@@ -121,43 +121,43 @@
 	</extension>
  
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
-       <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+       <propertySections contributorId="org.eclipse.mdht.uml.ui.properties">
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemVersionSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.CodeSystemVersionSection" 
 	 	     id="property.section.CodeSystemVersionSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemVersionFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.CodeSystemVersionFilter">
 	      </propertySection>
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetVersionSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.ValueSetVersionSection" 
 	 	     id="property.section.ValueSetVersionSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetVersionFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.ValueSetVersionFilter">
 	      </propertySection>
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetCodeSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.ValueSetCodeSection" 
 	 	     id="property.section.ValueSetCodeSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetCodeFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.ValueSetCodeFilter">
 	      </propertySection>
 	      
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetConstraintSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.ValueSetConstraintSection" 
 	 	     id="property.section.ValueSetConstraintSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetConstraintFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.ValueSetConstraintFilter">
 	      </propertySection>
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemConstraintSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.CodeSystemConstraintSection" 
 	 	     id="property.section.CodeSystemConstraintSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemConstraintFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.CodeSystemConstraintFilter">
 	      </propertySection>
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ConceptDomainConstraintSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.ConceptDomainConstraintSection" 
 	 	     id="property.section.ConceptDomainConstraintSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
 	      </propertySection>
 	      
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.VocabularyConstraintsSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.VocabularyConstraintsSection" 
 	 	     id="property.section.VocabularyConstraintsSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodedAttributeFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.CodedAttributeFilter">
 	      </propertySection>
 	  </propertySections>
    </extension> 
@@ -178,41 +178,41 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
        <propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemVersionSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.CodeSystemVersionSection" 
 	 	     id="property.section.CodeSystemVersionSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemVersionFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.CodeSystemVersionFilter">
 	      </propertySection>
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetVersionSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.ValueSetVersionSection" 
 	 	     id="property.section.ValueSetVersionSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetVersionFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.ValueSetVersionFilter">
 	      </propertySection>
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetCodeSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.ValueSetCodeSection" 
 	 	     id="property.section.ValueSetCodeSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetCodeFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.ValueSetCodeFilter">
 	      </propertySection>
 	      
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetConstraintSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.ValueSetConstraintSection" 
 	 	     id="property.section.ValueSetConstraintSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetConstraintFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.ValueSetConstraintFilter">
 	      </propertySection>
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemConstraintSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.CodeSystemConstraintSection" 
 	 	     id="property.section.CodeSystemConstraintSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemConstraintFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.CodeSystemConstraintFilter">
 	      </propertySection>
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ConceptDomainConstraintSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.ConceptDomainConstraintSection" 
 	 	     id="property.section.ConceptDomainConstraintSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
 	      </propertySection>
 	      
           <propertySection tab="property.tab.TerminologyPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.VocabularyConstraintsSection" 
+	 	     class="org.eclipse.mdht.uml.term.ui.properties.VocabularyConstraintsSection" 
 	 	     id="property.section.VocabularyConstraintsSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodedAttributeFilter">
+             filter="org.eclipse.mdht.uml.term.ui.filters.CodedAttributeFilter">
 	      </propertySection>
 	  </propertySections>
    </extension> 

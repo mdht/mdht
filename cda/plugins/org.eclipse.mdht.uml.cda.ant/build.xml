@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="org.openhealthtools.mdht.uml.cda.ant" default="build.jars" basedir=".">
+<project name="org.eclipse.mdht.uml.cda.ant" default="build.jars" basedir=".">
 
 	<property name="p2.build.repo" value="file:${buildDirectory}/buildRepo"/>
 	<property name="basews" value="${ws}"/>
 	<property name="baseos" value="${os}"/>
 	<property name="basearch" value="${arch}"/>
 	<property name="basenl" value="${nl}"/>
-	<property name="bundleId" value="org.openhealthtools.mdht.uml.cda.ant"/>
+	<property name="bundleId" value="org.eclipse.mdht.uml.cda.ant"/>
 	<property name="bundleVersion" value="2.5.16.201601080917"/>
 	<property name="p2.publishonerror" value="false"/>
 
@@ -73,7 +73,7 @@
 
 	</target>
 
-	<target name="build.update.jar" depends="init" description="Build the plug-in: org.openhealthtools.mdht.uml.cda.ant for an update site.">
+	<target name="build.update.jar" depends="init" description="Build the plug-in: org.eclipse.mdht.uml.cda.ant for an update site.">
 		<delete dir="${temp.folder}"/>
 		<mkdir dir="${temp.folder}"/>
 		<antcall target="build.jars"/>
@@ -114,7 +114,7 @@
 			<patternset includes="library.jar"/>
 		</unzip>
 	</target>
-	<target name="ant_tasks/cdatools.ant.tasks.jar" depends="init,ant_tasks/cdatools.ant.tasks.jar.nestedJars" unless="ant_tasks/cdatools.ant.tasks.jar" description="Create jar: org.openhealthtools.mdht.uml.cda.ant ant_tasks/cdatools.ant.tasks.jar.">
+	<target name="ant_tasks/cdatools.ant.tasks.jar" depends="init,ant_tasks/cdatools.ant.tasks.jar.nestedJars" unless="ant_tasks/cdatools.ant.tasks.jar" description="Create jar: org.eclipse.mdht.uml.cda.ant ant_tasks/cdatools.ant.tasks.jar.">
 		<delete dir="${temp.folder}/ant_tasks/cdatools.ant.tasks.jar.bin"/>
 		<mkdir dir="${temp.folder}/ant_tasks/cdatools.ant.tasks.jar.bin"/>
 		<path id="ant_tasks/cdatools.ant.tasks.jar.classpath">
@@ -173,8 +173,8 @@
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/com.ibm.icu_50.1.1.v201304230130.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.edit_2.9.0.v20140203-1126.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.ecore.change_2.9.0.v20131212-0545.jar"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.common/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.common/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/com.google.guava_12.0.0.v201212092141.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.mapping_2.7.0.v20140203-1126.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.apache.commons.lang_2.6.0.v201205030909.jar"/>
@@ -204,18 +204,18 @@
 			<pathelement path="../org.openhealthtools.mdht.uml.hl7.vocab/@dot"/>
 			<pathelement path="../org.openhealthtools.mdht.uml.hl7.rim/bin/"/>
 			<pathelement path="../org.openhealthtools.mdht.uml.hl7.rim/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.emf.runtime/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.emf.runtime/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.transform/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.transform/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.transform.core/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.transform.core/@dot"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.transform/bin/"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.transform/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.term.transform/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.term.transform/@dot"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.dita/bin/"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.dita/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.emf.runtime/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.emf.runtime/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.transform/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.transform/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.transform.core/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.transform.core/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.transform/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.transform/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.term.transform/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.term.transform/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.dita/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.dita/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.apache.commons.io_2.0.1.v201105210651.jar"/>
 			<pathelement path="../../../core/plugins/org.dita.dost/bin/"/>
 			<pathelement path="../../../core/plugins/org.dita.dost/@dot"/>
@@ -319,8 +319,8 @@
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.core.externaltools_1.0.200.v20130402-1741.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.compare_3.5.401.v20130709-1308.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.ui/bin/"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.ui/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.ui/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.ui/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.transaction_1.4.0.201306111400.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.workspace_1.5.1.201306111400.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.gmf.runtime.common.core_1.7.0.201306111432.jar"/>
@@ -349,25 +349,25 @@
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.gmf.runtime.notation_1.7.0.201306101425.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.gmf.runtime.diagram.core_1.7.0.201306111432.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.gmf.runtime.draw2d.ui.render_1.7.0.201306111432.jar"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.common.ui/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.common.ui/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common.ui/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common.ui/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.uml2.uml.edit_4.1.2.v20140202-2055.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.uml2.common.edit_1.6.0.v20140202-2055.jar"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.edit/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.edit/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui.properties/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui.properties/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui.navigator/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui.navigator/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.edit/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.edit/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.properties/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.properties/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.navigator/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.navigator/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.ui.navigator_3.5.300.v20130517-0139.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.workspace.ui_1.3.0.201306111400.jar"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.term.ui/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.term.ui/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.term.ui/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.term.ui/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.codegen_2.9.0.v20140203-1126.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.codegen.ecore_2.9.1.v20140203-1126.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.uml2.codegen.ecore_1.9.100.v20140202-2055.jar"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.uml2.uml.ecore.importer_2.7.0.v20140202-2055.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.importer_2.8.1.v20140203-1126.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.converter_2.6.0.v20140203-1126.jar"/>
@@ -501,7 +501,7 @@
 			<patternset includes="library.jar"/>
 		</unzip>
 	</target>
-	<target name="@dot" depends="init,@dot.nestedJars" unless="@dot" description="Create jar: org.openhealthtools.mdht.uml.cda.ant @dot.">
+	<target name="@dot" depends="init,@dot.nestedJars" unless="@dot" description="Create jar: org.eclipse.mdht.uml.cda.ant @dot.">
 		<delete dir="${build.result.folder}/@dot"/>
 		<mkdir dir="${build.result.folder}/@dot"/>
 		<path id="@dot.classpath">
@@ -560,8 +560,8 @@
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/com.ibm.icu_50.1.1.v201304230130.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.edit_2.9.0.v20140203-1126.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.ecore.change_2.9.0.v20131212-0545.jar"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.common/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.common/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/com.google.guava_12.0.0.v201212092141.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.mapping_2.7.0.v20140203-1126.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.apache.commons.lang_2.6.0.v201205030909.jar"/>
@@ -591,18 +591,18 @@
 			<pathelement path="../org.openhealthtools.mdht.uml.hl7.vocab/@dot"/>
 			<pathelement path="../org.openhealthtools.mdht.uml.hl7.rim/bin/"/>
 			<pathelement path="../org.openhealthtools.mdht.uml.hl7.rim/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.emf.runtime/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.emf.runtime/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.transform/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.transform/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.transform.core/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.transform.core/@dot"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.transform/bin/"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.transform/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.term.transform/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.term.transform/@dot"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.dita/bin/"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.dita/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.emf.runtime/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.emf.runtime/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.transform/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.transform/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.transform.core/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.transform.core/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.transform/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.transform/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.term.transform/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.term.transform/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.dita/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.dita/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.apache.commons.io_2.0.1.v201105210651.jar"/>
 			<pathelement path="../../../core/plugins/org.dita.dost/bin/"/>
 			<pathelement path="../../../core/plugins/org.dita.dost/@dot"/>
@@ -706,8 +706,8 @@
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.core.externaltools_1.0.200.v20130402-1741.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.compare_3.5.401.v20130709-1308.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.ui/bin/"/>
-			<pathelement path="../org.openhealthtools.mdht.uml.cda.ui/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.ui/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.ui/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.transaction_1.4.0.201306111400.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.workspace_1.5.1.201306111400.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.gmf.runtime.common.core_1.7.0.201306111432.jar"/>
@@ -736,25 +736,25 @@
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.gmf.runtime.notation_1.7.0.201306101425.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.gmf.runtime.diagram.core_1.7.0.201306111432.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.gmf.runtime.draw2d.ui.render_1.7.0.201306111432.jar"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.common.ui/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.common.ui/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common.ui/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common.ui/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.uml2.uml.edit_4.1.2.v20140202-2055.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.uml2.common.edit_1.6.0.v20140202-2055.jar"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.edit/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.edit/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui.properties/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui.properties/@dot"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui.navigator/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui.navigator/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.edit/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.edit/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.properties/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.properties/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.navigator/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.navigator/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.ui.navigator_3.5.300.v20130517-0139.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.workspace.ui_1.3.0.201306111400.jar"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.term.ui/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.term.ui/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.term.ui/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.term.ui/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.codegen_2.9.0.v20140203-1126.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.codegen.ecore_2.9.1.v20140203-1126.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.uml2.codegen.ecore_1.9.100.v20140202-2055.jar"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui/bin/"/>
-			<pathelement path="../../../core/plugins/org.openhealthtools.mdht.uml.ui/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui/@dot"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.uml2.uml.ecore.importer_2.7.0.v20140202-2055.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.importer_2.8.1.v20140203-1126.jar"/>
 			<pathelement path="../../../../../../../../Applications/mdhtStable/plugins/org.eclipse.emf.converter_2.6.0.v20140203-1126.jar"/>
@@ -857,7 +857,7 @@
 		</copy>
 	</target>
 
-	<target name="build.jars" depends="init" description="Compile classes and build nested jars for the plug-in: org.openhealthtools.mdht.uml.cda.ant.">
+	<target name="build.jars" depends="init" description="Compile classes and build nested jars for the plug-in: org.eclipse.mdht.uml.cda.ant.">
 		<delete file="${compilation.problem.marker}" quiet="true"/>
 		<available property="ant_tasks/cdatools.ant.tasks.jar" file="${build.result.folder}/ant_tasks/cdatools.ant.tasks.jar"/>
 		<antcall target="ant_tasks/cdatools.ant.tasks.jar"/>
@@ -870,43 +870,43 @@
 		<eclipse.logCompileError log="${compilation.prereq.log}" bundle="org.openhealthtools.mdht.uml.cda.ant_2.5.16.201601080917">
 			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.dita.dost/compilation.problem"/>
 			<include name="${pluginTemp}/org.dita.dost_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.emf.runtime/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.emf.runtime/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.emf.runtime_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.transform.core/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.transform.core/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.transform.core_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.uml.common/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.common/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.common_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.uml.common.ui/compilation.problem"/>
-			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.common.ui_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.uml.edit/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.common.ui/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.common.ui_2.5.16.201601080917/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.edit/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.edit_2.5.16.201601080917/compilation.problem"/>
 			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.term.core/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.term.core_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.uml.term.transform/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.term.transform/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.term.transform_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.uml.term.ui/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.term.ui/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.term.ui_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.uml.transform/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.transform/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.transform_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.uml.ui/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.ui/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.ui_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.uml.ui.navigator/compilation.problem"/>
-			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.ui.navigator_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.openhealthtools.mdht.uml.ui.properties/compilation.problem"/>
-			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.ui.properties_2.5.16.201601080917/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.ui.navigator/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.ui.navigator_2.5.16.201601080917/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.ui.properties/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.ui.properties_2.5.16.201601080917/compilation.problem"/>
 			<include name="/Users/seanmuir/git/mdht/mdht/core/plugins/org.eclipse.mdht.uml.validation/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.validation_2.5.16.201601080917/compilation.problem"/>
 			<include name="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.openhealthtools.mdht.uml.cda/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.cda_2.5.16.201601080917/compilation.problem"/>
 			<include name="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.eclipse.mdht.uml.cda.core/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.cda.core_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.openhealthtools.mdht.uml.cda.dita/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.eclipse.mdht.uml.cda.dita/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.cda.dita_2.5.16.201601080917/compilation.problem"/>
 			<include name="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.eclipse.mdht.uml.cda.resources/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.cda.resources_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.openhealthtools.mdht.uml.cda.transform/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.eclipse.mdht.uml.cda.transform/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.cda.transform_2.5.16.201601080917/compilation.problem"/>
-			<include name="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.openhealthtools.mdht.uml.cda.ui/compilation.problem"/>
+			<include name="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.eclipse.mdht.uml.cda.ui/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.cda.ui_2.5.16.201601080917/compilation.problem"/>
 			<include name="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.openhealthtools.mdht.uml.hl7.datatypes/compilation.problem"/>
 			<include name="${pluginTemp}/org.openhealthtools.mdht.uml.hl7.datatypes_2.5.16.201601080917/compilation.problem"/>
@@ -1021,7 +1021,7 @@
 		</copy>
 	</target>
 
-	<target name="clean" depends="init" description="Clean the plug-in: org.openhealthtools.mdht.uml.cda.ant of all the zips, jars and logs created.">
+	<target name="clean" depends="init" description="Clean the plug-in: org.eclipse.mdht.uml.cda.ant of all the zips, jars and logs created.">
 		<delete dir="${build.result.folder}/@dot"/>
 		<delete file="${build.result.folder}/src.zip"/>
 		<delete file="${build.result.folder}/ant_tasks/cdatools.ant.tasks.jar"/>
@@ -1033,11 +1033,11 @@
 	</target>
 
 	<target name="refresh" depends="init" if="eclipse.running" description="Refresh this folder.">
-		<eclipse.convertPath fileSystemPath="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.openhealthtools.mdht.uml.cda.ant" property="resourcePath"/>
+		<eclipse.convertPath fileSystemPath="/Users/seanmuir/git/mdht/mdht/cda/plugins/org.eclipse.mdht.uml.cda.ant" property="resourcePath"/>
 		<eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
 	</target>
 
-	<target name="zip.plugin" depends="init" description="Create a zip containing all the elements for the plug-in: org.openhealthtools.mdht.uml.cda.ant.">
+	<target name="zip.plugin" depends="init" description="Create a zip containing all the elements for the plug-in: org.eclipse.mdht.uml.cda.ant.">
 		<delete dir="${temp.folder}"/>
 		<mkdir dir="${temp.folder}"/>
 		<antcall target="build.jars"/>

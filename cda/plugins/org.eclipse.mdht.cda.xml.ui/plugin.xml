@@ -20,14 +20,14 @@
 
 	<extension point="org.eclipse.core.contenttype.contentTypes">
 		<content-type base-type="org.eclipse.core.runtime.xml"
-			describer="org.openhealthtools.mdht.cda.xml.CDAContentHandler"
+			describer="org.eclipse.mdht.cda.xml.CDAContentHandler"
 			file-extensions="xml" id="org.openhealthtools.mdht.cda" name="Clinical Document Architecture (CDA)"
 			priority="normal">
 		</content-type>
 	</extension>
 
 	<extension id="xml" name="CDA Validator" point="org.eclipse.wst.validation.validatorV2">
-		<validator build="false" class="org.openhealthtools.mdht.cda.xml.Validator" markerId="org.openhealthtools.mdht.cda.xml.validationMarker" manual="true">
+		<validator build="false" class="org.eclipse.mdht.cda.xml.Validator" markerId="org.openhealthtools.mdht.cda.xml.validationMarker" manual="true">
 			<include>
 				<rules>
 					<contentType id="org.openhealthtools.mdht.cda"></contentType>

@@ -17,4 +17,4 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.mdht.uml.common,
  org.eclipse.mdht.uml.common.ui,
  org.eclipse.mdht.uml.transform
-Export-Package: org.openhealthtools.mdht.uml.transform.ui.atl
+Export-Package: org.eclipse.mdht.uml.transform.ui.atl

@@ -27,14 +27,14 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.mapping.ecore2xml.Ecore2XMLPackage;
 import org.eclipse.mdht.uml.cda.core.profile.CDAPackage;
 import org.eclipse.mdht.uml.cda.core.util.InstanceGenerator;
+import org.eclipse.mdht.uml.common.UmlPlugin;
+import org.eclipse.mdht.uml.common.util.UMLUtil;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.UMLPlugin;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.openhealthtools.mdht.uml.common.UmlPlugin;
-import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class Generate {
 

@@ -15,6 +15,7 @@ import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.mdht.uml.common.util.CompareResultVisitor;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -27,7 +28,6 @@ import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.common.util.CompareResultVisitor;
 
 /**
  * @author fhim
@@ -363,7 +363,7 @@ public class DitaCompare implements CompareResultVisitor {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.openhealthtools.mdht.uml.common.util.CompareResultInterface#startElement(org.eclipse.uml2.uml.NamedElement)
+	 * @see org.eclipse.mdht.uml.common.util.CompareResultInterface#startElement(org.eclipse.uml2.uml.NamedElement)
 	 */
 	public void startElement(NamedElement element) {
 		if (monitor != null) {
@@ -375,7 +375,7 @@ public class DitaCompare implements CompareResultVisitor {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.openhealthtools.mdht.uml.common.util.CompareResultInterface#addedElement(org.eclipse.uml2.uml.NamedElement,
+	 * @see org.eclipse.mdht.uml.common.util.CompareResultInterface#addedElement(org.eclipse.uml2.uml.NamedElement,
 	 * org.eclipse.uml2.uml.Element)
 	 */
 	public void addedElement(NamedElement owner, Element element) {
@@ -402,7 +402,7 @@ public class DitaCompare implements CompareResultVisitor {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.openhealthtools.mdht.uml.common.util.CompareResultInterface#deletedElement(org.eclipse.uml2.uml.NamedElement,
+	 * @see org.eclipse.mdht.uml.common.util.CompareResultInterface#deletedElement(org.eclipse.uml2.uml.NamedElement,
 	 * org.eclipse.uml2.uml.Element)
 	 */
 	public void deletedElement(NamedElement owner, Element element) {
@@ -428,7 +428,7 @@ public class DitaCompare implements CompareResultVisitor {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.openhealthtools.mdht.uml.common.util.CompareResultInterface#changedElement(org.eclipse.uml2.uml.NamedElement,
+	 * @see org.eclipse.mdht.uml.common.util.CompareResultInterface#changedElement(org.eclipse.uml2.uml.NamedElement,
 	 * org.eclipse.uml2.uml.Element)
 	 */
 	public void changedElement(NamedElement owner, Element origialElement, Element upatedElement) {
@@ -456,7 +456,7 @@ public class DitaCompare implements CompareResultVisitor {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.openhealthtools.mdht.uml.common.util.CompareResultInterface#endElement(org.eclipse.uml2.uml.NamedElement)
+	 * @see org.eclipse.mdht.uml.common.util.CompareResultInterface#endElement(org.eclipse.uml2.uml.NamedElement)
 	 */
 	public void endElement(NamedElement element) {
 

@@ -3,7 +3,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.mdht.uml.ui.properties;singleton:=true
 Bundle-Version: 3.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.openhealthtools.mdht.uml.ui.properties.internal.UML2UIPlugin
+Bundle-Activator: org.eclipse.mdht.uml.ui.properties.internal.UML2UIPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
@@ -17,8 +17,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.mdht.uml.ui.navigator,
  org.eclipse.mdht.uml.validation
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.ui.properties.filters,org
- .openhealthtools.mdht.uml.ui.properties.internal.sections,org.openhea
- lthtools.mdht.uml.ui.properties.sections
+Export-Package: org.eclipse.mdht.uml.ui.properties.filters,
+ org.eclipse.mdht.uml.ui.properties.internal.sections,
+ org.eclipse.mdht.uml.ui.properties.sections
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

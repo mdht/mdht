@@ -13,8 +13,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.mapping.ecore2xml;bundle-version="2.5.0",
  org.apache.commons.lang;visibility:=reexport,
  org.eclipse.core.resources
-Export-Package: org.openhealthtools.mdht.uml.common,org.openhealthtool
- s.mdht.uml.common.modelfilter,org.openhealthtools.mdht.uml.common.not
- ation,org.openhealthtools.mdht.uml.common.search,org.openhealthtools.
- mdht.uml.common.util
+Export-Package: org.eclipse.mdht.uml.common,
+ org.eclipse.mdht.uml.common.modelfilter,
+ org.eclipse.mdht.uml.common.notation,
+ org.eclipse.mdht.uml.common.search,
+ org.eclipse.mdht.uml.common.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.uml.cda.internal.resource;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.xmi.XMLHelper;
-import org.openhealthtools.mdht.emf.runtime.resource.DOMElementHandler;
+import org.eclipse.mdht.emf.runtime.resource.DOMElementHandler;
 import org.w3c.dom.Element;
 
 /**

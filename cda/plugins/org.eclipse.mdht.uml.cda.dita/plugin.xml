@@ -18,13 +18,13 @@
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="org.openhealthtools.mdht.uml.cda.dita.internal.preferences.PreferenceInitializer">
+            class="org.eclipse.mdht.uml.cda.dita.internal.preferences.PreferenceInitializer">
       </initializer>
    </extension>
    <extension
          point="org.eclipse.mdht.uml.ui.properties.ConstraintEditor">
       <editor
-            component="org.openhealthtools.mdht.uml.cda.dita.internal.TextEditor"
+            component="org.eclipse.mdht.uml.cda.dita.internal.TextEditor"
             language="Analysis">
       </editor>
    </extension>

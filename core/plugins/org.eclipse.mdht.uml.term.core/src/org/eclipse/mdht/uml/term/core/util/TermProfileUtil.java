@@ -60,8 +60,7 @@ public class TermProfileUtil {
 	 * Check all containing packages for applied profile.
 	 */
 	public static Profile getAppliedProfile(Element element) {
-		return org.openhealthtools.mdht.uml.common.util.UMLUtil.getAppliedProfile(
-			TermResource.TERM_PROFILE_URI, element);
+		return org.eclipse.mdht.uml.common.util.UMLUtil.getAppliedProfile(TermResource.TERM_PROFILE_URI, element);
 
 	}
 

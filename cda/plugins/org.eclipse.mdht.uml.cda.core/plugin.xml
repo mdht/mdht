@@ -17,7 +17,7 @@
    <extension-point id="TransformProvider" name="org.openhealthtools.uml.cda.core" schema="schema/TransformProvider.exsd"/>
    <extension point="org.eclipse.mdht.uml.common.modelFilter">
       <provider profileURI="pathmap://CDA_PROFILES/cda.profile.uml"
-      		 class="org.openhealthtools.mdht.uml.cda.core.modelfilter.CDAModelFilterProvider"/>
+      		 class="org.eclipse.mdht.uml.cda.core.modelfilter.CDAModelFilterProvider"/>
    </extension>
    
    <extension point="org.eclipse.uml2.uml.generated_package">

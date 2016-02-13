@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.mdht.uml.common.util.ModelConsolidator;
+import org.eclipse.mdht.uml.common.util.UMLUtil;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
 import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
@@ -29,8 +31,6 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
-import org.openhealthtools.mdht.uml.common.util.ModelConsolidator;
-import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class CDAModelConsolidator extends ModelConsolidator {
 

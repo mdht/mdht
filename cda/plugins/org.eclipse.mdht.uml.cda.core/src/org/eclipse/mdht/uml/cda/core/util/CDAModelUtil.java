@@ -54,6 +54,9 @@ import org.eclipse.mdht.uml.cda.core.profile.LogicalOperator;
 import org.eclipse.mdht.uml.cda.core.profile.SeverityKind;
 import org.eclipse.mdht.uml.cda.core.profile.Validation;
 import org.eclipse.mdht.uml.cda.core.profile.ValidationKind;
+import org.eclipse.mdht.uml.common.util.NamedElementUtil;
+import org.eclipse.mdht.uml.common.util.PropertyList;
+import org.eclipse.mdht.uml.common.util.UMLUtil;
 import org.eclipse.mdht.uml.term.core.profile.BindingKind;
 import org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion;
@@ -79,9 +82,6 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
-import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
-import org.openhealthtools.mdht.uml.common.util.PropertyList;
-import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class CDAModelUtil {
 
@@ -198,7 +198,7 @@ public class CDAModelUtil {
 		if (element != null) {
 			Package neareastPackage = element.getNearestPackage();
 			if (neareastPackage != null) {
-				Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(neareastPackage);
+				Package topPackage = org.eclipse.mdht.uml.common.util.UMLUtil.getTopPackage(neareastPackage);
 				return CDA_PACKAGE_NAME.equals((topPackage != null)
 						? topPackage.getName()
 						: "");
@@ -839,7 +839,7 @@ public class CDAModelUtil {
 			if (eReferenceStereoetype != null) {
 				String nameSpace = (String) cdaBaseProperty.getValue(eReferenceStereoetype, CDAModelUtil.XMLNAMESPACE);
 				if (!StringUtils.isEmpty(nameSpace)) {
-					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(
+					Package topPackage = org.eclipse.mdht.uml.common.util.UMLUtil.getTopPackage(
 						cdaBaseProperty.getNearestPackage());
 					Stereotype ePackageStereoetype = topPackage.getApplicableStereotype(CDAModelUtil.EPACKAGE);
 					if (ePackageStereoetype != null) {

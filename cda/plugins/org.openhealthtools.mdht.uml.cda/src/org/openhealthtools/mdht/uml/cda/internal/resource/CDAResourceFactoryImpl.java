@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.XMLSave;
-import org.openhealthtools.mdht.emf.runtime.resource.DOMElementHandler;
-import org.openhealthtools.mdht.emf.runtime.resource.FleXMLResource;
-import org.openhealthtools.mdht.emf.runtime.resource.XSITypeHandler;
-import org.openhealthtools.mdht.emf.runtime.resource.XSITypeProvider;
-import org.openhealthtools.mdht.emf.runtime.resource.impl.FleXMLResourceFactoryImpl;
+import org.eclipse.mdht.emf.runtime.resource.DOMElementHandler;
+import org.eclipse.mdht.emf.runtime.resource.FleXMLResource;
+import org.eclipse.mdht.emf.runtime.resource.XSITypeHandler;
+import org.eclipse.mdht.emf.runtime.resource.XSITypeProvider;
+import org.eclipse.mdht.emf.runtime.resource.impl.FleXMLResourceFactoryImpl;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 

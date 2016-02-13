@@ -1,4 +1,4 @@
-package org.openhealthtools.mdht.uml.cda.ui.util;
+package org.eclipse.mdht.uml.cda.ui.util;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;

@@ -17,7 +17,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.openhealthtools.org/mdht/uml/hl7/rim"
-            class="org.openhealthtools.mdht.uml.hl7.rim.RIMPackage"
+            class="org.eclipse.mdht.uml.hl7.rim.RIMPackage"
             genModel="model/rim.genmodel"/>
    </extension>
    

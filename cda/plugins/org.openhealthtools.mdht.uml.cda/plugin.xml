@@ -19,14 +19,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="urn:hl7-org:v3"
-            class="org.openhealthtools.mdht.uml.cda.CDAPackage"
+            class="org.eclipse.mdht.uml.cda.CDAPackage"
             genModel="model/cda.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <parser
             type="cda"
-            class="org.openhealthtools.mdht.uml.cda.internal.resource.CDAResourceFactoryImpl"/>
+            class="org.eclipse.mdht.uml.cda.internal.resource.CDAResourceFactoryImpl"/>
    </extension>
    
      <extension point="org.eclipse.emf.ecore.uri_mapping">

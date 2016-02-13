@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
-import org.openhealthtools.mdht.emf.runtime.resource.XSITypeProvider;
+import org.eclipse.mdht.emf.runtime.resource.XSITypeProvider;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.w3c.dom.Element;

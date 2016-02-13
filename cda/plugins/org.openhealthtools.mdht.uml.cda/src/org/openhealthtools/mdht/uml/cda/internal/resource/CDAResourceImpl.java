@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.uml.cda.internal.resource;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLSaveImpl;
-import org.openhealthtools.mdht.emf.runtime.resource.impl.FleXMLResourceImpl;
+import org.eclipse.mdht.emf.runtime.resource.impl.FleXMLResourceImpl;
 
 /**
  * <!-- begin-user-doc -->

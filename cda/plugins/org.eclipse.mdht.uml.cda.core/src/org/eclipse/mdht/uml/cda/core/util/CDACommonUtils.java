@@ -38,6 +38,11 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.mdht.uml.cda.core.profile.Inline;
 import org.eclipse.mdht.uml.cda.core.profile.LogicalConstraint;
 import org.eclipse.mdht.uml.cda.core.profile.TextValue;
+import org.eclipse.mdht.uml.common.UmlPlugin;
+import org.eclipse.mdht.uml.common.util.NamedElementComparator;
+import org.eclipse.mdht.uml.common.util.NamedElementUtil;
+import org.eclipse.mdht.uml.common.util.PropertyComparator;
+import org.eclipse.mdht.uml.common.util.PropertyList;
 import org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetCode;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
@@ -60,11 +65,6 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
 import org.eclipse.uml2.uml.VisibilityKind;
-import org.openhealthtools.mdht.uml.common.UmlPlugin;
-import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
-import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
-import org.openhealthtools.mdht.uml.common.util.PropertyComparator;
-import org.openhealthtools.mdht.uml.common.util.PropertyList;
 
 /**
  * Various utility methods around CDA

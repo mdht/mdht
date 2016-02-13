@@ -22,7 +22,7 @@
 
   <extension point="org.eclipse.ant.core.antTasks">
     <antTask library="ant_tasks/cdatools.ant.tasks.jar" name="cdatools" headless="true" 
-    class="org.openhealthtools.mdht.uml.cda.ant.taskdefs.CDAModelingTask" />
+    class="org.eclipse.mdht.uml.cda.ant.taskdefs.CDAModelingTask" />
   </extension>
   
 </plugin>

@@ -14,7 +14,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.mdht.uml.cda.transform,
  org.eclipse.mdht.uml.cda.dita,
  org.eclipse.mdht.uml.validation
-Bundle-Activator: org.openhealthtools.mdht.uml.cda.ant.CDAAntPlugin
+Bundle-Activator: org.eclipse.mdht.uml.cda.ant.CDAAntPlugin
 Bundle-Vendor: %providerName
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

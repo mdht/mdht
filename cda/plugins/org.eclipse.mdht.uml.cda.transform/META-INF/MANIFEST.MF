@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.mdht.uml.cda.transform;singleton:=true
 Bundle-Version: 3.0.0.qualifier
-Bundle-Activator: org.openhealthtools.mdht.uml.cda.transform.internal.Activator
+Bundle-Activator: org.eclipse.mdht.uml.cda.transform.internal.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.mdht.uml.transform;visibility:=reexport,
  org.eclipse.mdht.uml.term.transform
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.cda.transform
+Export-Package: org.eclipse.mdht.uml.cda.transform
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 

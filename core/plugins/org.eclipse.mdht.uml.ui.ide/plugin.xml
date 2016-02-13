@@ -14,7 +14,7 @@
 <plugin>
 
 	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-		<propertyTabs contributorId="org.openhealthtools.mdht.uml.ui.properties">   
+		<propertyTabs contributorId="org.eclipse.mdht.uml.ui.properties">   
 			<propertyTab
                category="domain"
                label="%MDHT.propertyTabs.label"

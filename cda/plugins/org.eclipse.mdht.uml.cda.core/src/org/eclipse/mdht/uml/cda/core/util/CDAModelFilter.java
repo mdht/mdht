@@ -17,6 +17,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.mdht.uml.cda.core.profile.SeverityKind;
 import org.eclipse.mdht.uml.cda.core.profile.Validation;
+import org.eclipse.mdht.uml.common.util.ModelFilter;
+import org.eclipse.mdht.uml.common.util.UMLUtil;
 import org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
@@ -30,8 +32,6 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.openhealthtools.mdht.uml.common.util.ModelFilter;
-import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /**
  * @author dcarlson

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="org.openhealthtools.mdht.uml.common" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.eclipse.mdht.uml.common" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appInfo>
-         <meta.schema plugin="org.openhealthtools.mdht.uml.common" id="notation" name="org.openhealthtools.mdht.uml.common"/>
+         <meta.schema plugin="org.eclipse.mdht.uml.common" id="notation" name="org.eclipse.mdht.uml.common"/>
       </appInfo>
       <documentation>
          [Enter description of this extension point.]

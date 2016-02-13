@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.uml.cda.internal.resource;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.openhealthtools.mdht.emf.runtime.resource.DOMElementHandler;
+import org.eclipse.mdht.emf.runtime.resource.DOMElementHandler;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.w3c.dom.Element;
 

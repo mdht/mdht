@@ -18,18 +18,18 @@
    <extension point="org.eclipse.core.runtime.adapters">
 	  <factory
 	        adaptableType="org.eclipse.core.resources.IResource"
-	        class="org.openhealthtools.mdht.uml.ui.navigator.internal.ResourcePropertySheetAdapterFactory">
+	        class="org.eclipse.mdht.uml.ui.navigator.internal.ResourcePropertySheetAdapterFactory">
 	     <adapter type="org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor"/>
 	  </factory>
 	  <factory
-	        adaptableType="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
-	        class="org.openhealthtools.mdht.uml.ui.navigator.internal.UMLNavigatorAdapterFactory">
+	        adaptableType="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+	        class="org.eclipse.mdht.uml.ui.navigator.internal.UMLNavigatorAdapterFactory">
 	     <adapter type="org.eclipse.uml2.uml.Element"/>
 	     <adapter type="org.eclipse.ui.IActionFilter"/>
 	  </factory>
 	  <factory
 	        adaptableType="org.eclipse.ui.navigator.CommonNavigator"
-	        class="org.openhealthtools.mdht.uml.ui.navigator.internal.UMLNavigatorAdapterFactory">
+	        class="org.eclipse.mdht.uml.ui.navigator.internal.UMLNavigatorAdapterFactory">
 	     <adapter type="org.eclipse.core.commands.operations.IUndoContext"/>
 	  </factory>
    </extension>
@@ -40,13 +40,13 @@
             nameFilter="*.uml"
             objectClass="org.eclipse.core.resources.IFile">
          <action
-               class="org.openhealthtools.mdht.uml.ui.navigator.internal.actions.OpenModelAction"
+               class="org.eclipse.mdht.uml.ui.navigator.internal.actions.OpenModelAction"
                enablesFor="1+"
                id="org.openhealthtools.mdht.uml.ui.navigator.openModelAction"
                label="%openModelAction.label"
                menubarPath="group.open"/>
          <action
-               class="org.openhealthtools.mdht.uml.ui.navigator.internal.actions.ExportToXMIAction"
+               class="org.eclipse.mdht.uml.ui.navigator.internal.actions.ExportToXMIAction"
                enablesFor="1+"
                id="org.openhealthtools.mdht.uml.ui.navigator.exportToXMIAction"
                label="%exportToXMIAction.label"
@@ -76,10 +76,10 @@
    <extension point="org.eclipse.ui.navigator.navigatorContent">
       <navigatorContent
             activeByDefault="true"
-            contentProvider="org.openhealthtools.mdht.uml.ui.navigator.internal.UMLNavigatorContentProvider"
+            contentProvider="org.eclipse.mdht.uml.ui.navigator.internal.UMLNavigatorContentProvider"
             icon="icons/obj16/ResourceUML.gif"
             id="org.openhealthtools.mdht.uml.resourceContent"
-            labelProvider="org.openhealthtools.mdht.uml.ui.navigator.internal.UMLNavigatorLabelProvider"
+            labelProvider="org.eclipse.mdht.uml.ui.navigator.internal.UMLNavigatorLabelProvider"
             name="%navigatorContentName"
             priority="normal"
             providesSaveables="true">
@@ -92,15 +92,15 @@
         	         <test property="org.eclipse.core.resources.extension" value="xmi"/>
         	       </or>
             	</and>
-            	<instanceof value="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"/>
+            	<instanceof value="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-         	<instanceof value="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"/>
+         	<instanceof value="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"/>
          </possibleChildren>
          <commonSorter 
                id="org.openhealthtools.mdht.uml.navigatorSorter" 
-               class="org.openhealthtools.mdht.uml.ui.navigator.internal.UMLNavigatorSorter">
+               class="org.eclipse.mdht.uml.ui.navigator.internal.UMLNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
@@ -110,13 +110,13 @@
         	           <test property="org.eclipse.core.resources.extension" value="xmi"/>
         	         </or>
                   </and>
-                  <instanceof value="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"/>
+                  <instanceof value="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
          <actionProvider
                id="org.openhealthtools.mdht.uml.ui.navigator.ActionProvider"
-               class="org.openhealthtools.mdht.uml.ui.navigator.internal.actions.ModelActionProvider">
+               class="org.eclipse.mdht.uml.ui.navigator.internal.actions.ModelActionProvider">
          </actionProvider>
       </navigatorContent>
       
@@ -126,33 +126,33 @@
             id="org.openhealthtools.mdht.uml.ui.navigator.commonFilter.Association"
             name="%AssociationFilter.name"
             description="%AssociationFilter.description"
-            class="org.openhealthtools.mdht.uml.ui.navigator.internal.filters.AssociationFilter">
+            class="org.eclipse.mdht.uml.ui.navigator.internal.filters.AssociationFilter">
       </commonFilter>
       <commonFilter
             activeByDefault="false"
             id="org.openhealthtools.mdht.uml.ui.navigator.commonFilter.Comment"
             name="%CommentFilter.name"
             description="%CommentFilter.description"
-            class="org.openhealthtools.mdht.uml.ui.navigator.internal.filters.CommentFilter">
+            class="org.eclipse.mdht.uml.ui.navigator.internal.filters.CommentFilter">
       </commonFilter>
       <commonFilter
             activeByDefault="true"
             id="org.openhealthtools.mdht.uml.ui.navigator.commonFilter.ProfileApplication"
             name="%ProfileApplicationFilter.name"
             description="%ProfileApplicationFilter.description"
-            class="org.openhealthtools.mdht.uml.ui.navigator.internal.filters.ProfileApplicationFilter">
+            class="org.eclipse.mdht.uml.ui.navigator.internal.filters.ProfileApplicationFilter">
       </commonFilter>
    </extension>
    
    <extension point="org.eclipse.emf.validation.validationListeners">
-       <listener class="org.openhealthtools.mdht.uml.ui.navigator.internal.validation.ProblemReporter">
+       <listener class="org.eclipse.mdht.uml.ui.navigator.internal.validation.ProblemReporter">
            <clientContext id="org.eclipse.mdht.uml.validation.clientContext"/>
        </listener>
    </extension>
    
    <extension point="org.eclipse.ui.decorators">
       <decorator id="org.openhealthtools.mdht.uml.ui.navigator.stereotypeDecorator"
-            class="org.openhealthtools.mdht.uml.ui.navigator.internal.StereotypeDecorator" 
+            class="org.eclipse.mdht.uml.ui.navigator.internal.StereotypeDecorator" 
             label="%StereotypeDecorator.label" 
             lightweight="false" state="false">
          <description>
@@ -160,13 +160,13 @@
          </description>
          <enablement>
             <or>
-               <objectClass name="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem" />
+               <objectClass name="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem" />
                <objectClass name="org.eclipse.uml2.uml.Element" />
             </or>
          </enablement>
       </decorator>
       <decorator id="org.openhealthtools.mdht.uml.ui.navigator.problemsDecorator"
-            class="org.openhealthtools.mdht.uml.ui.navigator.internal.ProblemsDecorator" 
+            class="org.eclipse.mdht.uml.ui.navigator.internal.ProblemsDecorator" 
             label="%ProblemsDecorator.label" 
             lightweight="false" state="true">
          <description>
@@ -174,7 +174,7 @@
          </description>
          <enablement>
             <or>
-               <objectClass name="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem" />
+               <objectClass name="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem" />
                <objectClass name="org.eclipse.uml2.uml.Element" />
             </or>
          </enablement>

@@ -15,6 +15,7 @@ package org.eclipse.mdht.uml.cda.core.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.mdht.uml.common.util.PropertyList;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -23,7 +24,6 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
-import org.openhealthtools.mdht.uml.common.util.PropertyList;
 
 public class RIMModelUtil {
 

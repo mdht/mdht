@@ -19,7 +19,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.openhealthtools.org/mdht/uml/hl7/datatypes"
-            class="org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage"
+            class="org.eclipse.mdht.uml.hl7.datatypes.DatatypesPackage"
             genModel="model/datatypes.genmodel"/>
    </extension>
    

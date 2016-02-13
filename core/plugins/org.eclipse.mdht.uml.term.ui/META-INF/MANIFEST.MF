@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.eclipse.mdht.uml.term.ui;singleton:=true
 Bundle-Version: 3.0.0.qualifier
-Bundle-Activator: org.openhealthtools.mdht.uml.term.ui.internal.Activator
+Bundle-Activator: org.eclipse.mdht.uml.term.ui.internal.Activator
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -18,7 +18,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.mdht.uml.term.core;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.term.ui.actions,org.openh
- ealthtools.mdht.uml.term.ui.filters,org.openhealthtools.mdht.uml.term
- .ui.properties,org.openhealthtools.mdht.uml.term.ui.notation
+Export-Package: org.eclipse.mdht.uml.term.ui.actions,
+ org.eclipse.mdht.uml.term.ui.filters,
+ org.eclipse.mdht.uml.term.ui.notation,
+ org.eclipse.mdht.uml.term.ui.properties
 

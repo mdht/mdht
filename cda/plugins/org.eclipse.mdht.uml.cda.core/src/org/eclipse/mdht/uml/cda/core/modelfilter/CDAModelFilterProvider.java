@@ -17,6 +17,7 @@ import org.eclipse.core.runtime.IExecutableExtension;
 import org.eclipse.mdht.uml.cda.core.profile.SeverityKind;
 import org.eclipse.mdht.uml.cda.core.profile.Validation;
 import org.eclipse.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.eclipse.mdht.uml.common.modelfilter.IModelFilterProvider;
 import org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.uml2.uml.Association;
@@ -24,7 +25,6 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.common.modelfilter.IModelFilterProvider;
 
 public class CDAModelFilterProvider implements IModelFilterProvider, IExecutableExtension {
 

@@ -15,12 +15,12 @@
 -->
 
 <plugin>
-   <extension-point id="ConstraintEditor" name="org.openhealthtools.uml.ui" schema="schema/ConstraintEditor.exsd"/>
+   <extension-point id="ConstraintEditor" name="org.eclipse.uml.ui" schema="schema/ConstraintEditor.exsd"/>
 
     <extension point="org.eclipse.core.runtime.adapters">
       <factory
-            adaptableType="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
-            class="org.openhealthtools.mdht.uml.ui.properties.internal.UMLDomainNavigatorItemAdapterFactory">
+            adaptableType="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            class="org.eclipse.mdht.uml.ui.properties.internal.UMLDomainNavigatorItemAdapterFactory">
          <adapter type="org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor"/>
       </factory>
     </extension>
@@ -31,9 +31,9 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="org.openhealthtools.mdht.uml.ui.properties"
-            typeMapper="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ModelElementTypeMapper"
-            labelProvider="org.openhealthtools.mdht.uml.ui.properties.internal.sections.UMLSheetLabelProvider">
+            contributorId="org.eclipse.mdht.uml.ui.properties"
+            typeMapper="org.eclipse.mdht.uml.ui.properties.internal.sections.ModelElementTypeMapper"
+            labelProvider="org.eclipse.mdht.uml.ui.properties.internal.sections.UMLSheetLabelProvider">
          <propertyCategory
                category="core">
          </propertyCategory>
@@ -52,7 +52,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="org.openhealthtools.mdht.uml.ui.properties">   
+            contributorId="org.eclipse.mdht.uml.ui.properties">   
          <propertyTab
                label="%tab.General"
                category="core"
@@ -88,40 +88,40 @@
    </extension>
  
     <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
-       <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+       <propertySections contributorId="org.eclipse.mdht.uml.ui.properties">
           <propertySection tab="property.tab.GeneralPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.NamedElementSection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.NamedElementSection" 
 	 	     id="property.section.uml2.NamedElementSection"
-             filter="org.openhealthtools.mdht.uml.ui.properties.filters.NamedElementNonNavAssociationFilter">
+             filter="org.eclipse.mdht.uml.ui.properties.filters.NamedElementNonNavAssociationFilter">
 	      </propertySection>
           <propertySection tab="property.tab.GeneralPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.AssociationNamedElementSection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.AssociationNamedElementSection" 
 	 	     id="property.section.uml2.AssociationNamedElementSection"
-             filter="org.openhealthtools.mdht.uml.ui.properties.filters.NavigableAssociationFilter">
+             filter="org.eclipse.mdht.uml.ui.properties.filters.NavigableAssociationFilter">
 	      </propertySection>
           <propertySection tab="property.tab.AssociationSection" 
              afterSection="property.tab.GeneralPropertySection"
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.NamedElementSection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.NamedElementSection" 
 	 	     id="property.section.uml2.AssociationNamedElementSection"
-             filter="org.openhealthtools.mdht.uml.ui.properties.filters.NavigableAssociationFilter">
+             filter="org.eclipse.mdht.uml.ui.properties.filters.NavigableAssociationFilter">
 	      </propertySection>
 	      
           <propertySection tab="property.tab.GeneralPropertySection" 
              afterSection="property.section.uml2.NamedElementSection"
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ClassifierSection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.ClassifierSection" 
 	 	     id="property.section.uml2.ClassifierSection"
-             filter="org.openhealthtools.mdht.uml.ui.properties.filters.ClassifierNotAssociationFilter">
+             filter="org.eclipse.mdht.uml.ui.properties.filters.ClassifierNotAssociationFilter">
 	      </propertySection>
 	      
           <propertySection tab="property.tab.GeneralPropertySection" 
              afterSection="property.section.uml2.NamedElementSection"
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.PropertyDefaultSection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.PropertyDefaultSection" 
 	 	     id="property.section.uml2.PropertyDefaultSection"
-             filter="org.openhealthtools.mdht.uml.ui.properties.filters.PropertyDefaultFilter">
+             filter="org.eclipse.mdht.uml.ui.properties.filters.PropertyDefaultFilter">
 	      </propertySection>
           <propertySection tab="property.tab.GeneralPropertySection" 
              afterSection="property.section.uml2.NamedElementSection"
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.PropertySection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.PropertySection" 
 	 	     id="property.section.uml2.PropertySection">
 	            <input type="org.eclipse.uml2.uml.Property"/>
 	            <input type="org.eclipse.uml2.uml.Association"/>
@@ -129,49 +129,49 @@
 	      
           <propertySection tab="property.tab.GeneralPropertySection" 
              afterSection="property.section.uml2.NamedElementSection"
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ParameterSection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.ParameterSection" 
 	 	     id="property.section.uml2.ParameterSection">
 	            <input type="org.eclipse.uml2.uml.Parameter"/>
 	      </propertySection>
           <propertySection tab="property.tab.GeneralPropertySection" 
              afterSection="property.section.uml2.NamedElementSection"
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintSection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.ConstraintSection" 
 	 	     id="property.section.uml2.ConstraintSection">
 	            <input type="org.eclipse.uml2.uml.Constraint"/>
 	      </propertySection>
           <propertySection tab="property.tab.ConstraintDetailsTab" 
              afterSection="property.section.uml2.ConstraintSection"
-             class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintDiagnosticSection" 
+             class="org.eclipse.mdht.uml.ui.properties.internal.sections.ConstraintDiagnosticSection" 
              id="property.section.validation.ConstraintDiagnosticSection"
-             filter="org.openhealthtools.mdht.uml.ui.properties.filters.DiagnosticStereotypeFilter">
+             filter="org.eclipse.mdht.uml.ui.properties.filters.DiagnosticStereotypeFilter">
                 <input type="org.eclipse.uml2.uml.Constraint"/>
           </propertySection>
           <propertySection tab="property.tab.ConstraintDetailsTab" 
              afterSection="property.section.validation.ConstraintDiagnosticSection"
-             class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstrainedElementsSection" 
+             class="org.eclipse.mdht.uml.ui.properties.internal.sections.ConstrainedElementsSection" 
              id="property.section.uml2.ConstraintSection">
                 <input type="org.eclipse.uml2.uml.Constraint"/>
           </propertySection>
 	      
           <propertySection tab="property.tab.GeneralPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ElementImportSection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.ElementImportSection" 
 	 	     id="property.section.uml2.ElementImportSection">
 	            <input type="org.eclipse.uml2.uml.ElementImport"/>
 	      </propertySection>
 	      
           <propertySection tab="property.tab.DocumentationPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.CommentSection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.CommentSection" 
 	 	     id="property.section.uml2.CommentSection"
-             filter="org.openhealthtools.mdht.uml.ui.properties.filters.ElementNonNavAssociationFilter">
+             filter="org.eclipse.mdht.uml.ui.properties.filters.ElementNonNavAssociationFilter">
 	      </propertySection>
           <propertySection tab="property.tab.DocumentationPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.AssociationCommentSection" 
+	 	     class="org.eclipse.mdht.uml.ui.properties.internal.sections.AssociationCommentSection" 
 	 	     id="property.section.uml2.AssociationCommentSection"
-             filter="org.openhealthtools.mdht.uml.ui.properties.filters.NavigableAssociationFilter">
+             filter="org.eclipse.mdht.uml.ui.properties.filters.NavigableAssociationFilter">
 	      </propertySection>
 	      
 		 <propertySection tab="property.tab.AdvancedPropertySection" 
-		 	class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.UMLAdvancedSection" 
+		 	class="org.eclipse.mdht.uml.ui.properties.internal.sections.UMLAdvancedSection" 
 		 	id="property.section.AdvancedPropertySection">
 		    	<input type="java.lang.Object"/>
 		 </propertySection>
@@ -180,7 +180,7 @@
     <extension
           point="org.eclipse.mdht.uml.ui.properties.ConstraintEditor">
        <editor
-          component="org.openhealthtools.mdht.uml.ui.properties.internal.LanguageEditor"
+          component="org.eclipse.mdht.uml.ui.properties.internal.LanguageEditor"
              language="Analysis">
        </editor>
     </extension>
@@ -188,7 +188,7 @@
       <extension
           point="org.eclipse.mdht.uml.ui.properties.ConstraintEditor">
        <editor
-          component="org.openhealthtools.mdht.uml.ui.properties.internal.LanguageEditor"
+          component="org.eclipse.mdht.uml.ui.properties.internal.LanguageEditor"
              language="OCL">
        </editor>
     </extension>
@@ -197,7 +197,7 @@
         <extension
           point="org.eclipse.mdht.uml.ui.properties.ConstraintEditor">
        <editor
-          component="org.openhealthtools.mdht.uml.ui.properties.internal.LanguageEditor"
+          component="org.eclipse.mdht.uml.ui.properties.internal.LanguageEditor"
              language="Java">
        </editor>
     </extension>
@@ -205,7 +205,7 @@
         <extension
           point="org.eclipse.mdht.uml.ui.properties.ConstraintEditor">
        <editor
-          component="org.openhealthtools.mdht.uml.ui.properties.internal.LanguageEditor"
+          component="org.eclipse.mdht.uml.ui.properties.internal.LanguageEditor"
              language="XPath">
        </editor>
     </extension>
@@ -213,7 +213,7 @@
          <extension
           point="org.eclipse.mdht.uml.ui.properties.ConstraintEditor">
        <editor
-          component="org.openhealthtools.mdht.uml.ui.properties.internal.LanguageEditor"
+          component="org.eclipse.mdht.uml.ui.properties.internal.LanguageEditor"
              language="StrucText">
        </editor>
     </extension>

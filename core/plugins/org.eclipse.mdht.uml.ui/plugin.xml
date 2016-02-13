@@ -17,7 +17,7 @@
 
    <extension point="org.eclipse.ui.perspectives">
       <perspective
-           class="org.openhealthtools.mdht.uml.ui.perspective.PerspectiveFactory"
+           class="org.eclipse.mdht.uml.ui.perspective.PerspectiveFactory"
            id="org.openhealthtools.mdht.uml.ui.perspective"
            name="%Perspective_name">
       </perspective>
@@ -25,8 +25,8 @@
   
    <extension point = "org.eclipse.ui.editors">
      <editor
-          class="org.openhealthtools.mdht.uml.ui.editors.UMLTableEditor"
-          contributorClass="org.openhealthtools.mdht.uml.ui.editors.UMLTableActionBarContributor"
+          class="org.eclipse.mdht.uml.ui.editors.UMLTableEditor"
+          contributorclass="org.eclipse.mdht.uml.ui.editors.UMLTableActionBarContributor"
           default="true"
           extensions="uml,xmi"
           icon="icons/full/eview16/uml.gif"
@@ -54,7 +54,7 @@
          </visibility>
          <action
                label="%UMLTableEditor_label"
-               class="org.openhealthtools.mdht.uml.ui.actions.OpenUMLTableEditorAction"
+               class="org.eclipse.mdht.uml.ui.actions.OpenUMLTableEditorAction"
                menubarPath="openWith/ext"
                enablesFor="+"
                id="org.openhealthtools.mdht.uml.ui.actions.OpenUMLTableEditorAction">
@@ -125,13 +125,13 @@
          point="org.eclipse.ui.handlers">
       <handler
             commandId="org.openhealthtools.mdht.uml.ui.commands.openSubclassEditor"
-            class="org.openhealthtools.mdht.uml.common.ui.handlers.OpenSubclassEditorHandler">
+            class="org.eclipse.mdht.uml.common.ui.handlers.OpenSubclassEditorHandler">
          <activeWhen>
             <and>
                <reference definitionId="org.openhealthtools.mdht.uml.ui.context.classes"/>
                <count value="1"/>
                <iterate>
-                  <test property="org.openhealthtools.mdht.uml.common.ui.ecore.eclass" value="uml:Class"/>
+                  <test property="org.eclipse.mdht.uml.common.ui.ecore.eclass" value="uml:Class"/>
                </iterate>
             </and>
          </activeWhen>
@@ -172,7 +172,7 @@
      -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.uml">
          <visibility>
             <objectState name="umlType" value="Element"/>
@@ -193,7 +193,7 @@
    <!-- UML Package menu items -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.uml.package">
          <visibility>
             <objectState name="umlType" value="Package"/>
@@ -201,7 +201,7 @@
          <action
                label="%addUMLPackage.label"
                icon="icons/full/obj16/Package.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLPackageAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddUMLPackageAction"
                menubarPath="mdht.addUML/packageGroup"
                enablesFor="1"
                id="mdht.actions.addUML.package">
@@ -209,7 +209,7 @@
          <action
                label="%addUMLElementImport.label"
                icon="icons/full/obj16/ElementImport.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddElementImportAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddElementImportAction"
                menubarPath="mdht.addUML/packageGroup"
                enablesFor="1"
                id="mdht.actions.addUML.elementImport">
@@ -217,7 +217,7 @@
          <action
                label="%addUMLPackageImport.label"
                icon="icons/full/obj16/PackageImport.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddPackageImportAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddPackageImportAction"
                menubarPath="mdht.addUML/packageGroup"
                enablesFor="1"
                id="mdht.actions.addUML.packageImport">
@@ -226,7 +226,7 @@
          <action
                label="%addUMLEnumeration.label"
                icon="icons/full/obj16/Enumeration.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLEnumerationAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddUMLEnumerationAction"
                menubarPath="mdht.addUML/classifierGroup"
                enablesFor="1"
                id="mdht.actions.addUML.enumeration">
@@ -234,7 +234,7 @@
          <action
                label="%addUMLClass.label"
                icon="icons/full/obj16/Class.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLClassAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddUMLClassAction"
                menubarPath="mdht.addUML/classifierGroup"
                enablesFor="1"
                id="mdht.actions.addUML.class">
@@ -245,7 +245,7 @@
    <!-- UML Classifier menu items -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.uml.classifier">
          <visibility>
             <objectState name="umlType" value="Class"/>
@@ -254,7 +254,7 @@
          <action
                label="%addUMLNestedClass.label"
                icon="icons/full/obj16/Class.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLClassAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddUMLClassAction"
                menubarPath="mdht.addUML/classifierGroup"
                enablesFor="1"
                id="mdht.actions.addUML.nestedClass">
@@ -263,7 +263,7 @@
             <action
                label="%addUMLSubstitution.label"
                icon="icons/full/obj16/Generalization.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddSubstitutionAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddSubstitutionAction"
                menubarPath="mdht.addUML/classifierGroup"
                
                enablesFor="1"
@@ -273,7 +273,7 @@
          <action
                label="%addUMLGeneralization.label"
                icon="icons/full/obj16/Generalization.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddGeneralizationAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddGeneralizationAction"
                menubarPath="mdht.addUML/classifierGroup"
                enablesFor="1"
                id="mdht.actions.addUML.generalization">
@@ -284,7 +284,7 @@
          <action
                label="%addUMLOperation.label"
                icon="icons/full/obj16/Operation.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddOperationAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddOperationAction"
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.operation">
@@ -292,7 +292,7 @@
          <action
                label="%addUMLAssociation.label"
                icon="icons/full/obj16/Association_navigable.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLAssociationAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddUMLAssociationAction"
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.association">
@@ -300,7 +300,7 @@
          <action
                label="%addUMLAttribute.label"
                icon="icons/full/obj16/Property.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLAttributeAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddUMLAttributeAction"
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.attribute">
@@ -310,7 +310,7 @@
    
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.uml.classifier">
          <visibility>
          	<or>
@@ -322,7 +322,7 @@
          <action
                label="%addUMLNestedSubclass.label"
                icon="icons/full/obj16/Class.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddNestedSubclassAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddNestedSubclassAction"
                menubarPath="mdht.addUML/classifierGroup"
                enablesFor="1"
                id="mdht.actions.addUML.nestedSubclass">
@@ -333,7 +333,7 @@
    <!-- UML Operation menu items -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.uml.operation">
          <visibility>
             <objectState name="umlType" value="Operation"/>
@@ -341,7 +341,7 @@
          <action
                label="%addUMLPostCondition.label"
                icon="icons/full/obj16/Constraint.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddPostConditionAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddPostConditionAction"
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.postCondition">
@@ -349,7 +349,7 @@
          <action
                label="%addUMLPreCondition.label"
                icon="icons/full/obj16/Constraint.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddPreConditionAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddPreConditionAction"
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.preCondition">
@@ -357,7 +357,7 @@
          <action
                label="%addUMLBodyCondition.label"
                icon="icons/full/obj16/Constraint.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddBodyConditionAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddBodyConditionAction"
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.bodyCondition">
@@ -365,7 +365,7 @@
          <action
                label="%addUMLReturnParameter.label"
                icon="icons/full/obj16/Parameter_return.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddReturnParameterAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddReturnParameterAction"
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.returnParameter">
@@ -373,7 +373,7 @@
          <action
                label="%addUMLInputParameter.label"
                icon="icons/full/obj16/Parameter_in.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddInputParameterAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddInputParameterAction"
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.inputParameter">
@@ -383,7 +383,7 @@
          
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.uml.classifier">
          <visibility>
             <objectState name="umlType" value="Enumeration"/>
@@ -391,7 +391,7 @@
          <action
                label="%addUMLEnumerationLiteral.label"
                icon="icons/full/obj16/EnumerationLiteral.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLEnumerationLiteralAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddUMLEnumerationLiteralAction"
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.enumerationLiteral">
@@ -402,7 +402,7 @@
    <!-- UML Constraint and Comment menu items -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.uml.element">
          <visibility>
             <objectState name="umlType" value="Element"/>
@@ -410,7 +410,7 @@
          <action
                label="%addUMLConstraint.label"
                icon="icons/full/obj16/Constraint.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLConstraintAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddUMLConstraintAction"
                menubarPath="mdht.addUML/constraintGroup"
                enablesFor="1"
                id="mdht.actions.addUML.constraint">
@@ -418,7 +418,7 @@
          <action
                label="%addUMLComment.label"
                icon="icons/full/obj16/Comment.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddCommentAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddCommentAction"
                menubarPath="mdht.addUML/commentGroup"
                enablesFor="1"
                id="mdht.actions.addUML.comment">
@@ -429,7 +429,7 @@
    <!-- UML Profile edit menu items -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.uml.profile">
          <visibility>
             <objectState name="umlType" value="Profile"/>
@@ -437,7 +437,7 @@
          <action
                label="%addUMLStereotype.label"
                icon="icons/full/obj16/Stereotype.gif"
-               class="org.openhealthtools.mdht.uml.ui.actions.AddStereotypeAction"
+               class="org.eclipse.mdht.uml.ui.actions.AddStereotypeAction"
                menubarPath="mdht.addUML/classifierGroup"
                enablesFor="1"
                id="mdht.actions.addUML.stereotype">
@@ -448,7 +448,7 @@
    <!-- Profile and Stereotype actions -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.umlExtension">
          <visibility>
             <objectState name="umlType" value="Element"/>
@@ -465,21 +465,21 @@
    
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.umlExtension.package">
           <visibility>
              <objectState name="umlType" value="Package"/>
           </visibility>
 	      <action
 	         label="%_UI_UnapplyProfileAction_label"
-	         class="org.openhealthtools.mdht.uml.ui.actions.UnapplyProfileAction"
+	         class="org.eclipse.mdht.uml.ui.actions.UnapplyProfileAction"
 	         menubarPath="mdht.umlExtension/packageGroup"
 	         enablesFor="1"
 	         id="org.openhealthtools.mdht.uml.ui.editor.UnapplyProfileActionID">
 	      </action>
 	      <action
 	         label="%_UI_ApplyProfileAction_label"
-	         class="org.openhealthtools.mdht.uml.ui.actions.ApplyProfileAction"
+	         class="org.eclipse.mdht.uml.ui.actions.ApplyProfileAction"
 	         menubarPath="mdht.umlExtension/packageGroup"
 	         enablesFor="1"
 	         id="org.openhealthtools.mdht.uml.ui.editor.ApplyProfileActionID">
@@ -489,21 +489,21 @@
          
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            objectClass="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.umlExtension.element">
           <visibility>
              <objectState name="umlType" value="Element"/>
           </visibility>
 	      <action
 	         label="%_UI_UnapplyStereotypeAction_label"
-	         class="org.openhealthtools.mdht.uml.ui.actions.UnapplyStereotypeAction"
+	         class="org.eclipse.mdht.uml.ui.actions.UnapplyStereotypeAction"
 	         menubarPath="mdht.umlExtension/elementGroup"
 	         enablesFor="1"
 	         id="org.openhealthtools.mdht.uml.ui.editor.UnapplyStereotypeActionID">
 	      </action>
 	      <action
 	         label="%_UI_ApplyStereotypeAction_label"
-	         class="org.openhealthtools.mdht.uml.ui.actions.ApplyStereotypeAction"
+	         class="org.eclipse.mdht.uml.ui.actions.ApplyStereotypeAction"
 	         menubarPath="mdht.umlExtension/elementGroup"
 	         enablesFor="1"
 	         id="org.openhealthtools.mdht.uml.ui.editor.ApplyStereotypeActionID">
@@ -524,7 +524,7 @@
       </menu>
       <action
          label="%_UI_UnapplyProfileAction_label"
-         class="org.openhealthtools.mdht.uml.ui.actions.UnapplyProfileAction"
+         class="org.eclipse.mdht.uml.ui.actions.UnapplyProfileAction"
          menubarPath="org.openhealthtools.mdht.uml.ui.umlMenuID/org.openhealthtools.mdht.uml.ui.editor.PackageMenuID/additions"
          enablesFor="1"
          id="org.openhealthtools.mdht.uml.ui.editor.UnapplyProfileActionID">
@@ -534,7 +534,7 @@
       </action>
       <action
          label="%_UI_ApplyProfileAction_label"
-         class="org.openhealthtools.mdht.uml.ui.actions.ApplyProfileAction"
+         class="org.eclipse.mdht.uml.ui.actions.ApplyProfileAction"
          menubarPath="org.openhealthtools.mdht.uml.ui.umlMenuID/org.openhealthtools.mdht.uml.ui.editor.PackageMenuID/additions"
          enablesFor="1"
          id="org.openhealthtools.mdht.uml.ui.editor.ApplyProfileActionID">
@@ -550,7 +550,7 @@
       </menu>
       <action
          label="%_UI_UnapplyStereotypeAction_label"
-         class="org.openhealthtools.mdht.uml.ui.actions.UnapplyStereotypeAction"
+         class="org.eclipse.mdht.uml.ui.actions.UnapplyStereotypeAction"
          menubarPath="org.openhealthtools.mdht.uml.ui.umlMenuID/org.openhealthtools.mdht.uml.ui.editor.ElementMenuID/additions"
          enablesFor="1"
          id="org.openhealthtools.mdht.uml.ui.editor.UnapplyStereotypeActionID">
@@ -560,7 +560,7 @@
       </action>
       <action
          label="%_UI_ApplyStereotypeAction_label"
-         class="org.openhealthtools.mdht.uml.ui.actions.ApplyStereotypeAction"
+         class="org.eclipse.mdht.uml.ui.actions.ApplyStereotypeAction"
          menubarPath="org.openhealthtools.mdht.uml.ui.umlMenuID/org.openhealthtools.mdht.uml.ui.editor.ElementMenuID/additions"
          enablesFor="1"
          id="org.openhealthtools.mdht.uml.ui.editor.ApplyStereotypeActionID">
@@ -635,7 +635,7 @@
                name="OPT_NESTCLASS"
                optional="true"
                typeId="org.openhealthtools.mdht.uml.ui.cmd.paramtype.Boolean"
-               values="org.openhealthtools.mdht.uml.ui.propertytesters.BooleanValues">
+               values="org.eclipse.mdht.uml.ui.propertytesters.BooleanValues">
          </commandParameter> 
       </command>
       <category
@@ -644,7 +644,7 @@
             name="Smart Constraint Commands">
       </category>
      <commandParameterType
-            converter="org.openhealthtools.mdht.uml.ui.propertytesters.BooleanValueConverter"
+            converter="org.eclipse.mdht.uml.ui.propertytesters.BooleanValueConverter"
             id="org.openhealthtools.mdht.uml.ui.cmd.paramtype.Boolean"
             type="java.lang.Boolean">
       </commandParameterType> 
@@ -652,7 +652,7 @@
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="org.openhealthtools.mdht.uml.ui.commands.AddLocalizedClassCommand"
+            class="org.eclipse.mdht.uml.ui.commands.AddLocalizedClassCommand"
             commandId="org.openhealthtools.mdht.uml.ui.cmd.smartconstraint.localiseclass">
           <enabledWhen>
 	                <with variable="selection">
@@ -681,18 +681,18 @@
    <extension
          point="org.eclipse.core.expressions.propertyTesters">
       <propertyTester
-            class="org.openhealthtools.mdht.uml.ui.propertytesters.UmlElement"
+            class="org.eclipse.mdht.uml.ui.propertytesters.UmlElement"
             id="org.eclipse.emf.edit.provider.DelegatingWrapperItemProvider"
             namespace="org.openhealthtools.mdht.uml.ui"
             properties="instanceOf, isLocalised, fromLocal,isAnAssociation, isProperty,isNamedElement"
             type="org.eclipse.emf.edit.provider.DelegatingWrapperItemProvider">
       </propertyTester>
       <propertyTester
-            class="org.openhealthtools.mdht.uml.ui.propertytesters.UmlElement"
-            id="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            class="org.eclipse.mdht.uml.ui.propertytesters.UmlElement"
+            id="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             namespace="org.openhealthtools.mdht.uml.ui"
             properties="instanceOf, isLocalised, fromLocal,isAnAssociation, isProperty,isNamedElement"
-            type="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem">
+            type="org.eclipse.mdht.uml.ui.navigator.UMLDomainNavigatorItem">
       </propertyTester>
    </extension>
   
