@@ -2046,6 +2046,10 @@ public class CDAModelUtil {
 			return "../" + normalizeCodeName(target.getName()) + ".dita";
 		}
 
+		if (target instanceof Class && CDAModelUtil.isPublishSeperately((Class) target)) {
+			return "../" + normalizeCodeName(target.getName()) + ".dita";
+		}
+
 		// If the model project is available (should be) and the dita content is part of the doc project
 		if (!isCDAModel(target)) {
 			IProject sourceProject = getElementModelProject(source);
@@ -2071,7 +2075,9 @@ public class CDAModelUtil {
 			String basePackage = "";
 			String prefix = "";
 
-			String packageName = target.getNearestPackage().getName();
+			String packageName = target.getNearestPackage() != null
+					? target.getNearestPackage().getName()
+					: "";
 			if (RIMModelUtil.RIM_PACKAGE_NAME.equals(packageName)) {
 				basePackage = "org.openhealthtools.mdht.uml.hl7.rim";
 			} else if (CDA_PACKAGE_NAME.equals(packageName)) {

@@ -765,7 +765,8 @@ public class TableGenerator {
 			}
 
 			if (from != null && from.getQualifiedName().equals(umlClass.getQualifiedName())) {
-				if (to instanceof Class && CDAModelUtil.getTemplateId((Class) to) != null) {
+				if (to instanceof Class &&
+						((CDAModelUtil.getTemplateId((Class) to) != null) || CDAModelUtil.isPublishSeperately((Class) to))) {
 					addContains(to);
 				}
 			}
@@ -788,7 +789,8 @@ public class TableGenerator {
 
 		void walkInlineClass(Class inlineClass) {
 			for (Property p : inlineClass.getOwnedAttributes()) {
-				if (p.getType() instanceof Class && CDAModelUtil.getTemplateId((Class) p.getType()) != null) {
+				if (p.getType() instanceof Class &&
+						(CDAModelUtil.getTemplateId((Class) p.getType()) != null || CDAModelUtil.isPublishSeperately((Class) p.getType()))) {
 					contains.add(p.getType());
 				}
 				if (p.getType() instanceof Class && CDAModelUtil.isInlineClass((Class) p.getType())) {
@@ -847,7 +849,7 @@ public class TableGenerator {
 					containedBy = getAnXref(topPackage, (Class) associationSwitch.getContainedBy().get(rowCtr));
 				}
 				if (rowCtr < associationSwitch.getContains().size()) {
-					contains = getAnXref(topPackage, (Class) associationSwitch.getContains().get(rowCtr));
+						contains = getAnXref(topPackage, (Class) associationSwitch.getContains().get(rowCtr));
 
 				}
 				tableBuffer.append("<row><entry>" + containedBy + "</entry><entry>" + contains + "</entry></row>");
