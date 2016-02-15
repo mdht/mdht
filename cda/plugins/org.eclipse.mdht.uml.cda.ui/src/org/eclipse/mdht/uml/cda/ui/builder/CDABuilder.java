@@ -75,7 +75,7 @@ import org.eclipse.uml2.uml.ecore.importer.UMLImporter;
 
 public class CDABuilder extends IncrementalProjectBuilder {
 
-	private static final QualifiedName cleanStatus = new QualifiedName("org.eclipse.mdht.uml.cda.ui.builder", "status");
+	private static final QualifiedName cleanStatus = new QualifiedName("org.eclipse.mdht.uml.cda.builder.id", "status");
 
 	class CheckForModelChanged implements IResourceDeltaVisitor {
 
@@ -104,7 +104,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		}
 	}
 
-	public static final String BUILDER_ID = "org.eclipse.mdht.uml.cda.ui.org.openhealthtools.mdht.uml.cda.builder.id";
+	public static final String BUILDER_ID = "org.eclipse.mdht.uml.cda.ui.org.eclipse.mdht.uml.cda.builder.id";
 
 	private static final String ANNOTATIONSOURCE = "http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer";
 

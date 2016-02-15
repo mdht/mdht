@@ -390,7 +390,7 @@
    </extension>
 
    <extension
-         id="org.openhealthtools.mdht.uml.cda.builder.id"
+         id="org.eclipse.mdht.uml.cda.builder.id"
          name="CDA Project Builder"
          point="org.eclipse.core.resources.builders">
       <builder
@@ -401,7 +401,7 @@
       </builder>
    </extension>
    <extension
-         id="org.openhealthtools.mdht.uml.cda.nature.id"
+         id="org.eclipse.mdht.uml.cda.nature.id"
          name="CDA Project Nature"
          point="org.eclipse.core.resources.natures">
       <runtime>
@@ -410,7 +410,7 @@
          </run>
       </runtime>
       <builder
-            id="org.openhealthtools.mdht.uml.cda.ui.org.openhealthtools.mdht.uml.cda.builder.id">
+            id="org.eclipse.mdht.uml.cda.builder.id">
       </builder>
    </extension>
    <extension
@@ -545,5 +545,35 @@
          </action>
       </objectContribution>
    </extension>
+   
+   
+   
+      <extension
+         id="org.eclipse.mdht.uml.cda.builder.id"
+         name="CDA Project Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="org.eclipse.mdht.uml.cda.ui.builder.CDABuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="org.eclipse.mdht.uml.cda.nature.id"
+         name="CDA Project Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.eclipse.mdht.uml.cda.ui.builder.CDANature">
+         </run>
+      </runtime>
+      <builder
+            id="org.eclipse.mdht.uml.cda.ui.org.eclipse.mdht.uml.cda.builder.id">
+      </builder>
+   </extension>
+   
+   
+  
    
 </plugin>

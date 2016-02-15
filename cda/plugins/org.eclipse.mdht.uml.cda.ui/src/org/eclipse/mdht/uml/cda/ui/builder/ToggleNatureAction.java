@@ -102,6 +102,7 @@ public class ToggleNatureAction implements IObjectActionDelegate {
 			project.setDescription(description, null);
 
 		} catch (CoreException e) {
+			e.printStackTrace();
 		}
 	}
 

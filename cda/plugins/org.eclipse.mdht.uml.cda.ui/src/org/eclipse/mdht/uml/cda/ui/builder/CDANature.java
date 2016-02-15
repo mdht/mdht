@@ -22,7 +22,7 @@ public class CDANature implements IProjectNature {
 	/**
 	 * ID of this project nature
 	 */
-	public static final String NATURE_ID = "org.eclipse.mdht.uml.cda.ui.org.openhealthtools.mdht.uml.cda.nature.id";
+	public static final String NATURE_ID = "org.eclipse.mdht.uml.cda.ui.org.eclipse.mdht.uml.cda.nature.id";
 
 	private IProject project;
 
