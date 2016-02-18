@@ -765,19 +765,39 @@ public class TableGenerator {
 			}
 
 			if (from != null && from.getQualifiedName().equals(umlClass.getQualifiedName())) {
-				if (to instanceof Class &&
-						((CDAModelUtil.getTemplateId((Class) to) != null) || CDAModelUtil.isPublishSeperately((Class) to))) {
-					addContains(to);
+				if (to instanceof Class) {
+
+					Class toClass = (Class) to;
+
+					if (CDAModelUtil.isPublishSeperately(toClass)) {
+						addContains(toClass);
+					}
+
+					if (CDAModelUtil.getTemplateId(toClass) != null) {
+						addContains(toClass);
+					}
+
 				}
 			}
 
 			if (to != null && to.getQualifiedName().equals(umlClass.getQualifiedName())) {
-				if (from instanceof Class && CDAModelUtil.getTemplateId((Class) from) != null) {
-					addContainedBy(from);
+				if (from instanceof Class) {
+
+					Class fromClass = (Class) from;
+
+					if (CDAModelUtil.isPublishSeperately(fromClass)) {
+						addContainedBy(fromClass);
+					}
+
+					if (CDAModelUtil.getTemplateId(fromClass) != null) {
+						addContainedBy(fromClass);
+					}
+
 				}
 			}
 
-			if (to instanceof Class && CDAModelUtil.isInlineClass((Class) to)) {
+			if (to instanceof Class && CDAModelUtil.isInlineClass((Class) to) &&
+					!CDAModelUtil.isPublishSeperately((Class) to)) {
 				// If we have a reference to inline class
 				// check for uses of templated classes
 				walkInlineClass((Class) to);
@@ -789,11 +809,21 @@ public class TableGenerator {
 
 		void walkInlineClass(Class inlineClass) {
 			for (Property p : inlineClass.getOwnedAttributes()) {
-				if (p.getType() instanceof Class &&
-						(CDAModelUtil.getTemplateId((Class) p.getType()) != null || CDAModelUtil.isPublishSeperately((Class) p.getType()))) {
-					contains.add(p.getType());
+				if (p.getType() instanceof Class) {
+
+					Class toClass = (Class) p.getType();
+
+					if (CDAModelUtil.isPublishSeperately(toClass)) {
+						addContains(toClass);
+					}
+
+					if (CDAModelUtil.getTemplateId(toClass) != null) {
+						addContains(toClass);
+					}
+
 				}
-				if (p.getType() instanceof Class && CDAModelUtil.isInlineClass((Class) p.getType())) {
+				if (p.getType() instanceof Class && CDAModelUtil.isInlineClass((Class) p.getType()) &&
+						!CDAModelUtil.isPublishSeperately((Class) p.getType())) {
 					walkInlineClass((Class) p.getType());
 				}
 			}
@@ -849,7 +879,7 @@ public class TableGenerator {
 					containedBy = getAnXref(topPackage, (Class) associationSwitch.getContainedBy().get(rowCtr));
 				}
 				if (rowCtr < associationSwitch.getContains().size()) {
-						contains = getAnXref(topPackage, (Class) associationSwitch.getContains().get(rowCtr));
+					contains = getAnXref(topPackage, (Class) associationSwitch.getContains().get(rowCtr));
 
 				}
 				tableBuffer.append("<row><entry>" + containedBy + "</entry><entry>" + contains + "</entry></row>");
