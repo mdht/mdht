@@ -110,6 +110,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_pgbhwM2JEeSEZ8MJJ3ZzLg" name="HITSP-CS-83"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_3OgIoD1FEeWD4MX6K2c_gA" name="Media Type"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_Oe_SEOuZEeWgMM6dmEi-NA" name="orderableDrugForm"/>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -182,4 +183,5 @@
   <term:CodeSystemVersion xmi:id="_M_9VALC4EeSVMPnHsd38Lg" identifier="2.16.840.1.113883.6.121" source="http://www.loc.gov/standards/iso639-2/php/code_list.php" base_Enumeration="_M_8G4LC4EeSVMPnHsd38Lg"/>
   <term:CodeSystemVersion xmi:id="_pgcI0M2JEeSEZ8MJJ3ZzLg" identifier="2.16.840.1.113883.5.83" base_Enumeration="_pgbhwM2JEeSEZ8MJJ3ZzLg"/>
   <term:CodeSystemVersion xmi:id="_3OgvsD1FEeWD4MX6K2c_gA" identifier="2.16.840.1.113883.5.79" base_Enumeration="_3OgIoD1FEeWD4MX6K2c_gA"/>
+  <term:CodeSystemVersion xmi:id="_OsdGUOuZEeWgMM6dmEi-NA" identifier="2.16.840.1.113883.5.85" url="http://www.hl7.org/documentcenter/public_temp_029C8D8D-1C23-BA17-0C659482C916B284/standards/vocabulary/vocabulary_tables/infrastructure/vocabulary/orderableDrugForm.html" base_Enumeration="_Oe_SEOuZEeWgMM6dmEi-NA"/>
 </xmi:XMI>
