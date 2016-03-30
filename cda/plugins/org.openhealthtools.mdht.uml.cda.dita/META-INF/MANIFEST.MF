@@ -19,5 +19,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.compare,
  org.openhealthtools.mdht.uml.ui.properties;bundle-version="2.5.9",
  org.eclipse.swt;bundle-version="3.102.1"
-Export-Package: org.openhealthtools.mdht.uml.cda.dita
+Export-Package: org.openhealthtools.mdht.uml.cda.dita,
+ org.openhealthtools.mdht.uml.cda.dita.internal,
+ org.openhealthtools.mdht.uml.cda.dita.internal.preferences
 

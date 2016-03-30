@@ -4,14 +4,14 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Les Westberg - Fixed a problem related to generating the DITA for value sets
- *                    that were not contained in the vocab project and that are in 
+ *                    that were not contained in the vocab project and that are in
  *                    models which are not based on CDA
- *                   
- *     
+ *
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
@@ -33,6 +33,12 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class TransformValueSet extends TransformAbstract {
+
+	public TransformValueSet() {
+		super(new DitaTransformerOptions());
+		// DitaTransformerOptions dto = new DitaTransformerOptions();
+
+	}
 
 	public TransformValueSet(DitaTransformerOptions options) {
 		super(options);
@@ -85,9 +91,9 @@ public class TransformValueSet extends TransformAbstract {
 				writer.println("</row></thead><tbody>");
 			} else {
 				writer.println("<table frame=\"all\" rowsep=\"1\" colsep=\"1\"><tgroup cols=\"3\">");
-				writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
-				writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
-				writer.println("<colspec colname=\"col3\" colwidth=\"2*\"/>");
+				writer.println("<colspec colname=\"col1\" colwidth=\"6*\"/>");
+				writer.println("<colspec colname=\"col2\" colwidth=\"6*\"/>");
+				writer.println("<colspec colname=\"col3\" colwidth=\"4*\"/>");
 				writer.println("<thead><row>");
 				writer.println("<entry>Code</entry><entry>Code System</entry><entry>Print Name</entry>");
 				writer.println("</row></thead><tbody>");
