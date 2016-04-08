@@ -11,7 +11,7 @@
  *     Dave Carlson (XMLmodeling.com) - added document class registry
  *     Christian W. Damus - refactored CDAResource, CDAUtil, CDARegistry on the new flexible XML resource (artf3367)
  *     Rama Ramakrishnan - If a template class has already been loaded, ignore further occurences (artf3397)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
@@ -69,7 +69,7 @@ public class CDAXSITypeProvider implements XSITypeProvider {
 
 	/**
 	 * Initializes me with the {@link EClass} that I should use to instantiate the CDA document, instead of discovering it based on the template ID.
-	 * 
+	 *
 	 * @param documentClass my forced document class, or {@code null} to discover the document class by template ID
 	 */
 	public CDAXSITypeProvider(EClass documentClass) {
@@ -81,9 +81,9 @@ public class CDAXSITypeProvider implements XSITypeProvider {
 	}
 
 	/**
-	 * Initializes me with the qualified name (e.g. <tt>ccd::ContinuityOfCareDocument</tt>) of the {@link EClass} to use 
+	 * Initializes me with the qualified name (e.g. <tt>ccd::ContinuityOfCareDocument</tt>) of the {@link EClass} to use
 	 * as the document root.
-	 * 
+	 *
 	 * @param documentClassQName my forced document class's qualified name, or {@code null} to discover the document class by template ID
 	 */
 	public CDAXSITypeProvider(String documentClassQName) {
@@ -178,15 +178,24 @@ public class CDAXSITypeProvider implements XSITypeProvider {
 		}
 
 		String key = null;
+
 		if (!isEmpty(versionId)) {
 			key = templateId + "v" + versionId;
+
 		} else {
 			key = templateId;
 		}
 		EClass eClass = classes.get(key);
+		// If versioned template - and can not locate versioned in current runtime
+		// check for un versioned template - swm
+		if (eClass == null && !isEmpty(versionId)) {
+			eClass = classes.get(templateId);
+		}
 		if (delegates.containsKey(eClass)) {
 			RegistryDelegate delegate = delegates.get(eClass);
 			eClass = delegate.getEClass(key, context);
+		} else {
+
 		}
 		return eClass;
 	}
