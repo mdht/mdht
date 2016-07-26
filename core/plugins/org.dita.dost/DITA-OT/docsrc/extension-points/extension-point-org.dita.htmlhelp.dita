@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generated from plugin source, do not edit! -->
+<!DOCTYPE reference
+  PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="org.dita.htmlhelp-extension-points"><title outputclass="generated">org.dita.htmlhelp extension points</title><titlealts><navtitle/></titlealts><shortdesc id="shortdesc"/><refbody><section><dl><dlentry id="dita.xsl.htmlhelp.map2hhc"><dt><parmname>dita.xsl.htmlhelp.map2hhc</parmname></dt><dd id="dita.xsl.htmlhelp.map2hhc.desc">HTML Help content XSLT import</dd></dlentry><dlentry id="dita.xsl.htmlhelp.map2hhp"><dt><parmname>dita.xsl.htmlhelp.map2hhp</parmname></dt><dd id="dita.xsl.htmlhelp.map2hhp.desc">HTML Help project XSLT import</dd></dlentry></dl></section></refbody></reference>

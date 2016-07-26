@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generated from plugin source, do not edit! -->
+<!DOCTYPE reference
+  PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="org.dita.troff-extension-points"><title outputclass="generated">org.dita.troff extension points</title><titlealts><navtitle/></titlealts><shortdesc id="shortdesc"/><refbody><section><dl><dlentry id="dita.xsl.troff"><dt><parmname>dita.xsl.troff</parmname></dt><dd id="dita.xsl.troff.desc">Troff XSLT import</dd></dlentry><dlentry id="dita.xsl.troff-ast"><dt><parmname>dita.xsl.troff-ast</parmname></dt><dd id="dita.xsl.troff-ast.desc">Troff AST XSLT import</dd></dlentry></dl></section></refbody></reference>

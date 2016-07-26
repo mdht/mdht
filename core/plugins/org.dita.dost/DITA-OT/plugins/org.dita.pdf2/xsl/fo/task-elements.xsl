@@ -27,7 +27,7 @@ These terms and conditions supersede the terms and conditions in any
 licensing agreement to the extent that such terms and conditions conflict
 with those set forth herein.
 
-This file is part of the DITA Open Toolkit project hosted on Sourceforge.net. 
+This file is part of the DITA Open Toolkit project hosted on Sourceforge.net.
 See the accompanying license.txt file for applicable licenses.
 -->
 
@@ -35,10 +35,8 @@ See the accompanying license.txt file for applicable licenses.
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     xmlns:dita2xslfo="http://dita-ot.sourceforge.net/ns/200910/dita2xslfo"
     xmlns:opentopic="http://www.idiominc.com/opentopic"
-    xmlns:exsl="http://exslt.org/common"
     xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
-    extension-element-prefixes="exsl"
-    exclude-result-prefixes="opentopic exsl opentopic-index dita2xslfo"
+    exclude-result-prefixes="opentopic opentopic-index dita2xslfo"
     version="2.0">
 
     <!-- Determines whether to generate titles for task sections. Values are YES and NO. -->
@@ -48,13 +46,19 @@ See the accompanying license.txt file for applicable licenses.
             <xsl:otherwise>NO</xsl:otherwise>
         </xsl:choose>
     </xsl:param>
-
-    <xsl:template match="*" mode="processTask">
-        <fo:block xsl:use-attribute-sets="task">
-            <xsl:apply-templates select="." mode="commonTopicProcessing"/>
-        </fo:block>
-    </xsl:template>
-
+  
+  <xsl:template match="*[contains(@class, ' task/task ')]" mode="processTopic"
+                name="processTask">
+    <fo:block xsl:use-attribute-sets="task">
+      <xsl:apply-templates select="." mode="commonTopicProcessing"/>
+    </fo:block>
+  </xsl:template>
+  
+  <!-- Deprecated, retained for backwards compatibility -->
+  <xsl:template match="*" mode="processTask">
+    <xsl:call-template name="processTask"/>
+  </xsl:template>
+  
     <xsl:template match="*[contains(@class, ' task/taskbody ')]">
         <fo:block xsl:use-attribute-sets="taskbody">
             <xsl:call-template name="commonattributes"/>
@@ -66,10 +70,11 @@ See the accompanying license.txt file for applicable licenses.
         <fo:block xsl:use-attribute-sets="prereq">
             <xsl:call-template name="commonattributes"/>
             <xsl:apply-templates select="." mode="dita2xslfo:task-heading">
-                <xsl:with-param name="use-label">
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'Task Prereq'"/>
-                    </xsl:call-template>
+                  <xsl:with-param name="use-label">
+                    <xsl:apply-templates select="." mode="dita2xslfo:retrieve-task-heading">
+                      <xsl:with-param name="pdf2-string">Task Prereq</xsl:with-param>
+                      <xsl:with-param name="common-string">task_prereq</xsl:with-param>
+                    </xsl:apply-templates>
                 </xsl:with-param>
             </xsl:apply-templates>
             <fo:block xsl:use-attribute-sets="prereq__content">
@@ -83,9 +88,10 @@ See the accompanying license.txt file for applicable licenses.
             <xsl:call-template name="commonattributes"/>
             <xsl:apply-templates select="." mode="dita2xslfo:task-heading">
                 <xsl:with-param name="use-label">
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'Task Context'"/>
-                    </xsl:call-template>
+                    <xsl:apply-templates select="." mode="dita2xslfo:retrieve-task-heading">
+                      <xsl:with-param name="pdf2-string">Task Context</xsl:with-param>
+                      <xsl:with-param name="common-string">task_context</xsl:with-param>
+                    </xsl:apply-templates>
                 </xsl:with-param>
             </xsl:apply-templates>
             <fo:block xsl:use-attribute-sets="context__content">
@@ -98,8 +104,14 @@ See the accompanying license.txt file for applicable licenses.
         <fo:block xsl:use-attribute-sets="cmd">
             <xsl:call-template name="commonattributes"/>
             <xsl:if test="../@importance='optional'">
-                <xsl:call-template name="insertVariable">
-                    <xsl:with-param name="theVariableID" select="'Optional Step'"/>
+                <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Optional Step'"/>
+                </xsl:call-template>
+                <xsl:text> </xsl:text>
+            </xsl:if>
+            <xsl:if test="../@importance='required'">
+                <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Required Step'"/>
                 </xsl:call-template>
                 <xsl:text> </xsl:text>
             </xsl:if>
@@ -133,9 +145,10 @@ See the accompanying license.txt file for applicable licenses.
             <xsl:call-template name="commonattributes"/>
             <xsl:apply-templates select="." mode="dita2xslfo:task-heading">
                 <xsl:with-param name="use-label">
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'Task Result'"/>
-                    </xsl:call-template>
+                    <xsl:apply-templates select="." mode="dita2xslfo:retrieve-task-heading">
+                      <xsl:with-param name="pdf2-string">Task Result</xsl:with-param>
+                      <xsl:with-param name="common-string">task_results</xsl:with-param>
+                    </xsl:apply-templates>
                 </xsl:with-param>
             </xsl:apply-templates>
             <fo:block xsl:use-attribute-sets="result__content">
@@ -155,9 +168,10 @@ See the accompanying license.txt file for applicable licenses.
               <xsl:otherwise>
                 <xsl:apply-templates select="." mode="dita2xslfo:task-heading">
                   <xsl:with-param name="use-label">
-                      <xsl:call-template name="insertVariable">
-                          <xsl:with-param name="theVariableID" select="'Task Example'"/>
-                      </xsl:call-template>
+                      <xsl:apply-templates select="." mode="dita2xslfo:retrieve-task-heading">
+                        <xsl:with-param name="pdf2-string">Task Example</xsl:with-param>
+                        <xsl:with-param name="common-string">task_example</xsl:with-param>
+                      </xsl:apply-templates>
                   </xsl:with-param>
                 </xsl:apply-templates>
               </xsl:otherwise>
@@ -173,9 +187,10 @@ See the accompanying license.txt file for applicable licenses.
             <xsl:call-template name="commonattributes"/>
             <xsl:apply-templates select="." mode="dita2xslfo:task-heading">
                 <xsl:with-param name="use-label">
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'Task Postreq'"/>
-                    </xsl:call-template>
+                    <xsl:apply-templates select="." mode="dita2xslfo:retrieve-task-heading">
+                      <xsl:with-param name="pdf2-string">Task Postreq</xsl:with-param>
+                      <xsl:with-param name="common-string">task_postreq</xsl:with-param>
+                    </xsl:apply-templates>
                 </xsl:with-param>
             </xsl:apply-templates>
             <fo:block xsl:use-attribute-sets="postreq__content">
@@ -198,9 +213,10 @@ See the accompanying license.txt file for applicable licenses.
               <fo:block>
                   <xsl:apply-templates select="." mode="dita2xslfo:task-heading">
                       <xsl:with-param name="use-label">
-                          <xsl:call-template name="insertVariable">
-                              <xsl:with-param name="theVariableID" select="'Task Steps'"/>
-                          </xsl:call-template>
+                        <xsl:apply-templates select="." mode="dita2xslfo:retrieve-task-heading">
+                          <xsl:with-param name="pdf2-string">Task Steps</xsl:with-param>
+                          <xsl:with-param name="common-string">task_procedure</xsl:with-param>
+                        </xsl:apply-templates>
                       </xsl:with-param>
                   </xsl:apply-templates>
                   <fo:list-block xsl:use-attribute-sets="steps">
@@ -224,9 +240,13 @@ See the accompanying license.txt file for applicable licenses.
         <fo:block>
           <xsl:apply-templates select="." mode="dita2xslfo:task-heading">
             <xsl:with-param name="use-label">
-              <xsl:call-template name="insertVariable">
-                <xsl:with-param name="theVariableID" select="'#steps-unordered-label'"/>
-              </xsl:call-template>
+              <!--<xsl:call-template name="getVariable">
+                <xsl:with-param name="id" select="'#steps-unordered-label'"/>
+              </xsl:call-template>-->
+              <xsl:apply-templates select="." mode="dita2xslfo:retrieve-task-heading">
+                <xsl:with-param name="pdf2-string">#steps-unordered-label</xsl:with-param>
+                <xsl:with-param name="common-string">task_procedure_unordered</xsl:with-param>
+              </xsl:apply-templates>
             </xsl:with-param>
           </xsl:apply-templates>
           <fo:list-block xsl:use-attribute-sets="steps-unordered">
@@ -243,7 +263,7 @@ See the accompanying license.txt file for applicable licenses.
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
 
     <xsl:template match="*[contains(@class, ' task/steps ')]/*[contains(@class, ' task/step ')]">
         <!-- Switch to variable for the count rather than xsl:number, so that step specializations are also counted -->
@@ -255,9 +275,9 @@ See the accompanying license.txt file for applicable licenses.
                         <xsl:call-template name="commonattributes"/>
                     </fo:inline>
                     <xsl:if test="preceding-sibling::*[contains(@class, ' task/step ')] | following-sibling::*[contains(@class, ' task/step ')]">
-                        <xsl:call-template name="insertVariable">
-                            <xsl:with-param name="theVariableID" select="'Ordered List Number'"/>
-                            <xsl:with-param name="theParameters">
+                        <xsl:call-template name="getVariable">
+                            <xsl:with-param name="id" select="'Ordered List Number'"/>
+                            <xsl:with-param name="params">
                                 <number>
                                     <xsl:value-of select="$actual-step-count"/>
                                 </number>
@@ -283,8 +303,8 @@ See the accompanying license.txt file for applicable licenses.
                     <fo:inline>
                         <xsl:call-template name="commonattributes"/>
                     </fo:inline>
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'Unordered List bullet'"/>
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="'Unordered List bullet'"/>
                     </xsl:call-template>
                 </fo:block>
             </fo:list-item-label>
@@ -358,8 +378,8 @@ See the accompanying license.txt file for applicable licenses.
                     <fo:inline>
                         <xsl:call-template name="commonattributes"/>
                     </fo:inline>
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'Unordered List bullet'"/>
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="'Unordered List bullet'"/>
                     </xsl:call-template>
                 </fo:block>
             </fo:list-item-label>
@@ -370,6 +390,132 @@ See the accompanying license.txt file for applicable licenses.
             </fo:list-item-body>
         </fo:list-item>
     </xsl:template>
+
+  <!-- Choice tables -->
+
+  <xsl:template match="*[contains(@class, ' task/choicetable ')]">
+    <fo:table xsl:use-attribute-sets="choicetable">
+      <xsl:call-template name="commonattributes"/>
+      <xsl:call-template name="univAttrs"/>
+      <xsl:call-template name="globalAtts"/>
+
+      <xsl:if test="@relcolwidth">
+        <xsl:variable name="fix-relcolwidth">
+          <xsl:apply-templates select="." mode="fix-relcolwidth">
+            <xsl:with-param name="number-cells" select="2"/>
+          </xsl:apply-templates>
+        </xsl:variable>
+        <xsl:call-template name="createSimpleTableColumns">
+          <xsl:with-param name="theColumnWidthes" select="$fix-relcolwidth"/>
+        </xsl:call-template>
+      </xsl:if>
+
+      <xsl:choose>
+        <xsl:when test="*[contains(@class, ' task/chhead ')]">
+          <xsl:apply-templates select="*[contains(@class, ' task/chhead ')]"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <fo:table-header xsl:use-attribute-sets="chhead">
+            <fo:table-row xsl:use-attribute-sets="chhead__row">
+              <fo:table-cell xsl:use-attribute-sets="chhead.choptionhd">
+                <fo:block xsl:use-attribute-sets="chhead.choptionhd__content">
+                  <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Option'"/>
+                  </xsl:call-template>
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell xsl:use-attribute-sets="chhead.chdeschd">
+                <fo:block xsl:use-attribute-sets="chhead.chdeschd__content">
+                  <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Description'"/>
+                  </xsl:call-template>
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-header>
+        </xsl:otherwise>
+      </xsl:choose>
+
+      <fo:table-body xsl:use-attribute-sets="choicetable__body">
+        <xsl:apply-templates select="*[contains(@class, ' task/chrow ')]"/>
+      </fo:table-body>
+
+    </fo:table>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' task/chhead ')]">
+    <fo:table-header xsl:use-attribute-sets="chhead">
+      <xsl:call-template name="commonattributes"/>
+      <fo:table-row xsl:use-attribute-sets="chhead__row">
+        <xsl:apply-templates/>
+      </fo:table-row>
+    </fo:table-header>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' task/chrow ')]">
+    <fo:table-row xsl:use-attribute-sets="chrow">
+      <xsl:call-template name="commonattributes"/>
+      <xsl:apply-templates/>
+    </fo:table-row>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' task/chhead ')]/*[contains(@class, ' task/choptionhd ')]">
+    <fo:table-cell xsl:use-attribute-sets="chhead.choptionhd">
+      <xsl:call-template name="commonattributes"/>
+      <fo:block xsl:use-attribute-sets="chhead.choptionhd__content">
+        <xsl:apply-templates/>
+      </fo:block>
+    </fo:table-cell>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' task/chhead ')]/*[contains(@class, ' task/chdeschd ')]">
+    <fo:table-cell xsl:use-attribute-sets="chhead.chdeschd">
+      <xsl:call-template name="commonattributes"/>
+      <fo:block xsl:use-attribute-sets="chhead.chdeschd__content">
+        <xsl:apply-templates/>
+      </fo:block>
+    </fo:table-cell>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' task/chrow ')]/*[contains(@class, ' task/choption ')]">
+    <xsl:variable name="keyCol" select="ancestor::*[contains(@class, ' task/choicetable ')][1]/@keycol"/>
+    <fo:table-cell xsl:use-attribute-sets="chrow.choption">
+      <xsl:call-template name="commonattributes"/>
+      <xsl:choose>
+        <xsl:when test="$keyCol = 1">
+          <fo:block xsl:use-attribute-sets="chrow.choption__keycol-content">
+            <xsl:apply-templates/>
+          </fo:block>
+        </xsl:when>
+        <xsl:otherwise>
+          <fo:block xsl:use-attribute-sets="chrow.choption__content">
+            <xsl:apply-templates/>
+          </fo:block>
+        </xsl:otherwise>
+      </xsl:choose>
+    </fo:table-cell>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' task/chrow ')]/*[contains(@class, ' task/chdesc ')]">
+    <xsl:variable name="keyCol" select="number(ancestor::*[contains(@class, ' task/choicetable ')][1]/@keycol)"/>
+    <fo:table-cell xsl:use-attribute-sets="chrow.chdesc">
+      <xsl:call-template name="commonattributes"/>
+      <xsl:choose>
+        <xsl:when test="$keyCol = 2">
+          <fo:block xsl:use-attribute-sets="chrow.chdesc__keycol-content">
+            <xsl:apply-templates/>
+          </fo:block>
+        </xsl:when>
+        <xsl:otherwise>
+          <fo:block xsl:use-attribute-sets="chrow.chdesc__content">
+            <xsl:apply-templates/>
+          </fo:block>
+        </xsl:otherwise>
+      </xsl:choose>
+    </fo:table-cell>
+  </xsl:template>
+
+  <!-- Example -->
 
   <xsl:template match="*[contains(@class, ' topic/example ')]" mode="dita2xslfo:task-heading">
     <xsl:param name="use-label"/>
@@ -389,6 +535,29 @@ See the accompanying license.txt file for applicable licenses.
                 <fo:inline><xsl:copy-of select="$use-label"/></fo:inline>
             </fo:block>
         </xsl:if>
+    </xsl:template>
+
+    <!-- Set up to allow string retrieval based on the original PDF2 string;
+         if not found, fall back to the common string -->
+    <xsl:template match="*" mode="dita2xslfo:retrieve-task-heading">
+      <xsl:param name="pdf2-string"/>
+      <xsl:param name="common-string"/>
+      <xsl:variable name="retrieved-pdf2-string">
+        <!-- By default, will return the lookup value -->
+        <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="$pdf2-string"/>
+        </xsl:call-template>
+      </xsl:variable>
+      <xsl:choose>
+        <xsl:when test="$retrieved-pdf2-string!=$pdf2-string and $retrieved-pdf2-string!=''">
+          <xsl:value-of select="$retrieved-pdf2-string"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="getVariable">
+              <xsl:with-param name="id" select="$common-string"/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
     </xsl:template>
 
 </xsl:stylesheet>

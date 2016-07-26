@@ -1,21 +1,21 @@
 <?xml version='1.0'?>
 
-<!-- 
-Copyright © 2004-2006 by Idiom Technologies, Inc. All rights reserved. 
+<!--
+Copyright © 2004-2006 by Idiom Technologies, Inc. All rights reserved.
 IDIOM is a registered trademark of Idiom Technologies, Inc. and WORLDSERVER
-and WORLDSTART are trademarks of Idiom Technologies, Inc. All other 
-trademarks are the property of their respective owners. 
+and WORLDSTART are trademarks of Idiom Technologies, Inc. All other
+trademarks are the property of their respective owners.
 
-IDIOM TECHNOLOGIES, INC. IS DELIVERING THE SOFTWARE "AS IS," WITH 
+IDIOM TECHNOLOGIES, INC. IS DELIVERING THE SOFTWARE "AS IS," WITH
 ABSOLUTELY NO WARRANTIES WHATSOEVER, WHETHER EXPRESS OR IMPLIED,  AND IDIOM
 TECHNOLOGIES, INC. DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
-BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
 PURPOSE AND WARRANTY OF NON-INFRINGEMENT. IDIOM TECHNOLOGIES, INC. SHALL NOT
 BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, COVER, PUNITIVE, EXEMPLARY,
-RELIANCE, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO LOSS OF 
-ANTICIPATED PROFIT), ARISING FROM ANY CAUSE UNDER OR RELATED TO  OR ARISING 
+RELIANCE, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO LOSS OF
+ANTICIPATED PROFIT), ARISING FROM ANY CAUSE UNDER OR RELATED TO  OR ARISING
 OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF IDIOM
-TECHNOLOGIES, INC. HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+TECHNOLOGIES, INC. HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 Idiom Technologies, Inc. and its licensors shall not be liable for any
 damages suffered by any person as a result of using and/or modifying the
@@ -27,7 +27,7 @@ These terms and conditions supersede the terms and conditions in any
 licensing agreement to the extent that such terms and conditions conflict
 with those set forth herein.
 
-This file is part of the DITA Open Toolkit project hosted on Sourceforge.net. 
+This file is part of the DITA Open Toolkit project hosted on Sourceforge.net.
 See the accompanying license.txt file for applicable licenses.
 -->
 
@@ -39,51 +39,51 @@ See the accompanying license.txt file for applicable licenses.
   <!-- common attribute sets -->
 
   <xsl:attribute-set name="common.border__top">
-    <xsl:attribute name="border-top-style">solid</xsl:attribute>
-    <xsl:attribute name="border-top-width">1pt</xsl:attribute>
-    <xsl:attribute name="border-top-color">black</xsl:attribute>
+    <xsl:attribute name="border-before-style">solid</xsl:attribute>
+    <xsl:attribute name="border-before-width">1pt</xsl:attribute>
+    <xsl:attribute name="border-before-color">black</xsl:attribute>
   </xsl:attribute-set>
-  
+
   <xsl:attribute-set name="common.border__bottom">
-    <xsl:attribute name="border-bottom-style">solid</xsl:attribute>
-    <xsl:attribute name="border-bottom-width">1pt</xsl:attribute>
-    <xsl:attribute name="border-bottom-color">black</xsl:attribute>
+    <xsl:attribute name="border-after-style">solid</xsl:attribute>
+    <xsl:attribute name="border-after-width">1pt</xsl:attribute>
+    <xsl:attribute name="border-after-color">black</xsl:attribute>
   </xsl:attribute-set>
-  
+
   <xsl:attribute-set name="common.border__right">
-    <xsl:attribute name="border-right-style">solid</xsl:attribute>
-    <xsl:attribute name="border-right-width">1pt</xsl:attribute>
-    <xsl:attribute name="border-right-color">black</xsl:attribute>
+    <xsl:attribute name="border-end-style">solid</xsl:attribute>
+    <xsl:attribute name="border-end-width">1pt</xsl:attribute>
+    <xsl:attribute name="border-end-color">black</xsl:attribute>
   </xsl:attribute-set>
-  
+
   <xsl:attribute-set name="common.border__left">
-    <xsl:attribute name="border-left-style">solid</xsl:attribute>
-    <xsl:attribute name="border-left-width">1pt</xsl:attribute>
-    <xsl:attribute name="border-left-color">black</xsl:attribute>
+    <xsl:attribute name="border-start-style">solid</xsl:attribute>
+    <xsl:attribute name="border-start-width">1pt</xsl:attribute>
+    <xsl:attribute name="border-start-color">black</xsl:attribute>
   </xsl:attribute-set>
-  
+
   <xsl:attribute-set name="common.border" use-attribute-sets="common.border__top common.border__right common.border__bottom common.border__left"/>
-  
+
   <xsl:attribute-set name="base-font">
     <xsl:attribute name="font-size"><xsl:value-of select="$default-font-size"/></xsl:attribute>
   </xsl:attribute-set>
-  
+
   <!-- titles -->
   <xsl:attribute-set name="common.title">
     <xsl:attribute name="font-family">sans-serif</xsl:attribute>
   </xsl:attribute-set>
-  
+
   <!-- paragraph-like blocks -->
   <xsl:attribute-set name="common.block">
     <xsl:attribute name="space-before">0.6em</xsl:attribute>
     <xsl:attribute name="space-after">0.6em</xsl:attribute>
   </xsl:attribute-set>
-  
+
   <xsl:attribute-set name="common.link">
     <xsl:attribute name="color">blue</xsl:attribute>
     <xsl:attribute name="font-style">italic</xsl:attribute>
   </xsl:attribute-set>
-  
+
   <!-- common element specific attribute sets -->
 
     <xsl:attribute-set name="tm">
@@ -93,7 +93,7 @@ See the accompanying license.txt file for applicable licenses.
 
     <xsl:attribute-set name="tm__content">
         <xsl:attribute name="font-size">75%</xsl:attribute>
-        <xsl:attribute name="baseline-shift">20%</xsl:attribute> 
+        <xsl:attribute name="baseline-shift">20%</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="tm__content__service">
@@ -107,8 +107,8 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:attribute-set name="source">
     </xsl:attribute-set>
 
-    <xsl:attribute-set name="topic.title" use-attribute-sets="common.title">
-		<xsl:attribute name="border-bottom">3pt solid black</xsl:attribute>
+    <xsl:attribute-set name="topic.title" use-attribute-sets="common.title common.border__bottom">
+    <xsl:attribute name="border-after-width">3pt</xsl:attribute>
         <xsl:attribute name="space-before">0pt</xsl:attribute>
         <xsl:attribute name="space-after">16.8pt</xsl:attribute>
         <xsl:attribute name="font-size">18pt</xsl:attribute>
@@ -268,6 +268,9 @@ See the accompanying license.txt file for applicable licenses.
         <xsl:attribute name="start-indent">72pt</xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="div">
+    </xsl:attribute-set>
+
     <xsl:attribute-set name="p" use-attribute-sets="common.block">
         <xsl:attribute name="text-indent">0em</xsl:attribute>
     </xsl:attribute-set>
@@ -319,15 +322,15 @@ See the accompanying license.txt file for applicable licenses.
 
     <xsl:attribute-set name="note__table" use-attribute-sets="common.block">
     </xsl:attribute-set>
-  
+
     <xsl:attribute-set name="note__image__column">
         <xsl:attribute name="column-number">1</xsl:attribute>
         <xsl:attribute name="column-width">32pt</xsl:attribute>
     </xsl:attribute-set>
-  
+
     <xsl:attribute-set name="note__text__column">
       <xsl:attribute name="column-number">2</xsl:attribute>
-    </xsl:attribute-set>  
+    </xsl:attribute-set>
 
     <xsl:attribute-set name="note__image__entry">
         <xsl:attribute name="padding-right">5pt</xsl:attribute>
@@ -373,8 +376,11 @@ See the accompanying license.txt file for applicable licenses.
 
     <xsl:attribute-set name="note__label__danger">
     </xsl:attribute-set>
-  
+
     <xsl:attribute-set name="note__label__warning">
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="note__label__trouble">
     </xsl:attribute-set>
 
     <xsl:attribute-set name="note__label__other">
@@ -385,7 +391,6 @@ See the accompanying license.txt file for applicable licenses.
         <xsl:attribute name="white-space-collapse">false</xsl:attribute>
         <xsl:attribute name="linefeed-treatment">preserve</xsl:attribute>
         <xsl:attribute name="wrap-option">wrap</xsl:attribute>
-        <xsl:attribute name="background-color">#f0f0f0</xsl:attribute>
         <xsl:attribute name="font-family">monospace</xsl:attribute>
         <xsl:attribute name="line-height">106%</xsl:attribute>
     </xsl:attribute-set>
@@ -394,24 +399,46 @@ See the accompanying license.txt file for applicable licenses.
         <xsl:attribute name="font-weight">bold</xsl:attribute>
     </xsl:attribute-set>
 
-    <xsl:attribute-set name="__border__top">
-        <xsl:attribute name="border-top-color">black</xsl:attribute>
-        <xsl:attribute name="border-top-width">thin</xsl:attribute>
+    <xsl:attribute-set name="__border__right" use-attribute-sets="common.border__right">
+      <xsl:attribute name="padding-right">6pt</xsl:attribute>
+      <xsl:attribute name="end-indent">6pt + from-parent(end-indent)</xsl:attribute>
+    </xsl:attribute-set>
+  
+    <xsl:attribute-set name="__border__left" use-attribute-sets="common.border__left">
+      <xsl:attribute name="padding-left">6pt</xsl:attribute>
+      <xsl:attribute name="start-indent">6pt + from-parent(start-indent)</xsl:attribute>
     </xsl:attribute-set>
 
-    <xsl:attribute-set name="__border__bot">
-        <xsl:attribute name="border-bottom-color">black</xsl:attribute>
-        <xsl:attribute name="border-bottom-width">thin</xsl:attribute>
+    <xsl:attribute-set name="__border__top" use-attribute-sets="common.border__top">
+      <xsl:attribute name="padding-top">6pt</xsl:attribute>
+    </xsl:attribute-set>
+  
+    <xsl:attribute-set name="__border__bot" use-attribute-sets="common.border__bottom">
+      <xsl:attribute name="padding-bottom">6pt</xsl:attribute>
     </xsl:attribute-set>
 
-    <xsl:attribute-set name="__border__sides">
-        <xsl:attribute name="border-left-color">black</xsl:attribute>
-        <xsl:attribute name="border-left-width">thin</xsl:attribute>
-        <xsl:attribute name="border-right-color">black</xsl:attribute>
-        <xsl:attribute name="border-right-width">thin</xsl:attribute>
+    <xsl:attribute-set name="__border__topbot" use-attribute-sets="__border__top __border__bot">
+    </xsl:attribute-set>
+  
+    <xsl:attribute-set name="__border__sides" use-attribute-sets="__border__right __border__left">
+    </xsl:attribute-set>
+  
+    <xsl:attribute-set name="__border__all" use-attribute-sets="__border__right __border__left __border__top __border__bot">
     </xsl:attribute-set>
 
-    <xsl:attribute-set name="__border__all" use-attribute-sets="common.border">
+    <xsl:attribute-set name="__expanse__page">
+        <xsl:attribute name="start-indent">0</xsl:attribute>
+        <xsl:attribute name="end-indent">0</xsl:attribute>
+        <xsl:attribute name="width">auto</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="__expanse__column">
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="__expanse__textline">
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="__expanse__spread">
     </xsl:attribute-set>
 
     <xsl:attribute-set name="lines" use-attribute-sets="base-font">
@@ -643,12 +670,21 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:attribute-set name="image">
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="image.artlabel">
+      <xsl:attribute name="font-weight">bold</xsl:attribute>
+      <xsl:attribute name="font-style">italic</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="flag.image" use-attribute-sets="image">
+    </xsl:attribute-set>
+
     <xsl:attribute-set name="__unresolved__conref">
         <xsl:attribute name="color">#CC3333</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="__fo__root" use-attribute-sets="base-font">
         <xsl:attribute name="font-family">serif</xsl:attribute>
+        <!-- TODO: https://issues.apache.org/jira/browse/FOP-2409 -->
         <xsl:attribute name="xml:lang" select="translate($locale, '_', '-')"/>
         <xsl:attribute name="writing-mode" select="$writing-mode"/>
     </xsl:attribute-set>
@@ -656,7 +692,7 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:attribute-set name="__force__page__count">
         <xsl:attribute name="force-page-count">
             <xsl:choose>
-                <xsl:when test="name(/*) = 'bookmap'">
+                <xsl:when test="/*[contains(@class, ' bookmap/bookmap ')]">
                     <xsl:value-of select="'even'"/>
                 </xsl:when>
                 <xsl:otherwise>
@@ -665,5 +701,42 @@ See the accompanying license.txt file for applicable licenses.
             </xsl:choose>
         </xsl:attribute>
     </xsl:attribute-set>
+
+  <xsl:attribute-set name="page-sequence.cover" use-attribute-sets="__force__page__count">
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="page-sequence.frontmatter">
+    <xsl:attribute name="format">i</xsl:attribute>
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="page-sequence.notice" use-attribute-sets="__force__page__count page-sequence.frontmatter">
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="page-sequence.preface" use-attribute-sets="__force__page__count page-sequence.frontmatter">
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="page-sequence.toc" use-attribute-sets="__force__page__count page-sequence.frontmatter">
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="page-sequence.lot" use-attribute-sets="page-sequence.toc">
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="page-sequence.lof" use-attribute-sets="page-sequence.toc">
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="page-sequence.body" use-attribute-sets="__force__page__count">
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="page-sequence.part" use-attribute-sets="__force__page__count">
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="page-sequence.appendix" use-attribute-sets="__force__page__count">
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="page-sequence.glossary" use-attribute-sets="__force__page__count">
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="page-sequence.index" use-attribute-sets="__force__page__count">
+  </xsl:attribute-set>
 
 </xsl:stylesheet>

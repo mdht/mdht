@@ -8,28 +8,18 @@
 <!-- Need to ensure this comes out with the name "plugin.xml" rather than the default.
      So: use saxon to force the plugin name. -->
 
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="2.0" 
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   
-  <xsl:import href="../../../xsl/common/output-message.xsl"/>
+  <xsl:import href="plugin:org.dita.base:xsl/common/dita-utilities.xsl"/>
+  <xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/>
+  <!-- Deprecated since 2.3 -->
   <xsl:variable name="msgprefix">DOTX</xsl:variable>
   
   <xsl:param name="PLUGINFILE" select="'plugin.xml'"/>
-  <xsl:param name="DITAMAPEXT" select="'ditamap'"/>
-  <xsl:param name="indexFilename" select="'index.xml'"/>
-  <xsl:param name="FULL-DITAMAPEXT">
-    <xsl:choose>
-      <xsl:when test="starts-with($DITAMAPEXT,'.')"><xsl:value-of select="$DITAMAPEXT"/></xsl:when>
-      <xsl:otherwise><xsl:value-of select="concat('.',$DITAMAPEXT)"/></xsl:otherwise>
-    </xsl:choose>
-  </xsl:param>
-  <xsl:param name="DITAEXT" select="'dita'"/>
-  <xsl:param name="FULL-DITAEXT">
-    <xsl:choose>
-      <xsl:when test="starts-with($DITAEXT,'.')"><xsl:value-of select="$DITAEXT"/></xsl:when>
-      <xsl:otherwise><xsl:value-of select="concat('.',$DITAEXT)"/></xsl:otherwise>
-    </xsl:choose>
-  </xsl:param>
+  <xsl:param name="DITAMAPEXT" select="'.ditamap'"/>
+  <xsl:param name="indexFilename" select="'index.xml'"/>  
+  
 
   <xsl:param name="DEFAULTINDEX" select="''"/>
   <xsl:param name="fragment.country" select="''"/>
@@ -134,7 +124,12 @@
   <xsl:template match="*[contains(@class,' eclipsemap/primarytocref ')][@href]">
     <xsl:variable name="tocname">
       <xsl:choose>
-        <xsl:when test="contains(@href,$FULL-DITAMAPEXT)"><xsl:value-of select="substring-before(@href,$FULL-DITAMAPEXT)"/>.xml</xsl:when>
+        <xsl:when test="@format = 'ditamap'">
+          <xsl:call-template name="replace-extension">
+            <xsl:with-param name="filename" select="@href"/>
+            <xsl:with-param name="extension" select="'.xml'"/>
+          </xsl:call-template>
+        </xsl:when>
         <xsl:otherwise><xsl:value-of select="@href"/></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
@@ -147,7 +142,12 @@
   <xsl:template match="*[contains(@class,' eclipsemap/tocref ')][@href]">
     <xsl:variable name="tocname">
       <xsl:choose>
-        <xsl:when test="contains(@href,$FULL-DITAMAPEXT)"><xsl:value-of select="substring-before(@href,$FULL-DITAMAPEXT)"/>.xml</xsl:when>
+        <xsl:when test="@format = 'ditamap'">
+          <xsl:call-template name="replace-extension">
+            <xsl:with-param name="filename" select="@href"/>
+            <xsl:with-param name="extension" select="'.xml'"/>
+          </xsl:call-template>
+        </xsl:when>
         <xsl:otherwise><xsl:value-of select="@href"/></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
@@ -164,8 +164,12 @@
   <xsl:template  name="indexExtension" match="*[contains(@class,' eclipsemap/indexExtension ')][@href]">
     <xsl:variable name="indexname">
       <xsl:choose>
-        <xsl:when test="contains(@href,$FULL-DITAEXT)"><xsl:value-of select="substring-before(@href,$FULL-DITAEXT)"/>.xml</xsl:when>
-        <xsl:when test="contains(@href,$FULL-DITAMAPEXT)"><xsl:value-of select="substring-before(@href,$FULL-DITAMAPEXT)"/>.xml</xsl:when>
+        <xsl:when test="not(@format) or @format = 'dita' or @format = 'ditamap'">
+          <xsl:call-template name="replace-extension">
+            <xsl:with-param name="filename" select="@href"/>
+            <xsl:with-param name="extension" select="'.xml'"/>
+          </xsl:call-template>
+        </xsl:when>
         <xsl:otherwise><xsl:value-of select="@href"/></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
@@ -385,8 +389,7 @@
           <xsl:otherwise>
             <xsl:text>Bundle-SymbolicName: org.sample.help.doc; singleton:=true</xsl:text><xsl:value-of select="$newline"/>
             <xsl:call-template name="output-message">
-              <xsl:with-param name="msgnum">050</xsl:with-param>
-              <xsl:with-param name="msgsev">W</xsl:with-param>
+              <xsl:with-param name="id" select="'DOTX050W'"/>
             </xsl:call-template>
           </xsl:otherwise>
         </xsl:choose>
@@ -443,8 +446,7 @@
             </xsl:choose>
             <xsl:value-of select="$newline"/>
             <xsl:call-template name="output-message">
-              <xsl:with-param name="msgnum">050</xsl:with-param>
-              <xsl:with-param name="msgsev">W</xsl:with-param>
+              <xsl:with-param name="id" select="'DOTX050W'"/>
             </xsl:call-template>
           </xsl:otherwise>
         </xsl:choose>                 
@@ -480,7 +482,7 @@
   
   <xsl:template match="@version" mode="eclipse.manifest">
     <xsl:choose>
-      <xsl:when test="(string(number(.)) &lt; 0) or (string(number(.)) = 'NaN')  or (normalize-space(.)='') ">
+      <xsl:when test="(number(.) &lt; 0) or (string(number(.)) = 'NaN')  or (normalize-space(.)='') ">
           <xsl:text>0</xsl:text>
       </xsl:when>
       <xsl:otherwise>
@@ -491,7 +493,7 @@
   
   <xsl:template match="@release" mode="eclipse.manifest">
     <xsl:choose>
-      <xsl:when test="(string(number(.)) &lt; 0) or (string(number(.)) = 'NaN')  or (normalize-space(.)='') ">
+      <xsl:when test="(number(.) &lt; 0) or (string(number(.)) = 'NaN')  or (normalize-space(.)='') ">
           <xsl:text>.</xsl:text><xsl:text>0</xsl:text>
       </xsl:when>
       <xsl:otherwise>
@@ -502,7 +504,7 @@
   
   <xsl:template match="@modification" mode="eclipse.manifest">
     <xsl:choose>
-      <xsl:when test="(string(number(.)) &lt; 0) or (string(number(.)) = 'NaN')  or (normalize-space(.)='') ">
+      <xsl:when test="(number(.) &lt; 0) or (string(number(.)) = 'NaN')  or (normalize-space(.)='') ">
           <xsl:text>.</xsl:text><xsl:text>0</xsl:text>
       </xsl:when>
       <xsl:otherwise>

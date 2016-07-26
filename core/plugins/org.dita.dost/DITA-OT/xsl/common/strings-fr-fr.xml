@@ -62,6 +62,7 @@
    <str name="task_prereq">Avant de commencer</str>
    <str name="task_postreq">Que faire ensuite</str>
    <str name="task_procedure">Procédure</str>
+   <str name="task_procedure_unordered">Procédure</str>
    <str name="task_results">Résultats</str>
 
    <str name="Copyright">Copyright</str>
@@ -71,11 +72,4 @@
    <str name="CloseQuote">"</str>
    <str name="ColonSymbol"> :</str>
    
-   <!-- For odt transform -->
-   <str name="On the page"> à la page </str>
-   <str name="Related Links">Liens connexes</str>
-   <str name="List item">Articles.</str>
-   <str name="Foot note">Note de bas de page.</str>
-   <str name="Page"> la page </str>
-   <str name="Unordered List bullet">&#8226;</str>
 </strings>

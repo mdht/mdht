@@ -5,27 +5,29 @@
 <!-- (c) Copyright IBM Corp. 2006 All Rights Reserved. -->
 <project name="dita2javahelp">
 
+  <target name="dita2javahelp.init">
+    <property name="html-version" value="html"/>
+  </target>
+    
+
     <target name="dita2javahelp"
             unless="noMap"
-        depends="build-init, preprocess, copy-css, 
-                     dita.topics.html, dita.inner.topics.html, dita.outer.topics.html">
-          <antcall target="dita.map.javahelp"></antcall>
-          <antcall target="compile.Java.Help"></antcall>
+            depends="dita2javahelp.init, build-init, preprocess, 
+                     xhtml.topics,
+                     copy-css">
+          <antcall target="dita.map.javahelp"/>
+          <antcall target="compile.Java.Help"/>
     </target>
 
     <target name="dita.map.javahelp"
-            depends="dita.map.javahelp.init, dita.map.javahelp.toc, 
-        						 dita.map.javahelp.map, dita.map.javahelp.set, dita.map.javahelp.index,
-                                 dita.out.map.javahelp.toc, dita.out.map.javahelp.map, 
-                                 dita.out.map.javahelp.set, dita.out.map.javahelp.index">
+            depends="dita.map.javahelp.init,
+                     dita.map.javahelp.toc, dita.map.javahelp.map,
+                     dita.map.javahelp.set, dita.map.javahelp.index">
     </target>
 
     <target name="dita.map.javahelp.init"
             description="Init properties for JavaHelp">
-        <basename property="dita.map.toc.root"
-                  file="${dita.input.filename}"
-                  suffix=".ditamap" />
-        <condition property="args.javahelp.toc" value="${dita.map.toc.root}">
+        <condition property="args.javahelp.toc" value="${dita.map.filename.root}">
             <not>
                 <isset property="args.javahelp.toc" />
             </not>
@@ -35,7 +37,7 @@
                 <isset property="out.ext" />
             </not>
         </condition>
-        <condition property="args.javahelp.map" value="${dita.map.toc.root}">
+        <condition property="args.javahelp.map" value="${dita.map.filename.root}">
             <not>
                 <isset property="args.javahelp.map" />
             </not>
@@ -43,35 +45,36 @@
     </target>
 
     <target name="dita.map.javahelp.toc"
-            depends="dita.map.javahelp.init" if="old.transform"
+            depends="dita.map.javahelp.init"
             description="Build JavaHelp TOC file">
+        <local name="javahelp.toc.output.dir"/>
+        <condition property="javahelp.toc.output.dir" value="${output.dir}" else="${_dita.map.output.dir}">
+          <isset property="inner.transform"/>
+        </condition>
         <xslt
               basedir="${dita.temp.dir}"
-              destdir="${output.dir}"
-              includesfile="${dita.temp.dir}${file.separator}${user.input.file.listfile}"
+              destdir="${javahelp.toc.output.dir}"
+              includesfile="${dita.temp.dir}/${user.input.file.listfile}"
               classpathref="dost.class.path"
-              style="${dita.script.dir}${file.separator}map2javahelptoc.xsl">
-        	<excludesfile name="${dita.temp.dir}${file.separator}${resourceonlyfile}" if="resourceonlyfile"/>
-            <param name="DITAEXT" expression="${dita.ext}" if="dita.ext" />
+              style="${dita.plugin.org.dita.javahelp.dir}/xsl/map2javahelptoc.xsl">
+        	<excludesfile name="${dita.temp.dir}/${resourceonlyfile}" if="resourceonlyfile"/>
             <param name="OUTEXT" expression="${out.ext}" if="out.ext" />
-            <mapper type="glob"
-                    from="*${dita.input.filename}"
-                    to="*${args.javahelp.toc}.xml" />
+            <mergemapper to="${args.javahelp.toc}.xml"/>
           <xmlcatalog refid="dita.catalog"/>
         </xslt>
     </target>
     
+    <!-- Deprecated since 2.1 -->
     <target name="dita.out.map.javahelp.toc"
         depends="dita.map.javahelp.init" if="inner.transform"
         description="Build JavaHelp TOC file">
         <xslt
             basedir="${dita.temp.dir}"
             destdir="${output.dir}"
-            includesfile="${dita.temp.dir}${file.separator}${user.input.file.listfile}"
+            includesfile="${dita.temp.dir}/${user.input.file.listfile}"
             classpathref="dost.class.path"
-            style="${dita.script.dir}${file.separator}map2javahelptoc.xsl">
-        	<excludesfile name="${dita.temp.dir}${file.separator}${resourceonlyfile}" if="resourceonlyfile"/>
-            <param name="DITAEXT" expression="${dita.ext}" if="dita.ext" />
+            style="${dita.plugin.org.dita.javahelp.dir}/xsl/map2javahelptoc.xsl">
+        	<excludesfile name="${dita.temp.dir}/${resourceonlyfile}" if="resourceonlyfile"/>
             <param name="OUTEXT" expression="${out.ext}" if="out.ext" />
             <mapper type="glob"
                 from="${user.input.file}"
@@ -81,35 +84,36 @@
     </target>
 
     <target name="dita.map.javahelp.map"
-            depends="dita.map.javahelp.init" if="old.transform"
+            depends="dita.map.javahelp.init"
             description="Build JavaHelp Map file">
+        <local name="javahelp.map.output.dir"/>
+        <condition property="javahelp.map.output.dir" value="${output.dir}" else="${_dita.map.output.dir}">
+          <isset property="inner.transform"/>
+        </condition>
         <xslt
               basedir="${dita.temp.dir}"
-              destdir="${output.dir}"
-              includesfile="${dita.temp.dir}${file.separator}${user.input.file.listfile}"
+              destdir="${javahelp.map.output.dir}"
+              includesfile="${dita.temp.dir}/${user.input.file.listfile}"
               classpathref="dost.class.path"
-              style="${dita.script.dir}${file.separator}map2javahelpmap.xsl">
-        	<excludesfile name="${dita.temp.dir}${file.separator}${resourceonlyfile}" if="resourceonlyfile"/>
-            <param name="DITAEXT" expression="${dita.ext}" if="dita.ext" />
+              style="${dita.plugin.org.dita.javahelp.dir}/xsl/map2javahelpmap.xsl">
+        	<excludesfile name="${dita.temp.dir}/${resourceonlyfile}" if="resourceonlyfile"/>
             <param name="OUTEXT" expression="${out.ext}" if="out.ext" />
-            <mapper type="glob"
-                    from="*${dita.input.filename}"
-                    to="*${args.javahelp.map}.jhm" />
+            <mergemapper to="${args.javahelp.map}.jhm"/>
           <xmlcatalog refid="dita.catalog"/>
         </xslt>
     </target>
     
+    <!-- Deprecated since 2.1 -->
     <target name="dita.out.map.javahelp.map"
         depends="dita.map.javahelp.init" if="inner.transform"
         description="Build JavaHelp Map file">
         <xslt
             basedir="${dita.temp.dir}"
             destdir="${output.dir}"
-            includesfile="${dita.temp.dir}${file.separator}${user.input.file.listfile}"
+            includesfile="${dita.temp.dir}/${user.input.file.listfile}"
             classpathref="dost.class.path"
-            style="${dita.script.dir}${file.separator}map2javahelpmap.xsl">
-        	<excludesfile name="${dita.temp.dir}${file.separator}${resourceonlyfile}" if="resourceonlyfile"/>
-            <param name="DITAEXT" expression="${dita.ext}" if="dita.ext" />
+            style="${dita.plugin.org.dita.javahelp.dir}/xsl/map2javahelpmap.xsl">
+        	<excludesfile name="${dita.temp.dir}/${resourceonlyfile}" if="resourceonlyfile"/>
             <param name="OUTEXT" expression="${out.ext}" if="out.ext" />
             <mapper type="glob"
                 from="${user.input.file}"
@@ -119,56 +123,61 @@
     </target>
 
     <target name="dita.map.javahelp.set"
-            depends="dita.map.javahelp.init, dita.map.javahelp.map" if="old.transform"
+            depends="dita.map.javahelp.init, dita.map.javahelp.map"
             description="Build JavaHelp Set file">
+        <local name="javahelp.set.output.dir"/>
+        <condition property="javahelp.set.output.dir" value="${output.dir}" else="${_dita.map.output.dir}">
+          <isset property="inner.transform"/>
+        </condition>
         <xslt
               basedir="${dita.temp.dir}"
-              destdir="${output.dir}"
-              includesfile="${dita.temp.dir}${file.separator}${user.input.file.listfile}"
+              destdir="${javahelp.set.output.dir}"
+              includesfile="${dita.temp.dir}/${user.input.file.listfile}"
               classpathref="dost.class.path"
-              style="${dita.script.dir}${file.separator}map2javahelpset.xsl">
-        	<excludesfile name="${dita.temp.dir}${file.separator}${resourceonlyfile}" if="resourceonlyfile"/>
+              style="${dita.plugin.org.dita.javahelp.dir}/xsl/map2javahelpset.xsl">
+        	<excludesfile name="${dita.temp.dir}/${resourceonlyfile}" if="resourceonlyfile"/>
             <param name="javahelpmap" expression="${args.javahelp.map}" />
             <param name="javahelptoc" expression="${args.javahelp.toc}" />
         	<param name="basedir" expression="${basedir}"/>
         	<param name="outputdir" expression="${output.dir}"/>
-        	<!--param name="outputdir" expression="${dita.dir}${file.separator}${output.dir}${file.separator}" /-->
-            <mapper type="glob"
-                    from="*${dita.input.filename}"
-                    to="*${dita.map.toc.root}_helpset.hs" />
+            <mergemapper to="${dita.map.filename.root}_helpset.hs"/>
           <xmlcatalog refid="dita.catalog"/>
         </xslt>
     </target>
     
+    <!-- Deprecated since 2.1 -->
     <target name="dita.out.map.javahelp.set"
         depends="dita.map.javahelp.init, dita.out.map.javahelp.map" if="inner.transform"
         description="Build JavaHelp Set file">
         <xslt
             basedir="${dita.temp.dir}"
             destdir="${output.dir}"
-            includesfile="${dita.temp.dir}${file.separator}${user.input.file.listfile}"
+            includesfile="${dita.temp.dir}/${user.input.file.listfile}"
             classpathref="dost.class.path"
-            style="${dita.script.dir}${file.separator}map2javahelpset.xsl">
-        	<excludesfile name="${dita.temp.dir}${file.separator}${resourceonlyfile}" if="resourceonlyfile"/>
+            style="${dita.plugin.org.dita.javahelp.dir}/xsl/map2javahelpset.xsl">
+        	<excludesfile name="${dita.temp.dir}/${resourceonlyfile}" if="resourceonlyfile"/>
             <param name="javahelpmap" expression="${args.javahelp.map}" />
             <param name="javahelptoc" expression="${args.javahelp.toc}" />
         	<param name="basedir" expression="${basedir}"/>
         	<param name="outputdir" expression="${output.dir}"/>
-        	<!--param name="outputdir" expression="${dita.dir}${file.separator}${output.dir}${file.separator}" /-->
             <mapper type="glob"
                 from="${user.input.file}"
-                to="${dita.map.toc.root}_helpset.hs" />
+                to="${dita.map.filename.root}_helpset.hs" />
           <xmlcatalog refid="dita.catalog"/>
         </xslt>
     </target>
 
-    <target name="dita.map.javahelp.index" if="old.transform"
+    <target name="dita.map.javahelp.index"
             description="Build JavaHelp Index file">
+        <local name="javahelp.index.output.dir"/>
+        <condition property="javahelp.index.output.dir" value="${output.dir}" else="${_dita.map.output.dir}">
+          <isset property="inner.transform"/>
+        </condition>
         <pipeline message="Extract index term."
                   tempdir="${dita.temp.dir}"
                   inputmap="${user.input.file}">
           <module class="org.dita.dost.module.IndexTermExtractModule">
-            <param name="output" location="${output.dir}${file.separator}${user.input.file}"/>
+            <param name="output" location="${javahelp.index.output.dir}/${dita.map.filename.root}.xml"/>
             <param name="targetext" value=".html"/>
             <param name="indextype" value="javahelp"/>
             <param name="encoding" value="${args.dita.locale}" if="args.dita.locale"/>
@@ -176,13 +185,14 @@
         </pipeline>
     </target>
     
+    <!-- Deprecated since 2.1 -->
     <target name="dita.out.map.javahelp.index" if="inner.transform"
         description="Build JavaHelp Index file">
         <pipeline message="Extract index term."
             tempdir="${dita.temp.dir}"
             inputmap="${user.input.file}">
           <module class="org.dita.dost.module.IndexTermExtractModule">
-            <param name="output" location="${output.dir}${file.separator}${dita.map.filename.root}.xml"/>
+            <param name="output" location="${output.dir}/${dita.map.filename.root}.xml"/>
             <param name="targetext" value=".html"/>
             <param name="indextype" value="javahelp"/>
             <param name="encoding" value="${args.dita.locale}" if="args.dita.locale"/>
@@ -200,15 +210,12 @@
         <condition property="compile.dir" value="${output.dir}">
             <isset property="inner.transform"/>
         </condition>
-        <delete dir="${compile.dir}${file.separator}JavaHelpSearch" />
+        <delete dir="${compile.dir}/JavaHelpSearch" />
         <java jar="${env.JHHOME}${file.separator}javahelp${file.separator}bin${file.separator}jhindexer.jar"
               fork="true"
               dir="${compile.dir}">
             <arg value="." />
         </java>
     </target>
-
-    <!-- depecrated: keep for back-compatibility, will be remvoed in a later release -->
-    <target name="dita.topics.javahelp" depends="dita.topics.html" />
 
 </project>

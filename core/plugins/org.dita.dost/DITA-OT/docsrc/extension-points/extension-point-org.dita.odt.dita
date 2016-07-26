@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generated from plugin source, do not edit! -->
+<!DOCTYPE reference
+  PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="org.dita.odt-extension-points"><title outputclass="generated">org.dita.odt extension points</title><titlealts><navtitle/></titlealts><shortdesc id="shortdesc"/><refbody><section><dl><dlentry id="dita.xsl.odt"><dt><parmname>dita.xsl.odt</parmname></dt><dd id="dita.xsl.odt.desc">ODT XSLT import</dd></dlentry></dl></section></refbody></reference>

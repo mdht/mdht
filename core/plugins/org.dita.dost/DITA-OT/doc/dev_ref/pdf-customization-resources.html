@@ -1,0 +1,75 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2016"><meta name="DC.rights.owner" content="(C) Copyright 2016"><meta name="DC.Type" content="reference"><meta name="description" content="There are several external resources that can help you generate and refine custom PDF plug-ins for the DITA Open Toolkit."><meta name="DC.Relation" scheme="URI" content="../dev_ref/pdf-customization.html"><meta name="DC.Format" content="XHTML"><meta name="DC.Identifier" content="resources-for-pdf-customization-plug-ins"><link rel="stylesheet" type="text/css" href="../css/commonltr.css"><link rel="stylesheet" type="text/css" href="../css/dita-ot-doc.css"><title>Resources for custom PDF plug-ins</title></head><body id="resources-for-pdf-customization-plug-ins"><header role="banner"><div class="header">
+  <p>DITA Open Toolkit</p>
+  <hr>
+</div></header><nav role="toc"><ul><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a><ul><li><a href="../dev_ref/pdf-transformation-history.html">History of the PDF transformation</a></li><li><a href="../dev_ref/pdf-customization-approaches.html">PDF customization approaches</a></li><li><a href="../dev_ref/pdf-customization-plugin-types.html">Types of custom PDF plug-ins</a></li><li><a href="../dev_ref/pdf-plugin-structure.html">PDF plug-in structure</a></li><li><a href="../dev_ref/pdf-customization-example.html">Simple PDF plug-in example</a></li><li><a href="../dev_ref/pdf-customization-best-practices.html">Customization best practices</a></li><li class="active"><a href="../dev_ref/pdf-customization-resources.html">Custom PDF plug-in resources</a></li></ul></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li><li><a href="../user-guide/dita-and-dita-ot-resources.html">DITA Resources</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Resources for custom PDF plug-ins</h1>
+  
+
+  <div class="body refbody"><p class="shortdesc">There are several external resources that can help you generate and refine custom PDF plug-ins for the DITA
+    Open Toolkit.</p>
+    <section class="section"><h2 class="title sectiontitle">PDF Plugin Generator</h2>
+      
+      <p class="p">This online tool, developed and maintained by Jarno Elovirta, enables you to generate a PDF customization
+        plug-in automatically.</p>
+      <p class="p">The application at
+        <a class="xref" href="http://dita-generator.elovirta.com/" target="_blank">dita-generator.elovirta.com</a> walks you through the process of creating a custom PDF plug-in and allows
+        you to adjust a variety of settings for your PDF output. For example, you can:</p>
+      <ul class="ul">
+        <li class="li">Define the target environment, selecting from the most current and two previous versions of the DITA-OT</li>
+        <li class="li">Select the XSL formatting engine (FOP, Antenna House Formatter, or RenderX XEP)</li>
+        <li class="li">Specify page size, columns, and margins</li>
+        <li class="li">Select from (limited) options for headers and footers</li>
+        <li class="li">Specify layout options for chapters</li>
+        <li class="li">Select formatting for the following publication components:
+          <ul class="ul">
+            <li class="li">Normal text</li>
+            <li class="li">Headings (levels one through four)</li>
+            <li class="li">Titles for sections and examples</li>
+            <li class="li">Tables and figures</li>
+            <li class="li">Notes and examples</li>
+            <li class="li">Lists (unordered, ordered, and definition)</li>
+            <li class="li">Code blocks and pre-formatted text</li>
+            <li class="li">Inline elements such as links and trademarks</li>
+          </ul>
+          <p class="p">For each component, you can specify: </p>
+          <ul class="ul">
+            <li class="li">Font family, size, weight, and style</li>
+            <li class="li">Color and background color</li>
+            <li class="li">Alignment, indentation, spacing, and padding</li>
+          </ul></li>
+      </ul>
+      <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> The PDF Plugin Generator should be your first stop as you start developing a brand-new PDF
+        customization plug-in.</div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle"><cite class="cite">DITA for Print: A DITA Open Toolkit Workbook</cite> (2013)</h2>
+      
+      <p class="p">Authored by Leigh W. White, DITA Specialist at IXIASOFT, and published by XML Press, walks readers through
+        developing a PDF customization from scratch. Here is an excerpt from the back cover:</p>
+      <blockquote class="lq"><cite class="cite">DITA for Print</cite> is for anyone who wants to learn how to create PDFs using the DITA Open Toolkit
+        without learning everything that there is to know about XSL-FO, XSLT, or XPath, or even about the DITA Open
+        Toolkit itself. <cite class="cite">DITA for Print</cite> is written for non-programmers, by a non-programmer, and although it
+        is written for people who have a good understanding of the DITA standard, you don't need a technical background
+        to get custom PDFs up and running quickly.</blockquote>
+      <p class="p">This is an excellent, long-needed resource that was developed for DITA-OT 1.8.</p>
+      <div class="note important note_important"><span class="note__title importanttitle">Important:</span> 
+        <cite class="cite">DITA for Print</cite> recommends copying entire files from the PDF2 plug-in to your custom plug-in. The
+        DITA-OT project does not recommend this practice. Instead, we suggest you copy only the specific attribute sets
+        and templates that you want to override. Following this practice will more cleanly isolate your customizations
+        from the DITA-OT code, which will make it easier for you to update your plug-ins to work with future versions of
+        the DITA-OT.</div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle"><cite class="cite">DITA for Practitioners: Volume 1, Architecture and Technology</cite> (2012)</h2>
+      
+      <p class="p">Authored by Eliot Kimber and published by XML Press, this seminal resource contains a chapter dedicated to the
+        DITA Open Toolkit: “Running, Configuring, and Customizing the Open Toolkit”. In addition to a robust overview of
+        DITA-OT customization and extension, the chapter contains a detailed example of customizing a PDF plug-in to
+        specify 7" x 10" paper size and custom fonts for body text and headers.</p>
+      <p class="p">The DITA-OT chapter in <cite class="cite">DITA for Practitioners: Volume 1</cite> was written for DITA-OT 1.5.4, which was
+        the latest stable version at the time it was written.</p>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/pdf-customization.html" title="You can create custom DITA-OT plug-ins that build on the default DITA to PDF transformation. Plug-ins can customize covers and page layouts, modify formatting, override logic of the default PDF plug-in, and much more.">Customizing PDF output</a></div></div></nav></article></main></body></html>

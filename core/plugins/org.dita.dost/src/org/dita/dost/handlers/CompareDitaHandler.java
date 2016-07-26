@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir, JKM Software LLC. - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.dita.dost.handlers;
 
@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.mdht.uml.common.util.ModelCompare;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -41,7 +42,6 @@ import org.eclipse.ui.progress.IProgressService;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
-import org.openhealthtools.mdht.uml.common.util.ModelCompare;
 
 /**
  * @author fhim
@@ -121,7 +121,7 @@ public class CompareDitaHandler extends org.eclipse.core.commands.AbstractHandle
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.operation.IRunnableWithProgress#run(org.eclipse.core.runtime.IProgressMonitor)
 		 */
 		public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
@@ -130,8 +130,10 @@ public class CompareDitaHandler extends org.eclipse.core.commands.AbstractHandle
 			// Initialize pathmaps
 			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
 				UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
-			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("emx", UMLResource.Factory.INSTANCE);
-			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("efx", UMLResource.Factory.INSTANCE);
+			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
+				"emx", UMLResource.Factory.INSTANCE);
+			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
+				"efx", UMLResource.Factory.INSTANCE);
 
 			URI modelFile1 = URI.createFileURI(leftModel.getRawLocation().toOSString());
 			URI modelFile2 = URI.createFileURI(rightModel.getRawLocation().toOSString());
@@ -211,7 +213,7 @@ public class CompareDitaHandler extends org.eclipse.core.commands.AbstractHandle
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.IHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -226,7 +228,8 @@ public class CompareDitaHandler extends org.eclipse.core.commands.AbstractHandle
 				final Class<?> modelServerElement = getModelServerElement();
 
 				if (modelServerElement != null) {
-					final Method getResourceIfResourceRootMethod = modelServerElement.getMethod("getResourceIfResourceRoot");
+					final Method getResourceIfResourceRootMethod = modelServerElement.getMethod(
+						"getResourceIfResourceRoot");
 
 					for (Object selection : (Collection<?>) evaluationContext.getDefaultVariable()) {
 						if (modelServerElement.isInstance(selection)) {

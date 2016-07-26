@@ -1,0 +1,31 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2016"><meta name="DC.rights.owner" content="(C) Copyright 2016"><meta name="DC.Type" content="task"><meta name="description" content="The DITA-OT ships with Ant scripts that enable you to rebuild the toolkit documentation. This is especially helpful if your environment contains plug-ins that integrate additional extension points, messages, or parameters into the toolkit."><meta name="DC.Relation" scheme="URI" content="../dev_ref/extending-the-ot.html"><meta name="DC.Format" content="XHTML"><meta name="DC.Identifier" content="rebuilding-the-dita-ot-documentation"><link rel="stylesheet" type="text/css" href="../css/commonltr.css"><link rel="stylesheet" type="text/css" href="../css/dita-ot-doc.css"><title>Rebuilding the DITA-OT documentation</title></head><body id="rebuilding-the-dita-ot-documentation"><header role="banner"><div class="header">
+  <p>DITA Open Toolkit</p>
+  <hr>
+</div></header><nav role="toc"><ul><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a><ul><li><a href="../dev_ref/plugins-installing.html">Installing plug-ins</a></li><li><a href="../dev_ref/plugins-removing.html">Removing plug-ins</a></li><li class="active"><a href="../dev_ref/rebuilding-the-dita-ot-documentation.html">Rebuilding the DITA-OT documentation</a></li></ul></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li><li><a href="../user-guide/dita-and-dita-ot-resources.html">DITA Resources</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Rebuilding the DITA-OT documentation</h1>
+  
+  <div class="body taskbody"><p class="shortdesc">The DITA-OT ships with Ant scripts that enable you to rebuild the toolkit documentation. This is especially
+    helpful if your environment contains plug-ins that integrate additional extension points, messages, or parameters
+    into the toolkit.</p>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Change to the <span class="ph filepath">docsrc</span> directory.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Run the following command:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>ant -f build.xml <var class="keyword varname">target</var></code></pre>
+        </div>
+        <div class="itemgroup info">
+          <div class="p">The <var class="keyword varname">target</var> parameter is optional and specifies a transformation type. It takes the
+            following values:
+            <ul class="ul">
+              <li class="li">html</li>
+              <li class="li">htmlhelp</li>
+              <li class="li">pdf</li>
+            </ul></div>
+          <p class="p">If you do not specify an Ant target, HTML5 and PDF output is generated.</p>
+        </div>
+      </li></ol>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/extending-the-ot.html" title="There are several methods that can be used to extend the toolkit; not all of them are recommended or supported. The best way to create most extensions is with a plug-in; extended documentation for creating plug-ins is provided in the next section.">Extending the DITA Open Toolkit</a></div></div></nav></article></main></body></html>

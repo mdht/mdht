@@ -1,0 +1,243 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2016"><meta name="DC.rights.owner" content="(C) Copyright 2016"><meta name="DC.Type" content="reference"><meta name="description" content="The plug-in descriptor file (plugin.xml) controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and then integrates those changes into the core DITA-OT code."><meta name="DC.Relation" scheme="URI" content="../dev_ref/plugins-overview.html"><meta name="DC.Relation" scheme="URI" content="../dev_ref/plugin-newextensions.html"><meta name="DC.Relation" scheme="URI" content="../dev_ref/plugin-newtranstype.html"><meta name="DC.Relation" scheme="URI" content="../extension-points/all-extension-points.html"><meta name="DC.Relation" scheme="URI" content="../dev_ref/plugin-sample.html"><meta name="DC.Relation" scheme="URI" content="../extension-points/all-extension-points.html"><meta name="DC.Format" content="XHTML"><meta name="DC.Identifier" content="plugin-configfile"><meta name="DC.Language" content="en-US"><link rel="stylesheet" type="text/css" href="../css/commonltr.css"><link rel="stylesheet" type="text/css" href="../css/dita-ot-doc.css"><title>Plug-in descriptor file</title></head><body id="plugin-configfile"><header role="banner"><div class="header">
+  <p>DITA Open Toolkit</p>
+  <hr>
+</div></header><nav role="toc"><ul><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a><ul><li><a href="../dev_ref/plugins-overview.html">Overview of plug-ins</a><ul><li><a href="../dev_ref/plugin-benefits.html">Benefits of plug-ins</a></li><li class="active"><a href="../dev_ref/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../dev_ref/plugin-dependencies.html">Plug-in dependencies</a></li></ul></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding a new target to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding an Ant target to the pre-processing pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Adding a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding an XSLT-processing step</a></li><li><a href="../dev_ref/using-plugin-URI-extension.html">Referencing files from other plug-ins</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Adding parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding a Java library to the DITA-OT classpath parameter</a></li><li><a href="../dev_ref/plugin-messages.html">Adding new diagnostic messages</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li><li><a href="../user-guide/dita-and-dita-ot-resources.html">DITA Resources</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Plug-in descriptor file</h1>
+  
+  <div class="body refbody"><p class="shortdesc">The plug-in descriptor file (<span class="ph filepath">plugin.xml</span>) controls all aspects of a plug-in, making
+    each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and
+    then integrates those changes into the core DITA-OT code.</p>
+    <section class="section"><h2 class="title sectiontitle">Plug-in identifiers</h2>
+      
+      <p class="p">Every DITA-OT plug-in must have a unique identifier composed of one or more dot-delimited tokens, for example,
+          <code class="ph codeph">com.example.rss</code>. This identifier is used to identify the plug-in to the DITA-OT for
+        integration, processing, and when determining plug-in dependencies.</p>
+      <div class="note note note_note"><span class="note__title notetitle">Note:</span> The default DITA-OT plug-ins use a reverse domain naming convention, as in <code class="ph codeph">org.dita.html5</code>;
+        this is strongly recommended to avoid plug-in naming conflicts.</div>
+      <div class="p" id="plugin-configfile__tokendef">Each token can include only the following characters:
+        <ul class="ul">
+          <li class="li">Lower-case letters (a-z)</li>
+          <li class="li">Upper-case letters (A-Z)</li>
+          <li class="li">Numerals (0-9)</li>
+          <li class="li">Underscores (_)</li>
+          <li class="li">Hyphens (-)</li>
+        </ul></div>
+    </section>
+    <section class="section"><h2 class="title sectiontitle"><code class="keyword markupname xmlelement">&lt;plugin&gt;</code></h2>
+      
+      <p class="p">The root element of the <span class="ph filepath">plugin.xml</span> file is <code class="keyword markupname xmlelement">&lt;plugin&gt;</code>, which has a
+        required <code class="keyword markupname xmlatt">@id</code> attribute set to the unique plug-in identifier.</p>
+      
+    </section>
+    <section class="section"><h2 class="title sectiontitle">Plug-in elements</h2>
+      
+      
+      <p class="p">The <code class="keyword markupname xmlelement">&lt;plugin&gt;</code> element can contain the following child elements: </p>
+      <dl class="dl parml">
+        
+          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;extension-point&gt;</code></dt>
+          <dd class="dd pd">
+            <p class="p">An optional element that defines a new extension point that can be used by other DITA-OT plug-ins.</p>
+            <p class="p">The following attributes are supported:</p>
+            <table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th class="stentry" id="plugin-configfile__stentry__1">Attribute</th>
+                <th class="stentry" id="plugin-configfile__stentry__2">Description</th>
+                <th class="stentry" id="plugin-configfile__stentry__3">Required?</th>
+              </tr></thead><tbody><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__1">id</th>
+                <td class="stentry" headers="plugin-configfile__stentry__2 d10005e123">Extension point identifier</td>
+                <td class="stentry" headers="plugin-configfile__stentry__3 d10005e123">Yes</td>
+              </tr><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__1">name</th>
+                <td class="stentry" headers="plugin-configfile__stentry__2 d10005e135">Extension point description</td>
+                <td class="stentry" headers="plugin-configfile__stentry__3 d10005e135">No</td>
+              </tr></tbody></table>
+            <p class="p" id="plugin-configfile__extension-point-ids">Like plug-in identifiers, extension point identifiers are composed of one or
+              more dot-delimited tokens.</p>
+            <div class="note note note_note" id="plugin-configfile__entension-point-ids-note"><span class="note__title notetitle">Note:</span> Extension point identifiers should begin with the identifier of the
+              defining plug-in and append one or more tokens, for example, <code class="ph codeph">org.dita.example.pre</code>.</div>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;feature&gt;</code></dt>
+          <dd class="dd pd">
+            <p class="p">An optional element that supplies values to a DITA-OT extension point.</p>
+            <p class="p">The following attributes are supported:</p>
+            <table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th class="stentry" id="plugin-configfile__stentry__10">Attribute</th>
+                <th class="stentry" id="plugin-configfile__stentry__11">Description</th>
+                <th class="stentry" id="plugin-configfile__stentry__12">Required?</th>
+              </tr></thead><tbody><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__10">extension</th>
+                <td class="stentry" headers="plugin-configfile__stentry__11 d10005e187">Identifier of the DITA-OT extension point</td>
+                <td class="stentry" headers="plugin-configfile__stentry__12 d10005e187">Yes</td>
+              </tr><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__10">value</th>
+                <td class="stentry" headers="plugin-configfile__stentry__11 d10005e199">Comma separated string value of the extension</td>
+                <td class="stentry" headers="plugin-configfile__stentry__12 d10005e199">Either the <code class="keyword markupname xmlatt">@value</code> or <code class="keyword markupname xmlatt">@file</code> attribute must be
+                  specified</td>
+              </tr><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__10">file</th>
+                <td class="stentry" headers="plugin-configfile__stentry__11 d10005e217">Name and path of a file containing data for the extension point.
+                  <p class="p">Depending on the extension point, this might be specified as an absolute path, a path relative to
+                    the <span class="ph filepath">plugin.xml</span> file, or a path relative to the DITA-OT root.</p></td>
+                <td class="stentry" headers="plugin-configfile__stentry__12 d10005e217">Either the <code class="keyword markupname xmlatt">@value</code> or <code class="keyword markupname xmlatt">@file</code> attribute must be
+                  specified</td>
+              </tr><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__10">type</th>
+                <td class="stentry" headers="plugin-configfile__stentry__11 d10005e240">Type of the <code class="keyword markupname xmlatt">@value</code> attribute</td>
+                <td class="stentry" headers="plugin-configfile__stentry__12 d10005e240">No</td>
+              </tr></tbody></table>
+            <div class="p">If more than one <code class="keyword markupname xmlelement">&lt;feature&gt;</code> element supplies values to the same extension point,
+              the values are additive. For example, the following are
+              equivalent:<pre class="pre codeblock"><code>&lt;feature extension="org.dita.example.extension-point" value="a,b,c"/&gt;</code></pre><pre class="pre codeblock"><code>&lt;feature extension="org.dita.example.extension-point" value="a"/&gt;
+&lt;feature extension="org.dita.example.extension-point" value="b"/&gt;
+&lt;feature extension="org.dita.example.extension-point" value="c"/&gt;</code></pre></div>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;meta&gt;</code></dt>
+          <dd class="dd pd">
+            <p class="p">An optional element that defines metadata.</p>
+            <p class="p">The following attributes are supported:</p>
+            <table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th class="stentry" id="plugin-configfile__stentry__25">Attribute</th>
+                <th class="stentry" id="plugin-configfile__stentry__26">Description</th>
+                <th class="stentry" id="plugin-configfile__stentry__27">Required?</th>
+              </tr></thead><tbody><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__25">type</th>
+                <td class="stentry" headers="plugin-configfile__stentry__26 d10005e296">Metadata name </td>
+                <td class="stentry" headers="plugin-configfile__stentry__27 d10005e296">Yes</td>
+              </tr><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__25">value</th>
+                <td class="stentry" headers="plugin-configfile__stentry__26 d10005e308">Metadata value</td>
+                <td class="stentry" headers="plugin-configfile__stentry__27 d10005e308">Yes</td>
+              </tr></tbody></table>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;require&gt;</code></dt>
+          <dd class="dd pd">
+            <p class="p">An optional element that defines plug-in dependencies.</p>
+            <p class="p">The following attributes are supported:</p>
+            <table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th class="stentry" id="plugin-configfile__stentry__34">Attribute</th>
+                <th class="stentry" id="plugin-configfile__stentry__35">Description</th>
+                <th class="stentry" id="plugin-configfile__stentry__36">Required?</th>
+              </tr></thead><tbody><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__34">plugin</th>
+                <td class="stentry" headers="plugin-configfile__stentry__35 d10005e351">The identifier of the required plug-in.
+                  <p class="p">To specify alternative requirements, separate plug-in identifiers with a vertical
+                  bar.</p></td>
+                <td class="stentry" headers="plugin-configfile__stentry__36 d10005e351">Yes</td>
+              </tr><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__34">importance</th>
+                <td class="stentry" headers="plugin-configfile__stentry__35 d10005e365">Identifies whether the plug-in is <code class="ph codeph">required</code> (default) or
+                    <code class="ph codeph">optional</code>. The DITA-OT provides a warning if a required plug-in is not
+                  available.</td>
+                <td class="stentry" headers="plugin-configfile__stentry__36 d10005e365">No</td>
+              </tr></tbody></table>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;template&gt;</code></dt>
+          <dd class="dd pd">
+            <p class="p">An optional element that defines files that should be treated as templates.</p>
+            <p class="p">Template files can be used to integrate DITA-OT extensions. Templates typically extend the default
+              transformation-type-specific build files via <code class="keyword markupname xmlelement">&lt;dita:extension&gt;</code> elements. When the
+              plug-in integration process runs, template files are used to recreate build files, and the integration
+              points specified in the extensions are replaced with references to the appropriate plug-ins.</p>
+            <p class="p">The following attributes are supported: </p>
+            <table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th class="stentry" id="plugin-configfile__stentry__43">Attribute</th>
+                <th class="stentry" id="plugin-configfile__stentry__44">Description</th>
+                <th class="stentry" id="plugin-configfile__stentry__45">Required?</th>
+              </tr></thead><tbody><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__43">file</th>
+                <td class="stentry" headers="plugin-configfile__stentry__44 d10005e420">Name and path to the template file, relative to the <span class="ph filepath">plugin.xml</span>
+                  file</td>
+                <td class="stentry" headers="plugin-configfile__stentry__45 d10005e420">Yes</td>
+              </tr></tbody></table>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;transtype&gt;</code></dt>
+          <dd class="dd pd">
+            <p class="p">An optional element that defines a new output format (transformation type).</p>
+            <p class="p">The following attributes are supported:</p>
+            <table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th class="stentry" id="plugin-configfile__stentry__49">Attribute</th>
+                <th class="stentry" id="plugin-configfile__stentry__50">Description</th>
+                <th class="stentry" id="plugin-configfile__stentry__51">Required?</th>
+              </tr></thead><tbody><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__49">name</th>
+                <td class="stentry" headers="plugin-configfile__stentry__50 d10005e467">Transformation name</td>
+                <td class="stentry" headers="plugin-configfile__stentry__51 d10005e467">Yes</td>
+              </tr><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__49">desc</th>
+                <td class="stentry" headers="plugin-configfile__stentry__50 d10005e479">Transformation type description</td>
+                <td class="stentry" headers="plugin-configfile__stentry__51 d10005e479">No</td>
+              </tr><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__49">abstract</th>
+                <td class="stentry" headers="plugin-configfile__stentry__50 d10005e491">When <span class="keyword option">true</span>, sets the transformation type as <span class="q">"abstract"</span>, meaning it can be
+                  extended by other plug-ins, but cannot be used directly.
+                  <p class="p">For example, the <code class="ph codeph">org.dita.base</code> plug-in defines an abstract <span class="q">"base"</span>
+                    transformation type that is extended by other DITA-OT plug-ins.</p></td>
+                <td class="stentry" headers="plugin-configfile__stentry__51 d10005e491">No</td>
+              </tr><tr class="strow">
+                <th scope="row" class="stentry" headers="plugin-configfile__stentry__49">extends</th>
+                <td class="stentry" headers="plugin-configfile__stentry__50 d10005e517">Specifies the name of the transformation type being extended</td>
+                <td class="stentry" headers="plugin-configfile__stentry__51 d10005e517">No</td>
+              </tr></tbody></table>
+            <p class="p">The <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element may define additional parameters for the transformation
+              type using the following child elements.</p>
+            <dl class="dl parml">
+              
+                <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;param&gt;</code></dt>
+                <dd class="dd pd">An optional element that specifies a parameter for the transformation type.
+                  <p class="p">The following parameter attributes are supported:</p><table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                      <th class="stentry" id="plugin-configfile__stentry__64">Attribute</th>
+                      <th class="stentry" id="plugin-configfile__stentry__65">Description</th>
+                      <th class="stentry" id="plugin-configfile__stentry__66">Required?</th>
+                    </tr></thead><tbody><tr class="strow">
+                      <th scope="row" class="stentry" headers="plugin-configfile__stentry__64">name</th>
+                      <td class="stentry" headers="plugin-configfile__stentry__65 d10005e562">Parameter name</td>
+                      <td class="stentry" headers="plugin-configfile__stentry__66 d10005e562">Yes</td>
+                    </tr><tr class="strow">
+                      <th scope="row" class="stentry" headers="plugin-configfile__stentry__64">desc</th>
+                      <td class="stentry" headers="plugin-configfile__stentry__65 d10005e574">Parameter description</td>
+                      <td class="stentry" headers="plugin-configfile__stentry__66 d10005e574">No</td>
+                    </tr><tr class="strow">
+                      <th scope="row" class="stentry" headers="plugin-configfile__stentry__64">type</th>
+                      <td class="stentry" headers="plugin-configfile__stentry__65 d10005e586">Parameter type (<span class="keyword option">enum</span>, <span class="keyword option">file</span>,
+                        <span class="keyword option">string</span>)</td>
+                      <td class="stentry" headers="plugin-configfile__stentry__66 d10005e586">Yes</td>
+                    </tr></tbody></table></dd>
+              
+              
+                <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;val&gt;</code></dt>
+                <dd class="dd pd">A child of <code class="keyword markupname xmlelement">&lt;param&gt;</code> (when <code class="keyword markupname xmlatt">@type</code>=<span class="keyword option">enum</span>) that
+                  specifies an enumeration value.
+                  <p class="p">The following attributes are supported:</p><table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                      <th class="stentry" id="plugin-configfile__stentry__76">Attribute</th>
+                      <th class="stentry" id="plugin-configfile__stentry__77">Description</th>
+                      <th class="stentry" id="plugin-configfile__stentry__78">Required?</th>
+                    </tr></thead><tbody><tr class="strow">
+                      <th scope="row" class="stentry" headers="plugin-configfile__stentry__76">default</th>
+                      <td class="stentry" headers="plugin-configfile__stentry__77 d10005e642">When <span class="keyword option">true</span>, sets the enumeration value as the default value of the parent
+                          <code class="keyword markupname xmlelement">&lt;param&gt;</code></td>
+                      <td class="stentry" headers="plugin-configfile__stentry__78 d10005e642">Only for the default <code class="keyword markupname xmlelement">&lt;val&gt;</code></td>
+                    </tr></tbody></table></dd>
+              
+            </dl>
+          </dd>
+        
+      </dl>
+      <p class="p">Any extension that is not recognized by the DITA-OT is ignored. Since DITA-OT version 1.5.3, you can combine
+        multiple extension definitions within a single <span class="ph filepath">plug-in.xml</span> file; in older versions, only
+        the last extension definition was used. </p>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/plugins-overview.html" title="Plug-ins enable users to extend the functionality of the DITA-OT. This might entail adding support for specialized document types, integrating processing overrides, or defining new output transformations.">Overview of plug-ins</a></div></div><div class="linklist linklist relinfo reltasks"><strong>Related tasks</strong><br><div><a class="link" href="../dev_ref/plugin-newtranstype.html" title="Plug-ins can integrate an entirely new transformation type. The new transformation type can be very simple, such as an XHTML build that creates an additional control file; it also can be very complex, adding any number of new processing steps.">Adding a new transformation type</a></div></div><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../dev_ref/plugin-newextensions.html" title="If your plug-in needs to define its own extension point in an XML file, add the string &#34;_template&#34; to the filename before the file suffix. During integration, this file will be processed like the built-in DITA-OT templates.">Creating a new plug-in extension point</a></div><div><a class="link" href="../extension-points/all-extension-points.html" title="The pre-defined extension points can be used to extend the functionality of the DITA-OT. If your toolkit installation includes custom plug-ins that define additional extension points, you can add to this list by rebuilding the DITA-OT documentation.">All DITA-OT extension points</a></div><div><a class="link" href="../dev_ref/plugin-sample.html" title="The following is a sample of a plugin.xml file. This file adds support for a new set of specialized DTDs, and includes an override for the XHTML output processor.">Example plugin.xml file</a></div></div></nav></article></main></body></html>

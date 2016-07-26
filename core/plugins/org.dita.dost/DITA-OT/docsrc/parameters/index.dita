@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!--This file is part of the DITA Open Toolkit project. See the accompanying LICENSE.md file for applicable licenses.-->
+
+<reference id="ID">
+  <title>DITA Open Toolkit Parameter Reference</title>
+  <titlealts>
+    <navtitle>Parameter Reference</navtitle>
+  </titlealts>
+  <shortdesc>
+    <ph id="ph_docs-pr-desc">The <cite>Parameter Reference</cite> is designed to help users to locate information easily
+      and quickly. It includes documentation for <cmdname>dita</cmdname> command arguments and options, DITA-OT
+      parameters, and configuration properties.</ph>
+  </shortdesc>
+</reference>

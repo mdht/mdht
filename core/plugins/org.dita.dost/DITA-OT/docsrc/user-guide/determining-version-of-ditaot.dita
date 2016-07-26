@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!--This file is part of the DITA Open Toolkit project. See the accompanying LICENSE.md file for applicable licenses.-->
+
+<task id="determining-version-of-dita-ot">
+  <title>Checking the DITA-OT version</title>
+  <shortdesc>You can determine the version of the DITA Open Toolkit from a command prompt.</shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd conref="../resources/conref-task.dita#ID/open-terminal"/>
+      </step>
+      <step>
+        <cmd>Issue the following command:</cmd>
+        <choicetable frame="topbot" relcolwidth="1.0* 3.0*">
+          <chrow platform="linux osx">
+            <choption>Linux or Mac OS&#xA0;X&#xA0;</choption>
+            <chdesc>
+              <cmdname>bin/dita</cmdname>
+              <option>-version</option>
+            </chdesc>
+          </chrow>
+          <chrow platform="windows">
+            <choption>Windows</choption>
+            <chdesc>
+              <cmdname>bin\dita</cmdname>
+              <option>-version</option>
+            </chdesc>
+          </chrow>
+        </choicetable>
+        <info>
+          <note conref="../resources/conref-task.dita#ID/dita-in-path"/>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

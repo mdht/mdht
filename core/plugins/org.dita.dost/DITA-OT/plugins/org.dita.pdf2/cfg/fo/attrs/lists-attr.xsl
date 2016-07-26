@@ -56,6 +56,7 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:attribute-set name="ul.li">
         <xsl:attribute name="space-after">1.5pt</xsl:attribute>
         <xsl:attribute name="space-before">1.5pt</xsl:attribute>
+        <xsl:attribute name="relative-align">baseline</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="ul.li__label">
@@ -79,12 +80,13 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:attribute-set name="ol" use-attribute-sets="common.block">
         <xsl:attribute name="provisional-distance-between-starts">5mm</xsl:attribute>
         <xsl:attribute name="provisional-label-separation">1mm</xsl:attribute>
-<!--		<xsl:attribute name="margin-left">-8pt</xsl:attribute>-->
+<!--    <xsl:attribute name="margin-left">-8pt</xsl:attribute>-->
     </xsl:attribute-set>
 
     <xsl:attribute-set name="ol.li">
         <xsl:attribute name="space-after">1.5pt</xsl:attribute>
         <xsl:attribute name="space-before">1.5pt</xsl:attribute>
+        <xsl:attribute name="relative-align">baseline</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="ol.li__label">

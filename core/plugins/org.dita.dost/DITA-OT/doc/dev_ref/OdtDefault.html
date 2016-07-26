@@ -1,0 +1,34 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2016"><meta name="DC.rights.owner" content="(C) Copyright 2016"><meta name="DC.Type" content="concept"><meta name="description" content="The odt transformation creates a binary file using the OASIS Open Document Format."><meta name="DC.Relation" scheme="URI" content="../dev_ref/DITA-OTArchitecture.html"><meta name="DC.Format" content="XHTML"><meta name="DC.Identifier" content="odtdefault"><meta name="DC.Language" content="en-US"><link rel="stylesheet" type="text/css" href="../css/commonltr.css"><link rel="stylesheet" type="text/css" href="../css/dita-ot-doc.css"><title>Open Document Format processing modules</title></head><body id="odtdefault"><header role="banner"><div class="header">
+  <p>DITA Open Toolkit</p>
+  <hr>
+</div></header><nav role="toc"><ul><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a><ul><li><a href="../dev_ref/processing-structure.html">Processing structure</a></li><li><a href="../dev_ref/processing-pipeline-modules.html">Processing modules</a></li><li><a href="../dev_ref/processing-order.html">Processing order</a></li><li><a href="../dev_ref/DITA-OTPreprocess.html">Pre-processing modules</a></li><li><a href="../dev_ref/XhtmlWithNavigation.html">HTML-based processing modules</a></li><li><a href="../dev_ref/PdfDefault.html">PDF processing modules</a></li><li class="active"><a href="../dev_ref/OdtDefault.html">Open Document Format processing modules</a></li></ul></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li><li><a href="../user-guide/dita-and-dita-ot-resources.html">DITA Resources</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Open Document Format processing modules</h1>
+  
+  <div class="body conbody"><p class="shortdesc">The <span class="keyword option">odt</span> transformation creates a binary file using the OASIS Open Document Format. </p>
+    <section class="section">
+      <div class="p">The <span class="keyword option">odt</span> transformation begins with pre-processing. It then runs either the
+          <code class="ph codeph">dita.odt.package.topic</code> or <code class="ph codeph">dita.odt.package.map</code> target, depending on whether
+        the input to the transformation is a DITA topic or a DITA map. The following description focuses on the map
+        process, which is made up of the following targets:<dl class="dl">
+          
+            <dt class="dt dlterm"><code class="ph codeph">dita.map.odt</code></dt>
+            <dd class="dd">Converts the map into a merged XML file using the Java-based <code class="ph codeph">topicmerge</code> module. Then an
+              XSLT process converts the merged file into the <span class="ph filepath">content.xml</span> file.</dd>
+          
+          
+            <dt class="dt dlterm"><code class="ph codeph">dita.map.odt.stylesfile</code></dt>
+            <dd class="dd">Reads the input DITA map, and then uses XSLT to create a <span class="ph filepath">styles.xml</span> file in the
+              temporary directory.</dd>
+          
+          
+            <dt class="dt dlterm"><code class="ph codeph">dita.out.odt.manifest.file</code></dt>
+            <dd class="dd">Creates the <span class="ph filepath">manifest.xml</span> file</dd>
+          
+        </dl></div>
+      <p class="p">Once these targets have run, the generated files are zipped up together with other required files to create the
+        output ODT file.</p>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/DITA-OTArchitecture.html" title="The DITA Open Toolkit is an open-source implementation of the OASIS specification for the Darwin Information Typing Architecture. The toolkit uses Ant, XSLT, and Java to transform DITA content (maps and topics) into different deliverable formats.">Architecture of the DITA Open Toolkit</a></div></div></nav></article></main></body></html>

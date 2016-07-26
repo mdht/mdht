@@ -1,0 +1,48 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2016"><meta name="DC.rights.owner" content="(C) Copyright 2016"><meta name="DC.Type" content="reference"><meta name="description" content="You can use these extension points to define version and support information for a plug-in. Currently, the DITA-OT does not do anything with this information, but it might do so in the future."><meta name="DC.Relation" scheme="URI" content="../dev_ref/plugin-extension-points.html"><meta name="DC.Format" content="XHTML"><meta name="DC.Identifier" content="plugin-support"><meta name="DC.Language" content="en-US"><link rel="stylesheet" type="text/css" href="../css/commonltr.css"><link rel="stylesheet" type="text/css" href="../css/dita-ot-doc.css"><title>Version and support information</title></head><body id="plugin-support"><header role="banner"><div class="header">
+  <p>DITA Open Toolkit</p>
+  <hr>
+</div></header><nav role="toc"><ul><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a><ul><li><a href="../dev_ref/plugin-extension-points-general.html">General extension points</a></li><li><a href="../dev_ref/plugin-extension-points-pre-processing.html">Pre-processing extension points</a></li><li><a href="../dev_ref/plugin-extension-points-xslt-import.html">XSLT-import extension points</a></li><li><a href="../dev_ref/plugin-extension-points-xslt-parameters.html">XSLT-parameter extension points</a></li><li class="active"><a href="../dev_ref/plugin-extension-points-support.html">Version and support information</a></li><li><a href="../extension-points/all-extension-points.html">All extension points</a></li></ul></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li><li><a href="../user-guide/dita-and-dita-ot-resources.html">DITA Resources</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Version and support information</h1>
+  
+  <div class="body refbody"><p class="shortdesc">You can use these extension points to define version and support information for a plug-in. Currently, the
+    DITA-OT does not do anything with this information, but it might do so in the future.</p>
+    <section class="section">
+      <dl class="dl">
+        
+          <dt class="dt dlterm"><span class="keyword parmname">package.support.name</span></dt>
+          <dd class="dd">Specifies the person who provides support for the DITA-OT plug-in</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">package.support.email</span></dt>
+          <dd class="dd">Specifies the e-mail address for the person who provides support for the DITA-OT plug-in</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">package.version</span></dt>
+          <dd class="dd">
+            <p class="p">Specifies the version of the DITA-OT plug-in. The value uses the following syntax:</p>
+            <pre class="pre codeblock"><code><var class="keyword varname">major</var>.<var class="keyword varname">minor</var>.<var class="keyword varname">micro</var>.<var class="keyword varname">qualifier</var></code></pre>
+            <p class="p">where:</p>
+            <ul class="ul">
+              <li class="li"><var class="keyword varname">major</var> is a number and is required.</li>
+              <li class="li"><var class="keyword varname">minor</var> is a number and is optional.</li>
+              <li class="li"><var class="keyword varname">micro</var> is a number and is optional.</li>
+              <li class="li"><var class="keyword varname">qualifier</var> is optional and can be composed of numerals, uppercase or lower case
+                letters, underscores, and hyphens.</li>
+            </ul>
+            <p class="p">By default, the <span class="keyword parmname">package.version</span> value is set to <code class="ph codeph">0.0.0</code>.</p>
+          </dd>
+        
+      </dl>
+    </section>
+    <div class="example"><h2 class="title sectiontitle">Example</h2>
+      
+      <pre class="pre codeblock"><code>&lt;plugin id="com.example.WithSupportInfo"&gt;
+  &lt;feature extension="package.support.name" value="Joe the Author"/&gt;
+  &lt;feature extension="package.support.email" value="joe@example.com"/&gt;
+  &lt;feature extension="package.version" value="1.2.3"/&gt;
+&lt;/plugin&gt;</code></pre>
+    </div>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/plugin-extension-points.html" title="The DITA Open Toolkit provides a series of extension points that can be used to integrate changes into the core code. Extension points are defined in the plugin.xml file for each plug-in. The DITA-OT integration process makes each extension visible to the rest of the toolkit.">Extension points</a></div></div></nav></article></main></body></html>

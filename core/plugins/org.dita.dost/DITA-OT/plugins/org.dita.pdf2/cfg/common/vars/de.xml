@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--   
 Copyright © 2004-2006 by Idiom Technologies, Inc. All rights reserved. 
 IDIOM is a registered trademark of Idiom Technologies, Inc. and WORLDSERVER
 and WORLDSTART are trademarks of Idiom Technologies, Inc. All other 
@@ -26,10 +26,9 @@ These terms and conditions supersede the terms and conditions in any
 licensing agreement to the extent that such terms and conditions conflict
 with those set forth herein.
 
-This file is part of the DITA Open Toolkit project hosted on Sourceforge.net. 
+This file is part of the DITA Open Toolkit project. 
 See the accompanying license.txt file for applicable licenses.
 -->
-
 <vars xmlns="http://www.idiominc.com/opentopic/vars">
 
     <!-- 
@@ -61,10 +60,10 @@ See the accompanying license.txt file for applicable licenses.
     <variable id="Body first header"/>
 
     <!-- The header that appears on odd-numbered pages. -->
-    <variable id="Body odd header"><param ref-name="prodname"/>&#160;|&#160;<param ref-name="heading"/>&#160;|&#160;<param ref-name="pagenum"/></variable>
+    <variable id="Body odd header"><param ref-name="prodname"/> | <param ref-name="heading"/> | <param ref-name="pagenum"/></variable>
 
     <!-- The header that appears on even-numbered pages. -->
-    <variable id="Body even header"><param ref-name="pagenum"/>&#160;|&#160;<param ref-name="heading"/>&#xA0;|&#xA0;<param ref-name="prodname"/></variable>
+    <variable id="Body even header"><param ref-name="pagenum"/> | <param ref-name="heading"/> | <param ref-name="prodname"/></variable>
 
     <!-- The footer that appears on Preface odd-numbered pages. -->
     <variable id="Preface odd footer"/>
@@ -76,10 +75,10 @@ See the accompanying license.txt file for applicable licenses.
     <variable id="Preface first footer"/>
 
     <!-- The header that appears on Preface odd-numbered pages. -->
-    <variable id="Preface odd header"><param ref-name="pagenum"/>&#160;|&#160;Einleitung&#160;|&#160;<param ref-name="pagenum"/></variable>
+    <variable id="Preface odd header"><param ref-name="pagenum"/> | Einleitung | <param ref-name="pagenum"/></variable>
 
     <!-- The header that appears on Preface even-numbered pages. -->
-    <variable id="Preface even header"><param ref-name="pagenum"/>&#160;|&#160;Einleitung&#160;|&#160;<param ref-name="pagenum"/></variable>
+    <variable id="Preface even header"><param ref-name="pagenum"/> | Einleitung | <param ref-name="pagenum"/></variable>
 
     <!-- The header that appears on Preface first page. -->
     <variable id="Preface first header"/>
@@ -95,11 +94,11 @@ See the accompanying license.txt file for applicable licenses.
     <!-- The header that appears on the odd-numbered table of contents
          pages. --> 
     <!-- Inhaltsverzeichnis -->
-    <variable id="Toc odd header"><param ref-name="prodname"/>&#160;|&#160;<param ref-name="heading"/>&#160;|&#160;<param ref-name="pagenum"/></variable>
+    <variable id="Toc odd header"><param ref-name="prodname"/> | <param ref-name="heading"/> | <param ref-name="pagenum"/></variable>
 
     <!-- The header that appears on the odd-numbered table of contents
          pages. --> 
-    <variable id="Toc even header"><param ref-name="pagenum"/>&#160;|&#160;<param ref-name="heading"/>&#xA0;|&#xA0;<param ref-name="prodname"/></variable>
+    <variable id="Toc even header"><param ref-name="pagenum"/> | <param ref-name="heading"/> | <param ref-name="prodname"/></variable>
 
     <!-- The footer that appears on the odd-numbered index pages. -->
     <variable id="Index odd footer"/>
@@ -108,88 +107,63 @@ See the accompanying license.txt file for applicable licenses.
     <variable id="Index even footer"/>
 
     <!-- The header that appears on the odd-numbered index pages. -->
-    <variable id="Index odd header"><param ref-name="prodname"/>&#xA0;|&#xA0;<param ref-name="heading"/>&#xA0;|&#xA0;<param ref-name="pagenum"/></variable>
+    <variable id="Index odd header"><param ref-name="prodname"/> | <param ref-name="heading"/> | <param ref-name="pagenum"/></variable>
 
     <!-- The header that appears on the even-numbered index pages. -->
-    <variable id="Index even header"><param ref-name="pagenum"/>&#xA0;|&#xA0;<param ref-name="heading"/>&#xA0;|&#xA0;<param ref-name="prodname"/></variable>
+    <variable id="Index even header"><param ref-name="pagenum"/> | <param ref-name="heading"/> | <param ref-name="prodname"/></variable>
 
     <!-- The formatting used to display ordered lists (e.g., "1., 2." or 
          "1), 2)" -->
     <variable id="Ordered List Number"><param ref-name="number"/>. </variable>
 
     <!-- The unordered list bullet   -->
-    <variable id="Unordered List bullet">&#8226;</variable>
+    <variable id="Unordered List bullet">•</variable>
 
     <!-- The heading string to put at the top of the Table of Contents -->
     <variable id="Table of Contents">Inhalt</variable>
 
-    <!-- The heading string to put at the top of the Index -->
-    <variable id="Index">Index</variable>
     <variable id="Index Continued String">Fortsetzung</variable>
     <variable id="Index See String">, Siehe </variable>
     <variable id="Index See Also String">Siehe auch </variable>
 
     <!-- The string used to label a chapter within the table of contents. -->
-    <variable id="Table of Contents Chapter">Kapitel&#160;<param ref-name="number"/>:&#160;</variable>
+    <variable id="Table of Contents Chapter">Kapitel <param ref-name="number"/>: </variable>
 
     <!-- The string used to label an appendix within the table of contents. -->
-    <variable id="Table of Contents Appendix">Anhang&#160;<param ref-name="number"/>:&#160;</variable>
+    <variable id="Table of Contents Appendix">Anhang <param ref-name="number"/>: </variable>
 
-    <!-- The string used to label an part within the table of contents. -->
-    <variable id="Table of Contents Part">Teil&#160;<param ref-name="number"/>:&#160;</variable>
+    <!-- The string used to label a part within the table of contents. -->
+    <variable id="Table of Contents Part">Teil <param ref-name="number"/>: </variable>
 
-    <!-- The string used to label an preface within the table of contents. -->
-    <variable id="Table of Contents Preface">Einleitung&#160;</variable>
+    <!-- The string used to label a preface within the table of contents. -->
+    <variable id="Table of Contents Preface">Einleitung </variable>
+
+    <!-- The string used to label Notices within the table of contents. -->
+    <variable id="Table of Contents Notices"/>
+
     <variable id="Preface title">Einleitung</variable>
-
+    
+    <!-- The string used to label an notices in body text. -->
+    <variable id="Notices title"/>
+    
     <!-- The heading to put at the top of a chapter when creating a
          chapter-level "mini-TOC" -->
     <variable id="Mini Toc">Themen: </variable>
 
-    <!-- Text to use for 'Note' label generated from <note> element. -->
-    <variable id="Note">Hinweis</variable>
+    <variable id="#note-separator">: </variable>
+
     <!-- Text to use for 'Notice' label generated from <note> element. -->
     <variable id="Notice"><!--TODO:Notice--></variable>
-    <!-- Text to use for 'Note' label generated from <note> element 
-         with 'type' attribute set to 'tip'. -->
-    <variable id="Tip">Tipp</variable>
-
-    <!-- Text to use for 'Note' label generated from <note> element
-         with 'type' attribute set to 'tip'. -->
-    <variable id="Important">Wichtig</variable>
-
-    <!-- Text to use for 'Note' label generated from <note> element 
-         with 'type' attribute set to 'fastpath'. -->
-    <variable id="Fastpath">Pfad für den Schnellzugriff</variable>
-
-    <!-- Text to use for 'Note' label generated from <note> element 
-         with 'type' attribute set to 'remember'. -->
-    <variable id="Remember">Nicht vergessen!</variable>
-
-    <!-- Text to use for 'Note' label generated from <note> element 
-         with 'type' attribute set to 'attention'. -->
-    <variable id="Attention">Achtung</variable>
-
-    <!-- Text to use for 'Note' label generated from <note> element 
-         with 'type' attribute set to 'caution'. -->
-    <variable id="Caution">Vorsicht</variable>
-
-    <!-- Text to use for 'Note' label generated from <note> element 
-         with 'type' attribute set to 'danger'. -->
-    <variable id="Danger">Gefahr</variable>
-    <!-- Text to use for 'Note' label generated from <note> element with 'type' attribute set to 'warning'. -->
-    <variable id="Warning">Warnung</variable>
-    <!-- Text to use for 'Note' label generated from <note> element
-         with 'type' attribute set to 'restriction'. -->
-    <variable id="Restriction">Beschränkung</variable>
 
     <!-- Text to use for figure titles. Renders as part of <fig>/<title>
           elements. -->
-    <variable id="Figure">Abbildung  <param ref-name="number"/>: <param ref-name="title"/></variable>
+    <variable id="Figure.title">Abbildung  <param ref-name="number"/>: <param ref-name="title"/></variable>
+    <variable id="Figure Number">Abbildung  <param ref-name="number"/></variable>
 
     <!-- Text to use for table titles. Renders as part of <table>/<title> 
          elements. -->
-    <variable id="Table">Tabelle <param ref-name="number"/>: <param ref-name="title"/></variable>
+    <variable id="Table.title">Tabelle <param ref-name="number"/>: <param ref-name="title"/></variable>
+    <variable id="Table Number">Tabelle <param ref-name="number"/></variable>
 
     <!-- Text to use for related links label.
          Renders as part of <related-links> element. -->
@@ -199,13 +173,14 @@ See the accompanying license.txt file for applicable licenses.
          text in case it's not specified in source. -->
     <variable id="Cross-Reference">Querverweis auf: </variable>
 
-    <!-- Default content-reference text prefix. Used to generate reference 
+    <!-- Prefix for unresolved content reference. Used to generate reference 
          text in case target cannot be resolved. -->
     <variable id="Content-Reference">Inhaltsverweis auf: </variable>
 
     <!-- Default title text for referenced section title. Used to generate 
          reference text in case reference has no explicit content and
          referenced section has no title. -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Untitled section">Unbenannter Abschnitt.</variable>
 
     <!-- Default title text for referenced list item. Used to generate
@@ -224,6 +199,7 @@ See the accompanying license.txt file for applicable licenses.
 
     <!-- Text to use for a generated label of search title. Renders 
          as part of <searchtitle> element. -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Search title">Suchtitel</variable>
 
     <!-- Text to use for chapter titles.-->
@@ -251,9 +227,9 @@ See the accompanying license.txt file for applicable licenses.
     <variable id="This link">diese Verbindung</variable>
 
     <!-- Image path to use for a note of "note" type. -->
-    <variable id="note Note Image Path">Configuration/OpenTopic/cfg/common/artwork/hand.gif</variable>
+    <variable id="note Note Image Path"></variable>
     <!-- Image path to use for a note of "notice" type. -->
-    <variable id="notice Note Image Path">Configuration/OpenTopic/cfg/common/artwork/hand.gif</variable>
+    <variable id="notice Note Image Path"></variable>
     <!-- Image path to use for a note of "attention" type. -->
     <variable id="attention Note Image Path">Configuration/OpenTopic/cfg/common/artwork/warning.gif</variable>
 
@@ -265,87 +241,106 @@ See the accompanying license.txt file for applicable licenses.
     <!-- Image path to use for a note of "warning" type. -->
     <variable id="warning Note Image Path">Configuration/OpenTopic/cfg/common/artwork/warning.gif</variable>
     <!-- Image path to use for a note of "fastpath" type. -->
-    <variable id="fastpath Note Image Path">Configuration/OpenTopic/cfg/common/artwork/hand.gif</variable>
+    <variable id="fastpath Note Image Path"></variable>
 
     <!-- Image path to use for a note of "important" type. -->
-    <variable id="important Note Image Path">Configuration/OpenTopic/cfg/common/artwork/hand.gif</variable>
+    <variable id="important Note Image Path"></variable>
 
     <!-- Image path to use for a note of "remember" type. -->
-    <variable id="remember Note Image Path">Configuration/OpenTopic/cfg/common/artwork/hand.gif</variable>
+    <variable id="remember Note Image Path"></variable>
 
     <!-- Image path to use for a note of "restriction" type. -->
-    <variable id="restriction Note Image Path">Configuration/OpenTopic/cfg/common/artwork/hand.gif</variable>
+    <variable id="restriction Note Image Path"></variable>
 
     <!-- Image path to use for a note of "tip" type. -->
-    <variable id="tip Note Image Path">Configuration/OpenTopic/cfg/common/artwork/hand.gif</variable>
+    <variable id="tip Note Image Path"></variable>
 
     <!-- Image path to use for a note of "other" type. -->
-    <variable id="other Note Image Path">Configuration/OpenTopic/cfg/common/artwork/hand.gif</variable>
+    <variable id="other Note Image Path"></variable>
+
+    <!-- The title of the links to child topics -->
+    <variable id="Child topics"/>
+
+    <!-- The title of the links to Related references -->
+    <variable id="Related references"/>
 
     <!--
        Strings used in the online-help publishing.
     -->
 
     <!-- The title of the "contents" button in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Contents button title">Inhalt</variable>
 
     <!-- The title of the "index" button in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Index button title">Index</variable>
 
     <!-- The title of the "search" button in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Search button title">Suche</variable>
 
     <!-- The title of the "back" button in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Back button title">Zurück</variable>
 
     <!-- The title of the "forward" button in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Forward button title">Vorwärts</variable>
 
     <!-- The title of the "main page" button in online-help output -->
-    <variable id="Main page button title">HauptcSeite</variable>
+    <!-- Deprecated since 2.3 -->
+    <variable id="Main page button title">Hauptseite</variable>
 
     <!-- The title of the "previous page" button in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Previous page button title">Vorige Seite</variable>
 
     <!-- The title of the "next page" button in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Next page button title">Folgende Seite</variable>
 
     <!-- The "online help" document title prefix in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Online help prefix">On-line-Hilfe</variable>
 
     <!-- The search by index field title in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Search index field title">Suche nach dem Schlüsselwort:</variable>
 
     <!-- The search by index button title in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Search index button title">Sehen Sie</variable>
 
     <!-- The search by text field title in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Search text field title">Suchhilfe für:</variable>
 
     <!-- The search by text button title in online-help output -->
+    <!-- Deprecated since 2.3 -->
     <variable id="Search text button title">Suche</variable>
 
     <!--Label for a step with importance="optional"-->
     <variable id="Optional Step">Optional:</variable>
+    <variable id="Required Step">Erforderlich:</variable>
 
-    <!--Labels for task sections-->
-    <variable id="Task Prereq">Vorbereitungen</variable>
-    <variable id="Task Context">Warum und wann dieser Vorgang ausgeführt wird</variable>
-    <variable id="Task Steps">Prozedur</variable>
-  <variable id="#steps-unordered-label"><variable id="Task Steps"/></variable>
-    <variable id="Task Result">Ergebnisse</variable>
-    <variable id="Task Example">Beispiel</variable>
-    <variable id="Task Postreq">Nächste Maßnahme</variable>
+    <!--Labels for task sections, now reused from common-->
+    <variable id="Task Prereq"></variable>
+    <variable id="Task Context"></variable>
+    <variable id="Task Steps"></variable>
+    <variable id="#steps-unordered-label"></variable>
+    <variable id="Task Result"></variable>
+    <variable id="Task Example"></variable>
+    <variable id="Task Postreq"></variable>
     <variable id="Glossary odd footer"/>
     <variable id="Glossary even footer"/>
-    <variable id="Glossary odd header"><param ref-name="prodname"/>&#xA0;|&#xA0;<param ref-name="heading"/>&#xA0;|&#xA0;<param ref-name="pagenum"/></variable>
-    <variable id="Glossary even header"><param ref-name="pagenum"/>&#xA0;|&#xA0;<param ref-name="heading"/>&#xA0;|&#xA0;<param ref-name="prodname"/></variable>
+    <variable id="Glossary odd header"><param ref-name="prodname"/> | <param ref-name="heading"/> | <param ref-name="pagenum"/></variable>
+    <variable id="Glossary even header"><param ref-name="pagenum"/> | <param ref-name="heading"/> | <param ref-name="prodname"/></variable>
     <variable id="Glossary">Glossar</variable>
     <variable id="List of Tables">Tabellenverzeichnis</variable>
     <variable id="List of Figures">Abbildungsverzeichnis</variable>
-  <variable id="Option">Option</variable>
-  <variable id="Description">Bezeichnung</variable>
-  <variable id="#menucascade-separator">&#xA0;&#x3E; </variable>
+
+  <variable id="#menucascade-separator"> &gt; </variable>
   <variable id="#quote-start">„</variable>
   <variable id="#quote-end">“</variable>
 </vars>

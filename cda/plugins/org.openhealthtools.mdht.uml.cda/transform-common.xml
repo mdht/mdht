@@ -29,7 +29,7 @@
 
     <target name="transformModel" description="Transform Ecore UML model.">
         <cdatools model="${modelPath.uml}">
-        	<validateModel failOnError="${validation.failOnError}"/>
+        
             <transformToEcoreModel ecoreModel="${ecoreModelPath.uml}" />
         </cdatools>
 

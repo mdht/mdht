@@ -1,0 +1,46 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2016"><meta name="DC.rights.owner" content="(C) Copyright 2016"><meta name="DC.Type" content="concept"><meta name="description" content="Elaboration on how the generate.copy.outer parameter functions."><meta name="DC.Relation" scheme="URI" content="../parameters/parameters-base-html.html"><meta name="DC.Format" content="XHTML"><meta name="DC.Identifier" content="concept_rcv_xbp_xg"><link rel="stylesheet" type="text/css" href="../css/commonltr.css"><link rel="stylesheet" type="text/css" href="../css/dita-ot-doc.css"><title>generate.copy.outer parameter</title></head><body id="concept_rcv_xbp_xg"><header role="banner"><div class="header">
+  <p>DITA Open Toolkit</p>
+  <hr>
+</div></header><nav role="toc"><ul><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a><ul><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a><ul><li><a href="../parameters/parameters-base.html">Common</a></li><li><a href="../parameters/parameters-base-html.html">HTML-based output</a></li><li><a href="../parameters/parameters-common-html.html">HTML5 and XHTML</a></li><li><a href="../parameters/parameters-html5.html">HTML5</a></li><li><a href="../parameters/parameters-eclipsecontent.html">Eclipse content</a></li><li><a href="../parameters/parameters-eclipsehelp.html">Eclipse Help</a></li><li><a href="../parameters/parameters-htmlhelp.html">HTMLHelp</a></li><li><a href="../parameters/parameters-javahelp.html">JavaHelp</a></li><li><a href="../parameters/parameters-odt.html">Open Document Format</a></li><li><a href="../parameters/parameters-other.html">Other</a></li><li><a href="../parameters/parameters-pdf.html">PDF</a></li></ul></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li></ul></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="../user-guide/dita-and-dita-ot-resources.html">DITA Resources</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1"><span class="keyword parmname">generate.copy.outer</span> parameter</h1>
+  
+  <div class="body conbody"><p class="shortdesc">Elaboration on how the <span class="keyword parmname">generate.copy.outer</span> parameter functions.</p>
+    <section class="section"><h2 class="title sectiontitle">Background</h2>
+      
+      <div class="p">This is an issue in the following situations:<ul class="ul">
+          <li class="li">The DITA map is in a directory that is a peer to directories that contain referenced objects.</li>
+          <li class="li">The DITA map is in a directory that is below the directories that contain the referenced objects.</li>
+        </ul></div>
+      <div class="p">Let's assume that the directory structure for the DITA content looks like the
+        following:<pre class="pre">maps
+topics
+images</pre>The DITA map is in the <span class="ph filepath">maps</span> directory, the topics
+        are in the<span class="ph filepath"> topics</span> directory, and the images are in the <span class="ph filepath">images</span>
+        directory.</div></section>
+    <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">1</span></h2>
+      
+      <div class="p">Let's assume that you run the HTML5 transformation and specify an output directory of
+          <span class="ph filepath">C:\A-test</span>. By default, The DITA-OT uses the <span class="keyword parmname">generate.copy.outer</span>
+        parameter with a value of <span class="keyword option">1</span>. Output is not built for the topics. You receive only the following
+        output: <pre class="pre">C:\A-test
+--- index.html
+--- commonltr.css
+--- commonrtl.css</pre>The
+          <span class="ph filepath">index.html</span> file contains the navigation structure, but all the links are broken, since no
+        HTML5 files were built for the topics.</div>
+      <p class="p">How do you fix this? By specifying a value of <span class="keyword option">3</span> for the
+          <span class="keyword parmname">generate.copy.outer</span> parameter. </p>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">3</span></h2>
+      
+      <div class="p">Now your output directory structure looks like this: <pre class="pre">C:\A-test
+--- images\
+--- maps\
+--- topics\</pre>The
+        index.html file is in the maps directory, and the CSS and other files are located in the output directory,
+          <span class="ph filepath">C:\A-test</span>. Copying the output directory is simplified.</div>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../parameters/parameters-base-html.html" title="Certain parameters apply to all the HTML-based transformation types: Eclipse help, HTML Help, JavaHelp, TocJS, HTML5, and XHTML.">HTML-based output parameters</a></div></div></nav></article></main></body></html>

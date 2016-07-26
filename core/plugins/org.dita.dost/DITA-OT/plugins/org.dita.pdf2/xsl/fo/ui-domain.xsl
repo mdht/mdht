@@ -40,8 +40,8 @@ See the accompanying license.txt file for applicable licenses.
         <xsl:if test="ancestor::*[contains(@class,' ui-d/menucascade ')]">
             <xsl:variable name="uicontrolcount" select="count(preceding-sibling::*[contains(@class,' ui-d/uicontrol ')])"/>
             <xsl:if test="$uicontrolcount &gt; 0">
-                <xsl:call-template name="insertVariable">
-                  <xsl:with-param name="theVariableID" select="'#menucascade-separator'"/>
+                <xsl:call-template name="getVariable">
+                  <xsl:with-param name="id" select="'#menucascade-separator'"/>
                 </xsl:call-template>
             </xsl:if>
         </xsl:if>
@@ -76,19 +76,10 @@ See the accompanying license.txt file for applicable licenses.
         <xsl:call-template name="generateAttrLabel"/>
         <fo:block xsl:use-attribute-sets="screen">
             <xsl:call-template name="commonattributes"/>
+            <xsl:call-template name="setFrame"/>
             <xsl:call-template name="setScale"/>
-            <!-- rules have to be applied within the scope of the PRE box; else they start from page margin! -->
-            <xsl:if test="contains(@frame,'top')">
-                <fo:block>
-                    <fo:leader xsl:use-attribute-sets="screen__top"/>
-                </fo:block>
-            </xsl:if>
+            <xsl:call-template name="setExpanse"/>
             <xsl:apply-templates/>
-            <xsl:if test="contains(@frame,'bot')">
-                <fo:block>
-                    <fo:leader xsl:use-attribute-sets="screen__bottom"/>
-                </fo:block>
-            </xsl:if>
         </fo:block>
     </xsl:template>
 

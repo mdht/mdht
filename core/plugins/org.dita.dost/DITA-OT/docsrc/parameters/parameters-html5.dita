@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generated from plugin source, do not edit! -->
+<!DOCTYPE reference
+  PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="html5"><title outputclass="generated">HTML5 parameters</title><titlealts><navtitle>HTML5</navtitle></titlealts><shortdesc id="shortdesc"/><refbody><section><parml><plentry id="nav-toc" props="html5"><pt><parmname>nav-toc</parmname></pt><pd id="nav-toc.desc">Specifies whether to generate a navigation TOC in topic pages. The following values are supported:<ul><li><option>none</option> (default) – No TOC</li><li><option>partial</option> – Partial TOC that shows the current topic</li><li><option>full</option> – Full TOC</li></ul></pd></plentry></parml></section></refbody></reference>

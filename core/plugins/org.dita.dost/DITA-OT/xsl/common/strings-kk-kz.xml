@@ -59,6 +59,7 @@
 <str name="task_postreq">Келесі әрекет</str>
 <str name="task_prereq">Бастаудан бұрын</str>
 <str name="task_procedure">Процедура</str>
+<str name="task_procedure_unordered">Процедура</str>
 <str name="task_results">Нәтижелер</str>
 
 <str name="Copyright">авторлық құқықтары</str>
@@ -67,13 +68,5 @@
 <str name="OpenQuote">"</str>
 <str name="CloseQuote">"</str>
 <str name="ColonSymbol">:</str>
-
-<!-- For odt transform -->
-<str name="On the page"> on page </str>
-<str name="Related Links">Related Links</str>
-<str name="List item">List item.</str>
-<str name="Foot note">Footnote.</str>
-<str name="Page"> page </str>
-<str name="Unordered List bullet">&#x2022;</str>
 
 </strings>

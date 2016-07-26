@@ -1,0 +1,51 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2016"><meta name="DC.rights.owner" content="(C) Copyright 2016"><meta name="DC.Type" content="task"><meta name="description" content="You can update either the main DITA-OT XML catalog or the XML catalog that is used by the PDF plug-in. This enables the DITA-OT to support new specializations and document-type shells."><meta name="DC.Relation" scheme="URI" content="../dev_ref/plugin-creating.html"><meta name="DC.Relation" scheme="URI" content="../dev_ref/plugin-extension-points-general.html"><meta name="DC.Format" content="XHTML"><meta name="DC.Identifier" content="plugin-xmlcatalog"><meta name="DC.Language" content="en-US"><link rel="stylesheet" type="text/css" href="../css/commonltr.css"><link rel="stylesheet" type="text/css" href="../css/dita-ot-doc.css"><title>Extending an XML catalog file</title></head><body id="plugin-xmlcatalog"><header role="banner"><div class="header">
+  <p>DITA Open Toolkit</p>
+  <hr>
+</div></header><nav role="toc"><ul><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a><ul><li><a href="../dev_ref/plugins-overview.html">Overview of plug-ins</a></li><li class="active"><a href="../dev_ref/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding a new target to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding an Ant target to the pre-processing pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Adding a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding an XSLT-processing step</a></li><li><a href="../dev_ref/using-plugin-URI-extension.html">Referencing files from other plug-ins</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Adding parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding a Java library to the DITA-OT classpath parameter</a></li><li><a href="../dev_ref/plugin-messages.html">Adding new diagnostic messages</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li><li><a href="../user-guide/dita-and-dita-ot-resources.html">DITA Resources</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Extending an XML catalog file</h1>
+  
+  <div class="body taskbody"><p class="shortdesc">You can update either the main DITA-OT XML catalog or the XML catalog that is used by the PDF plug-in. This
+    enables the DITA-OT to support new specializations and document-type shells.</p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
+      <p class="p">You can use the <code class="ph codeph">dita.specialization.catalog.relative</code> and
+          <code class="ph codeph">org.dita.pdf2.catalog.relative</code> extension points to update the DITA-OT catalog files.</p>
+      <div class="note remember note_remember"><span class="note__title remembertitle">Remember:</span> The <code class="ph codeph">dita.specialization.catalog</code> extension is deprecated. Use
+          <code class="ph codeph">dita.specialization.catalog.relative</code> instead.</div>
+    </section>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Using the OASIS catalog format, create an XML catalog file that contains only the new values that you want
+          to add to a DITA-OT catalog file.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Create a <span class="ph filepath">plug-in.xml</span> file that contains the following content:</span>
+        <div class="itemgroup info"><pre class="pre codeblock"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
+  &lt;feature extension="<var class="keyword varname">extension-point</var>" file="<var class="keyword varname">file</var>"/&gt;
+&lt;/plugin&gt;</code></pre>where:
+          <ul class="ul">
+            <li class="li"><var class="keyword varname">plugin-id</var> is the plug-in identifier, for example,
+                <code class="ph codeph">com.example.catalog</code>.</li>
+            <li class="li"><var class="keyword varname">extension-point</var> is either <code class="ph codeph">dita.specialization.catalog.relative</code> or
+                <code class="ph codeph">org.dita.pdf2.catalog.relative</code>.</li>
+            <li class="li"><var class="keyword varname">file</var> is the name of the new catalog file, for example,
+                <span class="ph filepath">catalog-dita.xml</span>. </li>
+          </ul></div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Save the new XML catalog file to your plug-in. Be sure that the local file references are relative to the
+          location of the catalog and plug-in.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Integrate the plug-in.</span>
+      </li></ol>
+    <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>The catalog entries inside of the new catalog file are added to the core DITA-OT catalog file.</section>
+    <div class="example"><h2 class="title sectiontitle">Example</h2>
+      
+      <p class="p">This example assumes that <span class="ph filepath">catalog-dita.xml</span> contains an OASIS catalog for any document-type
+        shells inside this plug-in. The catalog entries in <span class="ph filepath">catalog-dita.xml</span> are relative to the
+        catalog itself; when the plug-in is integrated, they are added to the core DITA-OT catalog (with the correct
+        path).</p>
+      <pre class="pre codeblock"><code>&lt;plugin id="com.example.catalog"&gt;
+  &lt;feature extension="dita.specialization.catalog.relative" file="catalog-dita.xml"/&gt;
+&lt;/plugin&gt;</code></pre>
+    </div>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/plugin-creating.html" title="You can use DITA-OT plug-ins to extend the DITA Open Toolkit.">Creating plug-ins</a></div></div><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../dev_ref/plugin-extension-points-general.html" title="These extension points enable you to extend the DITA-OT. You can add Ant targets or imports; add a Java library to the classpath parameter; add a new transformation type; extend a catalog file; add new diagnostic messages, and more.">General extension points</a></div></div></nav></article></main></body></html>

@@ -11,11 +11,10 @@
               elsewhere with no processing trade-off.
               -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-  version="1.0" 
-  xmlns:exsl="http://exslt.org/common" 
+  version="2.0"  
   xmlns:dita2html="http://dita-ot.sourceforge.net/ns/200801/dita2html"
   xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg"
-  exclude-result-prefixes="exsl dita2html ditamsg">
+  exclude-result-prefixes="dita2html ditamsg">
  
  <xsl:template name="getrules">
   <xsl:variable name="domains">
@@ -145,7 +144,7 @@
    </xsl:call-template>
   </xsl:variable>
   <xsl:choose>
-   <xsl:when test="exsl:node-set($flag-result)/prop">
+   <xsl:when test="$flag-result/prop">
     <xsl:copy-of select="$flag-result"/>
    </xsl:when>
    <xsl:otherwise>
@@ -192,7 +191,6 @@
    <xsl:when test="$FILTERDOC/val/prop[@att=$flag-att][@val=$firstflag][@action='flag']">
     <xsl:copy-of select="$FILTERDOC/val/prop[@att=$flag-att][@val=$firstflag][@action='flag']"/>
    </xsl:when>
-   <!-- Added by William on 2009-06-01 for flag process start-->
    <xsl:when test="$FILTERDOC/val/prop[@att=$flag-att][not(@val=$firstflag)][@action='flag']">
     
     <xsl:for-each select="$FILTERDOC/val/prop[@att=$flag-att][not(@val=$firstflag)][@action='flag']">
@@ -235,7 +233,6 @@
      </xsl:if>
     </xsl:for-each>
    </xsl:when>
-   <!-- Added by William on 2009-06-01 for flag process end-->
    <xsl:otherwise/> <!-- that flag not active -->
   </xsl:choose>
   
@@ -252,7 +249,6 @@
   </xsl:choose>
  </xsl:template>
  
- <!-- Added by William on 2009-06-01 for flag process start-->
  <!-- copy needed elements -->
  <xsl:template match="*" mode="copy-element">
   <xsl:param name="att"/>
@@ -386,7 +382,6 @@
  <xsl:template match="*" mode="getChildNode">
   <xsl:copy-of select="node()"/>
  </xsl:template>
- <!-- Added by William on 2009-06-01 for flag process end-->
  
  <xsl:template name="getPropsValue">
   <xsl:param name="propsPath"/>
@@ -455,8 +450,8 @@
    <xsl:call-template name="getrules"/>
   </xsl:param>
   <xsl:choose>
-   <xsl:when test="exsl:node-set($flagrules)/*">
-    <xsl:apply-templates select="exsl:node-set($flagrules)/*[1]" mode="conflict-check"/>
+   <xsl:when test="$flagrules/*">
+    <xsl:apply-templates select="$flagrules/*[1]" mode="conflict-check"/>
    </xsl:when>
    <xsl:otherwise>
     <xsl:value-of select="'false'"/>
@@ -488,14 +483,14 @@
   <xsl:param name="flagrules">
    <xsl:call-template name="getrules"/>
   </xsl:param>
-  <xsl:apply-templates select="exsl:node-set($flagrules)/prop[1]" mode="start-flagit"/>
+  <xsl:apply-templates select="$flagrules/prop[1]" mode="start-flagit"/>
  </xsl:template>
  
  <xsl:template name="end-flagit">
   <xsl:param name="flagrules">
    <xsl:call-template name="getrules"/>
   </xsl:param>
-  <xsl:apply-templates select="exsl:node-set($flagrules)/prop[last()]" mode="end-flagit"/>
+  <xsl:apply-templates select="$flagrules/prop[last()]" mode="end-flagit"/>
  </xsl:template>
  
  <!-- Use @rev to find the first active flagged revision.
@@ -637,14 +632,13 @@
   <xsl:param name="flagrules">
    <xsl:call-template name="getrules"/>
   </xsl:param>
-  <xsl:apply-templates select="exsl:node-set($flagrules)/revprop[last()]" mode="end-revflagit"/>
+  <xsl:apply-templates select="$flagrules/revprop[last()]" mode="end-revflagit"/>
  </xsl:template>
  
  
  <xsl:template match="*" mode="ditamsg:conflict-text-style-applied">
   <xsl:call-template name="output-message">
-   <xsl:with-param name="msgnum">054</xsl:with-param>
-   <xsl:with-param name="msgsev">W</xsl:with-param>
+   <xsl:with-param name="id" select="'DOTX054W'"/>
   </xsl:call-template>
  </xsl:template>
  

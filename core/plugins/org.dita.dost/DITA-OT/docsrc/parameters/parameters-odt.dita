@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generated from plugin source, do not edit! -->
+<!DOCTYPE reference
+  PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="odt"><title outputclass="generated">Open Document Format parameters</title><titlealts><navtitle>Open Document Format</navtitle></titlealts><shortdesc id="shortdesc"/><refbody><section><parml><plentry id="args.odt.img.embed" props="odt"><pt><parmname>args.odt.img.embed</parmname></pt><pd id="args.odt.img.embed.desc">Determines whether images are embedded as binary objects within the ODT file. The allowed values are <option>yes</option> and <option>no</option>; the default value is <option>yes</option>.</pd></plentry></parml></section></refbody></reference>

@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir, JKM Software LLC. - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.dita.dost.handlers;
 
@@ -15,6 +15,7 @@ import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.mdht.uml.common.util.CompareResultVisitor;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -27,14 +28,13 @@ import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.common.util.CompareResultVisitor;
 
 /**
  * @author fhim
- * 
+ *
  */
 /*
- * 
+ *
  * Package
  * Association Added
  * Class Added
@@ -56,7 +56,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseComment(org.eclipse.uml2.uml.Comment)
 		 */
 		@Override
@@ -66,7 +66,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseProperty(org.eclipse.uml2.uml.Property)
 		 */
 		@Override
@@ -82,7 +82,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#casePackage(org.eclipse.uml2.uml.Package)
 		 */
 		@Override
@@ -92,7 +92,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseClass(org.eclipse.uml2.uml.Class)
 		 */
 		@Override
@@ -102,7 +102,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#defaultCase(org.eclipse.emf.ecore.EObject)
 		 */
 		@Override
@@ -116,10 +116,10 @@ public class DitaCompare implements CompareResultVisitor {
 		static final ElementDisplay ELEMENTDISPLAYINSTANCE = new ElementDisplay();
 
 		/*
-		 * 
+		 *
 		 * /*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseProperty(org.eclipse.uml2.uml.Property)
 		 */
 		@Override
@@ -129,7 +129,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseComment(org.eclipse.uml2.uml.Comment)
 		 */
 		@Override
@@ -139,7 +139,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseGeneralization(org.eclipse.uml2.uml.Generalization)
 		 */
 		@Override
@@ -149,7 +149,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseEnumeration(org.eclipse.uml2.uml.Enumeration)
 		 */
 		@Override
@@ -159,7 +159,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseNamedElement(org.eclipse.uml2.uml.NamedElement)
 		 */
 		@Override
@@ -169,7 +169,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#defaultCase(org.eclipse.emf.ecore.EObject)
 		 */
 		@Override
@@ -184,7 +184,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseNamedElement(org.eclipse.uml2.uml.NamedElement)
 		 */
 		@Override
@@ -199,7 +199,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseClassifier(org.eclipse.uml2.uml.Classifier)
 		 */
 		@Override
@@ -209,7 +209,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#casePackage(org.eclipse.uml2.uml.Package)
 		 */
 		@Override
@@ -219,7 +219,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseProperty(org.eclipse.uml2.uml.Property)
 		 */
 		@Override
@@ -227,14 +227,15 @@ public class DitaCompare implements CompareResultVisitor {
 			return "Property " + getEscapedElementName(object) + " [" + object.getLower() + ".." +
 					(object.getUpper() >= 0
 							? object.getUpper()
-							: "*") + "] " + (object.getType() != null
+							: "*") +
+					"] " + (object.getType() != null
 							? object.getType().getName()
 							: "NULL");
 		}
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseAssociation(org.eclipse.uml2.uml.Association)
 		 */
 		@Override
@@ -256,7 +257,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseComment(org.eclipse.uml2.uml.Comment)
 		 */
 		@Override
@@ -266,7 +267,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseGeneralization(org.eclipse.uml2.uml.Generalization)
 		 */
 		@Override
@@ -291,7 +292,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseLiteralUnlimitedNatural(org.eclipse.uml2.uml.LiteralUnlimitedNatural)
 		 */
 		@Override
@@ -303,7 +304,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseLiteralInteger(org.eclipse.uml2.uml.LiteralInteger)
 		 */
 		@Override
@@ -313,7 +314,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#defaultCase(org.eclipse.emf.ecore.EObject)
 		 */
 		@Override
@@ -347,15 +348,11 @@ public class DitaCompare implements CompareResultVisitor {
 		buffer.append("<section id=\"modelupdatesdescription\" >");
 		buffer.append("<title>Model Updates</title>");
 		buffer.append(
-			"<table colsep=\"1\" rowsep=\"1\"> " +
-					"<tgroup cols=\"2\">" +
+			"<table colsep=\"1\" rowsep=\"1\"> " + "<tgroup cols=\"2\">" +
 					" <colspec colname=\"col1\" colwidth=\"2*\"/> <colspec colname=\"col2\" colwidth=\"1*\"/> <colspec colname=\"col3\" colwidth=\"1*\"/> <colspec colname=\"col4\" colwidth=\"2*\"/>" +
-					"<thead>" +
-					"<row><entry namest=\"col1\" nameend =\"col2\" valign=\"top\">Intial Version " +
-					version1 +
-					"</entry><entry namest=\"col3\" nameend =\"col4\" valign=\"top\">Target Version " +
-					version2 +
-					"</entry></row>" +
+					"<thead>" + "<row><entry namest=\"col1\" nameend =\"col2\" valign=\"top\">Intial Version " +
+					version1 + "</entry><entry namest=\"col3\" nameend =\"col4\" valign=\"top\">Target Version " +
+					version2 + "</entry></row>" +
 					"<row><entry colname=\"col1\" valign=\"top\">Domain</entry><entry colname=\"col2\" valign=\"top\">Class</entry><entry colname=\"col3\" valign=\"top\">Action</entry><entry colname=\"col4\" valign=\"top\">Element</entry></row>" +
 					"</thead><tbody>").append(System.getProperty("line.separator"));
 		;
@@ -365,7 +362,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.common.util.CompareResultInterface#startElement(org.eclipse.uml2.uml.NamedElement)
 	 */
 	public void startElement(NamedElement element) {
@@ -377,7 +374,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.common.util.CompareResultInterface#addedElement(org.eclipse.uml2.uml.NamedElement,
 	 * org.eclipse.uml2.uml.Element)
 	 */
@@ -388,7 +385,7 @@ public class DitaCompare implements CompareResultVisitor {
 				"<row><entry>" + StringEscapeUtils.escapeHtml(owner.getNearestPackage().getQualifiedName()) +
 						"</entry><entry>" + ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(element) +
 						"</entry><entry>Added</entry><entry></entry></row>").append(
-				System.getProperty("line.separator"));
+							System.getProperty("line.separator"));
 			;
 		} else if (owner instanceof Class) {
 			DeltaDisplay.DELTADISPLAY.leftElement = null;
@@ -404,7 +401,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.common.util.CompareResultInterface#deletedElement(org.eclipse.uml2.uml.NamedElement,
 	 * org.eclipse.uml2.uml.Element)
 	 */
@@ -415,7 +412,7 @@ public class DitaCompare implements CompareResultVisitor {
 				"<row><entry>" + StringEscapeUtils.escapeHtml(owner.getNearestPackage().getQualifiedName()) +
 						"</entry><entry>" + ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(element) +
 						"</entry><entry>Deleted</entry><entry></entry></row>").append(
-				System.getProperty("line.separator"));
+							System.getProperty("line.separator"));
 			;
 		} else if (owner instanceof Class) {
 			DeltaDisplay.DELTADISPLAY.leftElement = null;
@@ -430,7 +427,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.common.util.CompareResultInterface#changedElement(org.eclipse.uml2.uml.NamedElement,
 	 * org.eclipse.uml2.uml.Element)
 	 */
@@ -458,7 +455,7 @@ public class DitaCompare implements CompareResultVisitor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.common.util.CompareResultInterface#endElement(org.eclipse.uml2.uml.NamedElement)
 	 */
 	public void endElement(NamedElement element) {

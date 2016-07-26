@@ -1,0 +1,44 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2016"><meta name="DC.rights.owner" content="(C) Copyright 2016"><meta name="DC.Type" content="concept"><meta name="description" content="A DITA-OT plug-in can be dependent on other plug-ins. Prerequisite plug-ins are integrated first, which ensures that the DITA-OT handles XSLT overrides correctly."><meta name="DC.Relation" scheme="URI" content="../dev_ref/plugins-overview.html"><meta name="DC.Format" content="XHTML"><meta name="DC.Identifier" content="plugin-dependencies"><meta name="DC.Language" content="en-US"><link rel="stylesheet" type="text/css" href="../css/commonltr.css"><link rel="stylesheet" type="text/css" href="../css/dita-ot-doc.css"><title>Plug-in dependencies</title></head><body id="plugin-dependencies"><header role="banner"><div class="header">
+  <p>DITA Open Toolkit</p>
+  <hr>
+</div></header><nav role="toc"><ul><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a><ul><li><a href="../dev_ref/plugins-overview.html">Overview of plug-ins</a><ul><li><a href="../dev_ref/plugin-benefits.html">Benefits of plug-ins</a></li><li><a href="../dev_ref/plugin-configfile.html">Plug-in descriptor file</a></li><li class="active"><a href="../dev_ref/plugin-dependencies.html">Plug-in dependencies</a></li></ul></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding a new target to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding an Ant target to the pre-processing pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Adding a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding an XSLT-processing step</a></li><li><a href="../dev_ref/using-plugin-URI-extension.html">Referencing files from other plug-ins</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Adding parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding a Java library to the DITA-OT classpath parameter</a></li><li><a href="../dev_ref/plugin-messages.html">Adding new diagnostic messages</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li><li><a href="../user-guide/dita-and-dita-ot-resources.html">DITA Resources</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Plug-in dependencies</h1>
+  
+  <div class="body conbody"><p class="shortdesc">A DITA-OT plug-in can be dependent on other plug-ins. Prerequisite plug-ins are integrated first, which
+    ensures that the DITA-OT handles XSLT overrides correctly.</p>
+    
+    <section class="section">
+      <p class="p">The <code class="keyword markupname xmlelement">&lt;require&gt;</code> element in the <span class="ph filepath">plugin.xml</span> file specifies whether the
+        plug-in has dependencies. Use <code class="keyword markupname xmlelement">&lt;require&gt;</code> elements to specify prerequisite plug-ins, in
+        order from most general to most specific.</p>
+      <p class="p">If a prerequisite plug-in is missing, the DITA-OT prints a warning during integration. To suppress the warning
+        but keep the integration order if both plug-ins are present, add <code class="ph codeph">importance="optional"</code> to the
+          <code class="keyword markupname xmlelement">&lt;require&gt;</code> element. </p>
+      
+      <p class="p">If a plug-in can depend on any one of several optional plug-ins, separate the plug-in IDs with a vertical bar.
+        This is most useful when combined with <code class="ph codeph">importance="optional"</code>.</p>
+    </section>
+    <div class="example"><h2 class="title sectiontitle">Example: Plug-in with a prerequisite plug-in</h2>
+      
+      <p class="p">The following plug-in will only be installed if the plug-in with the ID <code class="ph codeph">com.example.primary</code> is
+        available. If that plug-in is not available, a warning is generated and the integration operation fails.</p>
+      <pre class="pre codeblock"><code>&lt;plugin id="com.example.builds-on-primary"&gt;
+  &lt;!-- ... Extensions here --&gt;
+  &lt;require plugin="com.example.primary"/&gt;
+&lt;/plugin&gt;</code></pre>
+    </div>
+    <div class="example"><h2 class="title sectiontitle">Example: Plug-in that has optional plug-ins</h2>
+      
+      <p class="p">The following plug-in will only be installed if either the plug-in with the ID <code class="ph codeph">pluginA</code> or the
+        plug-in with the ID <code class="ph codeph">pluginB</code> is available. If neither of those plug-ins are installed, a warning
+        is generated but the integration operation is completed.</p>
+      <pre class="pre codeblock"><code>&lt;plugin id="pluginC"&gt;
+  &lt;!-- ...extensions here --&gt;
+  &lt;require plugin="pluginA|pluginB" importance="optional"/&gt;
+&lt;/plugin&gt;</code></pre>
+      
+    </div>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/plugins-overview.html" title="Plug-ins enable users to extend the functionality of the DITA-OT. This might entail adding support for specialized document types, integrating processing overrides, or defining new output transformations.">Overview of plug-ins</a></div></div></nav></article></main></body></html>

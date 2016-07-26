@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- 
+<?xml version="1.0" encoding="UTF-8"?><!-- 
 Copyright © 2004-2006 by Idiom Technologies, Inc. All rights reserved. 
 IDIOM is a registered trademark of Idiom Technologies, Inc. and WORLDSERVER
 and WORLDSTART are trademarks of Idiom Technologies, Inc. All other 
@@ -29,12 +29,11 @@ This file is part of the DITA Open Toolkit project hosted on Sourceforge.net.
 See the accompanying license.txt file for applicable licenses.
 --><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
 
-    <xsl:import href="topic2fo.xsl"></xsl:import>
+    <xsl:import href="topic2fo.xsl"/>
     
     
-<xsl:import href="../../../org.openhealthtools.mdht.cda/xsl/mdhtcda2xslfo.xsl"/>
 
-    <xsl:import href="cfg:fo/attrs/custom.xsl"></xsl:import>
-    <xsl:import href="cfg:fo/xsl/custom.xsl"></xsl:import>
+    <xsl:import xmlns:dita="http://dita-ot.sourceforge.net" href="cfg:fo/attrs/custom.xsl"/>
+    <xsl:import href="cfg:fo/xsl/custom.xsl"/>
 
 </xsl:stylesheet>

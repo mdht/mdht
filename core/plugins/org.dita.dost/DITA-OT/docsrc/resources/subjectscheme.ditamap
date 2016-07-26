@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE subjectScheme PUBLIC "-//OASIS//DTD DITA Subject Scheme Map//EN" "subjectScheme.dtd">
+<!--This file is part of the DITA Open Toolkit project. See the accompanying LICENSE.md file for applicable licenses.-->
+
+<subjectScheme>
+  <subjectdef keys="audience">
+    <subjectdef keys="novice"/>
+    <subjectdef keys="expert"/>
+    <subjectdef keys="xslt-customizer"/>
+  </subjectdef>
+  <subjectdef keys="os">
+    <subjectdef keys="windows"/>
+    <subjectdef keys="unix">
+      <subjectdef keys="osx"/>
+      <subjectdef keys="linux"/>
+    </subjectdef>
+  </subjectdef>
+  <enumerationdef>
+    <attributedef name="audience"/>
+    <subjectdef keyref="audience"/>
+  </enumerationdef>
+  <enumerationdef>
+    <attributedef name="platform"/>
+    <subjectdef keyref="os"/>
+  </enumerationdef>
+</subjectScheme>

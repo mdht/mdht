@@ -6,9 +6,9 @@
 <plugin id="org.dita.wordrtf">
   <!-- extension points -->
   <extension-point id="dita.xsl.rtf" name="RTF XSLT import"/>
+  <feature extension="dita.conductor.lib.import" file="lib/wordrtf.jar"/>
   <!-- extensions -->
-  <feature extension="dita.conductor.transtype.check" value="wordrtf"/>
+  <transtype name="wordrtf" desc="Word RTF"/>
   <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
-  <feature extension="dita.basedir-resource-directory" value="true"/>
-  <template file="../../xsl/dita2rtf_template.xsl"/>
+  <template file="xsl/dita2rtf_template.xsl"/>
 </plugin>

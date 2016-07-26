@@ -27,30 +27,32 @@ These terms and conditions supersede the terms and conditions in any
 licensing agreement to the extent that such terms and conditions conflict
 with those set forth herein.
 
-This file is part of the DITA Open Toolkit project hosted on Sourceforge.net. 
+This file is part of the DITA Open Toolkit project. 
 See the accompanying license.txt file for applicable licenses.
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format"
-                xmlns:exsl="http://exslt.org/common"
                 xmlns:opentopic="http://www.idiominc.com/opentopic"
                 xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
-                xmlns:exslf="http://exslt.org/functions"
                 xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
                 xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder"
-                extension-element-prefixes="exsl"
-                exclude-result-prefixes="opentopic-index opentopic exslf opentopic-func ot-placeholder"
+                exclude-result-prefixes="xs opentopic-index opentopic opentopic-func ot-placeholder"
                 version="2.0">
+
+    <!-- Determines whether letter headings in an index generate bookmarks.
+         0 = no bookmarks.
+         Any other number = if total # of terms exceeds $bookmarks.index-group-size, generate headers.
+         To always generate headers, set to 1. -->
+    <xsl:param name="bookmarks.index-group-size" as="xs:integer">100</xsl:param>
 
     <xsl:variable name="map" select="//opentopic:map"/>
 
     <xsl:template match="*[contains(@class, ' topic/topic ')]" mode="bookmark">
         <xsl:variable name="mapTopicref" select="key('map-id', @id)[1]"/>
         <xsl:variable name="topicTitle">
-            <xsl:call-template name="getNavTitle">
-              <xsl:with-param name="topicNumber" select="1"/>
-            </xsl:call-template>
+            <xsl:call-template name="getNavTitle"/>
         </xsl:variable>
         
         <xsl:choose>
@@ -97,27 +99,17 @@ See the accompanying license.txt file for applicable licenses.
               </xsl:if>
             </xsl:for-each>
             <xsl:choose>
-                <xsl:when test="($ditaVersion &gt;= 1.1) and $map//*[contains(@class,' bookmap/toc ')][@href]"/>
-                <xsl:when test="($ditaVersion &gt;= 1.1) and ($map//*[contains(@class,' bookmap/toc ')]
-                          	or /*[contains(@class,' map/map ')][not(contains(@class,' bookmap/bookmap '))])">
+                <xsl:when test="$map//*[contains(@class,' bookmap/toc ')][@href]"/>
+                <xsl:when test="$map//*[contains(@class,' bookmap/toc ')]
+                              | /*[contains(@class,' map/map ')][not(contains(@class,' bookmap/bookmap '))]">
                     <fo:bookmark internal-destination="{$id.toc}">
                         <fo:bookmark-title>
-                            <xsl:call-template name="insertVariable">
-                                <xsl:with-param name="theVariableID" select="'Table of Contents'"/>
+                            <xsl:call-template name="getVariable">
+                                <xsl:with-param name="id" select="'Table of Contents'"/>
                             </xsl:call-template>
                         </fo:bookmark-title>
                     </fo:bookmark>
                 </xsl:when>
-  		          <xsl:when test="$ditaVersion &gt;= 1.1"/>
-                <xsl:otherwise>
-                    <fo:bookmark internal-destination="{$id.toc}">
-                        <fo:bookmark-title>
-                            <xsl:call-template name="insertVariable">
-                                <xsl:with-param name="theVariableID" select="'Table of Contents'"/>
-                            </xsl:call-template>
-                        </fo:bookmark-title>
-                    </fo:bookmark>
-                </xsl:otherwise>
             </xsl:choose>
             <xsl:for-each select="/*/*[contains(@class, ' topic/topic ')] |
                                   /*/ot-placeholder:glossarylist |
@@ -130,31 +122,7 @@ See the accompanying license.txt file for applicable licenses.
                 <xsl:apply-templates select="." mode="bookmark"/>
               </xsl:if>
             </xsl:for-each>
-            <xsl:if test="//opentopic-index:index.groups//opentopic-index:index.entry">
-                <xsl:choose>
-                    <xsl:when test="($ditaVersion &gt;= 1.1) and $map//*[contains(@class,' bookmap/indexlist ')][@href]"/>
-                    <xsl:when test="($ditaVersion &gt;= 1.1) and ($map//*[contains(@class,' bookmap/indexlist ')]
-                          	or /*[contains(@class,' map/map ')][not(contains(@class,' bookmap/bookmap '))])">
-                        <fo:bookmark internal-destination="{$id.index}">
-                            <fo:bookmark-title>
-                                <xsl:call-template name="insertVariable">
-                                    <xsl:with-param name="theVariableID" select="'Index'"/>
-                                </xsl:call-template>
-                            </fo:bookmark-title>
-                        </fo:bookmark>
-                    </xsl:when>
-                    <xsl:when test="$ditaVersion &gt;= 1.1"/>
-                    <xsl:otherwise>
-                        <fo:bookmark internal-destination="{$id.index}">
-                            <fo:bookmark-title>
-                                <xsl:call-template name="insertVariable">
-                                    <xsl:with-param name="theVariableID" select="'Index'"/>
-                                </xsl:call-template>
-                            </fo:bookmark-title>
-                        </fo:bookmark>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:if>
+            <xsl:apply-templates select="/*" mode="bookmark-index"/>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
@@ -164,15 +132,15 @@ See the accompanying license.txt file for applicable licenses.
         </fo:bookmark-tree>
       </xsl:if>
     </xsl:template>
-    
+
     <xsl:template match="ot-placeholder:toc[$retain-bookmap-order]" mode="bookmark">
         <fo:bookmark internal-destination="{$id.toc}">
             <xsl:if test="$bookmarkStyle!='EXPANDED'">
                 <xsl:attribute name="starting-state">hide</xsl:attribute>
             </xsl:if>
             <fo:bookmark-title>
-                <xsl:call-template name="insertVariable">
-                    <xsl:with-param name="theVariableID" select="'Table of Contents'"/>
+                <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Table of Contents'"/>
                 </xsl:call-template>
             </fo:bookmark-title>
         </fo:bookmark>
@@ -184,8 +152,8 @@ See the accompanying license.txt file for applicable licenses.
                 <xsl:attribute name="starting-state">hide</xsl:attribute>
             </xsl:if>
             <fo:bookmark-title>
-                <xsl:call-template name="insertVariable">
-                    <xsl:with-param name="theVariableID" select="'Index'"/>
+                <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Index'"/>
                 </xsl:call-template>
             </fo:bookmark-title>
         </fo:bookmark>
@@ -197,8 +165,8 @@ See the accompanying license.txt file for applicable licenses.
                 <xsl:attribute name="starting-state">hide</xsl:attribute>
             </xsl:if>
             <fo:bookmark-title>
-                <xsl:call-template name="insertVariable">
-                    <xsl:with-param name="theVariableID" select="'Glossary'"/>
+                <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Glossary'"/>
                 </xsl:call-template>
             </fo:bookmark-title>
             
@@ -213,8 +181,8 @@ See the accompanying license.txt file for applicable licenses.
                     <xsl:attribute name="starting-state">hide</xsl:attribute>
                 </xsl:if>
                 <fo:bookmark-title>
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'List of Tables'"/>
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="'List of Tables'"/>
                     </xsl:call-template>
                 </fo:bookmark-title>
                 
@@ -230,14 +198,51 @@ See the accompanying license.txt file for applicable licenses.
                     <xsl:attribute name="starting-state">hide</xsl:attribute>
                 </xsl:if>
                 <fo:bookmark-title>
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'List of Figures'"/>
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="'List of Figures'"/>
                     </xsl:call-template>
                 </fo:bookmark-title>
                 
                 <xsl:apply-templates mode="bookmark"/>
             </fo:bookmark>
         </xsl:if>
+    </xsl:template>
+
+    <xsl:template match="*" mode="bookmark-index">
+      <xsl:if test="//opentopic-index:index.groups//opentopic-index:index.entry">
+          <xsl:choose>
+              <xsl:when test="$map//*[contains(@class,' bookmap/indexlist ')][@href]"/>
+              <xsl:when test="$map//*[contains(@class,' bookmap/indexlist ')]
+                            | /*[contains(@class,' map/map ')][not(contains(@class,' bookmap/bookmap '))]">
+                  <fo:bookmark internal-destination="{$id.index}" starting-state="hide">
+                      <fo:bookmark-title>
+                          <xsl:call-template name="getVariable">
+                              <xsl:with-param name="id" select="'Index'"/>
+                          </xsl:call-template>
+                      </fo:bookmark-title>
+                      <xsl:if test="$bookmarks.index-group-size !=0 and 
+                                    count(//opentopic-index:index.groups//opentopic-index:index.entry) &gt; $bookmarks.index-group-size">
+                        <xsl:apply-templates select="//opentopic-index:index.groups" mode="bookmark-index"/>
+                      </xsl:if>
+                  </fo:bookmark>
+              </xsl:when>
+          </xsl:choose>
+      </xsl:if>
+    </xsl:template>
+
+    <xsl:template match="opentopic-index:index.groups" mode="bookmark-index">
+      <xsl:apply-templates select="opentopic-index:index.group" mode="bookmark-index"/>
+    </xsl:template>
+    <xsl:template match="opentopic-index:index.group" mode="bookmark-index">
+      <xsl:apply-templates select="opentopic-index:label" mode="bookmark-index"/>
+    </xsl:template>
+    <xsl:template match="opentopic-index:label" mode="bookmark-index">
+      <!-- Letter headings in index are always collapsed, regardless of bookmarkStyle. -->
+      <fo:bookmark internal-destination="{generate-id(.)}" starting-state="hide">
+          <fo:bookmark-title>
+            <xsl:value-of select="."/>
+          </fo:bookmark-title>
+      </fo:bookmark>
     </xsl:template>
 
 </xsl:stylesheet>

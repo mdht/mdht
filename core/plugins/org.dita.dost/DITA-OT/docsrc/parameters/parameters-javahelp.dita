@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generated from plugin source, do not edit! -->
+<!DOCTYPE reference
+  PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="javahelp"><title outputclass="generated">JavaHelp parameters</title><titlealts><navtitle>JavaHelp</navtitle></titlealts><shortdesc id="shortdesc"/><refbody><section><parml><plentry id="args.javahelp.map" props="javahelp"><pt><parmname>args.javahelp.map</parmname></pt><pd id="args.javahelp.map.desc">Specifies the name of the ditamap file for a JavaHelp project.</pd></plentry><plentry id="args.javahelp.toc" props="javahelp"><pt><parmname>args.javahelp.toc</parmname></pt><pd id="args.javahelp.toc.desc">Specifies the name of the file containing the TOC in your JavaHelp output.</pd></plentry></parml></section></refbody></reference>

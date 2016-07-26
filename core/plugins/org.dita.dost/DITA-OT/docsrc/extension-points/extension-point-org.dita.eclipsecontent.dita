@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generated from plugin source, do not edit! -->
+<!DOCTYPE reference
+  PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="org.dita.eclipsecontent-extension-points"><title outputclass="generated">org.dita.eclipsecontent extension points</title><titlealts><navtitle/></titlealts><shortdesc id="shortdesc"/><refbody><section><dl><dlentry id="dita.xsl.dynamicdita"><dt><parmname>dita.xsl.dynamicdita</parmname></dt><dd id="dita.xsl.dynamicdita.desc">Dynamic DITA XSLT import</dd></dlentry></dl></section></refbody></reference>

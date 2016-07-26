@@ -64,6 +64,7 @@
 <str name="task_example">Ejemplo</str>
 <str name="task_postreq">Qué hacer a continuación</str>
 <str name="task_procedure">Procedimiento</str>
+<str name="task_procedure_unordered">Procedimiento</str>
 <str name="task_results">Resultados</str>
 
 <str name="Copyright">Copyright</str>
@@ -72,13 +73,5 @@
 <str name="OpenQuote">"</str>
 <str name="CloseQuote">"</str>
 <str name="ColonSymbol">:</str>
-    
-<!-- For odt transform -->
-<str name="On the page"> en la página </str>
-<str name="Related Links">Vínculos relacionados</str>
-<str name="List item">Elemento de lista.</str>
-<str name="Foot note">Nota al pie.</str>
-<str name="Page"> página </str>
-<str name="Unordered List bullet">&#8226;</str>
 
 </strings>

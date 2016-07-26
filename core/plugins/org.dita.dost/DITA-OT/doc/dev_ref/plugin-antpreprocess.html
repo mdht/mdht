@@ -1,0 +1,45 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2016"><meta name="DC.rights.owner" content="(C) Copyright 2016"><meta name="DC.Type" content="task"><meta name="description" content="You can add an Ant target to the pre-processing pipeline. This enables you to insert additional processing before or after the pre-processing chain or a specific step in the pre-processing operation."><meta name="DC.Relation" scheme="URI" content="../dev_ref/plugin-creating.html"><meta name="DC.Relation" scheme="URI" content="../dev_ref/plugin-extension-points-pre-processing.html"><meta name="DC.Format" content="XHTML"><meta name="DC.Identifier" content="plugin-antpreprocess"><meta name="DC.Language" content="en-US"><link rel="stylesheet" type="text/css" href="../css/commonltr.css"><link rel="stylesheet" type="text/css" href="../css/dita-ot-doc.css"><title>Adding an Ant target to the pre-processing pipeline</title></head><body id="plugin-antpreprocess"><header role="banner"><div class="header">
+  <p>DITA Open Toolkit</p>
+  <hr>
+</div></header><nav role="toc"><ul><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a><ul><li><a href="../dev_ref/plugins-overview.html">Overview of plug-ins</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding a new target to the Ant build process</a></li><li class="active"><a href="../dev_ref/plugin-antpreprocess.html">Adding an Ant target to the pre-processing pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Adding a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding an XSLT-processing step</a></li><li><a href="../dev_ref/using-plugin-URI-extension.html">Referencing files from other plug-ins</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Adding parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding a Java library to the DITA-OT classpath parameter</a></li><li><a href="../dev_ref/plugin-messages.html">Adding new diagnostic messages</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li><li><a href="../user-guide/dita-and-dita-ot-resources.html">DITA Resources</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Adding an Ant target to the pre-processing pipeline</h1>
+  
+  <div class="body taskbody"><p class="shortdesc">You can add an Ant target to the pre-processing pipeline. This enables you to insert additional processing
+    before or after the pre-processing chain or a specific step in the pre-processing operation.</p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
+      <p class="p">You can use the <code class="ph codeph">depend.preprocess.pre</code> and <code class="ph codeph">depend.preprocess.post</code> extension
+        points to run a target before or after the entire pre-processing operation. In addition, there are extension
+        points that enable you ro run an Ant target before specific pre-processing steps.</p>
+    </section>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Define and integrate the new Ant target.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Create the following <span class="ph filepath">plugin.xml</span> file:</span>
+        <div class="itemgroup info"><pre class="pre codeblock"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
+  &lt;feature extension="<var class="keyword varname">extension-point</var>" value="<var class="keyword varname">Ant-target</var>"/&gt;
+&lt;/plugin&gt;</code></pre>where
+          <ul class="ul">
+            <li class="li"><var class="keyword varname">plugin-id</var> is the plug-in identifier.</li>
+            <li class="li"><var class="keyword varname">extension-point</var> is a pre-processing extension point.</li>
+            <li class="li"><var class="keyword varname">Ant-target</var> is the name of the Ant target.</li>
+          </ul></div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Integrate the plug-in.</span>
+      </li></ol>
+    <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>The new target is added to the Ant dependency list. The new target now is always run in conjunction with the
+      specified step in the pre-processing pipeline.</section>
+    <div class="example"><h2 class="title sectiontitle">Example</h2>
+      
+      <p class="p">The following <span class="ph filepath">plugin.xml</span> file specifies that the
+          <span class="keyword parmname">myAntTargetBeforeChunk</span> target is always run before the <code class="ph codeph">chunk</code> step in the
+        pre-processing stage.</p>
+      <pre class="pre codeblock"><code>&lt;plugin id="com.example.extendchunk"&gt;
+  &lt;feature extension="depend.preprocess.chunk.pre" value="myAntTargetBeforeChunk"/&gt;
+&lt;/plugin&gt;</code></pre>
+      <p class="p">It assumes that the <span class="keyword parmname">myAntTargetBeforeChunk</span> target has already been defined and
+        integrated.</p>
+    </div>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/plugin-creating.html" title="You can use DITA-OT plug-ins to extend the DITA Open Toolkit.">Creating plug-ins</a></div></div><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../dev_ref/plugin-extension-points-pre-processing.html" title="You can use these extension points to run an Ant target before or after the pre-processing stage; you also run an Ant target before or after a specific step in the pre-processing operation.">Pre-processing extension points</a></div></div></nav></article></main></body></html>

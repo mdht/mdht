@@ -27,7 +27,7 @@ These terms and conditions supersede the terms and conditions in any
 licensing agreement to the extent that such terms and conditions conflict
 with those set forth herein.
 
-This file is part of the DITA Open Toolkit project hosted on Sourceforge.net. 
+This file is part of the DITA Open Toolkit project. 
 See the accompanying license.txt file for applicable licenses.
 -->
 
@@ -55,17 +55,17 @@ See the accompanying license.txt file for applicable licenses.
     <alphabet char-set="Simplified Chinese">
        <character-set>
           <character-range>
-	     <start include="yes">&#x4e00;</start>
-	     <end include="yes">&#x9fff;</end>
-	  </character-range>
+       <start include="yes">&#x4e00;</start>
+       <end include="yes">&#x9fff;</end>
+    </character-range>
           <character-range>
-	     <start include="yes">&#x3400;</start>
-	     <end include="yes">&#x4dff;</end>
-	  </character-range>
+       <start include="yes">&#x3400;</start>
+       <end include="yes">&#x4dff;</end>
+    </character-range>
           <character-range>
-	     <start include="yes">&#x0100;</start>
-	     <end include="yes">&#xff00;</end>
-	  </character-range>
+       <start include="yes">&#x0100;</start>
+       <end include="yes">&#xff00;</end>
+    </character-range>
        </character-set>
     </alphabet>    
 

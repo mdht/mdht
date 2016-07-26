@@ -3,7 +3,7 @@
   Sourceforge.net. See the accompanying license.txt file for 
   applicable licenses.-->
 <!-- (c) Copyright IBM Corp. 2007 All Rights Reserved. -->
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="2.0" 
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:topicpull="http://dita-ot.sourceforge.net/ns/200704/topicpull"
   xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg"
@@ -50,9 +50,9 @@
           </xsl:variable>
           <!--grab type, text and metadata, as long there's an href to grab from, otherwise error-->
           <xsl:apply-templates select="." mode="topicpull:get-stuff">
-            <xsl:with-param name="localtype"><xsl:value-of select="$type"/></xsl:with-param>
-            <xsl:with-param name="scope"><xsl:value-of select="$scope"/></xsl:with-param>
-            <xsl:with-param name="format"><xsl:value-of select="$format"/></xsl:with-param>
+            <xsl:with-param name="localtype" select="$type"/>
+            <xsl:with-param name="scope" select="$scope"/>
+            <xsl:with-param name="format" select="$format"/>
           </xsl:apply-templates>
         </xsl:copy>
       </xsl:when>
@@ -119,7 +119,7 @@
 
     <!--create class value string implied by the link's type, used for comparison with class strings in the target topic for validation-->
     <xsl:variable name="classval">
-      <xsl:apply-templates select="." mode="topicpull:get-stuff_classval"><xsl:with-param name="type"><xsl:value-of select="$type"/></xsl:with-param></xsl:apply-templates>
+      <xsl:apply-templates select="." mode="topicpull:get-stuff_classval"><xsl:with-param name="type" select="$type"/></xsl:apply-templates>
     </xsl:variable>
 
     <!--linktext-->

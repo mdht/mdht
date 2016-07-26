@@ -3,7 +3,7 @@
      Sourceforge.net. See the accompanying license.txt file for 
      applicable licenses.-->
 <!-- (c) Copyright IBM Corporation 2010. All Rights Reserved. -->
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="2.0" 
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
   exclude-result-prefixes="dita-ot"
@@ -20,12 +20,12 @@
   
   <!-- add "'" for q -->
   <xsl:template match="*[contains(@class,' topic/q ')]" mode="dita-ot:text-only">
-    <xsl:call-template name="getString">
-      <xsl:with-param name="stringName" select="'OpenQuote'"/>
+    <xsl:call-template name="getVariable">
+      <xsl:with-param name="id" select="'OpenQuote'"/>
     </xsl:call-template>
     <xsl:apply-templates mode="dita-ot:text-only"/>
-    <xsl:call-template name="getString">
-      <xsl:with-param name="stringName" select="'CloseQuote'"/>
+    <xsl:call-template name="getVariable">
+      <xsl:with-param name="id" select="'CloseQuote'"/>
     </xsl:call-template>
   </xsl:template>
   
