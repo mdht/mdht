@@ -2,7 +2,7 @@
 <feature
       id="org.dita.dost"
       label="%featureName"
-      version="2.5.19.qualifier"
+      version="3.0.0.qualifier"
       provider-name="%featureProvider">
 
    <description url="http://mdht.projects.openhealthtools.org">
@@ -20,6 +20,8 @@
    <url>
       <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates/integration"/>
    </url>
+
+   
 
    <plugin
          id="org.dita.dost"
