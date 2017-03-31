@@ -22,8 +22,9 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ReflectiveItemProvider;
-import org.eclipse.nebula.widgets.xviewer.XViewerColumn;
-import org.eclipse.nebula.widgets.xviewer.XViewerColumn.SortDataType;
+import org.eclipse.nebula.widgets.xviewer.core.model.SortDataType;
+import org.eclipse.nebula.widgets.xviewer.core.model.XViewerAlign;
+import org.eclipse.nebula.widgets.xviewer.core.model.XViewerColumn;
 import org.eclipse.swt.SWT;
 
 import traceability.LogEntry;
@@ -38,9 +39,9 @@ public class ReflectiveTraceabilityEditor extends TraceabilityEditor {
 
 	private static final String COLUMN_NAMESPACE = "trace";
 
-	protected static XViewerColumn FanOut_Col = new TracebilityColumn(COLUMN_NAMESPACE + ".fanout", "Fan-Out Element", 350, SWT.LEFT, true, SortDataType.String, false, null);
-	protected static XViewerColumn Error_Col = new TracebilityColumn(COLUMN_NAMESPACE + ".error", "Error", 400, SWT.LEFT, true, SortDataType.String, false, null);
-	protected static XViewerColumn ErrorCode_Col = new TracebilityColumn(COLUMN_NAMESPACE + ".errorcode", "Code", 40, SWT.LEFT, true, SortDataType.Integer, false, null);
+	protected static XViewerColumn FanOut_Col = new TracebilityColumn(COLUMN_NAMESPACE + ".fanout", "Fan-Out Element", 350, XViewerAlign.Left, true, SortDataType.String, false, null);
+	protected static XViewerColumn Error_Col = new TracebilityColumn(COLUMN_NAMESPACE + ".error", "Error", 400, XViewerAlign.Left, true, SortDataType.String, false, null);
+	protected static XViewerColumn ErrorCode_Col = new TracebilityColumn(COLUMN_NAMESPACE + ".errorcode", "Code", 40, XViewerAlign.Left, true, SortDataType.Integer, false, null);
 
 	protected List<XViewerColumn> dynamicColumns = new ArrayList<XViewerColumn>();
 
@@ -172,7 +173,7 @@ public class ReflectiveTraceabilityEditor extends TraceabilityEditor {
 		if (name == null) {
 			name = model.toString();
 		}
-		TracebilityColumn col = new TracebilityColumn(getNamespace() + "." + name, name, 200, SWT.LEFT, true, SortDataType.String, false, null);
+		TracebilityColumn col = new TracebilityColumn(getNamespace() + "." + name, name, 200, XViewerAlign.Left, true, SortDataType.String, false, null);
 		dynamicColumns.add(col);
 		modelOfColumn.put(col, model);
 	}

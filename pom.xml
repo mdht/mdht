@@ -25,7 +25,7 @@
 		<repository>
 			<id>nebula</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/technology/nebula/snapshot</url>
+			<url>http://download.eclipse.org/nebula/releases/latest</url>
 		</repository>
 	</repositories>
 

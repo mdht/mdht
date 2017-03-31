@@ -28,7 +28,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.ViewerRow;
 import org.eclipse.nebula.widgets.xviewer.XViewer;
-import org.eclipse.nebula.widgets.xviewer.XViewerColumn;
+import org.eclipse.nebula.widgets.xviewer.core.model.XViewerColumn;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseMoveListener;
@@ -44,6 +44,8 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.TreeColumn;
 import org.eclipse.swt.widgets.TreeItem;
 
+import com.google.common.primitives.Ints;
+
 import traceability.LogEntry;
 import traceability.Trace;
 import traceability.TraceabilityFactory;
@@ -52,8 +54,6 @@ import traceability.presentation.TraceabilityEditor;
 import traceability.presentation.TraceabilityEditorPlugin;
 import traceability.presentation.Tracing;
 import traceability.presentation.table.images.TraceabilityImageCache;
-
-import com.google.common.primitives.Ints;
 
 /**
  * Main viewer class of the traceability table

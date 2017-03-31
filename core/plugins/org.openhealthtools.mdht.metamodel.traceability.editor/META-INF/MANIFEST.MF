@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.metamodel.traceability.editor;singleton:=true
-Bundle-Version: 2.5.15.qualifier
+Bundle-Version: 2.5.16.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: traceability.presentation.TraceabilityEditorPlugin$Implementation
 Bundle-Vendor: %providerName
@@ -22,7 +22,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.commands;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.openhealthtools.mdht.metamodel.traceability.edit;visibility:=reexport,
- org.eclipse.nebula.widgets.xviewer,
  org.apache.commons.lang,
- com.google.guava
+ com.google.guava,
+ org.eclipse.nebula.widgets.xviewer;bundle-version="1.0.0",
+ org.eclipse.nebula.widgets.xviewer.core;bundle-version="1.0.0",
+ org.eclipse.nebula.widgets.xviewer.core.source;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

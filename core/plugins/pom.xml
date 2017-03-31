@@ -27,7 +27,6 @@
 	</profiles>
 
 	<modules>
-		<module>org.dita.dost</module>
 		<module>org.openhealthtools.mdht.emf.runtime</module>
 		<module>org.openhealthtools.mdht.transform.core</module>
 		<module>org.openhealthtools.mdht.uml.common</module>
