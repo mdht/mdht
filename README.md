@@ -1,3 +1,10 @@
+# ARCHIVED 1/1/2025
+
+All updates have been moved here
+https://gitlab.eclipse.org/eclipse/mdht/modeling.mdht.git
+
+
+
 Model-Driven Health Tools (MDHT)
 ======
 Open Health Tools Model-Driven Health Tools (**MDHT**) Project is a wide-ranging open source effort to promote interoperability in healthcare infrastructure. It promotes shared artifacts between related healthcare standards and standards development organizations, and works to develop localized specifications. It also delivers a common modeling framework and tools that support seamless integration of design, publication, and runtime artifact creation.
